@@ -232,6 +232,7 @@ export function ToolsRadar() {
                   {radarPulse.launches.map((launch) => (
                     <article key={launch.name} className="radar-note">
                       <h4>{launch.name}</h4>
+                      <p className="radar-kicker">{launch.date}</p>
                       <p>{launch.desc}</p>
                       <p className="radar-why">{launch.why}</p>
                     </article>

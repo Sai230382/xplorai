@@ -553,11 +553,15 @@ nav.main a.active {
   max-width: var(--wrap);
   margin: 0 auto;
   min-height: calc(100vh - var(--nav-h) - 16px);
+  overflow: visible;
 }
 
 .hero-text {
   position: relative;
   z-index: 5;
+  overflow: visible;
+  container-type: inline-size;
+  container-name: hero-copy;
 }
 
 .starburst {
@@ -583,6 +587,7 @@ nav.main a.active {
 
 .stack {
   margin: 0;
+  overflow: visible;
 }
 
 .stack .ln {
@@ -590,12 +595,17 @@ nav.main a.active {
   font-family: var(--disp);
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 0.82;
-  font-size: clamp(3rem, 7.4vw, 6.6rem);
+  line-height: 0.92;
+  padding-block: 0.08em;
+  /* Size from the hero column so UNDERSTAND cannot outrun max-width/clip-path. */
+  font-size: clamp(2.2rem, min(5vw, 12.5cqi), 4.6rem);
   position: relative;
   width: max-content;
   max-width: 100%;
-  clip-path: inset(0 100% 0 0);
+  overflow: visible;
+  /* Top/bottom inset stays open so cap-height and ghosts aren't cropped;
+     the wipe still interpolates only the right edge (100% → 0). */
+  clip-path: inset(-0.08em 100% -0.08em 0);
   transition: clip-path 0.9s var(--ease);
 }
 
@@ -616,14 +626,14 @@ nav.main a.active {
 
 .hero.is-in .stack .ln,
 .hero.is-static .stack .ln {
-  clip-path: inset(0 0 0 0);
+  clip-path: inset(-0.08em 0 -0.08em 0);
 }
 
 .stack .ln .gc,
 .stack .ln .gv {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 0.08em;
   pointer-events: none;
   mix-blend-mode: multiply;
 }
@@ -2188,6 +2198,13 @@ nav.main a.active {
   line-height: 0.95;
 }
 
+.radar-note .radar-kicker {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-family: var(--ui);
+  color: var(--peri);
+}
+
 .radar-note p,
 .radar-quote p {
   font-family: var(--serif);
@@ -2838,7 +2855,7 @@ nav.main a.active {
   }
 
   .stack .ln {
-    font-size: clamp(2.6rem, 13vw, 4rem);
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
   }
 
   .mag-head {

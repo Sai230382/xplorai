@@ -2461,22 +2461,31 @@
     }
   ],
   "pulse": {
-    "week": "September 8, 2026",
+    "week": "14 September 2026",
     "launches": [
       {
-        "name": "Blume (blume.codes)",
-        "desc": "A local sidecar for Claude Code, Codex and Cursor that clusters your repeated corrections and turns them into rules, hooks and skills you approve as diffs. Built after its founders' previous startup died of 'agent drift.'",
-        "why": "The first tool aimed squarely at the gap between what you keep telling your agent and what its config actually says."
+        "name": "Eclipse Enclave (enclave.eclipse.dev)",
+        "date": "8 September 2026",
+        "desc": "Eclipse Foundation open-source sandbox: every coding-agent session gets its own container, filesystem view, and network gateway. Claude Code, Codex, OpenCode, Pi, and others run with permission prompts off because the sandbox — not the human — is the gate.",
+        "why": "The brief is about who may run a cyber model. Enclave answers the local version: what the agent on your laptop is allowed to touch."
       },
       {
-        "name": "Moadim (moadim.io)",
-        "desc": "MIT-licensed Rust daemon: prompt + schedule + agent = a loop, fired from your OS crontab in isolated workbenches with watchdogs. Supports Claude, Codex, Hermes, Pi. 1,000+ daily users; the author calls it 'done.'",
-        "why": "Cron for agents — the boring, necessary primitive that turns one-off agent runs into standing jobs."
+        "name": "Harden AIF (harden.run)",
+        "date": "9 September 2026",
+        "desc": "A free, local firewall for coding agents. A post-trained cybersecurity model checks each tool call against your intent and session context, then allows, rewrites, asks, or blocks — Claude Code, Codex, Cursor, Gemini CLI, and others. Repo and tool output stay on the machine.",
+        "why": "Same week Google gated Flash Cyber behind Fairwind. Harden is the desk-level check: the agent does not get a free pass on rm, npx, or your keys."
       },
       {
-        "name": "Runway Solaris",
-        "desc": "An 'Interface World Model' that renders a live, interactive UI frame-by-frame in response to clicks and drags — no DOM, no CSS, no JavaScript underneath. 720p, built on Gen-4.5; legible text and factual accuracy are open problems.",
-        "why": "A genuinely different bet from the 'AI writes code' wave: skip the code layer of software entirely."
+        "name": "Cadenya (cadenya.com)",
+        "date": "11 September 2026",
+        "desc": "A hosted agentic loop rather than a framework you bolt on. Connect OpenAPI and MCP tools; Cadenya runs context compaction, tool approvals, webhooks, and streaming. Model-agnostic via OpenRouter or any OpenAI-compatible endpoint.",
+        "why": "The missing harness people keep rewriting: tool calls, compaction, and an approval gate as a service — not another closed managed-agents box."
+      },
+      {
+        "name": "Elva (getelva.ai)",
+        "date": "14 September 2026",
+        "desc": "Discovers APIs in your repo, writes audience contracts, and hosts MCP servers behind scoped keys, per-tool auth, and full call logs. Built for the week when agents — not only developers — are the API consumers.",
+        "why": "The Anthropic report treats stolen AI keys as loot. Elva issues keys per agent and revokes them in one click — the MCP equivalent of not leaving AWS keys in the APK."
       }
     ],
     "funding": [
@@ -2528,8 +2537,8 @@
         "desc": "Anthropic shipped the same model at two tiers (Fable public, Mythos gated). Google shipped Gemini 3.8 Flash plus a looser-mitigation 'Cyber' variant behind its Fairwind Program. OpenAI restricted Astra's cyber capabilities to 'trusted defenders.' Three labs in one week chose to differentiate on who gets access rather than on what the model does — the natural endgame after OpenAI's own agents breached Hugging Face in July."
       },
       {
-        "title": "The agent layer just got an ops layer",
-        "desc": "Blume watches agents and rewrites their rules. Moadim schedules them. ARBR governs which model they route to and rolls back if quality drops. Speakeasy's Kit gives them one 'compose' tool with ACP/A2A interop. Nex runs them at CRM-scale volume. None of these are agents — they're the monitoring, scheduling, governance and runtime tooling that appears only once a category has real production users to support."
+        "title": "The agent layer just got a security layer",
+        "desc": "Eclipse Enclave sandboxes the session. Harden checks the tool call before it runs. Elva scopes the MCP key. None of these are agents — they are the sandbox, firewall, and API gate that appear once agents have production credentials to steal."
       }
     ]
   },

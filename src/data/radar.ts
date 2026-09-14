@@ -22,6 +22,7 @@ export type RadarQuote = {
 
 export type RadarLaunch = {
   name: string
+  date: string
   desc: string
   why: string
 }
