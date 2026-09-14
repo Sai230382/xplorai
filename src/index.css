@@ -2195,6 +2195,13 @@ nav.main a.active {
   line-height: 0.95;
 }
 
+.radar-note .radar-kicker {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-family: var(--ui);
+  color: var(--peri);
+}
+
 .radar-note p,
 .radar-quote p {
   font-family: var(--serif);

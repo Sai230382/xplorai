@@ -231,8 +231,8 @@ export function ToolsRadar() {
                 <div className="radar-grid">
                   {radarPulse.launches.map((launch) => (
                     <article key={launch.name} className="radar-note">
-                      <p className="radar-kicker">{launch.date}</p>
                       <h4>{launch.name}</h4>
+                      <p className="radar-kicker">{launch.date}</p>
                       <p>{launch.desc}</p>
                       <p className="radar-why">{launch.why}</p>
                     </article>
