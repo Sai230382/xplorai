@@ -1,229 +1,229 @@
 {
-  "number": 9,
-  "edition": "Briefing 09",
-  "date": "10 September 2026",
-  "dateISO": "2026-09-10",
+  "number": 10,
+  "edition": "Briefing 10",
+  "date": "14 September 2026",
+  "dateISO": "2026-09-14",
   "kicker": "This week in AI",
-  "title": "The helper can now do the clicking. Someone still has to own the result.",
-  "summary": "ChatGPT’s new Astra model can fill forms, tidy a calendar, and draft in your email. Europe now requires chatbots to say they are machines, and fake video to be labelled. Companies keep overspending on AI even when they cannot say what it is for.",
-  "uncertainty": "We do not yet know how often these new helpers are used for real work, versus how often they are tried once and left running up a bill.",
+  "title": "The labs say slow down. The attackers already sped up.",
+  "summary": "Anthropic’s Dario Amodei called for pacing frontier AI and putting independent evaluators inside labs. OpenAI’s Sam Altman and xAI’s Elon Musk publicly agreed. The same week, Anthropic published a threat report showing criminals and spies using AI to run cyber attacks end to end — and treating stolen AI API keys like cash.",
+  "uncertainty": "We do not yet know whether ‘pacing’ will change what ships next quarter, or only what CEOs say on social media.",
   "stats": {
-    "scanned": 4200,
-    "filtered": 310,
-    "verified": 41,
+    "scanned": 4500,
+    "filtered": 280,
+    "verified": 36,
     "themes": 5
   },
   "stories": [
     {
-      "id": "astra-does-the-clicking",
-      "topic": "tools",
-      "theme": "A helper that uses the computer for you",
-      "changed": "OpenAI launched GPT-6 Astra in ChatGPT. It can fill online forms, update customer records, organise a calendar, research online, and draft in your email or documents — not only answer questions.",
-      "matters": "The useful question is no longer “which chatbot.” It is which chores you will let a helper finish, and which you still want a person to click.",
-      "imply": "Chat is no longer the product. The product is a helper that can finish a chore in the same tabs you already live in. That only works if you decide, in advance, which chores are safe to hand over.",
-      "uses": [
-        "Turn a pile of open tabs into one draft email, then you send it.",
-        "Copy new contacts from a spreadsheet into a form, one row at a time, while you watch the first three.",
-        "Reshuffle a messy week of meetings from the inbox — and leave money, legal, and shared drives alone."
-      ],
-      "example": "A coordinator has 40 conference registrations sitting in a spreadsheet. She lets Astra open the event form and fill the first five rows. She checks names and emails, then lets it do the rest. She still hits submit. That is a use. Letting it email the whole list “to save time” is not.",
-      "audience": "Anyone who writes, files, books meetings, or lives in a browser.",
-      "watch": "Whether it stays careful on your real inbox and forms, not on a staged demo. Paid ChatGPT users get it over the coming days; workplace admins can switch it on.",
-      "source": {
-        "title": "OpenAI, GPT-6 Astra",
-        "url": "https://openai.com/index/gpt-6-astra/",
-        "quote": "It can take care of tedious tasks like filling out online forms, updating customer records in a CRM, and organizing your calendar. It can conduct online research and draft summaries in your email or in your document editor."
-      }
-    },
-    {
-      "id": "who-owns-the-click",
-      "topic": "work",
-      "theme": "If it can act, someone must be able to stop it",
-      "changed": "The same launch puts ChatGPT on the desktop with permission to click, type, and move files. OpenAI says Astra is less likely than last year’s model to go beyond what it was asked to do — in one test, the old model overstepped 48% of the time; Astra did so in none of the cases.",
-      "matters": "That is progress. It is not a substitute for a workplace rule: what the helper may touch, when a person must approve, and a record of what it did. A survey of technology leaders this summer found 34% are already limiting future hiring because of AI, and 20% are cutting roles.",
-      "imply": "If a helper can click, someone has to own the off switch. Safer in a lab test is not the same as unsupervised on your shared drive.",
-      "uses": [
-        "Give it a written list: these three folders, this calendar, not the finance sheet.",
-        "Keep a log of what it clicked. If nobody can read the log, do not turn it on.",
-        "Use it to rename and file last week’s exports — not to move client folders."
-      ],
-      "example": "An operations lead turns desktop ChatGPT on for one person, on one laptop, with access only to a “staging” folder of last month’s CSVs. After a week they compare the filed copies with the originals. Only then do they talk about a second person. They do not start with the shared drive.",
-      "audience": "Managers, operations leads, and anyone who has connected email or a shared drive to a helper.",
-      "watch": "Simple permissions. If your company turns this on, ask who can switch it off.",
-      "source": {
-        "title": "OpenAI, GPT-6 Astra",
-        "url": "https://openai.com/index/gpt-6-astra/",
-        "quote": "Compared to GPT‑5.6 Sol, which without production safeguards went beyond the authorized target 48% of the time, GPT‑6 Astra did this in 0% of cases."
-      }
-    },
-    {
-      "id": "say-you-are-a-machine",
+      "id": "pace-the-frontier",
       "topic": "rules",
-      "theme": "Europe: say it is AI, label the fake video",
-      "changed": "From 2 August 2026, EU rules require that chatbots tell people they are talking to a machine (unless that is already obvious), and that deepfakes and other AI-made media be disclosed. Late August, Brussels sent its first formal information requests to the big AI labs about safety, security, and what they trained on.",
-      "matters": "If you sell into Europe, “we use AI” is no longer enough. Customers and staff should be able to tell a person from a bot, and a real clip from a generated one.",
-      "imply": "A label is now part of the product. If a customer, a pupil, or a candidate cannot tell a person from a machine, you are already on the wrong side of the rule — and of trust.",
+      "theme": "Rivals agree: put outsiders inside the lab",
+      "changed": "On 12–13 September 2026, Anthropic CEO Dario Amodei published ‘We Must Pace the Frontier,’ arguing labs must slow how fast they improve frontier models so safety work can keep up. He committed Anthropic to embedded third-party evaluators with employee-like access (desks, badges, laptops, and the right to publish findings with only narrow redactions). OpenAI’s Sam Altman and xAI’s Elon Musk publicly backed the call; Altman said OpenAI would adopt independent evaluators with employee-like access.",
+      "matters": "Safety promises used to be company blogs. This is a rare public agreement between fierce rivals on a concrete check: outsiders who can see training and incidents, not only a polished model card.",
+      "imply": "If evaluators are real, buyers and governments can ask ‘who is sitting inside?’ If they are theatre, the gap will show up fast. Either way, ‘trust us’ is no longer the whole product.",
       "uses": [
-        "Put one plain line on every chatbot: “You are talking to a helper, not a person.”",
-        "Mark generated video and images in the caption before you post them.",
-        "If you sell into Europe, ask your vendor where the disclosure lives — in the product, not in a PDF."
+        "If you buy from a frontier lab, ask whether independent evaluators have ongoing access — and whether they can publish without PR edit.",
+        "Put that answer next to the security questionnaire, not in a slide deck.",
+        "For internal AI projects that train or fine-tune, name who can audit the pipeline before the next big run."
       ],
-      "example": "A school uses a homework chatbot on its site. From this week the first message is: “I am a writing helper. A teacher still marks the work.” A parent who could not tell is no longer guessing. That is the rule doing its job.",
-      "audience": "Founders, school and HR leaders, and anyone publishing video or running a customer chatbot.",
-      "watch": "2 December 2026 is the extra deadline for older tools to add machine-readable marks. Deployers already had to disclose deepfakes from 2 August.",
+      "example": "A procurement lead renewing an enterprise AI contract adds one line: ‘Name the embedded evaluator team, their access level, and the last public incident note they issued.’ If the vendor cannot answer, the renewal waits. That is the Amodei proposal, applied as a buyer.",
+      "audience": "Security and procurement leads, and anyone writing AI policy for a company that sits near the frontier.",
+      "watch": "Whether desks and badges actually appear — and whether unfavorable findings get published, not only praised.",
       "source": {
-        "title": "Morgan Lewis, EU AI Act transparency rules",
-        "url": "https://www.morganlewis.com/blogs/sourcingatmorganlewis/2026/08/eu-ai-acts-transparency-rules-what-went-into-effect-on-2-august",
-        "quote": "On 2 August 2026, the transparency obligations in Article 50 of the EU AI Act began to apply."
+        "title": "Dario Amodei, We Must Pace the Frontier",
+        "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+        "quote": "Each frontier AI company commits to giving ongoing, employee-like access to a team of embedded third-party evaluators… whose role is to verify adherence to safety practices and commitments, report incidents, and help assess the alignment of not just completed AI models but training pipelines and processes."
       }
     },
     {
-      "id": "bills-without-a-yardstick",
-      "topic": "money",
-      "theme": "Everyone is buying it. Few can say what it cost.",
-      "changed": "In a summer survey of 1,636 technology leaders, 47% said AI spending was moderately or substantially over plan, and 10% had no formal AI budget at all. When the bill ran over, only 17% paused or scaled back. Three-quarters named AI for workforce productivity.",
-      "matters": "Headlines follow the money. Useful change follows what people actually do on a Tuesday. Those are not yet the same story. Overruns are often paid for by cutting contractors and older software, not by proving the new tool earned its keep.",
-      "imply": "A rising bill is not proof that Tuesday got better. If nobody can name the job the spend is for, the spend will keep rising.",
-      "uses": [
-        "Give every AI line a person’s name and one sentence for what “good” looks like.",
-        "Pilot one chore for 30 days before you buy seats for the whole office.",
-        "When the bill runs over, pause the extra seats first — not the contractors who still do the work."
-      ],
-      "example": "A 40-person firm bought a “team” plan after a demo. Three people used it daily; the rest logged in once. They cut back to four seats, named an owner, and kept a weekly note: drafts accepted, drafts thrown away. The bill dropped. The useful work did not.",
-      "audience": "Operators, finance leads, and anyone asked to fund “an AI transformation.”",
-      "watch": "A line in the budget with a person’s name on it. If nobody can say what “good” looks like, the spend will keep rising.",
-      "source": {
-        "title": "ETR Research, Summer 2026 Macro Views",
-        "url": "https://research.etr.ai/etr-data-drop/ai-demand-is-strong.-ai-budget-control-is-still-catching-up",
-        "quote": "47% of organizations report AI spending moderately or substantially over plan, and 10% have no formal AI budget at all."
-      }
-    },
-    {
-      "id": "the-face-on-the-call",
+      "id": "ai-runs-the-attack",
       "topic": "trust",
-      "theme": "The face on the video call may not be the person",
-      "changed": "On 31 July 2026, eleven governments — including the US, UK, Japan, Australia, Canada, France, and Germany — warned that people applying for remote jobs may not be who they appear to be on a video call. The alert says some video feeds look manipulated or generated, and that AI is being used to hide identities.",
-      "matters": "Seeing is no longer believing. A video call is not, by itself, proof of who is there. That matters for hiring, and for any payment you approve because a familiar face asked.",
-      "imply": "A face on a screen is a clue, not a passport. Hiring, refunds, and wire transfers that rest on “I saw them” need a second step that is not the camera.",
+      "theme": "The attacker no longer needs a full team",
+      "changed": "Anthropic’s September 2026 threat-intelligence report describes cyber operations (Dec 2025–Aug 2026) where actors used Claude across the kill chain: reconnaissance, phishing, exploit work, and data theft. In several cases AI agents rebuilt malware when security products detected it. Anthropic says sophistication is no longer a reliable clue to who is behind an attack — a lone operator with AI can run campaigns that used to need a skilled team.",
+      "matters": "Defenders used to slow attackers by shipping a new detection. These cases show attackers closing that loop with AI — rewrite, redeploy, continue — while a human still picks targets and reviews the loot.",
+      "imply": "Assume a small crew can move at team speed. Patching and key hygiene matter more than betting the attacker is ‘too junior’ to hurt you.",
       "uses": [
-        "For remote hires: one live check that is not the interview camera — a call-back on a number you already have, or an in-person day.",
-        "For payments: never release money because a familiar face asked on video. Use the channel you already trust.",
-        "For schools and clinics: treat a new video “parent” or “patient” as unverified until you match a record you hold."
+        "Treat exposed admin panels, hotel/vendor Wi‑Fi, and SaaS tokens as high value — these reports show they are how bigger targets get reached.",
+        "When malware is detected, rotate credentials and assume the toolkit will be rewritten, not retired.",
+        "Share the Anthropic indicators with your SOC; do not wait for a perfect attribution story."
       ],
-      "example": "A hiring manager likes a candidate on Zoom. Before an offer, they call the mobile number on the CV from a work phone, and they ask the person to hold up the same ID they uploaded. The face on the call is not the last check. That is the alert, applied.",
-      "audience": "Hiring managers, school leaders, and anyone who green-lights a transfer after a video call.",
-      "watch": "At least one check that is not the camera: an in-person step, a live ID match, or a call-back on a number you already trust.",
+      "example": "An IT lead reads that one actor used AI to rebuild implants after detection. They stop treating a single EDR alert as ‘cleaned.’ They rotate the related service accounts the same day and check DNS on vendor portals the company uses. That is the report, turned into Tuesday work.",
+      "audience": "Security teams, IT leads, and operators who rely on vendors with admin access to guest or customer networks.",
+      "watch": "Whether your incident playbook assumes a human tempo. If cleanup takes a week, the report says the attacker may already have a new build.",
       "source": {
-        "title": "U.S. Department of State, 31 July 2026 joint alert",
-        "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/alert-to-countries-companies-and-other-entities-regarding-north-korean-it-workers",
-        "quote": "Discrepancies appear in video conference meetings, including photo ID mismatches or video feeds that appear to be manipulated or artificially generated."
+        "title": "Anthropic, Detecting and countering misuse of AI: September 2026",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "quote": "For threat intelligence investigators, sophistication has stopped being a reliable signal of who is behind an operation."
+      }
+    },
+    {
+      "id": "keys-are-the-loot",
+      "topic": "money",
+      "theme": "Your AI keys are inventory now",
+      "changed": "The same Anthropic report shows criminals treating AI API keys and session tokens as loot, compute, and cover: steal them from apps, GitHub, containers, and ‘discount’ reseller sites; resell them; run further attacks on the victim’s bill; and blame the legitimate account owner. One pattern: fake cheap Claude access that harvests the buyer’s credentials. Anthropic says its own systems were not breached in the cases where customer keys were stolen from customer environments.",
+      "matters": "Companies still leave model keys in mobile apps and repos the way they once left AWS keys. Attackers now farm those keys at scale because they buy attack compute and hide attribution.",
+      "imply": "An AI key is a production credential. A bargain reseller that wants your login is a breach waiting to happen.",
+      "uses": [
+        "Scan mobile apps, public repos, and containers for hardcoded model API keys this week — not next quarter.",
+        "Buy AI access only through official channels; ban ‘cheap Claude’ middlemen on company devices.",
+        "Give every production AI key an owner, a rotation date, and alerts on spend spikes."
+      ],
+      "example": "A startup finds an old Anthropic key in a Play Store APK. They revoke it, check the billing spike, and add a CI check that fails the build if a provider key pattern appears in the bundle. The report’s lesson becomes a merge gate.",
+      "audience": "Founders, platform engineers, and finance leads who see AI line items climb without knowing which keys are live.",
+      "watch": "Sudden spend on an AI account nobody remembers provisioning — treat it as theft until proven otherwise.",
+      "source": {
+        "title": "Anthropic, Detecting and countering misuse of AI: September 2026",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "quote": "Operators who obtain AI credentials gain three things at once: loot… compute… and cover: the activity is attributed to the credential’s legitimate owner."
+      }
+    },
+    {
+      "id": "cyber-model-for-defenders",
+      "topic": "tools",
+      "theme": "A cyber model that is not for everyone",
+      "changed": "On 2 September 2026, Google DeepMind launched Gemini 3.8 Flash and Gemini 3.8 Flash Cyber. Flash is a general workhorse for agentic coding and reasoning at Flash pricing. Flash Cyber is aimed at vulnerability detection and automated patching for trusted defenders through Google’s Fairwind Program — government authorities, critical infrastructure operators, and software maintainers — not a wide public free-for-all.",
+      "matters": "Labs are splitting ‘helpful coding model’ from ‘cyber-capable model with a gate.’ That is a product decision with a security policy inside it.",
+      "imply": "If your job is defence, ask whether you are on the trusted path. If your job is building consumer apps, do not assume the cyber variant is a feature you can flip on for growth hacks.",
+      "uses": [
+        "Security vendors and infra teams: check Fairwind eligibility before promising ‘Gemini Cyber’ in a roadmap slide.",
+        "Product teams: keep general Flash and cyber-gated tools on different approval tracks.",
+        "Buyers: ask which model variant touches production vulns — and who is allowed to run it."
+      ],
+      "example": "A CISO cancels a demo that pitched ‘autonomous patching for everyone’ after reading Fairwind’s trusted-defender framing. They ask the vendor which exact Gemini variant runs, and under whose contract. The launch page becomes the checklist.",
+      "audience": "Security buyers, platform owners, and anyone evaluating agentic coding tools with cyber features.",
+      "watch": "How tightly Fairwind stays limited — and whether copycats ship cyber skills with no gate.",
+      "source": {
+        "title": "Google, Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "quote": "Through our new Fairwind Program, we’re providing trusted government authorities, as well as critical infrastructure operators and software maintainers with prioritized access to Gemini 3.8 Flash Cyber."
+      }
+    },
+    {
+      "id": "talk-is-cheap-desks-are-not",
+      "topic": "work",
+      "theme": "A pledge is not a permission model",
+      "changed": "Altman said OpenAI agrees the industry must ‘pace the frontier’ and welcomed independent evaluators with employee-like access. Amodei’s essay spells out what that access means in practice: office presence, comparable tools, and public reporting rights with narrow redactions only. The public agreement is new; the desks are not yet a settled industry standard.",
+      "matters": "Workplaces copying ‘AI safety’ language from vendor blogs need a sharper test: can an outsider verify the pipeline, or only read the marketing?",
+      "imply": "Inside your company, the parallel is boring and useful — name who can stop a risky automation, and who reviews the log. Outside, ask vendors for the evaluator arrangement, not only the slogan.",
+      "uses": [
+        "Add ‘independent evaluator access’ to vendor security reviews for frontier models.",
+        "For internal agents that can click or spend money, write the off switch and the log owner before wider rollout.",
+        "Do not treat a CEO tweet as a control. Treat a named audit path as a control."
+      ],
+      "example": "An operations lead updating the AI use policy replaces ‘we follow industry best practice’ with ‘frontier vendors must disclose embedded evaluator status; internal agents need a named owner and kill switch.’ The week’s news becomes a policy diff.",
+      "audience": "Operators, compliance, and managers rolling out agents that can act, not only chat.",
+      "watch": "First concrete evaluator appointments and first public notes that are not glowing.",
+      "source": {
+        "title": "Dario Amodei, We Must Pace the Frontier",
+        "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+        "quote": "External reviewers should have the right to publish key findings about risk levels, incidents, practices, and the access they received or didn’t receive — without editorial control by Anthropic."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Helpers that click, not only chat",
-        "body": "Astra can fill forms, tidy a calendar, and draft in email. ChatGPT on the desktop can click and type on your computer."
+        "title": "Rivals say: put outsiders in",
+        "body": "Amodei called for pacing frontier models and embedding third-party evaluators with desks and badges. Altman and Musk publicly agreed."
       },
       {
-        "title": "Europe requires a label",
-        "body": "From 2 August, chatbots in the EU must say they are AI, and fake video must be disclosed. Brussels has started asking labs for paperwork."
+        "title": "AI ran the attack",
+        "body": "Anthropic’s threat report shows criminals and spies using Claude across reconnaissance, phishing, exploit work, and theft — then rebuilding malware when it was detected."
       },
       {
-        "title": "The bill is running hot",
-        "body": "Nearly half of organisations surveyed are over plan on AI spend. Almost none pause. Most still name it as a productivity tool."
+        "title": "A cyber model with a gate",
+        "body": "Google launched Gemini 3.8 Flash for general work, and Flash Cyber for trusted defenders only, through the Fairwind Program."
       }
     ],
     "matters": [
       {
-        "title": "Permission is the product",
-        "body": "A safer helper is still a helper with your files. Decide what it may touch before you celebrate what it can do."
+        "title": "Safety is now a checkable access question",
+        "body": "A public agreement between rivals is rare. The useful test is whether outsiders can see training and incidents, not only a model card."
       },
       {
-        "title": "People have a right to know",
-        "body": "If a customer, a pupil, or a candidate cannot tell a person from a machine, or a real clip from a fake one, trust is already broken."
+        "title": "Sophistication is no longer a clue",
+        "body": "A lone operator with AI can run what used to need a team. Patching and key hygiene beat betting the attacker is too junior."
       },
       {
-        "title": "Spend is not the same as useful work",
-        "body": "Paying more for AI while cutting contractors is a choice. It is not proof that Tuesday got better."
+        "title": "Your AI keys are inventory",
+        "body": "Stolen model keys buy compute and hide who did it. Companies still leave them in apps and repos the way they once left AWS keys."
       }
     ],
     "watch": [
       {
-        "title": "Who can switch it off",
-        "body": "When a workplace turns on computer-use helpers, ask who owns the permissions and the log."
+        "title": "Whether desks actually appear",
+        "body": "Look for named evaluator teams, employee-like access, and public notes that are not only praise."
       },
       {
-        "title": "2 December for older tools",
-        "body": "Europe’s extra deadline for machine-readable marks on older generative tools. Deepfake disclosure is already in force."
+        "title": "Playbooks that assume a human tempo",
+        "body": "If cleanup takes a week, the report says the attacker may already have a new build."
       },
       {
-        "title": "A check that is not the camera",
-        "body": "Hiring and payments that rely on a video face need a second step. Eleven governments have said so."
+        "title": "How tightly Fairwind stays limited",
+        "body": "Watch whether cyber-capable models stay behind a trusted-defender gate — or copycats ship them with none."
       }
     ]
   },
   "chips": [
-    "Fills your forms",
-    "GPT-6 Astra",
-    "47% over budget",
-    "It can click for you",
-    "Say you are a machine",
-    "Chat, then action",
-    "Drafts in your email",
-    "10% had no AI budget",
-    "Who owns the click",
-    "ChatGPT on the desk",
-    "Eleven governments warn",
-    "Label the fake video",
-    "Ask who can stop it",
-    "The face on the call",
-    "2 August, in force",
-    "What it may touch",
-    "Plus users, this week",
-    "A check besides the camera"
+    "Pace the frontier",
+    "Gemini 3.8 Flash",
+    "Keys as loot",
+    "Desks and badges",
+    "AI runs the attack",
+    "Embedded evaluators",
+    "Flash Cyber, gated",
+    "Stolen API keys",
+    "Fairwind Program",
+    "Employee-like access",
+    "Rebuild the malware",
+    "Cheap Claude trap",
+    "Outsiders inside",
+    "Cover on their bill",
+    "Trusted defenders only",
+    "A pledge is not a desk",
+    "Who is sitting inside",
+    "Spend spike = theft?"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "ChatGPT’s Astra can fill forms, tidy a calendar, and draft in email",
+      "raw": "Google launched Gemini 3.8 Flash and a gated Flash Cyber for trusted defenders",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Survey: 47% of organisations over plan on AI spend; 10% have no AI budget",
-      "topic": "Money"
-    },
-    {
-      "id": "s3",
-      "raw": "New ChatGPT desktop can click, type, and move files on your computer",
-      "topic": "Work"
-    },
-    {
-      "id": "s4",
-      "raw": "EU: from 2 August, chatbots must say they are AI; deepfakes must be labelled",
+      "raw": "Amodei: labs should pace the frontier and embed third-party evaluators",
       "topic": "Rules"
     },
     {
-      "id": "s5",
-      "raw": "Eleven governments warn that fake faces are being used in live job interviews",
+      "id": "s3",
+      "raw": "Anthropic: actors used Claude across reconnaissance, phishing, exploit, and theft",
       "topic": "Trust"
     },
     {
-      "id": "s6",
-      "raw": "When AI overruns the budget, only 17% pause; most keep paying",
+      "id": "s4",
+      "raw": "Stolen AI API keys treated as loot, compute, and cover",
       "topic": "Money"
     },
     {
+      "id": "s5",
+      "raw": "Altman and Musk backed independent evaluators with employee-like access",
+      "topic": "Work"
+    },
+    {
+      "id": "s6",
+      "raw": "Sophistication is no longer a reliable clue to who is behind an attack",
+      "topic": "Trust"
+    },
+    {
       "id": "s7",
-      "raw": "Astra rolling out to ChatGPT Plus, Pro, Business, and workplace plans",
+      "raw": "Flash Cyber is for Fairwind partners, not a public free-for-all",
       "topic": "Tools"
     },
     {
       "id": "s8",
-      "raw": "OpenAI: last model overstepped its brief 48% of the time in one test; Astra, 0%",
-      "topic": "Work"
+      "raw": "Fake cheap Claude resellers harvest the buyer’s credentials",
+      "topic": "Money"
     }
   ]
 }
