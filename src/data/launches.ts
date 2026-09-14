@@ -8,27 +8,27 @@ export type LaunchSignal = {
 
 export const featuredLaunch = {
   kicker: "This week’s tool",
-  name: "GPT-6 Astra",
-  maker: "OpenAI · inside ChatGPT",
-  released: "10 September 2026",
+  name: "Gemini 3.8 Flash Cyber",
+  maker: "Google DeepMind · Fairwind Program",
+  released: "14 September 2026",
   overview:
-    "Astra is ChatGPT’s new helper that can use a computer: fill forms, update customer records, organise a calendar, research online, and draft in your email or documents. It is rolling out this week to paid ChatGPT plans.",
+    "Gemini 3.8 Flash is Google’s general workhorse for agentic coding and reasoning at Flash pricing. Flash Cyber is a cyber-capable variant for vulnerability detection and automated patching, available to trusted defenders through the Fairwind Program — not a wide public release.",
   capabilities: [
-    "Fill online forms and update customer records",
-    "Organise a calendar",
-    "Research online and draft in email or documents",
-    "On the desktop: click, type, and move files when you allow it",
+    "Flash: agentic coding and multi-step reasoning at Flash pricing",
+    "Flash Cyber: vulnerability detection and automated patching",
+    "Fairwind: prioritized access for governments, critical infrastructure, and software maintainers",
+    "Same Flash speed and cost, with a tighter gate on who may use the cyber variant",
   ],
   useCases: [
-    "Turn a pile of tabs into a draft email",
-    "Update a list of contacts without copying cell by cell",
-    "Reshuffle a week of meetings from a messy inbox",
+    "Ask whether your vendor is on the Fairwind path before promising ‘Gemini Cyber’",
+    "Keep general Flash and cyber-gated tools on different approval tracks",
+    "Name which model variant may touch production vulnerabilities",
   ],
   limitations: [
-    "It still needs your accounts and your permission. It is not a colleague with judgement.",
-    "OpenAI says it is less likely to go beyond what you asked. That is not the same as never making a mess.",
-    "Workplace plans may take days to appear, and an admin can switch it off.",
-    "Do not let it click on money, legal filings, or shared files without a person watching.",
+    "Flash Cyber is not a feature you can flip on for growth hacks.",
+    "Fairwind is limited to trusted defenders. Eligibility is the first question, not the demo.",
+    "Copycats may ship cyber skills with no gate. Do not assume every vendor matches Google’s split.",
+    "A launch page is not a contract. Ask which exact variant runs, and under whose account.",
   ],
   signals: currentEdition.signals,
 }
