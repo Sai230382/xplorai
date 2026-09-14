@@ -37,50 +37,59 @@ export const lumenBriefings: Record<string, { changed: string; matters: string; 
   {
     default: {
       changed:
-        "A ChatGPT helper can now click and type, Europe requires chatbots to say they are machines, and nearly half of surveyed offices are over budget on AI.",
+        "Frontier lab CEOs publicly agreed to embed independent evaluators, Anthropic’s threat report shows attackers using AI across the kill chain, and Google gated a cyber model behind Fairwind.",
       matters:
-        "The scarce thing is no longer access to a helper. It is permission, a label, and a person who owns the result.",
-      watch: "Whether workplaces write simple rules before they switch computer-use on — and whether the bill has a name on it.",
-      uncertainty: "We do not yet know how often these helpers are used for real work, versus how often they are tried once.",
+        "The scarce thing is no longer a safety slogan. It is desks inside the lab, a named off switch, and treating AI keys as production credentials.",
+      watch:
+        "Whether evaluator desks actually appear — and whether your incident playbook still assumes a human tempo.",
+      uncertainty:
+        "We do not yet know whether ‘pacing’ will change what ships next quarter, or only what CEOs say on social media.",
     },
     tools: {
       changed:
-        "GPT-6 Astra can fill forms, tidy a calendar, research online, and draft in email or documents — not only chat.",
+        "Google launched Gemini 3.8 Flash for general work, and Flash Cyber for trusted defenders only, through the Fairwind Program.",
       matters:
-        "The useful question is which chores you will let a helper finish, and which you still want a person to click.",
-      watch: "Whether it stays careful on your real inbox and forms, not on a staged demo.",
-      uncertainty: "Rollout to Plus, Pro, Business, and workplace plans is staggered. Your admin may not have switched it on.",
+        "Labs are splitting a helpful coding model from a cyber-capable model with a gate. That is a product decision with a security policy inside it.",
+      watch: "How tightly Fairwind stays limited — and whether copycats ship cyber skills with no gate.",
+      uncertainty:
+        "Eligibility is not a public list you can check in a vendor slide. Ask which exact variant runs, and under whose contract.",
     },
     work: {
       changed:
-        "ChatGPT on the desktop can click, type, and move files. OpenAI says last year’s model overstepped its brief 48% of the time in one test; Astra did so in none of the cases.",
+        "Altman said OpenAI agrees the industry must pace the frontier and welcomed independent evaluators with employee-like access. The desks are not yet a settled industry standard.",
       matters:
-        "Safer is not the same as unsupervised. Someone still has to decide what it may touch, and who can switch it off.",
-      watch: "A written permission list, and a log. If your company turns this on, ask who owns both.",
-      uncertainty: "A lab test is not your shared drive. We do not know how often real workplaces will leave it unsupervised.",
+        "A pledge is not a permission model. Inside your company, name who can stop a risky automation, and who reviews the log.",
+      watch: "First concrete evaluator appointments and first public notes that are not glowing.",
+      uncertainty:
+        "Public agreement is new. We do not yet know who will actually get badges, or what they will be allowed to publish.",
     },
     rules: {
       changed:
-        "From 2 August, EU rules require chatbots to tell people they are talking to a machine, and fake video to be labelled. Brussels has started asking the big labs for paperwork.",
+        "Amodei called for pacing frontier models and embedding third-party evaluators with desks, badges, laptops, and the right to publish with only narrow redactions. Altman and Musk publicly backed the call.",
       matters:
-        "If you sell into Europe, customers and staff should be able to tell a person from a bot, and a real clip from a generated one.",
-      watch: "2 December is the extra deadline for older tools to add machine-readable marks. Deepfake disclosure is already in force.",
-      uncertainty: "How strictly this will be checked in small companies is not yet clear from public cases.",
+        "Safety promises used to be company blogs. This is a rare public agreement on a concrete check: outsiders who can see training and incidents, not only a model card.",
+      watch:
+        "Whether desks and badges actually appear — and whether unfavorable findings get published, not only praised.",
+      uncertainty:
+        "We do not yet know whether ‘pacing’ will change what ships next quarter, or only what CEOs say on social media.",
     },
     money: {
       changed:
-        "In a summer survey of technology leaders, 47% said AI spending was over plan, and 10% had no AI budget at all. Only 17% paused when the bill ran over.",
+        "The same Anthropic report shows criminals treating AI API keys and session tokens as loot, compute, and cover: steal them, resell them, run attacks on the victim’s bill, and blame the account owner.",
       matters:
-        "Paying more for AI is not proof that Tuesday got better. Most still name it as a productivity tool, not a new line of work.",
-      watch: "A line in the budget with a person’s name on it, and a sentence for what “good” looks like.",
-      uncertainty: "Surveys of technology leaders are not the same as what a whole company actually uses.",
+        "An AI key is a production credential. Companies still leave them in apps and repos the way they once left AWS keys.",
+      watch: "Sudden spend on an AI account nobody remembers provisioning — treat it as theft until proven otherwise.",
+      uncertainty:
+        "We do not yet know how many production keys already sit in public repos and APKs, only that attackers are farming them at scale.",
     },
     trust: {
       changed:
-        "Eleven governments warned that people applying for remote jobs may not be who they appear to be on a video call, including video that looks manipulated or generated.",
+        "Anthropic’s threat report describes cyber operations where actors used Claude across reconnaissance, phishing, exploit work, and theft. In several cases AI rebuilt malware when it was detected.",
       matters:
-        "A video call is not, by itself, proof of who is there. That matters for hiring, and for any payment a familiar face asks you to send.",
-      watch: "A check that is not the camera: in-person, a live ID match, or a call-back on a number you already trust.",
-      uncertainty: "The alert names a specific hiring scam. How common fake faces are in ordinary video calls is still unnamed.",
+        "Sophistication is no longer a reliable clue to who is behind an attack. A lone operator with AI can run what used to need a team.",
+      watch:
+        "Whether your incident playbook assumes a human tempo. If cleanup takes a week, the attacker may already have a new build.",
+      uncertainty:
+        "The report names disrupted cases. How far this operating model has spread beyond those cases is still unnamed.",
     },
   }
