@@ -553,11 +553,13 @@ nav.main a.active {
   max-width: var(--wrap);
   margin: 0 auto;
   min-height: calc(100vh - var(--nav-h) - 16px);
+  overflow: visible;
 }
 
 .hero-text {
   position: relative;
   z-index: 5;
+  overflow: visible;
 }
 
 .starburst {
@@ -583,6 +585,7 @@ nav.main a.active {
 
 .stack {
   margin: 0;
+  overflow: visible;
 }
 
 .stack .ln {
@@ -590,12 +593,15 @@ nav.main a.active {
   font-family: var(--disp);
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 0.82;
+  line-height: 0.92;
+  padding-block: 0.04em;
   font-size: clamp(3rem, 7.4vw, 6.6rem);
   position: relative;
   width: max-content;
   max-width: 100%;
-  clip-path: inset(0 100% 0 0);
+  overflow: visible;
+  /* Negative inset keeps cap-height and misprint ghosts inside the wipe. */
+  clip-path: inset(-0.14em 100% -0.14em -0.12em);
   transition: clip-path 0.9s var(--ease);
 }
 
@@ -616,14 +622,14 @@ nav.main a.active {
 
 .hero.is-in .stack .ln,
 .hero.is-static .stack .ln {
-  clip-path: inset(0 0 0 0);
+  clip-path: inset(-0.14em -0.12em -0.14em -0.12em);
 }
 
 .stack .ln .gc,
 .stack .ln .gv {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 0.04em;
   pointer-events: none;
   mix-blend-mode: multiply;
 }
