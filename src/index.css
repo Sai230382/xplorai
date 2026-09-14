@@ -594,14 +594,15 @@ nav.main a.active {
   font-weight: 900;
   text-transform: uppercase;
   line-height: 0.92;
-  padding-block: 0.04em;
+  padding-block: 0.08em;
   font-size: clamp(3rem, 7.4vw, 6.6rem);
   position: relative;
   width: max-content;
   max-width: 100%;
   overflow: visible;
-  /* Negative inset keeps cap-height and misprint ghosts inside the wipe. */
-  clip-path: inset(-0.14em 100% -0.14em -0.12em);
+  /* Top/bottom inset stays open so cap-height and ghosts aren't cropped;
+     the wipe still interpolates only the right edge (100% → 0). */
+  clip-path: inset(-0.08em 100% -0.08em 0);
   transition: clip-path 0.9s var(--ease);
 }
 
@@ -622,14 +623,14 @@ nav.main a.active {
 
 .hero.is-in .stack .ln,
 .hero.is-static .stack .ln {
-  clip-path: inset(-0.14em -0.12em -0.14em -0.12em);
+  clip-path: inset(-0.08em 0 -0.08em 0);
 }
 
 .stack .ln .gc,
 .stack .ln .gv {
   position: absolute;
   left: 0;
-  top: 0.04em;
+  top: 0.08em;
   pointer-events: none;
   mix-blend-mode: multiply;
 }
