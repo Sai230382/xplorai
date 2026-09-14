@@ -560,6 +560,8 @@ nav.main a.active {
   position: relative;
   z-index: 5;
   overflow: visible;
+  container-type: inline-size;
+  container-name: hero-copy;
 }
 
 .starburst {
@@ -595,7 +597,8 @@ nav.main a.active {
   text-transform: uppercase;
   line-height: 0.92;
   padding-block: 0.08em;
-  font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+  /* Size from the hero column so UNDERSTAND cannot outrun max-width/clip-path. */
+  font-size: clamp(2.2rem, min(5vw, 12.5cqi), 4.6rem);
   position: relative;
   width: max-content;
   max-width: 100%;
