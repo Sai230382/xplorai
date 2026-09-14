@@ -1,0 +1,1464 @@
+<!doctype html>
+<html lang="en" data-page-node-id="nqjtXvp2pvprq0vqFKfUH4">
+<head data-page-node-id="uGskMdWsKGmrDTXJAofSVj">
+<meta charset="utf-8" data-page-node-id="9unSXNhdwHH4j8TE5I5OEQ" />
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="37bCZQj2sRZHyHku76NIBp" />
+<title>Harness Engineering — interactive slides</title>
+<style>
+  :root{
+    --bg:#08090b;
+    --panel:#0e1014;
+    --panel2:#12151b;
+    --line:#22262e;
+    --line2:#2d323b;
+    --fg:#e7e9ec;
+    --dim:#8d939d;
+    --faint:#5d636d;
+    --blue:#6fb3ff;
+    --green:#3ecf8e;
+    --amber:#e0a33d;
+    --red:#e5645e;
+    --violet:#a58bff;
+    --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+  #boot{
+    position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    font:500 13px/1.6 var(--mono); color:var(--faint); letter-spacing:.08em; text-align:center; padding:24px;
+  }
+  #boot.error{color:var(--red)}
+
+  #viewport{position:fixed; inset:0; display:flex; align-items:center; justify-content:center;}
+  #stage{
+    position:relative; width:1280px; height:720px; flex:0 0 auto;
+    transform-origin:center center;
+    background:radial-gradient(1200px 720px at 60% 28%, #0d1016 0%, #08090b 62%);
+    border:1px solid var(--line); border-radius:6px; overflow:hidden;
+  }
+
+  /* ---------- slide chrome ---------- */
+  .slide{position:absolute; inset:0; padding:52px 68px 0; display:flex; flex-direction:column; animation:slideIn .42s cubic-bezier(.22,.8,.24,1) both;}
+  @keyframes slideIn{from{opacity:0; transform:translateY(10px) scale(.995)} to{opacity:1; transform:none}}
+  .kicker{
+    font:600 11px/1 var(--mono); letter-spacing:.22em; text-transform:uppercase;
+    color:var(--blue); margin-bottom:14px; display:flex; gap:12px; align-items:center;
+  }
+  .kicker .rule{height:1px; width:38px; background:var(--line2)}
+  h1{
+    margin:0; font-size:52px; line-height:1.02; letter-spacing:-.028em; font-weight:640;
+    max-width:1000px;
+  }
+  h2{
+    margin:0; font-size:33px; line-height:1.1; letter-spacing:-.02em; font-weight:620; max-width:900px;
+  }
+  .lead{margin-top:16px; color:var(--dim); font-size:15.5px; line-height:1.62; max-width:720px; font-weight:400;}
+  .lead b{color:var(--fg); font-weight:600}
+  .body{flex:1; display:flex; gap:34px; margin-top:26px; min-height:0; padding-bottom:44px;}
+  .col{display:flex; flex-direction:column; min-width:0}
+  .grow{flex:1}
+
+  /* ---------- generic bits ---------- */
+  .mono{font-family:var(--mono)}
+  .tag{
+    font:600 10px/1 var(--mono); letter-spacing:.14em; text-transform:uppercase;
+    padding:5px 8px; border:1px solid var(--line2); border-radius:3px; color:var(--dim);
+  }
+  .tag.b{color:var(--blue); border-color:#26405c; background:#0e1723}
+  .tag.g{color:var(--green); border-color:#1f4a39; background:#0c1a15}
+  .tag.a{color:var(--amber); border-color:#4b3a1c; background:#1a1409}
+  .tag.r{color:var(--red); border-color:#4d2624; background:#1b0f0e}
+
+  .card{
+    border:1px solid var(--line); background:linear-gradient(180deg,var(--panel2),var(--panel));
+    border-radius:6px; padding:16px 18px;
+  }
+  .card h4{margin:0 0 8px; font-size:13.5px; font-family:var(--mono); letter-spacing:.06em; font-weight:600; color:var(--fg)}
+  .card p{margin:0; font-size:13px; line-height:1.6; color:var(--dim)}
+
+  .list{display:flex; flex-direction:column; gap:0}
+  .row{
+    display:grid; grid-template-columns:190px 1fr; gap:18px; align-items:start;
+    padding:11px 0; border-top:1px solid var(--line);
+  }
+  .row:first-child{border-top:none}
+  .row .k{font:600 11.5px/1.5 var(--mono); letter-spacing:.05em; color:var(--fg); text-transform:uppercase}
+  .row .v{font-size:13.5px; line-height:1.55; color:var(--dim)}
+  .row .v b{color:var(--fg); font-weight:600}
+
+  .note{
+    font:400 12px/1.65 var(--mono); color:var(--faint); border-left:2px solid var(--line2);
+    padding-left:12px; margin-top:14px;
+  }
+
+  /* ---------- three.js mounts ---------- */
+  .three{
+    position:relative; border:1px solid var(--line); border-radius:6px;
+    background:linear-gradient(180deg,#0b0d11,#08090b);
+    overflow:hidden;
+  }
+  .three canvas{position:absolute; inset:0; cursor:grab}
+  .three canvas:active{cursor:grabbing}
+  .three-hint{
+    position:absolute; left:10px; bottom:8px; font:500 9.5px/1 var(--mono);
+    letter-spacing:.14em; color:#454b55; text-transform:uppercase; pointer-events:none;
+  }
+
+  /* ---------- controls ---------- */
+  .seg{display:inline-flex; border:1px solid var(--line2); border-radius:5px; overflow:hidden; background:var(--panel)}
+  .seg button{
+    appearance:none; border:none; background:transparent; color:var(--dim);
+    font:600 11px/1 var(--mono); letter-spacing:.14em; padding:9px 15px; cursor:pointer;
+    border-right:1px solid var(--line2); transition:background .15s,color .15s;
+  }
+  .seg button:last-child{border-right:none}
+  .seg button:hover{color:var(--fg); background:#14181e}
+  .seg button.on{background:#16202b; color:var(--blue)}
+  .seg button.on.g{background:#0f2119; color:var(--green)}
+  .seg button.on.r{background:#201110; color:var(--red)}
+  .seg button.on.a{background:#1d1709; color:var(--amber)}
+
+  /* ---------- nav ---------- */
+  #nav{
+    position:absolute; left:0; right:0; bottom:0; height:44px;
+    display:flex; align-items:center; gap:14px; padding:0 20px;
+    border-top:1px solid var(--line); background:rgba(8,9,11,.82); backdrop-filter:blur(8px);
+  }
+  #nav .num{font:600 11px/1 var(--mono); color:var(--faint); letter-spacing:.1em; min-width:56px}
+  .dots{display:flex; gap:5px; flex:1; align-items:center}
+  .dot{width:16px; height:3px; border-radius:2px; background:var(--line2); cursor:pointer; transition:background .18s, width .18s; border:none; padding:0}
+  .dot:hover{background:#4a505b}
+  .dot.on{background:var(--blue); width:26px}
+  .arrows{display:flex; gap:6px}
+  .arrows button{
+    appearance:none; width:28px; height:24px; border:1px solid var(--line2); background:var(--panel);
+    color:var(--dim); border-radius:4px; cursor:pointer; font:600 12px/1 var(--mono);
+  }
+  .arrows button:hover{color:var(--fg); border-color:#3c424d}
+  #nav .title{font:500 11px/1 var(--mono); color:#4a505b; letter-spacing:.08em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:330px}
+
+  /* ---------- tier detail panel ---------- */
+  .tier-detail{display:flex; flex-direction:column; gap:8px}
+  .tier-detail .lvl{display:grid; grid-template-columns:52px 1fr; gap:12px; align-items:baseline}
+  .tier-detail .lvl span{font:600 10px/1.6 var(--mono); letter-spacing:.12em}
+  .tier-detail .lvl p{margin:0; font-size:12.5px; line-height:1.55; color:var(--dim)}
+  .lvl.bad span{color:var(--red)} .lvl.ok span{color:var(--amber)} .lvl.good span{color:var(--green)}
+
+  /* ---------- layers diagram ---------- */
+  .layer{
+    display:grid; grid-template-columns:44px 150px 1fr; gap:16px; align-items:center;
+    padding:9px 14px; border:1px solid var(--line); border-radius:5px; background:var(--panel);
+  }
+  .layer .id{font:600 10.5px/1 var(--mono); color:var(--faint); letter-spacing:.1em}
+  .layer .nm{font:600 12.5px/1.3 var(--mono); color:var(--fg); letter-spacing:.04em}
+  .layer .d{font-size:12.5px; line-height:1.5; color:var(--dim)}
+  .layer.hot{border-color:#26405c; background:#0d141d}
+  .layer.hot .nm{color:var(--blue)}
+
+  /* ---------- bars ---------- */
+  .bar-row{display:grid; grid-template-columns:112px 1fr 46px; gap:12px; align-items:center; margin-bottom:9px}
+  .bar-row .lb{font:600 10.5px/1 var(--mono); letter-spacing:.1em; color:var(--dim); text-transform:uppercase}
+  .bar-track{height:9px; background:#14171d; border-radius:2px; overflow:hidden}
+  .bar-fill{height:100%; border-radius:2px; transition:width .7s cubic-bezier(.22,.8,.24,1)}
+  .bar-row .pc{font:600 10.5px/1 var(--mono); color:var(--faint); text-align:right}
+
+  /* ---------- misc ---------- */
+  .kv{display:grid; grid-template-columns:1fr auto; gap:6px 16px; font-size:13px; color:var(--dim)}
+  .kv b{color:var(--fg); font-weight:600; font-family:var(--mono); font-size:12px}
+
+  .bad-list{display:flex; flex-direction:column; gap:7px}
+  .bad-item{
+    display:grid; grid-template-columns:1fr; gap:3px; padding:10px 13px;
+    border:1px solid #3a2321; background:#150e0d; border-radius:5px; cursor:default;
+  }
+  .bad-item .t{font:600 12px/1.3 var(--mono); color:#f0857f; letter-spacing:.04em}
+  .bad-item .d{font-size:12.5px; line-height:1.5; color:#9c8f8d}
+
+  .fix-list{display:flex; flex-direction:column; gap:7px}
+  .fix-item{display:grid; grid-template-columns:150px 1fr; gap:14px; padding:10px 0; border-top:1px solid var(--line); align-items:start}
+  .fix-item:first-child{border-top:none}
+  .fix-item .t{font:600 11.5px/1.5 var(--mono); color:var(--fg); letter-spacing:.05em; text-transform:uppercase}
+  .fix-item .d{font-size:12.5px; line-height:1.55; color:var(--dim)}
+
+  .radar-wrap{display:grid; grid-template-columns:400px 1fr; gap:30px; align-items:center}
+  .sliders{display:flex; flex-direction:column; gap:9px}
+  .sl{display:grid; grid-template-columns:132px 1fr 30px; gap:11px; align-items:center}
+  .sl label{font:600 10.5px/1 var(--mono); letter-spacing:.08em; color:var(--dim); text-transform:uppercase}
+  .sl output{font:600 11px/1 var(--mono); color:var(--fg); text-align:right}
+  input[type=range]{appearance:none; width:100%; height:3px; background:var(--line2); border-radius:2px; outline:none}
+  input[type=range]::-webkit-slider-thumb{appearance:none; width:13px; height:13px; border-radius:50%; background:var(--blue); cursor:pointer; border:2px solid #0b0f15}
+  input[type=range]::-moz-range-thumb{width:13px; height:13px; border-radius:50%; background:var(--blue); cursor:pointer; border:2px solid #0b0f15}
+  .score{font:600 40px/1 var(--mono); letter-spacing:-.02em}
+  .verdict{font:600 12px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase; margin-top:8px}
+
+  .grad{display:flex; flex-direction:column; gap:10px}
+  .grad-row{display:grid; grid-template-columns:88px 1fr; gap:14px; align-items:center}
+  .grad-row .lb{font:600 10.5px/1 var(--mono); letter-spacing:.1em; color:var(--faint); text-transform:uppercase}
+  .grad-bar{height:26px; border:1px solid var(--line); border-radius:4px; background:var(--panel); display:flex; align-items:center; padding:0 12px; font:500 11.5px/1 var(--mono); color:var(--dim); letter-spacing:.04em}
+  .grad-row.on .grad-bar{border-color:#26405c; background:#0d141d; color:var(--fg)}
+  .grad-row .lb.on{color:var(--blue)}
+
+  .takes{display:flex; flex-direction:column; gap:0}
+  .take{display:grid; grid-template-columns:34px 1fr; gap:16px; padding:10px 0; border-top:1px solid var(--line); align-items:start}
+  .take:first-child{border-top:none}
+  .take .n{font:600 11px/1.7 var(--mono); color:var(--blue); letter-spacing:.1em}
+  .take .t{font-size:14px; line-height:1.55; color:var(--fg); font-weight:500}
+  .take .t span{display:block; font-weight:400; color:var(--dim); font-size:12.5px; margin-top:3px; line-height:1.55}
+</style>
+</head>
+<body data-page-node-id="ujpCcjkky5Av6TlT2txdWf">
+<div id="boot" data-page-node-id="D0RUyd11Jy6LCQE2XeDz6n">LOADING MODULES…</div>
+<div id="viewport" data-page-node-id="VZaa6SER01E9oIfn4TOhur"><div id="stage" data-page-node-id="9ukYuuDalCBjc8QAH7QhXR"></div></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client?deps=react@18.3.1",
+    "htm": "https://esm.sh/htm@3.1.1",
+    "three": "https://esm.sh/three@0.160.0"
+  }
+}
+</script>
+
+<script>
+  // If the module never boots (offline / blocked CDN), say so instead of showing a blank screen.
+  window.__booted = false;
+  setTimeout(function(){
+    if(!window.__booted){
+      var b = document.getElementById('boot');
+      if(b){ b.className='error'; b.textContent='Could not load React / three.js from the CDN. Check your network connection and reload.'; }
+    }
+  }, 12000);
+</script>
+
+<script type="module">
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import htm from 'htm';
+import * as THREE from 'three';
+
+const { useState, useEffect, useRef, useMemo } = React;
+const html = htm.bind(React.createElement);
+
+/* =========================================================================
+   0. palette + tiny helpers
+   ========================================================================= */
+const HEX = {
+  fg:0xe7e9ec, dim:0x8d939d, faint:0x5d636d,
+  blue:0x6fb3ff, green:0x3ecf8e, amber:0xe0a33d, red:0xe5645e, violet:0xa58bff,
+  dead:0x2a2e35, panel:0x111419
+};
+const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp  = (a,b,t)=>a+(b-a)*t;
+const TAU = Math.PI*2;
+
+/* =========================================================================
+   1. three.js plumbing: a tiny orbit stage + canvas text sprites
+   ========================================================================= */
+function createStage(opts){
+  const o = Object.assign({ cameraZ:7, fov:42, phi:Math.PI/2-0.30, theta:0.55, autoRotate:0.10, target:[0,0,0] }, opts||{});
+  const mount = o.mount;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(o.fov, 1, 0.1, 400);
+  const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+  renderer.setClearColor(0x000000, 0);
+  mount.appendChild(renderer.domElement);
+  renderer.domElement.style.display='block';
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.62));
+  const key = new THREE.DirectionalLight(0xffffff, 1.45); key.position.set(4,6,7); scene.add(key);
+  const rim = new THREE.DirectionalLight(0x6fb3ff, 0.85); rim.position.set(-6,-3,-5); scene.add(rim);
+  const fill = new THREE.DirectionalLight(0xffffff, 0.35); fill.position.set(-2,5,-6); scene.add(fill);
+
+  const st = { theta:o.theta, phi:o.phi, dist:o.cameraZ, drag:false, px:0, py:0, moved:false };
+  const tgt = new THREE.Vector3(o.target[0], o.target[1], o.target[2]);
+
+  function place(){
+    const sp = Math.sin(st.phi);
+    camera.position.set(
+      tgt.x + st.dist * sp * Math.sin(st.theta),
+      tgt.y + st.dist * Math.cos(st.phi),
+      tgt.z + st.dist * sp * Math.cos(st.theta)
+    );
+    camera.lookAt(tgt);
+  }
+  place();
+
+  const el = renderer.domElement;
+  const down = (e)=>{ st.drag=true; st.moved=false; st.px=e.clientX; st.py=e.clientY; el.setPointerCapture&&el.setPointerCapture(e.pointerId); };
+  const move = (e)=>{
+    if(!st.drag) return;
+    const dx=e.clientX-st.px, dy=e.clientY-st.py;
+    st.px=e.clientX; st.py=e.clientY;
+    if(Math.abs(dx)+Math.abs(dy)>2) st.moved=true;
+    st.theta -= dx*0.006;
+    st.phi = clamp(st.phi - dy*0.005, 0.22, Math.PI-0.22);
+    place();
+  };
+  const up = (e)=>{ st.drag=false; try{el.releasePointerCapture(e.pointerId)}catch(_){} };
+  el.addEventListener('pointerdown', down);
+  window.addEventListener('pointermove', move);
+  window.addEventListener('pointerup', up);
+  el.addEventListener('touchmove', (e)=>e.preventDefault(), {passive:false});
+
+  const ro = new ResizeObserver(()=>{
+    const w = mount.clientWidth||1, h = mount.clientHeight||1;
+    renderer.setSize(w,h,false);
+    el.style.width='100%'; el.style.height='100%';
+    camera.aspect = w/h; camera.updateProjectionMatrix();
+  });
+  ro.observe(mount);
+
+  let frameFn = null, raf = 0, last = performance.now();
+  function tick(now){
+    const dt = Math.min(0.05, (now-last)/1000); last = now;
+    if(!st.drag) st.theta += o.autoRotate*dt;
+    place();
+    if(frameFn) frameFn(dt, (now)/1000);
+    renderer.render(scene, camera);
+    raf = requestAnimationFrame(tick);
+  }
+  raf = requestAnimationFrame(tick);
+
+  return {
+    THREE, scene, camera, renderer, state:st,
+    setFrame(fn){ frameFn = fn; },
+    destroy(){
+      cancelAnimationFrame(raf); ro.disconnect();
+      el.removeEventListener('pointerdown', down);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+      scene.traverse(n=>{
+        if(n.geometry) n.geometry.dispose();
+        if(n.material){ (Array.isArray(n.material)?n.material:[n.material]).forEach(m=>{ if(m.map) m.map.dispose(); m.dispose(); }); }
+      });
+      renderer.dispose();
+      if(el.parentNode) el.parentNode.removeChild(el);
+    }
+  };
+}
+
+function makeLabel(text, o){
+  o = o||{};
+  const color = o.color || '#dfe3e8';
+  const size  = o.size  || 46;
+  const weight= o.weight|| 600;
+  const pad   = 16;
+  const worldH= o.worldH|| 0.30;
+  const cv = document.createElement('canvas');
+  let ctx = cv.getContext('2d');
+  const font = weight+' '+size+'px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+  ctx.font = font;
+  const w = Math.ceil(ctx.measureText(text).width) + pad*2;
+  const h = Math.ceil(size*1.42);
+  cv.width = w; cv.height = h;
+  ctx = cv.getContext('2d');
+  ctx.font = font;
+  if(o.bg){ ctx.fillStyle=o.bg; ctx.fillRect(0,0,w,h); }
+  ctx.fillStyle = color;
+  ctx.textBaseline = 'middle';
+  if(o.track!==undefined){ ctx.letterSpacing = o.track+'px'; }
+  ctx.fillText(text, pad, h/2 + 1);
+  const tex = new THREE.CanvasTexture(cv);
+  tex.minFilter = THREE.LinearFilter;
+  tex.magFilter = THREE.LinearFilter;
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:tex, transparent:true, depthTest:false, depthWrite:false }));
+  sp.scale.set(worldH*(w/h), worldH, 1);
+  sp.renderOrder = 10;
+  return sp;
+}
+
+function mesh(geo, color, o){
+  o = o||{};
+  const m = new THREE.MeshStandardMaterial({
+    color: color,
+    roughness: o.rough!==undefined?o.rough:0.42,
+    metalness: o.metal!==undefined?o.metal:0.10,
+    emissive: o.emissive!==undefined?o.emissive:0x000000,
+    emissiveIntensity: o.ei!==undefined?o.ei:0.6,
+    transparent: !!o.opacity,
+    opacity: o.opacity!==undefined?o.opacity:1,
+    flatShading: !!o.flat
+  });
+  return new THREE.Mesh(geo, m);
+}
+function edges(geo, color, opacity){
+  const l = new THREE.LineSegments(
+    new THREE.EdgesGeometry(geo),
+    new THREE.LineBasicMaterial({ color:color, transparent:true, opacity:opacity!==undefined?opacity:0.55 })
+  );
+  return l;
+}
+
+/* =========================================================================
+   2. React <-> three bridge
+   ========================================================================= */
+function ThreeCanvas(props){
+  const mountRef = useRef(null);
+  const handleRef = useRef(null);
+  useEffect(()=>{
+    let alive = true;
+    const h = props.setup(mountRef.current);
+    handleRef.current = h;
+    return ()=>{ alive=false; if(handleRef.current && handleRef.current.destroy) handleRef.current.destroy(); handleRef.current=null; };
+  }, []);
+  useEffect(()=>{
+    const h = handleRef.current;
+    if(h && h.update) h.update(props.value);
+  }, [props.value]);
+  return html`<div className="three" ref=${mountRef} style=${props.style||{}}>
+    <div className="three-hint">drag to rotate</div>
+  </div>`;
+}
+
+/* =========================================================================
+   3. SCENE A — model core inside the harness shell
+   ========================================================================= */
+function sceneKernel(mount){
+  const S = createStage({ mount, cameraZ:7.6, fov:40, phi:Math.PI/2-0.22, theta:0.6, autoRotate:0.10 });
+  const { scene } = S;
+  const root = new THREE.Group(); scene.add(root);
+
+  // --- the model: a dense faceted core
+  const core = mesh(new THREE.IcosahedronGeometry(1.25, 1), 0x0d1a28, { emissive:HEX.blue, ei:0.75, flat:true, rough:0.35 });
+  root.add(core);
+  const coreEdge = edges(new THREE.IcosahedronGeometry(1.26, 1), HEX.blue, 0.75);
+  root.add(coreEdge);
+  const halo = mesh(new THREE.IcosahedronGeometry(1.62, 2), 0x6fb3ff, { emissive:HEX.blue, ei:0.5, opacity:0.055, rough:1 });
+  root.add(halo);
+
+  // --- the harness: three rings + a lattice boundary
+  const rings = new THREE.Group(); root.add(rings);
+  const ringSpec = [[2.35, 0.014, HEX.green], [2.05, 0.011, HEX.green], [2.65, 0.010, HEX.blue]];
+  ringSpec.forEach(([r,t,c],i)=>{
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(r, t, 6, 160),
+      new THREE.MeshStandardMaterial({ color:c, emissive:c, emissiveIntensity:0.9, transparent:true, opacity:0.85 })
+    );
+    ring.rotation.set(i===0?Math.PI/2:0, i===1?Math.PI/2.4:0, i===2?0.5:0.2);
+    rings.add(ring);
+  });
+
+  // --- harness component nodes on the shell, wired back to the core
+  const PARTS = ['CONTEXT','TOOLS','CONTROL','VERIFY','MEMORY','OBSERVE'];
+  const nodes = new THREE.Group(); root.add(nodes);
+  const nodePts = [];
+  PARTS.forEach((name, i)=>{
+    const a = (i/PARTS.length)*TAU + 0.3;
+    const y = Math.sin(i*1.7)*0.55;
+    const r = 2.35;
+    const p = new THREE.Vector3(Math.cos(a)*r, y, Math.sin(a)*r);
+    nodePts.push(p);
+    const n = mesh(new THREE.BoxGeometry(0.20,0.20,0.20), 0x0f2a20, { emissive:HEX.green, ei:0.85, rough:0.4 });
+    n.position.copy(p); nodes.add(n);
+    const lb = makeLabel(name, { color:'#9fe7c4', size:40, worldH:0.235 });
+    lb.position.copy(p).multiplyScalar(1.20); lb.position.y += 0.06;
+    nodes.add(lb);
+    // tether to the core
+    const g = new THREE.BufferGeometry().setFromPoints([p.clone().multiplyScalar(0.24), p.clone().multiplyScalar(0.94)]);
+    nodes.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color:HEX.green, transparent:true, opacity:0.3 })));
+  });
+
+  // --- lattice shell: dots on a sphere so the boundary reads as a surface
+  const dotGeo = new THREE.BufferGeometry();
+  const pts = [];
+  const N = 420, R = 2.35;
+  for(let i=0;i<N;i++){
+    const u = Math.random(), v = Math.random();
+    const th = TAU*u, ph = Math.acos(2*v-1);
+    pts.push(R*Math.sin(ph)*Math.cos(th), R*Math.cos(ph), R*Math.sin(ph)*Math.sin(th));
+  }
+  dotGeo.setAttribute('position', new THREE.Float32BufferAttribute(pts,3));
+  const dots = new THREE.Points(dotGeo, new THREE.PointsMaterial({ color:0x3a4756, size:0.022, transparent:true, opacity:0.55 }));
+  root.add(dots);
+
+  const coreLabel = makeLabel('MODEL', { color:'#cfe6ff', size:44, worldH:0.26 });
+  coreLabel.position.set(0,-1.85,0); root.add(coreLabel);
+  const shellLabel = makeLabel('HARNESS', { color:'#9fe7c4', size:44, worldH:0.26 });
+  shellLabel.position.set(0,2.95,0); root.add(shellLabel);
+
+  S.setFrame((dt,t)=>{
+    core.rotation.y += dt*0.22; core.rotation.x += dt*0.07;
+    coreEdge.rotation.copy(core.rotation);
+    halo.rotation.y -= dt*0.05;
+    rings.children.forEach((r,i)=>{
+      r.rotation.x += dt*(0.09+i*0.03);
+      r.rotation.y += dt*(0.13-i*0.02);
+    });
+    const pulse = 0.72 + Math.sin(t*1.4)*0.16;
+    core.material.emissiveIntensity = pulse;
+    dots.rotation.y += dt*0.03;
+  });
+  return S;
+}
+
+/* =========================================================================
+   4. SCENE B — the control loop, in three quality modes
+   ========================================================================= */
+const LOOP_NODES = ['INTENT','CONTEXT','MODEL','TOOLS','VERIFY','MEMORY'];
+const LOOP_MODES = {
+  bad:  { active:[0,1,2],    arcs:[0,1],       ret:false },
+  ok:   { active:[0,1,2,3],  arcs:[0,1,2,3],   ret:false },
+  good: { active:[0,1,2,3,4,5], arcs:[0,1,2,3,4,5], ret:true }
+};
+function sceneLoop(mount){
+  const S = createStage({ mount, cameraZ:8.4, fov:40, phi:0.78, theta:0.0, autoRotate:0.11, target:[0,0,0] });
+  const { scene } = S;
+  const root = new THREE.Group(); scene.add(root);
+  const R = 2.75, STEP = TAU/LOOP_NODES.length;
+
+  const nodeMeshes = [], arcMeshes = [], labels = [];
+  LOOP_NODES.forEach((name,i)=>{
+    const a = -Math.PI/2 + i*STEP;
+    const p = new THREE.Vector3(Math.cos(a)*R, 0, Math.sin(a)*R);
+    const b = mesh(new THREE.BoxGeometry(1.02,0.34,0.62), HEX.panel, { emissive:HEX.blue, ei:0.3, rough:0.45 });
+    b.position.copy(p);
+    b.lookAt(0,0,0);
+    root.add(b); nodeMeshes.push(b);
+    const lb = makeLabel(name, { color:'#dfe3e8', size:40, worldH:0.27 });
+    lb.position.set(p.x*1.30, 0.52, p.z*1.30);
+    root.add(lb); labels.push(lb);
+  });
+
+  // arcs between consecutive nodes
+  for(let i=0;i<LOOP_NODES.length;i++){
+    const a0 = -Math.PI/2 + i*STEP, a1 = a0 + STEP;
+    const curve = new THREE.CatmullRomCurve3(
+      Array.from({length:14},(_,k)=>{
+        const a = lerp(a0,a1,k/13);
+        return new THREE.Vector3(Math.cos(a)*R, 0, Math.sin(a)*R);
+      })
+    );
+    const m = new THREE.Mesh(
+      new THREE.TubeGeometry(curve, 26, 0.017, 6, false),
+      new THREE.MeshStandardMaterial({ color:HEX.dead, emissive:0x000000, emissiveIntensity:0.6, transparent:true, opacity:0.9 })
+    );
+    root.add(m); arcMeshes.push(m);
+
+    // direction cone
+    const am = a0 + STEP*0.5;
+    const tangent = new THREE.Vector3(-Math.sin(am),0,Math.cos(am)).normalize();
+    const cone = new THREE.Mesh(
+      new THREE.ConeGeometry(0.075, 0.20, 8),
+      new THREE.MeshStandardMaterial({ color:HEX.dead, emissive:0x000000, emissiveIntensity:0.5 })
+    );
+    cone.position.set(Math.cos(am)*R, 0.0, Math.sin(am)*R);
+    cone.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), tangent);
+    root.add(cone);
+    if(!arcMeshes[i].userData) arcMeshes[i].userData = {};
+    arcMeshes[i].userData.cone = cone;
+  }
+
+  // the return / feedback path: VERIFY -> CONTEXT  (only exists in a good harness)
+  const vA = -Math.PI/2 + 4*STEP, cA = -Math.PI/2 + 1*STEP;
+  const pv = new THREE.Vector3(Math.cos(vA)*R, 0, Math.sin(vA)*R);
+  const pc = new THREE.Vector3(Math.cos(cA)*R, 0, Math.sin(cA)*R);
+  const mid = new THREE.Vector3(0, 0.05, 0).add(pv.clone().add(pc).multiplyScalar(0.18));
+  const retCurve = new THREE.CatmullRomCurve3([pv, pv.clone().lerp(mid,0.5).setY(0.35), mid, pc.clone().lerp(mid,0.5).setY(0.35), pc]);
+  const retMesh = new THREE.Mesh(
+    new THREE.TubeGeometry(retCurve, 60, 0.018, 6, false),
+    new THREE.MeshStandardMaterial({ color:HEX.green, emissive:HEX.green, emissiveIntensity:1.0, transparent:true, opacity:0.0 })
+  );
+  root.add(retMesh);
+  const retLabel = makeLabel('FEEDBACK', { color:'#9fe7c4', size:34, worldH:0.20 });
+  retLabel.position.set(0.15, 0.62, 0.15);
+  retLabel.material.opacity = 0; root.add(retLabel);
+
+  // the travelling task
+  const pulse = mesh(new THREE.SphereGeometry(0.115, 20, 16), 0xffffff, { emissive:0xffffff, ei:1.4, rough:0.2 });
+  root.add(pulse);
+  const glow = mesh(new THREE.SphereGeometry(0.24, 20, 16), 0xffffff, { emissive:0xffffff, ei:0.5, opacity:0.10, rough:1 });
+  root.add(glow);
+
+  let mode = 'good', p = 0, target = LOOP_MODES.good;
+  function applyMode(m){
+    mode = m; target = LOOP_MODES[m];
+    const act = new Set(target.active);
+    nodeMeshes.forEach((b,i)=>{
+      const on = act.has(i);
+      b.userData.on = on;
+    });
+    arcMeshes.forEach((a,i)=>{ a.userData.on = target.arcs.indexOf(i)>=0; });
+    retMesh.userData.on = target.ret;
+    retLabel.userData.on = target.ret;
+  }
+  applyMode('good');
+
+  const setColor = (m, hex, ei, op)=>{
+    m.material.color.setHex(hex);
+    m.material.emissive.setHex(hex===HEX.dead?0x000000:hex);
+    m.material.emissiveIntensity = ei;
+    if(op!==undefined) m.material.opacity = op;
+  };
+
+  S.setFrame((dt,t)=>{
+    const act = new Set(target.active);
+    nodeMeshes.forEach((b,i)=>{
+      const on = act.has(i);
+      const cur = b.userData.k===undefined?0:b.userData.k;
+      b.userData.k = lerp(cur, on?1:0, 1-Math.pow(0.001,dt));
+      const k = b.userData.k;
+      if(on) setColor(b, HEX.blue, 0.18+0.30*k);
+      else   setColor(b, HEX.dead, 0.0);
+      labels[i].material.opacity = 0.28 + 0.72*k;
+    });
+    arcMeshes.forEach((a,i)=>{
+      const on = a.userData.on;
+      const cur = a.userData.k===undefined?0:a.userData.k;
+      a.userData.k = lerp(cur, on?1:0, 1-Math.pow(0.002,dt));
+      const k = a.userData.k;
+      setColor(a, on?HEX.blue:HEX.dead, k*0.9, 0.35+0.55*k);
+      const c = a.userData.cone;
+      setColor(c, on?HEX.blue:HEX.dead, k*0.9, 0.35+0.55*k);
+    });
+    const rk = lerp(retMesh.userData.k===undefined?0:retMesh.userData.k, retMesh.userData.on?1:0, 1-Math.pow(0.002,dt));
+    retMesh.userData.k = rk;
+    retMesh.material.opacity = rk*0.95;
+    retLabel.material.opacity = rk;
+
+    // advance the pulse along the active arcs
+    const arcs = target.arcs;
+    p += dt*0.85;
+    if(p >= arcs.length) p -= arcs.length;
+    const ai = arcs[Math.min(arcs.length-1, Math.floor(p))];
+    const lt = p - Math.floor(p);
+    const a0 = -Math.PI/2 + ai*STEP;
+    const a = a0 + lt*STEP;
+    const bounce = Math.sin(lt*Math.PI)*0.16;
+    pulse.position.set(Math.cos(a)*R, bounce, Math.sin(a)*R);
+    glow.position.copy(pulse.position);
+    const c = mode==='good'?0x9fe7c4 : mode==='ok'?0xcfe0f5 : 0xe5645e;
+    pulse.material.emissive.setHex(c); pulse.material.color.setHex(0xffffff);
+    glow.material.emissive.setHex(c);
+  });
+
+  return { update:(v)=>applyMode(v), destroy:S.destroy };
+}
+
+/* =========================================================================
+   5. SCENE C — the component matrix: bad / ok / good
+   ========================================================================= */
+const TIERS = ['BAD','OK','GOOD'];
+const COMPONENTS = [
+  { key:'CONTEXT',  lv:[0,1,2] },
+  { key:'TOOLS',    lv:[0,1,2] },
+  { key:'CONTROL',  lv:[0,1,2] },
+  { key:'VERIFY',   lv:[0,1,2] },
+  { key:'MEMORY',   lv:[0,1,2] },
+  { key:'ERRORS',   lv:[0,0,2] },
+  { key:'PARALLEL', lv:[0,0,2] },
+  { key:'OBSERVE',  lv:[0,1,2] },
+  { key:'SAFETY',   lv:[0,1,2] },
+  { key:'BUDGET',   lv:[0,0,2] },
+  { key:'EVALS',    lv:[0,1,2] }
+];
+const LV_COLOR = [HEX.dead, HEX.amber, HEX.green];
+const LV_W     = [0.12, 1.05, 1.95];
+
+function sceneTiers(mount, opts){
+  const pickRef = opts.pickRef, selRef = opts.selRef;
+  const S = createStage({ mount, cameraZ:11.4, fov:40, phi:Math.PI/2-0.10, theta:0.30, autoRotate:0.055, target:[0,0,0] });
+  const { scene } = S;
+  const root = new THREE.Group(); scene.add(root);
+
+  const COLW = 2.55, ROWH = 0.60;
+  const yTop = ((COMPONENTS.length-1)*ROWH)/2;
+
+  // column headers
+  TIERS.forEach((t,i)=>{
+    const c = i===0?HEX.red : i===1?HEX.amber : HEX.green;
+    const lb = makeLabel(t, { color:'#'+c.toString(16).padStart(6,'0'), size:46, worldH:0.30 });
+    lb.position.set((i-1)*COLW, yTop+0.68, 0);
+    root.add(lb);
+  });
+
+  // rows
+  const bars = [];
+  COMPONENTS.forEach((comp, r)=>{
+    const y = yTop - r*ROWH;
+    const lb = makeLabel(comp.key, { color:'#8d939d', size:38, worldH:0.225 });
+    lb.position.set(-4.55, y, 0);
+    root.add(lb);
+
+    comp.lv.forEach((lv, c)=>{
+      const x0 = (c-1)*COLW - 0.98;
+      const w = LV_W[lv];
+      const g = new THREE.BoxGeometry(Math.max(w,0.10), 0.30, 0.42);
+      const m = mesh(g, LV_COLOR[lv], { emissive:LV_COLOR[lv], ei: lv===0?0.05:0.45, rough:0.4 });
+      m.position.set(x0 + w/2, y, 0);
+      m.userData = { r, c, lv, comp:comp.key, base:LV_COLOR[lv], ei: lv===0?0.05:0.45 };
+      root.add(m); bars.push(m);
+      const e = edges(g, lv===0?0x3a3f48:LV_COLOR[lv], lv===0?0.5:0.35);
+      e.position.copy(m.position); root.add(e);
+      m.userData.edge = e;
+    });
+  });
+
+  // picking
+  const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+  const el = S.renderer.domElement;
+  function pick(ev){
+    const r = el.getBoundingClientRect();
+    ndc.x = ((ev.clientX-r.left)/r.width)*2-1;
+    ndc.y = -((ev.clientY-r.top)/r.height)*2+1;
+    ray.setFromCamera(ndc, S.camera);
+    const hit = ray.intersectObjects(bars, false)[0];
+    if(hit){ pickRef.current && pickRef.current(hit.object.userData.r, hit.object.userData.c); }
+  }
+  el.addEventListener('pointerdown', (e)=>{ S.state.moved=false; });
+  el.addEventListener('pointerup', (e)=>{ if(!S.state.moved && !S.state.drag) pick(e); });
+  el.addEventListener('click', (e)=>{ if(!S.state.moved) pick(e); });
+
+  S.setFrame((dt,t)=>{
+    const sel = selRef.current || { r:3, c:2 };
+    bars.forEach(b=>{
+      const isSel = b.userData.r===sel.r && b.userData.c===sel.c;
+      const isRow = b.userData.r===sel.r;
+      const tgt = isSel ? 1.25 : (isRow ? 0.55 : b.userData.ei);
+      b.material.emissiveIntensity = lerp(b.material.emissiveIntensity, tgt, 1-Math.pow(0.002,dt));
+      const s = isSel ? 1.16 : 1.0;
+      b.scale.z = lerp(b.scale.z, s, 1-Math.pow(0.002,dt));
+      b.scale.y = lerp(b.scale.y, s, 1-Math.pow(0.002,dt));
+      if(b.userData.edge) b.userData.edge.material.opacity = isSel?0.95:(isRow?0.6:0.3);
+    });
+    root.position.y = Math.sin(t*0.35)*0.03;
+  });
+
+  return { update:()=>{}, destroy:S.destroy };
+}
+
+/* =========================================================================
+   6. SCENE D — the context window as a budget
+   ========================================================================= */
+const CTX_SEGS = [
+  { key:'SYSTEM',    c:0x6fb3ff, bad:0.55, good:0.40 },
+  { key:'TOOLS',     c:0xa58bff, bad:0.85, good:0.32 },
+  { key:'RETRIEVED', c:0xe0a33d, bad:2.10, good:0.85 },
+  { key:'HISTORY',   c:0x3ecf8e, bad:1.30, good:0.60 },
+  { key:'RESERVE',   c:0xe5645e, bad:0.12, good:1.05 }
+];
+const CTX_MAX = 5.0;
+function sceneContext(mount){
+  const S = createStage({ mount, cameraZ:9.2, fov:38, phi:Math.PI/2-0.12, theta:0.42, autoRotate:0.09, target:[0,0,0] });
+  const { scene } = S;
+  const root = new THREE.Group(); scene.add(root);
+
+  // the window: a wireframe column
+  const frameGeo = new THREE.BoxGeometry(1.7, CTX_MAX, 1.7);
+  const frame = edges(frameGeo, 0x39404b, 0.85);
+  frame.position.y = 0.2; root.add(frame);
+  const base = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.7,1.7),
+    new THREE.MeshBasicMaterial({ color:0x6fb3ff, transparent:true, opacity:0.05 })
+  );
+  base.rotation.x = -Math.PI/2; base.position.y = 0.2 - CTX_MAX/2; root.add(base);
+
+  const slabs = CTX_SEGS.map(s=>{
+    const m = mesh(new THREE.BoxGeometry(1.42, 1, 1.42), s.c, { emissive:s.c, ei:0.32, rough:0.45 });
+    root.add(m);
+    const lb = makeLabel(s.key, { color:'#'+s.c.toString(16).padStart(6,'0'), size:36, worldH:0.215 });
+    root.add(lb);
+    return { m, lb, h:0.4, th:0.4 };
+  });
+
+  let mode='bad';
+  function apply(m){ mode=m; slabs.forEach((s,i)=>{ s.th = m==='bad'?CTX_SEGS[i].bad:CTX_SEGS[i].good; }); }
+  apply('bad');
+
+  S.setFrame((dt)=>{
+    let y = -CTX_MAX/2 + 0.2;
+    slabs.forEach((s,i)=>{
+      s.h = lerp(s.h, s.th, 1-Math.pow(0.004,dt));
+      const h = Math.max(s.h, 0.02);
+      s.m.scale.y = h;
+      s.m.position.y = y + h/2;
+      s.lb.position.set(1.55, y + h/2, 0);
+      y += h;
+    });
+  });
+  return { update:apply, destroy:S.destroy };
+}
+
+/* =========================================================================
+   7. content
+   ========================================================================= */
+const ANATOMY = [
+  ['Context assembly','What the model sees. System contract, tool schemas, retrieved evidence, prior turns, and an explicit token reserve for the answer.'],
+  ['Tool surface','What the model can do. Names, schemas, descriptions, side effects, idempotency, and the error text it gets back when a call fails.'],
+  ['Controller','What happens next. Plan, decompose, budget, stop conditions, retry policy, model routing.'],
+  ['Executor / sandbox','Where actions run. Permissions, filesystem and network scope, timeouts, concurrency limits.'],
+  ['Verifier','Whether the answer counts. Builds, tests, type and schema checks, property tests, diff review, second-model grading, human gates.'],
+  ['Memory','What survives the turn. Pinned facts, episodic log, artifacts, and compaction when the window fills.'],
+  ['Telemetry','What you learn. Replayable traces, per-step token and cost attribution, a taxonomy of failures.'],
+  ['Policy','What it must never do. Capability-scoped credentials, audit trail, escalation on irreversible actions.'],
+  ['Eval suite','How you know it improved. Held-out tasks, sliced by failure mode, run in CI on every harness change.']
+];
+
+const EXAMPLES = [
+  { t:'Agentic coding harness',
+    d:'Tools: read / edit / grep / bash. Context: a repo map plus just-in-time file reads, not the whole tree. Verify: build + tests + typecheck. Memory: a persistent project note plus automatic compaction. Safety: sandboxed filesystem, allow-listed network.' },
+  { t:'Retrieval (enterprise Q&A)',
+    d:'Hybrid BM25 + embedding retrieval, then a reranker, then a chunking policy, then a cite-or-refuse rule. Freshness windows per source. Grounded answers are enforced by the output contract, not by asking nicely.' },
+  { t:'Eval harness',
+    d:'Fixed task set, deterministic seeds, parallel rollouts, programmatic grader plus model grader, statistical reporting with confidence intervals, regression gate in CI. This is the harness that tells you whether the other harnesses got better.' },
+  { t:'Computer-use / browser harness',
+    d:'Observation is a screenshot plus a DOM digest. Action space is small and atomic. State diffing detects no-ops, stuck detection breaks loops, credentials live in a vault, every action lands in an audit log.' }
+];
+
+const TIER_TEXT = {
+  CONTEXT:['Dump the repo, the docs and the entire history into one prompt and hope.',
+           'A fixed template plus a single retrieval step bolted on.',
+           'Just-in-time retrieval, compression, an explicit output reserve, re-assembled every turn.'],
+  TOOLS:['Forty overlapping tools with one-line descriptions and raw stdout as results.',
+         'A clear handful with reasonable schemas and a global timeout.',
+         'Few, orthogonal, atomic, idempotent tools. Errors that teach the model how to recover. Results capped and pointer-based.'],
+  CONTROL:['One shot. Whatever comes back, ship it.',
+           'A fixed loop with a max step count and no notion of progress.',
+           'Plan, then an adaptive loop with stuck detection, early exit, and a per-task step and token budget.'],
+  VERIFY:['It looks right to me.',
+          'Run the test suite if one happens to exist.',
+          'Layered checks: build, tests, property checks, schema validation, diff review, held-out tasks, human gate on irreversible changes.'],
+  MEMORY:['Replay the entire transcript forever until it overflows.',
+          'Sliding window of the last N turns. Facts discovered in turn 3 are lost by turn 30.',
+          'Pinned facts + episodic log + artifacts + compaction, with retrieval over all of it.'],
+  ERRORS:['Crash, or swallow the error and retry the identical call.',
+          'Retry once with the raw stack trace pasted back in.',
+          'Typed errors returned as structured observations, rollback of partial work, an alternate strategy, and a circuit breaker after N.'],
+  PARALLEL:['Strictly serial, every step waits for the last.',
+            'Naive fan-out: writes race, merges are last-write-wins, failures are silent.',
+            'Decomposed subtasks in isolation, then an explicit merge step with conflict resolution.'],
+  OBSERVE:['print() statements and a screenshot in Slack.',
+           'One log line per run, no way to reproduce it.',
+           'Replayable traces, token and cost attribution per step, a failure taxonomy, dashboards by failure mode.'],
+  SAFETY:['Full trust, full disk, production credentials in the environment.',
+          'A blocklist of commands that are obviously dangerous.',
+          'Capability-scoped permissions, sandbox by default, audit trail, human confirmation on irreversible actions.'],
+  BUDGET:['Uncapped. Found out on the invoice.',
+          'A global cap that hard-stops mid-task and loses the work.',
+          'Per-task budget, model routing by difficulty, prompt caching, graceful degradation when the budget runs low.'],
+  EVALS:['Vibes. Someone tries it once and says it feels better.',
+         'A handful of favourite tasks, run by hand, no baseline.',
+         'Held-out task suite, sliced by failure mode, run automatically on every harness change, gated in CI.']
+};
+
+const LAYERS = [
+  ['L0','Trigger','Issue, ticket, cron, chat message, upstream event.'],
+  ['L1','Controller','Plan, decompose, budget, stop conditions, model routing.', true],
+  ['L2','Context assembler','Pinned facts, retrieval, history, compression, output reserve.', true],
+  ['L3','Model call','Sampling params, structured output contract, tool schemas.', true],
+  ['L4','Tool router','Sandbox, permissions, timeouts, typed errors, retries.', true],
+  ['L5','Verifier','Build, tests, schema checks, diff review, grader, human gate.', true],
+  ['L6','State & memory','Write-back, artifacts, compaction, what survives the turn.'],
+  ['L7','Telemetry','Traces, cost, latency, failure taxonomy, replay for eval.']
+];
+
+const ANTIPATTERNS = [
+  ['Prompt soup','One 6,000-token system prompt that grew by accretion. Nobody knows which clause is load-bearing, so nothing can be removed.'],
+  ['Tool zoo','Thirty tools that overlap. The model picks the wrong one, and it is the harness\'s fault for making them indistinguishable.'],
+  ['Infinite retry','Retry the same call with the same arguments and expect a different result. It will produce the same failure, eight times, expensively.'],
+  ['Context stuffing','More retrieval is always better, until it is not. Every token you add competes with the tokens that matter.'],
+  ['No verifier','Generation without a check. The output is plausible, confident, and wrong, and nothing in the system can tell.'],
+  ['Silent failure','The run returns success because no exception was thrown, not because the work was done.'],
+  ['Human as rubber stamp','A review step nobody reads. It buys the appearance of oversight, not oversight.'],
+  ['Evals last','Ship the harness, then look for tasks it passes. You will find them, because you chose them afterwards.']
+];
+
+const FAILURES = [
+  ['Loop / thrash','The model repeats an action that produces no state change. Detect by hashing (tool, args, result) and breaking after N identical turns.'],
+  ['Context overrun','The window fills and quality collapses long before it errors. Compact proactively at a threshold, always keeping an output reserve.'],
+  ['Tool thrash','Wrong tool, wrong arguments, retry, repeat. Fix the schema and the error text rather than adding a retry.'],
+  ['Silent wrong answer','No exception, no failing test, wrong result. Only a verifier catches this, which is why a verifier is not optional.'],
+  ['Partial side effects','A write succeeded, then the plan changed. Require idempotency keys and a rollback path on every mutating tool.'],
+  ['Cost blowup','A cheap task fans out into a wide search. Per-task budgets, not just a global cap that stops mid-flight.']
+];
+
+const SCORE_DIMS = [
+  ['Context discipline', 'Is the window curated, compressed, and does it reserve room for the answer?'],
+  ['Tool design',        'Few, orthogonal, atomic, idempotent tools with error text that teaches recovery.'],
+  ['Verification',       'Are there cheap, layered, automated checks that can actually fail the run?'],
+  ['Memory & state',     'Does anything survive the turn? Is compaction a component or an afterthought?'],
+  ['Error recovery',     'Are errors typed, fed back, and paired with rollback and an alternate strategy?'],
+  ['Observability',      'Can you replay any run and attribute tokens, cost, and failure mode per step?'],
+  ['Safety',             'Least privilege, sandbox by default, audit trail, human gate on irreversible actions.'],
+  ['Economics',          'Per-task budgets, model routing by difficulty, caching, graceful degradation.']
+];
+
+const GRADIENT = [
+  { at:0,  name:'Suggest only',   what:'No write tools. Every change proposed as a diff for a human to apply.' },
+  { at:22, name:'Scoped writes',  what:'Writes confined to one directory. Every mutation must pass the test suite before it is kept.' },
+  { at:45, name:'Branch + PR',    what:'Creates branches and pull requests. Build, tests, lint and diff review must be green; human merges.' },
+  { at:68, name:'Auto-merge',     what:'Merges on green with a scoped credential, an audit entry, and a cheap automatic rollback.' },
+  { at:88, name:'Long-horizon',   what:'Runs unattended across many steps against a held-out eval gate, with circuit breakers and a budget.' }
+];
+
+/* =========================================================================
+   8. small presentational components
+   ========================================================================= */
+const Seg = (props)=> html`
+  <div className="seg" key=${props.key}>
+    ${props.options.map(o=>html`
+      <button key=${o.v}
+        className=${(props.value===o.v ? 'on '+(o.tone||'') : '')}
+        onClick=${()=>props.onChange(o.v)}>${o.label}</button>`)}
+  </div>`;
+
+function Radar(props){
+  const dims = SCORE_DIMS.length;
+  const cx=260, cy=220, R=140;
+  const pt = (i, r)=>{
+    const a = -Math.PI/2 + (i/dims)*TAU;
+    return [cx + Math.cos(a)*R*r, cy + Math.sin(a)*R*r];
+  };
+  const rings = [0.25,0.5,0.75,1].map(r=>{
+    const d = Array.from({length:dims},(_,i)=>pt(i,r).map(n=>n.toFixed(1)).join(',')).join(' ');
+    return html`<polygon key=${r} points=${d} fill="none" stroke="#22262e" stroke-width="1"/>`;
+  });
+  const spokes = Array.from({length:dims},(_,i)=>{
+    const [x,y]=pt(i,1);
+    return html`<line key=${i} x1=${cx} y1=${cy} x2=${x.toFixed(1)} y2=${y.toFixed(1)} stroke="#22262e" stroke-width="1"/>`;
+  });
+  const poly = props.values.map((v,i)=>pt(i, 0.08 + (v/10)*0.92).map(n=>n.toFixed(1)).join(',')).join(' ');
+  const dots = props.values.map((v,i)=>{
+    const [x,y]=pt(i, 0.08 + (v/10)*0.92);
+    return html`<circle key=${i} cx=${x.toFixed(1)} cy=${y.toFixed(1)} r="3" fill="#6fb3ff"/>`;
+  });
+  const labels = SCORE_DIMS.map((d,i)=>{
+    const [x,y]=pt(i,1.22);
+    const anchor = Math.abs(x-cx)<22 ? 'middle' : (x>cx?'start':'end');
+    return html`<text key=${i} x=${x.toFixed(1)} y=${(y+4).toFixed(1)} text-anchor=${anchor}
+      font-family="ui-monospace, Menlo, monospace" font-size="9.5" letter-spacing="0.6"
+      fill="#8d939d">${d[0].toUpperCase()}</text>`;
+  });
+  return html`<svg width="460" height="420" viewBox="0 0 520 460">
+    ${rings}${spokes}
+    <polygon points=${poly} fill="rgba(111,179,255,0.16)" stroke="#6fb3ff" stroke-width="1.6"/>
+    ${dots}${labels}
+  </svg>`;
+}
+
+/* =========================================================================
+   9. slides
+   ========================================================================= */
+function SlideShell(props){
+  return html`<div className="slide" key=${props.id}>
+    <div className="kicker"><span className="rule"></span>${props.kicker}</div>
+    ${props.hero ? html`<h1 style="font-size:${props.heroSize||52}px">${props.title}</h1>`
+                 : html`<h2>${props.title}</h2>`}
+    ${props.lead ? html`<div className="lead">${props.lead}</div>` : null}
+    <div className="body">${props.children}</div>
+  </div>`;
+}
+
+/* ---- 1. title ---- */
+function S1(){
+  return html`<div className="slide" key="s1" style=${{justifyContent:'center', paddingTop:0}}>
+    <div className="kicker"><span className="rule"></span>ENGINEERING SYSTEMS AROUND MODELS</div>
+    <h1 style=${{fontSize:78, letterSpacing:'-.035em'}}>Harness Engineering</h1>
+    <div className="lead" style=${{maxWidth:820, fontSize:17, marginTop:22}}>
+      The model is a <b>stateless function</b>: tokens in, tokens out. The <b>harness</b> is everything wrapped
+      around it — what it sees, what it may touch, what happens after it answers, and whether the answer counts.
+      For frontier models the harness, not the weights, is now the largest source of variance in results.
+    </div>
+    <div style=${{display:'flex', gap:10, marginTop:34, flexWrap:'wrap'}}>
+      <span className="tag b">17 slides</span>
+      <span className="tag">arrow keys to move</span>
+      <span className="tag">3D scenes are draggable</span>
+      <span className="tag">interactive: loop, matrix, budget, scorecard</span>
+    </div>
+  </div>`;
+}
+
+/* ---- 2. what is a harness ---- */
+function S2(){
+  return html`<${SlideShell} id="s2" kicker="01 — DEFINITION" title="A model is an engine. The harness is the vehicle."
+    lead=${html`Same engine, different chassis: one becomes a delivery van, another a race car, a third a tractor. The harness decides which. It is the part you actually ship.`}>
+    <div className="col" style=${{width:560, flex:'0 0 560px'}}>
+      <div className="three" style=${{width:560, height:400}} ref=${(el)=>{ if(el && !el.dataset.m){ el.dataset.m='1'; sceneKernel(el); } }} >
+        <div className="three-hint">drag to rotate</div>
+      </div>
+    </div>
+    <div className="col grow" style=${{justifyContent:'center'}}>
+      <div className="list">
+        <div className="row"><div className="k">What it sees</div><div className="v"><b>Context assembly.</b> System contract, tool schemas, retrieved evidence, prior turns — curated and compressed, with room reserved for the answer.</div></div>
+        <div className="row"><div className="k">What it can do</div><div className="v"><b>Tool surface and permissions.</b> The action space, its schemas, its sandbox, and the error text returned when a call fails.</div></div>
+        <div className="row"><div className="k">What happens next</div><div className="v"><b>Control flow.</b> Planning, decomposition, retry policy, stop conditions, budget, escalation.</div></div>
+        <div className="row"><div className="k">Whether it counts</div><div className="v"><b>Verification.</b> Tests, checkers, graders, review gates. The component most harnesses skip and every good one has.</div></div>
+        <div className="row"><div className="k">What persists</div><div className="v"><b>Memory and telemetry.</b> What survives the turn, and what you can replay afterwards.</div></div>
+      </div>
+      <div className="note">Harness engineering is the discipline of designing that layer deliberately — instead of letting it accrete inside a single long prompt string.</div>
+    </div>
+  <//>`;
+}
+
+/* ---- 3. anatomy ---- */
+function S3(){
+  return html`<${SlideShell} id="s3" kicker="02 — ANATOMY" title="Nine parts. Every harness has all nine."
+    lead=${html`Most teams build two well (tools and prompts) and discover the other seven in production. The list below is the checklist.`}>
+    <div className="col grow" style=${{columnCount:2, columnGap:40}}>
+      ${ANATOMY.map(([k,v],i)=>html`
+        <div key=${i} style=${{padding:'10px 0', borderTop:i<2?'none':'1px solid var(--line)', breakInside:'avoid'}}>
+          <div style=${{font:'600 11.5px/1.4 var(--mono)', letterSpacing:'.06em', color:'var(--blue)', textTransform:'uppercase'}}>${String(i+1).padStart(2,'0')} · ${k}</div>
+          <div style=${{fontSize:13, lineHeight:1.6, color:'var(--dim)', marginTop:4}}>${v}</div>
+        </div>`)}
+    </div>
+  <//>`;
+}
+
+/* ---- 4. examples ---- */
+function S4(){
+  return html`<${SlideShell} id="s4" kicker="03 — EXAMPLES" title="Four harnesses you have probably met"
+    lead=${html`None of these is “a prompt”. Each is a system with a state machine, a tool surface and a notion of done.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, alignContent:'start'}}>
+      ${EXAMPLES.map(e=>html`<div className="card" key=${e.t}><h4>${e.t}</h4><p>${e.d}</p></div>`)}
+      <div className="card" style=${{borderStyle:'dashed', background:'transparent'}}>
+        <h4 style=${{color:'var(--faint)'}}>The pattern</h4>
+        <p>Notice what all four share: a <b style=${{color:'var(--fg)'}}>bounded action space</b>, an
+        <b style=${{color:'var(--fg)'}}>explicit done-check</b>, <b style=${{color:'var(--fg)'}}>state that outlives one call</b>,
+        and <b style=${{color:'var(--fg)'}}>a way to replay what happened</b>. Those four properties are the harness.</p>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* ---- 5. why frontier models change it ---- */
+function S5(){
+  const bars = [
+    { l:'Weak-model era',  m:72, h:28 },
+    { l:'Frontier era',    m:28, h:72 }
+  ];
+  return html`<${SlideShell} id="s5" kicker="04 — THE SHIFT" title="Why harness quality matters more for frontier models"
+    lead=${html`When the model could barely do the task, the model was the bottleneck. Once it reliably can, the bottleneck moves to the state you gave it, the levers you exposed, and whether anything checked the result.`}>
+    <div className="col grow" style=${{gap:22}}>
+      <div style=${{maxWidth:620}}>
+        <div style=${{font:'600 10.5px/1 var(--mono)', letterSpacing:'.14em', color:'var(--faint)', marginBottom:12}}>WHERE THE OUTCOME VARIANCE COMES FROM</div>
+        ${bars.map(b=>html`
+          <div key=${b.l} style=${{marginBottom:14}}>
+            <div style=${{font:'600 11px/1 var(--mono)', color:'var(--dim)', marginBottom:7, letterSpacing:'.08em'}}>${b.l.toUpperCase()}</div>
+            <div style=${{display:'flex', height:22, borderRadius:4, overflow:'hidden', border:'1px solid var(--line)'}}>
+              <div style=${{width:b.m+'%', background:'#1b2b3d', display:'flex', alignItems:'center', paddingLeft:10, font:'600 10px/1 var(--mono)', color:'#6fb3ff', letterSpacing:'.1em'}}>MODEL ${b.m}%</div>
+              <div style=${{width:b.h+'%', background:'#12261f', display:'flex', alignItems:'center', paddingLeft:10, font:'600 10px/1 var(--mono)', color:'#3ecf8e', letterSpacing:'.1em'}}>HARNESS ${b.h}%</div>
+            </div>
+          </div>`)}
+      </div>
+      <div className="list" style=${{maxWidth:640}}>
+        <div className="row"><div className="k">Failure mode moves</div><div className="v">It is no longer “the model cannot do this step”. It is <b>wrong state, missing lever, or no way to check</b>.</div></div>
+        <div className="row"><div className="k">Same weights, big spread</div><div className="v">Identical model, different harness, double-digit swings on agentic benchmarks. Much published “model quality” is <b>harness quality</b>.</div></div>
+        <div className="row"><div className="k">Strong models amplify defects</div><div className="v">A vague tool schema becomes confidently wrong calls at scale. No verifier becomes plausible garbage, fast. Unbounded context becomes slow, expensive, degraded.</div></div>
+        <div className="row"><div className="k">Rails vs room</div><div className="v">Weak models need <b>rails</b>. Frontier models need <b>room and ground truth</b> — over-constraining them costs more than it saves.</div></div>
+        <div className="row"><div className="k">The bitter lesson caveat</div><div className="v">Harness gains partly wash out at the next model generation. Keep the portable parts — <b>checks, contracts, evals, traces</b> — and drop scaffolding the model learns to do itself.</div></div>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* ---- 6. the loop (3D) ---- */
+function S6(){
+  const [mode, setMode] = useState('good');
+  const notes = {
+    bad:['One pass: intent → context → model. Whatever comes back is the answer.','No tool loop, no verification step, no write-back. The system cannot tell a good run from a bad one, because nothing in it checks.','Symptom: plausible answers, silent failures, and a team that keeps editing the system prompt.'],
+    ok:['Tools are wired in and the loop runs, but it is a fixed loop with a max step count.','It can act, but it cannot tell whether the action worked — so it either over-runs the budget or stops early and declares victory.','Symptom: works on the demo task, thrashes on anything longer.'],
+    good:['Every stage feeds the next, and the verifier feeds <b>back into context</b>. That arrow is the whole difference: failure becomes input.','Add memory write-back and the loop compounds — each pass starts from a better state than the last.','Symptom: it recovers from its own mistakes instead of requiring you to notice them.']
+  };
+  return html`<${SlideShell} id="s6" kicker="05 — THE LOOP" title="The control loop, and the one arrow that separates good from ok"
+    lead=${html`Six stages. Every harness has them. What differs is which ones are actually wired up — and whether the verifier can send anything back.`}>
+    <div className="col" style=${{width:640, flex:'0 0 640px'}}>
+      <${ThreeCanvas} style=${{width:640, height:392}}
+        setup=${(el)=>sceneLoop(el)} value=${mode} />
+    </div>
+    <div className="col grow" style=${{justifyContent:'space-between'}}>
+      <div>
+        <${Seg} value=${mode} onChange=${setMode} options=${[
+          {v:'bad',  label:'BAD',  tone:'r'},
+          {v:'ok',   label:'OK',   tone:'a'},
+          {v:'good', label:'GOOD', tone:'g'}
+        ]} />
+        <div style=${{marginTop:18, display:'flex', flexDirection:'column', gap:10}}>
+          ${notes[mode].map((n,i)=>html`<div key=${i} style=${{fontSize:13, lineHeight:1.6, color:i===0?'var(--fg)':'var(--dim)', paddingLeft:12, borderLeft:'2px solid '+(i===0?'var(--blue)':'var(--line2)')}} dangerouslySetInnerHTML=${{__html:n}}></div>`)}
+        </div>
+      </div>
+      <div className="note">A loop is not a harness. A loop with a <b>feedback edge from the verifier</b> is — that is the difference between a system that fails and one that recovers.</div>
+    </div>
+  <//>`;
+}
+
+/* ---- 7. reference architecture ---- */
+function S7(){
+  return html`<${SlideShell} id="s7" kicker="06 — ARCHITECTURE" title="Reference architecture: eight layers, one rule"
+    lead=${html`The rule: <b>push everything deterministic out of the model and into code.</b> The model should be the only non-deterministic component in the system, and it should be doing the smallest possible amount of work.`}>
+    <div className="col grow" style=${{gap:7}}>
+      ${LAYERS.map(([id,nm,d,hot])=>html`
+        <div className=${'layer'+(hot?' hot':'')} key=${id}>
+          <div className="id">${id}</div><div className="nm">${nm}</div><div className="d">${d}</div>
+        </div>`)}
+    </div>
+    <div className="col" style=${{width:290, flex:'0 0 290px'}}>
+      <div className="card" style=${{height:'100%'}}>
+        <h4>THE RULE IN PRACTICE</h4>
+        <p style=${{marginBottom:12}}>Everything that <b style=${{color:'var(--fg)'}}>can</b> be checked by a program should be. Every instruction that can become a tool, a schema, or a test should become one.</p>
+        <p style=${{marginBottom:12}}>The model is reserved for <b style=${{color:'var(--fg)'}}>judgment</b>: ambiguous intent, choosing among options, deciding what to look at next.</p>
+        <p>When quality drops, the fix is usually a missing layer — not a longer prompt.</p>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* ---- 8. component matrix (3D) ---- */
+function S8(){
+  const [sel, setSel] = useState({r:3,c:2});
+  const pickRef = useRef(null); pickRef.current = (r,c)=>setSel({r,c});
+  const selRef = useRef(sel); selRef.current = sel;
+  const comp = COMPONENTS[sel.r];
+  const txt = TIER_TEXT[comp.key];
+  return html`<${SlideShell} id="s8" kicker="07 — GOOD vs OK vs BAD" title="Eleven components, three tiers"
+    lead=${html`This is the core of harness quality: for each component, is it <b>absent</b>, <b>present but shallow</b>, or <b>fully built</b>? Click any bar in the grid.`}>
+    <div className="col" style=${{width:700, flex:'0 0 700px'}}>
+      <${ThreeCanvas} style=${{width:700, height:400}}
+        setup=${(el)=>sceneTiers(el,{pickRef, selRef})} value=${sel} />
+    </div>
+    <div className="col grow">
+      <div style=${{display:'flex', alignItems:'baseline', gap:12, marginBottom:12}}>
+        <div style=${{font:'600 17px/1 var(--mono)', letterSpacing:'.06em'}}>${comp.key}</div>
+        <div style=${{font:'500 10.5px/1 var(--mono)', color:'var(--faint)', letterSpacing:'.1em'}}>COMPONENT ${String(sel.r+1).padStart(2,'0')} / ${COMPONENTS.length}</div>
+      </div>
+      <div className="tier-detail">
+        <div className=${'lvl bad'+(sel.c===0?'':'')} style=${{opacity:sel.c===0?1:0.55}}><span>BAD</span><p>${txt[0]}</p></div>
+        <div className="lvl ok"  style=${{opacity:sel.c===1?1:0.55}}><span>OK</span><p>${txt[1]}</p></div>
+        <div className="lvl good" style=${{opacity:sel.c===2?1:0.55}}><span>GOOD</span><p>${txt[2]}</p></div>
+      </div>
+      <div className="note">A harness is only as good as its <b>weakest</b> component. Strong tools with no verifier still ships wrong answers; strong verification with a stuffed context window never gets to run.</div>
+    </div>
+  <//>`;
+}
+
+/* ---- 9. context budget (3D) ---- */
+function S9(){
+  const [mode, setMode] = useState('bad');
+  const badTotal = CTX_SEGS.reduce((s,x)=>s+x.bad,0);
+  const goodTotal = CTX_SEGS.reduce((s,x)=>s+x.good,0);
+  return html`<${SlideShell} id="s9" kicker="08 — CONTEXT IS A BUDGET" title="Context is a budget, not a bucket"
+    lead=${html`Every token you add competes with every other token. Attention degrades long before the window overflows, and the middle of a long context is where things get lost.`}>
+    <div className="col" style=${{width:420, flex:'0 0 420px'}}>
+      <${ThreeCanvas} style=${{width:420, height:400}} setup=${(el)=>sceneContext(el)} value=${mode} />
+    </div>
+    <div className="col grow">
+      <${Seg} value=${mode} onChange=${setMode} options=${[
+        {v:'bad',  label:'STUFFED', tone:'r'},
+        {v:'good', label:'CURATED', tone:'g'}
+      ]} />
+      <div style=${{marginTop:16, font:'600 11px/1 var(--mono)', letterSpacing:'.12em', color:'var(--faint)'}}>
+        USED ${(mode==='bad'?badTotal:goodTotal).toFixed(2)} / ${CTX_MAX.toFixed(2)} — OUTPUT RESERVE ${(mode==='bad'?CTX_SEGS[4].bad:CTX_SEGS[4].good).toFixed(2)}
+      </div>
+      <div className="list" style=${{marginTop:14}}>
+        <div className="row"><div className="k">Stuffed</div><div className="v">System prompt creep, tool-schema bloat, retrieved chunks nobody pruned, full transcript replay. The reserve for the answer is squeezed to nothing, so responses get truncated and shallow.</div></div>
+        <div className="row"><div className="k">Curated</div><div className="v">Small stable system contract, lean tool schemas, retrieval that is <b>just-in-time</b> and re-run each turn, history compacted, and a real reserve held for output.</div></div>
+        <div className="row"><div className="k">Compaction</div><div className="v">Treat it as a <b>component</b>, not an emergency. Compact at a threshold into pinned facts plus an episodic summary, and keep the decision reproducible.</div></div>
+        <div className="row"><div className="k">Rule of thumb</div><div className="v">If you cannot say what a token is buying you, it is costing you twice: once in price, once in attention.</div></div>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* ---- 10. tools ---- */
+function S10(){
+  return html`<${SlideShell} id="s10" kicker="09 — TOOL DESIGN" title="Tools are API design, and every field is a prompt"
+    lead=${html`The name, the description, the schema and the error text are all read by the model. A tool is not just an endpoint — it is a piece of the context you ship on every call.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:24, alignContent:'start'}}>
+      <div>
+        <div className="tag r" style=${{display:'inline-block', marginBottom:12}}>TOOL ZOO</div>
+        <div className="bad-list">
+          ${[
+            ['Overlapping names','search_docs, find_docs, lookup_doc, doc_search — the model cannot choose, so it guesses.'],
+            ['One-line descriptions','"Searches stuff." The schema is the only signal, and it is empty.'],
+            ['Raw dumps','Returns 40KB of JSON. It eats the window and buries the one relevant field.'],
+            ['Opaque errors','"Error: failed". Nothing to learn, so the model tries the identical call again.'],
+            ['Non-idempotent writes','A retry duplicates the side effect. Now you have two of everything.']
+          ].map(([t,d])=>html`<div className="bad-item" key=${t}><div className="t">${t}</div><div className="d">${d}</div></div>`)}
+        </div>
+      </div>
+      <div>
+        <div className="tag g" style=${{display:'inline-block', marginBottom:12}}>ORTHOGONAL SET</div>
+        <div className="fix-list">
+          ${[
+            ['Few and atomic','One clear verb per noun. If two tools can do the same thing, delete one of them.'],
+            ['Descriptions teach','State what it does, when to use it, when not to, and what it returns. Include one example.'],
+            ['Errors teach','Return the reason, the offending field, and the concrete next action. Error text is the highest-leverage prompt in the system.'],
+            ['Idempotent + rollback','Every mutating tool takes an idempotency key and has a defined undo.'],
+            ['Bounded results','Cap size, return pointers (path, id, offset) instead of payloads, and let the model page.'],
+            ['Observable','Every call lands in the trace with arguments, duration and result digest — so you can debug the model by reading the tool log.']
+          ].map(([t,d])=>html`<div className="fix-item" key=${t}><div className="t">${t}</div><div className="d">${d}</div></div>`)}
+        </div>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* ---- 11. verification asymmetry ---- */
+function S11(){
+  const [i, setI] = useState(2);
+  const ladder = [
+    { n:'Schema / type check', cost:'~free', cat:'Malformed output, wrong shape, missing fields', d:'Structured output contracts plus a validator. Catches a surprising share of failures for almost nothing.' },
+    { n:'Build / compile', cost:'seconds', cat:'Broken references, syntax, integration errors', d:'The cheapest real signal available. If your harness cannot build, it cannot claim anything works.' },
+    { n:'Unit / integration tests', cost:'seconds–minutes', cat:'Behaviour regressions', d:'The workhorse. The harness should be able to run a targeted subset, not the whole suite, every turn.' },
+    { n:'Property / invariant checks', cost:'seconds', cat:'Edge cases nobody wrote a test for', d:'Encode the invariants you actually care about and let a generator find the counterexamples.' },
+    { n:'Diff review (second model)', cost:'cheap', cat:'Changes that are technically green but wrong', d:'A second, cheaper model reviews the diff against the intent. Best cost-to-catch ratio after tests.' },
+    { n:'Held-out task suite', cost:'minutes', cat:'Capability regressions on realistic work', d:'The only check that tells you the harness improved rather than the demo task got easier.' },
+    { n:'Human gate', cost:'expensive', cat:'Irreversible, ambiguous, or high-blast-radius actions', d:'Spend humans where judgment is irreplaceable — on the plan and the diff, never on every token.' }
+  ];
+  const cur = ladder[i];
+  return html`<${SlideShell} id="s11" kicker="10 — VERIFICATION ASYMMETRY" title="Generation is expensive. Checking is cheap. Exploit that."
+    lead=${html`It costs far more to produce a correct answer than to recognise one. Every harness that wins has converted that asymmetry into a stack of cheap checks.`}>
+    <div className="col" style=${{width:430, flex:'0 0 430px'}}>
+      <div style=${{display:'flex', flexDirection:'column', gap:5}}>
+        ${ladder.map((l,k)=>html`
+          <div key=${l.n} onClick=${()=>setI(k)}
+            style=${{padding:'10px 13px', border:'1px solid '+(k===i?'#26405c':'var(--line)'), borderRadius:5,
+                     background:k===i?'#0d141d':'var(--panel)', cursor:'pointer', display:'grid',
+                     gridTemplateColumns:'1fr auto', gap:10, alignItems:'center', transition:'border-color .15s, background .15s'}}>
+            <div style=${{font:'600 11.5px/1.3 var(--mono)', color:k===i?'var(--blue)':'var(--dim)', letterSpacing:'.04em'}}>${l.n}</div>
+            <div style=${{font:'500 9.5px/1 var(--mono)', color:'var(--faint)', letterSpacing:'.1em'}}>${l.cost.toUpperCase()}</div>
+          </div>`)}
+      </div>
+    </div>
+    <div className="col grow">
+      <div style=${{font:'600 20px/1.2 var(--mono)', letterSpacing:'-.01em'}}>${cur.n}</div>
+      <div style=${{marginTop:12, fontSize:14, lineHeight:1.62, color:'var(--dim)'}}>${cur.d}</div>
+      <div style=${{marginTop:20}} className="card">
+        <h4 style=${{color:'var(--green)'}}>CATCHES</h4>
+        <p>${cur.cat}</p>
+      </div>
+      <div className="note">Autonomy should follow verification, never lead it. Where the checks are strong you can let the model run; where they are absent, keep it on a short leash. <b>A cheap check beats a longer prompt, every time.</b></div>
+    </div>
+  <//>`;
+}
+
+/* ---- 12. failure modes ---- */
+function S12(){
+  return html`<${SlideShell} id="s12" kicker="11 — FAILURE MODES" title="How harnesses actually fail"
+    lead=${html`None of these throw an exception. That is what makes them expensive — they all look like success until someone reads the output.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'0 34px', alignContent:'start'}}>
+      ${FAILURES.map(([t,d],i)=>html`
+        <div key=${t} style=${{padding:'12px 0', borderTop:i<2?'none':'1px solid var(--line)'}}>
+          <div style=${{font:'600 11.5px/1.4 var(--mono)', color:'var(--red)', letterSpacing:'.06em', textTransform:'uppercase'}}>${t}</div>
+          <div style=${{fontSize:13, lineHeight:1.6, color:'var(--dim)', marginTop:5}}>${d}</div>
+        </div>`)}
+    </div>
+  <//>`;
+}
+
+/* ---- 13. autonomy gradient ---- */
+function S13(){
+  const [a, setA] = useState(45);
+  const active = GRADIENT.filter(g=>g.at<=a).pop();
+  return html`<${SlideShell} id="s13" kicker="12 — THE TRUST GRADIENT" title="Autonomy should follow verification, never lead it"
+    lead=${html`There is no correct autonomy level. There is only autonomy that is <b>justified</b> by the strength of the checks beneath it. Move the slider.`}>
+    <div className="col grow">
+      <div className="grad">
+        ${GRADIENT.map((g,i)=>html`
+          <div className=${'grad-row'+(active.at===g.at?' on':'')} key=${g.name}>
+            <div className=${'lb'+(active.at===g.at?' on':'')}>${String(g.at).padStart(2,'0')}</div>
+            <div className="grad-bar">${g.name} — ${g.what}</div>
+          </div>`)}
+      </div>
+      <div style=${{marginTop:22, display:'grid', gridTemplateColumns:'120px 1fr 60px', gap:14, alignItems:'center'}}>
+        <label style=${{font:'600 10.5px/1 var(--mono)', letterSpacing:'.1em', color:'var(--dim)'}}>AUTONOMY</label>
+        <input type="range" min="0" max="100" step="1" value=${a} onInput=${(e)=>setA(+e.target.value)} />
+        <output style=${{font:'600 13px/1 var(--mono)', color:'var(--fg)', textAlign:'right'}}>${a}</output>
+      </div>
+      <div className="note" style=${{marginTop:14}}>The failure mode is not “too much autonomy”. It is autonomy granted at a layer with
+      <b> no verification below it</b>. Turn the slider up only when the layer underneath can say no.</div>
+    </div>
+    <div className="col" style=${{width:250, flex:'0 0 250px'}}>
+      <div className="card" style=${{height:'100%'}}>
+        <h4 style=${{color:'var(--blue)'}}>ACTIVE LEVEL</h4>
+        <p style=${{fontSize:15, color:'var(--fg)', marginBottom:10}}>${active.name}</p>
+        <p>${active.what}</p>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* ---- 14. anti-patterns ---- */
+function S14(){
+  return html`<${SlideShell} id="s14" kicker="13 — ANTI-PATTERNS" title="Eight ways to build a bad harness"
+    lead=${html`Each of these feels like progress while you are doing it. That is what makes them durable.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, alignContent:'start'}}>
+      ${ANTIPATTERNS.map(([t,d])=>html`
+        <div className="bad-item" key=${t}><div className="t">${t}</div><div className="d">${d}</div></div>`)}
+    </div>
+  <//>`;
+}
+
+/* ---- 15. scorecard ---- */
+function S15(){
+  const [v, setV] = useState([4,5,3,4,3,4,5,3]);
+  const score = Math.round(v.reduce((s,x)=>s+x,0)/v.length*10);
+  const tone = score<45?'r':score<72?'a':'g';
+  const label = score<45?'BAD HARNESS':score<72?'OK HARNESS':'GOOD HARNESS';
+  const color = score<45?'var(--red)':score<72?'var(--amber)':'var(--green)';
+  const lowest = v.indexOf(Math.min.apply(null,v));
+  return html`<${SlideShell} id="s15" kicker="14 — SCORECARD" title="Score your own harness"
+    lead=${html`Move the sliders honestly. The lowest bar is the one to fix next — the rest do not matter until it moves.`}>
+    <div className="radar-wrap" style=${{width:'100%'}}>
+      <${Radar} values=${v} />
+      <div>
+        <div className="sliders">
+          ${SCORE_DIMS.map((d,i)=>html`
+            <div className="sl" key=${d[0]}>
+              <label title=${d[1]}>${d[0]}</label>
+              <input type="range" min="0" max="10" step="1" value=${v[i]}
+                onInput=${(e)=>{ const n=v.slice(); n[i]=+e.target.value; setV(n); }} />
+              <output>${v[i]}</output>
+            </div>`)}
+        </div>
+        <div style=${{marginTop:18, display:'flex', alignItems:'flex-end', gap:18}}>
+          <div>
+            <div className="score" style=${{color:color}}>${score}</div>
+            <div className="verdict" style=${{color:color}}>${label}</div>
+          </div>
+          <div style=${{flex:1, paddingBottom:4}}>
+            <div style=${{font:'600 10.5px/1 var(--mono)', letterSpacing:'.1em', color:'var(--faint)', marginBottom:6}}>WEAKEST LINK</div>
+            <div style=${{font:'600 12px/1.4 var(--mono)', color:'var(--fg)'}}>${SCORE_DIMS[lowest][0].toUpperCase()}</div>
+            <div style=${{fontSize:12.5, lineHeight:1.55, color:'var(--dim)', marginTop:4}}>${SCORE_DIMS[lowest][1]}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* ---- 16. what to build first ---- */
+function S16(){
+  return html`<${SlideShell} id="s16" kicker="15 — ORDER OF OPERATIONS" title="If you are starting from a prompt, build in this order"
+    lead=${html`The instinct is to start with prompts and finish with evals. That order is backwards, and it is why harness work stalls.`}>
+    <div className="col grow" style=${{gap:0}}>
+      ${[
+        ['1','Evals first','Twenty real tasks with a pass/fail you trust. Without this you cannot tell improvement from noise, and every later decision is a guess.'],
+        ['2','Observability','A replayable trace of every run. You cannot fix what you cannot watch, and you will not guess the real failure mode correctly.'],
+        ['3','Verification','Wire the checks that already exist — build, tests, schema validation. This single step usually moves results more than any prompt change.'],
+        ['4','Tool surface','Cut the tool list in half, rewrite every description, and make error messages teach. Delete before you add.'],
+        ['5','Context discipline','Measure the window composition. Prune, compress, reserve room for output, re-assemble each turn.'],
+        ['6','Control flow','Plan, stuck detection, budgets, rollback. Now that it can be checked, let it run longer.'],
+        ['7','Prompts last','By this point the system prompt is short, because everything it used to say now lives in code.']
+      ].map(([n,t,d],i)=>html`
+        <div key=${n} style=${{display:'grid', gridTemplateColumns:'30px 170px 1fr', gap:18, padding:'12px 0',
+             borderTop:i===0?'none':'1px solid var(--line)', alignItems:'start'}}>
+          <div style=${{font:'600 12px/1.7 var(--mono)', color:'var(--blue)', letterSpacing:'.08em'}}>${n}</div>
+          <div style=${{font:'600 13px/1.5 var(--mono)', color:'var(--fg)', letterSpacing:'.04em'}}>${t}</div>
+          <div style=${{fontSize:13.5, lineHeight:1.6, color:'var(--dim)'}}>${d}</div>
+        </div>`)}
+    </div>
+  <//>`;
+}
+
+/* ---- 17. takeaways ---- */
+function S17(){
+  return html`<${SlideShell} id="s17" kicker="16 — TAKEAWAYS" title="The harness is the product"
+    lead=${html`Models are increasingly a commodity you call. What you build around them is the thing competitors cannot rent.`}>
+    <div className="col grow takes" style=${{maxWidth:1000}}>
+      ${[
+        ['The model is a function; the harness is the system.','Stateless in, stateless out. Everything that makes it useful — memory, tools, control, checks — is code you own.'],
+        ['Frontier models moved the bottleneck.','When the model can reliably do the step, the remaining variance is almost entirely harness: state, levers, and verification.'],
+        ['Verification is the highest-leverage component.','Generation is expensive, checking is cheap. Build the ladder, then grant autonomy in proportion to it.'],
+        ['Push determinism out of the model.','Every instruction that could be a tool, a schema, or a test should become one. Keep the model for judgment only.'],
+        ['Context is a budget with an attention cost.','Curate, compress, re-assemble each turn, and always reserve room for the answer.'],
+        ['Tools are API design.','Names, descriptions and error text are prompts you ship on every call. Make them teach.'],
+        ['Evals before prompts.','The harness you can measure is the harness you can improve. Everything else is taste.']
+      ].map(([t,d],i)=>html`
+        <div className="take" key=${t}>
+          <div className="n">${String(i+1).padStart(2,'0')}</div>
+          <div className="t">${t}<span>${d}</span></div>
+        </div>`)}
+    </div>
+  <//>`;
+}
+
+const SLIDES = [
+  { t:'Harness Engineering', f:S1 },
+  { t:'Definition', f:S2 },
+  { t:'Anatomy', f:S3 },
+  { t:'Examples', f:S4 },
+  { t:'The shift', f:S5 },
+  { t:'The loop', f:S6 },
+  { t:'Architecture', f:S7 },
+  { t:'Good / OK / Bad', f:S8 },
+  { t:'Context budget', f:S9 },
+  { t:'Tool design', f:S10 },
+  { t:'Verification', f:S11 },
+  { t:'Failure modes', f:S12 },
+  { t:'Trust gradient', f:S13 },
+  { t:'Anti-patterns', f:S14 },
+  { t:'Scorecard', f:S15 },
+  { t:'Order of operations', f:S16 },
+  { t:'Takeaways', f:S17 }
+];
+
+/* =========================================================================
+   10. app + navigation
+   ========================================================================= */
+function App(){
+  const params = typeof location!=='undefined' ? new URLSearchParams(location.search) : null;
+  const start = Math.max(0, Math.min(SLIDES.length-1, parseInt(params && params.get('s')) || 0));
+  const [i, setI] = useState(start - 1 >= 0 ? start : 0);
+  useEffect(()=>{ if(start>=0) setI(start); }, []);
+  const n = SLIDES.length;
+  const go = (k)=>setI(clamp(k,0,n-1));
+
+  useEffect(()=>{
+    const onKey = (e)=>{
+      if(e.target && /input|textarea/i.test(e.target.tagName)) {
+        if(e.key==='ArrowLeft'||e.key==='ArrowRight') e.target.blur();
+        return;
+      }
+      if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown') { e.preventDefault(); go(i+1); }
+      else if(e.key==='ArrowLeft'||e.key==='PageUp') { e.preventDefault(); go(i-1); }
+      else if(e.key==='Home') go(0);
+      else if(e.key==='End') go(n-1);
+    };
+    window.addEventListener('keydown', onKey);
+    return ()=>window.removeEventListener('keydown', onKey);
+  }, [i]);
+
+  useEffect(()=>{
+    const fit = ()=>{
+      const s = Math.min(window.innerWidth/1280, window.innerHeight/720);
+      const st = document.getElementById('stage');
+      if(st) st.style.transform = 'scale('+s+')';
+    };
+    fit(); window.addEventListener('resize', fit);
+    return ()=>window.removeEventListener('resize', fit);
+  }, []);
+
+  const Cur = SLIDES[i].f;
+  return html`<div style=${{position:'absolute', inset:0}}>
+    <${Cur} key=${i} />
+    <div id="nav">
+      <div className="num">${String(i+1).padStart(2,'0')} / ${n}</div>
+      <div className="dots">
+        ${SLIDES.map((s,k)=>html`<button className=${'dot'+(k===i?' on':'')} key=${k}
+          title=${s.t} onClick=${()=>go(k)} aria-label=${s.t}></button>`)}
+      </div>
+      <div className="title">${SLIDES[i].t.toUpperCase()}</div>
+      <div className="arrows">
+        <button onClick=${()=>go(i-1)} title="previous">←</button>
+        <button onClick=${()=>go(i+1)} title="next">→</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+const boot = document.getElementById('boot');
+createRoot(document.getElementById('stage')).render(html`<${App} />`);
+window.__booted = true;
+if(boot && boot.parentNode) boot.parentNode.removeChild(boot);
+</script>
+</body>
+</html>

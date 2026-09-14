@@ -1,0 +1,1335 @@
+<!doctype html>
+<html lang="en" data-page-node-id="KRdiPW10Mh0uHjsN4oX4FB">
+<head data-page-node-id="Bnp0cgfpm2RaCYVwIlhosc">
+<meta charset="utf-8" data-page-node-id="NIRRfPeOVJ3E1BMMmrsMWU" />
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="EXk82V9QInnK2njxDHP4zz" />
+<title>Evals, plainly — interactive</title>
+<style>
+  :root{
+    --bg:#121110;
+    --panel:#1b1917;
+    --panel2:#221f1c;
+    --line:#2f2b26;
+    --line2:#3d3831;
+    --fg:#f2ece1;
+    --dim:#a79d8f;
+    --faint:#736a5f;
+    --amber:#e0a33d;
+    --teal:#4ec9a0;
+    --coral:#e5645e;
+    --violet:#a58bff;
+    --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans);
+    -webkit-font-smoothing:antialiased; overflow:hidden;
+    background-image:
+      linear-gradient(rgba(242,236,225,.020) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242,236,225,.020) 1px, transparent 1px);
+    background-size:30px 30px;
+  }
+  #boot{position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    font:500 12px/1.6 var(--mono); color:var(--faint); letter-spacing:.14em; text-align:center; padding:24px;}
+  #boot.error{color:var(--coral)}
+
+  /* ---------- shell ---------- */
+  #root{display:flex; height:100vh; width:100vw}
+  #rail{
+    width:288px; flex:0 0 288px; border-right:1px solid var(--line);
+    padding:30px 0 22px; display:flex; flex-direction:column; overflow:hidden;
+    background:rgba(10,9,9,.35);
+  }
+  #rail .mark{padding:0 28px 22px; border-bottom:1px solid var(--line); margin-bottom:16px}
+  #rail .mark .t{font:600 18px/1.15 var(--sans); letter-spacing:-.01em}
+  #rail .mark .s{font:500 10.5px/1 var(--mono); letter-spacing:.2em; color:var(--amber); margin-top:9px; text-transform:uppercase}
+  #rail ol{list-style:none; margin:0; padding:0 14px; overflow-y:auto; flex:1}
+  #rail ol::-webkit-scrollbar{width:0}
+  #rail li{margin:0}
+  #rail li button{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    display:grid; grid-template-columns:30px 1fr; gap:11px; align-items:baseline;
+    padding:9px 14px; border-radius:6px; color:var(--faint);
+    font:500 13.5px/1.4 var(--sans); transition:background .15s,color .15s;
+  }
+  #rail li button:hover{background:#1e1b18; color:var(--dim)}
+  #rail li button .n{font:600 11.5px/1.7 var(--mono); letter-spacing:.06em}
+  #rail li.on button{background:#241f16; color:var(--fg)}
+  #rail li.on button .n{color:var(--amber)}
+  #rail .foot{padding:16px 28px 0; border-top:1px solid var(--line); margin-top:14px;
+    font:500 10.5px/1.8 var(--mono); color:#5c544b; letter-spacing:.08em}
+
+  #main{flex:1; position:relative; overflow:hidden; min-width:0}
+  #slides{position:absolute; inset:0}
+  #bar{position:absolute; top:0; left:0; right:0; height:2px; background:#241f1b; z-index:5}
+  #bar i{display:block; height:100%; background:var(--amber); transition:width .4s cubic-bezier(.22,.8,.24,1)}
+
+  .slide{
+    position:absolute; inset:0; padding:48px 62px 42px;
+    display:flex; flex-direction:column; overflow:hidden;
+    animation:slideIn .38s cubic-bezier(.22,.8,.24,1) both;
+  }
+  @keyframes slideIn{from{opacity:0; transform:translateX(14px)} to{opacity:1; transform:none}}
+  .kicker{font:600 12px/1 var(--mono); letter-spacing:.22em; text-transform:uppercase; color:var(--amber); margin-bottom:16px}
+  h1{margin:0; font-size:68px; line-height:1.0; letter-spacing:-.032em; font-weight:640; max-width:900px}
+  h2{margin:0; font-size:40px; line-height:1.12; letter-spacing:-.022em; font-weight:620; max-width:840px}
+  .lead{margin-top:18px; color:var(--dim); font-size:17.5px; line-height:1.6; max-width:860px}
+  .lead b{color:var(--fg); font-weight:600}
+  .body{flex:1; display:flex; gap:34px; margin-top:30px; min-height:0}
+  .col{display:flex; flex-direction:column; min-width:0}
+  .grow{flex:1}
+
+  /* ---------- instrument readouts ---------- */
+  .readout{display:flex; align-items:flex-end; gap:11px; font-family:var(--mono)}
+  .readout .v{font-size:64px; line-height:.86; letter-spacing:-.04em; font-weight:600}
+  .readout .u{font-size:18px; line-height:1.5; color:var(--faint); letter-spacing:.06em}
+  .caption{font:600 11px/1 var(--mono); letter-spacing:.2em; text-transform:uppercase; color:var(--faint); margin-bottom:11px}
+
+  .chip{font:600 11px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+    padding:8px 12px; border:1px solid var(--line2); border-radius:4px; color:var(--dim)}
+  .chip.a{color:var(--amber); border-color:#5a4118; background:#241c0d}
+  .chip.t{color:var(--teal); border-color:#1e4a3c; background:#0f211b}
+  .chip.c{color:var(--coral); border-color:#552826; background:#231311}
+  .chip.v{color:var(--violet); border-color:#3f3560; background:#191627}
+
+  .card{border:1px solid var(--line); background:linear-gradient(180deg,var(--panel2),var(--panel));
+    border-radius:11px; padding:20px 24px}
+  .card h4{margin:0 0 10px; font:600 14px/1.35 var(--mono); letter-spacing:.07em; color:var(--fg)}
+  .card p{margin:0; font-size:15px; line-height:1.62; color:var(--dim)}
+
+  .btn{
+    appearance:none; border:1px solid var(--line2); background:var(--panel2); color:var(--fg);
+    font:600 12px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+    padding:13px 20px; border-radius:7px; cursor:pointer; transition:background .15s,border-color .15s;
+  }
+  .btn:hover{background:#2b2621; border-color:#524a41}
+  .btn.a{background:#3a2a10; border-color:#6b4d18; color:var(--amber)}
+  .btn.a:hover{background:#4a3512}
+
+  .seg{display:inline-flex; border:1px solid var(--line2); border-radius:7px; overflow:hidden; background:var(--panel)}
+  .seg button{appearance:none; border:none; background:transparent; color:var(--dim);
+    font:600 12px/1 var(--mono); letter-spacing:.14em; padding:11px 18px; cursor:pointer;
+    border-right:1px solid var(--line2); transition:background .15s,color .15s}
+  .seg button:last-child{border-right:none}
+  .seg button:hover{color:var(--fg); background:#241f1b}
+  .seg button.on{background:#33240e; color:var(--amber)}
+
+  .list{display:flex; flex-direction:column; flex:1; justify-content:space-evenly}
+  .list .row{display:grid; grid-template-columns:186px 1fr; gap:18px; align-items:start;
+    padding:13px 0; border-top:1px solid var(--line)}
+  .list .row:first-child{border-top:none}
+  .list .k{font:600 13px/1.55 var(--mono); letter-spacing:.06em; color:var(--fg); text-transform:uppercase}
+  .list .v{font-size:15.5px; line-height:1.58; color:var(--dim)}
+  .list .v b{color:var(--fg); font-weight:600}
+
+  .note{font:400 13.5px/1.68 var(--mono); color:var(--faint); border-left:2px solid var(--line2);
+    padding-left:14px; margin-top:16px}
+  .note b{color:var(--dim); font-weight:600}
+
+  /* ---------- grader matrix (sim 1) ---------- */
+  table.mx{border-collapse:collapse; width:100%; font-family:var(--mono); font-size:13px}
+  table.mx th{padding:12px 13px; text-align:left; font-weight:600; letter-spacing:.09em;
+    text-transform:uppercase; font-size:11px; color:var(--faint); border-bottom:1px solid var(--line)}
+  table.mx th.on{color:var(--amber)}
+  table.mx td{padding:14px 13px; border-bottom:1px solid #221f1c; color:var(--dim); vertical-align:top}
+  table.mx td.lbl{color:var(--fg); white-space:nowrap; font-size:13px}
+  table.mx td.cell{cursor:pointer; text-align:center; font-weight:600; letter-spacing:.06em}
+  table.mx td.cell.on{outline:1px solid var(--amber); outline-offset:-1px}
+  .pass{color:var(--teal)} .fail{color:var(--coral)}
+
+  /* ---------- 3d mounts ---------- */
+  .three{position:relative; border:1px solid var(--line); border-radius:9px;
+    background:linear-gradient(180deg,#17150f,#121110); overflow:hidden}
+  .three canvas{position:absolute; inset:0; cursor:grab}
+  .three canvas:active{cursor:grabbing}
+  .three-hint{position:absolute; left:13px; bottom:11px; font:500 10.5px/1 var(--mono);
+    letter-spacing:.16em; color:#5b5349; text-transform:uppercase; pointer-events:none}
+
+  /* ---------- ladder ---------- */
+  .rung{display:grid; grid-template-columns:30px 1fr auto; gap:16px; align-items:center;
+    padding:13px 16px; border:1px solid var(--line); border-radius:7px; background:var(--panel);
+    cursor:pointer; transition:border-color .15s,background .15s}
+  .rung:hover{border-color:var(--line2)}
+  .rung.on{border-color:#6b4d18; background:#241c0d}
+  .rung .n{font:600 12px/1 var(--mono); color:var(--faint)}
+  .rung.on .n{color:var(--amber)}
+  .rung .nm{font:600 14.5px/1.35 var(--mono); letter-spacing:.04em; color:var(--fg)}
+  .rung .meta{font:500 10.5px/1 var(--mono); letter-spacing:.13em; color:var(--faint); text-align:right}
+
+  /* ---------- sliders ---------- */
+  .sl{display:grid; grid-template-columns:140px 1fr 56px; gap:13px; align-items:center; margin-bottom:14px}
+  .sl label{font:600 12px/1 var(--mono); letter-spacing:.09em; color:var(--dim); text-transform:uppercase}
+  .sl output{font:600 13.5px/1 var(--mono); color:var(--fg); text-align:right}
+  input[type=range]{appearance:none; width:100%; height:5px; background:var(--line2); border-radius:3px; outline:none}
+  input[type=range]::-webkit-slider-thumb{appearance:none; width:17px; height:17px; border-radius:50%;
+    background:var(--amber); cursor:pointer; border:2px solid #17150f}
+  input[type=range]::-moz-range-thumb{width:17px; height:17px; border-radius:50%;
+    background:var(--amber); cursor:pointer; border:2px solid #17150f}
+
+  /* ---------- slice report ---------- */
+  .slice{display:grid; grid-template-columns:180px 66px 1fr 74px; gap:16px; align-items:center;
+    padding:13px 16px; border:1px solid var(--line); border-radius:7px; background:var(--panel); cursor:pointer}
+  .slice:hover{border-color:var(--line2)}
+  .slice.on{border-color:#6b4d18; background:#241c0d}
+  .slice .nm{font:600 14px/1.2 var(--mono); letter-spacing:.05em; color:var(--fg)}
+  .slice .n{font:500 11px/1 var(--mono); color:var(--faint); letter-spacing:.08em}
+  .track{height:9px; background:#221f1c; border-radius:3px; position:relative; overflow:hidden}
+  .track i{position:absolute; top:0; bottom:0; left:0; border-radius:3px}
+  .slice .d{font:600 13.5px/1 var(--mono); text-align:right}
+
+  /* ---------- checks ---------- */
+  .check{display:grid; grid-template-columns:26px 1fr; gap:14px; align-items:start;
+    padding:13px 16px; border:1px solid var(--line); border-radius:7px; background:var(--panel); cursor:pointer}
+  .check:hover{border-color:var(--line2)}
+  .check.on{border-color:#1e4a3c; background:#101f1a}
+  .check .box{width:18px; height:18px; border:1px solid var(--line2); border-radius:4px; margin-top:3px;
+    display:flex; align-items:center; justify-content:center; font:700 12px/1 var(--mono); color:#121110}
+  .check.on .box{background:var(--teal); border-color:var(--teal)}
+  .check .t{font-size:15px; line-height:1.5; color:var(--dim)}
+  .check.on .t{color:var(--fg)}
+
+  .antip{display:grid; grid-template-columns:1fr; gap:5px; padding:14px 17px;
+    border:1px solid #4a2b28; background:#1d1413; border-radius:7px}
+  .antip .t{font:600 14px/1.35 var(--mono); color:#ee8b85; letter-spacing:.04em}
+  .antip .d{font-size:14.5px; line-height:1.52; color:#a08d89}
+
+  .steps{display:flex; flex-direction:column; flex:1; justify-content:space-evenly}
+  .steps .st{display:grid; grid-template-columns:34px 190px 1fr; gap:20px; padding:15px 0;
+    border-top:1px solid var(--line); align-items:start}
+  .steps .st:first-child{border-top:none}
+  .steps .n{font:600 13px/1.7 var(--mono); color:var(--amber); letter-spacing:.08em}
+  .steps .t{font:600 15px/1.5 var(--mono); color:var(--fg); letter-spacing:.03em}
+  .steps .d{font-size:15.5px; line-height:1.58; color:var(--dim)}
+
+  /* ---------- vertical rhythm shrinks on shorter screens ---------- */
+  @media (max-height:960px){
+    .slide{padding:38px 54px 32px}
+    h2{font-size:36px}
+    .lead{margin-top:15px; font-size:16.5px}
+    .body{margin-top:24px; gap:28px}
+    .list .row{padding:11px 0}
+    .list .v{font-size:14.5px}
+    .card{padding:17px 20px}
+    .card p{font-size:14px}
+    .steps .st{padding:12px 0; gap:17px}
+    .steps .d{font-size:14.5px}
+    .check{padding:11px 14px}
+    .check .t{font-size:14px}
+    .antip{padding:12px 15px}
+    .antip .t{font-size:13px}
+    .antip .d{font-size:13.5px}
+    .rung{padding:11px 14px}
+    .slice{padding:11px 14px}
+    .readout .v{font-size:56px}
+    .note{font-size:12.5px; margin-top:13px}
+  }
+  @media (max-height:840px){
+    .slide{padding:30px 46px 26px}
+    h2{font-size:32px}
+    .kicker{margin-bottom:12px}
+    .lead{margin-top:12px; font-size:15.5px}
+    .body{margin-top:18px; gap:24px}
+    .readout .v{font-size:50px}
+    .list .row{padding:9px 0}
+    .list .v{font-size:13.5px}
+    .card{padding:14px 17px}
+    .card p{font-size:13px}
+    .steps .st{padding:10px 0}
+    .steps .d{font-size:13.5px}
+    .check{padding:9px 12px}
+    .check .t{font-size:13px}
+    .antip{padding:10px 13px}
+    .antip .d{font-size:12.5px}
+    .note{font-size:11.5px}
+  }
+</style>
+</head>
+<body data-page-node-id="BmBSjfHUW8IG7lxRMrSHsj">
+<div id="boot" data-page-node-id="QOcTbVGXxWmBl16zRikOmv">LOADING MODULES…</div>
+<div id="root" data-page-node-id="HedZzoTYEGVaSUpExCcIVd"></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client?deps=react@18.3.1",
+    "htm": "https://esm.sh/htm@3.1.1",
+    "three": "https://esm.sh/three@0.160.0"
+  }
+}
+</script>
+
+<script>
+  window.__booted = false;
+  setTimeout(function(){
+    if(!window.__booted){
+      var b = document.getElementById('boot');
+      if(b){ b.className='error'; b.textContent='Could not load React / three.js from the CDN. Check your network connection and reload.'; }
+    }
+  }, 12000);
+  window.addEventListener('error', function(e){
+    var b = document.getElementById('boot');
+    if(b){ b.className='error'; b.style.display='block'; b.style.padding='20px'; b.style.whiteSpace='pre-wrap'; b.style.textAlign='left';
+      b.textContent = '[boot error]\n' + (e.message || e) + '\n' + (e.filename||'') + ':' + (e.lineno||'') + ':' + (e.colno||''); }
+  });
+  window.addEventListener('unhandledrejection', function(e){
+    var b = document.getElementById('boot');
+    if(b){ b.className='error'; b.style.display='block'; b.style.padding='20px'; b.style.whiteSpace='pre-wrap'; b.style.textAlign='left';
+      b.textContent = '[unhandled rejection]\n' + (e.reason && e.reason.message ? e.reason.message : e.reason); }
+  });
+</script>
+
+<script type="module">
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import htm from 'htm';
+import * as THREE from 'three';
+
+const { useState, useEffect, useRef, useMemo } = React;
+const html = htm.bind(React.createElement);
+
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const TAU=Math.PI*2;
+const pct=(x)=>Math.round(x*100);
+
+/* deterministic RNG so the "suite" itself is stable between runs */
+function rng(seed){ let s = seed>>>0; return ()=>{ s = (s*1664525 + 1013904223)>>>0; return s/4294967296; }; }
+
+/* =========================================================================
+   three.js stage (shared with the harness deck, palette swapped)
+   ========================================================================= */
+function createStage(opts){
+  const o = Object.assign({ cameraZ:8, fov:40, phi:1.0, theta:0.4, autoRotate:0.06, target:[0,0,0] }, opts||{});
+  const mount = o.mount;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(o.fov, 1, 0.1, 400);
+  const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+  renderer.setClearColor(0x000000, 0);
+  mount.appendChild(renderer.domElement);
+  renderer.domElement.style.display='block';
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.60));
+  const key = new THREE.DirectionalLight(0xfff3e0, 1.35); key.position.set(4,7,6); scene.add(key);
+  const rim = new THREE.DirectionalLight(0xe0a33d, 0.75); rim.position.set(-6,2,-5); scene.add(rim);
+  const fill= new THREE.DirectionalLight(0xffffff, 0.30); fill.position.set(-2,4,-7); scene.add(fill);
+
+  const st = { theta:o.theta, phi:o.phi, dist:o.cameraZ, drag:false, px:0, py:0, moved:false };
+  const tgt = new THREE.Vector3(o.target[0], o.target[1], o.target[2]);
+  function place(){
+    const sp=Math.sin(st.phi);
+    camera.position.set(tgt.x+st.dist*sp*Math.sin(st.theta), tgt.y+st.dist*Math.cos(st.phi), tgt.z+st.dist*sp*Math.cos(st.theta));
+    camera.lookAt(tgt);
+  }
+  place();
+
+  const el = renderer.domElement;
+  const down=(e)=>{ st.drag=true; st.moved=false; st.px=e.clientX; st.py=e.clientY; el.setPointerCapture&&el.setPointerCapture(e.pointerId); };
+  const move=(e)=>{ if(!st.drag) return;
+    const dx=e.clientX-st.px, dy=e.clientY-st.py; st.px=e.clientX; st.py=e.clientY;
+    if(Math.abs(dx)+Math.abs(dy)>2) st.moved=true;
+    st.theta -= dx*0.006; st.phi = clamp(st.phi - dy*0.005, 0.20, Math.PI-0.20); place(); };
+  const up=(e)=>{ st.drag=false; try{el.releasePointerCapture(e.pointerId)}catch(_){} };
+  el.addEventListener('pointerdown', down);
+  window.addEventListener('pointermove', move);
+  window.addEventListener('pointerup', up);
+  el.addEventListener('touchmove', e=>e.preventDefault(), {passive:false});
+
+  const ro = new ResizeObserver(()=>{
+    const w=mount.clientWidth||1, h=mount.clientHeight||1;
+    renderer.setSize(w,h,false); el.style.width='100%'; el.style.height='100%';
+    camera.aspect=w/h; camera.updateProjectionMatrix();
+  });
+  ro.observe(mount);
+
+  let frameFn=null, raf=0, last=performance.now();
+  function tick(now){
+    const dt=Math.min(0.05,(now-last)/1000); last=now;
+    if(!st.drag) st.theta += o.autoRotate*dt;
+    place();
+    if(frameFn) frameFn(dt, now/1000);
+    renderer.render(scene, camera);
+    raf=requestAnimationFrame(tick);
+  }
+  raf=requestAnimationFrame(tick);
+
+  return { THREE, scene, camera, renderer, state:st, setFrame(f){frameFn=f;},
+    destroy(){ cancelAnimationFrame(raf); ro.disconnect();
+      el.removeEventListener('pointerdown',down);
+      window.removeEventListener('pointermove',move);
+      window.removeEventListener('pointerup',up);
+      scene.traverse(n=>{ if(n.geometry) n.geometry.dispose();
+        if(n.material){ (Array.isArray(n.material)?n.material:[n.material]).forEach(m=>{ if(m.map) m.map.dispose(); m.dispose(); }); } });
+      renderer.dispose(); if(el.parentNode) el.parentNode.removeChild(el); } };
+}
+
+function makeLabel(text,o){
+  o=o||{};
+  const color=o.color||'#e6dfd2', size=o.size||44, worldH=o.worldH||0.28, weight=o.weight||600, pad=16;
+  const cv=document.createElement('canvas');
+  let ctx=cv.getContext('2d');
+  const font=weight+' '+size+'px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+  ctx.font=font;
+  const w=Math.ceil(ctx.measureText(text).width)+pad*2, h=Math.ceil(size*1.42);
+  cv.width=w; cv.height=h;
+  ctx=cv.getContext('2d'); ctx.font=font;
+  if(o.bg){ ctx.fillStyle=o.bg; ctx.fillRect(0,0,w,h); }
+  ctx.fillStyle=color; ctx.textBaseline='middle'; ctx.fillText(text,pad,h/2+1);
+  const tex=new THREE.CanvasTexture(cv); tex.minFilter=THREE.LinearFilter; tex.magFilter=THREE.LinearFilter;
+  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false,depthWrite:false}));
+  sp.scale.set(worldH*(w/h), worldH, 1); sp.renderOrder=10;
+  return sp;
+}
+
+function ThreeCanvas(props){
+  const mountRef=useRef(null), handleRef=useRef(null);
+  useEffect(()=>{ handleRef.current = props.setup(mountRef.current);
+    return ()=>{ if(handleRef.current&&handleRef.current.destroy) handleRef.current.destroy(); handleRef.current=null; }; }, []);
+  useEffect(()=>{ const h=handleRef.current; if(h&&h.update) h.update(props.value); }, [props.value]);
+  return html`<div className="three" ref=${mountRef} style=${props.style||{}}>
+    <div className="three-hint">drag to rotate</div></div>`;
+}
+
+/* =========================================================================
+   SCENE A — a suite of 48 tasks, flipping as the run proceeds
+   ========================================================================= */
+const COL_PENDING=0x332e29, COL_PASS=0x4ec9a0, COL_FAIL=0xe5645e;
+
+function sceneSuite(mount, opts){
+  const S=createStage({mount, cameraZ:8.6, fov:38, phi:0.92, theta:0.0, autoRotate:0.05});
+  const root=new THREE.Group(); S.scene.add(root);
+
+  const COLS=8, ROWS=6, N=COLS*ROWS, SP=0.66;
+  const r=rng(20260909);
+  const P=[]; for(let i=0;i<N;i++) P.push(0.22 + 0.72*r());       // per-task true difficulty
+  const geo=new THREE.BoxGeometry(0.52,0.10,0.52);
+  const tiles=[];
+  for(let i=0;i<N;i++){
+    const c=i%COLS, rw=Math.floor(i/COLS);
+    const m=new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+      color:COL_PENDING, emissive:COL_PENDING, emissiveIntensity:0.06, roughness:0.5, metalness:0.05 }));
+    m.position.set((c-(COLS-1)/2)*SP, 0, (rw-(ROWS-1)/2)*SP);
+    root.add(m);
+    tiles.push({ m, state:0, col:new THREE.Color(COL_PENDING), flipAt:null, applied:true, pop:0 });
+  }
+  root.position.y = 0.2;
+
+  const gl=makeLabel('TASKS', {color:'#8a8074', size:40, worldH:0.24});
+  gl.position.set(0,-2.45,2.35); root.add(gl);
+
+  let runT=null, reported=true, results=[];
+  function start(){
+    results=[]; runT=performance.now()/1000; reported=false;
+    tiles.forEach((t,i)=>{ t.flipAt = runT + 0.06 + i*0.042; t.applied=false; });
+  }
+
+  S.setFrame((dt,now)=>{
+    if(runT!==null){
+      let allDone=true;
+      tiles.forEach((t,i)=>{
+        if(!t.applied && now>=t.flipAt){
+          const ok = Math.random() < P[i];
+          t.state = ok?1:2; t.applied=true; t.pop=1; results.push(ok?1:0);
+        }
+        if(!t.applied) allDone=false;
+      });
+      if(allDone && !reported){
+        reported=true; runT=null;
+        const sc = results.reduce((a,b)=>a+b,0)/N;
+        opts.doneRef && opts.doneRef.current && opts.doneRef.current(sc, results.slice());
+      }
+    }
+    tiles.forEach(t=>{
+      const target = t.state===0?COL_PENDING : t.state===1?COL_PASS : COL_FAIL;
+      t.col.lerp(new THREE.Color(target), 1-Math.pow(0.0006,dt));
+      t.m.material.color.copy(t.col);
+      t.m.material.emissive.copy(t.col);
+      t.m.material.emissiveIntensity = lerp(t.m.material.emissiveIntensity, t.state===0?0.06:0.55, 1-Math.pow(0.002,dt));
+      t.pop = Math.max(0, t.pop - dt*3.2);
+      t.m.scale.y = 1 + t.pop*1.8;
+      t.m.position.y = t.pop*0.10;
+    });
+  });
+
+  return { update:()=>start(), destroy:S.destroy };
+}
+
+/* =========================================================================
+   SCENE B — two sampling distributions; overlap = "you can't tell"
+   ========================================================================= */
+const X0=0.30, X1=0.72;                 // score axis range
+const C_BASE=new THREE.Color(0x4ec9a0), C_CAND=new THREE.Color(0xe0a33d), C_FLOOR=new THREE.Color(0x241f1b);
+function sceneDist(mount){
+  const S=createStage({mount, cameraZ:7.6, fov:40, phi:1.02, theta:0.42, autoRotate:0.05});
+  const NX=110, NZ=46;
+  const geo=new THREE.PlaneGeometry(7.0, 3.4, NX-1, NZ-1);
+  geo.rotateX(-Math.PI/2);
+  const pos=geo.attributes.position;
+  const colAttr=new Float32Array(NX*NZ*3);
+  geo.setAttribute('color', new THREE.BufferAttribute(colAttr,3));
+  const mesh=new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+    vertexColors:true, roughness:0.62, metalness:0.03, side:THREE.DoubleSide,
+    emissive:0x120f0c, emissiveIntensity:0.5 }));
+  S.scene.add(mesh);
+
+  const wire=new THREE.LineSegments(
+    new THREE.WireframeGeometry(geo),
+    new THREE.LineBasicMaterial({color:0x000000, transparent:true, opacity:0.10}));
+  S.scene.add(wire);
+
+  const lbBase=makeLabel('BASELINE', {color:'#4ec9a0', size:42, worldH:0.27});
+  const lbCand=makeLabel('CANDIDATE', {color:'#e0a33d', size:42, worldH:0.27});
+  lbBase.position.set(-2.55,0.30,-1.55); lbCand.position.set(2.55,0.30,1.55);
+  S.scene.add(lbBase); S.scene.add(lbCand);
+
+  let n=60, eff=0.06, mu=0.50, cur={n:60,eff:0.06};
+  function heights(nv, ev){
+    const sd = Math.sqrt(0.25/nv);
+    const amp = 0.55*Math.pow(0.0645/sd, 0.55);
+    const out=new Float32Array(NX*NZ);
+    return { sd, amp };
+  }
+  function rebuild(){
+    const sd = Math.sqrt(0.25/cur.n);
+    const amp = 0.60*Math.pow(0.0645/sd, 0.55);
+    const z0=-0.95, z1=0.95, wz=0.34;
+    const c=new THREE.Color();
+    for(let i=0;i<pos.count;i++){
+      const x=pos.getX(i), z=pos.getZ(i);
+      const s = X0 + ((x+3.5)/7.0)*(X1-X0);
+      const h1 = amp*Math.exp(-Math.pow(s-mu,2)/(2*sd*sd))*Math.exp(-Math.pow(z-z0,2)/(2*wz*wz));
+      const h2 = amp*Math.exp(-Math.pow(s-(mu+cur.eff),2)/(2*sd*sd))*Math.exp(-Math.pow(z-z1,2)/(2*wz*wz));
+      const y = Math.min(h1+h2, 2.6);
+      pos.setY(i, y);
+      const frac = (h1+h2)>1e-5 ? h2/(h1+h2) : 0;
+      c.copy(C_BASE).lerp(C_CAND, frac);
+      const lift = clamp(y/1.6, 0, 1);
+      c.lerp(C_FLOOR, 1-lift*0.92);
+      colAttr[i*3]=c.r; colAttr[i*3+1]=c.g; colAttr[i*3+2]=c.b;
+    }
+    pos.needsUpdate=true; geo.attributes.color.needsUpdate=true;
+    geo.computeVertexNormals();
+    wire.geometry.dispose();
+    wire.geometry = new THREE.WireframeGeometry(geo);
+  }
+  rebuild();
+  S.setFrame(()=>{});
+
+  return { update:(v)=>{ cur=v; rebuild(); }, destroy:S.destroy };
+}
+
+/* =========================================================================
+   tiny SVG line chart
+   ========================================================================= */
+function LineChart(props){
+  const w=props.w||560, h=props.h||220, pad={l:48,r:14,t:14,b:32};
+  const min=props.min!==undefined?props.min:0, max=props.max!==undefined?props.max:1;
+  const L=props.labels;
+  const X=(i)=>pad.l+(i/(L.length-1))*(w-pad.l-pad.r);
+  const Y=(v)=>h-pad.b-((v-min)/(max-min))*(h-pad.t-pad.b);
+  const gridY=[0,0.25,0.5,0.75,1].map(f=>{
+    const v=min+(max-min)*f;
+    return html`<g key=${f}>
+      <line x1=${pad.l} x2=${w-pad.r} y1=${Y(v)} y2=${Y(v)} stroke="#262320" stroke-width="1"/>
+      <text x=${pad.l-10} y=${Y(v)+4} text-anchor="end" font-family="ui-monospace,Menlo,monospace"
+        font-size="11.5" fill="#8a8074">${pct(v)}</text></g>`;
+  });
+  const paths=props.series.map((s,si)=>{
+    const d=s.values.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+    return html`<g key=${si}>
+      <path d=${d} fill="none" stroke=${s.color} stroke-width=${s.w||2} stroke-linejoin="round" stroke-linecap="round"/>
+      ${s.values.map((v,i)=>html`<circle key=${i} cx=${X(i).toFixed(1)} cy=${Y(v).toFixed(1)} r="3.4" fill=${s.color}/>`)}
+    </g>`;
+  });
+  const xl=L.map((t,i)=>html`<text key=${i} x=${X(i).toFixed(1)} y=${h-10} text-anchor="middle"
+    font-family="ui-monospace,Menlo,monospace" font-size="12" letter-spacing=".6" fill="#8a8074">${t}</text>`);
+  return html`<svg width=${w} height=${h} viewBox=${'0 0 '+w+' '+h}>${gridY}${paths}${xl}</svg>`;
+}
+
+/* =========================================================================
+   CONTENT
+   ========================================================================= */
+const PARTS = [
+  ['Task set','N inputs with a written definition of done. Held out. Versioned. Ideally harvested from real failures, not invented in a meeting.'],
+  ['System under test','The model <b>plus</b> the prompt, tools, retrieval and control flow. An eval scores a system — never a model in isolation.'],
+  ['Execution','Run each task, k times, with seeds and a sandbox. Cheap enough to run on every change, or it will not get run.'],
+  ['Grader','Turns an output into a number. This is where eval projects die, and almost nobody budgets for it.'],
+  ['The report','A headline number, a slice breakdown, and the actual failures to read. The failures are the deliverable; the score is the summary.']
+];
+
+const GRADERS = [
+  { k:'Exact match', cost:'free', obj:'total',
+    d:'String-compare against a reference. Perfectly reproducible, brittle to formatting. Penalises a correct answer for saying "1,240 dollars" instead of "$1240.00".',
+    use:'Closed-form outputs: IDs, labels, enum values, classifications.',
+    fail:'Measures your formatting convention more than the model.' },
+  { k:'Schema / regex', cost:'free', obj:'high',
+    d:'Parse the output and validate structure: required fields, types, allowed values, JSON validity. Says nothing about whether the content is right.',
+    use:'Catching malformed output before anything else grades it. Cheapest coverage you will ever buy.',
+    fail:'Passes confidently on an empty but well-formed answer.' },
+  { k:'Programmatic', cost:'cheap', obj:'total',
+    d:'Run the thing: unit tests, compile, SQL result comparison, file diff, a checksum, a linter. Deterministic and genuinely objective.',
+    use:'Anything with a computable notion of correct. The single best value in evals — build these first.',
+    fail:'Only exists where you can write the checker. Often that is the hard engineering.' },
+  { k:'Reference similarity', cost:'cheap', obj:'low',
+    d:'BLEU, ROUGE, embedding cosine against a gold answer. Rewards surface similarity to one reference phrasing.',
+    use:'Almost nothing. Tolerable as a smoke signal when you have no alternative.',
+    fail:'Scores phrasing, not correctness. A paraphrase that is more accurate scores worse.' },
+  { k:'Model grader (rubric)', cost:'moderate', obj:'medium',
+    d:'A second model scores the output against an explicit rubric, ideally with reference answers and per-criterion scores rather than one global number.',
+    use:'Open-ended quality: tone, completeness, reasoning, helpfulness — where no programmatic check exists.',
+    fail:'Uncalibrated it is an unmeasured instrument. It also prefers outputs like its own.' },
+  { k:'Pairwise preference', cost:'moderate', obj:'medium-high',
+    d:'Show two outputs, ask which is better. Judges are far more reliable at comparison than at absolute scoring.',
+    use:'A/B decisions between two candidate systems. Cheaper calibration than absolute rubrics.',
+    fail:'Position bias — always run both orders and count ties.' },
+  { k:'Human', cost:'expensive', obj:'ground truth',
+    d:'A person applies the rubric. Slow, expensive, inconsistent between raters — and still the reference everything else is measured against.',
+    use:'Building and periodically re-checking the gold set. Not for running on every commit.',
+    fail:'Used as the runtime grader it becomes the bottleneck, and people start skipping it.' }
+];
+
+/* the four outputs used in the grader simulation */
+const OUTPUTS = [
+  { t:'A', s:'{"total": "$1,240.00", "due": "2026-03-15"}' },
+  { t:'B', s:'The total is 1,240 dollars and it is due on March 15th, 2026.' },
+  { t:'C', s:'{"total": "1240", "due": "2026-03-15", "vendor": "Acme"}   ← extra field, untrimmed' },
+  { t:'D', s:'I could not locate a total in the provided email.' }
+];
+const G_KEYS = ['Exact match','Schema','Programmatic','Model grader','Human'];
+const G_MATRIX = [
+  [1,1,1,1,1],
+  [0,0,1,1,1],
+  [0,1,1,1,1],
+  [0,0,0,0,0]
+];
+const G_SUITE = [0.34, 0.58, 0.71, 0.79, 0.74];
+const G_NOTE = [
+  'Fails B and C on punctuation and field order alone. The model is fine; the ruler is rigid.',
+  'Catches "no answer" and malformed JSON. Cannot tell a wrong number from a right one.',
+  'Compares extracted fields to the known invoice. Free of formatting opinion, blind to tone.',
+  'Credits B for being correct and helpful. Also credits some wrong answers. Needs calibration.',
+  'The reference. Note it scores 5 points below the model grader — that gap is the grader’s bias.'
+];
+
+const BUCKETS = [
+  { t:'Capability', c:'var(--violet)',
+    d:'Can the system do this at all?',
+    x:'Answering "should we ship this feature / model / tool?" Usually the only eval teams build.',
+    r:'Saturates. Once everything passes it stops producing signal — retire it or make it harder.' },
+  { t:'Regression', c:'var(--teal)',
+    d:'Did it stop doing something it used to do?',
+    x:'Protecting today. Every bug you fix should become a task you keep forever.',
+    r:'The one that actually saves you. Most teams have almost none of these.' },
+  { t:'Safety', c:'var(--coral)',
+    d:'Will it do things it must not do?',
+    x:'Refusals, data leakage, prompt injection, irreversible actions, over-broad tool use.',
+    r:'Asymmetric: you need a near-zero rate, not a good average. Report the worst case, not the mean.' }
+];
+
+const ANTIPATTERNS = [
+  ['Grading with the model you are testing','Self-preference bias is real and reliably positive. Use a different family, or a programmatic check.'],
+  ['An uncalibrated judge','If you have never measured agreement with human labels, you do not have a grader. You have an opinion generator.'],
+  ['n = 10 and a victory lap','At n=10 the noise floor is around ±15 points. Most "wins" at that size are coin flips.'],
+  ['Only the aggregate','78% can be 95% on easy and 41% on hard. The average is where regressions go to hide.'],
+  ['Tuning on the set you report','If you looked at it while tuning, it is a dev set. The reported number is fiction.'],
+  ['Saturated evals','Everything passes, so nothing can regress. An eval that cannot fail is decoration.'],
+  ['Impossible evals','Everything fails, so there is no gradient to climb. You cannot tell an improvement from a nudge.'],
+  ['Two changes in one run','Now a regression and a win cancel out and you learn nothing. Change one thing.'],
+  ['Reporting pass@k as pass@1','pass@5 = 80% sounds great until you learn users get one attempt. Report both, always.'],
+  ['No regression suite','Capability scores make demos. Regression tasks make shipping safe.']
+];
+
+const LOOP = [
+  ['Harvest','Collect real failures — support tickets, reverted diffs, sessions users abandoned.'],
+  ['Write the grader first','If you cannot say how it is graded, it is not a task yet. Ungradable means unbuilt.'],
+  ['Baseline it','Freeze a baseline run. Every future claim is a comparison against this, on the same tasks.'],
+  ['Change one thing','One variable per run. Otherwise wins and regressions cancel and you learn nothing.'],
+  ['Run paired','Same tasks, both variants. Pairing removes task-difficulty variance and cuts the n you need.'],
+  ['Compare against noise','Is the delta bigger than the noise floor at this n? If not, you learned nothing — get more tasks.'],
+  ['Promote to regression','Every task you now pass is a future regression you have already prevented. Keep it forever.']
+];
+
+const SLICES = [
+  { k:'EASY',          n:13, b:0.95, a:0.97, d:'Short inputs, single step. Slightly up — noise, not news.' },
+  { k:'MEDIUM',        n:12, b:0.80, a:0.81, d:'Two or three steps. Flat.' },
+  { k:'HARD',          n:9,  b:0.62, a:0.53, d:'Nine points down. This is the story, and the headline hid it.' },
+  { k:'TOOL-HEAVY',    n:8,  b:0.71, a:0.74, d:'Five or more tool calls. Up — the tool changes helped here.' },
+  { k:'LONG CONTEXT',  n:6,  b:0.68, a:0.70, d:'Over 40k tokens. Up slightly, on the smallest sample — treat as unknown.' }
+];
+
+const CHECKS = [
+  'Tasks were harvested from real failures, not invented',
+  'A programmatic checker exists wherever one is possible',
+  'Any model grader is calibrated against human labels',
+  'There is a held-out set that is touched rarely',
+  'n is large enough for the decisions being made',
+  'Comparisons are paired against a frozen baseline',
+  'A slice report ships next to every headline number',
+  'Every fixed bug has become a permanent regression task'
+];
+
+const TAKES = [
+  ['An eval is an instrument, not a scoreboard','It has bias and variance of its own. Measure those before you trust a single number it prints.'],
+  ['The grader is the project','Anyone can write tasks. Turning an output into a defensible number is the actual engineering.'],
+  ['Every number is a sample','48 tasks is 48 coin flips. Run it twice and you get two different numbers. That is the point, not a bug.'],
+  ['Noise floor before victory lap','At n=20 you cannot see a 6-point improvement. Get more tasks or stop claiming wins.'],
+  ['Pair everything','Same tasks, both variants. It is the cheapest variance reduction available and most teams skip it.'],
+  ['Slices, not averages','The aggregate is where regressions hide. The hard slice is where the truth lives.'],
+  ['The failures are the deliverable','The score tells you whether to look. The failing transcripts tell you what to fix.']
+];
+
+/* =========================================================================
+   SLIDES
+   ========================================================================= */
+function Shell(p){
+  return html`<div className="slide">
+    <div className="kicker">${p.kicker}</div>
+    <h2>${p.title}</h2>
+    ${p.lead?html`<div className="lead">${p.lead}</div>`:null}
+    <div className="body">${p.children}</div>
+  </div>`;
+}
+
+/* -- 1 title -- */
+function S1(){
+  return html`<div className="slide" style=${{justifyContent:'center'}}>
+    <div className="kicker">MEASUREMENT FOR SYSTEMS THAT TALK</div>
+    <h1 style=${{fontSize:88}}>Evals, plainly</h1>
+    <div className="lead" style=${{maxWidth:760, fontSize:19, marginTop:26}}>
+      An eval is a repeatable procedure that turns <b>“is it better?”</b> into two numbers you can
+      compare. Everyone builds the tasks. Almost nobody builds the <b>instrument</b> — and the
+      instrument is the whole subject.
+    </div>
+    <div style=${{display:'flex', gap:9, marginTop:32, flexWrap:'wrap'}}>
+      <span className="chip a">16 sections</span>
+      <span className="chip">6 live simulations</span>
+      <span className="chip">3D scenes are draggable</span>
+      <span className="chip">arrow keys · click a chapter</span>
+    </div>
+  </div>`;
+}
+
+/* -- 2 the question -- */
+function S2(){
+  const [after, setAfter]=useState(7);
+  const [hist, setHist]=useState([7]);
+  const rerun=()=>{
+    let k=0; for(let i=0;i<12;i++) if(Math.random()<0.54) k++;
+    setAfter(k); setHist(h=>[k].concat(h).slice(0,8));
+  };
+  return html`<${Shell} kicker="02 — THE QUESTION" title="You changed something. Did it get better?"
+    lead=${html`This is the only question an eval answers. Everything else in this deck is about why the obvious answer to it is usually wrong.`}>
+    <div className="col" style=${{width:470, flex:'0 0 470px'}}>
+      <div className="card" style=${{padding:'26px 28px'}}>
+        <div className="caption">A SUITE OF 12 TASKS</div>
+        <div style=${{display:'flex', gap:34, marginTop:16}}>
+          <div>
+            <div className="readout"><span className="v" style=${{color:'var(--dim)'}}>6</span><span className="u">/12</span></div>
+            <div className="caption" style=${{marginTop:10}}>BEFORE</div>
+          </div>
+          <div>
+            <div className="readout"><span className="v" style=${{color:'var(--amber)'}}>${after}</span><span className="u">/12</span></div>
+            <div className="caption" style=${{marginTop:10}}>AFTER</div>
+          </div>
+        </div>
+        <div style=${{marginTop:20, display:'flex', alignItems:'center', gap:14}}>
+          <button className="btn a" onClick=${rerun}>Run the same thing again</button>
+          <div style=${{fontWeight:500, fontSize:11.5, lineHeight:1.6, fontFamily:'var(--mono)', color:'var(--faint)', letterSpacing:'.1em'}}>NOTHING CHANGED</div>
+        </div>
+        <div style=${{marginTop:18, display:'flex', gap:5, alignItems:'flex-end', height:44}}>
+          ${hist.map((v,i)=>html`<div key=${i} title=${v+'/12'}
+            style=${{width:22, height:8+v*2.6, background:i===0?'var(--amber)':'#3a332b', borderRadius:2}}></div>`)}
+        </div>
+        <div className="caption" style=${{marginTop:8}}>LAST ${hist.length} RUNS OF THE IDENTICAL SYSTEM</div>
+      </div>
+      <div className="note">Same code. Same tasks. Scores from ${Math.min.apply(null,hist)} to ${Math.max.apply(null,hist)} out of 12.
+        The system did not change between those runs — only the sample did.</div>
+    </div>
+    <div className="col grow" style=${{justifyContent:'center'}}>
+      <div className="list">
+        ${[
+          ['Without a procedure','You have an anecdote: “it felt better on the three things I tried.” Anecdotes are not wrong, they are just uncomparable.'],
+          ['With a procedure','You have a measurement. It has a number, a sample size, and a noise floor you can state out loud.'],
+          ['The trap','The number looks precise. <b>72.4%</b> reads like a fact. It is one draw from a distribution whose width you have not measured.'],
+          ['The move','Before asking whether a change helped, ask how wide the distribution is. That width decides what you are allowed to conclude.']
+        ].map(([k,v],i)=>html`<div className="row" key=${k}><div className="k">${k}</div><div className="v" dangerouslySetInnerHTML=${{__html:v}}></div></div>`)}
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 3 anatomy -- */
+function S3(){
+  return html`<${Shell} kicker="03 — ANATOMY" title="Five parts. The last one is where projects die."
+    lead=${html`An eval is not a benchmark file. It is a small piece of measurement equipment, and every component below can be built badly.`}>
+    <div className="col grow" style=${{gap:0, justifyContent:'space-evenly'}}>
+      ${PARTS.map(([k,v],i)=>html`
+        <div key=${k} style=${{display:'grid', gridTemplateColumns:'52px 200px 1fr', gap:22, padding:'17px 0',
+             borderTop:i===0?'none':'1px solid var(--line)', alignItems:'start'}}>
+          <div style=${{font:'600 13px/1.75 var(--mono)', color:'var(--amber)', letterSpacing:'.1em'}}>${String(i+1).padStart(2,'0')}</div>
+          <div style=${{font:'600 15px/1.5 var(--mono)', color:'var(--fg)', letterSpacing:'.04em'}}>${k}</div>
+          <div style=${{fontSize:16, lineHeight:1.6, color:'var(--dim)'}} dangerouslySetInnerHTML=${{__html:v}}></div>
+        </div>`)}
+    </div>
+  <//>`;
+}
+
+/* -- 4 grader sim -- */
+function S4(){
+  const [g, setG]=useState(3);
+  const col = G_MATRIX.map(r=>r[g]);
+  const passed = col.reduce((a,b)=>a+b,0);
+  return html`<${Shell} kicker="04 — THE INSTRUMENT" title="Same outputs. Different grader. Number moves 45 points."
+    lead=${html`One task: extract the invoice total and due date. Four real model outputs, five graders. The model never changes — only the ruler does.`}>
+    <div className="col grow">
+      <table className="mx">
+        <thead><tr>
+          <th style=${{width:280}}>OUTPUT</th>
+          ${G_KEYS.map((k,i)=>html`<th key=${k} className=${i===g?'on':''} style=${{cursor:'pointer', textAlign:'center'}}
+            onClick=${()=>setG(i)}>${k}</th>`)}
+        </tr></thead>
+        <tbody>
+          ${OUTPUTS.map((o,ri)=>html`<tr key=${o.t}>
+            <td className="lbl">${o.t} · <span style=${{color:'var(--faint)'}}>${o.s}</span></td>
+            ${G_MATRIX[ri].map((v,ci)=>html`
+              <td key=${ci} className=${'cell'+(ci===g?' on':'')} onClick=${()=>setG(ci)}>
+                <span className=${v?'pass':'fail'}>${v?'PASS':'FAIL'}</span></td>`)}
+          </tr>`)}
+        </tbody>
+      </table>
+
+      <div style=${{display:'flex', gap:26, alignItems:'flex-end', marginTop:26, flex:1}}>
+        <div>
+          <div className="caption">THIS GRADER, ON 200 TASKS</div>
+          <div className="readout"><span className="v" style=${{color:'var(--amber)'}}>${pct(G_SUITE[g])}</span><span className="u">%</span></div>
+        </div>
+        <div style=${{flex:1}}>
+          <div className="caption">THE SAME GRADER, SPREAD ACROSS ALL FIVE</div>
+          <div style=${{display:'flex', alignItems:'flex-end', gap:7, height:96, marginTop:2}}>
+            ${G_SUITE.map((v,i)=>html`
+              <div key=${i} onClick=${()=>setG(i)} title=${G_KEYS[i]+': '+pct(v)+'%'}
+                style=${{flex:1, height:6+v*82, background:i===g?'var(--amber)':'#3a332b', borderRadius:'3px 3px 0 0', cursor:'pointer'}}></div>`)}
+          </div>
+          <div style=${{display:'flex', gap:7, marginTop:6}}>
+            ${G_SUITE.map((v,i)=>html`<div key=${i} style=${{flex:1, textAlign:'center',
+              font:'600 11px/1.3 var(--mono)', color:i===g?'var(--amber)':'var(--faint)'}}>${pct(v)}</div>`)}
+          </div>
+        </div>
+      </div>
+      <div className="note" style=${{marginTop:14}} dangerouslySetInnerHTML=${{__html:'<b>'+G_KEYS[g]+'.</b> '+G_NOTE[g]}}></div>
+    </div>
+    <div className="col" style=${{width:310, flex:'0 0 310px'}}>
+      <div className="card">
+        <h4 style=${{color:'var(--amber)'}}>WHAT JUST HAPPENED</h4>
+        <p>You scored this output set anywhere from <b style=${{color:'var(--fg)'}}>34%</b> to
+        <b style=${{color:'var(--fg)'}}>79%</b> without the model producing a single new token.</p>
+        <p style=${{marginTop:10}}>So when someone reports “our eval says 78%”, the first question is never
+        <i>how many tasks</i>. It is <b style=${{color:'var(--fg)'}}>graded by what</b>.</p>
+      </div>
+      <div className="note">A grader is a measurement instrument. Instruments have bias and variance.
+      Publish both, or the number is decoration.</div>
+    </div>
+  <//>`;
+}
+
+/* -- 5 grader ladder -- */
+function S5(){
+  const [i, setI]=useState(2);
+  const g=GRADERS[i];
+  return html`<${Shell} kicker="05 — THE LADDER" title="Seven ways to grade, ordered by how much you can trust them"
+    lead=${html`Objectivity and cost pull in opposite directions. The craft is spending programmatic checks everywhere you can, and model graders only where you must.`}>
+    <div className="col" style=${{width:440, flex:'0 0 440px', gap:9, justifyContent:'space-evenly'}}>
+      ${GRADERS.map((x,k)=>html`
+        <div className=${'rung'+(k===i?' on':'')} key=${x.k} onClick=${()=>setI(k)}>
+          <div className="n">${String(k+1).padStart(2,'0')}</div>
+          <div className="nm">${x.k}</div>
+          <div className="meta">${x.cost.toUpperCase()}</div>
+        </div>`)}
+    </div>
+    <div className="col grow">
+      <div style=${{font:'600 23px/1.2 var(--mono)', letterSpacing:'-.01em'}}>${g.k}</div>
+      <div style=${{display:'flex', gap:8, marginTop:11}}>
+        <span className="chip a">COST: ${g.cost.toUpperCase()}</span>
+        <span className="chip">OBJECTIVITY: ${g.obj.toUpperCase()}</span>
+      </div>
+      <div style=${{marginTop:18, fontSize:16.5, lineHeight:1.62, color:'var(--dim)'}}>${g.d}</div>
+      <div style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginTop:18}}>
+        <div className="card"><h4 style=${{color:'var(--teal)'}}>USE IT FOR</h4><p>${g.use}</p></div>
+        <div className="card" style=${{borderColor:'#4a2b28'}}><h4 style=${{color:'#ee8b85'}}>FAILURE MODE</h4><p>${g.fail}</p></div>
+      </div>
+      <div className="note">If you use a model grader, <b>calibrate it</b>: label 100–200 outputs by hand,
+      measure agreement, publish the confusion matrix. Where the judge disagrees with humans is where your number is lying.</div>
+    </div>
+  <//>`;
+}
+
+/* -- 6 run the suite (3D) -- */
+function S6(){
+  const [runs, setRuns]=useState([]);
+  const [cur, setCur]=useState(null);
+  const [tok, setTok]=useState(0);
+  const doneRef=useRef(null);
+  doneRef.current=(sc)=>{ setCur(sc); setRuns(r=>[sc].concat(r).slice(0,6)); };
+  const mean = runs.length? runs.reduce((a,b)=>a+b,0)/runs.length : 0;
+  const spread = runs.length>1 ? (Math.max.apply(null,runs)-Math.min.apply(null,runs)) : 0;
+  return html`<${Shell} kicker="06 — RUN IT" title="48 tasks is 48 coin flips"
+    lead=${html`Press run. Then press it again. The system is identical both times — only the sample differs. That difference is what every eval number is made of.`}>
+    <div className="col" style=${{flex:'1.15 1 0', minWidth:360, maxWidth:680}}>
+      <${ThreeCanvas} style=${{width:'100%', height:430}} setup=${(el)=>sceneSuite(el,{doneRef})} value=${tok} />
+    </div>
+    <div className="col grow" style=${{minWidth:330}}>
+      <div style=${{display:'flex', alignItems:'flex-end', gap:24, flexWrap:'wrap'}}>
+        <div>
+          <div className="caption">THIS RUN</div>
+          <div className="readout"><span className="v" style=${{color:cur===null?'var(--faint)':'var(--amber)'}}>${cur===null?'—':pct(cur)}</span><span className="u">%</span></div>
+        </div>
+        <div>
+          <div className="caption">MEAN OF ${runs.length||'—'} RUNS</div>
+          <div className="readout"><span className="v" style=${{color:'var(--teal)', fontSize:46}}>${runs.length?pct(mean):'—'}</span><span className="u">%</span></div>
+        </div>
+        <div>
+          <div className="caption">SPREAD</div>
+          <div className="readout"><span className="v" style=${{color:'var(--coral)', fontSize:46}}>${runs.length>1?'±'+pct(spread/2):'—'}</span><span className="u">pt</span></div>
+        </div>
+        <button className="btn a" onClick=${()=>setTok(t=>t+1)}>${runs.length?'RUN AGAIN':'RUN THE SUITE'}</button>
+      </div>
+      <div className="list" style=${{marginTop:6}}>
+        ${[
+          ['What you are seeing','Each tile has a fixed true difficulty. Every run draws a fresh pass/fail from it. The suite never changes; the sample always does.'],
+          ['Why it matters','A single run gives one draw. Reporting it as “the score” implies a precision you have not earned.'],
+          ['What to do','Run the suite several times, or compute the standard error analytically: SE = √(p(1−p)/n). At n=48 that is about ±7 points.'],
+          ['The discipline','Quote the number <b>with</b> its noise floor: “71% ± 7”. Nobody does this, and it is the whole difference between a measurement and a vibe.']
+        ].map(([k,v])=>html`<div className="row" key=${k}><div className="k">${k}</div><div className="v" dangerouslySetInnerHTML=${{__html:v}}></div></div>`)}
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 7 significance (3D) -- */
+function S7(){
+  const [n, setN]=useState(60);
+  const [eff, setEff]=useState(6);
+  const [paired, setPaired]=useState(true);
+  const p=0.5;
+  const se = Math.sqrt(2*p*(1-p)/n) * (paired?0.62:1);
+  const need = 1.96*se;
+  const ok = (eff/100) > need;
+  return html`<${Shell} kicker="07 — IS IT REAL?" title="The noise floor decides what you are allowed to claim"
+    lead=${html`Two systems, a true difference of ${eff} points. Whether you can see it depends almost entirely on how many tasks you ran — and on whether you paired them.`}>
+    <div className="col" style=${{flex:'1.1 1 0', minWidth:340, maxWidth:640}}>
+      <${ThreeCanvas} style=${{width:'100%', height:410}} setup=${(el)=>sceneDist(el)} value=${{n, eff:eff/100}} />
+    </div>
+    <div className="col grow" style=${{minWidth:320}}>
+      <div style=${{display:'flex', gap:22, alignItems:'flex-end', marginBottom:8, flexWrap:'wrap'}}>
+        <div>
+          <div className="caption">TRUE EFFECT</div>
+          <div className="readout"><span className="v" style=${{color:'var(--fg)', fontSize:46}}>${eff}</span><span className="u">pt</span></div>
+        </div>
+        <div>
+          <div className="caption">NOISE FLOOR</div>
+          <div className="readout"><span className="v" style=${{color:'var(--coral)', fontSize:46}}>±${pct(need)}</span><span className="u">pt</span></div>
+        </div>
+        <div>
+          <div className="caption">VERDICT</div>
+          <div style=${{font:'600 18px/1.9 var(--mono)', letterSpacing:'.08em', color:ok?'var(--teal)':'var(--coral)'}}>
+            ${ok?'SIGNIFICANT':'NOT SIGNIFICANT'}</div>
+        </div>
+      </div>
+      <div style=${{maxWidth:430}}>
+        <div className="sl"><label>TASKS (n)</label>
+          <input type="range" min="10" max="800" step="10" value=${n} onInput=${(e)=>setN(+e.target.value)} />
+          <output>${n}</output></div>
+        <div className="sl"><label>TRUE EFFECT</label>
+          <input type="range" min="0" max="20" step="1" value=${eff} onInput=${(e)=>setEff(+e.target.value)} />
+          <output>${eff}pt</output></div>
+        <div style=${{display:'flex', gap:8, marginTop:4}}>
+          <${SegB} value=${paired} onChange=${setPaired} />
+        </div>
+      </div>
+      <div className="list" style=${{marginTop:12}}>
+        ${[
+          ['The formula','SE of the difference ≈ √(2p(1−p)/n). At p=0.5 and n=20 that is ±15 points — larger than most real improvements.'],
+          ['Pairing is free variance reduction','Same tasks, both variants. Task difficulty cancels out. Here it cuts the floor by roughly a third, which is often the difference between inconclusive and done.'],
+          ['The rule','Do not claim a win smaller than about twice the floor. Get more tasks instead of a better narrative.']
+        ].map(([k,v])=>html`<div className="row" key=${k}><div className="k">${k}</div><div className="v">${v}</div></div>`)}
+      </div>
+    </div>
+  <//>`;
+}
+const SegB=(p)=>html`<div className="seg">
+  <button className=${p.value?'on':''} onClick=${()=>p.onChange(true)}>PAIRED</button>
+  <button className=${!p.value?'on':''} onClick=${()=>p.onChange(false)}>UNPAIRED</button>
+</div>`;
+
+/* -- 8 pass@k -- */
+function S8(){
+  const [k, setK]=useState(1);
+  const r=rng(777);
+  const P=[]; for(let i=0;i<160;i++) P.push(0.18+0.62*r());
+  const at1 = P.reduce((a,p)=>a+p,0)/P.length;
+  const series=[
+    { name:'at least one of k', color:'#4ec9a0', values:Array.from({length:8},(_,i)=>P.reduce((a,p)=>a+(1-Math.pow(1-p,i+1)),0)/P.length) },
+    { name:'all k attempts',    color:'#e5645e', values:Array.from({length:8},(_,i)=>P.reduce((a,p)=>a+Math.pow(p,i+1),0)/P.length) }
+  ];
+  const passK = series[0].values[k-1], allK = series[1].values[k-1];
+  const interp = k===1 ? 'One attempt. This is what a user actually experiences.'
+    : (passK-at1 > 0.18
+       ? 'The gap between pass@1 and this is large — the capability is already there. Your harness is not surfacing it. Fix verification, retrieval and feedback, not the model.'
+       : 'Still close to pass@1 — the model genuinely cannot do these tasks yet. More attempts will not save you.');
+  return html`<${Shell} kicker="08 — PASS@K" title="One number is never enough: report the ceiling and the floor"
+    lead=${html`pass@1 is what users get. pass@k is what the system is capable of. The distance between them tells you what kind of problem you have.`}>
+    <div className="col grow">
+      <${LineChart} w=${700} h=${330} labels=${['1','2','3','4','5','6','7','8']} series=${series} min=${0} max=${1} />
+      <div style=${{display:'flex', gap:10, marginTop:6, flexWrap:'wrap'}}>
+        <span className="chip t">— AT LEAST ONE OF K (capability)</span>
+        <span className="chip c">— ALL K ATTEMPTS (reliability)</span>
+      </div>
+      <div style=${{maxWidth:520, marginTop:14}}>
+        <div className="sl"><label>ATTEMPTS (k)</label>
+          <input type="range" min="1" max="8" step="1" value=${k} onInput=${(e)=>setK(+e.target.value)} />
+          <output>${k}</output></div>
+      </div>
+      <div className="note" style=${{maxWidth:560}}>${interp}</div>
+    </div>
+    <div className="col" style=${{width:340, flex:'0 0 340px'}}>
+      <div className="card" style=${{marginBottom:10}}>
+        <div className="caption">PASS @ 1</div>
+        <div className="readout"><span className="v" style=${{color:'var(--fg)', fontSize:50}}>${pct(at1)}</span><span className="u">%</span></div>
+        <p style=${{marginTop:8}}>What a user gets on the first try. The number that matters for product.</p>
+      </div>
+      <div className="card" style=${{marginBottom:10}}>
+        <div className="caption">PASS @ ${k}</div>
+        <div className="readout"><span className="v" style=${{color:'var(--teal)', fontSize:50}}>${pct(passK)}</span><span className="u">%</span></div>
+        <p style=${{marginTop:8}}>At least one of ${k} attempts succeeded. The capability ceiling.</p>
+      </div>
+      <div className="card">
+        <div className="caption">ALL ${k} PASS</div>
+        <div className="readout"><span className="v" style=${{color:'var(--coral)', fontSize:50}}>${pct(allK)}</span><span className="u">%</span></div>
+        <p style=${{marginTop:8}}>Consistency. Low here with high pass@k means the system is capable but erratic.</p>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 9 three buckets -- */
+function S9(){
+  return html`<${Shell} kicker="09 — THREE BUCKETS" title="Capability, regression, safety — you need all three"
+    lead=${html`Most teams build capability evals because they are fun, and end up with almost no regression coverage. Regression is the one that lets you ship on a Friday.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:16, alignContent:'space-evenly'}}>
+      ${BUCKETS.map(b=>html`<div className="card" key=${b.t} style=${{borderColor:'#3d3831'}}>
+        <h4 style=${{color:b.c}}>${b.t.toUpperCase()}</h4>
+        <p style=${{color:'var(--fg)', marginBottom:12, fontSize:15.5}}>${b.d}</p>
+        <p style=${{marginBottom:10}}>${b.x}</p>
+        <p style=${{color:'var(--faint)'}}>${b.r}</p>
+      </div>`)}
+    </div>
+    <div className="col grow">
+      <div className="list">
+        ${[
+          ['The asymmetry','A capability eval that goes 60% → 80% is exciting. A regression eval that stays at 100% is invisible — and is the reason nothing broke this quarter.'],
+          ['Cheapest task you will ever write','Every bug you fix is a task someone already wrote for you. It arrived with a reproduction and a definition of done.'],
+          ['Safety is not an average','“99.2% safe” is meaningless. Report the count of violations and the worst case. One catastrophic failure is not a rounding error.'],
+          ['Retire what saturates','An eval where everything passes produces no gradient. Make it harder or delete it — do not keep reporting it.']
+        ].map(([k,v])=>html`<div className="row" key=${k}><div className="k">${k}</div><div className="v">${v}</div></div>`)}
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 10 overfitting -- */
+function S10(){
+  const [e, setE]=useState(35);
+  const xs=Array.from({length:11},(_,i)=>i*10);
+  const dev = xs.map(v=>0.52 + 0.38*(1-Math.exp(-v/35)) + 0.10*(v/100));
+  const held= xs.map(v=>0.52 + 0.30*(1-Math.exp(-v/60)) - 0.26*Math.pow(v/100,1.8));
+  const di=Math.round(e/10), dNow=dev[di], hNow=held[di];
+  const gap=dNow-hNow;
+  const series=[
+    {name:'dev', color:'#e0a33d', values:dev},
+    {name:'held', color:'#4ec9a0', values:held}
+  ];
+  return html`<${Shell} kicker="10 — OVERFITTING" title="If you looked at it while tuning, it is a dev set"
+    lead=${html`Every pass over the eval while you tune leaks information into your changes. Watch what happens to the set you did <b>not</b> look at.`}>
+    <div className="col grow">
+      <${LineChart} w=${680} h=${330} labels=${xs.map(String)} series=${series} min=${0.4} max=${1} />
+      <div style=${{display:'flex', gap:10, marginTop:6}}>
+        <span className="chip a">— DEV (you are staring at this)</span>
+        <span className="chip t">— HELD OUT (touched rarely)</span>
+      </div>
+      <div style=${{maxWidth:520, marginTop:14}}>
+        <div className="sl"><label>TUNING PRESSURE</label>
+          <input type="range" min="0" max="100" step="5" value=${e} onInput=${(ev)=>setE(+ev.target.value)} />
+          <output>${e}</output></div>
+      </div>
+      <div style=${{display:'flex', gap:26, marginTop:6}}>
+        <div><div className="caption">DEV</div><div className="readout"><span className="v" style=${{color:'var(--amber)', fontSize:44}}>${pct(dNow)}</span><span className="u">%</span></div></div>
+        <div><div className="caption">HELD OUT</div><div className="readout"><span className="v" style=${{color:'var(--teal)', fontSize:44}}>${pct(hNow)}</span><span className="u">%</span></div></div>
+        <div><div className="caption">THE ILLUSION</div><div className="readout"><span className="v" style=${{color:'var(--coral)', fontSize:44}}>+${pct(gap)}</span><span className="u">pt</span></div></div>
+      </div>
+    </div>
+    <div className="col" style=${{width:330, flex:'0 0 330px'}}>
+      <div className="card" style=${{marginBottom:10}}>
+        <h4 style=${{color:'var(--amber)'}}>WHAT IS HAPPENING</h4>
+        <p>${gap<0.06
+          ? 'Both sets agree. Early tuning is genuinely improving the system — this is the region you want to work in.'
+          : 'Dev keeps climbing while held-out has flattened or turned down. You are now fitting the eval, not the problem.'}</p>
+      </div>
+      <div className="card">
+        <h4 style=${{color:'var(--coral)'}}>THE OTHER LEAK</h4>
+        <p><b style=${{color:'var(--fg)'}}>Contamination.</b> If eval tasks leaked into few-shot examples, prompt text or fine-tuning data, the number is fiction. Version the set, and never paste a task into a prompt.</p>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 11 slicing -- */
+function S11(){
+  const [i, setI]=useState(-1);
+  const tot=(k)=>SLICES.reduce((a,s)=>a+s[k]*s.n,0)/SLICES.reduce((a,s)=>a+s.n,0);
+  const aggB=tot('b'), aggA=tot('a');
+  return html`<${Shell} kicker="11 — SLICE IT" title="The headline moved 0 points. One slice moved 9."
+    lead=${html`Two versions of the same system. The aggregate says nothing happened. Click any slice.`}>
+    <div className="col grow">
+      <div style=${{display:'flex', gap:30, alignItems:'flex-end', marginBottom:18}}>
+        <div>
+          <div className="caption">AGGREGATE BEFORE</div>
+          <div className="readout"><span className="v" style=${{color:'var(--dim)', fontSize:48}}>${pct(aggB)}</span><span className="u">%</span></div>
+        </div>
+        <div>
+          <div className="caption">AGGREGATE AFTER</div>
+          <div className="readout"><span className="v" style=${{color:'var(--dim)', fontSize:48}}>${pct(aggA)}</span><span className="u">%</span></div>
+        </div>
+        <div>
+          <div className="caption">HEADLINE DELTA</div>
+          <div style=${{font:'600 24px/2.1 var(--mono)', color:'var(--dim)'}}>${(aggA-aggB>=0?'+':'')+pct(aggA-aggB)} pt</div>
+        </div>
+        <div style=${{fontWeight:500, fontSize:12.5, lineHeight:1.6, fontFamily:'var(--mono)', color:'var(--faint)', letterSpacing:'.06em', maxWidth:220}}>
+          LOOKS LIKE NOTHING HAPPENED</div>
+      </div>
+      <div style=${{display:'flex', flexDirection:'column', gap:9, flex:1, justifyContent:'space-evenly'}}>
+        ${SLICES.map((s,si)=>{
+          const d=s.a-s.b;
+          return html`<div className=${'slice'+(i===si?' on':'')} key=${s.k} onClick=${()=>setI(i===si?-1:si)}>
+            <div className="nm">${s.k}</div>
+            <div className="n">n=${s.n}</div>
+            <div className="track">
+              <i style=${{width:pct(s.b)+'%', background:'#4a4137'}}></i>
+              <i style=${{width:pct(s.a)+'%', background:d>=0?'var(--teal)':'var(--coral)', opacity:.85, height:3, top:4}}></i>
+            </div>
+            <div className="d" style=${{color:Math.abs(d)<0.02?'var(--faint)':(d>0?'var(--teal)':'var(--coral)')}}>
+              ${d>=0?'+':'−'}${Math.abs(pct(d))}</div>
+          </div>`;
+        })}
+      </div>
+      <div className="note" style=${{marginTop:12}}>${i<0
+        ? 'Grey bar = before. Coloured bar = after. The −9 on HARD is the entire story, and the aggregate hid it completely.'
+        : SLICES[i].d}</div>
+    </div>
+    <div className="col" style=${{width:310, flex:'0 0 310px'}}>
+      <div className="card" style=${{marginBottom:10}}>
+        <h4 style=${{color:'var(--amber)'}}>WHY THIS HAPPENS</h4>
+        <p>Slices are unevenly sized and the easy ones dominate the average. A real collapse in the hardest
+        slice can be arithmetically invisible at 48 tasks.</p>
+      </div>
+      <div className="card">
+        <h4>ALWAYS SLICE BY</h4>
+        <p>Difficulty · task type · input length · tool count · language · whether retrieval fired ·
+        whether the verifier ran. If a slice has n &lt; 8, report it as unknown rather than as a number.</p>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 12 offline vs online -- */
+function S12(){
+  return html`<${Shell} kicker="12 — OFFLINE VS ONLINE" title="Offline for speed, online for truth"
+    lead=${html`Neither substitutes for the other. Offline is how you iterate; online is how you find out whether any of it mattered.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, alignContent:'space-evenly'}}>
+      <div className="card">
+        <h4 style=${{color:'var(--violet)'}}>OFFLINE</h4>
+        <p style=${{marginBottom:9}}>Fixed tasks, run on demand, before merge.</p>
+        <p style=${{marginBottom:9}}><b style=${{color:'var(--teal)'}}>Good:</b> fast, cheap, repeatable, catches regressions pre-ship, safe to run on untrusted changes.</p>
+        <p><b style=${{color:'var(--coral)'}}>Bad:</b> goes stale, gets contaminated, measures the tasks you imagined rather than the work users actually send.</p>
+      </div>
+      <div className="card">
+        <h4 style=${{color:'var(--amber)'}}>ONLINE</h4>
+        <p style=${{marginBottom:9}}>Real traffic: A/B, canary, shadow runs, guardrail metrics.</p>
+        <p style=${{marginBottom:9}}><b style=${{color:'var(--teal)'}}>Good:</b> ground truth, real distribution, catches things no task set predicted.</p>
+        <p><b style=${{color:'var(--coral)'}}>Bad:</b> slow, needs volume, can hurt users, hard to attribute, expensive to iterate against.</p>
+      </div>
+      <div className="card" style=${{gridColumn:'1 / -1'}}>
+        <h4>SIGNALS WORTH WATCHING ONLINE</h4>
+        <p>Acceptance rate · edit distance to what the user finally kept · retry and undo rate ·
+        time to resolution · escalation to a human · session abandonment · guardrail trip rate.
+        Each of these is a candidate offline task the moment it starts moving.</p>
+      </div>
+    </div>
+    <div className="col grow">
+      <div className="list">
+        ${[
+          ['The loop','Online surfaces a failure mode → you write it as an offline task → you iterate offline in minutes → you confirm online. Offline is the workshop; online is the road.'],
+          ['Shadow mode','Run the candidate alongside production without showing output. Free signal, zero user risk. The most under-used eval technique there is.'],
+          ['Guardrails are evals','A rate limit, a refusal threshold, a cost cap — each is a metric with an alert. Treat them as a safety eval that runs continuously.'],
+          ['Watch for drift','An offline suite that has not gained a task in three months is measuring last quarter’s product.']
+        ].map(([k,v])=>html`<div className="row" key=${k}><div className="k">${k}</div><div className="v">${v}</div></div>`)}
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 13 loop -- */
+function S13(){
+  return html`<${Shell} kicker="13 — THE LOOP" title="Eval-driven development, in seven steps"
+    lead=${html`The order matters. Most teams start at step 3 and wonder why the suite never seems to predict anything.`}>
+    <div className="col grow steps">
+      ${LOOP.map(([t,d],i)=>html`
+        <div className="st" key=${t}>
+          <div className="n">${String(i+1).padStart(2,'0')}</div>
+          <div className="t">${t}</div>
+          <div className="d">${d}</div>
+        </div>`)}
+    </div>
+    <div className="col" style=${{width:310, flex:'0 0 310px'}}>
+      <div className="card" style=${{marginBottom:10}}>
+        <h4 style=${{color:'var(--amber)'}}>THE TEST OF A GOOD TASK</h4>
+        <p>Can you write the grader in under an hour, and would you believe it if it failed? If either answer is no, it is not a task yet.</p>
+      </div>
+      <div className="card">
+        <h4>THE TEST OF A GOOD SUITE</h4>
+        <p>It fails when you break something on purpose. Try it: revert a real fix and check the suite goes red. If it stays green, the suite is decoration.</p>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 14 anti-patterns -- */
+function S14(){
+  return html`<${Shell} kicker="14 — ANTI-PATTERNS" title="Ten ways to fool yourself"
+    lead=${html`Every one of these produces a number that looks like evidence.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:10, alignContent:'space-evenly'}}>
+      ${ANTIPATTERNS.map(([t,d])=>html`<div className="antip" key=${t}>
+        <div className="t">${t}</div><div className="d">${d}</div></div>`)}
+    </div>
+  <//>`;
+}
+
+/* -- 15 checklist -- */
+function S15(){
+  const [on, setOn]=useState([true,false,false,false,false,true,false,false]);
+  const n=on.filter(Boolean).length;
+  const tone = n<=3?'var(--coral)' : n<=6?'var(--amber)' : 'var(--teal)';
+  const label= n<=3?'NOT TRUSTWORTHY' : n<=6?'USABLE WITH CAVEATS' : 'TRUSTWORTHY';
+  const missing = on.map((v,i)=>v?null:i).filter(v=>v!==null);
+  return html`<${Shell} kicker="15 — AUDIT" title="Would you bet a launch on your suite?"
+    lead=${html`Tick what is actually true today. Most honest answers land between four and six.`}>
+    <div className="col grow" style=${{display:'grid', gridTemplateColumns:'1fr 1fr', gap:9, alignContent:'space-evenly'}}>
+      ${CHECKS.map((c,i)=>html`<div className=${'check'+(on[i]?' on':'')} key=${c} onClick=${()=>{
+        const n2=on.slice(); n2[i]=!n2[i]; setOn(n2); }}>
+        <div className="box">${on[i]?'✓':''}</div><div className="t">${c}</div></div>`)}
+    </div>
+    <div className="col" style=${{width:310, flex:'0 0 310px'}}>
+      <div className="card">
+        <div className="caption">TRUST SCORE</div>
+        <div className="readout"><span className="v" style=${{color:tone}}>${n}</span><span className="u">/ ${CHECKS.length}</span></div>
+        <div style=${{font:'600 12.5px/1 var(--mono)', letterSpacing:'.18em', color:tone, marginTop:12}}>${label}</div>
+        <div style=${{marginTop:16}}>
+          <div className="caption">FIX THESE FIRST</div>
+          ${missing.slice(0,3).map(i=>html`<div key=${i} style=${{fontSize:14, lineHeight:1.55, color:'var(--dim)', marginTop:8,
+            paddingLeft:9, borderLeft:'2px solid var(--line2)'}}>${CHECKS[i]}</div>`)}
+          ${missing.length===0?html`<div style=${{fontSize:14.5, color:'var(--teal)', marginTop:8}}>Nothing missing. Now go check it actually fails when you break it.</div>`:null}
+        </div>
+      </div>
+    </div>
+  <//>`;
+}
+
+/* -- 16 takeaways -- */
+function S16(){
+  return html`<${Shell} kicker="16 — TAKEAWAYS" title="The instrument comes first"
+    lead=${html`Anyone can write tasks. Building something that produces a number you would defend in a review is the actual work.`}>
+    <div className="col grow" style=${{gap:0, maxWidth:1000}}>
+      ${TAKES.map(([t,d],i)=>html`
+        <div key=${t} style=${{display:'grid', gridTemplateColumns:'40px 1fr', gap:20, padding:'17px 0',
+             borderTop:i===0?'none':'1px solid var(--line)', alignItems:'start'}}>
+          <div style=${{font:'600 13px/1.8 var(--mono)', color:'var(--amber)', letterSpacing:'.1em'}}>${String(i+1).padStart(2,'0')}</div>
+          <div>
+            <div style=${{fontSize:17.5, lineHeight:1.45, color:'var(--fg)', fontWeight:500}}>${t}</div>
+            <div style=${{fontSize:15.5, lineHeight:1.62, color:'var(--dim)', marginTop:5}}>${d}</div>
+          </div>
+        </div>`)}
+    </div>
+  <//>`;
+}
+
+const SLIDES=[
+  { t:'Evals, plainly',        f:S1 },
+  { t:'The question',          f:S2 },
+  { t:'Anatomy',               f:S3 },
+  { t:'The grader',            f:S4 },
+  { t:'Grader ladder',         f:S5 },
+  { t:'Run the suite',         f:S6 },
+  { t:'Is it real?',           f:S7 },
+  { t:'pass@k',                f:S8 },
+  { t:'Three buckets',         f:S9 },
+  { t:'Overfitting',           f:S10 },
+  { t:'Slice it',              f:S11 },
+  { t:'Offline vs online',     f:S12 },
+  { t:'The loop',              f:S13 },
+  { t:'Anti-patterns',         f:S14 },
+  { t:'Audit your suite',      f:S15 },
+  { t:'Takeaways',             f:S16 }
+];
+
+/* =========================================================================
+   APP
+   ========================================================================= */
+function Root(){
+  const params = typeof location!=='undefined' ? new URLSearchParams(location.search) : null;
+  const start = clamp(parseInt(params && params.get('s')) || 0, 0, SLIDES.length-1);
+  const [i, setI]=useState(start);
+  const go=(k)=>setI(clamp(k,0,SLIDES.length-1));
+
+  useEffect(()=>{
+    const onKey=(e)=>{
+      if(e.target && /input|textarea/i.test(e.target.tagName)) return;
+      if(e.key==='ArrowRight'||e.key===' '||e.key==='ArrowDown'||e.key==='PageDown'){ e.preventDefault(); go(i+1); }
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); go(i-1); }
+      else if(e.key==='Home') go(0);
+      else if(e.key==='End') go(SLIDES.length-1);
+    };
+    window.addEventListener('keydown', onKey);
+    return ()=>window.removeEventListener('keydown', onKey);
+  }, [i]);
+
+  const Cur = SLIDES[i].f;
+  return html`<${React.Fragment}>
+    <nav id="rail">
+      <div className="mark">
+        <div className="t">Evals, plainly</div>
+        <div className="s">Measurement for systems that talk</div>
+      </div>
+      <ol>
+        ${SLIDES.map((s,k)=>html`<li key=${k} className=${k===i?'on':''}>
+          <button onClick=${()=>go(k)}>
+            <span className="n">${String(k+1).padStart(2,'0')}</span><span>${s.t}</span>
+          </button></li>`)}
+      </ol>
+      <div className="foot">↑ ↓ ARROW KEYS · CLICK A CHAPTER</div>
+    </nav>
+    <main id="main">
+      <div id="bar"><i style=${{width:pct((i+1)/SLIDES.length)+'%'}}></i></div>
+      <div id="slides"><${Cur} key=${i} /></div>
+    </main>
+  <//>`;
+}
+
+createRoot(document.getElementById('root')).render(html`<${Root} />`);
+window.__booted = true;
+const boot=document.getElementById('boot');
+if(boot && boot.parentNode) boot.parentNode.removeChild(boot);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/academy"
+  to = "/academy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/playbook"
+  to = "/playbook/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools"
+  to = "/tools/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
