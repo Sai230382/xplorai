@@ -1,228 +1,228 @@
 {
-  "number": 10,
-  "edition": "Briefing 10",
-  "date": "14 September 2026",
-  "dateISO": "2026-09-14",
+  "number": 11,
+  "edition": "Briefing 11",
+  "date": "16 September 2026",
+  "dateISO": "2026-09-16",
   "kicker": "This week in AI",
-  "title": "The labs say slow down. The attackers already sped up.",
-  "summary": "Anthropic’s Dario Amodei called for pacing frontier AI and putting independent evaluators inside labs. OpenAI’s Sam Altman and xAI’s Elon Musk publicly agreed. The same week, Anthropic published a threat report showing criminals and spies using AI to run cyber attacks end to end — and treating stolen AI API keys like cash.",
-  "uncertainty": "We do not yet know whether ‘pacing’ will change what ships next quarter, or only what CEOs say on social media.",
+  "title": "Rivals talk FINRA for AI. Microsoft writes Absolute Constraints. Claude plugs into Salesforce.",
+  "summary": "OpenAI said it is coordinating with Anthropic and Google DeepMind on a FINRA-style standards body for frontier AI. The same stretch, Microsoft published a draft Humanist AI Code of Conduct with Absolute Constraints that no operator can override — including a ban on operational cyberattack assistance. Anthropic shipped workplace product: Salesforce in Claude for sellers, a Claude for Small Business expansion with 43 workflows and 27 integrations, and Smart reports that attach cost to real workstreams.",
+  "uncertainty": "We do not yet know whether a labs standards body will mean desks and audits buyers can check, or a talking shop that never binds what ships.",
   "stats": {
-    "scanned": 4500,
-    "filtered": 280,
-    "verified": 36,
+    "scanned": 4200,
+    "filtered": 260,
+    "verified": 32,
     "themes": 5
   },
   "stories": [
     {
-      "id": "pace-the-frontier",
+      "id": "finra-for-frontier",
       "topic": "rules",
-      "theme": "Rivals agree: put outsiders inside the lab",
-      "changed": "On 12–13 September 2026, Anthropic CEO Dario Amodei published ‘We Must Pace the Frontier,’ arguing labs must slow how fast they improve frontier models so safety work can keep up. He committed Anthropic to embedded third-party evaluators with employee-like access (desks, badges, laptops, and the right to publish findings with only narrow redactions). OpenAI’s Sam Altman and xAI’s Elon Musk publicly backed the call; Altman said OpenAI would adopt independent evaluators with employee-like access.",
-      "matters": "Safety promises used to be company blogs. This is a rare public agreement between fierce rivals on a concrete check: outsiders who can see training and incidents, not only a polished model card.",
-      "imply": "If evaluators are real, buyers and governments can ask ‘who is sitting inside?’ If they are theatre, the gap will show up fast. Either way, ‘trust us’ is no longer the whole product.",
+      "theme": "Rivals explore a FINRA for frontier AI",
+      "changed": "On 15 September 2026, OpenAI confirmed it has been working with Anthropic and Google DeepMind on AI safety coordination. Reporting describes a self-regulatory standards body idea that tracks Demis Hassabis’s July proposal for a U.S.-led organisation modelled on FINRA — testing powerful systems before wider release, with substantial industry funding for talent and compute. OpenAI global affairs chief Chris Lehane said the firms had been in talks for several weeks and did not believe they needed an antitrust waiver to coordinate on safety. Sam Altman, speaking the same day at a Salesforce conference, backed industry coordination so labs have “enough time to do this safely.”",
+      "matters": "Briefing 10 covered CEOs agreeing to ‘pace the frontier.’ This week’s news is the next concrete shape: rivals talking about a shared standards body, not only essays and tweets.",
+      "imply": "Buyers and boards will soon ask which labs sit inside that body — and whether it can fail a model, not only praise one. Smaller labs will ask who writes the rules.",
       "uses": [
-        "If you buy from a frontier lab, ask whether independent evaluators have ongoing access — and whether they can publish without PR edit.",
-        "Put that answer next to the security questionnaire, not in a slide deck.",
-        "For internal AI projects that train or fine-tune, name who can audit the pipeline before the next big run."
+        "Add ‘participates in industry standards body / third-party testing’ to frontier-vendor security reviews.",
+        "Treat Lehane’s line — voluntary standards complement, not replace, federal rules — as the framing for internal policy memos.",
+        "Watch whether Cohere-style ‘cartel’ critiques stick; if they do, expect procurement questions about who gets a seat."
       ],
-      "example": "A procurement lead renewing an enterprise AI contract adds one line: ‘Name the embedded evaluator team, their access level, and the last public incident note they issued.’ If the vendor cannot answer, the renewal waits. That is the Amodei proposal, applied as a buyer.",
-      "audience": "Security and procurement leads, and anyone writing AI policy for a company that sits near the frontier.",
-      "watch": "Whether desks and badges actually appear — and whether unfavorable findings get published, not only praised.",
+      "example": "A risk committee renewing an enterprise frontier contract asks: ‘Name the standards or testing arrangement you are joining, and whether an independent tester can fail a release.’ If the answer is only ‘we support industry dialogue,’ the renewal waits for a named mechanism.",
+      "audience": "Policy, procurement, and security leads buying frontier models — and founders who fear standards written only by the largest labs.",
+      "watch": "Whether a charter, membership list, and first failed-or-delayed release appear — or only more briefings.",
       "source": {
-        "title": "Dario Amodei, We Must Pace the Frontier",
-        "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
-        "quote": "Each frontier AI company commits to giving ongoing, employee-like access to a team of embedded third-party evaluators… whose role is to verify adherence to safety practices and commitments, report incidents, and help assess the alignment of not just completed AI models but training pipelines and processes."
+        "title": "CNBC, OpenAI, Google, Anthropic discussing collaboration on AI safety issues",
+        "url": "https://www.cnbc.com/2026/09/15/open-ai-google-anthropic-safety.html",
+        "quote": "OpenAI has been engaging with other artificial intelligence companies, including Anthropic and Google, about how they can work together to address safety concerns, a spokesperson confirmed to CNBC on Tuesday."
       }
     },
     {
-      "id": "ai-runs-the-attack",
+      "id": "absolute-constraints",
       "topic": "trust",
-      "theme": "The attacker no longer needs a full team",
-      "changed": "Anthropic’s September 2026 threat-intelligence report describes cyber operations (Dec 2025–Aug 2026) where actors used Claude across the kill chain: reconnaissance, phishing, exploit work, and data theft. In several cases AI agents rebuilt malware when security products detected it. Anthropic says sophistication is no longer a reliable clue to who is behind an attack — a lone operator with AI can run campaigns that used to need a skilled team.",
-      "matters": "Defenders used to slow attackers by shipping a new detection. These cases show attackers closing that loop with AI — rewrite, redeploy, continue — while a human still picks targets and reviews the loot.",
-      "imply": "Assume a small crew can move at team speed. Patching and key hygiene matter more than betting the attacker is ‘too junior’ to hurt you.",
+      "theme": "Microsoft publishes Absolute Constraints no operator can flip off",
+      "changed": "On 14 September 2026, Microsoft AI published a draft Humanist AI Code of Conduct for MAI models and opened a six-week public consultation. The draft’s Absolute Constraints cannot be overridden by operators or users. On offensive cyberoperations, models must not generate working exploit code, attack tooling, planning and targeting methodologies, intrusion procedures, evasion techniques, or operational guidance that would enable or improve a cyberattack — ‘regardless of how the request is framed.’ A Chain of Command puts the Code above operator policies and user preferences; tool outputs and other AIs inherit no authority by default. Current MAI models are not yet trained on the document; a revised version later this year is meant to guide 2027 development.",
+      "matters": "This is not a slogan. It is a written permission model: what the model must never do, who it answers to, and which rules partners cannot negotiate away in a prompt.",
+      "imply": "Enterprises configuring Copilot and custom agents will be asked to map their kill switches and scope limits to something like this hierarchy — or explain why they have none.",
       "uses": [
-        "Treat exposed admin panels, hotel/vendor Wi‑Fi, and SaaS tokens as high value — these reports show they are how bigger targets get reached.",
-        "When malware is detected, rotate credentials and assume the toolkit will be rewritten, not retired.",
-        "Share the Anthropic indicators with your SOC; do not wait for a perfect attribution story."
+        "In vendor reviews, ask which Absolute Constraints (or equivalent) cannot be overridden by your admins or users.",
+        "For internal agents with tool access, write a Chain of Command: policy → operator config → user — and ban instructions from files/web/other agents from escalating privileges.",
+        "Submit consultation feedback if your industry needs clearer dual-use lines (defence vs offence) before 2027 training locks in."
       ],
-      "example": "An IT lead reads that one actor used AI to rebuild implants after detection. They stop treating a single EDR alert as ‘cleaned.’ They rotate the related service accounts the same day and check DNS on vendor portals the company uses. That is the report, turned into Tuesday work.",
-      "audience": "Security teams, IT leads, and operators who rely on vendors with admin access to guest or customer networks.",
-      "watch": "Whether your incident playbook assumes a human tempo. If cleanup takes a week, the report says the attacker may already have a new build.",
+      "example": "A platform owner updating the agent policy copies one test from Microsoft’s framing: ‘Can a user or a retrieved document authorize exploit tooling?’ If yes, the agent fails review until Absolute Constraints exist in code, not only in a slide.",
+      "audience": "Security architects, Copilot admins, and anyone shipping agents that can act on systems.",
+      "watch": "Whether the final 2027-trained models keep Absolute Constraints as non-overridable — and how ‘authorized defensive’ exceptions are gated.",
       "source": {
-        "title": "Anthropic, Detecting and countering misuse of AI: September 2026",
-        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
-        "quote": "For threat intelligence investigators, sophistication has stopped being a reliable signal of who is behind an operation."
+        "title": "Microsoft AI, Humanist AI Code of Conduct",
+        "url": "https://microsoft.ai/code-of-conduct/",
+        "quote": "MAI Models will not generate working exploit code, attack tooling, planning and targeting methodologies, intrusion procedures, evasion techniques, operational guidance, or other information or assistance that would enable or improve the execution of such attacks… This applies regardless of how the request is framed."
       }
     },
     {
-      "id": "keys-are-the-loot",
-      "topic": "money",
-      "theme": "Your AI keys are inventory now",
-      "changed": "The same Anthropic report shows criminals treating AI API keys and session tokens as loot, compute, and cover: steal them from apps, GitHub, containers, and ‘discount’ reseller sites; resell them; run further attacks on the victim’s bill; and blame the legitimate account owner. One pattern: fake cheap Claude access that harvests the buyer’s credentials. Anthropic says its own systems were not breached in the cases where customer keys were stolen from customer environments.",
-      "matters": "Companies still leave model keys in mobile apps and repos the way they once left AWS keys. Attackers now farm those keys at scale because they buy attack compute and hide attribution.",
-      "imply": "An AI key is a production credential. A bargain reseller that wants your login is a breach waiting to happen.",
-      "uses": [
-        "Scan mobile apps, public repos, and containers for hardcoded model API keys this week — not next quarter.",
-        "Buy AI access only through official channels; ban ‘cheap Claude’ middlemen on company devices.",
-        "Give every production AI key an owner, a rotation date, and alerts on spend spikes."
-      ],
-      "example": "A startup finds an old Anthropic key in a Play Store APK. They revoke it, check the billing spike, and add a CI check that fails the build if a provider key pattern appears in the bundle. The report’s lesson becomes a merge gate.",
-      "audience": "Founders, platform engineers, and finance leads who see AI line items climb without knowing which keys are live.",
-      "watch": "Sudden spend on an AI account nobody remembers provisioning — treat it as theft until proven otherwise.",
-      "source": {
-        "title": "Anthropic, Detecting and countering misuse of AI: September 2026",
-        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
-        "quote": "Operators who obtain AI credentials gain three things at once: loot… compute… and cover: the activity is attributed to the credential’s legitimate owner."
-      }
-    },
-    {
-      "id": "cyber-model-for-defenders",
+      "id": "salesforce-in-claude",
       "topic": "tools",
-      "theme": "A cyber model that is not for everyone",
-      "changed": "On 2 September 2026, Google DeepMind launched Gemini 3.8 Flash and Gemini 3.8 Flash Cyber. Flash is a general workhorse for agentic coding and reasoning at Flash pricing. Flash Cyber is aimed at vulnerability detection and automated patching for trusted defenders through Google’s Fairwind Program — government authorities, critical infrastructure operators, and software maintainers — not a wide public free-for-all.",
-      "matters": "Labs are splitting ‘helpful coding model’ from ‘cyber-capable model with a gate.’ That is a product decision with a security policy inside it.",
-      "imply": "If your job is defence, ask whether you are on the trusted path. If your job is building consumer apps, do not assume the cyber variant is a feature you can flip on for growth hacks.",
+      "theme": "Salesforce stays system of record; Claude does the seller busywork",
+      "changed": "On 15 September 2026, Anthropic launched Salesforce in Claude in beta: a plugin built with Salesforce that brings accounts, opportunities, and pipeline into Claude under the seller’s existing Salesforce permissions. It ships 37 sales skills for account research, call prep, pipeline review, CRM updates, morning briefs, and forecast narratives. By default Claude proposes changes and waits for seller approval before writing back. Anthropic says GitLab, Siemens, and Legora have deployed it, and about 7,000 Salesforce sellers already use it. Available on paid Claude plans after admin setup via AgentExchange.",
+      "matters": "The useful product pattern is not ‘AI CRM.’ It is CRM remains the record, AI does prep and drafts, humans approve the write.",
+      "imply": "Sales ops can cut meeting-prep hours without giving a model a blank cheque on stage and close date.",
       "uses": [
-        "Security vendors and infra teams: check Fairwind eligibility before promising ‘Gemini Cyber’ in a roadmap slide.",
-        "Product teams: keep general Flash and cyber-gated tools on different approval tracks.",
-        "Buyers: ask which model variant touches production vulns — and who is allowed to run it."
+        "Pilot on one team with approval-required writes; measure prep time and CRM hygiene before org-wide rollout.",
+        "Confirm Salesforce permission inheritance — Claude should see only what the seller already can.",
+        "Decide which skills may auto-run (briefs) vs which must always wait (stage changes, forecasts to leadership)."
       ],
-      "example": "A CISO cancels a demo that pitched ‘autonomous patching for everyone’ after reading Fairwind’s trusted-defender framing. They ask the vendor which exact Gemini variant runs, and under whose contract. The launch page becomes the checklist.",
-      "audience": "Security buyers, platform owners, and anyone evaluating agentic coding tools with cyber features.",
-      "watch": "How tightly Fairwind stays limited — and whether copycats ship cyber skills with no gate.",
+      "example": "A sales leader turns on morning briefs and after-call opportunity drafts for one pod. Stage and close-date changes stay approval-gated for two weeks. CRM completeness rises; no mystery stage flips appear in the forecast meeting.",
+      "audience": "Sales leaders, RevOps, and IT admins connecting Claude to CRM.",
+      "watch": "How often sellers approve writes without reading — and whether audit logs catch bad updates fast.",
       "source": {
-        "title": "Google, Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
-        "quote": "Through our new Fairwind Program, we’re providing trusted government authorities, as well as critical infrastructure operators and software maintainers with prioritized access to Gemini 3.8 Flash Cyber."
+        "title": "Anthropic, Bringing Salesforce into Claude",
+        "url": "https://claude.com/blog/salesforce-in-claude",
+        "quote": "Today we are releasing Salesforce in Claude in beta, a plugin built with Salesforce that brings a seller’s accounts, opportunities, and pipeline into Claude under their existing Salesforce permissions. It includes 37 skills for the work account executives do daily."
       }
     },
     {
-      "id": "talk-is-cheap-desks-are-not",
+      "id": "claude-smb-workflows",
       "topic": "work",
-      "theme": "A pledge is not a permission model",
-      "changed": "Altman said OpenAI agrees the industry must ‘pace the frontier’ and welcomed independent evaluators with employee-like access. Amodei’s essay spells out what that access means in practice: office presence, comparable tools, and public reporting rights with narrow redactions only. The public agreement is new; the desks are not yet a settled industry standard.",
-      "matters": "Workplaces copying ‘AI safety’ language from vendor blogs need a sharper test: can an outsider verify the pipeline, or only read the marketing?",
-      "imply": "Inside your company, the parallel is boring and useful — name who can stop a risky automation, and who reviews the log. Outside, ask vendors for the evaluator arrangement, not only the slogan.",
+      "theme": "Small-business Claude moves from back office to growth work",
+      "changed": "On 15 September 2026, Anthropic expanded Claude for Small Business to 43 workflows and 27 new integrations with tools owners already use — including Shopify, Salesforce, TikTok, Atlassian, Zoom, Xero, Gusto, Square, Stripe, and Zapier. Workflows cover Monday briefs, speed-to-lead replies, proposal builders, social content, and book close. Default mode: Claude drafts and stages; the owner approves before anything sends, posts, or pays. Anthropic says the plugin has been installed more than 900,000 times since May. Fall workshops and 14 partner webinars (Notion 25 Sep through Atlassian 17 Nov) ship alongside.",
+      "matters": "This is packaged work, not a chatbot. The product decision that matters for workplaces is approval-by-default before money or messages leave the building.",
+      "imply": "Owners and ops leads can adopt AI where the hours actually go — leads, proposals, close — without inventing a custom agent stack first.",
       "uses": [
-        "Add ‘independent evaluator access’ to vendor security reviews for frontier models.",
-        "For internal agents that can click or spend money, write the off switch and the log owner before wider rollout.",
-        "Do not treat a CEO tweet as a control. Treat a named audit path as a control."
+        "Start with one scheduled workflow (Monday brief or speed-to-lead) and keep approval mode on until the draft quality is boringly good.",
+        "Map which connectors touch payroll, payments, or send-as-you — those stay human-gated longer.",
+        "Use partner webinars as free enablement instead of a one-off consultant deck."
       ],
-      "example": "An operations lead updating the AI use policy replaces ‘we follow industry best practice’ with ‘frontier vendors must disclose embedded evaluator status; internal agents need a named owner and kill switch.’ The week’s news becomes a policy diff.",
-      "audience": "Operators, compliance, and managers rolling out agents that can act, not only chat.",
-      "watch": "First concrete evaluator appointments and first public notes that are not glowing.",
+      "example": "A five-person services firm connects HubSpot and calendar, turns on /speed-to-lead with approval required, and measures reply time for a week. Inbound leads stop sitting overnight; nothing sends without a human tap.",
+      "audience": "Small-business owners, ops managers, and consultants rolling out Claude beyond chat.",
+      "watch": "Whether teams leave approval mode on — or flip workflows to unsupervised send/pay too early.",
       "source": {
-        "title": "Dario Amodei, We Must Pace the Frontier",
-        "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
-        "quote": "External reviewers should have the right to publish key findings about risk levels, incidents, practices, and the access they received or didn’t receive — without editorial control by Anthropic."
+        "title": "Anthropic, Claude for Small Business launches new workflows, integrations, and training programs",
+        "url": "https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs",
+        "quote": "Claude for Small Business now includes 43 workflows and 27 new integrations with tools small businesses already use, including Shopify, Salesforce, TikTok, Atlassian, Zoom, Xero, Gusto, Square, Stripe, and Zapier."
+      }
+    },
+    {
+      "id": "smart-reports-cost",
+      "topic": "money",
+      "theme": "Enterprise Claude now prices the workstream, not just the seat",
+      "changed": "On 10 September 2026, Anthropic launched Smart reports (beta) on Claude Enterprise. Admins scope a team and up to 28 days of chat, Claude Code, or Cowork activity; Claude samples transcripts, groups workstreams and deliverables, attaches spend, flags friction (missing connectors, rework loops), and suggests reusable skills. Up to 10 free reports per org per month in beta. Off by default; Owner/Primary Owner must enable. Anthropic warns the feature is for adoption and investment planning — not individual performance reviews. Personal chats stay aggregate-only unless attribution is explicitly enabled and unveil actions are logged.",
+      "matters": "AI spend conversations usually start with a blended invoice. Smart reports try to answer ‘what work did we buy, and what did each kind cost?’",
+      "imply": "Finance and IT can walk into a renewal with evidence — or discover money burned on friction an admin can fix in an afternoon.",
+      "uses": [
+        "Run one report scoped to a single department before the next renewal; bring workstream cost, not only seat count.",
+        "Keep ‘Allow attribution to individual users’ off unless HR/legal have cleared performance-adjacent risk.",
+        "Treat ‘most common frictions’ as an IT ticket list — missing connectors beat buying more seats."
+      ],
+      "example": "An IT lead runs a report on the sales org, sees spend clustering on account briefs reinvented every week, and packages the suggested skill once. Seat cost stays flat; rework drops.",
+      "audience": "Enterprise admins, FinOps, and leaders who renew Claude on usage narratives.",
+      "watch": "Whether reports stay off-limits for performance management — and whether CMEK/HIPAA orgs get a path later.",
+      "source": {
+        "title": "Anthropic Help Center, Get started with smart reports",
+        "url": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports",
+        "quote": "Smart reports analyze how a team uses Claude and report on the work getting done, what it costs, where sessions run into friction, and which repeated patterns are worth packaging as shared skills."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Rivals say: put outsiders in",
-        "body": "Amodei called for pacing frontier models and embedding third-party evaluators with desks and badges. Altman and Musk publicly agreed."
+        "title": "A FINRA idea for frontier labs",
+        "body": "OpenAI confirmed talks with Anthropic and Google DeepMind on safety coordination and a standards body modelled on FINRA-style testing."
       },
       {
-        "title": "AI ran the attack",
-        "body": "Anthropic’s threat report shows criminals and spies using Claude across reconnaissance, phishing, exploit work, and theft — then rebuilding malware when it was detected."
+        "title": "Absolute Constraints in writing",
+        "body": "Microsoft’s draft Code bans operational cyberattack assistance and puts a Chain of Command above operators and users — for public comment now, training later."
       },
       {
-        "title": "A cyber model with a gate",
-        "body": "Google launched Gemini 3.8 Flash for general work, and Flash Cyber for trusted defenders only, through the Fairwind Program."
+        "title": "Claude inside the tools of work",
+        "body": "Salesforce in Claude (37 sales skills) and Claude for Small Business (43 workflows, 27 integrations) ship with approval-before-write defaults."
       }
     ],
     "matters": [
       {
-        "title": "Safety is now a checkable access question",
-        "body": "A public agreement between rivals is rare. The useful test is whether outsiders can see training and incidents, not only a model card."
+        "title": "From essays to a body",
+        "body": "Pacing pledges needed a next step. A shared standards organisation is the shape buyers can ask about by name."
       },
       {
-        "title": "Sophistication is no longer a clue",
-        "body": "A lone operator with AI can run what used to need a team. Patching and key hygiene beat betting the attacker is too junior."
+        "title": "Permission models beat slogans",
+        "body": "Absolute Constraints and Chain of Command are tests you can put next to an agent that can click, spend, or code."
       },
       {
-        "title": "Your AI keys are inventory",
-        "body": "Stolen model keys buy compute and hide who did it. Companies still leave them in apps and repos the way they once left AWS keys."
+        "title": "Spend needs a workstream",
+        "body": "Smart reports attach cost to what teams actually do — renewals stop being a blended mystery invoice."
       }
     ],
     "watch": [
       {
-        "title": "Whether desks actually appear",
-        "body": "Look for named evaluator teams, employee-like access, and public notes that are not only praise."
+        "title": "Charter, seats, first failure",
+        "body": "Look for a standards-body charter and a release that is delayed or blocked — not only another briefing."
       },
       {
-        "title": "Playbooks that assume a human tempo",
-        "body": "If cleanup takes a week, the report says the attacker may already have a new build."
+        "title": "Whether Absolute Constraints stay absolute",
+        "body": "Watch the consultation outcome and whether 2027 MAI training keeps non-overridable cyber and control rules."
       },
       {
-        "title": "How tightly Fairwind stays limited",
-        "body": "Watch whether cyber-capable models stay behind a trusted-defender gate — or copycats ship them with none."
+        "title": "Approval mode under pressure",
+        "body": "See whether sellers and owners leave human approval on — or flip unsupervised send/pay too early."
       }
     ]
   },
   "chips": [
-    "Pace the frontier",
-    "Gemini 3.8 Flash",
-    "Keys as loot",
-    "Desks and badges",
-    "AI runs the attack",
-    "Embedded evaluators",
-    "Flash Cyber, gated",
-    "Stolen API keys",
-    "Fairwind Program",
-    "Employee-like access",
-    "Rebuild the malware",
-    "Cheap Claude trap",
-    "Outsiders inside",
-    "Cover on their bill",
-    "Trusted defenders only",
-    "A pledge is not a desk",
-    "Who is sitting inside",
-    "Spend spike = theft?"
+    "FINRA for AI",
+    "Absolute Constraints",
+    "Salesforce in Claude",
+    "43 SMB workflows",
+    "Smart reports",
+    "Chain of Command",
+    "27 new integrations",
+    "37 sales skills",
+    "Approval before write",
+    "Standards body talks",
+    "Lehane in Washington",
+    "Six-week consultation",
+    "Workstream cost",
+    "Hassabis FINRA idea",
+    "No override on cyber",
+    "Monday brief",
+    "AgentExchange setup",
+    "Renewal with evidence"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Google launched Gemini 3.8 Flash and a gated Flash Cyber for trusted defenders",
-      "topic": "Tools"
-    },
-    {
-      "id": "s2",
-      "raw": "Amodei: labs should pace the frontier and embed third-party evaluators",
+      "raw": "OpenAI coordinating with Anthropic and Google DeepMind on AI safety / standards body",
       "topic": "Rules"
     },
     {
-      "id": "s3",
-      "raw": "Anthropic: actors used Claude across reconnaissance, phishing, exploit, and theft",
+      "id": "s2",
+      "raw": "Microsoft draft Humanist AI Code: Absolute Constraints and Chain of Command",
       "topic": "Trust"
     },
     {
-      "id": "s4",
-      "raw": "Stolen AI API keys treated as loot, compute, and cover",
-      "topic": "Money"
+      "id": "s3",
+      "raw": "Salesforce in Claude beta with 37 sales skills; CRM stays system of record",
+      "topic": "Tools"
     },
     {
-      "id": "s5",
-      "raw": "Altman and Musk backed independent evaluators with employee-like access",
+      "id": "s4",
+      "raw": "Claude for Small Business: 43 workflows and 27 integrations; approval by default",
       "topic": "Work"
     },
     {
+      "id": "s5",
+      "raw": "Smart reports beta attaches spend to Enterprise workstreams",
+      "topic": "Money"
+    },
+    {
       "id": "s6",
-      "raw": "Sophistication is no longer a reliable clue to who is behind an attack",
+      "raw": "MAI models not yet trained on Code; consultation guides 2027 development",
       "topic": "Trust"
     },
     {
       "id": "s7",
-      "raw": "Flash Cyber is for Fairwind partners, not a public free-for-all",
-      "topic": "Tools"
+      "raw": "Altman: industry should coordinate to have enough time to do this safely",
+      "topic": "Rules"
     },
     {
       "id": "s8",
-      "raw": "Fake cheap Claude resellers harvest the buyer’s credentials",
+      "raw": "Smart reports not for individual performance reviews; attribution off by default",
       "topic": "Money"
     }
   ]
