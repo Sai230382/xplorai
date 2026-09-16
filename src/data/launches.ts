@@ -8,27 +8,27 @@ export type LaunchSignal = {
 
 export const featuredLaunch = {
   kicker: "This week’s tool",
-  name: "Gemini 3.8 Flash Cyber",
-  maker: "Google DeepMind · Fairwind Program",
-  released: "14 September 2026",
+  name: "Salesforce in Claude",
+  maker: "Anthropic · with Salesforce",
+  released: "15 September 2026",
   overview:
-    "Gemini 3.8 Flash is Google’s general workhorse for agentic coding and reasoning at Flash pricing. Flash Cyber is a cyber-capable variant for vulnerability detection and automated patching, available to trusted defenders through the Fairwind Program — not a wide public release.",
+    "Salesforce in Claude is a plugin built with Salesforce that brings a seller’s accounts, opportunities, and pipeline into Claude under their existing Salesforce permissions. It ships 37 sales skills. By default Claude proposes changes and waits for seller approval before writing back.",
   capabilities: [
-    "Flash: agentic coding and multi-step reasoning at Flash pricing",
-    "Flash Cyber: vulnerability detection and automated patching",
-    "Fairwind: prioritized access for governments, critical infrastructure, and software maintainers",
-    "Same Flash speed and cost, with a tighter gate on who may use the cyber variant",
+    "Accounts, opportunities, and pipeline in Claude under existing Salesforce permissions",
+    "37 sales skills: account research, call prep, pipeline review, CRM updates, morning briefs, forecast narratives",
+    "Proposes changes and waits for seller approval before writing back",
+    "Available on paid Claude plans after admin setup via AgentExchange",
   ],
   useCases: [
-    "Ask whether your vendor is on the Fairwind path before promising ‘Gemini Cyber’",
-    "Keep general Flash and cyber-gated tools on different approval tracks",
-    "Name which model variant may touch production vulnerabilities",
+    "Pilot on one team with approval-required writes; measure prep time and CRM hygiene before org-wide rollout.",
+    "Confirm Salesforce permission inheritance — Claude should see only what the seller already can.",
+    "Decide which skills may auto-run (briefs) vs which must always wait (stage changes, forecasts to leadership).",
   ],
   limitations: [
-    "Flash Cyber is not a feature you can flip on for growth hacks.",
-    "Fairwind is limited to trusted defenders. Eligibility is the first question, not the demo.",
-    "Copycats may ship cyber skills with no gate. Do not assume every vendor matches Google’s split.",
-    "A launch page is not a contract. Ask which exact variant runs, and under whose account.",
+    "Beta. Anthropic says GitLab, Siemens, and Legora have deployed it; about 7,000 Salesforce sellers already use it.",
+    "CRM stays the system of record. Claude does prep and drafts; humans approve the write.",
+    "Admin setup via AgentExchange is required on paid Claude plans.",
+    "Watch how often sellers approve writes without reading — and whether audit logs catch bad updates fast.",
   ],
   signals: currentEdition.signals,
 }
