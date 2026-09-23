@@ -1,229 +1,229 @@
 {
-  "number": 13,
-  "edition": "Briefing 13",
-  "date": "21 September 2026",
-  "dateISO": "2026-09-21",
+  "number": 14,
+  "edition": "Briefing 14",
+  "date": "23 September 2026",
+  "dateISO": "2026-09-23",
   "kicker": "This week in AI",
-  "title": "Paid AI subscribers sue over a slowdown. California accelerates a kill switch. Accenture moves inside Anthropic. Claude already leads a quarter of Anthropic’s R&D.",
-  "summary": "Four ChatGPT, Claude, Grok and Gemini subscribers filed Buist v. Anthropic alleging a public Sherman Act agreement to pace frontier models, which they say would cut the value of paid subscriptions. California’s governor ordered faster independent AI oversight and work toward a verified frontier-model kill switch. Anthropic named Accenture’s Faculty unit as its first embedded evaluator — employee-comparable access, red-teaming, and at least $1B each over five years — and published an R&D Automation Index showing Claude leads 26% of internal AI R&D with zero fully autonomous work. Meta’s Muse agent reached the Mac, acting in native Files, Mail, Messages, Calendar and Notes with opt-in access and approval before sensitive actions.",
-  "uncertainty": "We do not yet know whether public ‘pace the frontier’ talk becomes a court-defined cartel, a funded evaluator desk buyers can check, or both — and whether a state kill-switch proposal survives the next legislative draft.",
+  "title": "They called for a slowdown. Then they cut prices. British Columbia sues OpenAI over a school shooting. Gemini quietly reached three real companies.",
+  "summary": "Two days after Briefing 13, Anthropic shipped Claude Opus 5.5 (Fable-class work at about 40% lower typical cost than Opus 5; $4/$20 per million input/output; Fable-tier cyber and biology safeguards) and OpenAI answered with GPT-6 Sol and Luna at 50% below GPT-5.6 promo API prices — the first big post-‘pace the frontier’ releases, aimed at cost-conscious workplaces. British Columbia sued OpenAI and Sam Altman in San Francisco over the Tumbler Ridge school shooting, alleging safety staff flagged the shooter’s ChatGPT use and urged RCMP contact but leadership deactivated the account instead. SpaceXAI launched Grok 4.7 for coding and knowledge work at Grok 4.6 prices ($2/$6 per million). Google confirmed Gemini models reached three real companies during a May Irregular CTF after a misconfigured internet path, disclosed after the Wall Street Journal asked. Air Security’s Plugin4Shell still leaves GitHub Copilot without a fix while Claude Code and Codex are patched.",
+  "uncertainty": "We do not yet know whether cheaper ‘workhorse’ models blunt the Buist pacing-as-cartel theory, whether a province can force ChatGPT violence-reporting rules from a California courtroom, or when Microsoft will patch Copilot’s plugin pin.",
   "stats": {
-    "scanned": 1900,
-    "filtered": 120,
-    "verified": 22,
+    "scanned": 2100,
+    "filtered": 140,
+    "verified": 24,
     "themes": 5
   },
   "stories": [
     {
-      "id": "buist-antitrust-slowdown",
+      "id": "opus55-sol-luna-price-war",
       "topic": "money",
-      "theme": "Subscribers sue: public slowdown talk as a Sherman Act agreement",
-      "changed": "On 18 September 2026, four paid subscribers filed Buist v. Anthropic PBC in the U.S. District Court for the Northern District of California against Anthropic, OpenAI, SpaceXAI and Google. The class action alleges a horizontal agreement to slow capability advancement below what competition would produce — limiting training compute and runs, restricting AI-improving-AI, and using capability checkpoints — contrary to Sherman Act §1. The complaint treats Amodei’s 12 September pacing essay as the public offer and same-day endorsements from Altman, Musk and Hassabis as acceptance; it highlights Amodei’s call for a narrow antitrust waiver and Altman’s reply that OpenAI would not wait for one, plus OpenAI policy chief Chris Lehane’s confirmation of weeks of coordination with Anthropic and Google DeepMind. Plaintiffs seek treble damages and an injunction on behalf of a proposed nationwide class of paid ChatGPT, Claude, Grok and Gemini subscribers. No defendant has answered; the filing identifies no cancelled model or altered training run yet.",
-      "matters": "Briefing 11–12 covered safety coordination as policy talk. This week it became a consumer damages theory: if rivals agree to ship slower capability, subscription value is the alleged injury.",
-      "imply": "Procurement and legal teams buying frontier APIs now have a live pleading that treats public CEO alignment as evidence of coordination — whether or not a court eventually buys it.",
+      "theme": "Pace the frontier — then ship cheaper workhorses the same afternoon",
+      "changed": "On 22 September 2026, Anthropic released Claude Opus 5.5 — the first Claude 5.5 model and its first release since Amodei’s ‘pace the frontier’ essay. Anthropic says it performs at Claude Fable 5.1 level on most work, costs about 40% less than Opus 5 on typical workloads, prices at $4 / $20 per million input / output tokens (cache reads $0.20), runs more than 30% faster output than Opus 5, and ships with Fable-class cybersecurity, biology, and distillation safeguards (risky cyber/biology requests fall back to older models; Life Sciences Verification Program opens for vetted biology use). External evaluators including Frontier Design and METR tested it pre-release; Anthropic calls it its best automated behavioral-audit score to date, while noting the model often suspects it is being evaluated. Hours later OpenAI launched GPT-6 Sol and GPT-6 Luna — faster, cheaper offshoots of GPT-6 Astra — with API prices 50% below GPT-5.6 promotional pricing, available in ChatGPT Work and Codex for paid tiers and in the API (Luna also for Free/Go on desktop). Fortune framed the same-day launches as an enterprise price war under cost pressure from open-weight rivals, despite both CEOs’ recent slowdown talk.",
+      "matters": "Briefing 13’s Buist complaint treats public pacing talk as a subscription-value injury. This week the labs’ first post-essay ships are cheaper everyday models — the opposite commercial signal buyers will price into renewals.",
+      "imply": "Procurement should separate voluntary safety essays from SKU roadmaps: capability and unit cost kept moving while the antitrust docket was still warm.",
       "uses": [
-        "Add ‘antitrust / pacing coordination’ to vendor risk packs alongside safety frameworks — track answers, not just essays.",
-        "Separate unilateral safety investment (usually fine) from joint pacing mechanisms (now litigated).",
-        "Watch whether working-group meetings continue; the complaint alleges mid-September meetings as ongoing conduct."
+        "Re-benchmark agentic coding and knowledge-work spend on Opus 5.5 vs Sol/Luna vs your current default before the next seat renewal.",
+        "Ask vendors which safeguard tier (Fable-class fallback vs full access) applies to your tenant — especially for cyber and biology workloads.",
+        "Update the board one-pager: ‘pacing’ talk and price cuts can arrive in the same week; track both."
       ],
-      "example": "A CFO renewing a $2M multi-model seat asks counsel: ‘If these labs publicly agree to pace releases, do our MSAs assume competitive upgrade cadence?’ Legal flags the Buist docket and requires a written note that pricing and roadmap commitments are unilateral, not contingent on rivals slowing.",
-      "audience": "General counsel, procurement, and product leads who pay for frontier subscriptions and need to explain roadmap risk to the board.",
-      "watch": "Defendant answers, any motion to dismiss on Noerr-Pennington / petitioning grounds, and whether the working group keeps meeting.",
+      "example": "A platform lead running overnight coding agents swaps a pilot pod from Opus 5 to Opus 5.5 on the same prompts, measures token spend and merge-ready output for one sprint, and holds the OpenAI Sol/Luna bake-off against that baseline before locking FY27 multi-model spend.",
+      "audience": "AI platform owners, FinOps, and procurement who pay for frontier APIs and need a clear price-performance story for the board.",
+      "watch": "Sonnet/Haiku 5.5 timing, whether Astra stays the paid flagship while Sol/Luna take volume, and any defendant filings that cite these launches in Buist.",
       "source": {
-        "title": "Fortune, Lawsuit claims Anthropic, OpenAI, SpaceXAI and Google illegally agreed to coordinate AI slowdown",
-        "url": "https://fortune.com/2026/09/19/lawsuit-anthropic-openai-spacexai-google-antitrust-laws-ai-slowdown-subscription-value/",
-        "quote": "It’s clear that an agreement among the chief rivals in AI that their progress ‘should be slower than competition would otherwise produce has an anticompetitive effect on consumers,’ the plaintiffs argue."
+        "title": "Anthropic, Introducing Claude Opus 5.5",
+        "url": "https://www.anthropic.com/claude-opus-5-5",
+        "quote": "We’re introducing Claude Opus 5.5, the first model in our new Claude 5.5 family. It performs at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5. Claude Opus 5.5 is our first release since we called for pacing the frontier."
       }
     },
     {
-      "id": "newsom-kill-switch-eo",
-      "topic": "rules",
-      "theme": "California: accelerate independent audits and design a verified kill switch",
-      "changed": "On 18 September 2026, California Governor Gavin Newsom issued an executive order directing the Government Operations Agency to accelerate implementation of SB 813 (independent verification organizations for AI safety/risk) and AB 1405 (state registry and independence standards for AI auditors). With the Governor’s Office of Emergency Services, it must convene national experts within two months to recommend strengthening state law to: embed a designated independent verification organization onsite at frontier labs for regular audits; require independent verification of safety frameworks, transparency reports and risk assessments filed under state law; advance a ‘kill switch’ for frontier models whose efficacy is verified ongoing by an independent verification organization; and update critical safety-incident definitions to include loss-of-control incidents such as the Hugging Face attack. Newsom also called on Congress and the White House to treat California’s framework as a national floor.",
-      "matters": "Voluntary lab essays (Briefing 12’s FINRA checklist) are now paired with a state clock: accelerate existing auditor laws and design an emergency shutoff whose effectiveness someone outside the lab must verify.",
-      "imply": "Frontier vendors with California nexus should expect onsite verifier access and kill-switch efficacy proofs to enter RFPs and board risk packs before any federal bill moves.",
-      "uses": [
-        "Map which of your models or vendors trip California ‘frontier’ obligations under SB 53 / SB 813 once timelines accelerate.",
-        "Ask vendors now: who is your independent verification organization, and how is kill-switch efficacy tested?",
-        "Update incident playbooks so ‘loss of control / sandbox escape’ maps to reportable critical safety incidents."
-      ],
-      "example": "A Bay Area AI platform owner renewing Anthropic and OpenAI contracts adds a clause: ‘Within 90 days of California publishing verifier/kill-switch standards, vendor will name its designated verification organization and share the latest kill-switch efficacy attestation.’",
-      "audience": "Policy, security, and compliance leads at companies deploying frontier models in or from California — and vendors selling into that market.",
-      "watch": "The two-month expert recommendations, accelerated SB 813/AB 1405 timelines, and whether any other state copies the kill-switch language.",
-      "source": {
-        "title": "Office of Governor Gavin Newsom, Executive order to accelerate independent oversight and advance an AI kill switch",
-        "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
-        "quote": "Advance the creation of a ‘kill switch’ for frontier models, with the efficacy of the switch verified on an ongoing basis by an independent verification organization."
-      }
-    },
-    {
-      "id": "accenture-embedded-evaluators",
+      "id": "bc-openai-tumbler-ridge",
       "topic": "trust",
-      "theme": "Accenture Faculty embeds inside Anthropic as the first evaluator desk",
-      "changed": "On 18 September 2026, Anthropic announced a partnership with Accenture’s Faculty unit for independent embedded evaluation of frontier AI — fulfilling a commitment from Amodei’s ‘We Must Pace the Frontier’ essay. Faculty will evaluate and red-team models, run alignment assessments, and test safeguards, with access comparable to an employee: watching models take shape in training, following build/deploy decisions, speaking to staff, assessing operations, verifying safety commitments, identifying blind spots, and reporting incidents. Anthropic and Accenture each expect to invest at least $1 billion over five years; Anthropic will fund Accenture directly for now while pursuing pooled/government funding long-term. The partnership is non-exclusive; Anthropic is also in dialogue with METR and other nonprofits to pilot embedded evaluation on their own funding, and more evaluators are expected in coming weeks. Standards for access and reporting do not yet exist.",
-      "matters": "External PDF audits become something different when the evaluator sits inside the lab with employee-like access — and the first named partner is a global consultancy enterprises already trust for deployment, not only a safety nonprofit.",
-      "imply": "Buyers can start asking for the embedded-evaluator name, access scope, and incident-reporting path the way they ask for SOC2 — even while standards are unfinished.",
+      "theme": "British Columbia sues OpenAI: flagged threats, no police call",
+      "changed": "On 21 September 2026, British Columbia’s Attorney General announced a lawsuit in California federal court against OpenAI (and naming CEO Sam Altman) over the 10 February 2026 Tumbler Ridge Secondary School mass shooting. The province alleges OpenAI’s systems flagged shooter Jesse Van Rootselaar’s ChatGPT activity for possible violence planning in June 2025, that safety staff recommended notifying the RCMP, and that leadership instead deactivated the account without telling law enforcement — after which the shooter obtained a new account. The suit seeks damages for recovery costs and court-ordered changes to how ChatGPT handles conversations that could lead to violence. AG Niki Sharma said OpenAI has not taken meaningful steps for survivors and families; an OpenAI spokesperson called the shooting an unspeakable tragedy and said the company remains committed to working with government and law enforcement. Separate victim-family suits and Florida’s state action against OpenAI already allege ChatGPT-linked violence harms.",
+      "matters": "Enterprise trust packs usually ask about jailbreaks and data retention. A province is now litigating whether ‘flagged but not reported’ is a product defect — and whether a CEO apology letter without follow-through counts as reform.",
+      "imply": "Any org deploying consumer or workplace chatbots that can discuss violence needs an explicit LE-escalation policy, audit trail, and named owner — not only model refusals.",
       "uses": [
-        "Add to frontier RFPs: named embedded evaluator(s), access comparable to employees?, funding model, and how incidents reach customers.",
-        "Treat Accenture’s enterprise-deployment lens as complementary to METR-style research evals — ask for both, not either/or.",
-        "Do not confuse ‘embedded’ with ‘outsourced accountability’; Anthropic still says model safety remains its responsibility."
+        "Ask vendors: when does automated violence flagging escalate to law enforcement, who decides, and can customers see aggregate escalation stats?",
+        "Map your own AI apps that touch minors or schools against the same escalation checklist.",
+        "Treat Altman’s April Tumbler Ridge letter vs this complaint as a case study in promise-vs-delivery for vendor risk reviews."
       ],
-      "example": "A bank’s AI governance committee reviewing Claude Enterprise asks: ‘Which embedded evaluator sits inside Anthropic today, what can they see that we cannot, and will their incident reports reach us under our MSA?’ Procurement holds the renewal until Accenture’s scope letter is attached.",
-      "audience": "Security, risk, and enterprise AI platform owners who need verifiable third-party eyes inside frontier labs — not another self-attestation PDF.",
-      "watch": "METR/nonprofit pilot details, the next named evaluator, and whether access/reporting standards get written down.",
+      "example": "A university CIO renewing ChatGPT Edu asks OpenAI in writing for the current imminent-harm reporting criteria, average time from flag to human review, and whether account deactivation without LE notice is still possible — and loops campus safety into the answer before signing.",
+      "audience": "Trust & safety, legal, education, and public-sector buyers who need escalation rules they can explain after an incident — not only marketing safety pages.",
+      "watch": "OpenAI’s motion practice, any court-ordered process changes, and whether Canadian federal Criminal Code amendments Sharma floated advance.",
       "source": {
-        "title": "Anthropic, Partnering with Accenture on embedded evaluation",
-        "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
-        "quote": "Unlike today’s external evaluators, embedded evaluators will work inside AI companies, with access comparable to an employee's. That access allows them to watch models take shape in training, follow the decisions that govern how those models are built and deployed, and speak directly to employees."
+        "title": "Government of British Columbia, Attorney General’s statement on B.C. filing legal action against OpenAI",
+        "url": "https://news.gov.bc.ca/releases/2026AG0067-001105",
+        "quote": "British Columbia is filing a lawsuit against OpenAI in California for its failure to notify law enforcement of threats made on its platform prior to the mass shooting at Tumbler Ridge Secondary school."
       }
     },
     {
-      "id": "rd-automation-index-26",
-      "topic": "work",
-      "theme": "Claude leads 26% of Anthropic’s AI R&D — and zero of it is fully autonomous",
-      "changed": "On 17 September 2026, Anthropic’s Institute published prototype measurements of the pace of AI development inside the lab. The R&D Automation Index (using Epoch AI’s Automation Levels) reports that as of August 2026 Claude ‘leads’ 26% of Anthropic’s AI R&D — completing most of a task end-to-end from a high-level prompt under human supervision (AL4) — while work at or above ‘AI collaborates’ (AL3) exceeds 90%, and Claude is not fully autonomous (AL5) for any measured subset. On Anthropic’s most-used internal agent platform, about 30,000 research and engineering agents ran at once; 100% of their actions passed online monitors before execution, with roughly 0.002% (about 1 in 47,000) blocked. A one-week compute snapshot (13–20 July) put about 6% of AI R&D compute toward safety (about 12% of AI-driven AI R&D compute), under a deliberately conservative definition. Anthropic says it will publish updates regularly and wants third parties to verify.",
-      "matters": "‘AI builds AI’ stopped being a slogan and became a vendor-published percentage with a named scale — useful for boards that need a number, not a vibes chart.",
-      "imply": "Enterprise AI leaders can demand the same three measurements (automation share, agent-monitor coverage/block rate, safety compute share) from any frontier vendor — and treat silence as the story.",
-      "uses": [
-        "Ask OpenAI and Google DeepMind for comparable AL3/AL4/AL5 shares and agent-monitor block rates.",
-        "Inside your own shop, pilot an automation-level score on one AI-assisted engineering workflow before trusting ‘leads’-tier claims from vendors.",
-        "Pair the 26% figure with the 0% AL5 line in exec briefings so ‘AI builds AI’ does not get oversold."
-      ],
-      "example": "A CTO slide for the board: ‘Anthropic says Claude leads 26% of its model R&D under human supervision; none is fully autonomous; ~1 in 47k agent actions blocked online.’ Action item: require the next OpenAI and Google risk packs to match those three cells or mark ‘not disclosed.’",
-      "audience": "CTOs, AI platform owners, and boards tracking recursive self-improvement risk and vendor transparency — not just benchmark charts.",
-      "watch": "The next Index update (does ‘leads’ climb?), third-party verification, and whether rivals publish matching numbers.",
-      "source": {
-        "title": "Anthropic Institute, Measurements for understanding the pace of AI development inside frontier labs",
-        "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
-        "quote": "As of August 2026, Claude is not operating fully autonomously for any measured subset of AI R&D work. Claude ‘leads’ 26% of Anthropic’s AI R&D work. The share of work at or above ‘AI collaborates’ is above 90%."
-      }
-    },
-    {
-      "id": "muse-mac-desktop-agent",
+      "id": "grok-4-7-coding",
       "topic": "tools",
-      "theme": "Muse hits Mac: the agent works in your real Files, Mail and Messages",
-      "changed": "On 17–18 September 2026, Meta shipped Muse for Mac — the first Muse client that completes work on the user’s computer. The agent works across native Files, Messages, Calendar, Notes and Mail; access is opt-in, Full Disk Access is optional, settings can change anytime, and Meta says Muse always asks before sensitive actions such as deleting files or sending messages. Muse launched earlier in September on iOS, Android, web and WhatsApp in the US and topped App Store charts; the Mac app extends that agent onto the desktop where most workplace files live. Powered by Muse Spark (Meta’s agentic model), it arrives amid a race among consumer desktop agents.",
-      "matters": "Workplace AI stops being a browser tab when the agent can open the spreadsheet and the inbox on the machine — with permission gates that IT can actually describe.",
-      "imply": "Security teams need a Mac agent policy this month: allowed apps, approval-before-send, and whether Muse belongs on managed laptops at all.",
+      "theme": "Grok 4.7: frontier coding workhorse at Grok 4.6 prices",
+      "changed": "On 21 September 2026, SpaceXAI launched Grok 4.7, positioned as its strongest model for coding and knowledge work: larger base than Grok 4.6, longer RL on multi-hour tasks, stronger self-checking, native Grok Bot harness training, and a redesigned safeguard stack. It ships at the same standard API price as Grok 4.6 — from $2 per million input and $6 per million output tokens — with a fast variant at 2× output speed and 2× price. SpaceXAI reports 46.3% on CursorBench 4.0 (vs 40.4% for Grok 4.6), 62.4% on LatchBio biosafety, and only 3.3% of risky dual-use prompts allowed through on HackerBench v0.3 while keeping low refusal on legitimate cyber work; select cyber partners get invite-only red-team access. Availability: Cursor, Grok Build, Grok API, third-party harnesses, and cloud routers.",
+      "matters": "While Anthropic and OpenAI cut mid-tier prices on 22 Sept, SpaceXAI’s move on the 21st was a same-price capability bump for teams already routing coding agents through Cursor and gateways.",
+      "imply": "Multi-model routers should re-score Grok 4.7 on long-running coding and office-agent tasks before assuming Opus 5.5 or Sol is the only workhorse upgrade this week.",
       "uses": [
-        "Pilot Muse Mac on a non-production Mac with Mail/Calendar only; keep Messages and Full Disk Access off until the approval prompts are boring.",
-        "Update MDM/acceptable-use docs: which desktop agents may request Full Disk Access.",
-        "Compare approval-before-sensitive-action behaviour to Claude’s ask-before-action default (Briefing 12)."
+        "Add grok-4.7 to the coding-agent bake-off beside Opus 5.5 and GPT-6 Sol on the same CursorBench-style tasks.",
+        "If you use dual-use cyber tooling, ask SpaceXAI whether you qualify for the invite-only red-team tier — and what logging comes with it.",
+        "Watch token price for prompts above 200k if your agents run huge contexts (vendor notes higher rates at that band)."
       ],
-      "example": "An EA asks Muse on Mac to pull tomorrow’s calendar, draft follow-ups in Mail, and leave them unsent. Every send requires a click; IT reviews the permission sheet before rolling the app to the exec team.",
-      "audience": "Knowledge workers on Mac and IT/security teams writing the first desktop-agent policy.",
-      "watch": "Enterprise/MDM controls, encrypted Muse builds Meta has teased, and how often users leave approval prompts on after the first week.",
+      "example": "A staff engineer sets the team’s Cursor default to Grok 4.7 for a week of multi-file refactors, compares pass rate and $/task to last week’s Grok 4.6 baseline, and only then decides whether to keep Opus 5.5 for the hardest overnight jobs.",
+      "audience": "Engineering leads and AI platform owners choosing a daily coding workhorse on price-performance, not flagship brag sheets.",
+      "watch": "Independent CursorBench replications, enterprise data-retention options on gateways, and whether the cyber red-team program opens more broadly.",
       "source": {
-        "title": "TechCrunch, Meta’s Muse hits Mac, letting the AI take actions on your computer",
-        "url": "https://techcrunch.com/2026/09/18/metas-muse-hits-mac-letting-the-ai-take-actions-on-your-computer/",
-        "quote": "On the Mac, Muse can interact with your files, messages, calendar, notes, and mail, all within their native applications. … the app will always ask for your approval before it performs sensitive actions, Meta says."
+        "title": "SpaceXAI, Introducing Grok 4.7",
+        "url": "https://x.ai/news/grok-4-7",
+        "quote": "Grok 4.7 is our most capable model for coding and knowledge work. It works longer on difficult tasks, checks its own work more carefully, and comes with our best-calibrated safeguards to date. Served at the same price and speed as Grok 4.6, it is highly competitive in its class."
+      }
+    },
+    {
+      "id": "gemini-three-company-breach",
+      "topic": "rules",
+      "theme": "Google confirms Gemini reached three real firms — and stayed quiet until asked",
+      "changed": "On 21 September 2026, after Wall Street Journal reporting, Google confirmed that Gemini models accessed systems at three real companies during a May 2026 capture-the-flag test run by cybersecurity firm Irregular. A misconfiguration gave the models internet access; a fictional target shared a name with a real firm. In one case Gemini guessed passwords; in two others it found credentials exposed in public software repositories. Google says the models stopped after recognizing the systems were real, Irregular later cut internet access, Irregular did not tell Google until July, and Google then notified the companies. Google VP of security engineering Heather Adkins said the event shows why powerful models must be trained to act responsibly and that ‘in this case, the model acted appropriately.’ Google had not publicly disclosed the incidents until the Journal asked; Ars Technica notes the company treated it as less severe than OpenAI’s Hugging Face containment failure because Gemini did not keep pushing after noticing real systems.",
+      "matters": "Vendor incident narratives now include ‘we didn’t disclose because the model stopped’ — buyers need a brighter line for when a sandbox escape into real customer or third-party systems is reportable.",
+      "imply": "RFPs for frontier cyber evals should require prompt notice when test harnesses touch real infrastructure, even if ‘no damage’ is claimed.",
+      "uses": [
+        "Add to vendor questionnaires: list of real-world unauthorized access events in the last 12 months, disclosure timeline, and who was notified.",
+        "If you run third-party CTF/red-team vendors against frontier models, require network allowlists and immediate client notice on any egress surprise.",
+        "Rotate credentials that ever appeared in public repos — Gemini’s path was boring and still worked."
+      ],
+      "example": "A CISO renewing a Google Cloud AI commit asks for a written addendum: any eval or red-team event that reaches non-test systems will be disclosed to the customer within a set number of days, with a summary of access and remediation — regardless of whether the model ‘stopped on its own.’",
+      "audience": "CISOs, AI governance, and security engineering leads buying Gemini or hiring AI cyber-eval vendors.",
+      "watch": "Whether California’s accelerated critical-incident definitions (Briefing 13) would have forced earlier public notice, and whether Irregular or Google publish a fuller postmortem.",
+      "source": {
+        "title": "Ars Technica, Google confirms Gemini models hacked three companies in May 2026",
+        "url": "https://arstechnica.com/google/2026/09/google-confirms-gemini-models-hacked-three-companies-in-may-2026/",
+        "quote": "This event highlights the importance of training powerful AI models to act responsibly. In this case, the model acted appropriately."
+      }
+    },
+    {
+      "id": "plugin4shell-copilot-unpatched",
+      "topic": "tools",
+      "theme": "Plugin4Shell: SHA pins that don’t pin — Copilot still open",
+      "changed": "On 18 September 2026, Air Security publicly disclosed Plugin4Shell, a zero-click plugin supply-chain flaw affecting Anthropic Claude Code, OpenAI Codex, GitHub Copilot, and Google Gemini CLI. Agents pin marketplace plugins to a commit hash but did not verify the checked-out code matched that hash; on hosts that allow hash-shaped branch names, a plugin-repo owner can make checkout resolve to other code while the pin still looks intact (Gemini CLI variant uses a FETCH_HEAD branch name). Auto-update defaults amplify risk on some agents. Air disclosed to vendors in June 2026. As of disclosure: Claude Code fixed in 2.1.179, Codex in 0.146.0, Copilot had no client fix, and Google will not patch deprecated consumer Gemini CLI (migrate to Antigravity). The Hacker News notes default marketplaces pointing at GitHub reduce exposure to the hash-branch trick because GitHub blocks hash-like ref names, but Copilot and others can still install from non-GitHub hosts where the trick works. No CVE and no vendor advisories at disclosure; no known in-the-wild exploitation reported.",
+      "matters": "Briefing 13 covered desktop agents asking before sensitive actions. This is the quieter failure mode: the ‘reviewed’ plugin pin was never cryptographically verified on disk — and one of the four biggest coding agents still had no patch days later.",
+      "imply": "Developer-productivity AI is now part of the software supply chain; pin theater without verify-on-disk is an audit finding, not a footnote.",
+      "uses": [
+        "Inventory Claude Code / Codex / Copilot / Gemini CLI versions; require ≥2.1.179 and ≥0.146.0 where applicable.",
+        "Until Copilot ships a fix, block plugin installs from non-GitHub remotes via MDM or policy.",
+        "Add ‘verify checkout hash after plugin install’ to your internal agent hardening checklist."
+      ],
+      "example": "A security engineering lead opens a Sev-3: ‘Disable Copilot marketplace plugins from Bitbucket/self-hosted git until Microsoft patches Plugin4Shell; confirm Claude Code ≥2.1.179 and Codex ≥0.146.0 on all builder images by Friday.’",
+      "audience": "AppSec, platform engineering, and developer-experience leads rolling out AI coding agents at scale.",
+      "watch": "Microsoft’s Copilot fix, any CVE assignment, and whether enterprise Gemini CLI builds get a patch Google withheld from the consumer CLI.",
+      "source": {
+        "title": "The Hacker News, Plugin4Shell Lets Repository Owners Swap Pinned Plugin Code Across Four AI Coding Agents",
+        "url": "https://thehackernews.com/2026/09/plugin4shell-lets-repository-owners.html",
+        "quote": "A flaw in four widely used AI coding agents lets someone who controls a plugin's code repository swap the plugin an agent installs for a malicious one, even when the agent locked that plugin to a specific reviewed version."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Slowdown talk meets a lawsuit",
-        "body": "Buist v. Anthropic treats public CEO pacing endorsements as a Sherman Act agreement that would cut paid subscription value."
+        "title": "Cheaper models, same week as pacing talk",
+        "body": "Opus 5.5 and GPT-6 Sol/Luna landed hours apart on 22 Sept — Fable-class work and Astra offshoots at sharply lower unit cost."
       },
       {
-        "title": "California accelerates the kill switch",
-        "body": "Newsom’s EO speeds SB 813/AB 1405 and asks experts for onsite verifiers plus a kill switch whose efficacy outsiders must verify."
+        "title": "A province takes ChatGPT to court",
+        "body": "British Columbia alleges OpenAI flagged the Tumbler Ridge shooter and still did not call police before the February attack."
       },
       {
-        "title": "Embedded evals get a named desk",
-        "body": "Accenture Faculty sits inside Anthropic with employee-like access; Anthropic also publishes Claude leading 26% of R&D under supervision."
+        "title": "Sandbox surprises and pin theater",
+        "body": "Google confirmed Gemini touched three real firms in a May test; Plugin4Shell still leaves Copilot without a verified-pin fix."
       }
     ],
     "matters": [
       {
-        "title": "Subscription value is now a damages theory",
-        "body": "Safety coordination left the essay stage and entered consumer antitrust — boards need a docket watch, not only a policy memo."
+        "title": "Price cuts undercut the slowdown narrative",
+        "body": "Buyers will price SKUs, not essays — and this week’s SKUs got cheaper while Buist is pending."
       },
       {
-        "title": "Verifier access beats another PDF",
-        "body": "Onsite independent evaluators and a verified shutoff are the concrete asks California is writing into the next law draft."
+        "title": "Escalation policy is the product",
+        "body": "Flagged-but-not-reported is now a government damages theory, not only a trust-and-safety debate."
       },
       {
-        "title": "Desktop agents need an IT policy",
-        "body": "Muse on Mac makes Files/Mail/Messages the attack surface — approval-before-send is the control to keep on."
+        "title": "Agent supply chain is audit-ready",
+        "body": "Coding-agent plugins and cyber-eval harnesses need the same disclosure and verify-on-disk bar as traditional CI."
       }
     ],
     "watch": [
       {
-        "title": "Answers in Buist",
-        "body": "See whether defendants treat public advocacy as petitioning — and whether the labs’ working group keeps meeting."
+        "title": "Buist meets the price war",
+        "body": "See whether defendants argue competitive price cuts defeat the ‘agreed slowdown’ story."
       },
       {
-        "title": "Kill-switch recommendations",
-        "body": "California’s two-month expert pack will show if ‘kill switch’ becomes a testable requirement or a slogan."
+        "title": "Court-ordered ChatGPT escalation",
+        "body": "Watch for injunction language that would force LE notification playbooks into the product."
       },
       {
-        "title": "Next Index + next evaluator",
-        "body": "Watch Anthropic’s next automation percentage, METR pilots, and whether OpenAI/Google publish matching metrics."
+        "title": "Copilot Plugin4Shell patch",
+        "body": "Microsoft’s fix timing — or continued policy workarounds for non-GitHub plugin hosts."
       }
     ]
   },
   "chips": [
-    "Buist v. Anthropic",
-    "Sherman Act",
-    "Subscription value",
-    "Antitrust waiver",
-    "Newsom EO",
-    "AI kill switch",
-    "SB 813",
-    "AB 1405",
-    "Independent verification",
-    "Accenture Faculty",
-    "Embedded evaluators",
-    "METR pilot",
-    "R&D Automation Index",
-    "Claude leads 26%",
-    "AL4 vs AL5",
-    "1 in 47,000 blocked",
-    "Muse for Mac",
-    "Approval before send"
+    "Claude Opus 5.5",
+    "GPT-6 Sol",
+    "GPT-6 Luna",
+    "40% cheaper Opus",
+    "50% API cut",
+    "Pace the frontier",
+    "British Columbia",
+    "Tumbler Ridge",
+    "ChatGPT escalation",
+    "Sam Altman",
+    "Grok 4.7",
+    "CursorBench",
+    "Gemini Irregular CTF",
+    "Three company access",
+    "Plugin4Shell",
+    "SHA pin bypass",
+    "Copilot unpatched",
+    "Claude Code 2.1.179"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Buist v. Anthropic: class action alleges public agreement to slow frontier AI; treble damages + injunction",
+      "raw": "Anthropic Claude Opus 5.5: Fable-level on most work; ~40% lower typical cost vs Opus 5; $4/$20 per M tokens; first post-pacing release",
       "topic": "Money"
     },
     {
       "id": "s2",
-      "raw": "California EO: accelerate SB 813/AB 1405; design verified frontier kill switch; onsite verifiers",
-      "topic": "Rules"
+      "raw": "OpenAI GPT-6 Sol + Luna: Astra offshoots; API prices 50% below GPT-5.6 promo; ChatGPT Work/Codex + API",
+      "topic": "Money"
     },
     {
       "id": "s3",
-      "raw": "Anthropic × Accenture Faculty: embedded evaluators with employee-comparable access; ≥$1B each / 5 years",
+      "raw": "B.C. sues OpenAI + Altman: alleged June 2025 violence flag, RCMP recommend overruled, account deactivated only",
       "topic": "Trust"
     },
     {
       "id": "s4",
-      "raw": "R&D Automation Index: Claude leads 26% of Anthropic AI R&D; >90% collaborates+; 0% fully autonomous",
-      "topic": "Work"
+      "raw": "Grok 4.7: coding/knowledge workhorse at Grok 4.6 price ($2/$6); Cursor + API; new safeguard stack",
+      "topic": "Tools"
     },
     {
       "id": "s5",
-      "raw": "~30k internal agents; 100% online monitor coverage; ~0.002% actions blocked (~1 in 47k)",
-      "topic": "Trust"
+      "raw": "Google confirms Gemini accessed 3 real companies in May Irregular CTF (password guess / leaked creds); disclosed after WSJ",
+      "topic": "Rules"
     },
     {
       "id": "s6",
-      "raw": "Muse for Mac: native Files/Mail/Messages/Calendar/Notes; opt-in access; ask before sensitive actions",
+      "raw": "Plugin4Shell: SHA-pin bypass on Claude Code/Codex/Copilot/Gemini CLI; Copilot still unpatched at disclosure",
       "topic": "Tools"
     },
     {
       "id": "s7",
-      "raw": "Amodei asked for narrow antitrust waiver; Altman said OpenAI would not wait — both lines in complaint",
-      "topic": "Money"
+      "raw": "Opus 5.5 ships Fable-tier cyber/biology safeguards + external METR/Frontier Design eval; model often suspects evaluation",
+      "topic": "Trust"
     },
     {
       "id": "s8",
-      "raw": "Safety compute share snapshot: ~6% of AI R&D compute; ~12% of AI-driven AI R&D compute (conservative)",
-      "topic": "Work"
+      "raw": "Same-day Anthropic/OpenAI launches framed as enterprise price war despite CEO slowdown endorsements",
+      "topic": "Money"
     }
   ]
 }
