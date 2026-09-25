@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XplorAI — Front door mock (purpose-led)</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --bg-elev: #12151c;
+      --bg-soft: #181c26;
+      --line: rgba(255,255,255,0.08);
+      --text: #f4f5f7;
+      --muted: #9aa3b2;
+      --faint: #6b7382;
+      --accent: #7c6cff;
+      --accent-2: #4f8cff;
+      --glow: rgba(124,108,255,0.35);
+      --ok: #5ad1a0;
+      --radius: 18px;
+      --font: "Segoe UI", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); }
+    body {
+      background:
+        radial-gradient(900px 480px at 15% -10%, rgba(124,108,255,0.18), transparent 55%),
+        radial-gradient(700px 420px at 90% 0%, rgba(79,140,255,0.12), transparent 50%),
+        var(--bg);
+    }
+    .chrome {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .badge i {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--ok); box-shadow: 0 0 0 3px rgba(90,209,160,0.2);
+    }
+    header.top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 56px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 700; letter-spacing: 0.08em; font-size: 14px;
+    }
+    .mark {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center; font-size: 13px; font-weight: 800;
+      box-shadow: 0 8px 24px var(--glow);
+    }
+    .nav-ghost { color: var(--faint); font-size: 13px; }
+    .hero {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+    .hero h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      font-weight: 650;
+    }
+    .hero p.lede {
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.55;
+      max-width: 540px;
+    }
+    .prompt-label {
+      margin-top: 36px;
+      color: var(--faint);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 18px;
+    }
+    .chip {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: var(--bg-elev);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, transform .15s, box-shadow .2s;
+    }
+    .chip:hover {
+      border-color: rgba(124,108,255,0.45);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    }
+    .chip[aria-pressed="true"] {
+      background: linear-gradient(180deg, rgba(124,108,255,0.22), rgba(124,108,255,0.08));
+      border-color: rgba(124,108,255,0.65);
+      box-shadow: 0 0 0 1px rgba(124,108,255,0.25), 0 12px 32px var(--glow);
+    }
+    .stage {
+      margin-top: 36px;
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 40%), var(--bg-elev);
+      min-height: 320px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+    }
+    .stage-empty {
+      display: grid; place-items: center;
+      min-height: 320px;
+      color: var(--faint);
+      font-size: 15px;
+      padding: 40px;
+      text-align: center;
+    }
+    .panel { display: none; padding: 28px 28px 32px; text-align: left; }
+    .panel.active { display: block; animation: rise .28s ease; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+    .panel-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); font-size: 12px; letter-spacing: 0.08em;
+      text-transform: uppercase; font-weight: 600; margin-bottom: 10px;
+    }
+    .panel h2 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+    }
+    .panel .sub {
+      color: var(--muted); margin: 0 0 22px; max-width: 560px; line-height: 1.5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      border-radius: 14px;
+      padding: 16px 16px 18px;
+      min-height: 128px;
+    }
+    .card .meta {
+      color: var(--faint); font-size: 11px; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .card h3 {
+      margin: 0 0 8px; font-size: 15px; line-height: 1.35; font-weight: 600;
+    }
+    .card p {
+      margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45;
+    }
+    .cta-row {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      margin-top: 22px;
+    }
+    .btn {
+      appearance: none; border: 0; cursor: pointer;
+      border-radius: 999px; padding: 12px 18px; font-size: 14px; font-weight: 600;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 10px 28px var(--glow);
+    }
+    .btn-ghost {
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .wire-note {
+      margin-top: 28px;
+      padding: 16px 18px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.14);
+      color: var(--faint);
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .wire-note strong { color: var(--muted); font-weight: 600; }
+    footer.meta-foot {
+      margin-top: 48px;
+      color: var(--faint);
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="chrome">
+    <header class="top">
+      <div class="brand"><span class="mark">X</span> XPLORAI</div>
+      <div class="nav-ghost">Mock · not live</div>
+    </header>
+
+    <section class="hero">
+      <span class="badge"><i></i> Proposed front door</span>
+      <h1>What are you trying to do?</h1>
+      <p class="lede">One purpose, one door. Pick where you want to land — news, learning, or tools — instead of scanning everything at once.</p>
+      <p class="prompt-label">Choose a purpose</p>
+      <div class="chips" role="group" aria-label="Purpose">
+        <button class="chip" type="button" data-target="news" aria-pressed="false">Stay updated on AI news</button>
+        <button class="chip" type="button" data-target="learn" aria-pressed="false">Learn something new about AI</button>
+        <button class="chip" type="button" data-target="tools" aria-pressed="false">Find tools for my work</button>
+      </div>
+    </section>
+
+    <div class="stage" id="stage">
+      <div class="stage-empty" id="empty">Select a purpose above to preview the route.</div>
+
+      <div class="panel" id="panel-news" data-panel="news">
+        <div class="panel-kicker">Routes to · Weekly brief</div>
+        <h2>This week’s briefing</h2>
+        <p class="sub">Short, sourced desks on what changed — not a firehose. Continues into Brief / Library.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="meta">Rules desk</div>
+            <h3>CRA’s 24-hour clock is live</h3>
+            <p>What product teams must notify, and by when.</p>
+          </article>
+          <article class="card">
+            <div class="meta">Trust desk</div>
+            <h3>Spain’s first AI-agent GDPR hit</h3>
+            <p>Why “the model did it” is not a defense.</p>
+          </article>
+          <article class="card">
+            <div class="meta">Tools desk</div>
+            <h3>Secure the harness</h3>
+            <p>ASD’s durable layer above the model.</p>
+          </article>
+        </div>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button">Enter this week’s brief</button>
+          <button class="btn btn-ghost" type="button">Browse past briefings</button>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-learn" data-panel="learn">
+        <div class="panel-kicker">Routes to · AI Academy</div>
+        <h2>Learn something useful this week</h2>
+        <p class="sub">Guided paths and playbooks — workplace-first, jargon last.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="meta">Path · 20 min</div>
+            <h3>How agents fail on ordinary data jobs</h3>
+            <p>Failed fetches, SQL injection attempts, and the guardrails that matter.</p>
+          </article>
+          <article class="card">
+            <div class="meta">Playbook</div>
+            <h3>Vendor diligence in one sitting</h3>
+            <p>Questions to ask before a model or agent touches customer data.</p>
+          </article>
+          <article class="card">
+            <div class="meta">Primer</div>
+            <h3>Harness vs model</h3>
+            <p>What to lock down even when the model keeps changing.</p>
+          </article>
+        </div>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button">Open AI Academy</button>
+          <button class="btn btn-ghost" type="button">Strategy Playbook</button>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-tools" data-panel="tools">
+        <div class="panel-kicker">Routes to · Tools Radar (filtered)</div>
+        <h2>Tools matched to your work</h2>
+        <p class="sub">Purpose filter applied first — coding, research, ops — then the full radar if you want it.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="meta">Coding</div>
+            <h3>Frontier coding workhorses</h3>
+            <p>Curated subset for builders who ship weekly.</p>
+          </article>
+          <article class="card">
+            <div class="meta">Knowledge work</div>
+            <h3>Research &amp; writing stacks</h3>
+            <p>Models and apps that stay useful past the demo.</p>
+          </article>
+          <article class="card">
+            <div class="meta">Ops / security</div>
+            <h3>Agent harness &amp; guardrails</h3>
+            <p>Things that sit above the model and survive upgrades.</p>
+          </article>
+        </div>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button">Open filtered Tools Radar</button>
+          <button class="btn btn-ghost" type="button">See all ~110 tools</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wire-note">
+      <strong>Wireframe notes for Sai:</strong>
+      Homepage opens on purpose only — no full brief, mosaic, or radar dump above the fold.
+      Chip selection reveals the matching destination preview, then one primary CTA into Brief, Academy, or filtered Tools.
+      Existing cover / briefing layout stays behind the door; this is the entry gate, not a rewrite of the brief page.
+    </div>
+
+    <footer class="meta-foot">XplorAI front-door concept mock · interactive wireframe · review only</footer>
+  </div>
+
+  <script>
+    const chips = [...document.querySelectorAll('.chip')];
+    const panels = [...document.querySelectorAll('.panel')];
+    const empty = document.getElementById('empty');
+
+    function select(target) {
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.target === target)));
+      panels.forEach((p) => p.classList.toggle('active', p.dataset.panel === target));
+      empty.style.display = target ? 'none' : 'grid';
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => select(chip.dataset.target));
+    });
+  </script>
+</body>
+</html>
