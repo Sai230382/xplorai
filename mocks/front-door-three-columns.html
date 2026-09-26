@@ -188,14 +188,22 @@
 
       .col-brief {
         background: var(--paper-2);
+        color: var(--ink);
       }
 
       .col-tools {
-        background: var(--lav);
+        background: var(--indigo);
+        color: var(--paper);
       }
 
       .col-academy {
-        background: var(--peri-bright);
+        background: var(--peri);
+        color: var(--paper);
+      }
+
+      .col-tools:focus-visible,
+      .col-academy:focus-visible {
+        outline-color: var(--paper);
       }
 
       .top {
@@ -282,6 +290,11 @@
         display: none;
         background: var(--panel, var(--paper));
         color: var(--ink);
+      }
+
+      #tools.dest,
+      #academy.dest {
+        color: var(--paper);
       }
 
       .dest:target {
@@ -557,7 +570,7 @@
         </div>
       </section>
 
-      <section id="tools" class="dest" style="--panel: var(--lav)">
+      <section id="tools" class="dest" style="--panel: var(--indigo)">
         <div class="dest-copy">
           <p class="kicker">Tools Radar</p>
           <h2 tabindex="-1">→ opens Tools Radar</h2>
@@ -566,7 +579,7 @@
         </div>
       </section>
 
-      <section id="academy" class="dest" style="--panel: var(--peri-bright)">
+      <section id="academy" class="dest" style="--panel: var(--peri)">
         <div class="dest-copy">
           <p class="kicker">AI Academy</p>
           <h2 tabindex="-1">→ opens AI Academy</h2>
