@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>XplorAI</title>
+    <meta
+      name="description"
+      content="Review mock of the XplorAI front door. Three columns: Weekly Brief, Tools Radar, and AI Academy."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --mast: #f6f4ef;
+        --cream: #ebe8e1;
+        --lime: #d4ef4a;
+        --mist: #c5d2e0;
+        --playbook: #f6f4ef;
+        --ink: #121212;
+        --rule: rgba(18, 18, 18, 0.2);
+        --serif: "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+        --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --bar: 58px;
+        --pad: 32px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        background: var(--mast);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      ::selection {
+        background: var(--ink);
+        color: var(--mast);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+      }
+
+      .mast {
+        height: var(--bar);
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 0 var(--pad);
+        background: var(--mast);
+        border-bottom: 1px solid var(--rule);
+        position: relative;
+        z-index: 4;
+      }
+
+      .wordmark {
+        margin: 0;
+        font-family: var(--sans);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      .wordmark a:focus-visible {
+        outline-offset: 6px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      .nav a {
+        padding: 4px 0;
+      }
+
+      .nav a:hover {
+        opacity: 0.55;
+      }
+
+      .nav a[aria-current="page"],
+      body:has(#brief:target) .nav a[href="#brief"],
+      body:has(#tools:target) .nav a[href="#tools"],
+      body:has(#academy:target) .nav a[href="#academy"],
+      body:has(#playbook:target) .nav a[href="#playbook"] {
+        opacity: 1;
+        text-decoration: underline;
+        text-underline-offset: 0.4em;
+        text-decoration-thickness: 1px;
+      }
+
+      .dot {
+        opacity: 0.55;
+        letter-spacing: 0;
+      }
+
+      #front {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+      }
+
+      .columns {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        min-height: calc(100svh - var(--bar));
+      }
+
+      .col {
+        container-type: inline-size;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        padding: 22px var(--pad) 0;
+        overflow: hidden;
+        color: var(--ink);
+        isolation: isolate;
+      }
+
+      .col:focus-visible {
+        outline-offset: -8px;
+      }
+
+      .col::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #000;
+        opacity: 0;
+        transition: opacity 180ms ease;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      .col:hover::after,
+      .col:focus-visible::after {
+        opacity: 0.055;
+      }
+
+      .col:active::after {
+        opacity: 0.09;
+      }
+
+      .col-brief {
+        background: var(--cream);
+      }
+
+      .col-tools {
+        background: var(--lime);
+      }
+
+      .col-academy {
+        background: var(--mist);
+      }
+
+      .top {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 13.5px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        line-height: 1;
+      }
+
+      .seal {
+        width: 22px;
+        height: 22px;
+        flex: none;
+        display: block;
+      }
+
+      .arrow {
+        width: 18px;
+        height: 18px;
+        flex: none;
+        display: block;
+        transition: transform 200ms ease;
+      }
+
+      .col:hover .arrow,
+      .col:focus-visible .arrow {
+        transform: translateX(5px);
+      }
+
+      .col h2 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding-top: clamp(2.4rem, 13vh, 8.5rem);
+        max-width: 11em;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-optical-sizing: auto;
+        font-size: clamp(2.55rem, 13.6cqi, 5.05rem);
+        line-height: 0.92;
+        letter-spacing: -0.028em;
+        text-wrap: balance;
+      }
+
+      .orb {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: 0;
+        width: min(58%, 320px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        transform: translate(-50%, 48%);
+        box-shadow: inset 0 0 0 1px rgba(18, 18, 18, 0.14);
+        transition: transform 480ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        pointer-events: none;
+      }
+
+      .col:hover .orb,
+      .col:focus-visible .orb {
+        transform: translate(-50%, 43%) scale(1.035);
+      }
+
+      .orb svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .dest {
+        display: none;
+        background: var(--panel, var(--mast));
+        color: var(--ink);
+      }
+
+      .dest:target {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        min-height: calc(100svh - var(--bar));
+        padding: clamp(2.5rem, 8vh, 6rem) clamp(1.5rem, 8vw, 7rem);
+      }
+
+      body:has(.dest:target) .columns {
+        display: none;
+      }
+
+      .dest-copy {
+        max-width: 18em;
+      }
+
+      .kicker {
+        margin: 0 0 1.1rem;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .dest h2 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-optical-sizing: auto;
+        font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+        line-height: 0.96;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+      }
+
+      .dek {
+        margin: 1.35rem 0 0;
+        max-width: 28em;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(1.2rem, 2vw, 1.55rem);
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 2.4rem;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .back:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.4em;
+      }
+
+      .defs {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      @media (max-width: 860px) {
+        .mast {
+          height: auto;
+          min-height: var(--bar);
+          padding: 14px 18px;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          row-gap: 10px;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          gap: 0.45rem 0.65rem;
+          letter-spacing: 0.12em;
+        }
+
+        .columns {
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+        }
+
+        .col {
+          min-height: 100svh;
+          padding: 22px 22px 0;
+        }
+
+        .col h2 {
+          padding-top: clamp(2.8rem, 10vh, 5.5rem);
+          font-size: clamp(2.7rem, 12.5cqi, 4.4rem);
+        }
+
+        .orb {
+          width: min(62%, 280px);
+        }
+      }
+
+      @media (min-width: 861px) {
+        body:not(:has(.dest:target)) {
+          height: 100svh;
+          overflow: hidden;
+        }
+      }
+
+      @media (max-height: 720px) and (min-width: 861px) {
+        .col h2 {
+          padding-top: clamp(1.4rem, 6vh, 3.2rem);
+          font-size: clamp(2.1rem, 10cqi, 3.5rem);
+        }
+
+        .orb {
+          width: min(42%, 220px);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .col::after,
+        .arrow,
+        .orb {
+          transition: none;
+        }
+
+        .col:hover .orb,
+        .col:focus-visible .orb {
+          transform: translate(-50%, 48%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="defs" aria-hidden="true">
+      <defs>
+        <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="26" />
+        </filter>
+        <filter id="grain" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.12  0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0.45 0"
+          />
+        </filter>
+        <radialGradient id="vig" cx="50%" cy="42%" r="62%">
+          <stop offset="58%" stop-color="#000" stop-opacity="0" />
+          <stop offset="100%" stop-color="#000" stop-opacity="0.38" />
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <header class="mast">
+      <h1 class="wordmark"><a href="#front">XplorAI</a></h1>
+      <nav class="nav" aria-label="Primary">
+        <a href="#brief">Brief</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="#tools">Tools</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="#academy">Academy</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="#playbook">Playbook</a>
+      </nav>
+    </header>
+
+    <main id="front">
+      <div class="columns">
+        <a class="col col-brief" href="#brief" aria-label="Weekly Brief. What changed in AI this week — and what it means at work.">
+          <span class="top">
+            <span class="meta">
+              <svg class="seal" viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="16" r="10.2" fill="none" stroke="currentColor" stroke-width="1.25" />
+                <path d="M11.2 13.4h9.6M11.2 16.2h9.6M11.2 19h6.1" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+              </svg>
+              briefing current
+            </span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h15M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2>What changed in AI this week — and what it means at work.</h2>
+          <span class="orb" aria-hidden="true">
+            <svg viewBox="0 0 600 600">
+              <rect width="600" height="600" fill="#1c3346" />
+              <g filter="url(#soft)">
+                <ellipse cx="210" cy="175" rx="210" ry="160" fill="#d5e4ef" />
+                <ellipse cx="390" cy="300" rx="190" ry="170" fill="#3e6480" />
+                <ellipse cx="180" cy="400" rx="170" ry="140" fill="#c9b79a" />
+                <ellipse cx="430" cy="450" rx="150" ry="130" fill="#122433" />
+              </g>
+              <ellipse cx="232" cy="188" rx="46" ry="34" fill="#f7f3ea" opacity="0.8" />
+              <rect width="600" height="600" filter="url(#grain)" />
+              <rect width="600" height="600" fill="url(#vig)" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="col col-tools" href="#tools" aria-label="Tools Radar. Find the tool worth trying before the noise wins.">
+          <span class="top">
+            <span class="meta">
+              <svg class="seal" viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="16" r="10.2" fill="none" stroke="currentColor" stroke-width="1.25" />
+                <circle cx="16" cy="16" r="3.15" fill="none" stroke="currentColor" stroke-width="1.15" />
+                <circle cx="16" cy="16" r="1.15" fill="currentColor" />
+                <path d="M16 16 22.4 12.1" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" />
+              </svg>
+              radar live
+            </span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h15M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2>Find the tool worth trying before the noise wins.</h2>
+          <span class="orb" aria-hidden="true">
+            <svg viewBox="0 0 600 600">
+              <rect width="600" height="600" fill="#6b3416" />
+              <g filter="url(#soft)">
+                <ellipse cx="250" cy="200" rx="220" ry="170" fill="#f0c27a" />
+                <ellipse cx="400" cy="340" rx="200" ry="180" fill="#8a3d16" />
+                <ellipse cx="170" cy="390" rx="160" ry="140" fill="#2a120c" />
+                <ellipse cx="330" cy="250" rx="90" ry="70" fill="#fbe7c2" />
+              </g>
+              <circle cx="300" cy="270" r="78" fill="none" stroke="#f8ecd4" stroke-width="10" opacity="0.75" />
+              <circle cx="300" cy="270" r="18" fill="#2a140c" opacity="0.8" />
+              <rect width="600" height="600" filter="url(#grain)" />
+              <rect width="600" height="600" fill="url(#vig)" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="col col-academy" href="#academy" aria-label="AI Academy. Learn AI like a craft, not a feed.">
+          <span class="top">
+            <span class="meta">
+              <svg class="seal" viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="16" r="10.2" fill="none" stroke="currentColor" stroke-width="1.25" />
+                <path d="M11 20.2V14.2M16 20.2V11.4M21 20.2v-4.2" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
+              </svg>
+              academy paths
+            </span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h15M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2>Learn AI like a craft, not a feed.</h2>
+          <span class="orb" aria-hidden="true">
+            <svg viewBox="0 0 600 600">
+              <rect width="600" height="600" fill="#1a3424" />
+              <g filter="url(#soft)">
+                <ellipse cx="200" cy="190" rx="200" ry="160" fill="#b7cf8e" />
+                <ellipse cx="390" cy="250" rx="180" ry="160" fill="#e4dcc4" />
+                <ellipse cx="160" cy="390" rx="170" ry="140" fill="#3f6a45" />
+                <ellipse cx="420" cy="430" rx="160" ry="140" fill="#102216" />
+              </g>
+              <ellipse cx="250" cy="210" rx="36" ry="26" fill="#f6f3e8" opacity="0.7" />
+              <rect width="600" height="600" filter="url(#grain)" />
+              <rect width="600" height="600" fill="url(#vig)" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <section id="brief" class="dest" style="--panel: var(--cream)">
+        <div class="dest-copy">
+          <p class="kicker">Weekly Brief</p>
+          <h2 tabindex="-1">→ opens Weekly Brief</h2>
+          <p class="dek">What changed in AI this week — and what it means at work.</p>
+          <a class="back" href="#front">← Front door</a>
+        </div>
+      </section>
+
+      <section id="tools" class="dest" style="--panel: var(--lime)">
+        <div class="dest-copy">
+          <p class="kicker">Tools Radar</p>
+          <h2 tabindex="-1">→ opens Tools Radar</h2>
+          <p class="dek">Find the tool worth trying before the noise wins.</p>
+          <a class="back" href="#front">← Front door</a>
+        </div>
+      </section>
+
+      <section id="academy" class="dest" style="--panel: var(--mist)">
+        <div class="dest-copy">
+          <p class="kicker">AI Academy</p>
+          <h2 tabindex="-1">→ opens AI Academy</h2>
+          <p class="dek">Learn AI like a craft, not a feed.</p>
+          <a class="back" href="#front">← Front door</a>
+        </div>
+      </section>
+
+      <section id="playbook" class="dest" style="--panel: var(--playbook)">
+        <div class="dest-copy">
+          <p class="kicker">Strategy Playbook</p>
+          <h2 tabindex="-1">→ opens Strategy Playbook</h2>
+          <p class="dek">What AI is, where the money sits, which model to pick, and how to price the work.</p>
+          <a class="back" href="#front">← Front door</a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        var routes = {
+          brief: "Weekly Brief — XplorAI",
+          tools: "Tools Radar — XplorAI",
+          academy: "AI Academy — XplorAI",
+          playbook: "Strategy Playbook — XplorAI",
+        };
+
+        function sync(moveFocus) {
+          var id = location.hash.replace("#", "");
+          var known = Object.prototype.hasOwnProperty.call(routes, id);
+          document.title = known ? routes[id] : "XplorAI";
+          document.querySelectorAll(".nav a").forEach(function (link) {
+            if (known && link.getAttribute("href") === "#" + id) link.setAttribute("aria-current", "page");
+            else link.removeAttribute("aria-current");
+          });
+          if (moveFocus && known) {
+            var heading = document.querySelector("#" + id + " h2");
+            if (heading) heading.focus({ preventScroll: true });
+          }
+        }
+
+        window.addEventListener("hashchange", function () {
+          sync(true);
+        });
+        sync(false);
+      })();
+    </script>
+  </body>
+</html>
