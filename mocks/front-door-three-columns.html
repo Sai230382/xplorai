@@ -12,20 +12,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --mast: #f6f4ef;
-        --cream: #ebe8e1;
-        --lime: #d4ef4a;
-        --mist: #c5d2e0;
-        --playbook: #f6f4ef;
-        --ink: #121212;
-        --rule: rgba(18, 18, 18, 0.2);
+        --paper: #f4f1ea;
+        --paper-2: #e9e4d8;
+        --paper-3: #ddd7c8;
+        --ink: #14121c;
+        --peri: #5c6de0;
+        --peri-bright: #8b9bff;
+        --indigo: #24265e;
+        --indigo-deep: #1b1c48;
+        --lav: #c4b4ff;
+        --lav-soft: #e6dfff;
+        --rule: rgba(20, 18, 28, 0.2);
         --serif: "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-        --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --disp: "Big Shoulders Display", "Archivo", sans-serif;
         --bar: 58px;
         --pad: 32px;
       }
@@ -45,7 +50,7 @@
         min-height: 100svh;
         display: flex;
         flex-direction: column;
-        background: var(--mast);
+        background: var(--paper);
         color: var(--ink);
         font-family: var(--sans);
         font-weight: 400;
@@ -55,7 +60,7 @@
 
       ::selection {
         background: var(--ink);
-        color: var(--mast);
+        color: var(--paper);
       }
 
       a {
@@ -76,7 +81,7 @@
         justify-content: space-between;
         gap: 24px;
         padding: 0 var(--pad);
-        background: var(--mast);
+        background: var(--paper);
         border-bottom: 1px solid var(--rule);
         position: relative;
         z-index: 4;
@@ -182,15 +187,15 @@
       }
 
       .col-brief {
-        background: var(--cream);
+        background: var(--paper-2);
       }
 
       .col-tools {
-        background: var(--lime);
+        background: var(--lav);
       }
 
       .col-academy {
-        background: var(--mist);
+        background: var(--peri-bright);
       }
 
       .top {
@@ -275,7 +280,7 @@
 
       .dest {
         display: none;
-        background: var(--panel, var(--mast));
+        background: var(--panel, var(--paper));
         color: var(--ink);
       }
 
@@ -543,7 +548,7 @@
         </a>
       </div>
 
-      <section id="brief" class="dest" style="--panel: var(--cream)">
+      <section id="brief" class="dest" style="--panel: var(--paper-2)">
         <div class="dest-copy">
           <p class="kicker">Weekly Brief</p>
           <h2 tabindex="-1">→ opens Weekly Brief</h2>
@@ -552,7 +557,7 @@
         </div>
       </section>
 
-      <section id="tools" class="dest" style="--panel: var(--lime)">
+      <section id="tools" class="dest" style="--panel: var(--lav)">
         <div class="dest-copy">
           <p class="kicker">Tools Radar</p>
           <h2 tabindex="-1">→ opens Tools Radar</h2>
@@ -561,7 +566,7 @@
         </div>
       </section>
 
-      <section id="academy" class="dest" style="--panel: var(--mist)">
+      <section id="academy" class="dest" style="--panel: var(--peri-bright)">
         <div class="dest-copy">
           <p class="kicker">AI Academy</p>
           <h2 tabindex="-1">→ opens AI Academy</h2>
@@ -570,7 +575,7 @@
         </div>
       </section>
 
-      <section id="playbook" class="dest" style="--panel: var(--playbook)">
+      <section id="playbook" class="dest" style="--panel: var(--paper)">
         <div class="dest-copy">
           <p class="kicker">Strategy Playbook</p>
           <h2 tabindex="-1">→ opens Strategy Playbook</h2>
