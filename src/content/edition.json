@@ -69,7 +69,7 @@
         "Ask finance what a very large, expensive-to-run model does to the token budget before anyone makes Gemini 4 the team default."
       ],
       "example": "An AI platform lead keeps the current coding default, adds a side-by-side sheet for Gemini 4 on three real front-end tickets, and switches nothing until those tickets — not the benchmark page — say so.",
-      "audience": "AI platform owners, engineering managers running model bake-offs, and finance leads watching inference cost.",
+      "audience": "Platform owners, engineering managers running model bake-offs, and finance leads watching inference cost.",
       "watch": "The still-unannounced date of Gemini 4’s full launch, and whether independent coding evals appear before broader access.",
       "source": {
         "title": "Bloomberg (via Northwest Arkansas Democrat-Gazette), Google grapples with Gemini skepticism",
@@ -90,7 +90,7 @@
         "Put Armadin, XBOW, and Horizon3 on one watchlist with the round sizes and dates above, and leave revenue blank until a company discloses it."
       ],
       "example": "A security lead turns down a “let our agents onto production this week” pilot and asks instead for a written scope, an out-of-scope action filter, and a three-day consented test on a segmented network.",
-      "audience": "CISOs, security procurement, and corporate-development leads tracking offensive-AI valuations.",
+      "audience": "Security leads, procurement teams, and corporate-development leads tracking offensive-AI valuations.",
       "watch": "A named customer, any revenue disclosure, and whether the OpenShell contribution gives buyers something they can inspect.",
       "source": {
         "title": "Tech Funding News, Mandiant founder’s AI hacking startup Armadin raises $255.5m from a16z and Accel at a $2.5B valuation",
@@ -111,7 +111,7 @@
         "Read the hiring side of the same report before you brief headcount: 90,787 planned hires in September, the lowest September since 2011, and year-to-date plans of 210,612, up 3%."
       ],
       "example": "A people-operations lead replaces a slide that says “AI is driving a fifth of layoffs” with Challenger’s count: AI cited in 120,136 announcements, about 21% year to date, employer-stated, and only fifth in September.",
-      "audience": "HR and workforce-planning leads, and executives who brief boards on AI and headcount.",
+      "audience": "Workforce-planning leads, HR teams, and executives who brief boards on AI and headcount.",
       "watch": "Whether AI stays the leading year-to-date cited reason once September’s smaller AI-cited count is in the total, and how firms separate “AI” from the wait-and-see factors Andy Challenger named.",
       "source": {
         "title": "Challenger, Gray & Christmas, Job Cuts Fall in September; Hiring Plans Up 3% Over 2025 On Weak Early Seasonal Hiring",
