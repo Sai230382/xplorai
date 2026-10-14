@@ -58,7 +58,8 @@ export type Edition = {
   summary: string
   uncertainty: string
   stats: {
-    scanned: number
+    /** Leave unset when the week was not actually counted. Do not invent a scan total. */
+    scanned?: number
     filtered: number
     verified: number
     themes: number

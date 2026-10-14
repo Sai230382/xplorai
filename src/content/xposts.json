@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Aravind Srinivas",
+    "handle": "AravSrinivas",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2099903483457703936/U-W6QQk__400x400.jpg",
+    "text": "Users are reverse engineering and porting software across platforms with Perplexity Computer. This user's mechanical keyboard app was Windows only, with no Linux support and no documentation. Computer downloaded the binary in its cloud sandbox, decompiled it with headless Ghidra, and ported it to a native Rust app for Linux.\n\nComputer read the decompiled code to learn how the app drives the keyboard, then rebuilt it piece by piece, complete with keyboard lighting that syncs to music over PipeWire, a 3D view, key remapping, macros and profiles.\n\nhttps://t.co/eDZwppdI6c\n\nhttps://t.co/OPmnDMqurt",
+    "url": "https://x.com/AravSrinivas/status/2110389625277813212",
+    "postedAt": "2026-10-14T15:17:50Z"
+  },
+  {
+    "name": "Elon Musk",
+    "handle": "elonmusk",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_400x400.jpg",
+    "text": "All Grok @Bots get their own email address and can help analyze and summarize your email box too https://t.co/kD8uGi4zB6",
+    "url": "https://x.com/elonmusk/status/2110127808718741920",
+    "postedAt": "2026-10-13T21:57:28Z"
+  },
+  {
+    "name": "Greg Brockman",
+    "handle": "gdb",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1347621377503711233/bHg3ipfD_400x400.jpg",
+    "text": "6 days and $40,000 of compute with GPT-5.6 Sol to find a critical vulnerability in Chrome, claiming Google’s first full-chain reward in 2026 for a vulnerability that would affect an estimated 1 billion users.\n\nHighlights the opportunity for defenders to utilize these tools to secure their software to unprecedented levels:",
+    "url": "https://x.com/gdb/status/2110063893016096831",
+    "postedAt": "2026-10-13T17:43:29Z"
+  },
+  {
+    "name": "Demis Hassabis",
+    "handle": "demishassabis",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1990472620614053888/xrAu0wQL_400x400.jpg",
+    "text": "Gemini 4 Argon is amazing for knowledge work and coding - and it’s super fun to build with! We asked it to create this wizard chess game and it's so cool to see Argon's physics understanding & 3D modelling capabilities, makes me nostalgic for Battlechess on the Amiga - fun times!\n\nArgon is rolling out today to Google Ultra and Pro subscribers in the @GeminiApp and Search, and Ultra subscribers in @antigravity! More info & full availability in the blog: https://t.co/7d3791mRNH",
+    "url": "https://x.com/demishassabis/status/2110041008100843835",
+    "postedAt": "2026-10-13T16:12:33Z"
+  },
+  {
+    "name": "Aravind Srinivas",
+    "handle": "AravSrinivas",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2099903483457703936/U-W6QQk__400x400.jpg",
+    "text": "Every Perplexity Project is a Git repo. We built a Git forge for agents, without the GitHub bloat, since no human has to approve anything.\n\nEach agent gets its own short-lived sandbox and commits to a shared repo on S3. Fewer than 2% of submissions collide.\n\nAgents search with plain `ls` and `grep`. That beats semantic search 63% vs 37% on answer accuracy for financial document analysis.",
+    "url": "https://x.com/AravSrinivas/status/2109738344011972893",
+    "postedAt": "2026-10-12T20:09:52Z"
+  },
+  {
+    "name": "Andrej Karpathy",
+    "handle": "karpathy",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1296667294148382721/9Pr6XrPB_400x400.jpg",
+    "text": "Dusting off this tweet from April because this gap in shared understanding of LLM capability is *widening*. It's now less \"two groups of people speaking past each other\" and more a sharp funnel.\n\n- Napkin math somewhere around 6B people (~75% of the population) have barely come https://t.co/79xGhQdf1n",
+    "url": "https://x.com/karpathy/status/2109361546505966046",
+    "postedAt": "2026-10-11T19:12:37Z"
+  },
+  {
+    "name": "Sam Altman",
+    "handle": "sama",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2046764873200394240/r7BxVezs_400x400.jpg",
+    "text": "ChatGPT can now generate a custom UI for you! https://t.co/ZdGRMAEjQX",
+    "url": "https://x.com/sama/status/2107924408597950702",
+    "postedAt": "2026-10-07T20:01:57Z"
+  },
+  {
+    "name": "Demis Hassabis",
+    "handle": "demishassabis",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1990472620614053888/xrAu0wQL_400x400.jpg",
+    "text": "The most important thing we can apply AI to is improving medicine and human health - very excited about this partnership with the CZI and the Virtual Biology Initiative! https://t.co/vCDhP4yZWB",
+    "url": "https://x.com/demishassabis/status/2107861788301607261",
+    "postedAt": "2026-10-07T15:53:07Z"
+  }
+]

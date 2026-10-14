@@ -2458,34 +2458,122 @@
       "s": 4,
       "p": "Per-module monthly pricing (~$200-500+ per automation)",
       "st": "active"
+    },
+    {
+      "n": "Jotbus",
+      "w": "https://jotbus.com",
+      "c": "Agent Infrastructure",
+      "tl": "Encrypted shared scratchpad for coding agents",
+      "d": "Jotbus gives coding agents an end-to-end encrypted shared workspace to exchange notes, files and handoffs across machines and people. npx jotbus sets up Claude Code, Codex, Cursor, Gemini CLI and other MCP clients; Jotbus stores only ciphertext.",
+      "f": [
+        "One-command setup for 13+ agents and any MCP client",
+        "End-to-end encryption, file names included",
+        "Guests join without an account",
+        "@mentions reach an agent the next time it is active"
+      ],
+      "u": [
+        "Asking a second model on another machine to review a branch",
+        "Leaving handoff notes between agent sessions",
+        "Sharing logs and patches with a colleague's agent"
+      ],
+      "e": "It is like a shared, locked notebook your AI coding helpers can all write in, so one can leave a note and the other picks it up later, without you copying text between windows.",
+      "s": 4,
+      "p": "Free 60-minute workspaces; Personal $7/month",
+      "st": "active"
+    },
+    {
+      "n": "Agent.reviews",
+      "w": "https://agent.reviews",
+      "c": "Agent Infrastructure",
+      "tl": "Where AI agents read and write reviews of software",
+      "d": "Agent.reviews, from Armature, is a review platform for AI agents. A CLI and skill let coding agents check reviews before choosing a tool and post their own experience afterwards, giving vendors feedback from agent sessions.",
+      "f": [
+        "npm CLI and skill for Claude Code, Codex, Cursor and others",
+        "Reviews by category of developer tool",
+        "Free access for humans and agents",
+        "Authentication to limit spam reviews"
+      ],
+      "u": [
+        "Letting an agent pick a tool based on other agents' experience",
+        "Seeing where a tool trips up agents",
+        "Improving a product's agent experience"
+      ],
+      "e": "It is like a review site, but the reviewers are AI assistants that just used the tool, so you can see what works for them and what does not.",
+      "s": 3,
+      "p": "Free",
+      "st": "active"
+    },
+    {
+      "n": "DiffGuardian",
+      "w": "https://diffguardian.ai",
+      "c": "Vibe Coding",
+      "tl": "Spoken, visual walkthroughs of PRs and codebases",
+      "d": "DiffGuardian indexes a repo into a code knowledge graph and explains PRs, agent plans and live worktrees out loud, highlighting code and drawing dependency graphs as it talks. Works with your own keys or local models; code stays on your machine.",
+      "f": [
+        "Hold Space to ask a PR or repo a question by voice",
+        "Trace It written walkthrough of large diffs",
+        "Blast-radius dependency graphs from the diff",
+        "Local models via Ollama, LM Studio, llama.cpp, vLLM"
+      ],
+      "u": [
+        "Reviewing agent-written PRs before approving",
+        "Onboarding to an unfamiliar codebase",
+        "Letting PMs ask what shipped in plain English"
+      ],
+      "e": "It is like having a colleague talk you through a code change, pointing at each line on screen, so you understand it before you say yes.",
+      "s": 4,
+      "p": "Free tier; Pro $8/month; Team $8/seat/month",
+      "st": "active"
+    },
+    {
+      "n": "Atticus",
+      "w": "https://news.ycombinator.com/item?id=50049588",
+      "c": "Productivity",
+      "tl": "Hold-to-talk Mac assistant that runs on your Claude plan",
+      "d": "Atticus is a free, open-source macOS assistant. Simple commands run locally in under a second; complex tasks go to Claude via claude -p on an existing Pro or Max plan. It remembers successful step sequences and replays them without AI, and prompts before risky actions.",
+      "f": [
+        "Local handling of simple tasks",
+        "Uses claude -p, no API key needed",
+        "Record-once, replay-without-AI shortcuts",
+        "Confirmation before delete, send, buy or write"
+      ],
+      "u": [
+        "Opening apps and running web searches by voice",
+        "Automating repeated desktop workflows",
+        "Running multi-step tasks on a Claude subscription"
+      ],
+      "e": "You hold a key and say what you want your Mac to do. Easy jobs happen instantly, hard ones go to Claude, and it asks you before anything risky.",
+      "s": 3,
+      "p": "Free and open source (requires macOS 26 and a Claude plan for complex tasks)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "14 September 2026",
+    "week": "14 October 2026",
     "launches": [
       {
-        "name": "Eclipse Enclave (enclave.eclipse.dev)",
-        "date": "8 September 2026",
-        "desc": "Eclipse Foundation open-source sandbox: every coding-agent session gets its own container, filesystem view, and network gateway. Claude Code, Codex, OpenCode, Pi, and others run with permission prompts off because the sandbox — not the human — is the gate.",
-        "why": "The brief is about who may run a cyber model. Enclave answers the local version: what the agent on your laptop is allowed to touch."
+        "name": "Jotbus (jotbus.com)",
+        "date": "6 October 2026",
+        "desc": "An end-to-end encrypted shared scratchpad for coding agents. One command, npx jotbus, creates a 60-minute workspace and wires up Claude Code, Codex, Cursor, Gemini CLI and other MCP clients so they can leave notes, files and handoffs for each other across machines. Free for instant workspaces; $7/month for persistent ones.",
+        "why": "For developers running more than one agent: an independent review by a second model, or a handoff to a colleague’s agent, without copy-pasting context. Jotbus stores only ciphertext."
       },
       {
-        "name": "Harden AIF (harden.run)",
-        "date": "9 September 2026",
-        "desc": "A free, local firewall for coding agents. A post-trained cybersecurity model checks each tool call against your intent and session context, then allows, rewrites, asks, or blocks — Claude Code, Codex, Cursor, Gemini CLI, and others. Repo and tool output stay on the machine.",
-        "why": "Same week Google gated Flash Cyber behind Fairwind. Harden is the desk-level check: the agent does not get a free pass on rm, npx, or your keys."
+        "name": "Agent.reviews (agent.reviews)",
+        "date": "7 October 2026",
+        "desc": "A G2-style review site where AI agents read and write reviews of developer tools. An npm CLI and skill let Claude Code, Codex or Cursor check reviews before picking a tool and post their own after using one. Free to read for humans and agents.",
+        "why": "For platform teams and dev-tool vendors: a feedback loop on how tools actually behave when an agent, not a person, is the user."
       },
       {
-        "name": "Cadenya (cadenya.com)",
-        "date": "11 September 2026",
-        "desc": "A hosted agentic loop rather than a framework you bolt on. Connect OpenAPI and MCP tools; Cadenya runs context compaction, tool approvals, webhooks, and streaming. Model-agnostic via OpenRouter or any OpenAI-compatible endpoint.",
-        "why": "The missing harness people keep rewriting: tool calls, compaction, and an approval gate as a service — not another closed managed-agents box."
+        "name": "DiffGuardian (diffguardian.ai)",
+        "date": "8 October 2026",
+        "desc": "A desktop app for macOS, Windows and Linux that indexes your repo into a code knowledge graph and gives a spoken, highlighted walkthrough of any PR, agent plan or live worktree. Runs on your own keys or local models; code never touches its servers. Free tier; Pro $8/month.",
+        "why": "For engineers and PMs approving agent-written PRs: understand what a change does and what it touches before you merge, instead of rubber-stamping."
       },
       {
-        "name": "Elva (getelva.ai)",
-        "date": "14 September 2026",
-        "desc": "Discovers APIs in your repo, writes audience contracts, and hosts MCP servers behind scoped keys, per-tool auth, and full call logs. Built for the week when agents — not only developers — are the API consumers.",
-        "why": "The Anthropic report treats stolen AI keys as loot. Elva issues keys per agent and revokes them in one click — the MCP equivalent of not leaving AWS keys in the APK."
+        "name": "Atticus (news.ycombinator.com/item?id=50049588)",
+        "date": "12 October 2026",
+        "desc": "A free, open-source hold-to-talk Mac assistant. Simple tasks run locally in under a second; harder ones go to Claude via claude -p on an existing Pro or Max plan, with no API key. It saves successful step sequences and replays them without AI, and asks before deleting, sending, buying or writing files.",
+        "why": "For Mac users who want a desktop agent with a confirmation gate on irreversible actions, built on a subscription they already pay for."
       }
     ],
     "funding": [
