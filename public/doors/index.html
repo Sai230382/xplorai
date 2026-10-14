@@ -92,16 +92,110 @@
 
       .wordmark {
         margin: 0;
-        font-family: var(--sans);
-        font-size: 13px;
+        font-family: var(--serif);
+        font-size: 1.32rem;
         font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
+        letter-spacing: -0.01em;
         line-height: 1;
       }
 
       .wordmark a:focus-visible {
         outline-offset: 6px;
+      }
+
+      .brand-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 1px;
+        position: relative;
+        padding: 4px 2px;
+      }
+
+      .x-butterfly {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 26px;
+        margin-right: -1px;
+        filter: drop-shadow(0 3px 6px rgba(36, 38, 94, 0.22));
+        animation: x-body-hover 5.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      }
+
+      .x-butterfly-svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      .xmark-wing {
+        transform-box: view-box;
+      }
+
+      .xmark-wing-l {
+        transform-origin: 31px 32px;
+        animation: x-wing-flap-l 5.6s cubic-bezier(0.32, 0, 0.24, 1) infinite;
+      }
+
+      .xmark-wing-r {
+        transform-origin: 33px 32px;
+        animation: x-wing-flap-r 5.6s cubic-bezier(0.32, 0, 0.24, 1) infinite;
+      }
+
+      .plorai {
+        display: inline-flex;
+        align-items: baseline;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.34rem;
+        letter-spacing: 0.01em;
+        color: var(--ink);
+      }
+
+      .plorai-ch {
+        display: inline-block;
+        transform-origin: bottom center;
+        animation: plorai-breeze-wave 5.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+        animation-delay: calc(110ms + var(--char-i, 0) * 62ms);
+      }
+
+      .plorai-ch.is-ai {
+        font-family: var(--sans);
+        font-size: 0.88em;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        margin-left: 0.5px;
+        color: var(--indigo);
+      }
+
+      @keyframes x-body-hover {
+        0%, 26%, 100% { transform: translateY(0) rotate(0deg); }
+        6% { transform: translateY(-2.5px) rotate(-4deg); }
+        13% { transform: translateY(-1px) rotate(2.5deg); }
+        20% { transform: translateY(-2px) rotate(-1.5deg); }
+      }
+
+      @keyframes x-wing-flap-l {
+        0%, 26%, 100% { transform: scaleX(1) skewY(0deg); }
+        5% { transform: scaleX(0.32) skewY(-10deg); }
+        10% { transform: scaleX(1.06) skewY(3deg); }
+        15% { transform: scaleX(0.42) skewY(-8deg); }
+        21% { transform: scaleX(1.03) skewY(2deg); }
+      }
+
+      @keyframes x-wing-flap-r {
+        0%, 26%, 100% { transform: scaleX(1) skewY(0deg); }
+        5% { transform: scaleX(0.32) skewY(10deg); }
+        10% { transform: scaleX(1.06) skewY(-3deg); }
+        15% { transform: scaleX(0.42) skewY(8deg); }
+        21% { transform: scaleX(1.03) skewY(-2deg); }
+      }
+
+      @keyframes plorai-breeze-wave {
+        0%, 28%, 100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+        7% { transform: translateY(-4.5px) translateX(2.5px) rotate(6deg) scale(1.06); color: var(--peri); }
+        16% { transform: translateY(1.2px) translateX(-0.8px) rotate(-2.5deg) scale(0.99); }
       }
 
       .nav {
@@ -1554,7 +1648,48 @@
     </svg>
 
     <header class="mast">
-      <h1 class="wordmark"><a href="#front">XplorAI</a></h1>
+      <h1 class="wordmark">
+        <a href="#front" class="brand-logo" aria-label="XplorAI">
+          <span class="x-butterfly" aria-hidden="true">
+            <svg class="x-butterfly-svg" viewBox="0 0 64 64" fill="none">
+              <defs>
+                <linearGradient id="xwing-upper" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#24265e" />
+                  <stop offset="58%" stop-color="#5161d4" />
+                  <stop offset="100%" stop-color="#c4b4ff" />
+                </linearGradient>
+                <linearGradient id="xwing-lower" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#1b1c48" />
+                  <stop offset="65%" stop-color="#5161d4" />
+                  <stop offset="100%" stop-color="#e6dfff" />
+                </linearGradient>
+              </defs>
+              <g class="xmark-wing xmark-wing-l">
+                <path d="M 31 31 C 24 17 14 7 5 9 C 2 10 3 19 10 26 C 16 31 24 32 31 32 Z" fill="url(#xwing-upper)" />
+                <path d="M 31 33 C 23 34 14 38 8 46 C 4 52 7 57 13 55 C 21 52 27 42 31 34 Z" fill="url(#xwing-lower)" />
+                <path d="M 30 31 C 21 23 13 16 6 13 M 30 34 C 22 40 15 47 10 53" stroke="#f4f1ea" stroke-width="1.1" stroke-linecap="round" opacity="0.72" />
+              </g>
+              <g class="xmark-wing xmark-wing-r">
+                <path d="M 33 31 C 40 17 50 7 59 9 C 62 10 61 19 54 26 C 48 31 40 32 33 32 Z" fill="url(#xwing-upper)" />
+                <path d="M 33 33 C 41 34 50 38 56 46 C 60 52 57 57 51 55 C 43 52 37 42 33 34 Z" fill="url(#xwing-lower)" />
+                <path d="M 34 31 C 43 23 51 16 58 13 M 34 34 C 42 40 49 47 54 53" stroke="#f4f1ea" stroke-width="1.1" stroke-linecap="round" opacity="0.72" />
+              </g>
+              <path d="M 31.3 22 C 29 15 24 10 19 9 M 32.7 22 C 35 15 40 10 45 9" stroke="#14121c" stroke-width="1.25" stroke-linecap="round" />
+              <circle cx="18.8" cy="9" r="1.4" fill="#24265e" />
+              <circle cx="45.2" cy="9" r="1.4" fill="#24265e" />
+              <rect x="30.4" y="20" width="3.2" height="24" rx="1.6" fill="#14121c" />
+            </svg>
+          </span>
+          <span class="plorai" aria-hidden="true">
+            <span class="plorai-ch" style="--char-i:0">p</span>
+            <span class="plorai-ch" style="--char-i:1">l</span>
+            <span class="plorai-ch" style="--char-i:2">o</span>
+            <span class="plorai-ch" style="--char-i:3">r</span>
+            <span class="plorai-ch is-ai" style="--char-i:4">A</span>
+            <span class="plorai-ch is-ai" style="--char-i:5">I</span>
+          </span>
+        </a>
+      </h1>
       <nav class="nav" aria-label="Primary">
         <a href="#brief">Brief</a>
         <span class="dot" aria-hidden="true">·</span>

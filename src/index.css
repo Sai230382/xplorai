@@ -106,16 +106,174 @@ a {
 
 .wordmark {
   margin: 0;
-  font-family: var(--sans);
-  font-size: 13px;
+  font-family: var(--serif);
+  font-size: 1.32rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
   line-height: 1;
 }
 
 .wordmark a:focus-visible {
   outline-offset: 6px;
+}
+
+/* ——— Butterfly-X + Fluttering "plorAI" Signature Logo ——— */
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  position: relative;
+  padding: 4px 2px;
+  perspective: 520px;
+}
+
+.x-butterfly {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 26px;
+  margin-right: -1px;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 3px 6px rgba(36, 38, 94, 0.22));
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.x-butterfly-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.xmark-wing {
+  transform-box: view-box;
+  transition: transform 260ms ease;
+}
+
+.xmark-wing-l {
+  transform-origin: 31px 32px;
+}
+
+.xmark-wing-r {
+  transform-origin: 33px 32px;
+}
+
+.plorai {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.34rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.plorai-ch {
+  display: inline-block;
+  transform-origin: bottom center;
+  will-change: transform, color;
+}
+
+.plorai-ch.is-ai {
+  font-family: var(--sans);
+  font-size: 0.88em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-left: 0.5px;
+  color: var(--indigo);
+}
+
+/* Wingbeat + Breeze Ripple when .is-fluttering or hovered */
+.brand-logo:hover .x-butterfly,
+.brand-logo.is-fluttering .x-butterfly {
+  animation: x-body-hover 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brand-logo:hover .xmark-wing-l,
+.brand-logo.is-fluttering .xmark-wing-l {
+  animation: x-wing-flap-l 1.25s cubic-bezier(0.32, 0, 0.24, 1);
+}
+
+.brand-logo:hover .xmark-wing-r,
+.brand-logo.is-fluttering .xmark-wing-r {
+  animation: x-wing-flap-r 1.25s cubic-bezier(0.32, 0, 0.24, 1);
+}
+
+.brand-logo:hover .plorai-ch,
+.brand-logo.is-fluttering .plorai-ch {
+  animation: plorai-breeze-wave 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(110ms + var(--char-i, 0) * 62ms);
+}
+
+@keyframes x-body-hover {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  22% {
+    transform: translateY(-2.5px) rotate(-4deg);
+  }
+  52% {
+    transform: translateY(-1px) rotate(2.5deg);
+  }
+  78% {
+    transform: translateY(-2px) rotate(-1.5deg);
+  }
+}
+
+@keyframes x-wing-flap-l {
+  0%,
+  100% {
+    transform: scaleX(1) skewY(0deg);
+  }
+  18% {
+    transform: scaleX(0.32) skewY(-10deg);
+  }
+  38% {
+    transform: scaleX(1.06) skewY(3deg);
+  }
+  58% {
+    transform: scaleX(0.42) skewY(-8deg);
+  }
+  80% {
+    transform: scaleX(1.03) skewY(2deg);
+  }
+}
+
+@keyframes x-wing-flap-r {
+  0%,
+  100% {
+    transform: scaleX(1) skewY(0deg);
+  }
+  18% {
+    transform: scaleX(0.32) skewY(10deg);
+  }
+  38% {
+    transform: scaleX(1.06) skewY(-3deg);
+  }
+  58% {
+    transform: scaleX(0.42) skewY(8deg);
+  }
+  80% {
+    transform: scaleX(1.03) skewY(-2deg);
+  }
+}
+
+@keyframes plorai-breeze-wave {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+  }
+  28% {
+    transform: translateY(-4.5px) translateX(2.5px) rotate(6deg) scale(1.06);
+    color: var(--peri);
+  }
+  62% {
+    transform: translateY(1.2px) translateX(-0.8px) rotate(-2.5deg) scale(0.99);
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+  }
 }
 
 .nav {
@@ -2236,9 +2394,13 @@ a {
   .plate img,
   .spine-book.spine-expandable,
   .spine-leaf,
-  .doors-tool-card {
+  .doors-tool-card,
+  .brand-logo .x-butterfly,
+  .brand-logo .xmark-wing-l,
+  .brand-logo .xmark-wing-r,
+  .brand-logo .plorai-ch {
     transition: none;
-    animation: none;
+    animation: none !important;
   }
 
   .col:hover .plate img,

@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { Mark } from "./components/Mark"
 import { desks, type DeskId, currentEdition } from "./data/edition"
 import { featuredLaunch } from "./data/launches"
 import { featuredModule, learnCatalog } from "./data/learn"
@@ -243,9 +244,12 @@ function Signal({ value }: { value: number }) {
   )
 }
 
+const PLORAI_CHARS = ["p", "l", "o", "r", "A", "I"] as const
+
 export default function App() {
   const reducedMotion = usePrefersReducedMotion()
   const [route, setRoute] = useState<RouteId>("front")
+  const [logoFlutter, setLogoFlutter] = useState(true)
   const [openStoryId, setOpenStoryId] = useState<string | null>(newsStories[0]?.id ?? null)
   const [selectedVolumeId, setSelectedVolumeId] = useState<string>(libraryVolumes[0]?.id ?? "academy")
   const volumeDeskRef = useRef<HTMLElement>(null)
@@ -403,6 +407,27 @@ export default function App() {
     window.addEventListener("hashchange", onHash)
     return () => window.removeEventListener("hashchange", onHash)
   }, [allShelfBooks])
+
+  // Trigger the Butterfly-X + "plorAI" breeze ripple on route change & periodic ambient interval
+  useEffect(() => {
+    if (reducedMotion) return
+    setLogoFlutter(true)
+    const clearTimer = window.setTimeout(() => setLogoFlutter(false), 1450)
+    const interval = window.setInterval(() => {
+      setLogoFlutter(true)
+      window.setTimeout(() => setLogoFlutter(false), 1450)
+    }, 6800)
+    return () => {
+      window.clearTimeout(clearTimer)
+      window.clearInterval(interval)
+    }
+  }, [route, reducedMotion])
+
+  function triggerLogoFlutter() {
+    if (reducedMotion || logoFlutter) return
+    setLogoFlutter(true)
+    window.setTimeout(() => setLogoFlutter(false), 1450)
+  }
 
   // Scroll-driven butterfly collage choreography on #front
   useLayoutEffect(() => {
@@ -635,7 +660,29 @@ export default function App() {
 
       <header className="mast">
         <h1 className="wordmark">
-          <a href="#front">{site.name}</a>
+          <a
+            href="#front"
+            className={`brand-logo ${logoFlutter ? "is-fluttering" : ""}`}
+            aria-label={site.name}
+            onMouseEnter={triggerLogoFlutter}
+            onFocus={triggerLogoFlutter}
+          >
+            <span className="x-butterfly" aria-hidden="true">
+              <Mark className="x-butterfly-svg" />
+            </span>
+            <span className="sr-only">{site.name}</span>
+            <span className="plorai" aria-hidden="true">
+              {PLORAI_CHARS.map((ch, idx) => (
+                <span
+                  key={idx}
+                  className={`plorai-ch ${idx >= 4 ? "is-ai" : ""}`}
+                  style={{ "--char-i": idx } as CSSProperties}
+                >
+                  {ch}
+                </span>
+              ))}
+            </span>
+          </a>
         </h1>
         <nav className="nav" aria-label="Primary">
           <a href="#brief" aria-current={route === "brief" ? "page" : undefined}>
