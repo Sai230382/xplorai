@@ -1,6 +1,6 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { Mark } from "./components/Mark"
-import { desks, type DeskId, currentEdition } from "./data/edition"
+import { desks, type DeskId, currentEdition, type EditionStory } from "./data/edition"
 import { featuredLaunch } from "./data/launches"
 import { featuredModule, learnCatalog } from "./data/learn"
 import { libraryVolumes } from "./data/library"
@@ -226,12 +226,25 @@ function deskLabel(id: DeskId) {
   return desks.find((desk) => desk.id === id)?.label ?? id
 }
 
+/** Keeps door & butterfly headlines crisp (~48 chars max, stopping cleanly at punctuation) */
 function conciseHeadline(theme: string) {
   const dashIdx = theme.indexOf(" — ")
-  if (dashIdx > 0) return theme.slice(0, dashIdx)
-  const semiIdx = theme.indexOf("; ")
-  if (semiIdx > 0) return theme.slice(0, semiIdx)
-  return theme
+  const base = dashIdx > 0 ? theme.slice(0, dashIdx) : theme
+  const commaIdx = base.indexOf(", ")
+  if (commaIdx > 18 && commaIdx <= 56) return base.slice(0, commaIdx)
+  const semiIdx = base.indexOf("; ")
+  if (semiIdx > 0 && semiIdx <= 58) return base.slice(0, semiIdx)
+  if (base.length <= 56) return base
+  return `${base.slice(0, 53).replace(/\s+\S*$/, "")}…`
+}
+
+/** Extracts the first 1–2 crisp sentences for scannable card previews */
+function firstSentence(text: string, maxChars = 175) {
+  const clean = text.trim()
+  const match = clean.match(/^[^.!?]+[.!?]/)
+  const first = match ? match[0].trim() : clean
+  if (first.length <= maxChars) return first
+  return `${first.slice(0, maxChars - 3).replace(/\s+\S*$/, "")}…`
 }
 
 function Signal({ value }: { value: number }) {
@@ -250,11 +263,15 @@ export default function App() {
   const reducedMotion = usePrefersReducedMotion()
   const [route, setRoute] = useState<RouteId>("front")
   const [logoFlutter, setLogoFlutter] = useState(true)
-  const [openStoryId, setOpenStoryId] = useState<string | null>(newsStories[0]?.id ?? null)
+
+  // Modal state for Weekly Brief stories & Editor's Note
+  const [activeStoryModal, setActiveStoryModal] = useState<EditionStory | null>(null)
+  const [editorNoteModalOpen, setEditorNoteModalOpen] = useState(false)
+
   const [selectedVolumeId, setSelectedVolumeId] = useState<string>(libraryVolumes[0]?.id ?? "academy")
   const volumeDeskRef = useRef<HTMLElement>(null)
 
-  // Tools Radar interactive state: two clean tabs ("niche" vs "directory") + compact pagination
+  // Tools Radar interactive state
   const [toolsTab, setToolsTab] = useState<ToolsTab>("niche")
   const [toolQuery, setToolQuery] = useState("")
   const [toolCategory, setToolCategory] = useState(radarCategories[0] ?? "Vibe Coding")
@@ -272,6 +289,18 @@ export default function App() {
   const svgRef = useRef<SVGSVGElement>(null)
   const colsRef = useRef<HTMLDivElement>(null)
   const clipRefs = useRef<(HTMLElement | null)[]>([])
+
+  // Close modals on Escape key
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setActiveStoryModal(null)
+        setEditorNoteModalOpen(false)
+      }
+    }
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [])
 
   // Combine the 5 core Library Volumes + 5 Curriculum Modules into unified expandable ShelfBooks
   const allShelfBooks: ShelfBook[] = useMemo(() => {
@@ -357,7 +386,9 @@ export default function App() {
         bucket: "academy",
         paint: "academy-1",
         desk: "Learn",
-        headline: currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
+        headline: conciseHeadline(
+          currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
+        ),
         stack: [74, 56, 3, 0.78],
         spread: [76, 66, 4, 1.02],
         dock: [52, 64, 3, 0.44],
@@ -367,7 +398,9 @@ export default function App() {
         bucket: "academy",
         paint: "academy-2",
         desk: "Learn",
-        headline: currentEdition.columns.matters[1]?.title ?? "Always-on agents need permission design",
+        headline: conciseHeadline(
+          currentEdition.columns.matters[1]?.title ?? "Always-on agents need permission design",
+        ),
         stack: [85, 43, -6, 0.76],
         spread: [86, 36, -3, 1.04],
         dock: [64, 76, -2, 0.4],
@@ -390,6 +423,8 @@ export default function App() {
       }
       const mapped = HASH_ALIASES[raw] ?? "front"
       setRoute(mapped)
+      setActiveStoryModal(null)
+      setEditorNoteModalOpen(false)
       document.title = mapped === "front" ? site.name : ROUTE_TITLES[mapped]
       if (moveFocus) {
         window.scrollTo({ top: 0, behavior: "auto" })
@@ -605,22 +640,6 @@ export default function App() {
     <div className={`doors-app route-${route}`}>
       <svg className="defs" aria-hidden="true">
         <defs>
-          {/* Procedural impasto canvas texture filter for painterly cards & sections */}
-          <filter id="impasto-paper" x="0%" y="0%" width="100%" height="100%">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.04 0.14"
-              numOctaves="3"
-              seed="7"
-              result="brush"
-            />
-            <feColorMatrix
-              in="brush"
-              type="matrix"
-              values="0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0 0.12  0 0 0 0.12 0"
-            />
-          </filter>
-
           <symbol id="wing-left" viewBox="0 0 100 120">
             <path
               d="M 96,46 C 82,30 58,18 34,22 C 20,25 18,36 28,45 C 44,53 74,51 96,49 Z"
@@ -768,16 +787,19 @@ export default function App() {
                 >
                   <span className="top">
                     <span className="meta">understand</span>
-                    <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M4 12h15M13 6.5 18.5 12 13 17.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <span className="door-cta">
+                      Click here to go to Brief
+                      <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M4 12h15M13 6.5 18.5 12 13 17.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </span>
                   <h2>What changed in AI this week — and what it means at work.</h2>
                   <ul className="paint-lines">
@@ -800,16 +822,19 @@ export default function App() {
                 >
                   <span className="top">
                     <span className="meta">learn</span>
-                    <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M4 12h15M13 6.5 18.5 12 13 17.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <span className="door-cta">
+                      Click here to go to Academy
+                      <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M4 12h15M13 6.5 18.5 12 13 17.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </span>
                   <h2>Learn AI like a craft, not a feed.</h2>
                   <ul className="paint-lines">
@@ -832,16 +857,19 @@ export default function App() {
                 >
                   <span className="top">
                     <span className="meta">use</span>
-                    <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M4 12h15M13 6.5 18.5 12 13 17.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <span className="door-cta">
+                      Click here to go to Tools
+                      <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M4 12h15M13 6.5 18.5 12 13 17.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </span>
                   <h2>Find the tool worth trying before the noise wins.</h2>
                   <ul className="paint-lines">
@@ -861,7 +889,7 @@ export default function App() {
           </div>
         ) : null}
 
-        {/* ——— DOOR 1: WEEKLY BRIEF (Pure Painterly CSS Surfaces, No Photos) ——— */}
+        {/* ——— DOOR 1: WEEKLY BRIEF (Concise Editorial Cards + Story Modal) ——— */}
         {route === "brief" ? (
           <section id="brief" className="dest is-active" aria-label="Weekly Brief">
             <div className="dest-shell">
@@ -876,29 +904,44 @@ export default function App() {
               </div>
 
               <p className="dest-lede">
-                One edition. Read it down the page: what changed, why it matters, then the things you can try at work.
+                Five verified stories this week. Scan the one-line takeaways below, or click any story to open its full briefing and work notes in a modal.
               </p>
 
-              {/* Edition executive summary & uncertainty banner */}
-              <article className="edition-overview painterly-card">
-                <span className="desk">Editor’s note · {todayBriefing.kicker}</span>
-                <h3>{todayBriefing.title}</h3>
-                <p>{todayBriefing.summary}</p>
-                <p className="edition-uncertainty">
-                  <strong>What remains open.</strong> {todayBriefing.uncertainty}
-                </p>
+              {/* Concise 3-column At-a-Glance Strip (replaces the giant wall-of-text Editor's Note) */}
+              <article className="edition-glance painterly-card">
+                <div className="glance-head">
+                  <div>
+                    <span className="desk">This week at a glance · {site.date}</span>
+                    <h3>The 60-second executive summary</h3>
+                  </div>
+                  <button
+                    type="button"
+                    className="doors-btn"
+                    onClick={() => setEditorNoteModalOpen(true)}
+                  >
+                    Read full editor’s note & open questions
+                  </button>
+                </div>
+                <div className="glance-grid">
+                  {currentEdition.columns.changed.slice(0, 3).map((item, idx) => (
+                    <div key={item.title} className="glance-col">
+                      <span className="desk">0{idx + 1} · Signal</span>
+                      <h4>{item.title}</h4>
+                      <p>{firstSentence(item.body, 140)}</p>
+                    </div>
+                  ))}
+                </div>
               </article>
 
+              {/* Crisp Painterly Story Cards (Implies + Example in Practice + Quote -> Click for Full Modal) */}
               <div className="proofs">
                 {newsStories.map((story, index) => {
-                  const isExpanded = openStoryId === story.id
                   const tone = IMPASTO_TONES[index % IMPASTO_TONES.length]
                   return (
                     <article
                       key={story.id}
-                      className={`proof painterly-proof ${tone} ${index === 0 ? "proof-lead" : ""} ${
-                        isExpanded ? "is-expanded" : ""
-                      }`}
+                      className={`proof painterly-proof ${tone} proof-concise`}
+                      onClick={() => setActiveStoryModal(story)}
                     >
                       <div className="proof-swatch" aria-hidden="true">
                         <span className="swatch-num">{String(index + 1).padStart(2, "0")}</span>
@@ -912,61 +955,43 @@ export default function App() {
                           <span className="proof-aud">{story.audience}</span>
                         </div>
                         <h3>{story.theme}</h3>
-                        <p>
-                          <strong>Changed.</strong> {story.changed}
-                        </p>
-                        <p>
-                          <strong>Matters.</strong> {story.matters}
-                        </p>
 
-                        {isExpanded ? (
-                          <div className="proof-drawer">
-                            <p>
-                              <strong>What this implies.</strong> {story.imply}
-                            </p>
-                            <div className="proof-uses">
-                              <strong>If you actually use it:</strong>
-                              <ul>
-                                {story.uses.map((u) => (
-                                  <li key={u}>{u}</li>
-                                ))}
-                              </ul>
-                            </div>
-                            <p>
-                              <strong>Example in practice.</strong> {story.example}
-                            </p>
-                            <p>
-                              <strong>Watch next.</strong> {story.watch}
-                            </p>
-                            <blockquote className="proof-source">
-                              “{story.source.quote}”
-                              <footer>
-                                —{" "}
-                                <a href={story.source.url} target="_blank" rel="noreferrer">
-                                  {story.source.title} ↗
-                                </a>
-                              </footer>
-                            </blockquote>
+                        <div className="proof-crisp-grid">
+                          <div className="crisp-cell">
+                            <span className="desk">What this implies</span>
+                            <p>{story.imply}</p>
                           </div>
-                        ) : null}
+                          <div className="crisp-cell">
+                            <span className="desk">Example in practice</span>
+                            <p>{firstSentence(story.example, 185)}</p>
+                          </div>
+                        </div>
+
+                        <blockquote
+                          className="proof-source proof-source-compact"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          “{firstSentence(story.source.quote, 190)}”
+                          <footer>
+                            —{" "}
+                            <a href={story.source.url} target="_blank" rel="noreferrer">
+                              {story.source.title} ↗
+                            </a>
+                          </footer>
+                        </blockquote>
 
                         <div className="proof-actions">
                           <button
                             type="button"
                             className="doors-btn"
-                            aria-expanded={isExpanded}
-                            onClick={() => setOpenStoryId(isExpanded ? null : story.id)}
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setActiveStoryModal(story)
+                            }}
                           >
-                            {isExpanded ? "Fold work notes" : "Read work notes & source"}
+                            Read full story & action steps →
                           </button>
-                          <a
-                            className="doors-link-subtle"
-                            href={story.source.url}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            Primary source ↗
-                          </a>
+                          <span className="proof-click-hint">Click card for full details</span>
                         </div>
                       </div>
                     </article>
@@ -981,7 +1006,7 @@ export default function App() {
                   {currentEdition.columns.changed.map((item) => (
                     <div key={item.title} className="synth-item painterly-card">
                       <h4>{item.title}</h4>
-                      <p>{item.body}</p>
+                      <p>{firstSentence(item.body, 150)}</p>
                     </div>
                   ))}
                 </div>
@@ -990,7 +1015,7 @@ export default function App() {
                   {currentEdition.columns.matters.map((item) => (
                     <div key={item.title} className="synth-item painterly-card">
                       <h4>{item.title}</h4>
-                      <p>{item.body}</p>
+                      <p>{firstSentence(item.body, 150)}</p>
                     </div>
                   ))}
                 </div>
@@ -999,7 +1024,7 @@ export default function App() {
                   {currentEdition.columns.watch.map((item) => (
                     <div key={item.title} className="synth-item painterly-card">
                       <h4>{item.title}</h4>
-                      <p>{item.body}</p>
+                      <p>{firstSentence(item.body, 150)}</p>
                     </div>
                   ))}
                 </div>
@@ -1662,6 +1687,127 @@ export default function App() {
           </section>
         ) : null}
       </main>
+
+      {/* ——— MODAL 1: FULL STORY BRIEFING & WORK NOTES ——— */}
+      {activeStoryModal ? (
+        <div
+          className="doors-modal-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-story-title"
+          onClick={() => setActiveStoryModal(null)}
+        >
+          <article
+            className="doors-modal painterly-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="modal-top-bar">
+              <span className="desk">
+                {deskLabel(activeStoryModal.topic)} · {site.edition} · {site.date}
+              </span>
+              <button
+                type="button"
+                className="doors-btn"
+                onClick={() => setActiveStoryModal(null)}
+              >
+                Close ✕
+              </button>
+            </div>
+
+            <h3 id="modal-story-title" className="modal-title">
+              {activeStoryModal.theme}
+            </h3>
+            <p className="modal-audience">
+              <strong>Who this touches:</strong> {activeStoryModal.audience}
+            </p>
+
+            <div className="modal-grid">
+              <div className="modal-section">
+                <span className="desk">What changed</span>
+                <p>{activeStoryModal.changed}</p>
+              </div>
+              <div className="modal-section">
+                <span className="desk">Why it matters</span>
+                <p>{activeStoryModal.matters}</p>
+                <p className="modal-imply">
+                  <strong>Operating implication:</strong> {activeStoryModal.imply}
+                </p>
+              </div>
+            </div>
+
+            <div className="modal-work-box">
+              <span className="desk">If you actually use it at work</span>
+              <ul>
+                {activeStoryModal.uses.map((u) => (
+                  <li key={u}>{u}</li>
+                ))}
+              </ul>
+              <p className="modal-example">
+                <strong>Example in practice:</strong> {activeStoryModal.example}
+              </p>
+            </div>
+
+            <div className="modal-foot-split">
+              <div>
+                <span className="desk">What to watch next</span>
+                <p>{activeStoryModal.watch}</p>
+              </div>
+              <blockquote className="proof-source">
+                “{activeStoryModal.source.quote}”
+                <footer>
+                  —{" "}
+                  <a href={activeStoryModal.source.url} target="_blank" rel="noreferrer">
+                    {activeStoryModal.source.title} ↗
+                  </a>
+                </footer>
+              </blockquote>
+            </div>
+          </article>
+        </div>
+      ) : null}
+
+      {/* ——— MODAL 2: FULL EDITOR'S NOTE & OPEN QUESTIONS ——— */}
+      {editorNoteModalOpen ? (
+        <div
+          className="doors-modal-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-editor-title"
+          onClick={() => setEditorNoteModalOpen(false)}
+        >
+          <article
+            className="doors-modal painterly-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="modal-top-bar">
+              <span className="desk">
+                Editor’s Note · {site.edition} · {site.date}
+              </span>
+              <button
+                type="button"
+                className="doors-btn"
+                onClick={() => setEditorNoteModalOpen(false)}
+              >
+                Close ✕
+              </button>
+            </div>
+
+            <h3 id="modal-editor-title" className="modal-title">
+              {todayBriefing.title}
+            </h3>
+
+            <div className="modal-section">
+              <span className="desk">Full weekly synthesis</span>
+              <p>{todayBriefing.summary}</p>
+            </div>
+
+            <div className="modal-work-box">
+              <span className="desk">What remains open & unverified</span>
+              <p>{todayBriefing.uncertainty}</p>
+            </div>
+          </article>
+        </div>
+      ) : null}
     </div>
   )
 }
