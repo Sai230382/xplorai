@@ -47,6 +47,12 @@ export type Edition = {
   edition: string
   date: string
   dateISO: string
+  /**
+   * Date of the tools-radar pulse currently on the page.
+   * This is not the briefing date. Leave it unset to fall back to radar.json `pulse.week`.
+   * Card dates still live on each launch in radar.json.
+   */
+  toolsPulseDate?: string
   kicker: string
   title: string
   summary: string

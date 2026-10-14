@@ -1,4 +1,5 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { Finch } from "./components/Finch"
 import { Mark } from "./components/Mark"
 import { desks, type DeskId, currentEdition, type EditionStory } from "./data/edition"
 import { featuredLaunch } from "./data/launches"
@@ -20,6 +21,7 @@ import {
   type RadarTool,
 } from "./data/radar"
 import { site } from "./data/site"
+import { useMaxWidth } from "./hooks/useMaxWidth"
 import { usePrefersReducedMotion } from "./hooks/usePrefersReducedMotion"
 
 type RouteId = "front" | "brief" | "academy" | "tools" | "playbook"
@@ -45,16 +47,33 @@ const HASH_ALIASES: Record<string, RouteId> = {
   playbook: "playbook",
 }
 
+type Carrier = "butterfly" | "bird"
+
 type ButterflyClip = {
   id: string
   bucket: "brief" | "tools" | "academy"
   paint: string
   desk: string
   headline: string
+  href: string
+  carrier: Carrier
+  storyId?: string
   stack: [number, number, number, number]
   spread: [number, number, number, number]
   dock: [number, number, number, number]
 }
+
+/** Desktop hero still. The loop was painted from public/doors/landscape.png. */
+const HERO_POSTER = "/doors/hero-loop-poster.jpg"
+const HERO_VIDEO_WEBM = "/doors/hero-loop.webm"
+const HERO_VIDEO_MP4 = "/doors/hero-loop.mp4"
+
+const SECTION_LINKS = [
+  { id: "brief", label: "Brief", cta: "Open the Brief" },
+  { id: "academy", label: "Academy", cta: "Enter the Academy" },
+  { id: "tools", label: "Tools", cta: "Explore Tools" },
+  { id: "playbook", label: "Playbook", cta: "Open the Playbook" },
+] as const
 
 const PAIRS: [number, number][] = [
   [0, 1],
@@ -226,16 +245,11 @@ function deskLabel(id: DeskId) {
   return desks.find((desk) => desk.id === id)?.label ?? id
 }
 
-/** Keeps door & butterfly headlines crisp (~48 chars max, stopping cleanly at punctuation) */
+/** Full hero headline. Wraps in the caption; never clipped with an ellipsis. */
 function conciseHeadline(theme: string) {
   const dashIdx = theme.indexOf(" — ")
   const base = dashIdx > 0 ? theme.slice(0, dashIdx) : theme
-  const commaIdx = base.indexOf(", ")
-  if (commaIdx > 18 && commaIdx <= 56) return base.slice(0, commaIdx)
-  const semiIdx = base.indexOf("; ")
-  if (semiIdx > 0 && semiIdx <= 58) return base.slice(0, semiIdx)
-  if (base.length <= 56) return base
-  return `${base.slice(0, 53).replace(/\s+\S*$/, "")}…`
+  return base.trim()
 }
 
 /** Extracts the first 1–2 crisp sentences for scannable card previews */
@@ -259,16 +273,124 @@ function Signal({ value }: { value: number }) {
 
 const PLORAI_CHARS = ["p", "l", "o", "r", "A", "I"] as const
 
+function Wayfinding({
+  current,
+  onNavigate,
+}: {
+  current: RouteId
+  onNavigate: (id: string) => void
+}) {
+  return (
+    <nav className="wayfinding" aria-label="Jump between sections">
+      <a
+        href="#front"
+        aria-current={current === "front" ? "true" : undefined}
+        onClick={(event) => {
+          event.preventDefault()
+          onNavigate("front")
+        }}
+      >
+        ↑ Top
+      </a>
+      {SECTION_LINKS.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          aria-current={current === item.id ? "true" : undefined}
+          onClick={(event) => {
+            event.preventDefault()
+            onNavigate(item.id)
+          }}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  )
+}
+
+function MobileHero({
+  clips,
+  onOpen,
+  onNavigate,
+}: {
+  clips: ButterflyClip[]
+  onOpen: (clip: ButterflyClip) => void
+  onNavigate: (id: string) => void
+}) {
+  return (
+    <section id="front" className="mobile-hero" aria-label="This week">
+      <div className="mobile-hero-sky" aria-hidden="true">
+        <img src={HERO_POSTER} alt="" />
+      </div>
+      <div className="mobile-hero-body">
+        <p className="mobile-kicker">
+          {site.edition} · {site.date}
+        </p>
+        <h2>This week, still in a pile.</h2>
+        <p className="hero-tagline">{site.tagline}</p>
+        <div className="story-cards">
+          {clips.map((clip) => (
+            <a
+              key={clip.id}
+              className={`story-card desk-${clip.desk.toLowerCase()}`}
+              href={clip.href}
+              onClick={(event) => {
+                event.preventDefault()
+                onOpen(clip)
+              }}
+            >
+              <span className="story-chip">{clip.desk}</span>
+              <p>{clip.headline}</p>
+              <span className="story-go">
+                {clip.storyId ? "Read the story →" : "Enter the Academy →"}
+              </span>
+            </a>
+          ))}
+        </div>
+        <div className="hero-entries">
+          {SECTION_LINKS.filter((item) => item.id !== "playbook").map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(event) => {
+                event.preventDefault()
+                onNavigate(item.id)
+              }}
+            >
+              {item.cta} →
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function App() {
   const reducedMotion = usePrefersReducedMotion()
-  const [route, setRoute] = useState<RouteId>("front")
-  const [logoFlutter, setLogoFlutter] = useState(true)
+  const narrow = useMaxWidth(768)
+  const [active, setActive] = useState<RouteId>("front")
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [showTop, setShowTop] = useState(false)
+  const [logoFlutter, setLogoFlutter] = useState(false)
 
   // Modal state for Weekly Brief stories & Editor's Note
-  const [activeStoryModal, setActiveStoryModal] = useState<EditionStory | null>(null)
+  const [activeStoryModal, setActiveStoryModal] = useState<EditionStory | null>(() => {
+    if (typeof window === "undefined") return null
+    const raw = window.location.hash.replace(/^#/, "")
+    if (!raw.startsWith("story-")) return null
+    return newsStories.find((item) => item.id === raw.slice(6)) ?? null
+  })
   const [editorNoteModalOpen, setEditorNoteModalOpen] = useState(false)
 
-  const [selectedVolumeId, setSelectedVolumeId] = useState<string>(libraryVolumes[0]?.id ?? "academy")
+  const [selectedVolumeId, setSelectedVolumeId] = useState<string>(() => {
+    const fallback = libraryVolumes[0]?.id ?? "academy"
+    if (typeof window === "undefined") return fallback
+    const raw = window.location.hash.replace(/^#/, "")
+    if (!raw.startsWith("lib-")) return fallback
+    return raw.slice(4) || fallback
+  })
   const volumeDeskRef = useRef<HTMLElement>(null)
 
   // Tools Radar interactive state
@@ -287,6 +409,9 @@ export default function App() {
   const lineRef = useRef<HTMLParagraphElement>(null)
   const skyRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
+  const stringRef = useRef<SVGSVGElement>(null)
+  const dockRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const colsRef = useRef<HTMLDivElement>(null)
   const clipRefs = useRef<(HTMLElement | null)[]>([])
 
@@ -296,6 +421,7 @@ export default function App() {
       if (e.key === "Escape") {
         setActiveStoryModal(null)
         setEditorNoteModalOpen(false)
+        setMenuOpen(false)
       }
     }
     window.addEventListener("keydown", onKeyDown)
@@ -335,9 +461,12 @@ export default function App() {
         id: "brief-1",
         bucket: "brief",
         paint: "brief-1",
+        carrier: "butterfly",
         desk: deskLabel(trustStory.topic),
         headline: conciseHeadline(trustStory.theme),
-        stack: [16, 42, -7, 0.78],
+        href: `#story-${trustStory.id}`,
+        storyId: trustStory.id,
+        stack: [13, 24, -7, 0.78],
         spread: [14, 28, -6, 1],
         dock: [13, 66, -3, 0.46],
       },
@@ -345,8 +474,11 @@ export default function App() {
         id: "brief-2",
         bucket: "brief",
         paint: "brief-2",
+        carrier: "bird",
         desk: deskLabel(rulesStory.topic),
         headline: conciseHeadline(rulesStory.theme),
+        href: `#story-${rulesStory.id}`,
+        storyId: rulesStory.id,
         stack: [27, 58, 5, 0.82],
         spread: [24, 68, 4, 1.08],
         dock: [24, 76, 2, 0.42],
@@ -355,9 +487,12 @@ export default function App() {
         id: "brief-3",
         bucket: "brief",
         paint: "brief-3",
+        carrier: "bird",
         desk: deskLabel(moneyStory.topic),
         headline: conciseHeadline(moneyStory.theme),
-        stack: [38, 38, -3, 0.84],
+        href: `#story-${moneyStory.id}`,
+        storyId: moneyStory.id,
+        stack: [40, 22, -3, 0.84],
         spread: [35, 24, -2, 0.98],
         dock: [33, 60, -1, 0.4],
       },
@@ -365,9 +500,12 @@ export default function App() {
         id: "tools-1",
         bucket: "tools",
         paint: "tools-1",
+        carrier: "butterfly",
         desk: deskLabel(toolsStory.topic),
         headline: conciseHeadline(toolsStory.theme),
-        stack: [50, 54, 6, 0.8],
+        href: `#story-${toolsStory.id}`,
+        storyId: toolsStory.id,
+        stack: [53, 56, 6, 0.8],
         spread: [50, 50, 1, 1.06],
         dock: [78, 66, 2, 0.44],
       },
@@ -375,9 +513,12 @@ export default function App() {
         id: "tools-2",
         bucket: "tools",
         paint: "tools-2",
+        carrier: "butterfly",
         desk: deskLabel(workStory.topic),
         headline: conciseHeadline(workStory.theme),
-        stack: [62, 40, -5, 0.82],
+        href: `#story-${workStory.id}`,
+        storyId: workStory.id,
+        stack: [66, 24, -5, 0.82],
         spread: [66, 26, -5, 1.02],
         dock: [90, 76, -2, 0.42],
       },
@@ -385,11 +526,13 @@ export default function App() {
         id: "academy-1",
         bucket: "academy",
         paint: "academy-1",
+        carrier: "butterfly",
         desk: "Learn",
         headline: conciseHeadline(
           currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
         ),
-        stack: [74, 56, 3, 0.78],
+        href: "#academy",
+        stack: [78, 58, 3, 0.78],
         spread: [76, 66, 4, 1.02],
         dock: [52, 64, 3, 0.44],
       },
@@ -397,66 +540,148 @@ export default function App() {
         id: "academy-2",
         bucket: "academy",
         paint: "academy-2",
+        carrier: "bird",
         desk: "Learn",
         headline: conciseHeadline(
           currentEdition.columns.matters[1]?.title ?? "Always-on agents need permission design",
         ),
-        stack: [85, 43, -6, 0.76],
+        href: "#academy",
+        stack: [90, 22, -6, 0.76],
         spread: [86, 36, -3, 1.04],
         dock: [64, 76, -2, 0.4],
       },
     ]
   }, [])
 
-  // Sync URL hash to active door route
+  const pendingNav = useRef<RouteId | null>(null)
+
+  function navigate(id: string) {
+    setMenuOpen(false)
+    const target: RouteId = id === "top" ? "front" : (id as RouteId)
+    pendingNav.current = target
+    setActive(target)
+    const behavior: ScrollBehavior = reducedMotion || narrow ? "auto" : "smooth"
+    if (target === "front") {
+      window.scrollTo({ top: 0, behavior })
+    } else {
+      document.getElementById(target)?.scrollIntoView({ behavior, block: "start" })
+      window.setTimeout(() => {
+        document.querySelector<HTMLElement>(`#${target} h2`)?.focus({ preventScroll: true })
+      }, behavior === "smooth" ? 700 : 0)
+    }
+    const hash = target === "front" ? "" : `#${target}`
+    history.pushState(null, "", `${window.location.pathname}${window.location.search}${hash}`)
+  }
+
+  function openClip(clip: ButterflyClip) {
+    setMenuOpen(false)
+    const behavior: ScrollBehavior = reducedMotion || narrow ? "auto" : "smooth"
+    if (clip.storyId) {
+      const story = newsStories.find((item) => item.id === clip.storyId) ?? null
+      document.getElementById(`story-${clip.storyId}`)?.scrollIntoView({ behavior, block: "start" })
+      if (story) setActiveStoryModal(story)
+      history.pushState(null, "", `#story-${clip.storyId}`)
+      return
+    }
+    const id = clip.href.replace("#", "")
+    document.getElementById(id)?.scrollIntoView({ behavior, block: "start" })
+    history.pushState(null, "", clip.href)
+  }
+
   useEffect(() => {
-    function syncHash(moveFocus: boolean) {
-      const raw = window.location.hash.replace("#", "")
-      if (raw.startsWith("lib-")) {
-        const volId = raw.replace("lib-", "")
-        if (allShelfBooks.some((v) => v.id === volId)) {
-          setSelectedVolumeId(volId)
-        }
-        setRoute("academy")
-        document.title = ROUTE_TITLES.academy
-        return
+    if (!activeStoryModal) return
+    document.getElementById("modal-story-title")?.focus()
+  }, [activeStoryModal])
+
+  useLayoutEffect(() => {
+    const raw = window.location.hash.replace(/^#/, "")
+    if (raw.startsWith("lib-")) {
+      document.getElementById("academy")?.scrollIntoView({ behavior: "auto", block: "start" })
+      return
+    }
+    if (raw.startsWith("story-")) {
+      document.getElementById(`story-${raw.slice(6)}`)?.scrollIntoView({ behavior: "auto", block: "start" })
+      return
+    }
+    const mapped = HASH_ALIASES[raw] ?? "front"
+    if (mapped === "front") return
+    document.getElementById(mapped)?.scrollIntoView({ behavior: "auto", block: "start" })
+  }, [])
+
+  useEffect(() => {
+    const ids: RouteId[] = ["front", "brief", "academy", "tools", "playbook"]
+    let frame = 0
+    function update() {
+      const mast = document.querySelector<HTMLElement>(".mast")?.offsetHeight ?? 58
+      const locked = pendingNav.current
+      if (locked) {
+        const arrived =
+          locked === "front"
+            ? window.scrollY <= 2
+            : Math.abs((document.getElementById(locked)?.getBoundingClientRect().top ?? 999) - mast) < 4
+        setShowTop(window.scrollY > 520)
+        if (!arrived) return
+        pendingNav.current = null
       }
-      const mapped = HASH_ALIASES[raw] ?? "front"
-      setRoute(mapped)
-      setActiveStoryModal(null)
-      setEditorNoteModalOpen(false)
-      document.title = mapped === "front" ? site.name : ROUTE_TITLES[mapped]
-      if (moveFocus) {
-        window.scrollTo({ top: 0, behavior: "auto" })
-        if (mapped !== "front") {
-          window.requestAnimationFrame(() => {
-            const heading = document.querySelector<HTMLElement>(`#${mapped} h2`)
-            heading?.focus({ preventScroll: true })
-          })
-        }
+      const line = window.scrollY + mast + 24
+      let current: RouteId = "front"
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        const top = el.getBoundingClientRect().top + window.scrollY
+        if (top <= line) current = id
+      }
+      setActive((prev) => (prev === current ? prev : current))
+      setShowTop(window.scrollY > 520)
+      const raw = window.location.hash.replace(/^#/, "")
+      if (raw.startsWith("story-") && current === "brief") return
+      if (raw.startsWith("lib-") && current === "academy") return
+      const nextHash = current === "front" ? "" : `#${current}`
+      if (window.location.hash !== nextHash) {
+        history.replaceState(null, "", `${window.location.pathname}${window.location.search}${nextHash}`)
       }
     }
+    function onScroll() {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(update)
+    }
+    function onScrollEnd() {
+      pendingNav.current = null
+      update()
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    window.addEventListener("scrollend", onScrollEnd)
+    update()
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+      window.removeEventListener("scrollend", onScrollEnd)
+    }
+  }, [])
 
-    syncHash(false)
-    const onHash = () => syncHash(true)
-    window.addEventListener("hashchange", onHash)
-    return () => window.removeEventListener("hashchange", onHash)
-  }, [allShelfBooks])
+  useEffect(() => {
+    document.title = active === "front" ? site.name : ROUTE_TITLES[active]
+  }, [active])
 
-  // Trigger the Butterfly-X + "plorAI" breeze ripple on route change & periodic ambient interval
+  // Settled wordmark on load. A later breeze never shifts letters sideways into each other.
   useEffect(() => {
     if (reducedMotion) return
-    setLogoFlutter(true)
-    const clearTimer = window.setTimeout(() => setLogoFlutter(false), 1450)
-    const interval = window.setInterval(() => {
+    let clearTimer = 0
+    const arm = () => {
       setLogoFlutter(true)
-      window.setTimeout(() => setLogoFlutter(false), 1450)
-    }, 6800)
+      window.clearTimeout(clearTimer)
+      clearTimer = window.setTimeout(() => setLogoFlutter(false), 1700)
+    }
+    const first = window.setTimeout(arm, 2400)
+    const interval = window.setInterval(arm, 9000)
     return () => {
+      window.clearTimeout(first)
       window.clearTimeout(clearTimer)
       window.clearInterval(interval)
     }
-  }, [route, reducedMotion])
+  }, [reducedMotion])
 
   function triggerLogoFlutter() {
     if (reducedMotion || logoFlutter) return
@@ -464,21 +689,23 @@ export default function App() {
     window.setTimeout(() => setLogoFlutter(false), 1450)
   }
 
-  // Scroll-driven butterfly collage choreography on #front
+  // Desktop only. Mobile renders painted cards and must not run this loop.
   useLayoutEffect(() => {
     const root = document.documentElement
     root.classList.add("js")
-    if (reducedMotion || route !== "front") return
+    if (reducedMotion || narrow) return
 
     const reel = reelRef.current
     const pin = pinRef.current
     const line = lineRef.current
     const sky = skyRef.current
     const svg = svgRef.current
+    const strings = stringRef.current
     const columns = colsRef.current
     if (!reel || !pin || !line || !sky || !svg || !columns) return
 
     const paths = Array.from(svg.querySelectorAll("path"))
+    const leads = strings ? Array.from(strings.querySelectorAll("line")) : []
 
     function frame() {
       if (!reel || !pin || !line || !sky || !svg || !columns) return
@@ -491,9 +718,12 @@ export default function App() {
       const p = clamp(scrolled / range, 0, 1)
       const w = pin.clientWidth
       const h = pin.clientHeight
+      const now = performance.now() / 1000
       svg.setAttribute("viewBox", `0 0 ${w} ${h}`)
+      strings?.setAttribute("viewBox", `0 0 ${w} ${h}`)
 
       const centers: { x: number; y: number; open: number; shut: number; bucket: string }[] = []
+      const pinRect = pin.getBoundingClientRect()
 
       clips.forEach((clipData, index) => {
         const el = clipRefs.current[index]
@@ -512,20 +742,37 @@ export default function App() {
         const lifted = pose(clipData.stack, fly, lift)
         const at = pose(lifted, clipData.dock, shut)
         const fade = smooth(span(p, 0.72, 0.86))
+        const alive = 1 - shut
+        const sway = Math.sin(now * 0.8 + index * 1.15) * 12 * alive
+        const bob = Math.cos(now * 0.95 + index * 0.8) * 7 * alive
+        const wobble = Math.sin(now * 0.7 + index) * 3.2 * alive
         const wordsFade = smooth(span(p, 0.64, 0.76))
         const flap = mix(0.18, 0.44 + 0.56 * Math.abs(Math.sin(travel * Math.PI * 3.2 + index * 0.85)), lift)
+        const x = (at[0] / 100) * w + sway
+        const y = (at[1] / 100) * h + bob
 
         el.style.setProperty("--flap", String(flap))
         el.style.opacity = String(1 - fade)
-        el.style.transform = `translate(${(at[0] / 100) * w}px,${(at[1] / 100) * h}px) translate(-50%,-50%) scale(${at[3]})`
+        el.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%) scale(${at[3]})`
         const flyNode = el.querySelector<HTMLElement>(".fly")
-        if (flyNode) flyNode.style.transform = `rotate(${at[2]}deg)`
+        if (flyNode) flyNode.style.transform = `rotate(${at[2] + wobble}deg)`
         const wordsNode = el.querySelector<HTMLElement>(".words")
         if (wordsNode) wordsNode.style.opacity = String(1 - wordsFade)
 
+        const knot = el.querySelector<HTMLElement>(".string-knot")
+        const lead = leads[index]
+        if (knot && lead) {
+          const rect = knot.getBoundingClientRect()
+          lead.setAttribute("x1", String((clipData.stack[0] / 100) * w))
+          lead.setAttribute("y1", "54")
+          lead.setAttribute("x2", String(rect.left + rect.width / 2 - pinRect.left))
+          lead.setAttribute("y2", String(rect.top + rect.height / 2 - pinRect.top))
+          lead.setAttribute("stroke-opacity", String((1 - fade) * 0.55))
+        }
+
         centers[index] = {
-          x: (at[0] / 100) * w,
-          y: (at[1] / 100) * h,
+          x,
+          y,
           open: lift,
           shut,
           bucket: clipData.bucket,
@@ -561,33 +808,100 @@ export default function App() {
       })
 
       const doors = smooth(span(p, 0.74, 0.92))
-      sky.style.opacity = String((0.55 + openAvg * 0.45) * (1 - doors))
+      sky.style.opacity = String(1 - doors * 0.92)
+      const columnsLive = doors > 0.62
       columns.style.opacity = String(doors)
-      columns.style.pointerEvents = doors > 0.92 ? "auto" : "none"
+      columns.style.pointerEvents = columnsLive ? "auto" : "none"
+      columns.style.zIndex = columnsLive ? "8" : "2"
+      if (columnsLive) columns.removeAttribute("inert")
+      else columns.setAttribute("inert", "")
+
+      const dock = dockRef.current
+      if (dock) {
+        const shown = 1 - smooth(span(p, 0.06, 0.2))
+        dock.style.opacity = String(shown)
+        const dockLive = shown > 0.65
+        dock.style.pointerEvents = dockLive ? "auto" : "none"
+        if (dockLive) dock.removeAttribute("inert")
+        else dock.setAttribute("inert", "")
+      }
 
       if (p < 0.16) line.textContent = "This week, still in a pile."
       else if (p < 0.7) line.textContent = "Understand what changed. Learn it. Then use it."
       line.style.opacity = String(1 - smooth(span(p, 0.58, 0.74)))
     }
 
-    let ticking = false
-    function onScrollOrResize() {
-      if (ticking) return
-      ticking = true
-      window.requestAnimationFrame(() => {
-        ticking = false
-        frame()
-      })
+    let alive = true
+    let raf = 0
+    function loop() {
+      if (!alive || !reel) return
+      const past = window.scrollY > reel.offsetTop + reel.offsetHeight + 40
+      if (!document.hidden && !past) frame()
+      if (document.hidden || past) {
+        raf = 0
+        return
+      }
+      raf = window.requestAnimationFrame(loop)
+    }
+    function kick() {
+      if (!raf) raf = window.requestAnimationFrame(loop)
     }
 
-    window.addEventListener("scroll", onScrollOrResize, { passive: true })
-    window.addEventListener("resize", onScrollOrResize)
-    frame()
+    window.addEventListener("scroll", kick, { passive: true })
+    window.addEventListener("resize", kick)
+    document.addEventListener("visibilitychange", kick)
+    kick()
     return () => {
-      window.removeEventListener("scroll", onScrollOrResize)
-      window.removeEventListener("resize", onScrollOrResize)
+      alive = false
+      window.cancelAnimationFrame(raf)
+      window.removeEventListener("scroll", kick)
+      window.removeEventListener("resize", kick)
+      document.removeEventListener("visibilitychange", kick)
     }
-  }, [clips, reducedMotion, route])
+  }, [clips, reducedMotion, narrow])
+
+  // Desktop lake loop. Sources are attached after load so they stay off the LCP path.
+  // Mobile never mounts the element. Reduced motion keeps the poster and does not fetch video.
+  useEffect(() => {
+    if (narrow || reducedMotion) return
+    const video = videoRef.current
+    const sky = skyRef.current
+    if (!video || !sky) return
+    let cancelled = false
+
+    function attach() {
+      if (cancelled || !video || video.querySelector("source")) return
+      video.muted = true
+      const webm = document.createElement("source")
+      webm.src = HERO_VIDEO_WEBM
+      webm.type = "video/webm"
+      const mp4 = document.createElement("source")
+      mp4.src = HERO_VIDEO_MP4
+      mp4.type = "video/mp4"
+      video.append(webm, mp4)
+      video.load()
+      video.addEventListener(
+        "canplay",
+        () => {
+          if (cancelled) return
+          video.play().then(() => sky?.classList.add("has-video")).catch(() => {})
+        },
+        { once: true },
+      )
+    }
+
+    if (document.readyState === "complete") window.requestAnimationFrame(attach)
+    else window.addEventListener("load", attach, { once: true })
+
+    return () => {
+      cancelled = true
+      video.pause()
+      video.querySelectorAll("source").forEach((node) => node.remove())
+      video.removeAttribute("src")
+      video.load()
+      sky.classList.remove("has-video")
+    }
+  }, [narrow, reducedMotion])
 
   // Tools Radar computed lists
   const effectiveCategory = toolQuery.trim() ? "All" : toolCategory
@@ -637,7 +951,7 @@ export default function App() {
   const toolsLines = clips.filter((c) => c.bucket === "tools")
 
   return (
-    <div className={`doors-app route-${route}`}>
+    <div className={`doors-app section-${active}`}>
       <svg className="defs" aria-hidden="true">
         <defs>
           <symbol id="wing-left" viewBox="0 0 100 120">
@@ -685,11 +999,14 @@ export default function App() {
             aria-label={site.name}
             onMouseEnter={triggerLogoFlutter}
             onFocus={triggerLogoFlutter}
+            onClick={(event) => {
+              event.preventDefault()
+              navigate("front")
+            }}
           >
             <span className="x-butterfly" aria-hidden="true">
               <Mark className="x-butterfly-svg" />
             </span>
-            <span className="sr-only">{site.name}</span>
             <span className="plorai" aria-hidden="true">
               {PLORAI_CHARS.map((ch, idx) => (
                 <span
@@ -703,42 +1020,68 @@ export default function App() {
             </span>
           </a>
         </h1>
-        <nav className="nav" aria-label="Primary">
-          <a href="#brief" aria-current={route === "brief" ? "page" : undefined}>
-            Brief
-          </a>
-          <span className="dot" aria-hidden="true">
-            ·
-          </span>
-          <a href="#academy" aria-current={route === "academy" ? "page" : undefined}>
-            Academy
-          </a>
-          <span className="dot" aria-hidden="true">
-            ·
-          </span>
-          <a href="#tools" aria-current={route === "tools" ? "page" : undefined}>
-            Tools
-          </a>
-          <span className="dot" aria-hidden="true">
-            ·
-          </span>
-          <a href="#playbook" aria-current={route === "playbook" ? "page" : undefined}>
-            Playbook
-          </a>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={menuOpen}
+          aria-controls="primary-nav"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? "Close" : "Menu"}
+        </button>
+        <nav id="primary-nav" className={menuOpen ? "nav is-open" : "nav"} aria-label="Primary">
+          {SECTION_LINKS.map((item, index) => (
+            <span key={item.id} className="nav-item">
+              {index > 0 ? (
+                <span className="dot" aria-hidden="true">
+                  ·
+                </span>
+              ) : null}
+              <a
+                href={`#${item.id}`}
+                aria-current={active === item.id ? "true" : undefined}
+                onClick={(event) => {
+                  event.preventDefault()
+                  navigate(item.id)
+                }}
+              >
+                {item.label}
+              </a>
+            </span>
+          ))}
         </nav>
       </header>
 
-      <main id="front">
-        {route === "front" ? (
-          <div className="reel" id="reel" ref={reelRef}>
+      <main>
+        {narrow ? (
+          <MobileHero clips={clips} onOpen={openClip} onNavigate={navigate} />
+        ) : (
+          <div className="reel" id="front" ref={reelRef}>
             <div className="reel-pin" id="reel-pin" ref={pinRef}>
               <div className="pile-sky" id="pile-sky" ref={skyRef} aria-hidden="true">
-                <img src="/doors/xplorai-door-land.png" alt="" />
+                <img src={HERO_POSTER} alt="" />
+                {reducedMotion ? null : (
+                  <video
+                    ref={videoRef}
+                    className="pile-video"
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    poster={HERO_POSTER}
+                    aria-hidden="true"
+                  />
+                )}
               </div>
               <p className="reel-line" id="reel-line" ref={lineRef}>
                 This week, still in a pile.
               </p>
               <div className="collage" id="collage" aria-hidden="true">
+                <svg className="strings" ref={stringRef}>
+                  {clips.map((clip) => (
+                    <line key={clip.id} />
+                  ))}
+                </svg>
                 <svg className="web" id="web" ref={svgRef}>
                   {PAIRS.map((_, idx) => (
                     <path key={idx} />
@@ -753,24 +1096,33 @@ export default function App() {
                     className="clip"
                     data-bucket={clip.bucket}
                     data-paint={clip.paint}
+                    data-carrier={clip.carrier}
                     style={{
                       zIndex: 10 + (index === 3 ? 8 : 3 - Math.abs(index - 3)),
                     }}
                   >
-                    <span className="fly" aria-hidden="true">
-                      <span className="wing wing-l">
-                        <svg viewBox="0 0 100 120">
-                          <use href="#wing-left" />
-                        </svg>
+                    {clip.carrier === "bird" ? (
+                      <Finch
+                        tone={
+                          clip.desk === "Money" ? "money" : clip.desk === "Learn" ? "learn" : "rules"
+                        }
+                      />
+                    ) : (
+                      <span className="fly" aria-hidden="true">
+                        <span className="wing wing-l">
+                          <svg viewBox="0 0 100 120">
+                            <use href="#wing-left" />
+                          </svg>
+                        </span>
+                        <span className="wing wing-r">
+                          <svg viewBox="0 0 100 120">
+                            <use href="#wing-right" />
+                          </svg>
+                        </span>
+                        <span className="thorax string-knot" />
+                        <span className="antennae" />
                       </span>
-                      <span className="wing wing-r">
-                        <svg viewBox="0 0 100 120">
-                          <use href="#wing-right" />
-                        </svg>
-                      </span>
-                      <span className="thorax" />
-                      <span className="antennae" />
-                    </span>
+                    )}
                     <div className="words">
                       <span className="desk">{clip.desk}</span>
                       <p>{clip.headline}</p>
@@ -783,22 +1135,16 @@ export default function App() {
                 <a
                   className="col col-brief"
                   href="#brief"
-                  aria-label="Weekly Brief. What changed in AI this week — and what it means at work."
+                  aria-label="Open the Brief. What changed in AI this week — and what it means at work."
+                  onClick={(event) => {
+                    event.preventDefault()
+                    navigate("brief")
+                  }}
                 >
                   <span className="top">
                     <span className="meta">understand</span>
                     <span className="door-cta">
-                      Click here to go to Brief
-                      <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M4 12h15M13 6.5 18.5 12 13 17.5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      Open the Brief →
                     </span>
                   </span>
                   <h2>What changed in AI this week — and what it means at work.</h2>
@@ -818,22 +1164,16 @@ export default function App() {
                 <a
                   className="col col-academy"
                   href="#academy"
-                  aria-label="AI Academy. Learn AI like a craft, not a feed."
+                  aria-label="Enter the Academy. Learn AI like a craft, not a feed."
+                  onClick={(event) => {
+                    event.preventDefault()
+                    navigate("academy")
+                  }}
                 >
                   <span className="top">
                     <span className="meta">learn</span>
                     <span className="door-cta">
-                      Click here to go to Academy
-                      <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M4 12h15M13 6.5 18.5 12 13 17.5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      Enter the Academy →
                     </span>
                   </span>
                   <h2>Learn AI like a craft, not a feed.</h2>
@@ -853,22 +1193,16 @@ export default function App() {
                 <a
                   className="col col-tools"
                   href="#tools"
-                  aria-label="Tools Radar. Find the tool worth trying before the noise wins."
+                  aria-label="Explore Tools. Find the tool worth trying before the noise wins."
+                  onClick={(event) => {
+                    event.preventDefault()
+                    navigate("tools")
+                  }}
                 >
                   <span className="top">
                     <span className="meta">use</span>
                     <span className="door-cta">
-                      Click here to go to Tools
-                      <svg className="arrow" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M4 12h15M13 6.5 18.5 12 13 17.5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      Explore Tools →
                     </span>
                   </span>
                   <h2>Find the tool worth trying before the noise wins.</h2>
@@ -885,12 +1219,41 @@ export default function App() {
                   </span>
                 </a>
               </div>
+              <div className="hero-dock" ref={dockRef}>
+                <p className="hero-tagline">{site.tagline}</p>
+                <div className="hero-entries">
+                  {SECTION_LINKS.filter((item) => item.id !== "playbook").map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(event) => {
+                        event.preventDefault()
+                        navigate(item.id)
+                      }}
+                    >
+                      {item.cta} →
+                    </a>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="scroll-cue"
+                  onClick={() => {
+                    window.scrollBy({
+                      top: Math.round(window.innerHeight * 0.72),
+                      behavior: reducedMotion ? "auto" : "smooth",
+                    })
+                  }}
+                >
+                  Scroll
+                  <span className="scroll-cue-chev" aria-hidden="true" />
+                </button>
+              </div>
             </div>
           </div>
-        ) : null}
+        )}
 
         {/* ——— DOOR 1: WEEKLY BRIEF (Concise Editorial Cards + Story Modal) ——— */}
-        {route === "brief" ? (
           <section id="brief" className="dest is-active" aria-label="Weekly Brief">
             <div className="dest-shell">
               <div className="dest-mast">
@@ -939,6 +1302,7 @@ export default function App() {
                   const tone = IMPASTO_TONES[index % IMPASTO_TONES.length]
                   return (
                     <article
+                      id={`story-${story.id}`}
                       key={story.id}
                       className={`proof painterly-proof ${tone} proof-concise`}
                       onClick={() => setActiveStoryModal(story)}
@@ -1030,15 +1394,11 @@ export default function App() {
                 </div>
               </div>
 
-              <a className="back" href="#front">
-                ← Front door
-              </a>
+              <Wayfinding current={active} onNavigate={navigate} />
             </div>
           </section>
-        ) : null}
 
         {/* ——— DOOR 2: AI ACADEMY & LIBRARY (Expandable Painterly Books, No Photos) ——— */}
-        {route === "academy" ? (
           <section id="academy" className="dest is-active" aria-label="AI Academy">
             <div className="dest-shell">
               <div className="dest-mast">
@@ -1203,15 +1563,11 @@ export default function App() {
                 </div>
               </article>
 
-              <a className="back" href="#front">
-                ← Front door
-              </a>
+              <Wayfinding current={active} onNavigate={navigate} />
             </div>
           </section>
-        ) : null}
 
         {/* ——— DOOR 3: TOOLS RADAR (Two Focused Painterly Views, No Photo Clutter) ——— */}
-        {route === "tools" ? (
           <section id="tools" className="dest is-active" aria-label="Tools Radar">
             <div className="dest-shell">
               <div className="dest-mast">
@@ -1224,7 +1580,7 @@ export default function App() {
                 </p>
               </div>
               <p className="dest-lede">
-                Switch between <strong>New Niche Tool Launches</strong> for this week’s under-the-radar releases and hidden gems, or open the <strong>Tools Directory</strong> to browse one category at a time without endless scrolling.
+                Switch between <strong>New Niche Tool Launches</strong> for the last tools pulse and its hidden gems, or open the <strong>Tools Directory</strong> to browse one category at a time without endless scrolling.
               </p>
 
               {/* Two-Room Mode Switcher (prevents vertical overload) */}
@@ -1326,7 +1682,9 @@ export default function App() {
                 <section id="niche-launches" className="radar-major-section" aria-labelledby="niche-heading">
                   <div className="section-banner">
                     <div>
-                      <span className="desk">Section 01 · Weekly Pulse ({radarPulse.week})</span>
+                      <span className="desk">
+                        Section 01 · Last tools pulse: {currentEdition.toolsPulseDate || radarPulse.week}
+                      </span>
                       <h3 id="niche-heading">New Niche Tool Launches</h3>
                       <p className="section-banner-sub">
                         Specialized sandboxes, agent firewalls, MCP gateways, and lesser-known builders that shipped recently — before they hit mainstream noise.
@@ -1613,15 +1971,11 @@ export default function App() {
                 </section>
               ) : null}
 
-              <a className="back" href="#front">
-                ← Front door
-              </a>
+              <Wayfinding current={active} onNavigate={navigate} />
             </div>
           </section>
-        ) : null}
 
         {/* ——— DOOR 4: STRATEGY PLAYBOOK (Pure Painterly Surfaces, No Photos) ——— */}
-        {route === "playbook" ? (
           <section id="playbook" className="dest is-active" aria-label="Strategy Playbook">
             <div className="dest-shell">
               <div className="dest-mast">
@@ -1680,13 +2034,14 @@ export default function App() {
                   })}
               </div>
 
-              <a className="back" href="#front">
-                ← Front door
-              </a>
+              <Wayfinding current={active} onNavigate={navigate} />
             </div>
           </section>
-        ) : null}
       </main>
+
+      <button type="button" className="to-top" hidden={!showTop} onClick={() => navigate("front")}>
+        Back to top
+      </button>
 
       {/* ——— MODAL 1: FULL STORY BRIEFING & WORK NOTES ——— */}
       {activeStoryModal ? (
@@ -1714,7 +2069,7 @@ export default function App() {
               </button>
             </div>
 
-            <h3 id="modal-story-title" className="modal-title">
+            <h3 id="modal-story-title" className="modal-title" tabIndex={-1}>
               {activeStoryModal.theme}
             </h3>
             <p className="modal-audience">
@@ -1792,7 +2147,7 @@ export default function App() {
               </button>
             </div>
 
-            <h3 id="modal-editor-title" className="modal-title">
+            <h3 id="modal-editor-title" className="modal-title" tabIndex={-1}>
               {todayBriefing.title}
             </h3>
 
