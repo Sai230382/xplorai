@@ -1,0 +1,2013 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>XplorAI</title>
+    <meta
+      name="description"
+      content="Review mock of the XplorAI front door. Home, Weekly Brief, Tools Radar, and AI Academy."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500;1,6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f4f1ea;
+        --paper-2: #e9e4d8;
+        --paper-3: #ddd7c8;
+        --ink: #14121c;
+        --peri: #5161d4;
+        --peri-bright: #8b9bff;
+        --indigo: #24265e;
+        --indigo-deep: #1b1c48;
+        --lav: #c4b4ff;
+        --lav-soft: #e6dfff;
+        --rule: rgba(20, 18, 28, 0.2);
+        --rule-soft: rgba(20, 18, 28, 0.12);
+        --serif: "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+        --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --disp: "Big Shoulders Display", "Archivo", sans-serif;
+        --bar: 58px;
+        --pad: 32px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        height: 100%;
+        scroll-behavior: auto;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      ::selection {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+      }
+
+      .mast {
+        height: var(--bar);
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 0 var(--pad);
+        background: var(--paper);
+        border-bottom: 1px solid var(--rule);
+        position: sticky;
+        top: 0;
+        z-index: 4;
+      }
+
+      .wordmark {
+        margin: 0;
+        font-family: var(--sans);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      .wordmark a:focus-visible {
+        outline-offset: 6px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      .nav a {
+        padding: 4px 0;
+      }
+
+      .nav a:hover {
+        opacity: 0.55;
+      }
+
+      .nav a[aria-current="page"],
+      body:has(#brief:target) .nav a[href="#brief"],
+      body:has(#tools:target) .nav a[href="#tools"],
+      body:has(#academy:target) .nav a[href="#academy"],
+      body:has(#playbook:target) .nav a[href="#playbook"] {
+        opacity: 1;
+        text-decoration: underline;
+        text-underline-offset: 0.4em;
+        text-decoration-thickness: 1px;
+      }
+
+      .dot {
+        opacity: 0.55;
+        letter-spacing: 0;
+      }
+
+      #front {
+        display: flex;
+        flex-direction: column;
+        flex: none;
+      }
+
+      body:has(.dest:target) #front {
+        flex: 1;
+        min-height: 0;
+      }
+
+      /* ——— Home columns ——— */
+      .columns {
+        flex: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+        min-height: calc(100svh - var(--bar));
+      }
+
+      .col {
+        container-type: inline-size;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        padding: 22px var(--pad) 0;
+        overflow: hidden;
+        color: var(--ink);
+        isolation: isolate;
+      }
+
+      .col:focus-visible {
+        outline-offset: -8px;
+      }
+
+      .col::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #000;
+        opacity: 0;
+        transition: opacity 180ms ease;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      .col:hover::after,
+      .col:focus-visible::after {
+        opacity: 0.055;
+      }
+
+      .col:active::after {
+        opacity: 0.09;
+      }
+
+      .col-brief {
+        background: var(--paper-2);
+        color: var(--ink);
+      }
+
+      .col-tools {
+        background: var(--indigo);
+        color: var(--paper);
+      }
+
+      .col-academy {
+        background: var(--peri);
+        color: var(--paper);
+      }
+
+      .col-tools:focus-visible,
+      .col-academy:focus-visible {
+        outline-color: var(--paper);
+      }
+
+      .top {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 13.5px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        line-height: 1;
+      }
+
+      .arrow {
+        width: 18px;
+        height: 18px;
+        flex: none;
+        display: block;
+        transition: transform 200ms ease;
+      }
+
+      .col:hover .arrow,
+      .col:focus-visible .arrow {
+        transform: translateX(5px);
+      }
+
+      .col h2 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding-top: clamp(2.4rem, 13vh, 8.5rem);
+        max-width: 11em;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-optical-sizing: auto;
+        font-size: clamp(2.55rem, 13.6cqi, 5.05rem);
+        line-height: 0.92;
+        letter-spacing: -0.028em;
+        text-wrap: balance;
+      }
+
+      .land {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 72%;
+        overflow: hidden;
+        pointer-events: none;
+        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 100%);
+      }
+
+      .land img {
+        position: absolute;
+        top: 0;
+        height: 128%;
+        max-width: none;
+        object-fit: cover;
+        object-position: center 36%;
+      }
+
+      .col-brief .land img {
+        width: 233.34%;
+        left: 0;
+      }
+
+      .col-academy .land img,
+      .col-tools .land img {
+        width: 350%;
+      }
+
+      .col-academy .land img {
+        left: -150%;
+      }
+
+      .col-tools .land img {
+        left: -250%;
+      }
+
+      .plate {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 64%;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .plate img {
+        display: block;
+        width: 100%;
+        height: 118%;
+        object-fit: cover;
+        object-position: center 72%;
+        transform: translateY(4%);
+        transition: transform 640ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .col:hover .plate img,
+      .col:focus-visible .plate img {
+        transform: translateY(0) scale(1.025);
+      }
+
+      .plate::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          var(--plate-fade) 0%,
+          transparent 42%
+        );
+      }
+
+      .col-brief {
+        --plate-fade: var(--paper-2);
+      }
+
+      .col-tools {
+        --plate-fade: var(--indigo);
+      }
+
+      .col-academy {
+        --plate-fade: var(--peri);
+      }
+
+      .paint-lines {
+        position: absolute;
+        z-index: 1;
+        left: var(--pad);
+        right: 22px;
+        bottom: 31%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.42rem;
+        pointer-events: none;
+      }
+
+      .paint-lines {
+        bottom: 44%;
+      }
+
+      .paint-lines li {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-style: italic;
+        font-optical-sizing: auto;
+        font-size: clamp(1.45rem, 4.4cqi, 2.05rem);
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+      }
+
+      .col-brief .paint-lines {
+        color: #0c0b10;
+        text-shadow: 0 1px 0 rgba(244, 241, 234, 0.9);
+      }
+
+      .col-academy .paint-lines {
+        color: #f4f1ea;
+        bottom: 46%;
+        text-shadow: 0 1px 10px rgba(20, 18, 28, 0.65), 0 1px 2px rgba(20, 18, 28, 0.85);
+      }
+
+      .col-tools .paint-lines {
+        color: #fffaf3;
+        bottom: 52%;
+        text-shadow: 0 1px 2px rgba(12, 11, 16, 0.7);
+      }
+
+      /* ——— Scroll collage ——— */
+      .reel {
+        position: relative;
+        height: calc(100svh - var(--bar) + 240vh);
+        background: var(--paper);
+      }
+
+      .reel-pin {
+        position: sticky;
+        top: var(--bar);
+        height: calc(100svh - var(--bar));
+        overflow: hidden;
+        background: var(--paper);
+      }
+
+      .reel-line {
+        position: absolute;
+        z-index: 6;
+        left: var(--pad);
+        right: var(--pad);
+        top: 18px;
+        margin: 0;
+        text-align: center;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(1.2rem, 2.1vw, 1.7rem);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        pointer-events: none;
+      }
+
+      .collage {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        pointer-events: none;
+      }
+
+      .web {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      .pile-sky {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .pile-sky img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 42%;
+      }
+
+      .web path {
+        fill: none;
+        stroke: #24265e;
+        stroke-width: 1.2;
+        stroke-linecap: round;
+      }
+
+      .clip {
+        --flap: 1;
+        --wing-img: url("card-brief-1.jpg");
+        --wing-tint: rgba(244, 241, 234, 0.12);
+        --wing-edge: rgba(36, 38, 94, 0.28);
+        --wing-glow: rgba(247, 244, 236, 0.65);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: min(204px, 25vw);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: none;
+        color: var(--ink);
+        perspective: 820px;
+        transform-style: preserve-3d;
+        will-change: transform;
+      }
+
+      .clip .swatch {
+        display: none;
+      }
+
+      .fly {
+        position: relative;
+        width: 100%;
+        height: 122px;
+        transform-style: preserve-3d;
+        pointer-events: none;
+      }
+
+      .wing {
+        position: absolute;
+        top: 0;
+        width: 53%;
+        height: 100%;
+        overflow: visible;
+        background: none;
+        transform-style: preserve-3d;
+        filter: drop-shadow(0 14px 20px rgba(20, 18, 28, 0.24));
+      }
+
+      .wing svg {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      .wing::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image:
+          radial-gradient(circle at 75% 48%, rgba(20, 18, 28, 0.22) 0%, transparent 56%),
+          linear-gradient(135deg, var(--wing-glow) 0%, var(--wing-tint) 55%, rgba(20, 18, 28, 0.18) 100%),
+          var(--wing-img);
+        background-size: 100% 100%, 100% 100%, 155% 155%;
+        background-position: center, center, 35% 45%;
+        background-blend-mode: multiply, soft-light, normal;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M 96,46 C 84,22 54,4 22,8 C 6,10 3,24 9,38 C 14,49 26,56 46,56 C 68,56 86,52 96,49 Z M 96,52 C 74,56 44,54 20,66 C 8,73 10,89 22,99 C 33,108 42,107 49,116 C 55,112 58,103 68,99 C 82,93 92,76 96,58 Z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M 96,46 C 84,22 54,4 22,8 C 6,10 3,24 9,38 C 14,49 26,56 46,56 C 68,56 86,52 96,49 Z M 96,52 C 74,56 44,54 20,66 C 8,73 10,89 22,99 C 33,108 42,107 49,116 C 55,112 58,103 68,99 C 82,93 92,76 96,58 Z'/%3E%3C/svg%3E");
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+        pointer-events: none;
+      }
+
+      .wing-r::before {
+        transform: scaleX(-1);
+      }
+
+      .wing-l {
+        left: -2%;
+        transform-origin: 96% 46%;
+        transform: rotateY(calc((1 - var(--flap)) * 68deg));
+      }
+
+      .wing-r {
+        right: -2%;
+        transform-origin: 4% 46%;
+        transform: rotateY(calc((var(--flap) - 1) * 68deg));
+      }
+
+      .thorax {
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        width: 6px;
+        height: 50%;
+        transform: translateX(-50%);
+        border-radius: 50% 50% 45% 45% / 26% 26% 74% 74%;
+        background:
+          radial-gradient(ellipse at 50% 14%, #46427d 0%, #201e3e 42%, #12101b 100%);
+        box-shadow:
+          0 -4px 0 -1px #1b1932,
+          0 4px 10px rgba(20, 18, 28, 0.32);
+        z-index: 2;
+      }
+
+      .antennae {
+        position: absolute;
+        left: 50%;
+        top: 9%;
+        width: 34px;
+        height: 20px;
+        transform: translateX(-50%);
+        z-index: 2;
+        opacity: 0.72;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M18.2 21 C16.5 12 10 4.5 3.5 3' fill='none' stroke='%2324265e' stroke-width='0.95' stroke-linecap='round'/%3E%3Cpath d='M19.8 21 C21.5 12 28 4.5 34.5 3' fill='none' stroke='%2324265e' stroke-width='0.95' stroke-linecap='round'/%3E%3Cellipse cx='3.2' cy='3' rx='1.6' ry='1' transform='rotate(-24 3.2 3)' fill='%2324265e'/%3E%3Cellipse cx='34.8' cy='3' rx='1.6' ry='1' transform='rotate(24 34.8 3)' fill='%2324265e'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .clip .words {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        max-width: 188px;
+        margin-top: 2px;
+        padding: 2px 6px;
+        text-align: center;
+        background: none;
+        border: none;
+        box-shadow: none;
+        color: var(--ink);
+        text-shadow:
+          0 0 14px rgba(244, 241, 234, 0.98),
+          0 0 6px rgba(244, 241, 234, 0.96),
+          0 1px 1px rgba(244, 241, 234, 0.95);
+      }
+
+      .clip .desk {
+        display: block;
+        margin: 0 0 2px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .clip p {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-style: italic;
+        font-size: 0.9rem;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+      }
+
+      .clip[data-paint="brief-1"] { --wing-img: url("obj-wash.jpg"); }
+      .clip[data-paint="brief-2"] { --wing-img: url("obj-cream.jpg"); }
+      .clip[data-paint="brief-3"] { --wing-img: url("obj-cup.jpg"); }
+      .clip[data-paint="tools-1"] { --wing-img: url("obj-indigo.jpg"); }
+      .clip[data-paint="tools-2"] { --wing-img: url("obj-dome.jpg?v=3"); }
+      .clip[data-paint="academy-1"] { --wing-img: url("obj-violet.jpg"); }
+      .clip[data-paint="academy-2"] { --wing-img: url("obj-brush.jpg"); }
+
+      .clip[data-bucket="brief"] {
+        --wing-tint: rgba(233, 228, 216, 0.25);
+        --wing-edge: rgba(36, 38, 94, 0.24);
+        --wing-glow: rgba(255, 252, 245, 0.72);
+      }
+
+      .clip[data-bucket="brief"] .desk {
+        color: var(--indigo);
+      }
+
+      .clip[data-bucket="academy"] {
+        --wing-tint: rgba(145, 158, 242, 0.34);
+        --wing-edge: rgba(27, 28, 72, 0.3);
+        --wing-glow: rgba(230, 223, 255, 0.62);
+        color: var(--indigo-deep);
+      }
+
+      .clip[data-bucket="academy"] .desk {
+        color: var(--indigo);
+      }
+
+      .clip[data-bucket="tools"] {
+        --wing-tint: rgba(36, 38, 94, 0.38);
+        --wing-edge: rgba(230, 223, 255, 0.34);
+        --wing-glow: rgba(196, 180, 255, 0.45);
+        color: var(--ink);
+      }
+
+      .clip[data-bucket="tools"] .thorax {
+        background: radial-gradient(ellipse at 50% 14%, #c4b4ff 0%, #4a4d96 42%, #1b1c48 100%);
+        box-shadow:
+          0 -4px 0 -1px #24265e,
+          0 4px 10px rgba(20, 18, 28, 0.32);
+      }
+
+      .clip[data-bucket="tools"] .desk {
+        color: var(--indigo);
+      }
+
+      .js .reel-pin .columns {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        height: 100%;
+        min-height: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* ——— Destination pages ——— */
+      .dest {
+        display: none;
+        background: var(--panel, var(--paper));
+        color: var(--ink);
+        flex-direction: column;
+        padding: 32px 24px 48px;
+      }
+
+      #tools.dest {
+        color: var(--paper);
+      }
+
+      #academy.dest {
+        color: var(--paper);
+      }
+
+      .dest:target {
+        display: flex;
+        flex: 1;
+        min-height: calc(100svh - var(--bar));
+      }
+
+      body:has(.dest:target) .reel {
+        display: none;
+      }
+
+      .dest-shell {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        padding: clamp(0.5rem, 2vh, 1.5rem) clamp(0.5rem, 3vw, 1.5rem) 0;
+      }
+
+      .dest-mast {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1.25rem 2rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid var(--dest-rule, var(--rule));
+        margin-bottom: clamp(1.75rem, 4vh, 2.75rem);
+      }
+
+      #tools .dest-mast {
+        --dest-rule: rgba(244, 241, 234, 0.28);
+      }
+
+      #academy .dest-mast {
+        --dest-rule: rgba(244, 241, 234, 0.28);
+      }
+
+      .kicker {
+        margin: 0 0 0.65rem;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .dest-mast h2 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-optical-sizing: auto;
+        font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+        line-height: 0.96;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+      }
+
+      .dest-meta {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        opacity: 0.72;
+        text-align: right;
+      }
+
+      .dest-lede {
+        margin: 0 0 clamp(1.75rem, 4vh, 2.5rem);
+        max-width: 38em;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+        line-height: 1.35;
+        letter-spacing: -0.015em;
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 2.5rem;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .back:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.4em;
+      }
+
+      /* ——— Edition, shelf, bookcase ——— */
+      #brief.dest {
+        background:
+          linear-gradient(to bottom, rgba(233, 228, 216, 0.15), var(--paper-2) 460px),
+          url("brief.jpg") center 18% / cover no-repeat;
+      }
+
+      #tools.dest {
+        background:
+          linear-gradient(to bottom, rgba(36, 38, 94, 0.42), var(--indigo) 420px),
+          url("tools.png?v=3") center 28% / cover no-repeat;
+      }
+
+      #academy.dest {
+        background:
+          linear-gradient(to bottom, rgba(92, 109, 224, 0.28), var(--peri) 440px),
+          url("academy.png?v=6") center 16% / cover no-repeat;
+      }
+
+      .proofs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+      }
+
+      .proof {
+        display: grid;
+        grid-template-columns: minmax(120px, 18%) 1fr;
+        min-height: 168px;
+        background-color: #f7f4ec;
+        background-size: cover;
+        background-position: left center;
+        box-shadow: 0 14px 32px rgba(20, 18, 28, 0.1);
+        color: var(--ink);
+      }
+
+      .proof-lead {
+        min-height: 240px;
+        grid-template-columns: minmax(160px, 28%) 1fr;
+      }
+
+      .proof-body {
+        grid-column: 2;
+        padding: 1.15rem 1.35rem 1.3rem;
+        background: linear-gradient(90deg, rgba(247, 244, 236, 0.08), rgba(247, 244, 236, 0.94) 22%);
+      }
+
+      .proof .desk {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--indigo);
+      }
+
+      .proof h3 {
+        margin: 0 0 0.55rem;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+        line-height: 1.08;
+        letter-spacing: -0.025em;
+      }
+
+      .proof p {
+        margin: 0 0 0.35rem;
+        max-width: 40em;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 1.02rem;
+        line-height: 1.35;
+      }
+
+      .proof p strong {
+        font-weight: 600;
+      }
+
+      .radar-shelf,
+      .bookcase {
+        overflow-x: auto;
+        padding: 1.5rem 0 0;
+      }
+
+      .shelf-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+        width: max-content;
+        min-width: 100%;
+      }
+
+      .radar-shelf .shelf-row {
+        border-bottom: 16px solid #141028;
+        padding-bottom: 0;
+        gap: 12px;
+      }
+
+      .tome {
+        position: relative;
+        flex: 1 0 150px;
+        min-height: 230px;
+        padding: 16px 14px 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: var(--indigo-deep);
+        background-size: cover;
+        background-position: center 28%;
+        color: var(--paper);
+        box-shadow: 0 16px 28px rgba(12, 11, 16, 0.28);
+      }
+
+      .tome::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(12, 11, 16, 0.88) 0%, rgba(12, 11, 16, 0.45) 34%, transparent 62%);
+        pointer-events: none;
+      }
+
+      .tome > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .tome:nth-child(2),
+      .tome:nth-child(4) {
+        min-height: 280px;
+      }
+
+      .tome .desk {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--lav);
+      }
+
+      .tome h3 {
+        margin: 0.35rem 0 0.4rem;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.35rem;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+
+      .tome p {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 0.95rem;
+        line-height: 1.42;
+      }
+
+      .bookcase .shelf-row {
+        gap: 8px;
+        padding-bottom: 0;
+        border-bottom: 18px solid #1b1c48;
+      }
+
+      .spine-book {
+        flex: 0 0 auto;
+        width: 84px;
+        writing-mode: vertical-rl;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.8rem;
+        padding: 18px 12px;
+        background-color: var(--paper-2);
+        background-size: cover;
+        background-position: center;
+        box-shadow:
+          inset 8px 0 0 rgba(247, 244, 236, 0.72),
+          0 12px 22px rgba(20, 18, 28, 0.18);
+        color: #14121c;
+        text-shadow: 0 0 10px rgba(247, 244, 236, 0.9);
+      }
+
+      .spine-book.dark {
+        background-color: var(--indigo-deep);
+        color: var(--paper);
+        text-shadow: 0 0 10px rgba(12, 11, 16, 0.85);
+      }
+
+      .spine-book .num {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+      }
+
+      .spine-book h3 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.15rem;
+        letter-spacing: -0.02em;
+      }
+
+      /* ——— Brief story cards ——— */
+      .story-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .story {
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        border: 1px solid var(--rule-soft);
+        min-height: 100%;
+        transition: transform 220ms ease, box-shadow 220ms ease;
+      }
+
+      .story:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(20, 18, 28, 0.08);
+      }
+
+      .story-cover {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 1px solid var(--rule-soft);
+      }
+
+      .story-cover svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .story-body {
+        padding: 1.15rem 1.2rem 1.35rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        flex: 1;
+      }
+
+      .story-tag {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--peri);
+      }
+
+      .story h3 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(1.25rem, 1.8vw, 1.45rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .story p {
+        margin: 0;
+        font-size: 14.5px;
+        line-height: 1.45;
+        opacity: 0.78;
+      }
+
+      .story-foot {
+        margin-top: auto;
+        padding-top: 0.85rem;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.5;
+      }
+
+      /* ——— Tools radar ——— */
+      .tools-list {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid rgba(244, 241, 234, 0.22);
+      }
+
+      .tool-row {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem 1.25rem;
+        align-items: center;
+        padding: 1.15rem 0;
+        border-bottom: 1px solid rgba(244, 241, 234, 0.22);
+        transition: background 160ms ease;
+      }
+
+      .tool-row:hover {
+        background: rgba(244, 241, 234, 0.04);
+      }
+
+      .tool-mark {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex: none;
+        box-shadow: inset 0 0 0 1px rgba(244, 241, 234, 0.2);
+      }
+
+      .tool-mark svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .tool-copy h3 {
+        margin: 0 0 0.3rem;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.25rem;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+
+      .tool-copy p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+        opacity: 0.78;
+        max-width: 42em;
+      }
+
+      .tool-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.45rem;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.28rem 0.65rem;
+        border: 1px solid rgba(244, 241, 234, 0.35);
+        border-radius: 999px;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .chip-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--lav);
+        box-shadow: 0 0 0 2px rgba(196, 180, 255, 0.25);
+      }
+
+      .chip-dot.new {
+        background: var(--peri-bright);
+        box-shadow: 0 0 0 2px rgba(139, 155, 255, 0.28);
+      }
+
+      .chip-dot.watch {
+        background: var(--paper-2);
+        box-shadow: 0 0 0 2px rgba(233, 228, 216, 0.2);
+      }
+
+      .tool-cat {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.55;
+      }
+
+      .radar-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        margin: 0 0 1.5rem;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+
+      .radar-legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      /* ——— Academy cards ——— */
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .course {
+        display: flex;
+        flex-direction: column;
+        background: var(--indigo-deep);
+        border: 1px solid rgba(244, 241, 234, 0.16);
+        min-height: 100%;
+        transition: transform 220ms ease, border-color 220ms ease;
+      }
+
+      .course:hover {
+        transform: translateY(-3px);
+        border-color: rgba(196, 180, 255, 0.45);
+      }
+
+      .course-art {
+        aspect-ratio: 5 / 3;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 1px solid rgba(244, 241, 234, 0.12);
+      }
+
+      .course-art svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .course-body {
+        padding: 1.2rem 1.2rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        flex: 1;
+      }
+
+      .course-mod {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--lav);
+      }
+
+      .course h3 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(1.3rem, 1.9vw, 1.55rem);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+      }
+
+      .course p {
+        margin: 0;
+        font-size: 14.5px;
+        line-height: 1.45;
+        opacity: 0.8;
+      }
+
+      .course-meta {
+        margin-top: auto;
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.55;
+      }
+
+      /* Playbook stub */
+      .stub-copy {
+        max-width: 22em;
+        padding: clamp(3rem, 12vh, 7rem) 0;
+      }
+
+      .stub-copy h2 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+        line-height: 0.96;
+        letter-spacing: -0.03em;
+      }
+
+      .stub-copy .dek {
+        margin: 1.2rem 0 0;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+        line-height: 1.35;
+      }
+
+      .defs {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      @media (max-width: 900px) {
+        .story-grid,
+        .course-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tool-row {
+          grid-template-columns: auto 1fr;
+        }
+
+        .tool-side {
+          grid-column: 2;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .mast {
+          height: auto;
+          min-height: var(--bar);
+          padding: 14px 18px;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          row-gap: 10px;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          gap: 0.45rem 0.65rem;
+          letter-spacing: 0.12em;
+        }
+
+        .columns {
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+        }
+
+        .col {
+          flex: none;
+          min-height: 0;
+          padding: 16px 20px 0;
+        }
+
+        .col h2 {
+          padding-top: 0.7rem;
+          padding-bottom: 7.25rem;
+          max-width: 18em;
+          font-size: clamp(1.65rem, 6.4vw, 2.15rem);
+        }
+
+        .plate {
+          height: 6.6rem;
+        }
+
+        .reel {
+          height: calc(100svh - var(--bar) + 190vh);
+        }
+
+        .clip {
+          width: min(148px, 44vw);
+          height: auto;
+        }
+
+        .fly {
+          height: 86px;
+        }
+
+        .clip .swatch {
+          height: 56px;
+        }
+
+        .clip p {
+          font-size: 0.92rem;
+        }
+
+        .js .reel-pin .col {
+          flex: 1 1 0;
+          min-height: 0;
+          padding: 12px 16px 0;
+        }
+
+        .js .reel-pin .col h2 {
+          padding-top: 0.35rem;
+          padding-bottom: 0;
+          font-size: clamp(1.2rem, 5vw, 1.65rem);
+        }
+
+        .js .reel-pin .plate {
+          height: 46%;
+        }
+
+        .paint-lines {
+          left: 16px;
+          right: 14px;
+          bottom: 7.4rem;
+          gap: 0.28rem;
+        }
+
+        .paint-lines li {
+          font-size: 0.95rem;
+        }
+
+        .proof,
+        .proof-lead {
+          grid-template-columns: 1fr;
+          min-height: 0;
+        }
+
+        .proof-body {
+          grid-column: 1;
+          background: rgba(247, 244, 236, 0.9);
+        }
+
+        .spine-book {
+          width: 72px;
+        }
+
+        .land img {
+          width: 100%;
+          left: 0;
+          height: 100%;
+        }
+
+        .col-brief .land img {
+          object-position: 18% 40%;
+        }
+
+        .col-academy .land img {
+          object-position: 50% 40%;
+        }
+
+        .col-tools .land img {
+          object-position: 82% 40%;
+        }
+
+        .dest-meta {
+          text-align: left;
+        }
+      }
+
+      @media (max-height: 720px) and (min-width: 861px) {
+        .col h2 {
+          padding-top: clamp(1.4rem, 6vh, 3.2rem);
+          font-size: clamp(2.1rem, 10cqi, 3.5rem);
+        }
+
+        .plate {
+          height: 46%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .col::after,
+        .arrow,
+        .plate img,
+        .story,
+        .course {
+          transition: none;
+          animation: none;
+        }
+
+        .col:hover .plate img,
+        .col:focus-visible .plate img {
+          transform: translateY(4%);
+        }
+
+        .story:hover,
+        .course:hover {
+          transform: none;
+        }
+
+        .reel {
+          height: auto;
+        }
+
+        .reel-pin {
+          position: relative;
+          top: auto;
+          height: auto;
+          overflow: visible;
+        }
+
+        .collage,
+        .reel-line {
+          display: none;
+        }
+
+        .reel-pin .columns,
+        .js .reel-pin .columns {
+          position: relative;
+          opacity: 1;
+          pointer-events: auto;
+          height: auto;
+          min-height: calc(100svh - var(--bar));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="defs" aria-hidden="true">
+      <defs>
+        <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="26" />
+        </filter>
+        <filter id="soft-sm" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="14" />
+        </filter>
+        <filter id="grain" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.12  0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0.45 0"
+          />
+        </filter>
+        <radialGradient id="vig" cx="50%" cy="42%" r="62%">
+          <stop offset="58%" stop-color="#000" stop-opacity="0" />
+          <stop offset="100%" stop-color="#000" stop-opacity="0.38" />
+        </radialGradient>
+
+        <symbol id="wing-left" viewBox="0 0 100 120">
+          <!-- Painterly impasto highlight & depth wash -->
+          <path
+            d="M 96,46 C 82,30 58,18 34,22 C 20,25 18,36 28,45 C 44,53 74,51 96,49 Z"
+            fill="var(--wing-glow)"
+            opacity="0.32"
+          />
+          <path
+            d="M 38,8 C 22,7 7,12 8,28 C 10,36 18,40 28,35 C 36,30 42,18 38,8 Z"
+            fill="var(--wing-edge)"
+            opacity="0.28"
+          />
+          <!-- Whisper-soft botanical venation & rim -->
+          <path
+            d="M 96,47 C 70,34 42,22 10,20 M 64,32 C 44,24 26,14 16,10 M 70,36 C 48,36 26,36 11,36 M 78,42 C 58,46 38,50 22,50 M 96,54 C 68,64 42,74 18,82 M 74,62 C 56,78 44,94 48,113"
+            fill="none"
+            stroke="var(--wing-edge)"
+            stroke-width="0.6"
+            stroke-linecap="round"
+          />
+          <path
+            d="M 96,46 C 84,22 54,4 22,8 C 6,10 3,24 9,38 C 14,49 26,56 46,56 C 68,56 86,52 96,49 M 96,52 C 74,56 44,54 20,66 C 8,73 10,89 22,99 C 33,108 42,107 49,116 C 55,112 58,103 68,99 C 82,93 92,76 96,58"
+            fill="none"
+            stroke="var(--wing-edge)"
+            stroke-width="0.75"
+            stroke-linejoin="round"
+          />
+          <!-- Painted rim highlights -->
+          <circle cx="13" cy="18" r="1.5" fill="var(--wing-glow)" opacity="0.75" />
+          <circle cx="11" cy="27" r="1.2" fill="var(--wing-glow)" opacity="0.7" />
+          <circle cx="19" cy="78" r="1.4" fill="var(--wing-glow)" opacity="0.7" />
+        </symbol>
+
+        <symbol id="wing-right" viewBox="0 0 100 120">
+          <g transform="translate(100, 0) scale(-1, 1)">
+            <use href="#wing-left" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="mast">
+      <h1 class="wordmark"><a href="#front">XplorAI</a></h1>
+      <nav class="nav" aria-label="Primary">
+        <a href="#brief">Brief</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="#academy">Academy</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="#tools">Tools</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="#playbook">Playbook</a>
+      </nav>
+    </header>
+
+    <main id="front">
+      <div class="reel" id="reel">
+        <div class="reel-pin" id="reel-pin">
+          <div class="pile-sky" id="pile-sky" aria-hidden="true">
+            <img src="xplorai-door-land.png" alt="" />
+          </div>
+          <p class="reel-line" id="reel-line">This week, still in a pile.</p>
+          <div class="collage" id="collage" aria-hidden="true">
+            <svg class="web" id="web"></svg>
+            <article class="clip" data-bucket="brief" data-paint="brief-1" data-stack="16,42,-7,0.78" data-spread="14,28,-6,1" data-dock="13,66,-3,0.46">
+              <span class="fly" aria-hidden="true"><span class="wing wing-l"><svg viewBox="0 0 100 120"><use href="#wing-left"/></svg></span><span class="wing wing-r"><svg viewBox="0 0 100 120"><use href="#wing-right"/></svg></span><span class="thorax"></span><span class="antennae"></span></span>
+              <div class="words"><span class="desk">Trust</span>
+              <p>FTC opens a probe into OpenAI and Anthropic</p></div>
+            </article>
+            <article class="clip" data-bucket="brief" data-paint="brief-2" data-stack="27,58,5,0.82" data-spread="24,68,4,1.08" data-dock="24,76,2,0.42">
+              <span class="fly" aria-hidden="true"><span class="wing wing-l"><svg viewBox="0 0 100 120"><use href="#wing-left"/></svg></span><span class="wing wing-r"><svg viewBox="0 0 100 120"><use href="#wing-right"/></svg></span><span class="thorax"></span><span class="antennae"></span></span>
+              <div class="words"><span class="desk">Rules</span>
+              <p>Hawley previews liability for rogue agents</p></div>
+            </article>
+            <article class="clip" data-bucket="brief" data-paint="brief-3" data-stack="38,38,-3,0.84" data-spread="35,24,-2,0.98" data-dock="33,60,-1,0.4">
+              <span class="fly" aria-hidden="true"><span class="wing wing-l"><svg viewBox="0 0 100 120"><use href="#wing-left"/></svg></span><span class="wing wing-r"><svg viewBox="0 0 100 120"><use href="#wing-right"/></svg></span><span class="thorax"></span><span class="antennae"></span></span>
+              <div class="words"><span class="desk">Money</span>
+              <p>SoftBank closes its final $10bn tranche</p></div>
+            </article>
+            <article class="clip" data-bucket="tools" data-paint="tools-1" data-stack="50,54,6,0.8" data-spread="50,50,1,1.06" data-dock="78,66,2,0.44">
+              <span class="fly" aria-hidden="true"><span class="wing wing-l"><svg viewBox="0 0 100 120"><use href="#wing-left"/></svg></span><span class="wing wing-r"><svg viewBox="0 0 100 120"><use href="#wing-right"/></svg></span><span class="thorax"></span><span class="antennae"></span></span>
+              <div class="words"><span class="desk">Tools</span>
+              <p>Gemini 4 Argon, gated to cyber defenders</p></div>
+            </article>
+            <article class="clip" data-bucket="tools" data-paint="tools-2" data-stack="62,40,-5,0.82" data-spread="66,26,-5,1.02" data-dock="90,76,-2,0.42">
+              <span class="fly" aria-hidden="true"><span class="wing wing-l"><svg viewBox="0 0 100 120"><use href="#wing-left"/></svg></span><span class="wing wing-r"><svg viewBox="0 0 100 120"><use href="#wing-right"/></svg></span><span class="thorax"></span><span class="antennae"></span></span>
+              <div class="words"><span class="desk">Work</span>
+              <p>OpenAI ships always-on Dots</p></div>
+            </article>
+            <article class="clip" data-bucket="academy" data-paint="academy-1" data-stack="74,56,3,0.78" data-spread="76,66,4,1.02" data-dock="52,64,3,0.44">
+              <span class="fly" aria-hidden="true"><span class="wing wing-l"><svg viewBox="0 0 100 120"><use href="#wing-left"/></svg></span><span class="wing wing-r"><svg viewBox="0 0 100 120"><use href="#wing-right"/></svg></span><span class="thorax"></span><span class="antennae"></span></span>
+              <div class="words"><span class="desk">Learn</span>
+              <p>A pledge is not an enforcement docket</p></div>
+            </article>
+            <article class="clip" data-bucket="academy" data-paint="academy-2" data-stack="85,43,-6,0.76" data-spread="86,36,-3,1.04" data-dock="64,76,-2,0.4">
+              <span class="fly" aria-hidden="true"><span class="wing wing-l"><svg viewBox="0 0 100 120"><use href="#wing-left"/></svg></span><span class="wing wing-r"><svg viewBox="0 0 100 120"><use href="#wing-right"/></svg></span><span class="thorax"></span><span class="antennae"></span></span>
+              <div class="words"><span class="desk">Learn</span>
+              <p>Always-on agents need permission design</p></div>
+            </article>
+          </div>
+      <div class="columns">
+        <a class="col col-brief" href="#brief" aria-label="Weekly Brief. What changed in AI this week — and what it means at work.">
+          <span class="top">
+            <span class="meta">understand</span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h15M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2>What changed in AI this week — and what it means at work.</h2>
+          <ul class="paint-lines">
+            <li>FTC opens a probe into OpenAI and Anthropic</li>
+            <li>Hawley previews liability for rogue agents</li>
+            <li>SoftBank closes its final $10bn tranche</li>
+          </ul>
+          <span class="plate">
+            <img src="brief.jpg" alt="" />
+          </span>
+          <span class="land" aria-hidden="true">
+            <img src="xplorai-door-land.png" alt="" />
+          </span>
+        </a>
+
+        <a class="col col-academy" href="#academy" aria-label="AI Academy. Learn AI like a craft, not a feed.">
+          <span class="top">
+            <span class="meta">learn</span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h15M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2>Learn AI like a craft, not a feed.</h2>
+          <ul class="paint-lines">
+            <li>A pledge is not an enforcement docket</li>
+            <li>Always-on agents need permission design</li>
+          </ul>
+          <span class="plate">
+            <img src="academy.png?v=6" alt="" />
+          </span>
+          <span class="land" aria-hidden="true">
+            <img src="xplorai-door-land.png" alt="" />
+          </span>
+        </a>
+
+        <a class="col col-tools" href="#tools" aria-label="Tools Radar. Find the tool worth trying before the noise wins.">
+          <span class="top">
+            <span class="meta">use</span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h15M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <h2>Find the tool worth trying before the noise wins.</h2>
+          <ul class="paint-lines">
+            <li>Gemini 4 Argon, gated to cyber defenders</li>
+            <li>OpenAI ships always-on Dots</li>
+          </ul>
+          <span class="plate">
+            <img src="tools.png?v=3" alt="" />
+          </span>
+          <span class="land" aria-hidden="true">
+            <img src="xplorai-door-land.png" alt="" />
+          </span>
+        </a>
+      </div>
+        </div>
+      </div>
+
+      <!-- WEEKLY BRIEF -->
+      <section id="brief" class="dest" style="--panel: var(--paper-2)" aria-label="Weekly Brief">
+        <div class="dest-shell">
+          <div class="dest-mast">
+            <div>
+              <p class="kicker">Weekly Brief</p>
+              <h2 tabindex="-1">Briefing 18</h2>
+            </div>
+            <p class="dest-meta">2 October 2026 · one sitting</p>
+          </div>
+          <p class="dest-lede">
+            One edition. Read it down the page: what changed, why it matters, then the two things you can try.
+          </p>
+
+          <div class="proofs">
+            <article class="proof proof-lead" style="background-image: url('obj-wash.jpg')">
+              <div class="proof-body">
+                <span class="desk">Trust · 01</span>
+                <h3>FTC opens a probe into OpenAI and Anthropic</h3>
+                <p><strong>Changed.</strong> On 30 September the FTC confirmed an industry-wide look at rogue AI agents, with demands and executive testimony on the table.</p>
+                <p><strong>Matters.</strong> “We signed the White House accord” is no longer a sufficient answer in a vendor review.</p>
+              </div>
+            </article>
+            <article class="proof" style="background-image: url('obj-cup.jpg')">
+              <div class="proof-body">
+                <span class="desk">Rules · 02</span>
+                <h3>Hawley previews liability for rogue agents</h3>
+                <p><strong>Changed.</strong> A Senate chair is drafting rules that would hold firms for reckless design and users for reckless deployment.</p>
+                <p><strong>Matters.</strong> Insurance and procurement should price statutory liability, not only a contract indemnity.</p>
+              </div>
+            </article>
+            <article class="proof" style="background-image: url('obj-stack.jpg')">
+              <div class="proof-body">
+                <span class="desk">Money · 03</span>
+                <h3>SoftBank closes its final $10bn tranche</h3>
+                <p><strong>Changed.</strong> Cumulative OpenAI investment is now $64.6bn, about a 13% stake. Valuation and IPO timing stay unpublished.</p>
+                <p><strong>Matters.</strong> A named shareholder finished the follow-on. That is a fact. It is not a price signal for your SKU.</p>
+              </div>
+            </article>
+            <article class="proof" style="background-image: url('obj-dish.jpg')">
+              <div class="proof-body">
+                <span class="desk">Try · 04</span>
+                <h3>Gemini 4 Argon, gated to cyber defenders</h3>
+                <p><strong>Changed.</strong> Google’s new frontier model starts in the Fairwind program at $2 / $10 per million tokens, with a 1M output limit.</p>
+                <p><strong>Matters.</strong> Do not score it from the announcement. Ask whether you can get in, and keep it out of production until that is clear.</p>
+              </div>
+            </article>
+            <article class="proof" style="background-image: url('obj-violet.jpg')">
+              <div class="proof-body">
+                <span class="desk">Try · 05</span>
+                <h3>OpenAI ships always-on Dots</h3>
+                <p><strong>Changed.</strong> Persistent agents with their own computer are on Pro and Business Premium in eligible markets. Enterprise stays off until an admin turns it on.</p>
+                <p><strong>Matters.</strong> You govern permissions and review gates, not every keystroke. Pilot one low-risk loop.</p>
+              </div>
+            </article>
+          </div>
+
+          <a class="back" href="#front">← Front door</a>
+        </div>
+      </section>
+
+      <!-- TOOLS RADAR -->
+      <section id="tools" class="dest" style="--panel: var(--indigo)" aria-label="Tools Radar">
+        <div class="dest-shell">
+          <div class="dest-mast">
+            <div>
+              <p class="kicker">Tools Radar</p>
+              <h2 tabindex="-1">On the scope this week</h2>
+            </div>
+            <p class="dest-meta">5 on the shelf · 2 October 2026</p>
+          </div>
+          <p class="dest-lede">
+            A shelf, not a feed. These are the things worth pulling down this week.
+          </p>
+          <div class="radar-shelf"><div class="shelf-row">
+            <article class="tome" style="background-image:url('obj-bowl.jpg?v=3')">
+              <span class="desk">Gated</span>
+              <h3>Gemini 4 Argon</h3>
+              <p>Fairwind first. $2 / $10. Don’t score it from the post.</p>
+            </article>
+            <article class="tome" style="background-image:url('obj-dish.jpg?v=3'); min-height: 280px">
+              <span class="desk">Agents</span>
+              <h3>OpenAI Dots</h3>
+              <p>Always-on, with their own computer. Pilot one low-risk loop.</p>
+            </article>
+            <article class="tome" style="background-image:url('obj-dome.jpg?v=3')">
+              <span class="desk">Coding</span>
+              <h3>GPT-6.1 Sol</h3>
+              <p>The cheaper near-Astra model for code and computer use.</p>
+            </article>
+            <article class="tome" style="background-image:url('obj-lens.jpg'); min-height: 250px">
+              <span class="desk">Voice</span>
+              <h3>MAI Voice</h3>
+              <p>Low-latency voice agents, shipped beside the Argon week.</p>
+            </article>
+            <article class="tome" style="background-image:url('obj-dots.jpg')">
+              <span class="desk">Access</span>
+              <h3>Fairwind</h3>
+              <p>The gate in front of Argon. Ask if your org is on the list.</p>
+            </article>
+          </div>
+</div>
+
+          <a class="back" href="#front">← Front door</a>
+        </div>
+      </section>
+
+      <!-- AI ACADEMY -->
+      <section id="academy" class="dest" style="--panel: var(--peri)" aria-label="AI Academy">
+        <div class="dest-shell">
+          <div class="dest-mast">
+            <div>
+              <p class="kicker">AI Academy</p>
+              <h2 tabindex="-1">Paths, not feeds</h2>
+            </div>
+            <p class="dest-meta">8 modules · pull any spine</p>
+          </div>
+          <p class="dest-lede">
+            The books. Pull a spine. Each one is a module you can finish.
+          </p>
+          <div class="bookcase"><div class="shelf-row">
+            <a class="spine-book" style="height:320px;background-image:url('obj-wash.jpg')" href="#academy"><span class="num">01</span><h3>What AI is</h3></a>
+            <a class="spine-book dark" style="height:360px;background-image:url('obj-indigo.jpg')" href="#academy"><span class="num">02</span><h3>How models work</h3></a>
+            <a class="spine-book" style="height:300px;background-image:url('obj-violet.jpg')" href="#academy"><span class="num">03</span><h3>Copilots to agents</h3></a>
+            <a class="spine-book" style="height:340px;background-image:url('obj-cream.jpg')" href="#academy"><span class="num">04</span><h3>The tools map</h3></a>
+            <a class="spine-book" style="height:380px;background-image:url('obj-brush.jpg')" href="#academy"><span class="num">05</span><h3>Prompting</h3></a>
+            <a class="spine-book dark" style="height:310px;background-image:url('obj-dish.jpg')" href="#academy"><span class="num">06</span><h3>Playbooks</h3></a>
+            <a class="spine-book" style="height:350px;background-image:url('obj-cup.jpg')" href="#academy"><span class="num">07</span><h3>Pricing</h3></a>
+            <a class="spine-book" style="height:290px;background-image:url('obj-stack.jpg')" href="#academy"><span class="num">08</span><h3>Ethics</h3></a>
+          </div>
+</div>
+
+          <a class="back" href="#front">← Front door</a>
+        </div>
+      </section>
+
+      <!-- Playbook stub only -->
+      <section id="playbook" class="dest" style="--panel: var(--paper)" aria-label="Strategy Playbook">
+        <div class="dest-shell">
+          <div class="stub-copy">
+            <p class="kicker">Strategy Playbook</p>
+            <h2 tabindex="-1">Coming in this mock as a nav stub</h2>
+            <p class="dek">What AI is, where the money sits, which model to pick, and how to price the work.</p>
+            <a class="back" href="#front">← Front door</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        var routes = {
+          brief: "Weekly Brief — XplorAI",
+          tools: "Tools Radar — XplorAI",
+          academy: "AI Academy — XplorAI",
+          playbook: "Strategy Playbook — XplorAI",
+        };
+
+        function sync(moveFocus) {
+          var id = location.hash.replace("#", "");
+          var known = Object.prototype.hasOwnProperty.call(routes, id);
+          document.title = known ? routes[id] : "XplorAI";
+          document.querySelectorAll(".nav a").forEach(function (link) {
+            if (known && link.getAttribute("href") === "#" + id) link.setAttribute("aria-current", "page");
+            else link.removeAttribute("aria-current");
+          });
+          if (moveFocus && known) {
+            var heading = document.querySelector("#" + id + " h2");
+            if (heading) heading.focus({ preventScroll: true });
+          }
+        }
+
+        window.addEventListener("hashchange", function () {
+          sync(true);
+        });
+        sync(false);
+      })();
+    </script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        var reel = document.getElementById("reel");
+        var pin = document.getElementById("reel-pin");
+        var line = document.getElementById("reel-line");
+        var sky = document.getElementById("pile-sky");
+        var svg = document.getElementById("web");
+        var clips = Array.prototype.slice.call(document.querySelectorAll(".clip"));
+        var columns = pin.querySelector(".columns");
+        var pairs = [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+          [3, 4],
+          [4, 5],
+          [5, 6],
+          [1, 4],
+          [4, 6],
+        ];
+
+        clips.forEach(function (clip, index) {
+          clip._stack = clip.dataset.stack.split(",").map(Number);
+          clip._spread = clip.dataset.spread.split(",").map(Number);
+          clip._dock = clip.dataset.dock.split(",").map(Number);
+          clip.style.zIndex = String(10 + (index === 3 ? 8 : 3 - Math.abs(index - 3)));
+        });
+
+        pairs.forEach(function () {
+          svg.appendChild(document.createElementNS("http://www.w3.org/2000/svg", "path"));
+        });
+        var lines = svg.querySelectorAll("path");
+
+        function clamp(v, a, b) {
+          return Math.min(b, Math.max(a, v));
+        }
+        function smooth(t) {
+          return t * t * (3 - 2 * t);
+        }
+        function easeOut(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
+        function span(p, a, b) {
+          return clamp((p - a) / (b - a), 0, 1);
+        }
+        function mix(a, b, t) {
+          return a + (b - a) * t;
+        }
+        function pose(from, to, t) {
+          return [
+            mix(from[0], to[0], t),
+            mix(from[1], to[1], t),
+            mix(from[2], to[2], t),
+            mix(from[3], to[3], t),
+          ];
+        }
+
+        var centers = [];
+
+        function frame() {
+          var mast = document.querySelector(".mast").offsetHeight;
+          pin.style.top = mast + "px";
+          pin.style.height = Math.max(window.innerHeight - mast, 320) + "px";
+          var range = Math.max(reel.offsetHeight - pin.offsetHeight, 1);
+          var scrolled = window.scrollY - Math.max(0, reel.offsetTop - mast);
+          var p = clamp(scrolled / range, 0, 1);
+          var w = pin.clientWidth;
+          var h = pin.clientHeight;
+          svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+
+          clips.forEach(function (clip, index) {
+            var delay = index * 0.012;
+            var lift = easeOut(span(p, 0.04 + delay, 0.24 + delay));
+            var travel = span(p, 0.08, 0.68);
+            var shut = smooth(span(p, 0.64 + delay * 0.4, 0.86));
+            var driftAngle = travel * Math.PI * 1.4 + index * 1.1;
+            var fly = [
+              clip._spread[0] + Math.sin(driftAngle) * 5.5,
+              clip._spread[1] + Math.cos(driftAngle * 1.15) * 6.5,
+              clip._spread[2] + Math.sin(driftAngle * 1.3) * 9,
+              clip._spread[3],
+            ];
+            var lifted = pose(clip._stack, fly, lift);
+            var at = pose(lifted, clip._dock, shut);
+            var fade = smooth(span(p, 0.72, 0.86));
+            var wordsFade = smooth(span(p, 0.64, 0.76));
+            var flap = mix(0.18, 0.44 + 0.56 * Math.abs(Math.sin(travel * Math.PI * 3.2 + index * 0.85)), lift);
+            clip._open = lift;
+            clip._shut = shut;
+            clip.style.setProperty("--flap", String(flap));
+            clip.style.opacity = String(1 - fade);
+            clip.querySelector(".words").style.opacity = String(1 - wordsFade);
+            clip.style.transform =
+              "translate(" + (at[0] / 100) * w + "px," + (at[1] / 100) * h + "px) translate(-50%,-50%) scale(" + at[3] + ")";
+            clip.querySelector(".fly").style.transform = "rotate(" + at[2] + "deg)";
+            centers[index] = { x: (at[0] / 100) * w, y: (at[1] / 100) * h, open: lift, shut: shut, bucket: clip.dataset.bucket };
+          });
+
+          var openSum = 0;
+          centers.forEach(function (c) {
+            openSum += c.open;
+          });
+          var openAvg = openSum / centers.length;
+
+          pairs.forEach(function (pair, index) {
+            var a = centers[pair[0]];
+            var b = centers[pair[1]];
+            var path = lines[index];
+            var cross = a.bucket === b.bucket ? 1 : 1 - Math.max(a.shut, b.shut);
+            var alpha = Math.min(a.open, b.open) * (1 - Math.max(a.shut, b.shut)) * cross;
+            var dx = b.x - a.x;
+            var dy = b.y - a.y;
+            var len = Math.hypot(dx, dy) || 1;
+            var nx = -dy / len;
+            var ny = dx / len;
+            var bow = (index % 2 === 0 ? 1 : -1) * (0.22 + alpha * 0.55) * Math.min(len * 0.42, 150);
+            var drift = ((index % 3) - 1) * 28 * alpha;
+            var c1x = a.x + dx * 0.28 + nx * bow + drift;
+            var c1y = a.y + dy * 0.18 + ny * bow;
+            var c2x = a.x + dx * 0.72 - nx * bow * 0.65;
+            var c2y = a.y + dy * 0.84 - ny * bow * 0.4 + drift;
+            path.setAttribute(
+              "d",
+              "M " + a.x + " " + a.y + " C " + c1x + " " + c1y + ", " + c2x + " " + c2y + ", " + b.x + " " + b.y
+            );
+            path.setAttribute("stroke-opacity", String(alpha * 0.15 * (1 - openAvg)));
+          });
+
+          var doors = smooth(span(p, 0.74, 0.92));
+          sky.style.opacity = String((0.55 + openAvg * 0.45) * (1 - doors));
+          columns.style.opacity = String(doors);
+          columns.style.pointerEvents = doors > 0.92 ? "auto" : "none";
+
+          if (p < 0.16) line.textContent = "This week, still in a pile.";
+          else if (p < 0.7) line.textContent = "Understand what changed. Learn it. Then use it.";
+          line.style.opacity = String(1 - smooth(span(p, 0.58, 0.74)));
+        }
+
+        var ticking = false;
+        function request() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function () {
+            ticking = false;
+            frame();
+          });
+        }
+        window.addEventListener("scroll", request, { passive: true });
+        window.addEventListener("resize", request);
+        frame();
+      })();
+    </script>
+  </body>
+</html>
