@@ -6,6 +6,7 @@ import { featuredLaunch } from "./data/launches"
 import { featuredModule, learnCatalog } from "./data/learn"
 import { libraryVolumes } from "./data/library"
 import { newsStories, todayBriefing } from "./data/news"
+import { xPostDate, xPosts, xPostText } from "./data/xposts"
 import {
   filterTools,
   findTools,
@@ -409,7 +410,6 @@ export default function App() {
   const lineRef = useRef<HTMLParagraphElement>(null)
   const skyRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
-  const stringRef = useRef<SVGSVGElement>(null)
   const dockRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const colsRef = useRef<HTMLDivElement>(null)
@@ -700,12 +700,10 @@ export default function App() {
     const line = lineRef.current
     const sky = skyRef.current
     const svg = svgRef.current
-    const strings = stringRef.current
     const columns = colsRef.current
     if (!reel || !pin || !line || !sky || !svg || !columns) return
 
     const paths = Array.from(svg.querySelectorAll("path"))
-    const leads = strings ? Array.from(strings.querySelectorAll("line")) : []
 
     function frame() {
       if (!reel || !pin || !line || !sky || !svg || !columns) return
@@ -720,10 +718,8 @@ export default function App() {
       const h = pin.clientHeight
       const now = performance.now() / 1000
       svg.setAttribute("viewBox", `0 0 ${w} ${h}`)
-      strings?.setAttribute("viewBox", `0 0 ${w} ${h}`)
 
       const centers: { x: number; y: number; open: number; shut: number; bucket: string }[] = []
-      const pinRect = pin.getBoundingClientRect()
 
       clips.forEach((clipData, index) => {
         const el = clipRefs.current[index]
@@ -756,19 +752,8 @@ export default function App() {
         el.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%) scale(${at[3]})`
         const flyNode = el.querySelector<HTMLElement>(".fly")
         if (flyNode) flyNode.style.transform = `rotate(${at[2] + wobble}deg)`
-        const wordsNode = el.querySelector<HTMLElement>(".words")
-        if (wordsNode) wordsNode.style.opacity = String(1 - wordsFade)
-
-        const knot = el.querySelector<HTMLElement>(".string-knot")
-        const lead = leads[index]
-        if (knot && lead) {
-          const rect = knot.getBoundingClientRect()
-          lead.setAttribute("x1", String((clipData.stack[0] / 100) * w))
-          lead.setAttribute("y1", "54")
-          lead.setAttribute("x2", String(rect.left + rect.width / 2 - pinRect.left))
-          lead.setAttribute("y2", String(rect.top + rect.height / 2 - pinRect.top))
-          lead.setAttribute("stroke-opacity", String((1 - fade) * 0.55))
-        }
+        const pendant = el.querySelector<HTMLElement>(".pendant")
+        if (pendant) pendant.style.opacity = String(1 - wordsFade)
 
         centers[index] = {
           x,
@@ -949,6 +934,16 @@ export default function App() {
   const briefLines = clips.filter((c) => c.bucket === "brief")
   const academyLines = clips.filter((c) => c.bucket === "academy")
   const toolsLines = clips.filter((c) => c.bucket === "tools")
+  const verifiedCount = currentEdition.stories.length
+  const verifiedLabel = `${verifiedCount} verified ${verifiedCount === 1 ? "story" : "stories"}`
+  const shelfSizes = radarCategories.map((name) => toolCounts[name] ?? 0)
+  const shelfMin = shelfSizes.length ? Math.min(...shelfSizes) : 0
+  const shelfMax = shelfSizes.length ? Math.max(...shelfSizes) : 0
+  const introPillars = [
+    { id: "brief", title: "Brief", line: "What changed, and what to do next." },
+    { id: "academy", title: "Academy", line: "Go deeper, like a craft." },
+    { id: "tools", title: "Tools", line: "Find the right tool in the Radar." },
+  ] as const
 
   return (
     <div className={`doors-app section-${active}`}>
@@ -1077,11 +1072,6 @@ export default function App() {
                 This week, still in a pile.
               </p>
               <div className="collage" id="collage" aria-hidden="true">
-                <svg className="strings" ref={stringRef}>
-                  {clips.map((clip) => (
-                    <line key={clip.id} />
-                  ))}
-                </svg>
                 <svg className="web" id="web" ref={svgRef}>
                   {PAIRS.map((_, idx) => (
                     <path key={idx} />
@@ -1097,9 +1087,14 @@ export default function App() {
                     data-bucket={clip.bucket}
                     data-paint={clip.paint}
                     data-carrier={clip.carrier}
-                    style={{
-                      zIndex: 10 + (index === 3 ? 8 : 3 - Math.abs(index - 3)),
-                    }}
+                    style={
+                      {
+                        zIndex: 10 + (index === 3 ? 8 : 3 - Math.abs(index - 3)),
+                        "--flap-delay": `${index * -0.62}s`,
+                        "--flap-duration": `${(4.1 + index * 0.28).toFixed(2)}s`,
+                        "--sway-duration": `${(3.5 + index * 0.24).toFixed(2)}s`,
+                      } as CSSProperties
+                    }
                   >
                     {clip.carrier === "bird" ? (
                       <Finch
@@ -1119,13 +1114,16 @@ export default function App() {
                             <use href="#wing-right" />
                           </svg>
                         </span>
-                        <span className="thorax string-knot" />
+                        <span className="thorax" />
                         <span className="antennae" />
                       </span>
                     )}
-                    <div className="words">
-                      <span className="desk">{clip.desk}</span>
-                      <p>{clip.headline}</p>
+                    <div className="pendant">
+                      <span className="leash" aria-hidden="true" />
+                      <div className="words">
+                        <span className="desk">{clip.desk}</span>
+                        <p>{clip.headline}</p>
+                      </div>
                     </div>
                   </article>
                 ))}
@@ -1253,6 +1251,67 @@ export default function App() {
           </div>
         )}
 
+        <section className="site-intro" aria-labelledby="what-is-xplorai">
+          <div className="site-intro-shell">
+            <article className="glass-card site-intro-card">
+              <h2 id="what-is-xplorai">What is XplorAI</h2>
+              <p>
+                XplorAI is a calm, three-times-a-week briefing on what actually changed in AI at work.
+                Every story is checked against a real source, explained in plain words, and paired with
+                what to do next. Then go deeper in the Academy, find the right tool in the Radar, and
+                price the work with the Playbook.
+              </p>
+              <div className="site-pillars">
+                {introPillars.map((pillar) => (
+                  <a
+                    key={pillar.id}
+                    className="glass-card site-pillar"
+                    href={`#${pillar.id}`}
+                    onClick={(event) => {
+                      event.preventDefault()
+                      navigate(pillar.id)
+                    }}
+                  >
+                    <span className="desk">{pillar.title}</span>
+                    <span>{pillar.line}</span>
+                  </a>
+                ))}
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {xPosts.length > 0 ? (
+          <section className="from-x" aria-labelledby="from-x-title">
+            <div className="from-x-shell">
+              <p className="kicker">From X</p>
+              <h2 id="from-x-title">What the builders are saying</h2>
+              <div className="from-x-strip">
+                {xPosts.map((post) => (
+                  <article key={post.url} className="glass-card xpost">
+                    <header className="xpost-who">
+                      {post.avatarUrl ? (
+                        <img src={post.avatarUrl} alt="" width={44} height={44} />
+                      ) : null}
+                      <div>
+                        <strong>{post.name}</strong>
+                        <span>@{post.handle}</span>
+                      </div>
+                    </header>
+                    <p className="xpost-text">{xPostText(post.text)}</p>
+                    <footer>
+                      <time dateTime={post.postedAt}>{xPostDate(post.postedAt)}</time>
+                      <a href={post.url} target="_blank" rel="noreferrer">
+                        View on X
+                      </a>
+                    </footer>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         {/* ——— DOOR 1: WEEKLY BRIEF (Concise Editorial Cards + Story Modal) ——— */}
           <section id="brief" className="dest is-active" aria-label="Weekly Brief">
             <div className="dest-shell">
@@ -1262,12 +1321,12 @@ export default function App() {
                   <h2 tabIndex={-1}>{site.edition}</h2>
                 </div>
                 <p className="dest-meta">
-                  {site.date} · {currentEdition.stats.scanned} scanned → {currentEdition.stats.verified} verified
+                  {site.date} · {verifiedLabel}
                 </p>
               </div>
 
               <p className="dest-lede">
-                Five verified stories this week. Scan the one-line takeaways below, or click any story to open its full briefing and work notes in a modal.
+                {verifiedLabel} this week. Scan the one-line takeaways below, or click any story to open its full briefing and work notes in a modal.
               </p>
 
               {/* Concise 3-column At-a-Glance Strip (replaces the giant wall-of-text Editor's Note) */}
@@ -1800,7 +1859,7 @@ export default function App() {
                       </span>
                       <h3 id="directory-heading">Tools Directory</h3>
                       <p className="section-banner-sub">
-                        Pick a category shelf below (9–14 tools each) or describe your workflow in <strong>Match by task</strong> so you never have to scroll a 110-item wall.
+                        Pick a category shelf below ({shelfMin}–{shelfMax} tools each) or describe your workflow in <strong>Match by task</strong> so you never have to scroll a {radarTools.length}-item wall.
                       </p>
                     </div>
                     <a className="doors-pill-link" href="/tools/index.html">

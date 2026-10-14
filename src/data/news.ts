@@ -33,11 +33,18 @@ export const newsStories: NewsStory[] = currentEdition.stories.map((story: Editi
 }))
 
 export const deskStats = [
-  { id: "scanned", label: "Items scanned", value: currentEdition.stats.scanned, note: "this week’s pile" },
-  { id: "filtered", label: "Passed filter", value: currentEdition.stats.filtered, note: "changed a decision" },
-  { id: "verified", label: "Verified", value: currentEdition.stats.verified, note: "a source we can link" },
-  { id: "themes", label: "Themes", value: currentEdition.stats.themes, note: "what you read" },
-] as const
+  ...(typeof currentEdition.stats.scanned === "number"
+    ? [{ id: "scanned" as const, label: "Items scanned", value: currentEdition.stats.scanned, note: "this week’s pile" }]
+    : []),
+  { id: "filtered" as const, label: "Passed filter", value: currentEdition.stats.filtered, note: "changed a decision" },
+  {
+    id: "verified" as const,
+    label: "Verified stories",
+    value: currentEdition.stories.length,
+    note: "in this briefing",
+  },
+  { id: "themes" as const, label: "Themes", value: currentEdition.stats.themes, note: "what you read" },
+]
 
 export const todayBriefing = {
   kicker: currentEdition.kicker,

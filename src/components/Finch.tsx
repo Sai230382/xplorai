@@ -1,4 +1,4 @@
-/** Painted finch. The leash mark sits in the beak, where the string is held. */
+/** Painted finch. The card hangs from the feet, so nothing is tied above the bird. */
 export function Finch({ tone }: { tone: "rules" | "money" | "learn" }) {
   const id = `finch-${tone}`
   const body = tone === "money" ? "#34377f" : "#24265e"
@@ -77,8 +77,6 @@ export function Finch({ tone }: { tone: "rules" | "money" | "learn" }) {
 
         <path className="bird-feet" d="M118 150 C112 162 104 166 110 168 M122 152 C118 164 126 168 132 166" />
         <path className="bird-feet" d="M108 166 C114 164 118 166 116 170 M128 166 C134 164 138 168 134 172" />
-
-        <circle className="string-knot" cx="174" cy="16" r="4" />
       </svg>
     </span>
   )
