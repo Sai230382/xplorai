@@ -57,7 +57,6 @@ type ButterflyClip = {
 
 /** Sailboat lake loop. WebM is first; MP4 is the fallback source. */
 const HERO_POSTER = "/doors/hero2-poster.jpg"
-const HERO_STILL = "/doors/hero2-still.jpg"
 const HERO_VIDEO_WEBM = "/doors/hero2-loop.webm"
 const HERO_VIDEO_MP4 = "/doors/hero2-loop.mp4"
 
@@ -292,26 +291,15 @@ function Wayfinding({
   )
 }
 
-function CloudBank({ soft = false }: { soft?: boolean }) {
-  const paper = soft ? "rgba(244,241,234,0.55)" : "rgba(244,241,234,0.82)"
-  const lav = soft ? "rgba(196,180,255,0.28)" : "rgba(196,180,255,0.5)"
-  return (
-    <svg className="cloud-bank" viewBox="0 0 800 220" aria-hidden="true">
-      <g fill={paper}>
-        <ellipse cx="150" cy="120" rx="120" ry="36" />
-        <ellipse cx="230" cy="98" rx="70" ry="42" />
-        <ellipse cx="90" cy="108" rx="54" ry="28" />
-        <ellipse cx="520" cy="130" rx="140" ry="34" />
-        <ellipse cx="600" cy="104" rx="78" ry="40" />
-        <ellipse cx="450" cy="118" rx="60" ry="26" />
-      </g>
-      <g fill={lav}>
-        <ellipse cx="210" cy="112" rx="80" ry="22" />
-        <ellipse cx="560" cy="122" rx="90" ry="20" />
-      </g>
-    </svg>
-  )
-}
+const MOBILE_SPOTS = [
+  ["8%", "30%"],
+  ["18%", "62%"],
+  ["34%", "44%"],
+  ["52%", "64%"],
+  ["76%", "36%"],
+  ["84%", "54%"],
+  ["92%", "22%"],
+] as const
 
 function MobileHero({
   clips,
@@ -332,12 +320,42 @@ function MobileHero({
       <h1 id="hero-title" className="sr-only">
         {site.headline}
       </h1>
-      <img className="mobile-hero-paint" src={poster} alt="" />
-      <div className="mobile-veil" aria-hidden="true" />
-      <p className="mobile-word" aria-hidden="true">
-        <span>XPLORAI</span>
-      </p>
-      <div className="mobile-hero-body">
+      <div className="mobile-sky">
+        <img className="mobile-hero-paint" src={poster} alt="" />
+        {reduced ? null : (
+          <video
+            className="mobile-hero-video"
+            muted
+            loop
+            playsInline
+            autoPlay
+            preload="metadata"
+            poster={poster}
+            aria-hidden="true"
+          >
+            <source src={HERO_VIDEO_WEBM} type="video/webm" />
+            <source src={HERO_VIDEO_MP4} type="video/mp4" />
+          </video>
+        )}
+        <div className="lake-shimmer" aria-hidden="true">
+          <svg viewBox="0 0 1200 220" preserveAspectRatio="none">
+            <path
+              fill="rgba(244,241,234,0.34)"
+              d="M0 90 C 160 40 320 140 480 90 C 640 40 800 140 960 88 C 1080 56 1160 100 1200 92 L 1200 220 L 0 220 Z"
+            />
+            <path
+              fill="rgba(196,180,255,0.28)"
+              d="M0 120 C 200 80 400 160 620 118 C 820 80 1000 150 1200 112 L 1200 220 L 0 220 Z"
+            />
+            <path
+              fill="rgba(92,109,224,0.22)"
+              d="M0 150 C 180 130 380 180 560 150 C 780 118 980 170 1200 142 L 1200 220 L 0 220 Z"
+            />
+          </svg>
+          <span className="lake-sweep" />
+        </div>
+      </div>
+      <div className="sky-ticker-slot sky-ticker-slot-mobile">
         <SkyTicker
           far={sky.far}
           near={sky.near}
@@ -345,42 +363,51 @@ function MobileHero({
           reduced={reduced}
           variant="mobile"
         />
-        <p className="mobile-kicker">
-          {site.edition} · {site.date}
-        </p>
-        <div className="story-cards">
-          {clips.map((clip) => (
+      </div>
+      <HeroGlass reduced={reduced} />
+      <div className="mobile-carriers">
+        {clips.map((clip, index) => {
+          const [x, y] = MOBILE_SPOTS[index] ?? ["50%", "50%"]
+          const birdCount = clips.slice(0, index).filter((item) => item.carrier === "bird").length
+          const butterflyCount = clips.slice(0, index).filter((item) => item.carrier === "butterfly").length
+          return (
             <a
               key={clip.id}
-              className={`story-card brief-glass desk-${clip.desk.toLowerCase()}`}
+              className="mobile-clip"
+              style={{ left: x, top: y }}
               href={clip.href}
               onClick={(event) => {
                 event.preventDefault()
                 onOpen(clip)
               }}
             >
-              <span className="story-chip">{clip.desk}</span>
-              <p>{clip.headline}</p>
-              <span className="story-go">
-                {clip.storyId ? "Read the story →" : "Enter the Academy →"}
+              {clip.carrier === "bird" ? (
+                <BirdCarrier src={carrierSprite("bird", birdCount)} />
+              ) : (
+                <ButterflyCarrier src={carrierSprite("butterfly", butterflyCount)} />
+              )}
+              <span className="leash" aria-hidden="true" />
+              <span className="words brief-glass">
+                <span className="desk">{clip.desk}</span>
+                <p>{clip.headline}</p>
               </span>
             </a>
-          ))}
-        </div>
-        <div className="hero-entries">
-          {SECTION_LINKS.filter((item) => item.id !== "playbook").map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(event) => {
-                event.preventDefault()
-                onNavigate(item.id)
-              }}
-            >
-              {item.cta} →
-            </a>
-          ))}
-        </div>
+          )
+        })}
+      </div>
+      <div className="hero-entries mobile-hero-entries">
+        {SECTION_LINKS.filter((item) => item.id !== "playbook").map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            onClick={(event) => {
+              event.preventDefault()
+              onNavigate(item.id)
+            }}
+          >
+            {item.cta} →
+          </a>
+        ))}
       </div>
     </section>
   )
@@ -416,7 +443,6 @@ export default function App() {
   const pinRef = useRef<HTMLDivElement>(null)
   const skyRef = useRef<HTMLDivElement>(null)
   const glassRef = useRef<HTMLDivElement>(null)
-  const wordRef = useRef<HTMLParagraphElement>(null)
   const tickerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const dockRef = useRef<HTMLDivElement>(null)
@@ -477,7 +503,7 @@ export default function App() {
         headline: conciseHeadline(trustStory.theme),
         href: `#story-${trustStory.id}`,
         storyId: trustStory.id,
-        stack: [10, 70, -7, 0.52],
+        stack: [8, 30, -6, 0.42],
         spread: [14, 28, -6, 1],
         dock: [13, 66, -3, 0.46],
       },
@@ -490,7 +516,7 @@ export default function App() {
         headline: conciseHeadline(rulesStory.theme),
         href: `#story-${rulesStory.id}`,
         storyId: rulesStory.id,
-        stack: [24, 76, 5, 0.5],
+        stack: [18, 62, 4, 0.4],
         spread: [24, 68, 4, 1.08],
         dock: [24, 76, 2, 0.42],
       },
@@ -503,7 +529,7 @@ export default function App() {
         headline: conciseHeadline(moneyStory.theme),
         href: `#story-${moneyStory.id}`,
         storyId: moneyStory.id,
-        stack: [38, 68, -3, 0.5],
+        stack: [34, 44, -3, 0.4],
         spread: [35, 24, -2, 0.98],
         dock: [33, 60, -1, 0.4],
       },
@@ -516,7 +542,7 @@ export default function App() {
         headline: conciseHeadline(toolsStory.theme),
         href: `#story-${toolsStory.id}`,
         storyId: toolsStory.id,
-        stack: [52, 76, 6, 0.48],
+        stack: [52, 64, 5, 0.38],
         spread: [50, 50, 1, 1.06],
         dock: [78, 66, 2, 0.44],
       },
@@ -529,7 +555,7 @@ export default function App() {
         headline: conciseHeadline(workStory.theme),
         href: `#story-${workStory.id}`,
         storyId: workStory.id,
-        stack: [66, 72, -5, 0.5],
+        stack: [76, 36, -4, 0.42],
         spread: [66, 26, -5, 1.02],
         dock: [90, 76, -2, 0.42],
       },
@@ -543,7 +569,7 @@ export default function App() {
           currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
         ),
         href: "#academy",
-        stack: [78, 76, 3, 0.48],
+        stack: [84, 54, 3, 0.4],
         spread: [76, 66, 4, 1.02],
         dock: [52, 64, 3, 0.44],
       },
@@ -557,7 +583,7 @@ export default function App() {
           currentEdition.columns.matters[1]?.title ?? "Always-on agents need permission design",
         ),
         href: "#academy",
-        stack: [90, 68, -6, 0.46],
+        stack: [93, 22, -5, 0.38],
         spread: [86, 36, -3, 1.04],
         dock: [64, 76, -2, 0.4],
       },
@@ -839,10 +865,8 @@ export default function App() {
 
       const heroUi = 1 - smooth(span(p, 0.05, 0.24))
       const glass = glassRef.current
-      const word = wordRef.current
       const ticker = tickerRef.current
       if (glass) glass.style.opacity = String(heroUi)
-      if (word) word.style.opacity = String(heroUi)
       if (ticker) {
         ticker.style.opacity = String(heroUi)
         ticker.style.pointerEvents = heroUi > 0.45 ? "auto" : "none"
@@ -1073,7 +1097,7 @@ export default function App() {
         {narrow ? (
           <MobileHero
             clips={clips}
-            poster={HERO_STILL}
+            poster={HERO_POSTER}
             reduced={reducedMotion}
             onOpen={openClip}
             onNavigate={navigate}
@@ -1084,7 +1108,7 @@ export default function App() {
               {site.headline}
             </h1>
             <div className="reel-pin" id="reel-pin" ref={pinRef}>
-              <div className="pile-sky" id="pile-sky" ref={skyRef} aria-hidden="true">
+              <div className="pile-sky sky-pan" id="pile-sky" ref={skyRef} aria-hidden="true">
                 <img src={HERO_POSTER} alt="" />
                 {reducedMotion ? null : (
                   <video
@@ -1116,21 +1140,9 @@ export default function App() {
                   </svg>
                   <span className="lake-sweep" />
                 </div>
-                <div className="cloud-layer cloud-far">
-                  <CloudBank />
-                  <CloudBank />
-                </div>
-                <div className="cloud-layer cloud-near">
-                  <CloudBank soft />
-                  <CloudBank soft />
-                </div>
               </div>
               <div className="hero-mist" ref={mistRef} aria-hidden="true" />
-              <HeroGlass links={SECTION_LINKS} glassRef={glassRef} onNavigate={navigate} />
-              <p className="hero-word" ref={wordRef} aria-hidden="true">
-                <span className="hero-word-hole">XPLORAI</span>
-                <span className="hero-word-solid">XPLORAI</span>
-              </p>
+              <HeroGlass glassRef={glassRef} reduced={reducedMotion} />
               <div className="sky-ticker-slot" ref={tickerRef}>
                 <SkyTicker
                   far={skyCopy.far}
