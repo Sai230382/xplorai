@@ -292,13 +292,13 @@ function Wayfinding({
 }
 
 const MOBILE_SPOTS = [
-  ["8%", "30%"],
-  ["18%", "62%"],
-  ["34%", "44%"],
-  ["52%", "64%"],
-  ["76%", "36%"],
-  ["84%", "54%"],
-  ["92%", "22%"],
+  ["16%", "68%"],
+  ["84%", "59%"],
+  ["50%", "32%"],
+  ["50%", "58%"],
+  ["84%", "33%"],
+  ["16%", "46%"],
+  ["16%", "27%"],
 ] as const
 
 function MobileHero({
@@ -569,7 +569,7 @@ export default function App() {
           currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
         ),
         href: "#academy",
-        stack: [84, 54, 3, 0.4],
+        stack: [90, 60, 3, 0.4],
         spread: [76, 66, 4, 1.02],
         dock: [52, 64, 3, 0.44],
       },

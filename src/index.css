@@ -4254,7 +4254,9 @@ a {
   animation-delay: calc(var(--i) * 160ms), calc(1.15s + var(--i) * 140ms);
 }
 
-.hero-plaque.is-still .hero-plaque-letter {
+.hero-plaque.is-still .hero-plaque-letter,
+.hero-plaque.is-still .plaque-wing-l,
+.hero-plaque.is-still .plaque-wing-r {
   opacity: 1;
   transform: none;
   animation: none;
@@ -4446,6 +4448,15 @@ a {
 .mobile-hero .hero-plaque {
   top: 48px;
   z-index: 6;
+  max-width: min(228px, calc(100% - 36px));
+}
+
+.mobile-hero .hero-plaque-edition {
+  max-width: 12.5rem;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  text-align: center;
 }
 
 .mobile-hero .hero-plaque-logo,
@@ -4565,8 +4576,13 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sky-lane-track {
-    animation: none;
+  .sky-lane-track,
+  .sky-pan,
+  .mobile-sky,
+  .plaque-wing-l,
+  .plaque-wing-r,
+  .hero-plaque-letter {
+    animation: none !important;
   }
 
   .mobile-hero-body {
