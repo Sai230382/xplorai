@@ -1,8 +1,11 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { BirdCarrier, ButterflyCarrier } from "./components/Carrier"
+import { HeroGlass, HeroWordmark } from "./components/HeroGlass"
+import { SkyTicker } from "./components/SkyTicker"
 import { carrierSprite } from "./data/carriers"
 import { LaunchSim } from "./components/LaunchSim"
 import { Mark } from "./components/Mark"
+import { skyTicker } from "./data/sky"
 import { desks, type DeskId, currentEdition, type EditionStory } from "./data/edition"
 import { featuredLaunch } from "./data/launches"
 import { featuredModule, learnCatalog } from "./data/learn"
@@ -313,30 +316,42 @@ function CloudBank({ soft = false }: { soft?: boolean }) {
 function MobileHero({
   clips,
   poster,
+  reduced,
   onOpen,
   onNavigate,
 }: {
   clips: ButterflyClip[]
   poster: string
+  reduced: boolean
   onOpen: (clip: ButterflyClip) => void
   onNavigate: (id: string) => void
 }) {
+  const sky = skyTicker()
   return (
-    <section id="front" className="mobile-hero" aria-label="This week">
-      <div className="mobile-hero-sky" aria-hidden="true">
-        <img src={poster} alt="" />
-      </div>
+    <section id="front" className="mobile-hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" className="sr-only">
+        {site.headline}
+      </h1>
+      <img className="mobile-hero-paint" src={poster} alt="" />
+      <p className="mobile-word" aria-hidden="true">
+        XPLORAI
+      </p>
       <div className="mobile-hero-body">
+        <SkyTicker
+          far={sky.far}
+          near={sky.near}
+          mobile={sky.mobile}
+          reduced={reduced}
+          variant="mobile"
+        />
         <p className="mobile-kicker">
           {site.edition} · {site.date}
         </p>
-        <h2>{site.headline}</h2>
-        <p className="hero-tagline">{site.tagline}</p>
         <div className="story-cards">
           {clips.map((clip) => (
             <a
               key={clip.id}
-              className={`story-card desk-${clip.desk.toLowerCase()}`}
+              className={`story-card brief-glass desk-${clip.desk.toLowerCase()}`}
               href={clip.href}
               onClick={(event) => {
                 event.preventDefault()
@@ -398,8 +413,10 @@ export default function App() {
 
   const reelRef = useRef<HTMLDivElement>(null)
   const pinRef = useRef<HTMLDivElement>(null)
-  const lineRef = useRef<HTMLParagraphElement>(null)
   const skyRef = useRef<HTMLDivElement>(null)
+  const glassRef = useRef<HTMLDivElement>(null)
+  const wordRef = useRef<HTMLParagraphElement>(null)
+  const tickerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const dockRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -459,7 +476,7 @@ export default function App() {
         headline: conciseHeadline(trustStory.theme),
         href: `#story-${trustStory.id}`,
         storyId: trustStory.id,
-        stack: [13, 24, -7, 0.78],
+        stack: [10, 70, -7, 0.52],
         spread: [14, 28, -6, 1],
         dock: [13, 66, -3, 0.46],
       },
@@ -472,7 +489,7 @@ export default function App() {
         headline: conciseHeadline(rulesStory.theme),
         href: `#story-${rulesStory.id}`,
         storyId: rulesStory.id,
-        stack: [27, 58, 5, 0.82],
+        stack: [24, 82, 5, 0.5],
         spread: [24, 68, 4, 1.08],
         dock: [24, 76, 2, 0.42],
       },
@@ -485,7 +502,7 @@ export default function App() {
         headline: conciseHeadline(moneyStory.theme),
         href: `#story-${moneyStory.id}`,
         storyId: moneyStory.id,
-        stack: [40, 22, -3, 0.84],
+        stack: [38, 68, -3, 0.5],
         spread: [35, 24, -2, 0.98],
         dock: [33, 60, -1, 0.4],
       },
@@ -498,7 +515,7 @@ export default function App() {
         headline: conciseHeadline(toolsStory.theme),
         href: `#story-${toolsStory.id}`,
         storyId: toolsStory.id,
-        stack: [53, 56, 6, 0.8],
+        stack: [52, 84, 6, 0.48],
         spread: [50, 50, 1, 1.06],
         dock: [78, 66, 2, 0.44],
       },
@@ -511,7 +528,7 @@ export default function App() {
         headline: conciseHeadline(workStory.theme),
         href: `#story-${workStory.id}`,
         storyId: workStory.id,
-        stack: [66, 24, -5, 0.82],
+        stack: [66, 72, -5, 0.5],
         spread: [66, 26, -5, 1.02],
         dock: [90, 76, -2, 0.42],
       },
@@ -525,7 +542,7 @@ export default function App() {
           currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
         ),
         href: "#academy",
-        stack: [78, 58, 3, 0.78],
+        stack: [78, 82, 3, 0.48],
         spread: [76, 66, 4, 1.02],
         dock: [52, 64, 3, 0.44],
       },
@@ -539,7 +556,7 @@ export default function App() {
           currentEdition.columns.matters[1]?.title ?? "Always-on agents need permission design",
         ),
         href: "#academy",
-        stack: [90, 22, -6, 0.76],
+        stack: [90, 68, -6, 0.46],
         spread: [86, 36, -3, 1.04],
         dock: [64, 76, -2, 0.4],
       },
@@ -690,11 +707,10 @@ export default function App() {
 
     const reel = reelRef.current
     const pin = pinRef.current
-    const line = lineRef.current
     const sky = skyRef.current
     const svg = svgRef.current
     const columns = colsRef.current
-    if (!reel || !pin || !line || !sky || !svg || !columns) return
+    if (!reel || !pin || !sky || !svg || !columns) return
 
     const paths = Array.from(svg.querySelectorAll("path"))
     const colNodes = Array.from(columns.querySelectorAll<HTMLElement>(".col"))
@@ -702,7 +718,7 @@ export default function App() {
     const collage = collageRef.current
 
     function frame() {
-      if (!reel || !pin || !line || !sky || !svg || !columns) return
+      if (!reel || !pin || !sky || !svg || !columns) return
       const mastEl = document.querySelector<HTMLElement>(".mast")
       const mast = mastEl ? mastEl.offsetHeight : 58
       pin.style.top = `${mast}px`
@@ -820,9 +836,16 @@ export default function App() {
         else dock.setAttribute("inert", "")
       }
 
-      if (p < 0.42) line.textContent = site.headline
-      else line.textContent = site.bridge
-      line.style.opacity = String(1 - smooth(span(p, 0.5, 0.66)))
+      const heroUi = 1 - smooth(span(p, 0.05, 0.24))
+      const glass = glassRef.current
+      const word = wordRef.current
+      const ticker = tickerRef.current
+      if (glass) glass.style.opacity = String(heroUi)
+      if (word) word.style.opacity = String(heroUi)
+      if (ticker) {
+        ticker.style.opacity = String(heroUi)
+        ticker.style.pointerEvents = heroUi > 0.45 ? "auto" : "none"
+      }
     }
 
     let alive = true
@@ -931,6 +954,7 @@ export default function App() {
   const selectedBook =
     allShelfBooks.find((b) => b.id === selectedVolumeId) ?? allShelfBooks[0]
 
+  const skyCopy = skyTicker()
   const briefLines = clips.filter((c) => c.bucket === "brief")
   const academyLines = clips.filter((c) => c.bucket === "academy")
   const toolsLines = clips.filter((c) => c.bucket === "tools")
@@ -984,7 +1008,7 @@ export default function App() {
       </svg>
 
       <header className="mast">
-        <h1 className="wordmark">
+        <div className="wordmark">
           <a
             href="#front"
             className={`brand-logo ${logoFlutter ? "is-fluttering" : ""}`}
@@ -1011,7 +1035,7 @@ export default function App() {
               ))}
             </span>
           </a>
-        </h1>
+        </div>
         <button
           type="button"
           className="nav-toggle"
@@ -1046,9 +1070,18 @@ export default function App() {
 
       <main>
         {narrow ? (
-          <MobileHero clips={clips} poster={HERO_STILL} onOpen={openClip} onNavigate={navigate} />
+          <MobileHero
+            clips={clips}
+            poster={HERO_STILL}
+            reduced={reducedMotion}
+            onOpen={openClip}
+            onNavigate={navigate}
+          />
         ) : (
-          <div className="reel" id="front" ref={reelRef}>
+          <div className="reel" id="front" ref={reelRef} aria-labelledby="hero-title">
+            <h1 id="hero-title" className="sr-only">
+              {site.headline}
+            </h1>
             <div className="reel-pin" id="reel-pin" ref={pinRef}>
               <div className="pile-sky" id="pile-sky" ref={skyRef} aria-hidden="true">
                 <img src={HERO_POSTER} alt="" />
@@ -1092,9 +1125,15 @@ export default function App() {
                 </div>
               </div>
               <div className="hero-mist" ref={mistRef} aria-hidden="true" />
-              <p className="reel-line" id="reel-line" ref={lineRef}>
-                {site.headline}
-              </p>
+              <HeroGlass links={SECTION_LINKS} glassRef={glassRef} onNavigate={navigate} />
+              <div className="sky-ticker-slot" ref={tickerRef}>
+                <SkyTicker
+                  far={skyCopy.far}
+                  near={skyCopy.near}
+                  mobile={skyCopy.mobile}
+                  reduced={reducedMotion}
+                />
+              </div>
               <div className="collage" id="collage" ref={collageRef} aria-hidden="true">
                 <svg className="web" id="web" ref={svgRef}>
                   {PAIRS.map((_, idx) => (
@@ -1137,7 +1176,7 @@ export default function App() {
                     )}
                     <div className="pendant">
                       <span className="leash" aria-hidden="true" />
-                      <div className="words">
+                      <div className="words brief-glass">
                         <span className="desk">{clip.desk}</span>
                         <p>{clip.headline}</p>
                       </div>
@@ -1145,6 +1184,7 @@ export default function App() {
                   </article>
                 ))}
               </div>
+              <HeroWordmark wordRef={wordRef} />
 
               <div className="columns" ref={colsRef}>
                 <a
@@ -1235,7 +1275,6 @@ export default function App() {
                 </a>
               </div>
               <div className="hero-dock" ref={dockRef}>
-                <p className="hero-tagline">{site.tagline}</p>
                 <div className="hero-entries">
                   {SECTION_LINKS.filter((item) => item.id !== "playbook").map((item) => (
                     <a
@@ -1347,7 +1386,7 @@ export default function App() {
               </p>
 
               {/* Concise 3-column At-a-Glance Strip (replaces the giant wall-of-text Editor's Note) */}
-              <article className="edition-glance painterly-card">
+              <article className="edition-glance painterly-card brief-glass">
                 <div className="glance-head">
                   <div>
                     <span className="desk">This week at a glance · {site.date}</span>
@@ -1380,7 +1419,7 @@ export default function App() {
                     <article
                       id={`story-${story.id}`}
                       key={story.id}
-                      className={`proof painterly-proof ${tone} proof-concise`}
+                      className={`proof painterly-proof brief-glass ${tone} proof-concise`}
                       onClick={() => setActiveStoryModal(story)}
                     >
                       <div className="proof-swatch" aria-hidden="true">
@@ -1444,7 +1483,7 @@ export default function App() {
                 <div className="synth-col">
                   <span className="desk">What changed</span>
                   {currentEdition.columns.changed.map((item) => (
-                    <div key={item.title} className="synth-item painterly-card">
+                    <div key={item.title} className="synth-item painterly-card brief-glass">
                       <h4>{item.title}</h4>
                       <p>{firstSentence(item.body, 150)}</p>
                     </div>
@@ -1453,7 +1492,7 @@ export default function App() {
                 <div className="synth-col">
                   <span className="desk">Why it matters</span>
                   {currentEdition.columns.matters.map((item) => (
-                    <div key={item.title} className="synth-item painterly-card">
+                    <div key={item.title} className="synth-item painterly-card brief-glass">
                       <h4>{item.title}</h4>
                       <p>{firstSentence(item.body, 150)}</p>
                     </div>
@@ -1462,7 +1501,7 @@ export default function App() {
                 <div className="synth-col">
                   <span className="desk">What to watch</span>
                   {currentEdition.columns.watch.map((item) => (
-                    <div key={item.title} className="synth-item painterly-card">
+                    <div key={item.title} className="synth-item painterly-card brief-glass">
                       <h4>{item.title}</h4>
                       <p>{firstSentence(item.body, 150)}</p>
                     </div>
@@ -1818,7 +1857,7 @@ export default function App() {
           onClick={() => setActiveStoryModal(null)}
         >
           <article
-            className="doors-modal painterly-card"
+            className="doors-modal painterly-card brief-glass"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="modal-top-bar">
@@ -1896,7 +1935,7 @@ export default function App() {
           onClick={() => setEditorNoteModalOpen(false)}
         >
           <article
-            className="doors-modal painterly-card"
+            className="doors-modal painterly-card brief-glass"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="modal-top-bar">
