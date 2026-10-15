@@ -291,15 +291,12 @@ function Wayfinding({
   )
 }
 
-const MOBILE_SPOTS = [
-  ["16%", "68%"],
-  ["84%", "59%"],
-  ["50%", "32%"],
-  ["50%", "58%"],
-  ["84%", "33%"],
-  ["16%", "46%"],
-  ["16%", "27%"],
-] as const
+const MOBILE_FLOCK = [
+  { kind: "butterfly" as const, n: 0, size: 36, y: "72%", dur: "34s", delay: "-4s", rest: "14%" },
+  { kind: "bird" as const, n: 0, size: 32, y: "84%", dur: "42s", delay: "-16s", rest: "58%" },
+  { kind: "butterfly" as const, n: 1, size: 28, y: "88%", dur: "36s", delay: "-24s", rest: "36%" },
+  { kind: "bird" as const, n: 1, size: 40, y: "78%", dur: "46s", delay: "-10s", rest: "76%" },
+]
 
 function MobileHero({
   clips,
@@ -315,8 +312,9 @@ function MobileHero({
   onNavigate: (id: string) => void
 }) {
   const sky = skyTicker()
+  const news = clips.slice(0, 4)
   return (
-    <section id="front" className="mobile-hero" aria-labelledby="hero-title">
+    <section id="front" className={`mobile-hero${reduced ? " is-still" : ""}`} aria-labelledby="hero-title">
       <h1 id="hero-title" className="sr-only">
         {site.headline}
       </h1>
@@ -355,59 +353,62 @@ function MobileHero({
           <span className="lake-sweep" />
         </div>
       </div>
-      <div className="sky-ticker-slot sky-ticker-slot-mobile">
-        <SkyTicker
-          far={sky.far}
-          near={sky.near}
-          mobile={sky.mobile}
-          reduced={reduced}
-          variant="mobile"
-        />
-      </div>
-      <HeroGlass reduced={reduced} />
-      <div className="mobile-carriers">
-        {clips.map((clip, index) => {
-          const [x, y] = MOBILE_SPOTS[index] ?? ["50%", "50%"]
-          const birdCount = clips.slice(0, index).filter((item) => item.carrier === "bird").length
-          const butterflyCount = clips.slice(0, index).filter((item) => item.carrier === "butterfly").length
-          return (
-            <a
-              key={clip.id}
-              className="mobile-clip"
-              style={{ left: x, top: y }}
-              href={clip.href}
-              onClick={(event) => {
-                event.preventDefault()
-                onOpen(clip)
-              }}
+      <div className="mobile-stage">
+        <div className="mobile-flock" aria-hidden="true">
+          {MOBILE_FLOCK.map((item) => (
+            <span
+              key={`${item.kind}-${item.n}`}
+              className={`mobile-critter mobile-critter-${item.kind}`}
+              style={
+                {
+                  "--size": `${item.size}px`,
+                  "--y": item.y,
+                  "--dur": item.dur,
+                  "--delay": item.delay,
+                  "--rest": item.rest,
+                } as CSSProperties
+              }
             >
-              {clip.carrier === "bird" ? (
-                <BirdCarrier src={carrierSprite("bird", birdCount)} />
-              ) : (
-                <ButterflyCarrier src={carrierSprite("butterfly", butterflyCount)} />
-              )}
-              <span className="leash" aria-hidden="true" />
-              <span className="words brief-glass">
-                <span className="desk">{clip.desk}</span>
-                <p>{clip.headline}</p>
-              </span>
-            </a>
-          )
-        })}
+              <img src={carrierSprite(item.kind, item.n)} alt="" draggable={false} />
+            </span>
+          ))}
+        </div>
+        <div className="sky-ticker-slot sky-ticker-slot-mobile">
+          <SkyTicker
+            far={sky.far}
+            near={sky.near}
+            mobile={sky.mobile}
+            reduced={reduced}
+            variant="mobile"
+          />
+        </div>
+        <HeroGlass reduced={reduced} />
       </div>
-      <div className="hero-entries mobile-hero-entries">
-        {SECTION_LINKS.filter((item) => item.id !== "playbook").map((item) => (
+      <div className="mobile-news">
+        {news.map((clip) => (
           <a
-            key={item.id}
-            href={`#${item.id}`}
+            key={clip.id}
+            className="mobile-news-card"
+            href={clip.href}
             onClick={(event) => {
               event.preventDefault()
-              onNavigate(item.id)
+              onOpen(clip)
             }}
           >
-            {item.cta} →
+            <span className="desk">{clip.desk}</span>
+            <p>{clip.headline}</p>
           </a>
         ))}
+        <a
+          className="mobile-brief-link"
+          href="#brief"
+          onClick={(event) => {
+            event.preventDefault()
+            onNavigate("brief")
+          }}
+        >
+          Open the Brief →
+        </a>
       </div>
     </section>
   )
@@ -503,7 +504,7 @@ export default function App() {
         headline: conciseHeadline(trustStory.theme),
         href: `#story-${trustStory.id}`,
         storyId: trustStory.id,
-        stack: [8, 30, -6, 0.42],
+        stack: [10, 18, -6, 1],
         spread: [14, 28, -6, 1],
         dock: [13, 66, -3, 0.46],
       },
@@ -516,7 +517,7 @@ export default function App() {
         headline: conciseHeadline(rulesStory.theme),
         href: `#story-${rulesStory.id}`,
         storyId: rulesStory.id,
-        stack: [18, 62, 4, 0.4],
+        stack: [12, 60, 4, 1],
         spread: [24, 68, 4, 1.08],
         dock: [24, 76, 2, 0.42],
       },
@@ -529,7 +530,7 @@ export default function App() {
         headline: conciseHeadline(moneyStory.theme),
         href: `#story-${moneyStory.id}`,
         storyId: moneyStory.id,
-        stack: [34, 44, -3, 0.4],
+        stack: [47, 62, -3, 1],
         spread: [35, 24, -2, 0.98],
         dock: [33, 60, -1, 0.4],
       },
@@ -542,7 +543,7 @@ export default function App() {
         headline: conciseHeadline(toolsStory.theme),
         href: `#story-${toolsStory.id}`,
         storyId: toolsStory.id,
-        stack: [52, 64, 5, 0.38],
+        stack: [31, 20, 5, 1],
         spread: [50, 50, 1, 1.06],
         dock: [78, 66, 2, 0.44],
       },
@@ -555,7 +556,7 @@ export default function App() {
         headline: conciseHeadline(workStory.theme),
         href: `#story-${workStory.id}`,
         storyId: workStory.id,
-        stack: [76, 36, -4, 0.42],
+        stack: [74, 19, -4, 1],
         spread: [66, 26, -5, 1.02],
         dock: [90, 76, -2, 0.42],
       },
@@ -569,7 +570,7 @@ export default function App() {
           currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
         ),
         href: "#academy",
-        stack: [90, 60, 3, 0.4],
+        stack: [91, 17, 3, 1],
         spread: [76, 66, 4, 1.02],
         dock: [52, 64, 3, 0.44],
       },
@@ -583,7 +584,7 @@ export default function App() {
           currentEdition.columns.matters[1]?.title ?? "Always-on agents need permission design",
         ),
         href: "#academy",
-        stack: [93, 22, -5, 0.38],
+        stack: [84, 58, -5, 1],
         spread: [86, 36, -3, 1.04],
         dock: [64, 76, -2, 0.4],
       },
