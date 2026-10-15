@@ -52,25 +52,11 @@ type ButterflyClip = {
   dock: [number, number, number, number]
 }
 
-/** Current lake loop. hero2-* replaces it automatically once those files are published. */
-const HERO_POSTER = "/doors/hero-loop-poster.jpg"
-const HERO_VIDEO_WEBM = "/doors/hero-loop.webm"
-const HERO_VIDEO_MP4 = "/doors/hero-loop.mp4"
-const HERO_POSTER_NEXT = "/doors/hero2-loop-poster.jpg"
-const HERO_VIDEO_WEBM_NEXT = "/doors/hero2-loop.webm"
-const HERO_VIDEO_MP4_NEXT = "/doors/hero2-loop.mp4"
-
-/** Vite serves index.html for missing files, so a 200 is not proof the asset exists. */
-async function publishedAsset(url: string) {
-  try {
-    const res = await fetch(url, { method: "HEAD" })
-    if (!res.ok) return false
-    const type = res.headers.get("content-type") ?? ""
-    return type.length > 0 && !type.includes("text/html")
-  } catch {
-    return false
-  }
-}
+/** Sailboat lake loop. WebM is first; MP4 is the fallback source. */
+const HERO_POSTER = "/doors/hero2-poster.jpg"
+const HERO_STILL = "/doors/hero2-still.jpg"
+const HERO_VIDEO_WEBM = "/doors/hero2-loop.webm"
+const HERO_VIDEO_MP4 = "/doors/hero2-loop.mp4"
 
 const SECTION_LINKS = [
   { id: "brief", label: "Brief", cta: "Open the Brief" },
@@ -391,7 +377,6 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [showTop, setShowTop] = useState(false)
   const [logoFlutter, setLogoFlutter] = useState(false)
-  const [heroPoster, setHeroPoster] = useState(HERO_POSTER)
 
   // Modal state for Weekly Brief stories & Editor's Note
   const [activeStoryModal, setActiveStoryModal] = useState<EditionStory | null>(() => {
@@ -875,17 +860,6 @@ export default function App() {
     }
   }, [clips, reducedMotion, narrow])
 
-  // Prefer the newer painted loop when it has been published. Fall back to the current files.
-  useEffect(() => {
-    let cancelled = false
-    publishedAsset(HERO_POSTER_NEXT).then((ok) => {
-      if (!cancelled && ok) setHeroPoster(HERO_POSTER_NEXT)
-    })
-    return () => {
-      cancelled = true
-    }
-  }, [])
-
   // Desktop lake loop. Sources attach after load so they stay off the LCP path.
   // Mobile never mounts the element. Reduced motion keeps the poster and does not fetch video.
   useEffect(() => {
@@ -925,12 +899,9 @@ export default function App() {
       if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) start()
     }
 
-    async function attach() {
+    function attach() {
       if (cancelled) return
-      const useNext = await publishedAsset(HERO_VIDEO_WEBM_NEXT)
-      if (cancelled) return
-      if (useNext) arm(HERO_VIDEO_WEBM_NEXT, HERO_VIDEO_MP4_NEXT)
-      else arm(HERO_VIDEO_WEBM, HERO_VIDEO_MP4)
+      arm(HERO_VIDEO_WEBM, HERO_VIDEO_MP4)
     }
 
     if (document.readyState === "complete") window.requestAnimationFrame(attach)
@@ -1075,12 +1046,12 @@ export default function App() {
 
       <main>
         {narrow ? (
-          <MobileHero clips={clips} poster={heroPoster} onOpen={openClip} onNavigate={navigate} />
+          <MobileHero clips={clips} poster={HERO_STILL} onOpen={openClip} onNavigate={navigate} />
         ) : (
           <div className="reel" id="front" ref={reelRef}>
             <div className="reel-pin" id="reel-pin" ref={pinRef}>
               <div className="pile-sky" id="pile-sky" ref={skyRef} aria-hidden="true">
-                <img src={heroPoster} alt="" />
+                <img src={HERO_POSTER} alt="" />
                 {reducedMotion ? null : (
                   <video
                     ref={videoRef}
@@ -1090,7 +1061,7 @@ export default function App() {
                     playsInline
                     autoPlay
                     preload="metadata"
-                    poster={heroPoster}
+                    poster={HERO_POSTER}
                     aria-hidden="true"
                   />
                 )}
@@ -1155,15 +1126,6 @@ export default function App() {
                           "bird",
                           clips.slice(0, index).filter((item) => item.carrier === "bird").length,
                         )}
-                        tone={
-                          clip.desk === "Money" ? "money" : clip.desk === "Learn" ? "learn" : "rules"
-                        }
-                        variant={
-                          clips.slice(0, index).filter((item) => item.carrier === "bird").length % 2 ===
-                          0
-                            ? "round"
-                            : "long"
-                        }
                       />
                     ) : (
                       <ButterflyCarrier

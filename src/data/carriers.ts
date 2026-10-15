@@ -1,10 +1,10 @@
 const BUTTERFLY_SPRITES = [
-  "/doors/butterfly-1.png",
-  "/doors/butterfly-2.png",
-  "/doors/butterfly-3.png",
+  "/carriers/butterfly-1.webp",
+  "/carriers/butterfly-2.webp",
+  "/carriers/butterfly-3.webp",
 ] as const
 
-const BIRD_SPRITES = ["/doors/bird-1.png", "/doors/bird-2.png"] as const
+const BIRD_SPRITES = ["/carriers/bird-1.webp", "/carriers/bird-2.webp"] as const
 
 export function carrierSprite(carrier: "butterfly" | "bird", nth: number) {
   const set = carrier === "bird" ? BIRD_SPRITES : BUTTERFLY_SPRITES
