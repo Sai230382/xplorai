@@ -4598,7 +4598,9 @@ a {
 }
 
 .sky-critter-body {
+  display: block;
   width: var(--size);
+  height: auto;
   transform: translate(-50%, -50%);
 }
 
