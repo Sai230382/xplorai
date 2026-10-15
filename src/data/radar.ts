@@ -20,11 +20,18 @@ export type RadarQuote = {
   source: string
 }
 
+export type RadarLaunchDemo = {
+  input: string
+  steps: string[]
+  output: string
+}
+
 export type RadarLaunch = {
   name: string
   date: string
   desc: string
   why: string
+  demo?: RadarLaunchDemo
 }
 
 export type RadarTrend = {

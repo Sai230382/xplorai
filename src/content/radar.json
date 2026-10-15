@@ -2555,25 +2555,57 @@
         "name": "Jotbus (jotbus.com)",
         "date": "6 October 2026",
         "desc": "An end-to-end encrypted shared scratchpad for coding agents. One command, npx jotbus, creates a 60-minute workspace and wires up Claude Code, Codex, Cursor, Gemini CLI and other MCP clients so they can leave notes, files and handoffs for each other across machines. Free for instant workspaces; $7/month for persistent ones.",
-        "why": "For developers running more than one agent: an independent review by a second model, or a handoff to a colleague’s agent, without copy-pasting context. Jotbus stores only ciphertext."
+        "why": "For developers running more than one agent: an independent review by a second model, or a handoff to a colleague’s agent, without copy-pasting context. Jotbus stores only ciphertext.",
+        "demo": {
+          "input": "npx jotbus",
+          "steps": [
+            "A 60-minute workspace opens",
+            "Claude Code, Codex, Cursor, and Gemini CLI connect"
+          ],
+          "output": "Handoff left for another agent. Jotbus stores only ciphertext."
+        }
       },
       {
         "name": "Agent.reviews (agent.reviews)",
         "date": "7 October 2026",
         "desc": "A G2-style review site where AI agents read and write reviews of developer tools. An npm CLI and skill let Claude Code, Codex or Cursor check reviews before picking a tool and post their own after using one. Free to read for humans and agents.",
-        "why": "For platform teams and dev-tool vendors: a feedback loop on how tools actually behave when an agent, not a person, is the user."
+        "why": "For platform teams and dev-tool vendors: a feedback loop on how tools actually behave when an agent, not a person, is the user.",
+        "demo": {
+          "input": "Check reviews before picking a tool",
+          "steps": [
+            "Claude Code reads agent reviews of a developer tool",
+            "After using it, the agent posts its own review"
+          ],
+          "output": "Review posted. Free to read for humans and agents."
+        }
       },
       {
         "name": "DiffGuardian (diffguardian.ai)",
         "date": "8 October 2026",
         "desc": "A desktop app for macOS, Windows and Linux that indexes your repo into a code knowledge graph and gives a spoken, highlighted walkthrough of any PR, agent plan or live worktree. Runs on your own keys or local models; code never touches its servers. Free tier; Pro $8/month.",
-        "why": "For engineers and PMs approving agent-written PRs: understand what a change does and what it touches before you merge, instead of rubber-stamping."
+        "why": "For engineers and PMs approving agent-written PRs: understand what a change does and what it touches before you merge, instead of rubber-stamping.",
+        "demo": {
+          "input": "Walk me through this pull request",
+          "steps": [
+            "The repo is indexed into a code knowledge graph",
+            "The change is highlighted"
+          ],
+          "output": "Spoken walkthrough of what the change does. Code stays off its servers."
+        }
       },
       {
         "name": "Atticus (news.ycombinator.com/item?id=50049588)",
         "date": "12 October 2026",
         "desc": "A free, open-source hold-to-talk Mac assistant. Simple tasks run locally in under a second; harder ones go to Claude via claude -p on an existing Pro or Max plan, with no API key. It saves successful step sequences and replays them without AI, and asks before deleting, sending, buying or writing files.",
-        "why": "For Mac users who want a desktop agent with a confirmation gate on irreversible actions, built on a subscription they already pay for."
+        "why": "For Mac users who want a desktop agent with a confirmation gate on irreversible actions, built on a subscription they already pay for.",
+        "demo": {
+          "input": "Hold to talk: write this note to a file",
+          "steps": [
+            "A simple task starts locally",
+            "Atticus asks before writing the file"
+          ],
+          "output": "Write the file? Saved steps can replay later without AI."
+        }
       }
     ],
     "funding": [

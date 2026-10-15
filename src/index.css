@@ -636,7 +636,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 64%;
 }
 
 .web path {
@@ -2206,6 +2206,148 @@ a {
   color: var(--lav-soft);
 }
 
+.launch-sim {
+  padding: 0.85rem 0.9rem 0.75rem;
+  color: #14121c;
+}
+
+.launch-sim-label {
+  margin: 0 0 0.65rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #24265e;
+}
+
+.launch-sim-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 9.5rem;
+}
+
+.launch-sim-input,
+.launch-sim-output {
+  padding: 0.55rem 0.65rem 0.6rem;
+  border: 1px solid rgba(36, 38, 94, 0.16);
+  border-radius: 12px 4px 12px 4px;
+  background: rgba(255, 252, 247, 0.78);
+}
+
+.launch-sim-input .desk,
+.launch-sim-output .desk {
+  color: #24265e;
+}
+
+.launch-sim-input p,
+.launch-sim-output p {
+  margin: 0.2rem 0 0;
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: #14121c;
+}
+
+.launch-sim-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.launch-sim-steps li,
+.launch-sim-output {
+  animation: sim-in 0.45s ease both;
+}
+
+.launch-sim-steps li {
+  padding: 0.35rem 0.55rem;
+  background: rgba(196, 180, 255, 0.42);
+  color: #14121c;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.launch-sim-output {
+  background: rgba(92, 109, 224, 0.12);
+  border-color: rgba(92, 109, 224, 0.35);
+}
+
+.launch-sim-caret {
+  display: inline-block;
+  width: 1px;
+  height: 0.9em;
+  margin-left: 2px;
+  background: #24265e;
+  vertical-align: text-bottom;
+  animation: sim-caret 1s steps(1) infinite;
+}
+
+.launch-sim-replay {
+  align-self: flex-start;
+  margin-top: 0.65rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #24265e;
+  background: #f4f1ea;
+  color: #14121c;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.launch-sim-replay:hover,
+.launch-sim-replay:focus-visible {
+  background: #24265e;
+  color: #f4f1ea;
+}
+
+@keyframes sim-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sim-caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .launch-sim {
+    padding: 0.65rem 0.7rem 0.6rem;
+  }
+
+  .launch-sim-stage {
+    min-height: 7.25rem;
+  }
+
+  .launch-sim-input p,
+  .launch-sim-output p {
+    font-size: 0.9rem;
+  }
+
+  .launch-sim-steps li {
+    font-size: 0.78rem;
+  }
+}
+
 .niche-split-row {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
@@ -2810,7 +2952,18 @@ a {
   .scroll-cue-chev,
   .pendant,
   .clip[data-carrier="butterfly"] .wing-l,
-  .clip[data-carrier="butterfly"] .wing-r {
+  .clip[data-carrier="butterfly"] .wing-r,
+  .sprite-wing-l,
+  .sprite-wing-r,
+  .fly-variant .wing-l,
+  .fly-variant .wing-r,
+  .fly-bird-sprite img,
+  .cloud-layer,
+  .lake-shimmer svg,
+  .lake-sweep,
+  .launch-sim-steps li,
+  .launch-sim-output,
+  .launch-sim-caret {
     animation: none;
   }
 }
@@ -2981,10 +3134,11 @@ a {
 .pile-video {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 64%;
   opacity: 0;
   pointer-events: none;
   transition: opacity 700ms ease;
@@ -3099,14 +3253,15 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  padding: 42px var(--pad) 20px;
-  background: linear-gradient(to bottom, rgba(244, 241, 234, 0) 0%, rgba(244, 241, 234, 0.92) 34%, #f4f1ea 62%);
+  padding: 18px var(--pad) 16px;
+  background: linear-gradient(to bottom, rgba(244, 241, 234, 0) 0%, rgba(244, 241, 234, 0.22) 46%, rgba(244, 241, 234, 0.55) 100%);
   color: #14121c;
 }
 
 .hero-tagline {
   margin: 0;
-  max-width: 18em;
+  max-width: 22em;
+  padding: 0.2rem 0.75rem;
   text-align: center;
   font-family: var(--serif);
   font-size: clamp(1.35rem, 2.4vw, 1.85rem);
@@ -3114,6 +3269,7 @@ a {
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #14121c;
+  background: rgba(244, 241, 234, 0.82);
 }
 
 .hero-entries {
@@ -3185,6 +3341,240 @@ a {
   width: min(200px, 92%);
   height: 150px;
   align-self: center;
+}
+
+.fly-butterfly {
+  perspective: 800px;
+  filter: drop-shadow(0 12px 16px rgba(20, 18, 28, 0.22));
+}
+
+.fly-variant .wing::before {
+  content: none;
+}
+
+.fly-variant .vein {
+  fill: none;
+  stroke: rgba(244, 241, 234, 0.78);
+  stroke-width: 0.8;
+  stroke-linecap: round;
+}
+
+.clip[data-carrier="bird"] .fly-variant .wing-l,
+.clip[data-carrier="bird"] .fly-variant .wing-r {
+  animation-duration: var(--flap-duration, 4.6s);
+  animation-delay: var(--flap-delay, 0s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.clip[data-carrier="bird"] .fly-variant .wing-l {
+  animation-name: hero-flap-l;
+}
+
+.clip[data-carrier="bird"] .fly-variant .wing-r {
+  animation-name: hero-flap-r;
+}
+
+.sprite-wing {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.sprite-wing img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.sprite-wing-l {
+  left: 0;
+  transform-origin: right center;
+}
+
+.sprite-wing-l img {
+  left: 0;
+}
+
+.sprite-wing-r {
+  right: 0;
+  transform-origin: left center;
+}
+
+.sprite-wing-r img {
+  left: -100%;
+}
+
+.clip[data-carrier="butterfly"] .sprite-wing-l,
+.clip[data-carrier="butterfly"] .sprite-wing-r {
+  animation-duration: var(--flap-duration, 4.6s);
+  animation-delay: var(--flap-delay, 0s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.clip[data-carrier="butterfly"] .sprite-wing-l {
+  animation-name: sprite-flap-l;
+}
+
+.clip[data-carrier="butterfly"] .sprite-wing-r {
+  animation-name: sprite-flap-r;
+}
+
+@keyframes sprite-flap-l {
+  0%,
+  100% {
+    transform: rotateY(calc(16deg + (1 - var(--flap, 0.4)) * 18deg));
+  }
+  50% {
+    transform: rotateY(calc(46deg + var(--flap, 0.4) * 18deg));
+  }
+}
+
+@keyframes sprite-flap-r {
+  0%,
+  100% {
+    transform: rotateY(calc(-16deg - (1 - var(--flap, 0.4)) * 18deg));
+  }
+  50% {
+    transform: rotateY(calc(-46deg - var(--flap, 0.4) * 18deg));
+  }
+}
+
+.fly-bird-sprite img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: 50% 62%;
+  filter: drop-shadow(0 12px 16px rgba(20, 18, 28, 0.22));
+  animation: bird-bob 3.2s ease-in-out infinite;
+}
+
+@keyframes bird-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+.cloud-layer {
+  position: absolute;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  width: 200%;
+  pointer-events: none;
+  animation: cloud-drift 72s linear infinite;
+}
+
+.cloud-far {
+  top: 4%;
+  height: 30%;
+  opacity: 0.92;
+}
+
+.cloud-near {
+  top: 14%;
+  height: 24%;
+  opacity: 0.8;
+  animation-duration: 48s;
+  animation-direction: reverse;
+}
+
+.cloud-bank {
+  flex: none;
+  width: 50%;
+  height: 100%;
+}
+
+@keyframes cloud-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.lake-shimmer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 46%;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, #000 42%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 0%, #000 42%, transparent 100%);
+}
+
+.lake-shimmer svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 78%;
+  animation: lake-bob 14s ease-in-out infinite;
+}
+
+.lake-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(244, 241, 234, 0.08) 34%,
+    rgba(244, 241, 234, 0.62) 50%,
+    rgba(196, 180, 255, 0.34) 58%,
+    transparent 76%
+  );
+  background-size: 220% 100%;
+  mix-blend-mode: screen;
+  animation: lake-sweep 10s ease-in-out infinite;
+}
+
+@keyframes lake-bob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 8px, 0);
+  }
+}
+
+@keyframes lake-sweep {
+  0% {
+    background-position: 130% 0;
+  }
+  100% {
+    background-position: -40% 0;
+  }
+}
+
+.hero-mist {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 18%, rgba(196, 180, 255, 0.28), transparent 68%),
+    linear-gradient(to bottom, rgba(244, 241, 234, 0.08) 0%, rgba(244, 241, 234, 0.55) 72%, rgba(244, 241, 234, 0.78) 100%);
 }
 
 .finch {
@@ -3300,8 +3690,11 @@ a {
 }
 
 .mobile-hero .hero-tagline {
+  max-width: none;
+  padding: 0;
   text-align: left;
   font-size: 1.2rem;
+  background: transparent;
 }
 
 .story-cards {
@@ -3455,12 +3848,49 @@ a {
   .brand-logo .plorai-ch,
   .pendant,
   .clip[data-carrier="butterfly"] .wing-l,
-  .clip[data-carrier="butterfly"] .wing-r {
+  .clip[data-carrier="butterfly"] .wing-r,
+  .sprite-wing-l,
+  .sprite-wing-r,
+  .fly-variant .wing-l,
+  .fly-variant .wing-r,
+  .fly-bird-sprite img,
+  .cloud-layer,
+  .lake-shimmer svg,
+  .lake-sweep,
+  .launch-sim-steps li,
+  .launch-sim-output,
+  .launch-sim-caret,
+  .site-intro {
     animation: none;
   }
 
   .pile-video {
     display: none;
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .site-intro {
+    animation: mobile-section-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  @media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+    .site-intro {
+      animation: mobile-section-fade 0.7s ease both;
+    }
+  }
+}
+
+@keyframes mobile-section-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
