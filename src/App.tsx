@@ -1,6 +1,6 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { BirdCarrier, ButterflyCarrier } from "./components/Carrier"
-import { HeroGlass, HeroWordmark } from "./components/HeroGlass"
+import { HeroGlass } from "./components/HeroGlass"
 import { SkyTicker } from "./components/SkyTicker"
 import { carrierSprite } from "./data/carriers"
 import { LaunchSim } from "./components/LaunchSim"
@@ -333,8 +333,9 @@ function MobileHero({
         {site.headline}
       </h1>
       <img className="mobile-hero-paint" src={poster} alt="" />
+      <div className="mobile-veil" aria-hidden="true" />
       <p className="mobile-word" aria-hidden="true">
-        XPLORAI
+        <span>XPLORAI</span>
       </p>
       <div className="mobile-hero-body">
         <SkyTicker
@@ -489,7 +490,7 @@ export default function App() {
         headline: conciseHeadline(rulesStory.theme),
         href: `#story-${rulesStory.id}`,
         storyId: rulesStory.id,
-        stack: [24, 82, 5, 0.5],
+        stack: [24, 76, 5, 0.5],
         spread: [24, 68, 4, 1.08],
         dock: [24, 76, 2, 0.42],
       },
@@ -515,7 +516,7 @@ export default function App() {
         headline: conciseHeadline(toolsStory.theme),
         href: `#story-${toolsStory.id}`,
         storyId: toolsStory.id,
-        stack: [52, 84, 6, 0.48],
+        stack: [52, 76, 6, 0.48],
         spread: [50, 50, 1, 1.06],
         dock: [78, 66, 2, 0.44],
       },
@@ -542,7 +543,7 @@ export default function App() {
           currentEdition.columns.matters[0]?.title ?? "A pledge is not an enforcement docket",
         ),
         href: "#academy",
-        stack: [78, 82, 3, 0.48],
+        stack: [78, 76, 3, 0.48],
         spread: [76, 66, 4, 1.02],
         dock: [52, 64, 3, 0.44],
       },
@@ -1126,6 +1127,10 @@ export default function App() {
               </div>
               <div className="hero-mist" ref={mistRef} aria-hidden="true" />
               <HeroGlass links={SECTION_LINKS} glassRef={glassRef} onNavigate={navigate} />
+              <p className="hero-word" ref={wordRef} aria-hidden="true">
+                <span className="hero-word-hole">XPLORAI</span>
+                <span className="hero-word-solid">XPLORAI</span>
+              </p>
               <div className="sky-ticker-slot" ref={tickerRef}>
                 <SkyTicker
                   far={skyCopy.far}
@@ -1184,7 +1189,6 @@ export default function App() {
                   </article>
                 ))}
               </div>
-              <HeroWordmark wordRef={wordRef} />
 
               <div className="columns" ref={colsRef}>
                 <a

@@ -38,16 +38,3 @@ export function HeroGlass({
     </div>
   )
 }
-
-export function HeroWordmark({ wordRef }: { wordRef: Ref<HTMLParagraphElement> }) {
-  return (
-    <p className="hero-word" ref={wordRef} aria-hidden="true">
-      <span className="hero-word-knock">
-        <span className="hero-word-text">XPLORAI</span>
-      </span>
-      <span className="hero-word-solid">
-        <span className="hero-word-text">XPLORAI</span>
-      </span>
-    </p>
-  )
-}
