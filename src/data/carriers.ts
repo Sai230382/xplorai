@@ -4,9 +4,6 @@ const BUTTERFLY_SPRITES = [
   "/carriers/butterfly-3.webp",
 ] as const
 
-const BIRD_SPRITES = ["/carriers/bird-1.webp", "/carriers/bird-2.webp"] as const
-
-export function carrierSprite(carrier: "butterfly" | "bird", nth: number) {
-  const set = carrier === "bird" ? BIRD_SPRITES : BUTTERFLY_SPRITES
-  return set[nth % set.length]
+export function butterflySprite(nth: number) {
+  return BUTTERFLY_SPRITES[nth % BUTTERFLY_SPRITES.length]
 }
