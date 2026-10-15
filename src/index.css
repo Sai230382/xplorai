@@ -806,11 +806,6 @@ a {
   background: #24265e;
 }
 
-.clip[data-carrier="bird"] .leash {
-  height: 24px;
-  margin-top: 0;
-}
-
 @keyframes card-dangle {
   0%,
   100% {
@@ -2994,7 +2989,6 @@ a {
   .clip[data-carrier="butterfly"] .wing-r,
   .sprite-wing-l,
   .sprite-wing-r,
-  .fly-bird-sprite img,
   .lake-shimmer svg,
   .lake-sweep,
   .launch-sim-steps li,
@@ -3391,12 +3385,6 @@ a {
   filter: drop-shadow(0 10px 14px rgba(20, 18, 28, 0.2));
 }
 
-.clip .fly-bird.fly-bird-sprite {
-  width: min(250px, 90%);
-  height: auto;
-  aspect-ratio: 1 / 1.08;
-}
-
 .sprite-wing {
   position: absolute;
   top: 0;
@@ -3468,26 +3456,6 @@ a {
   }
   50% {
     transform: rotateY(calc(-46deg - var(--flap, 0.4) * 18deg));
-  }
-}
-
-.fly-bird-sprite img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform-origin: 50% 62%;
-  filter: drop-shadow(0 12px 16px rgba(20, 18, 28, 0.22));
-  animation: bird-bob 3.2s ease-in-out infinite;
-}
-
-@keyframes bird-bob {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-4deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(5deg);
   }
 }
 
@@ -3848,7 +3816,6 @@ a {
   .clip[data-carrier="butterfly"] .wing-r,
   .sprite-wing-l,
   .sprite-wing-r,
-  .fly-bird-sprite img,
   .lake-shimmer svg,
   .lake-sweep,
   .launch-sim-steps li,
@@ -4512,10 +4479,6 @@ a {
   margin-inline: auto;
 }
 
-.clip .fly-bird.fly-bird-sprite {
-  width: 124px;
-}
-
 .mobile-news-card {
   display: block;
   width: auto;
@@ -4608,12 +4571,7 @@ a {
   aspect-ratio: 600 / 470;
 }
 
-.sky-critter-bird .sky-critter-body {
-  aspect-ratio: 1 / 1.02;
-}
-
-.critter-flutter,
-.critter-bird {
+.critter-flutter {
   display: block;
   width: 100%;
   height: 100%;
@@ -4631,8 +4589,7 @@ a {
   overflow: hidden;
 }
 
-.critter-wing img,
-.critter-bird {
+.critter-wing img {
   display: block;
   background: none;
   filter: none;
@@ -4667,17 +4624,8 @@ a {
   left: -100%;
 }
 
-.sky-critter-bird .critter-bird,
-.mobile-critter-bird .critter-bird {
-  height: 100%;
-  object-fit: contain;
-  transform-origin: 50% 55%;
-  animation: bird-beat var(--flap, 7s) ease-in-out infinite;
-}
-
 html.tab-hidden .sky-critter,
 html.tab-hidden .critter-wing,
-html.tab-hidden .critter-bird,
 html.tab-hidden .mobile-critter {
   animation-play-state: paused;
 }
@@ -4696,16 +4644,6 @@ html.tab-hidden .mobile-critter {
   34% { transform: scaleX(0.2); }
   52% { transform: scaleX(0.96); }
   74% { transform: scaleX(0.38); }
-}
-
-@keyframes bird-beat {
-  0%,
-  68%,
-  100% { transform: scaleX(1) scaleY(1); }
-  74% { transform: scaleX(0.84) scaleY(1.08); }
-  80% { transform: scaleX(1) scaleY(1); }
-  86% { transform: scaleX(0.9) scaleY(1.05); }
-  92% { transform: scaleX(1) scaleY(1); }
 }
 
 @keyframes flock-a {
@@ -4760,34 +4698,6 @@ html.tab-hidden .mobile-critter {
   50% { transform: translate3d(28px, 8px, 0) rotate(-4deg); }
   75% { transform: translate3d(2px, 14px, 0) rotate(6deg); }
   100% { transform: translate3d(-14px, 4px, 0) rotate(-6deg); }
-}
-
-@keyframes flock-bird-l {
-  0% { transform: translate3d(18px, 4px, 0) rotate(6deg); }
-  14% { transform: translate3d(-28px, -12px, 0) rotate(-8deg); }
-  30% { transform: translate3d(-92px, -4px, 0) rotate(3deg); }
-  42% { transform: translate3d(-126px, 10px, 0) rotate(18deg); }
-  50% { transform: translate3d(-116px, 26px, 0) rotate(58deg); }
-  58% { transform: translate3d(-84px, 32px, 0) rotate(118deg); }
-  66% { transform: translate3d(-46px, 22px, 0) rotate(170deg); }
-  80% { transform: translate3d(22px, 10px, 0) rotate(186deg); }
-  90% { transform: translate3d(74px, -2px, 0) rotate(146deg); }
-  96% { transform: translate3d(58px, -10px, 0) rotate(64deg); }
-  100% { transform: translate3d(18px, 4px, 0) rotate(6deg); }
-}
-
-@keyframes flock-bird-r {
-  0% { transform: translate3d(-12px, 2px, 0) rotate(-4deg); }
-  14% { transform: translate3d(34px, -14px, 0) rotate(7deg); }
-  30% { transform: translate3d(98px, -2px, 0) rotate(-4deg); }
-  42% { transform: translate3d(130px, 12px, 0) rotate(-20deg); }
-  50% { transform: translate3d(116px, 28px, 0) rotate(-62deg); }
-  58% { transform: translate3d(78px, 34px, 0) rotate(-124deg); }
-  66% { transform: translate3d(32px, 20px, 0) rotate(-174deg); }
-  80% { transform: translate3d(-36px, 8px, 0) rotate(-190deg); }
-  90% { transform: translate3d(-86px, -4px, 0) rotate(-142deg); }
-  96% { transform: translate3d(-64px, -12px, 0) rotate(-58deg); }
-  100% { transform: translate3d(-12px, 2px, 0) rotate(-4deg); }
 }
 
 .sky-ticker-slot-mobile {
@@ -4851,10 +4761,6 @@ html.tab-hidden .mobile-critter {
 
 .mobile-critter-butterfly {
   aspect-ratio: 600 / 470;
-}
-
-.mobile-critter-bird {
-  aspect-ratio: 1 / 1.02;
 }
 
 .mobile-hero.is-still .mobile-critter,
@@ -4947,7 +4853,6 @@ html.tab-hidden .mobile-critter {
   .hero-plaque-letter,
   .sky-critter,
   .critter-wing,
-  .critter-bird,
   .hero-plaque-caret {
     animation: none !important;
   }

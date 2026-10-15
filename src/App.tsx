@@ -1,8 +1,8 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
-import { PaintedBird, PaintedButterfly } from "./components/Carrier"
+import { PaintedButterfly } from "./components/Carrier"
 import { HeroGlass } from "./components/HeroGlass"
 import { SkyTicker } from "./components/SkyTicker"
-import { carrierSprite } from "./data/carriers"
+import { butterflySprite } from "./data/carriers"
 import { LaunchSim } from "./components/LaunchSim"
 import { Mark } from "./components/Mark"
 import { skyTicker } from "./data/sky"
@@ -39,7 +39,7 @@ const HASH_ALIASES: Record<string, RouteId> = {
   playbook: "playbook",
 }
 
-type Carrier = "butterfly" | "bird"
+type Carrier = "butterfly"
 
 type ButterflyClip = {
   id: string
@@ -264,32 +264,27 @@ function Wayfinding({
 }
 
 const MOBILE_FLOCK = [
-  { kind: "butterfly" as const, n: 0, size: 36, y: "72%", dur: "32s", delay: "-4s", rest: "14%", flap: "2.1s" },
-  { kind: "bird" as const, n: 0, size: 34, y: "82%", dur: "40s", delay: "-16s", rest: "58%", flap: "7.2s" },
-  { kind: "butterfly" as const, n: 1, size: 30, y: "88%", dur: "36s", delay: "-24s", rest: "36%", flap: "2.4s" },
-  { kind: "bird" as const, n: 1, size: 42, y: "76%", dur: "46s", delay: "-10s", rest: "76%", flap: "8.4s" },
+  { n: 0, size: 36, y: "70%", dur: "32s", delay: "-4s", rest: "12%", flap: "2.1s" },
+  { n: 1, size: 34, y: "80%", dur: "40s", delay: "-16s", rest: "48%", flap: "2.3s" },
+  { n: 2, size: 32, y: "88%", dur: "36s", delay: "-24s", rest: "30%", flap: "2.45s" },
+  { n: 1, size: 38, y: "64%", dur: "44s", delay: "-10s", rest: "72%", flap: "1.95s" },
 ]
 
 /**
- * Desktop sky. Sizes carry depth: ~32px far, ~56px near.
- * Birds use the glide paths that bank. Butterflies flutter on the wavy loops.
- * Anchors stay off the logo plaque.
+ * Desktop sky. Ten butterflies, ~32px far to ~56px near.
+ * Paths tilt at most ±12°. Anchors stay off the logo plaque.
  */
 const DESKTOP_FLOCK = [
-  { kind: "butterfly" as const, n: 0, size: 36, x: "8%", y: "22%", path: "flock-a", dur: "26s", delay: "-3s", flap: "2.05s" },
-  { kind: "bird" as const, n: 0, size: 52, x: "18%", y: "44%", path: "flock-bird-l", dur: "32s", delay: "-11s", flap: "6.8s" },
-  { kind: "butterfly" as const, n: 1, size: 32, x: "6%", y: "46%", path: "flock-c", dur: "22s", delay: "-8s", flap: "2.35s" },
-  { kind: "butterfly" as const, n: 2, size: 44, x: "24%", y: "16%", path: "flock-e", dur: "29s", delay: "-15s", flap: "1.9s" },
-  { kind: "bird" as const, n: 1, size: 34, x: "14%", y: "52%", path: "flock-bird-r", dur: "38s", delay: "-6s", flap: "8.1s" },
-  { kind: "butterfly" as const, n: 0, size: 56, x: "84%", y: "20%", path: "flock-c", dur: "24s", delay: "-12s", flap: "2.15s" },
-  { kind: "bird" as const, n: 0, size: 32, x: "91%", y: "34%", path: "flock-bird-l", dur: "36s", delay: "-20s", flap: "7.4s" },
-  { kind: "butterfly" as const, n: 1, size: 38, x: "73%", y: "15%", path: "flock-a", dur: "27s", delay: "-9s", flap: "2.5s" },
-  { kind: "butterfly" as const, n: 2, size: 48, x: "88%", y: "44%", path: "flock-e", dur: "31s", delay: "-18s", flap: "1.85s" },
-  { kind: "bird" as const, n: 1, size: 46, x: "76%", y: "40%", path: "flock-bird-r", dur: "34s", delay: "-4s", flap: "6.4s" },
-  { kind: "butterfly" as const, n: 2, size: 33, x: "30%", y: "48%", path: "flock-f", dur: "23s", delay: "-14s", flap: "2.2s" },
-  { kind: "bird" as const, n: 0, size: 30, x: "69%", y: "18%", path: "flock-bird-l", dur: "40s", delay: "-17s", flap: "8.6s" },
-  { kind: "butterfly" as const, n: 0, size: 40, x: "16%", y: "28%", path: "flock-g", dur: "28s", delay: "-1s", flap: "2.45s" },
-  { kind: "butterfly" as const, n: 1, size: 34, x: "66%", y: "50%", path: "flock-f", dur: "25s", delay: "-7s", flap: "2.05s" },
+  { n: 0, size: 36, x: "8%", y: "22%", path: "flock-a", dur: "26s", delay: "-3s", flap: "2.05s" },
+  { n: 1, size: 32, x: "6%", y: "46%", path: "flock-c", dur: "22s", delay: "-8s", flap: "2.35s" },
+  { n: 2, size: 44, x: "24%", y: "16%", path: "flock-e", dur: "29s", delay: "-15s", flap: "1.9s" },
+  { n: 2, size: 42, x: "78%", y: "34%", path: "flock-g", dur: "33s", delay: "-11s", flap: "2.2s" },
+  { n: 0, size: 56, x: "84%", y: "20%", path: "flock-c", dur: "24s", delay: "-12s", flap: "2.15s" },
+  { n: 1, size: 38, x: "73%", y: "15%", path: "flock-a", dur: "27s", delay: "-9s", flap: "2.5s" },
+  { n: 2, size: 48, x: "88%", y: "44%", path: "flock-e", dur: "31s", delay: "-18s", flap: "1.85s" },
+  { n: 2, size: 33, x: "30%", y: "48%", path: "flock-f", dur: "23s", delay: "-14s", flap: "2.2s" },
+  { n: 0, size: 40, x: "16%", y: "28%", path: "flock-g", dur: "28s", delay: "-1s", flap: "2.45s" },
+  { n: 1, size: 34, x: "66%", y: "50%", path: "flock-f", dur: "25s", delay: "-7s", flap: "2.05s" },
 ]
 
 function flockFade(size: number) {
@@ -353,10 +348,10 @@ function MobileHero({
       </div>
       <div className="mobile-stage">
         <div className="mobile-flock" aria-hidden="true">
-          {MOBILE_FLOCK.map((item) => (
+          {MOBILE_FLOCK.map((item, index) => (
             <span
-              key={`${item.kind}-${item.n}`}
-              className={`mobile-critter mobile-critter-${item.kind}`}
+              key={index}
+              className="mobile-critter mobile-critter-butterfly"
               style={
                 {
                   "--size": `${item.size}px`,
@@ -368,11 +363,7 @@ function MobileHero({
                 } as CSSProperties
               }
             >
-              {item.kind === "butterfly" ? (
-                <PaintedButterfly src={carrierSprite(item.kind, item.n)} />
-              ) : (
-                <PaintedBird src={carrierSprite(item.kind, item.n)} />
-              )}
+              <PaintedButterfly src={butterflySprite(item.n)} />
             </span>
           ))}
         </div>
@@ -513,7 +504,7 @@ export default function App() {
         id: "brief-2",
         bucket: "brief",
         paint: "brief-2",
-        carrier: "bird",
+        carrier: "butterfly",
         desk: deskLabel(rulesStory.topic),
         headline: conciseHeadline(rulesStory.theme),
         href: `#story-${rulesStory.id}`,
@@ -526,7 +517,7 @@ export default function App() {
         id: "brief-3",
         bucket: "brief",
         paint: "brief-3",
-        carrier: "bird",
+        carrier: "butterfly",
         desk: deskLabel(moneyStory.topic),
         headline: conciseHeadline(moneyStory.theme),
         href: `#story-${moneyStory.id}`,
@@ -579,7 +570,7 @@ export default function App() {
         id: "academy-2",
         bucket: "academy",
         paint: "academy-2",
-        carrier: "bird",
+        carrier: "butterfly",
         desk: "Learn",
         headline: conciseHeadline(
           currentEdition.columns.matters[1]?.title ?? "Always-on agents need permission design",
@@ -1085,8 +1076,8 @@ export default function App() {
               <div className="sky-flock" ref={flockRef} aria-hidden="true">
                 {DESKTOP_FLOCK.map((item, index) => (
                   <span
-                    key={`${item.kind}-${index}`}
-                    className={`sky-critter sky-critter-${item.kind}`}
+                    key={index}
+                    className="sky-critter sky-critter-butterfly"
                     style={
                       {
                         "--x": item.x,
@@ -1101,11 +1092,7 @@ export default function App() {
                     }
                   >
                     <span className="sky-critter-body">
-                      {item.kind === "butterfly" ? (
-                        <PaintedButterfly src={carrierSprite(item.kind, item.n)} />
-                      ) : (
-                        <PaintedBird src={carrierSprite(item.kind, item.n)} />
-                      )}
+                      <PaintedButterfly src={butterflySprite(item.n)} />
                     </span>
                   </span>
                 ))}

@@ -4,7 +4,7 @@ import { site } from "../data/site"
 const LETTERS = ["P", "L", "O", "R", "A", "I"] as const
 
 /** Chosen line. Alternates live in the PR description. */
-export const HERO_LINE = "AI moves fast. You'll move with it."
+export const HERO_LINE = "AI moves fast. We help you keep pace."
 
 const TYPE_START_MS = 1600
 const TYPE_STEP_MS = 52
