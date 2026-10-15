@@ -1,5 +1,7 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
-import { Finch } from "./components/Finch"
+import { BirdCarrier, ButterflyCarrier } from "./components/Carrier"
+import { carrierSprite } from "./data/carriers"
+import { LaunchSim } from "./components/LaunchSim"
 import { Mark } from "./components/Mark"
 import { desks, type DeskId, currentEdition, type EditionStory } from "./data/edition"
 import { featuredLaunch } from "./data/launches"
@@ -7,26 +9,12 @@ import { featuredModule, learnCatalog } from "./data/learn"
 import { libraryVolumes } from "./data/library"
 import { newsStories, todayBriefing } from "./data/news"
 import { xPostDate, xPosts, xPostText } from "./data/xposts"
-import {
-  filterTools,
-  findTools,
-  gemTool,
-  radarCategories,
-  radarFrontier,
-  radarGems,
-  radarPulse,
-  radarQuickPicks,
-  radarTools,
-  shortHost,
-  toolKey,
-  type RadarTool,
-} from "./data/radar"
+import { radarPulse } from "./data/radar"
 import { site } from "./data/site"
 import { useMaxWidth } from "./hooks/useMaxWidth"
 import { usePrefersReducedMotion } from "./hooks/usePrefersReducedMotion"
 
 type RouteId = "front" | "brief" | "academy" | "tools" | "playbook"
-type ToolsTab = "niche" | "directory"
 
 const ROUTE_TITLES: Record<Exclude<RouteId, "front">, string> = {
   brief: "Weekly Brief — XplorAI",
@@ -64,10 +52,11 @@ type ButterflyClip = {
   dock: [number, number, number, number]
 }
 
-/** Desktop hero still. The loop was painted from public/doors/landscape.png. */
-const HERO_POSTER = "/doors/hero-loop-poster.jpg"
-const HERO_VIDEO_WEBM = "/doors/hero-loop.webm"
-const HERO_VIDEO_MP4 = "/doors/hero-loop.mp4"
+/** Sailboat lake loop. WebM is first; MP4 is the fallback source. */
+const HERO_POSTER = "/doors/hero2-poster.jpg"
+const HERO_STILL = "/doors/hero2-still.jpg"
+const HERO_VIDEO_WEBM = "/doors/hero2-loop.webm"
+const HERO_VIDEO_MP4 = "/doors/hero2-loop.mp4"
 
 const SECTION_LINKS = [
   { id: "brief", label: "Brief", cta: "Open the Brief" },
@@ -262,16 +251,6 @@ function firstSentence(text: string, maxChars = 175) {
   return `${first.slice(0, maxChars - 3).replace(/\s+\S*$/, "")}…`
 }
 
-function Signal({ value }: { value: number }) {
-  return (
-    <span className="doors-sig" aria-label={`Signal ${value} of 5`}>
-      {Array.from({ length: 5 }, (_, i) => (
-        <i key={i} className={i < value ? "on" : undefined} />
-      ))}
-    </span>
-  )
-}
-
 const PLORAI_CHARS = ["p", "l", "o", "r", "A", "I"] as const
 
 function Wayfinding({
@@ -310,25 +289,48 @@ function Wayfinding({
   )
 }
 
+function CloudBank({ soft = false }: { soft?: boolean }) {
+  const paper = soft ? "rgba(244,241,234,0.55)" : "rgba(244,241,234,0.82)"
+  const lav = soft ? "rgba(196,180,255,0.28)" : "rgba(196,180,255,0.5)"
+  return (
+    <svg className="cloud-bank" viewBox="0 0 800 220" aria-hidden="true">
+      <g fill={paper}>
+        <ellipse cx="150" cy="120" rx="120" ry="36" />
+        <ellipse cx="230" cy="98" rx="70" ry="42" />
+        <ellipse cx="90" cy="108" rx="54" ry="28" />
+        <ellipse cx="520" cy="130" rx="140" ry="34" />
+        <ellipse cx="600" cy="104" rx="78" ry="40" />
+        <ellipse cx="450" cy="118" rx="60" ry="26" />
+      </g>
+      <g fill={lav}>
+        <ellipse cx="210" cy="112" rx="80" ry="22" />
+        <ellipse cx="560" cy="122" rx="90" ry="20" />
+      </g>
+    </svg>
+  )
+}
+
 function MobileHero({
   clips,
+  poster,
   onOpen,
   onNavigate,
 }: {
   clips: ButterflyClip[]
+  poster: string
   onOpen: (clip: ButterflyClip) => void
   onNavigate: (id: string) => void
 }) {
   return (
     <section id="front" className="mobile-hero" aria-label="This week">
       <div className="mobile-hero-sky" aria-hidden="true">
-        <img src={HERO_POSTER} alt="" />
+        <img src={poster} alt="" />
       </div>
       <div className="mobile-hero-body">
         <p className="mobile-kicker">
           {site.edition} · {site.date}
         </p>
-        <h2>This week, still in a pile.</h2>
+        <h2>{site.headline}</h2>
         <p className="hero-tagline">{site.tagline}</p>
         <div className="story-cards">
           {clips.map((clip) => (
@@ -394,17 +396,6 @@ export default function App() {
   })
   const volumeDeskRef = useRef<HTMLElement>(null)
 
-  // Tools Radar interactive state
-  const [toolsTab, setToolsTab] = useState<ToolsTab>("niche")
-  const [toolQuery, setToolQuery] = useState("")
-  const [toolCategory, setToolCategory] = useState(radarCategories[0] ?? "Vibe Coding")
-  const [findingTool, setFindingTool] = useState(false)
-  const [findQuery, setFindQuery] = useState("")
-  const [quickPick, setQuickPick] = useState<number | null>(null)
-  const [showAllInCat, setShowAllInCat] = useState(false)
-  const [openToolKey, setOpenToolKey] = useState<string | null>(null)
-  const toolDetailRef = useRef<HTMLDivElement>(null)
-
   const reelRef = useRef<HTMLDivElement>(null)
   const pinRef = useRef<HTMLDivElement>(null)
   const lineRef = useRef<HTMLParagraphElement>(null)
@@ -413,6 +404,8 @@ export default function App() {
   const dockRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const colsRef = useRef<HTMLDivElement>(null)
+  const mistRef = useRef<HTMLDivElement>(null)
+  const collageRef = useRef<HTMLDivElement>(null)
   const clipRefs = useRef<(HTMLElement | null)[]>([])
 
   // Close modals on Escape key
@@ -704,6 +697,9 @@ export default function App() {
     if (!reel || !pin || !line || !sky || !svg || !columns) return
 
     const paths = Array.from(svg.querySelectorAll("path"))
+    const colNodes = Array.from(columns.querySelectorAll<HTMLElement>(".col"))
+    const mist = mistRef.current
+    const collage = collageRef.current
 
     function frame() {
       if (!reel || !pin || !line || !sky || !svg || !columns) return
@@ -725,9 +721,9 @@ export default function App() {
         const el = clipRefs.current[index]
         if (!el) return
         const delay = index * 0.012
-        const lift = easeOut(span(p, 0.04 + delay, 0.24 + delay))
-        const travel = span(p, 0.08, 0.68)
-        const shut = smooth(span(p, 0.64 + delay * 0.4, 0.86))
+        const lift = easeOut(span(p, 0.04 + delay, 0.22 + delay))
+        const travel = span(p, 0.08, 0.48)
+        const exit = smooth(span(p, 0.5 + index * 0.016, 0.72 + index * 0.01))
         const driftAngle = travel * Math.PI * 1.4 + index * 1.1
         const fly: [number, number, number, number] = [
           clipData.spread[0] + Math.sin(driftAngle) * 5.5,
@@ -736,30 +732,32 @@ export default function App() {
           clipData.spread[3],
         ]
         const lifted = pose(clipData.stack, fly, lift)
-        const at = pose(lifted, clipData.dock, shut)
-        const fade = smooth(span(p, 0.72, 0.86))
-        const alive = 1 - shut
+        const alive = 1 - exit
         const sway = Math.sin(now * 0.8 + index * 1.15) * 12 * alive
         const bob = Math.cos(now * 0.95 + index * 0.8) * 7 * alive
         const wobble = Math.sin(now * 0.7 + index) * 3.2 * alive
-        const wordsFade = smooth(span(p, 0.64, 0.76))
-        const flap = mix(0.18, 0.44 + 0.56 * Math.abs(Math.sin(travel * Math.PI * 3.2 + index * 0.85)), lift)
-        const x = (at[0] / 100) * w + sway
-        const y = (at[1] / 100) * h + bob
+        const flap = mix(
+          0.18,
+          0.44 + 0.56 * Math.abs(Math.sin(travel * Math.PI * 3.2 + index * 0.85)),
+          lift,
+        )
+        const spreadX = lifted[0] + (lifted[0] - 50) * exit * 0.28
+        const x = (spreadX / 100) * w + sway
+        const y = (lifted[1] / 100) * h + bob - exit * (h * 0.72 + 36)
 
         el.style.setProperty("--flap", String(flap))
-        el.style.opacity = String(1 - fade)
-        el.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%) scale(${at[3]})`
+        el.style.opacity = String(alive)
+        el.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%) scale(${lifted[3]})`
         const flyNode = el.querySelector<HTMLElement>(".fly")
-        if (flyNode) flyNode.style.transform = `rotate(${at[2] + wobble}deg)`
+        if (flyNode) flyNode.style.transform = `rotate(${lifted[2] + wobble - exit * 10}deg)`
         const pendant = el.querySelector<HTMLElement>(".pendant")
-        if (pendant) pendant.style.opacity = String(1 - wordsFade)
+        if (pendant) pendant.style.opacity = String(alive)
 
         centers[index] = {
           x,
           y,
-          open: lift,
-          shut,
+          open: lift * alive,
+          shut: exit,
           bucket: clipData.bucket,
         }
       })
@@ -792,12 +790,23 @@ export default function App() {
         path.setAttribute("stroke-opacity", String(alpha * 0.15 * (1 - openAvg)))
       })
 
-      const doors = smooth(span(p, 0.74, 0.92))
-      sky.style.opacity = String(1 - doors * 0.92)
-      const columnsLive = doors > 0.62
-      columns.style.opacity = String(doors)
+      const mistAmount = smooth(span(p, 0.46, 0.74))
+      if (mist) mist.style.opacity = String(mistAmount)
+      sky.style.opacity = String(1 - smooth(span(p, 0.7, 0.9)) * 0.4)
+
+      let doorSum = 0
+      colNodes.forEach((col, index) => {
+        const rise = smooth(span(p, 0.58 + index * 0.045, 0.78 + index * 0.03))
+        doorSum += rise
+        col.style.opacity = String(rise)
+        col.style.transform = `translate3d(0, ${(1 - rise) * 72}px, 0)`
+      })
+      const doors = colNodes.length ? doorSum / colNodes.length : 0
+      const columnsLive = doors > 0.72
+      columns.style.opacity = "1"
       columns.style.pointerEvents = columnsLive ? "auto" : "none"
-      columns.style.zIndex = columnsLive ? "8" : "2"
+      columns.style.zIndex = columnsLive ? "8" : "6"
+      if (collage) collage.style.zIndex = doors > 0.84 ? "2" : "7"
       if (columnsLive) columns.removeAttribute("inert")
       else columns.setAttribute("inert", "")
 
@@ -811,9 +820,9 @@ export default function App() {
         else dock.setAttribute("inert", "")
       }
 
-      if (p < 0.16) line.textContent = "This week, still in a pile."
-      else if (p < 0.7) line.textContent = "Understand what changed. Learn it. Then use it."
-      line.style.opacity = String(1 - smooth(span(p, 0.58, 0.74)))
+      if (p < 0.42) line.textContent = site.headline
+      else line.textContent = site.bridge
+      line.style.opacity = String(1 - smooth(span(p, 0.5, 0.66)))
     }
 
     let alive = true
@@ -842,10 +851,16 @@ export default function App() {
       window.removeEventListener("scroll", kick)
       window.removeEventListener("resize", kick)
       document.removeEventListener("visibilitychange", kick)
+      colNodes.forEach((col) => {
+        col.style.opacity = ""
+        col.style.transform = ""
+      })
+      if (collage) collage.style.zIndex = ""
+      if (mist) mist.style.opacity = ""
     }
   }, [clips, reducedMotion, narrow])
 
-  // Desktop lake loop. Sources are attached after load so they stay off the LCP path.
+  // Desktop lake loop. Sources attach after load so they stay off the LCP path.
   // Mobile never mounts the element. Reduced motion keeps the poster and does not fetch video.
   useEffect(() => {
     if (narrow || reducedMotion) return
@@ -854,25 +869,39 @@ export default function App() {
     if (!video || !sky) return
     let cancelled = false
 
-    function attach() {
-      if (cancelled || !video || video.querySelector("source")) return
+    function arm(webmSrc: string, mp4Src: string) {
+      if (cancelled || !video) return
       video.muted = true
+      video.defaultMuted = true
+      video.playsInline = true
+      video.setAttribute("muted", "")
+      video.setAttribute("playsinline", "")
+      video.setAttribute("webkit-playsinline", "")
+      video.querySelectorAll("source").forEach((node) => node.remove())
       const webm = document.createElement("source")
-      webm.src = HERO_VIDEO_WEBM
+      webm.src = webmSrc
       webm.type = "video/webm"
       const mp4 = document.createElement("source")
-      mp4.src = HERO_VIDEO_MP4
+      mp4.src = mp4Src
       mp4.type = "video/mp4"
       video.append(webm, mp4)
+
+      const start = () => {
+        if (cancelled || !video) return
+        video.muted = true
+        const attempt = video.play()
+        if (!attempt) return
+        attempt.then(() => sky?.classList.add("has-video")).catch(() => {})
+      }
+
+      video.addEventListener("canplay", start, { once: true })
       video.load()
-      video.addEventListener(
-        "canplay",
-        () => {
-          if (cancelled) return
-          video.play().then(() => sky?.classList.add("has-video")).catch(() => {})
-        },
-        { once: true },
-      )
+      if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) start()
+    }
+
+    function attach() {
+      if (cancelled) return
+      arm(HERO_VIDEO_WEBM, HERO_VIDEO_MP4)
     }
 
     if (document.readyState === "complete") window.requestAnimationFrame(attach)
@@ -887,35 +916,6 @@ export default function App() {
       sky.classList.remove("has-video")
     }
   }, [narrow, reducedMotion])
-
-  // Tools Radar computed lists
-  const effectiveCategory = toolQuery.trim() ? "All" : toolCategory
-  const shelfTools = useMemo(
-    () => filterTools(radarTools, effectiveCategory, toolQuery),
-    [effectiveCategory, toolQuery],
-  )
-  const visibleShelfTools = useMemo(() => {
-    if (showAllInCat || toolQuery.trim()) return shelfTools
-    return shelfTools.slice(0, 9)
-  }, [shelfTools, showAllInCat, toolQuery])
-
-  const matchedTools = useMemo(() => findTools(radarTools, findQuery), [findQuery])
-  const openedTool: RadarTool | null = useMemo(
-    () => radarTools.find((t) => toolKey(t) === openToolKey) ?? null,
-    [openToolKey],
-  )
-  const toolCounts = useMemo(() => {
-    const next: Record<string, number> = { All: radarTools.length }
-    for (const tool of radarTools) next[tool.c] = (next[tool.c] ?? 0) + 1
-    return next
-  }, [])
-
-  function openToolDetail(key: string) {
-    setOpenToolKey(key)
-    window.requestAnimationFrame(() => {
-      toolDetailRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" })
-    })
-  }
 
   function handleBookClick(bookId: string) {
     if (selectedVolumeId === bookId) {
@@ -936,13 +936,10 @@ export default function App() {
   const toolsLines = clips.filter((c) => c.bucket === "tools")
   const verifiedCount = currentEdition.stories.length
   const verifiedLabel = `${verifiedCount} verified ${verifiedCount === 1 ? "story" : "stories"}`
-  const shelfSizes = radarCategories.map((name) => toolCounts[name] ?? 0)
-  const shelfMin = shelfSizes.length ? Math.min(...shelfSizes) : 0
-  const shelfMax = shelfSizes.length ? Math.max(...shelfSizes) : 0
   const introPillars = [
     { id: "brief", title: "Brief", line: "What changed, and what to do next." },
-    { id: "academy", title: "Academy", line: "Go deeper, like a craft." },
-    { id: "tools", title: "Tools", line: "Find the right tool in the Radar." },
+    { id: "academy", title: "Academy", line: "Learn the part that affects your work." },
+    { id: "tools", title: "Tools", line: "Niche launches worth a look." },
   ] as const
 
   return (
@@ -1049,7 +1046,7 @@ export default function App() {
 
       <main>
         {narrow ? (
-          <MobileHero clips={clips} onOpen={openClip} onNavigate={navigate} />
+          <MobileHero clips={clips} poster={HERO_STILL} onOpen={openClip} onNavigate={navigate} />
         ) : (
           <div className="reel" id="front" ref={reelRef}>
             <div className="reel-pin" id="reel-pin" ref={pinRef}>
@@ -1062,16 +1059,43 @@ export default function App() {
                     muted
                     loop
                     playsInline
-                    preload="none"
+                    autoPlay
+                    preload="metadata"
                     poster={HERO_POSTER}
                     aria-hidden="true"
                   />
                 )}
+                <div className="lake-shimmer">
+                  <svg viewBox="0 0 1200 220" preserveAspectRatio="none">
+                    <path
+                      fill="rgba(244,241,234,0.34)"
+                      d="M0 90 C 160 40 320 140 480 90 C 640 40 800 140 960 88 C 1080 56 1160 100 1200 92 L 1200 220 L 0 220 Z"
+                    />
+                    <path
+                      fill="rgba(196,180,255,0.28)"
+                      d="M0 120 C 200 80 400 160 620 118 C 820 80 1000 150 1200 112 L 1200 220 L 0 220 Z"
+                    />
+                    <path
+                      fill="rgba(92,109,224,0.22)"
+                      d="M0 150 C 180 130 380 180 560 150 C 780 118 980 170 1200 142 L 1200 220 L 0 220 Z"
+                    />
+                  </svg>
+                  <span className="lake-sweep" />
+                </div>
+                <div className="cloud-layer cloud-far">
+                  <CloudBank />
+                  <CloudBank />
+                </div>
+                <div className="cloud-layer cloud-near">
+                  <CloudBank soft />
+                  <CloudBank soft />
+                </div>
               </div>
+              <div className="hero-mist" ref={mistRef} aria-hidden="true" />
               <p className="reel-line" id="reel-line" ref={lineRef}>
-                This week, still in a pile.
+                {site.headline}
               </p>
-              <div className="collage" id="collage" aria-hidden="true">
+              <div className="collage" id="collage" ref={collageRef} aria-hidden="true">
                 <svg className="web" id="web" ref={svgRef}>
                   {PAIRS.map((_, idx) => (
                     <path key={idx} />
@@ -1097,26 +1121,19 @@ export default function App() {
                     }
                   >
                     {clip.carrier === "bird" ? (
-                      <Finch
-                        tone={
-                          clip.desk === "Money" ? "money" : clip.desk === "Learn" ? "learn" : "rules"
-                        }
+                      <BirdCarrier
+                        src={carrierSprite(
+                          "bird",
+                          clips.slice(0, index).filter((item) => item.carrier === "bird").length,
+                        )}
                       />
                     ) : (
-                      <span className="fly" aria-hidden="true">
-                        <span className="wing wing-l">
-                          <svg viewBox="0 0 100 120">
-                            <use href="#wing-left" />
-                          </svg>
-                        </span>
-                        <span className="wing wing-r">
-                          <svg viewBox="0 0 100 120">
-                            <use href="#wing-right" />
-                          </svg>
-                        </span>
-                        <span className="thorax" />
-                        <span className="antennae" />
-                      </span>
+                      <ButterflyCarrier
+                        src={carrierSprite(
+                          "butterfly",
+                          clips.slice(0, index).filter((item) => item.carrier === "butterfly").length,
+                        )}
+                      />
                     )}
                     <div className="pendant">
                       <span className="leash" aria-hidden="true" />
@@ -1256,10 +1273,10 @@ export default function App() {
             <article className="glass-card site-intro-card">
               <h2 id="what-is-xplorai">What is XplorAI</h2>
               <p>
-                XplorAI is a calm, three-times-a-week briefing on what actually changed in AI at work.
-                Every story is checked against a real source, explained in plain words, and paired with
-                what to do next. Then go deeper in the Academy, find the right tool in the Radar, and
-                price the work with the Playbook.
+                XplorAI is a short briefing for people who use AI at work and are tired of sorting the noise.
+                Three times a week it says what changed, why it matters for your job, and what to do next —
+                in plain words, checked against a real source. The Academy is there when you want to go
+                deeper. The Tools pulse is a few niche launches worth a look, not every tool on the internet.
               </p>
               <div className="site-pillars">
                 {introPillars.map((pillar) => (
@@ -1626,7 +1643,7 @@ export default function App() {
             </div>
           </section>
 
-        {/* ——— DOOR 3: TOOLS RADAR (Two Focused Painterly Views, No Photo Clutter) ——— */}
+        {/* ——— DOOR 3: TOOLS PULSE ——— */}
           <section id="tools" className="dest is-active" aria-label="Tools Radar">
             <div className="dest-shell">
               <div className="dest-mast">
@@ -1635,400 +1652,89 @@ export default function App() {
                   <h2 tabIndex={-1}>On the scope this week</h2>
                 </div>
                 <p className="dest-meta">
-                  {radarPulse.launches.length} new niche launches · {radarTools.length} tools indexed
+                  {radarPulse.launches.length} niche launches · last pulse{" "}
+                  {currentEdition.toolsPulseDate || radarPulse.week}
                 </p>
               </div>
               <p className="dest-lede">
-                Switch between <strong>New Niche Tool Launches</strong> for the last tools pulse and its hidden gems, or open the <strong>Tools Directory</strong> to browse one category at a time without endless scrolling.
+                Niche tools that shipped recently, before they turn into noise.
               </p>
 
-              {/* Two-Room Mode Switcher (prevents vertical overload) */}
-              <div className="radar-room-tabs" role="tablist" aria-label="Tools Radar sections">
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={toolsTab === "niche"}
-                  className={`room-tab ${toolsTab === "niche" ? "is-active" : ""}`}
-                  onClick={() => setToolsTab("niche")}
-                >
-                  <span className="room-num">01</span>
-                  <span className="room-label">
-                    <strong>New Niche Tool Launches</strong>
-                    <small>{radarPulse.launches.length} new drops + {radarGems.length} hidden gems</small>
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={toolsTab === "directory"}
-                  className={`room-tab ${toolsTab === "directory" ? "is-active" : ""}`}
-                  onClick={() => setToolsTab("directory")}
-                >
-                  <span className="room-num">02</span>
-                  <span className="room-label">
-                    <strong>Tools Directory</strong>
-                    <small>Browse by category or match by task ({radarTools.length} tools)</small>
-                  </span>
-                </button>
-              </div>
+              <section id="niche-launches" className="radar-major-section" aria-labelledby="niche-heading">
+                <div className="section-banner">
+                  <div>
+                    <span className="desk">
+                      Last tools pulse: {currentEdition.toolsPulseDate || radarPulse.week}
+                    </span>
+                    <h3 id="niche-heading">New Niche Tool Launches</h3>
+                    <p className="section-banner-sub">
+                      A short list of builders that shipped recently. Each card includes an illustrative example drawn from that tool’s description.
+                    </p>
+                  </div>
+                </div>
 
-              {/* Active Tool Inspection Drawer (shared between both rooms) */}
-              <div ref={toolDetailRef}>
-                {openedTool ? (
-                  <article className="doors-tool-inspect painterly-card">
-                    <div className="inspect-head">
+                <div className="niche-launches-grid">
+                  {radarPulse.launches.map((launch, index) => {
+                    const tone = IMPASTO_TONES[(index + 1) % IMPASTO_TONES.length]
+                    return (
+                      <article key={launch.name} className={`niche-launch-card ${tone}`}>
+                        <div className="niche-card-swatch">
+                          <div className="niche-swatch-meta">
+                            <span className="niche-badge">New Niche Launch</span>
+                            <span className="desk">{launch.date}</span>
+                          </div>
+                          <h4>{launch.name}</h4>
+                        </div>
+                        <div className="niche-card-body">
+                          <p className="niche-desc">{launch.desc}</p>
+                          {launch.demo ? <LaunchSim demo={launch.demo} /> : null}
+                          <p className="niche-why">
+                            <strong>Why it’s on our radar:</strong> {launch.why}
+                          </p>
+                        </div>
+                      </article>
+                    )
+                  })}
+                </div>
+
+                <div className="niche-split-row">
+                  <article className="tools-spotlight painterly-panel">
+                    <span className="desk">
+                      {featuredLaunch.kicker} · {featuredLaunch.maker} · {featuredLaunch.released}
+                    </span>
+                    <h4>{featuredLaunch.name}</h4>
+                    <p>{featuredLaunch.overview}</p>
+                    <div className="spotlight-cols">
                       <div>
-                        <span className="desk">
-                          {openedTool.c} · {openedTool.p || "Pricing on site"}
-                        </span>
-                        <h3>{openedTool.n}</h3>
-                        <p className="inspect-tl">{openedTool.tl}</p>
-                      </div>
-                      <div className="inspect-actions">
-                        <a
-                          className="doors-btn"
-                          href={openedTool.w}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Visit {shortHost(openedTool.w)} ↗
-                        </a>
-                        <button
-                          type="button"
-                          className="doors-btn doors-btn-light"
-                          onClick={() => setOpenToolKey(null)}
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                    <p className="inspect-desc">{openedTool.d}</p>
-                    <div className="inspect-cols">
-                      {openedTool.f?.length ? (
-                        <div>
-                          <span className="desk">What it does</span>
-                          <ul>
-                            {openedTool.f.map((f) => (
-                              <li key={f}>{f}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                      {openedTool.u?.length ? (
-                        <div>
-                          <span className="desk">If you actually use it</span>
-                          <ul>
-                            {openedTool.u.map((u) => (
-                              <li key={u}>{u}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                    </div>
-                    {openedTool.e ? (
-                      <p className="inspect-plain">
-                        <strong>In plain language.</strong> {openedTool.e}
-                      </p>
-                    ) : null}
-                  </article>
-                ) : null}
-              </div>
-
-              {/* =========================================================
-                  TAB 01: NEW NICHE TOOL LAUNCHES
-              ========================================================= */}
-              {toolsTab === "niche" ? (
-                <section id="niche-launches" className="radar-major-section" aria-labelledby="niche-heading">
-                  <div className="section-banner">
-                    <div>
-                      <span className="desk">
-                        Section 01 · Last tools pulse: {currentEdition.toolsPulseDate || radarPulse.week}
-                      </span>
-                      <h3 id="niche-heading">New Niche Tool Launches</h3>
-                      <p className="section-banner-sub">
-                        Specialized sandboxes, agent firewalls, MCP gateways, and lesser-known builders that shipped recently — before they hit mainstream noise.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Painterly Impasto Swatch Cards for Niche Launches (No Photos) */}
-                  <div className="niche-launches-grid">
-                    {radarPulse.launches.map((launch, index) => {
-                      const tone = IMPASTO_TONES[(index + 1) % IMPASTO_TONES.length]
-                      return (
-                        <article key={launch.name} className={`niche-launch-card ${tone}`}>
-                          <div className="niche-card-swatch">
-                            <div className="niche-swatch-meta">
-                              <span className="niche-badge">New Niche Launch</span>
-                              <span className="desk">{launch.date}</span>
-                            </div>
-                            <h4>{launch.name}</h4>
-                          </div>
-                          <div className="niche-card-body">
-                            <p className="niche-desc">{launch.desc}</p>
-                            <p className="niche-why">
-                              <strong>Why it’s on our radar:</strong> {launch.why}
-                            </p>
-                          </div>
-                        </article>
-                      )
-                    })}
-                  </div>
-
-                  {/* Featured Launch Deep-Dive + Niche Launch Trends */}
-                  <div className="niche-split-row">
-                    <article className="tools-spotlight painterly-panel">
-                      <span className="desk">
-                        {featuredLaunch.kicker} · {featuredLaunch.maker} · {featuredLaunch.released}
-                      </span>
-                      <h4>{featuredLaunch.name}</h4>
-                      <p>{featuredLaunch.overview}</p>
-                      <div className="spotlight-cols">
-                        <div>
-                          <span className="desk">How to pilot it</span>
-                          <ul>
-                            {featuredLaunch.useCases.map((u) => (
-                              <li key={u}>{u}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <span className="desk">Guardrails & limits</span>
-                          <ul>
-                            {featuredLaunch.limitations.map((l) => (
-                              <li key={l}>{l}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </article>
-
-                    <div className="niche-trends-col">
-                      <span className="desk">Niche Launch Patterns This Week</span>
-                      {radarPulse.trends.map((trend) => (
-                        <article key={trend.title} className="niche-trend-card painterly-panel">
-                          <h4>{trend.title}</h4>
-                          <p>{trend.desc}</p>
-                        </article>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Under-the-Radar Hidden Gems */}
-                  <div className="explorer-gems">
-                    <div className="doors-subhead">
-                      <span>Under-the-Radar Niche Gems · Click any gem to inspect</span>
-                      <span>{radarGems.length} curated picks</span>
-                    </div>
-                    <div className="doors-tool-grid">
-                      {radarGems.map((gem) => {
-                        const t = gemTool(gem.name)
-                        if (!t) return null
-                        return (
-                          <button
-                            key={gem.name}
-                            type="button"
-                            className={`doors-tool-card is-gem ${
-                              openToolKey === toolKey(t) ? "is-selected" : ""
-                            }`}
-                            onClick={() => openToolDetail(toolKey(t))}
-                          >
-                            <div className="card-top">
-                              <span className="desk">{t.c}</span>
-                              <Signal value={t.s} />
-                            </div>
-                            <h4>{t.n}</h4>
-                            <p>{gem.why}</p>
-                          </button>
-                        )
-                      })}
-                    </div>
-                  </div>
-                </section>
-              ) : null}
-
-              {/* =========================================================
-                  TAB 02: TOOLS DIRECTORY (CURATED BY CATEGORY, NEVER 110 AT ONCE)
-              ========================================================= */}
-              {toolsTab === "directory" ? (
-                <section id="tools-directory" className="radar-major-section" aria-labelledby="directory-heading">
-                  <div className="section-banner">
-                    <div>
-                      <span className="desk">
-                        Section 02 · Curated Shelf ({radarCategories.length} categories · {radarTools.length} tools total)
-                      </span>
-                      <h3 id="directory-heading">Tools Directory</h3>
-                      <p className="section-banner-sub">
-                        Pick a category shelf below ({shelfMin}–{shelfMax} tools each) or describe your workflow in <strong>Match by task</strong> so you never have to scroll a {radarTools.length}-item wall.
-                      </p>
-                    </div>
-                    <a className="doors-pill-link" href="/tools/index.html">
-                      Open standalone Tools Radar ↗
-                    </a>
-                  </div>
-
-                  <div className="doors-radar-explorer">
-                    <div className="explorer-bar">
-                      <div className="explorer-modes" role="tablist" aria-label="Radar search mode">
-                        <button
-                          type="button"
-                          role="tab"
-                          aria-selected={!findingTool}
-                          className={!findingTool ? "is-on" : undefined}
-                          onClick={() => setFindingTool(false)}
-                        >
-                          Browse by category
-                        </button>
-                        <button
-                          type="button"
-                          role="tab"
-                          aria-selected={findingTool}
-                          className={findingTool ? "is-on" : undefined}
-                          onClick={() => setFindingTool(true)}
-                        >
-                          Match by task
-                        </button>
-                      </div>
-
-                      {findingTool ? (
-                        <label className="explorer-input">
-                          <span className="sr-only">Describe the task you want to do</span>
-                          <input
-                            type="search"
-                            placeholder="Describe a job — e.g. transcribe noisy meetings, test prompts, animate product shots…"
-                            value={findQuery}
-                            onChange={(e) => {
-                              setFindQuery(e.target.value)
-                              setQuickPick(null)
-                            }}
-                          />
-                        </label>
-                      ) : (
-                        <label className="explorer-input">
-                          <span className="sr-only">Search across all 110 tools</span>
-                          <input
-                            type="search"
-                            placeholder="Search all 110 tools by name or keyword…"
-                            value={toolQuery}
-                            onChange={(e) => setToolQuery(e.target.value)}
-                          />
-                        </label>
-                      )}
-                    </div>
-
-                    {findingTool ? (
-                      <div className="explorer-chips">
-                        {radarQuickPicks.map((item, idx) => (
-                          <button
-                            key={item.l}
-                            type="button"
-                            className={quickPick === idx ? "is-on" : undefined}
-                            onClick={() => {
-                              setQuickPick(idx)
-                              setFindQuery(item.l)
-                            }}
-                          >
-                            {item.l}
-                          </button>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="explorer-chips" role="tablist" aria-label="Tool categories">
-                        {radarCategories
-                          .filter((c) => toolCounts[c])
-                          .map((cat) => (
-                            <button
-                              key={cat}
-                              type="button"
-                              className={effectiveCategory === cat ? "is-on" : undefined}
-                              onClick={() => {
-                                setToolCategory(cat)
-                                setToolQuery("")
-                                setShowAllInCat(false)
-                              }}
-                            >
-                              {cat} <span>{toolCounts[cat] ?? 0}</span>
-                            </button>
+                        <span className="desk">How to pilot it</span>
+                        <ul>
+                          {featuredLaunch.useCases.map((u) => (
+                            <li key={u}>{u}</li>
                           ))}
-                        <button
-                          type="button"
-                          className={effectiveCategory === "All" ? "is-on" : undefined}
-                          onClick={() => {
-                            setToolCategory("All")
-                            setShowAllInCat(false)
-                          }}
-                        >
-                          All <span>{radarTools.length}</span>
-                        </button>
+                        </ul>
                       </div>
-                    )}
-
-                    {/* Main Tool Grid (capped at 9 unless expanded) */}
-                    <div className="explorer-results">
-                      <div className="doors-subhead">
-                        <span>
-                          {findingTool
-                            ? findQuery.trim().length > 1
-                              ? `Top ${matchedTools.length} matched tools`
-                              : "Pick a task prompt above or type your workflow"
-                            : toolQuery.trim()
-                              ? `${shelfTools.length} matching tools across all categories`
-                              : `${effectiveCategory} Shelf · Showing ${visibleShelfTools.length} of ${shelfTools.length} tools`}
-                        </span>
-                      </div>
-
-                      <div className="doors-tool-grid">
-                        {(findingTool ? matchedTools.map((m) => m.tool) : visibleShelfTools).map((tool) => (
-                          <button
-                            key={toolKey(tool)}
-                            type="button"
-                            className={`doors-tool-card ${
-                              openToolKey === toolKey(tool) ? "is-selected" : ""
-                            }`}
-                            onClick={() => openToolDetail(toolKey(tool))}
-                          >
-                            <div className="card-top">
-                              <span className="desk">{tool.c}</span>
-                              <Signal value={tool.s} />
-                            </div>
-                            <h4>{tool.n}</h4>
-                            <p>{tool.tl}</p>
-                          </button>
-                        ))}
-                      </div>
-
-                      {!findingTool && !toolQuery.trim() && shelfTools.length > 9 ? (
-                        <div className="shelf-more-bar">
-                          <button
-                            type="button"
-                            className="doors-btn doors-btn-light"
-                            onClick={() => setShowAllInCat((v) => !v)}
-                          >
-                            {showAllInCat
-                              ? "Show top 9 only"
-                              : `Show all ${shelfTools.length} tools in ${effectiveCategory}`}
-                          </button>
-                        </div>
-                      ) : null}
-                    </div>
-
-                    {/* Frontier Watch (Closed & Open-Weight) */}
-                    <div className="frontier-watch">
-                      <span className="desk">Frontier model baselines · Closed & Open-weight</span>
-                      <div className="frontier-grid">
-                        {[...radarFrontier.closed, ...radarFrontier.open].map((item) => (
-                          <article key={item.name} className="frontier-card painterly-panel">
-                            <span className="desk">{item.org}</span>
-                            <h4>{item.name}</h4>
-                            <p className="frontier-model">{item.model}</p>
-                            <p>{item.note}</p>
-                          </article>
-                        ))}
+                      <div>
+                        <span className="desk">Guardrails & limits</span>
+                        <ul>
+                          {featuredLaunch.limitations.map((l) => (
+                            <li key={l}>{l}</li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
+                  </article>
+
+                  <div className="niche-trends-col">
+                    <span className="desk">Niche Launch Patterns This Week</span>
+                    {radarPulse.trends.map((trend) => (
+                      <article key={trend.title} className="niche-trend-card painterly-panel">
+                        <h4>{trend.title}</h4>
+                        <p>{trend.desc}</p>
+                      </article>
+                    ))}
                   </div>
-                </section>
-              ) : null}
+                </div>
+              </section>
 
               <Wayfinding current={active} onNavigate={navigate} />
             </div>
