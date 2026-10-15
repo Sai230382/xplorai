@@ -1,17 +1,23 @@
-import type { CSSProperties, Ref } from "react"
+import { type CSSProperties, type Ref, useEffect, useState } from "react"
 import { site } from "../data/site"
 
 const LETTERS = ["P", "L", "O", "R", "A", "I"] as const
 
-export function HeroGlass({
-  glassRef,
-  reduced = false,
+/** Chosen line. Alternates live in the PR description. */
+export const HERO_LINE = "AI moves fast. You'll move with it."
+
+const TYPE_START_MS = 1600
+const TYPE_STEP_MS = 52
+
+function Plaque({
+  plaqueRef,
+  reduced,
 }: {
-  glassRef?: Ref<HTMLDivElement>
-  reduced?: boolean
+  plaqueRef?: Ref<HTMLDivElement>
+  reduced: boolean
 }) {
   return (
-    <div className={`hero-plaque${reduced ? " is-still" : ""}`} ref={glassRef}>
+    <div className={`hero-plaque${reduced ? " is-still" : ""}`} ref={plaqueRef}>
       <svg className="paint-defs" width="0" height="0" aria-hidden="true">
         <filter id="plaque-brush" x="-8%" y="-20%" width="116%" height="150%" colorInterpolationFilters="sRGB">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="grain" />
@@ -58,6 +64,56 @@ export function HeroGlass({
       </p>
       <p className="hero-plaque-edition">
         {site.edition} · {site.date}
+      </p>
+    </div>
+  )
+}
+
+export function HeroGlass({
+  glassRef,
+  reduced = false,
+  line = false,
+}: {
+  glassRef?: Ref<HTMLDivElement>
+  reduced?: boolean
+  line?: boolean
+}) {
+  const [count, setCount] = useState(line && !reduced ? 0 : HERO_LINE.length)
+
+  useEffect(() => {
+    if (!line || reduced) {
+      setCount(HERO_LINE.length)
+      return
+    }
+    setCount(0)
+    let ticks = 0
+    let interval = 0
+    const start = window.setTimeout(() => {
+      interval = window.setInterval(() => {
+        ticks += 1
+        setCount(Math.min(ticks, HERO_LINE.length))
+        if (ticks >= HERO_LINE.length) window.clearInterval(interval)
+      }, TYPE_STEP_MS)
+    }, TYPE_START_MS)
+    return () => {
+      window.clearTimeout(start)
+      window.clearInterval(interval)
+    }
+  }, [line, reduced])
+
+  if (!line) return <Plaque plaqueRef={glassRef} reduced={reduced} />
+
+  return (
+    <div className="hero-plaque-wrap" ref={glassRef}>
+      <Plaque reduced={reduced} />
+      <p className="hero-plaque-line" aria-label={HERO_LINE}>
+        <span className="hero-plaque-line-sizer" aria-hidden="true">
+          {HERO_LINE}
+        </span>
+        <span className="hero-plaque-line-live" aria-hidden="true">
+          {HERO_LINE.slice(0, count)}
+          {reduced ? null : <span className="hero-plaque-caret" />}
+        </span>
       </p>
     </div>
   )
