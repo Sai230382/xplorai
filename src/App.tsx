@@ -1,4 +1,5 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { PaintedBird, PaintedButterfly } from "./components/Carrier"
 import { HeroGlass } from "./components/HeroGlass"
 import { SkyTicker } from "./components/SkyTicker"
 import { carrierSprite } from "./data/carriers"
@@ -54,10 +55,11 @@ type ButterflyClip = {
   dock: [number, number, number, number]
 }
 
-/** Sailboat lake loop. WebM is first; MP4 is the fallback source. */
-const HERO_POSTER = "/doors/hero2-poster.jpg"
-const HERO_VIDEO_WEBM = "/doors/hero2-loop.webm"
-const HERO_VIDEO_MP4 = "/doors/hero2-loop.mp4"
+/** Painted lake loop. Desktop uses WebM then MP4. Mobile uses its own portrait cut. */
+const HERO_POSTER = "/hero/hero3-poster.jpg"
+const HERO_VIDEO_WEBM = "/hero/hero3-loop.webm"
+const HERO_VIDEO_MP4 = "/hero/hero3-loop.mp4"
+const HERO_MOBILE_MP4 = "/hero/hero3-mobile.mp4"
 
 const SECTION_LINKS = [
   { id: "brief", label: "Brief", cta: "Open the Brief" },
@@ -262,67 +264,37 @@ function Wayfinding({
 }
 
 const MOBILE_FLOCK = [
-  { kind: "butterfly" as const, n: 0, size: 36, y: "72%", dur: "34s", delay: "-4s", rest: "14%" },
-  { kind: "bird" as const, n: 0, size: 32, y: "84%", dur: "42s", delay: "-16s", rest: "58%" },
-  { kind: "butterfly" as const, n: 1, size: 28, y: "88%", dur: "36s", delay: "-24s", rest: "36%" },
-  { kind: "bird" as const, n: 1, size: 40, y: "78%", dur: "46s", delay: "-10s", rest: "76%" },
+  { kind: "butterfly" as const, n: 0, size: 36, y: "72%", dur: "32s", delay: "-4s", rest: "14%", flap: "2.1s" },
+  { kind: "bird" as const, n: 0, size: 34, y: "82%", dur: "40s", delay: "-16s", rest: "58%", flap: "7.2s" },
+  { kind: "butterfly" as const, n: 1, size: 30, y: "88%", dur: "36s", delay: "-24s", rest: "36%", flap: "2.4s" },
+  { kind: "bird" as const, n: 1, size: 42, y: "76%", dur: "46s", delay: "-10s", rest: "76%", flap: "8.4s" },
 ]
 
-/** Desktop sky only. Rest points stay off the logo plaque; paths wander the sky. */
+/**
+ * Desktop sky. Sizes carry depth: ~32px far, ~56px near.
+ * Birds use the glide paths that bank. Butterflies flutter on the wavy loops.
+ * Anchors stay off the logo plaque.
+ */
 const DESKTOP_FLOCK = [
-  { kind: "butterfly" as const, n: 0, size: 28, x: "9%", y: "20%", path: "flock-a", dur: "27s", delay: "-4s", flap: "1.05s" },
-  { kind: "bird" as const, n: 0, size: 36, x: "18%", y: "31%", path: "flock-d", dur: "34s", delay: "-11s", flap: "2.6s" },
-  { kind: "butterfly" as const, n: 1, size: 24, x: "7%", y: "40%", path: "flock-c", dur: "23s", delay: "-7s", flap: "0.9s" },
-  { kind: "butterfly" as const, n: 2, size: 32, x: "23%", y: "17%", path: "flock-a", dur: "31s", delay: "-16s", flap: "1.25s" },
-  { kind: "bird" as const, n: 1, size: 26, x: "14%", y: "44%", path: "flock-e", dur: "38s", delay: "-2s", flap: "2.9s" },
-  { kind: "butterfly" as const, n: 0, size: 40, x: "84%", y: "19%", path: "flock-b", dur: "26s", delay: "-13s", flap: "1.15s" },
-  { kind: "bird" as const, n: 0, size: 30, x: "91%", y: "33%", path: "flock-b", dur: "36s", delay: "-21s", flap: "2.3s" },
-  { kind: "butterfly" as const, n: 1, size: 25, x: "74%", y: "16%", path: "flock-d", dur: "24s", delay: "-9s", flap: "1s" },
-  { kind: "butterfly" as const, n: 2, size: 34, x: "88%", y: "41%", path: "flock-b", dur: "30s", delay: "-18s", flap: "1.35s" },
-  { kind: "bird" as const, n: 1, size: 38, x: "78%", y: "36%", path: "flock-e", dur: "41s", delay: "-6s", flap: "2.7s" },
-  { kind: "butterfly" as const, n: 0, size: 27, x: "30%", y: "22%", path: "flock-f", dur: "29s", delay: "-14s", flap: "1.1s" },
-  { kind: "bird" as const, n: 0, size: 24, x: "70%", y: "21%", path: "flock-g", dur: "33s", delay: "-8s", flap: "3.1s" },
-  { kind: "bird" as const, n: 1, size: 33, x: "32%", y: "45%", path: "flock-f", dur: "37s", delay: "-19s", flap: "2.5s" },
-  { kind: "butterfly" as const, n: 2, size: 29, x: "67%", y: "44%", path: "flock-g", dur: "28s", delay: "-3s", flap: "1.2s" },
+  { kind: "butterfly" as const, n: 0, size: 36, x: "8%", y: "22%", path: "flock-a", dur: "26s", delay: "-3s", flap: "2.05s" },
+  { kind: "bird" as const, n: 0, size: 52, x: "18%", y: "44%", path: "flock-bird-l", dur: "32s", delay: "-11s", flap: "6.8s" },
+  { kind: "butterfly" as const, n: 1, size: 32, x: "6%", y: "46%", path: "flock-c", dur: "22s", delay: "-8s", flap: "2.35s" },
+  { kind: "butterfly" as const, n: 2, size: 44, x: "24%", y: "16%", path: "flock-e", dur: "29s", delay: "-15s", flap: "1.9s" },
+  { kind: "bird" as const, n: 1, size: 34, x: "14%", y: "52%", path: "flock-bird-r", dur: "38s", delay: "-6s", flap: "8.1s" },
+  { kind: "butterfly" as const, n: 0, size: 56, x: "84%", y: "20%", path: "flock-c", dur: "24s", delay: "-12s", flap: "2.15s" },
+  { kind: "bird" as const, n: 0, size: 32, x: "91%", y: "34%", path: "flock-bird-l", dur: "36s", delay: "-20s", flap: "7.4s" },
+  { kind: "butterfly" as const, n: 1, size: 38, x: "73%", y: "15%", path: "flock-a", dur: "27s", delay: "-9s", flap: "2.5s" },
+  { kind: "butterfly" as const, n: 2, size: 48, x: "88%", y: "44%", path: "flock-e", dur: "31s", delay: "-18s", flap: "1.85s" },
+  { kind: "bird" as const, n: 1, size: 46, x: "76%", y: "40%", path: "flock-bird-r", dur: "34s", delay: "-4s", flap: "6.4s" },
+  { kind: "butterfly" as const, n: 2, size: 33, x: "30%", y: "48%", path: "flock-f", dur: "23s", delay: "-14s", flap: "2.2s" },
+  { kind: "bird" as const, n: 0, size: 30, x: "69%", y: "18%", path: "flock-bird-l", dur: "40s", delay: "-17s", flap: "8.6s" },
+  { kind: "butterfly" as const, n: 0, size: 40, x: "16%", y: "28%", path: "flock-g", dur: "28s", delay: "-1s", flap: "2.45s" },
+  { kind: "butterfly" as const, n: 1, size: 34, x: "66%", y: "50%", path: "flock-f", dur: "25s", delay: "-7s", flap: "2.05s" },
 ]
 
 function flockFade(size: number) {
-  return (0.55 + ((size - 24) / 16) * 0.4).toFixed(2)
-}
-
-/** Extra boats on the right of the painted lake. The filmed sail stays on the left. */
-const LAKE_BOATS = [
-  { x: "54%", y: "40%", w: 28, fade: 0.66, drift: "boat-drift-a", dur: "78s", delay: "-12s", bob: "5.6s" },
-  { x: "69%", y: "37%", w: 24, fade: 0.58, drift: "boat-drift-b", dur: "84s", delay: "-28s", bob: "6.4s" },
-  { x: "81%", y: "46%", w: 44, fade: 0.8, drift: "boat-drift-c", dur: "64s", delay: "-8s", bob: "4.8s" },
-  { x: "60%", y: "54%", w: 62, fade: 0.92, drift: "boat-drift-a", dur: "52s", delay: "-18s", bob: "4.2s" },
-]
-
-function BoatMark() {
-  return (
-    <g>
-      <path d="M44 16 L44 76" stroke="#14121c" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M45 18 C64 30 70 50 54 70 C49 74 45 75 45 75 Z" fill="#f4f1ea" />
-      <path d="M44 22 C30 34 22 52 34 68 C39 73 44 74 44 74 Z" fill="#c4b4ff" />
-      <path d="M46 22 C58 34 62 48 52 64" fill="none" stroke="#5c6de0" strokeWidth="0.9" strokeLinecap="round" opacity="0.75" />
-      <path d="M14 76 C28 68 60 67 76 77 C71 86 20 87 14 76 Z" fill="#24265e" />
-      <path d="M24 77 C38 72 58 72 68 78" fill="none" stroke="#5c6de0" strokeWidth="1.35" strokeLinecap="round" />
-      <path d="M41 15 L47 15 L44 9 Z" fill="#c4b4ff" />
-    </g>
-  )
-}
-
-function PaintedBoat() {
-  return (
-    <svg viewBox="0 0 90 112" aria-hidden="true">
-      <g className="lake-boat-bob">
-        <g className="lake-boat-reflect">
-          <BoatMark />
-        </g>
-        <BoatMark />
-      </g>
-    </svg>
-  )
+  const near = Math.min(1, Math.max(0, (size - 30) / 26))
+  return (0.72 + near * 0.28).toFixed(2)
 }
 
 function MobileHero({
@@ -358,8 +330,7 @@ function MobileHero({
             poster={poster}
             aria-hidden="true"
           >
-            <source src={HERO_VIDEO_WEBM} type="video/webm" />
-            <source src={HERO_VIDEO_MP4} type="video/mp4" />
+            <source src={HERO_MOBILE_MP4} type="video/mp4" />
           </video>
         )}
         <div className="lake-shimmer" aria-hidden="true">
@@ -393,10 +364,15 @@ function MobileHero({
                   "--dur": item.dur,
                   "--delay": item.delay,
                   "--rest": item.rest,
+                  "--flap": item.flap,
                 } as CSSProperties
               }
             >
-              <img src={carrierSprite(item.kind, item.n)} alt="" draggable={false} />
+              {item.kind === "butterfly" ? (
+                <PaintedButterfly src={carrierSprite(item.kind, item.n)} />
+              ) : (
+                <PaintedBird src={carrierSprite(item.kind, item.n)} />
+              )}
             </span>
           ))}
         </div>
@@ -1095,28 +1071,6 @@ export default function App() {
                   </svg>
                   <span className="lake-sweep" />
                 </div>
-                <div className="lake-boats" aria-hidden="true">
-                  {LAKE_BOATS.map((boat) => (
-                    <span
-                      key={`${boat.x}-${boat.y}`}
-                      className="lake-boat"
-                      style={
-                        {
-                          "--x": boat.x,
-                          "--y": boat.y,
-                          "--w": `${boat.w}px`,
-                          "--fade": boat.fade,
-                          "--drift": boat.drift,
-                          "--dur": boat.dur,
-                          "--delay": boat.delay,
-                          "--bob": boat.bob,
-                        } as CSSProperties
-                      }
-                    >
-                      <PaintedBoat />
-                    </span>
-                  ))}
-                </div>
               </div>
               <div className="hero-mist" ref={mistRef} aria-hidden="true" />
               <HeroGlass glassRef={glassRef} reduced={reducedMotion} line />
@@ -1146,7 +1100,13 @@ export default function App() {
                       } as CSSProperties
                     }
                   >
-                    <img src={carrierSprite(item.kind, item.n)} alt="" draggable={false} />
+                    <span className="sky-critter-body">
+                      {item.kind === "butterfly" ? (
+                        <PaintedButterfly src={carrierSprite(item.kind, item.n)} />
+                      ) : (
+                        <PaintedBird src={carrierSprite(item.kind, item.n)} />
+                      )}
+                    </span>
                   </span>
                 ))}
               </div>

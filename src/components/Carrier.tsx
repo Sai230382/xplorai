@@ -20,3 +20,22 @@ export function BirdCarrier({ src }: { src: string }) {
     </span>
   )
 }
+
+/** Higgsfield butterfly, split so each wing folds toward the body. */
+export function PaintedButterfly({ src }: { src: string }) {
+  return (
+    <span className="critter-flutter">
+      <span className="critter-wing critter-wing-l">
+        <img src={src} alt="" draggable={false} />
+      </span>
+      <span className="critter-wing critter-wing-r">
+        <img src={src} alt="" draggable={false} />
+      </span>
+    </span>
+  )
+}
+
+/** Higgsfield bird. The parent banks; this sprite only beats its wings now and then. */
+export function PaintedBird({ src }: { src: string }) {
+  return <img className="critter-bird" src={src} alt="" draggable={false} />
+}

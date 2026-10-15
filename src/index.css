@@ -641,7 +641,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 56%;
+  object-position: center center;
 }
 
 .web path {
@@ -2948,8 +2948,18 @@ a {
     margin: 1rem auto;
   }
 
-  .hero-plaque-wrap .hero-plaque {
-    margin: 0;
+  .hero-plaque-wrap .hero-plaque,
+  .hero-plaque-line {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .hero-plaque-line {
+    margin-top: 0.65rem;
   }
 
   .sky-ticker-slot {
@@ -3168,7 +3178,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 56%;
+  object-position: center center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 700ms ease;
@@ -3534,71 +3544,6 @@ a {
   animation: lake-sweep 10s ease-in-out infinite;
 }
 
-.lake-boats {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.lake-boat {
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  width: var(--w);
-  height: auto;
-  opacity: var(--fade);
-  animation-name: var(--drift);
-  animation-duration: var(--dur);
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-delay: var(--delay);
-}
-
-.lake-boat svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.lake-boat-bob {
-  transform-box: fill-box;
-  transform-origin: 50% 70%;
-  animation: boat-bob var(--bob) ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-
-.lake-boat-reflect {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  transform: translateY(5px) scaleY(-0.46);
-  opacity: 0.28;
-}
-
-@keyframes boat-drift-a {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(34px, 3px, 0); }
-}
-
-@keyframes boat-drift-b {
-  from { transform: translate3d(6px, 0, 0); }
-  to { transform: translate3d(-26px, 2px, 0); }
-}
-
-@keyframes boat-drift-c {
-  from { transform: translate3d(-8px, 1px, 0); }
-  to { transform: translate3d(40px, -2px, 0); }
-}
-
-@keyframes boat-bob {
-  0%,
-  100% { transform: translateY(0) rotate(-1.5deg); }
-  50% { transform: translateY(2.6px) rotate(1.6deg); }
-}
-
 @keyframes lake-bob {
   0%,
   100% {
@@ -3719,7 +3664,7 @@ a {
   padding: 1.1rem 1rem 1.6rem;
   background:
     linear-gradient(180deg, rgba(244, 241, 234, 0.62), rgba(244, 241, 234, 0.86)),
-    url("/doors/hero2-still.jpg") center 58% / cover no-repeat;
+    url("/hero/hero3-poster.jpg") center 42% / cover no-repeat;
 }
 
 .mobile-kicker {
@@ -4244,43 +4189,39 @@ a {
 
 .hero-plaque-wrap {
   position: absolute;
+  inset: 0;
   z-index: 8;
-  left: 50%;
-  top: 96px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: max-content;
-  max-width: calc(100% - 48px);
   pointer-events: none;
 }
 
 .hero-plaque-wrap .hero-plaque {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
+  position: absolute;
+  left: 50%;
+  top: 96px;
+  transform: translateX(-50%);
 }
 
 .hero-plaque-line {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  bottom: 148px;
   margin: 0;
   min-height: 1.2em;
+  transform: translateX(-50%);
   font-family: var(--serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(1.35rem, 2.15vw, 1.7rem);
+  font-size: clamp(1.45rem, 2.3vw, 1.85rem);
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: #14121c;
   text-align: center;
   white-space: nowrap;
   text-shadow:
-    0 0 18px rgba(244, 241, 234, 0.98),
-    0 0 6px rgba(244, 241, 234, 0.96),
-    0 1px 0 rgba(244, 241, 234, 0.9);
+    0 0 2px rgba(244, 241, 234, 1),
+    0 0 10px rgba(244, 241, 234, 0.98),
+    0 0 22px rgba(244, 241, 234, 0.92),
+    0 0 36px rgba(244, 241, 234, 0.75);
 }
 
 .hero-plaque-line-sizer {
@@ -4623,7 +4564,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 16% 50%;
+  object-position: center center;
 }
 
 .mobile-hero-video {
@@ -4646,105 +4587,205 @@ a {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  width: var(--size);
-  height: var(--size);
-  margin-left: calc(var(--size) / -2);
-  margin-top: calc(var(--size) / -2);
+  width: 0;
+  height: 0;
   opacity: var(--fade);
   animation-name: var(--path);
   animation-duration: var(--dur);
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.37, 0.15, 0.63, 0.85);
   animation-iteration-count: infinite;
   animation-delay: var(--delay);
 }
 
-.sky-critter img {
+.sky-critter-body {
+  width: var(--size);
+  transform: translate(-50%, -50%);
+}
+
+.sky-critter-butterfly .sky-critter-body {
+  aspect-ratio: 600 / 470;
+}
+
+.sky-critter-bird .sky-critter-body {
+  aspect-ratio: 1 / 1.02;
+}
+
+.critter-flutter,
+.critter-bird {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transform-origin: 50% 62%;
-  animation-name: critter-flap;
-  animation-duration: var(--flap);
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-delay: var(--delay);
 }
 
-.sky-critter-bird img {
-  animation-name: critter-glide;
+.critter-flutter {
+  position: relative;
+}
+
+.critter-wing {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.critter-wing img,
+.critter-bird {
+  display: block;
+  background: none;
+  filter: none;
+  box-shadow: none;
+}
+
+.critter-wing img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 200%;
+  max-width: none;
+}
+
+.critter-wing-l {
+  left: 0;
+  transform-origin: 100% 52%;
+  animation: wing-fold-l var(--flap, 2.1s) ease-in-out infinite;
+}
+
+.critter-wing-l img {
+  left: 0;
+}
+
+.critter-wing-r {
+  right: 0;
+  transform-origin: 0% 52%;
+  animation: wing-fold-r var(--flap, 2.1s) ease-in-out infinite;
+}
+
+.critter-wing-r img {
+  left: -100%;
+}
+
+.sky-critter-bird .critter-bird,
+.mobile-critter-bird .critter-bird {
+  height: 100%;
+  object-fit: contain;
+  transform-origin: 50% 55%;
+  animation: bird-beat var(--flap, 7s) ease-in-out infinite;
 }
 
 html.tab-hidden .sky-critter,
-html.tab-hidden .sky-critter img,
-html.tab-hidden .lake-boat,
-html.tab-hidden .lake-boat-bob {
+html.tab-hidden .critter-wing,
+html.tab-hidden .critter-bird,
+html.tab-hidden .mobile-critter {
   animation-play-state: paused;
 }
 
-@keyframes critter-flap {
+@keyframes wing-fold-l {
   0%,
   100% { transform: scaleX(1); }
-  50% { transform: scaleX(0.55); }
+  34% { transform: scaleX(0.2); }
+  52% { transform: scaleX(0.96); }
+  74% { transform: scaleX(0.38); }
 }
 
-@keyframes critter-glide {
+@keyframes wing-fold-r {
   0%,
-  100% { transform: rotate(-8deg); }
-  50% { transform: rotate(7deg) translate3d(0, -3px, 0); }
+  100% { transform: scaleX(1); }
+  34% { transform: scaleX(0.2); }
+  52% { transform: scaleX(0.96); }
+  74% { transform: scaleX(0.38); }
+}
+
+@keyframes bird-beat {
+  0%,
+  68%,
+  100% { transform: scaleX(1) scaleY(1); }
+  74% { transform: scaleX(0.84) scaleY(1.08); }
+  80% { transform: scaleX(1) scaleY(1); }
+  86% { transform: scaleX(0.9) scaleY(1.05); }
+  92% { transform: scaleX(1) scaleY(1); }
 }
 
 @keyframes flock-a {
-  0% { transform: translate3d(0, 0, 0); }
-  25% { transform: translate3d(88px, -30px, 0); }
-  50% { transform: translate3d(146px, 10px, 0); }
-  75% { transform: translate3d(42px, 34px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-@keyframes flock-b {
-  0% { transform: translate3d(0, 6px, 0); }
-  30% { transform: translate3d(-72px, -22px, 0); }
-  55% { transform: translate3d(-138px, 16px, 0); }
-  80% { transform: translate3d(-34px, -12px, 0); }
-  100% { transform: translate3d(0, 6px, 0); }
+  0% { transform: translate3d(72px, 0, 0) rotate(0deg); }
+  8% { transform: translate3d(62px, 12px, 0) rotate(6deg); }
+  17% { transform: translate3d(36px, 20px, 0) rotate(10deg); }
+  25% { transform: translate3d(0, 24px, 0) rotate(12deg); }
+  33% { transform: translate3d(-36px, 20px, 0) rotate(10deg); }
+  42% { transform: translate3d(-62px, 12px, 0) rotate(6deg); }
+  50% { transform: translate3d(-72px, 0, 0) rotate(0deg); }
+  58% { transform: translate3d(-62px, -12px, 0) rotate(-6deg); }
+  67% { transform: translate3d(-36px, -20px, 0) rotate(-10deg); }
+  75% { transform: translate3d(0, -24px, 0) rotate(-12deg); }
+  83% { transform: translate3d(36px, -20px, 0) rotate(-10deg); }
+  92% { transform: translate3d(62px, -12px, 0) rotate(-6deg); }
+  100% { transform: translate3d(72px, 0, 0) rotate(0deg); }
 }
 
 @keyframes flock-c {
-  0% { transform: translate3d(0, 0, 0); }
-  20% { transform: translate3d(36px, 22px, 0); }
-  45% { transform: translate3d(104px, -16px, 0); }
-  70% { transform: translate3d(18px, -34px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-@keyframes flock-d {
-  0% { transform: translate3d(-16px, 8px, 0); }
-  35% { transform: translate3d(54px, -26px, 0); }
-  65% { transform: translate3d(-76px, -8px, 0); }
-  100% { transform: translate3d(-16px, 8px, 0); }
+  0% { transform: translate3d(58px, 6px, 0) rotate(-4deg); }
+  12% { transform: translate3d(40px, -16px, 0) rotate(6deg); }
+  24% { transform: translate3d(8px, 10px, 0) rotate(-8deg); }
+  36% { transform: translate3d(-28px, -18px, 0) rotate(7deg); }
+  48% { transform: translate3d(-64px, 4px, 0) rotate(-5deg); }
+  60% { transform: translate3d(-40px, 22px, 0) rotate(9deg); }
+  72% { transform: translate3d(4px, -8px, 0) rotate(-7deg); }
+  84% { transform: translate3d(36px, 16px, 0) rotate(5deg); }
+  100% { transform: translate3d(58px, 6px, 0) rotate(-4deg); }
 }
 
 @keyframes flock-e {
-  0% { transform: translate3d(0, 0, 0); }
-  25% { transform: translate3d(-46px, 20px, 0); }
-  50% { transform: translate3d(28px, -24px, 0); }
-  75% { transform: translate3d(72px, 14px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+  0% { transform: translate3d(48px, -8px, 0) rotate(5deg); }
+  16% { transform: translate3d(22px, 14px, 0) rotate(-9deg); }
+  32% { transform: translate3d(-18px, -12px, 0) rotate(8deg); }
+  48% { transform: translate3d(-50px, 10px, 0) rotate(-6deg); }
+  64% { transform: translate3d(-16px, 22px, 0) rotate(10deg); }
+  80% { transform: translate3d(26px, -6px, 0) rotate(-8deg); }
+  100% { transform: translate3d(48px, -8px, 0) rotate(5deg); }
 }
 
 @keyframes flock-f {
-  0% { transform: translate3d(0, 0, 0); }
-  33% { transform: translate3d(-34px, 12px, 0); }
-  66% { transform: translate3d(-16px, -14px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+  0% { transform: translate3d(18px, 0, 0) rotate(4deg); }
+  25% { transform: translate3d(0, -12px, 0) rotate(-8deg); }
+  50% { transform: translate3d(-22px, 6px, 0) rotate(7deg); }
+  75% { transform: translate3d(-4px, 12px, 0) rotate(-5deg); }
+  100% { transform: translate3d(18px, 0, 0) rotate(4deg); }
 }
 
 @keyframes flock-g {
-  0% { transform: translate3d(0, 0, 0); }
-  33% { transform: translate3d(34px, 12px, 0); }
-  66% { transform: translate3d(16px, -14px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+  0% { transform: translate3d(-14px, 4px, 0) rotate(-6deg); }
+  25% { transform: translate3d(16px, -10px, 0) rotate(8deg); }
+  50% { transform: translate3d(28px, 8px, 0) rotate(-4deg); }
+  75% { transform: translate3d(2px, 14px, 0) rotate(6deg); }
+  100% { transform: translate3d(-14px, 4px, 0) rotate(-6deg); }
+}
+
+@keyframes flock-bird-l {
+  0% { transform: translate3d(18px, 4px, 0) rotate(6deg); }
+  14% { transform: translate3d(-28px, -12px, 0) rotate(-8deg); }
+  30% { transform: translate3d(-92px, -4px, 0) rotate(3deg); }
+  42% { transform: translate3d(-126px, 10px, 0) rotate(18deg); }
+  50% { transform: translate3d(-116px, 26px, 0) rotate(58deg); }
+  58% { transform: translate3d(-84px, 32px, 0) rotate(118deg); }
+  66% { transform: translate3d(-46px, 22px, 0) rotate(170deg); }
+  80% { transform: translate3d(22px, 10px, 0) rotate(186deg); }
+  90% { transform: translate3d(74px, -2px, 0) rotate(146deg); }
+  96% { transform: translate3d(58px, -10px, 0) rotate(64deg); }
+  100% { transform: translate3d(18px, 4px, 0) rotate(6deg); }
+}
+
+@keyframes flock-bird-r {
+  0% { transform: translate3d(-12px, 2px, 0) rotate(-4deg); }
+  14% { transform: translate3d(34px, -14px, 0) rotate(7deg); }
+  30% { transform: translate3d(98px, -2px, 0) rotate(-4deg); }
+  42% { transform: translate3d(130px, 12px, 0) rotate(-20deg); }
+  50% { transform: translate3d(116px, 28px, 0) rotate(-62deg); }
+  58% { transform: translate3d(78px, 34px, 0) rotate(-124deg); }
+  66% { transform: translate3d(32px, 20px, 0) rotate(-174deg); }
+  80% { transform: translate3d(-36px, 8px, 0) rotate(-190deg); }
+  90% { transform: translate3d(-86px, -4px, 0) rotate(-142deg); }
+  96% { transform: translate3d(-64px, -12px, 0) rotate(-58deg); }
+  100% { transform: translate3d(-12px, 2px, 0) rotate(-4deg); }
 }
 
 .sky-ticker-slot-mobile {
@@ -4799,22 +4840,19 @@ html.tab-hidden .lake-boat-bob {
   top: var(--y);
   left: 0;
   width: var(--size);
-  height: var(--size);
-  animation: mobile-cross var(--dur) linear infinite;
+  animation-name: mobile-flutter;
+  animation-duration: var(--dur);
+  animation-timing-function: cubic-bezier(0.37, 0.15, 0.63, 0.85);
+  animation-iteration-count: infinite;
   animation-delay: var(--delay);
 }
 
-.mobile-critter img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  animation: mobile-flap 1.6s ease-in-out infinite;
-  animation-delay: var(--delay);
+.mobile-critter-butterfly {
+  aspect-ratio: 600 / 470;
 }
 
-.mobile-critter-bird img {
-  animation-name: mobile-bob;
+.mobile-critter-bird {
+  aspect-ratio: 1 / 1.02;
 }
 
 .mobile-hero.is-still .mobile-critter,
@@ -4826,21 +4864,13 @@ html.tab-hidden .lake-boat-bob {
   left: var(--rest);
 }
 
-@keyframes mobile-cross {
-  from { transform: translate3d(-48px, 0, 0); }
-  to { transform: translate3d(100vw, -8px, 0); }
-}
-
-@keyframes mobile-flap {
-  0%,
-  100% { transform: scaleX(1); }
-  50% { transform: scaleX(0.58); }
-}
-
-@keyframes mobile-bob {
-  0%,
-  100% { transform: rotate(-7deg); }
-  50% { transform: rotate(8deg) translate3d(0, -3px, 0); }
+@keyframes mobile-flutter {
+  0% { transform: translate3d(-56px, 6px, 0) rotate(-8deg); }
+  18% { transform: translate3d(16vw, -14px, 0) rotate(9deg); }
+  36% { transform: translate3d(38vw, 8px, 0) rotate(-6deg); }
+  54% { transform: translate3d(60vw, -12px, 0) rotate(8deg); }
+  72% { transform: translate3d(80vw, 7px, 0) rotate(-5deg); }
+  100% { transform: translate3d(108vw, -3px, 0) rotate(6deg); }
 }
 
 .mobile-news {
@@ -4914,15 +4944,23 @@ html.tab-hidden .lake-boat-bob {
   .plaque-wing-r,
   .hero-plaque-letter,
   .sky-critter,
-  .sky-critter img,
-  .lake-boat,
-  .lake-boat-bob,
+  .critter-wing,
+  .critter-bird,
   .hero-plaque-caret {
     animation: none !important;
   }
 
   .mobile-critter {
     left: var(--rest);
+  }
+
+  .hero-plaque-wrap .hero-plaque,
+  .hero-plaque-line {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
   }
 
   .mobile-hero-body {
