@@ -16,8 +16,12 @@ export function ShippedShowcase() {
             target="_blank"
             rel="noopener"
           >
-            <div className={`shipped-preview ${tone}`} aria-hidden="true">
-              <p>{showcasePosterTitle(post.what_they_built)}</p>
+            <div className={post.preview ? "shipped-preview has-photo" : `shipped-preview ${tone}`} aria-hidden="true">
+              {post.preview ? (
+                <img src={post.preview} alt="" loading="lazy" />
+              ) : (
+                <p>{showcasePosterTitle(post.what_they_built)}</p>
+              )}
             </div>
             <div className="shipped-body">
               <p className="shipped-handle">{post.author_handle}</p>

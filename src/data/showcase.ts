@@ -19,6 +19,7 @@ export type ShowcasePost = {
   model_or_tool: string | null
   what_they_built: string
   has_media: boolean
+  preview?: string
   public_metrics: ShowcaseMetrics
 }
 
