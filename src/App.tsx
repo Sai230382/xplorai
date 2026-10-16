@@ -1,6 +1,7 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { PaintedButterfly } from "./components/Carrier"
 import { HeroGlass } from "./components/HeroGlass"
+import { ShippedShowcase } from "./components/ShippedShowcase"
 import { SkyTicker } from "./components/SkyTicker"
 import { butterflySprite } from "./data/carriers"
 import { LaunchSim } from "./components/LaunchSim"
@@ -13,17 +14,19 @@ import { libraryVolumes } from "./data/library"
 import { newsStories, todayBriefing } from "./data/news"
 import { xPostDate, xPosts, xPostText } from "./data/xposts"
 import { radarPulse } from "./data/radar"
+import { showcasePosts } from "./data/showcase"
 import { site } from "./data/site"
 import { useMaxWidth } from "./hooks/useMaxWidth"
 import { usePrefersReducedMotion } from "./hooks/usePrefersReducedMotion"
 
-type RouteId = "front" | "brief" | "academy" | "tools" | "playbook"
+type RouteId = "front" | "brief" | "academy" | "tools" | "playbook" | "shipped"
 
 const ROUTE_TITLES: Record<Exclude<RouteId, "front">, string> = {
   brief: "Weekly Brief — XplorAI",
   tools: "Tools Radar — XplorAI",
   academy: "AI Academy — XplorAI",
   playbook: "Strategy Playbook — XplorAI",
+  shipped: "Shipped on X — XplorAI",
 }
 
 const HASH_ALIASES: Record<string, RouteId> = {
@@ -37,6 +40,7 @@ const HASH_ALIASES: Record<string, RouteId> = {
   academy: "academy",
   library: "academy",
   playbook: "playbook",
+  shipped: "shipped",
 }
 
 type Carrier = "butterfly"
@@ -67,6 +71,8 @@ const SECTION_LINKS = [
   { id: "tools", label: "Tools", cta: "Explore Tools" },
   { id: "playbook", label: "Playbook", cta: "Open the Playbook" },
 ] as const
+
+const NAV_LINKS = [...SECTION_LINKS, { id: "shipped", label: "Shipped" }] as const
 
 const IMPASTO_TONES = [
   "tone-cream",
@@ -246,7 +252,7 @@ function Wayfinding({
       >
         ↑ Top
       </a>
-      {SECTION_LINKS.map((item) => (
+      {NAV_LINKS.map((item) => (
         <a
           key={item.id}
           href={`#${item.id}`}
@@ -639,7 +645,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const ids: RouteId[] = ["front", "brief", "academy", "tools", "playbook"]
+    const ids: RouteId[] = ["front", "brief", "academy", "tools", "playbook", "shipped"]
     let frame = 0
     function update() {
       const mast = document.querySelector<HTMLElement>(".mast")?.offsetHeight ?? 58
@@ -993,7 +999,7 @@ export default function App() {
           {menuOpen ? "Close" : "Menu"}
         </button>
         <nav id="primary-nav" className={menuOpen ? "nav is-open" : "nav"} aria-label="Primary">
-          {SECTION_LINKS.map((item, index) => (
+          {NAV_LINKS.map((item, index) => (
             <span key={item.id} className="nav-item">
               {index > 0 ? (
                 <span className="dot" aria-hidden="true">
@@ -1753,6 +1759,25 @@ export default function App() {
               <Wayfinding current={active} onNavigate={navigate} />
             </div>
           </section>
+
+        <section id="shipped" className="dest is-active" aria-labelledby="shipped-title">
+          <div className="dest-shell">
+            <div className="dest-mast">
+              <div>
+                <p className="kicker">Showcase</p>
+                <h2 id="shipped-title" tabIndex={-1}>
+                  Shipped on X
+                </h2>
+              </div>
+              <p className="dest-meta">{showcasePosts.length} posts</p>
+            </div>
+            <p className="dest-lede">
+              Builds people posted on X. Each card opens the original post.
+            </p>
+            <ShippedShowcase />
+            <Wayfinding current={active} onNavigate={navigate} />
+          </div>
+        </section>
       </main>
 
       <button type="button" className="to-top" hidden={!showTop} onClick={() => navigate("front")}>
