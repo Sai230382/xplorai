@@ -5,7 +5,8 @@
     "avatarUrl": "https://pbs.twimg.com/profile_images/2099903483457703936/U-W6QQk__400x400.jpg",
     "text": "Users are reverse engineering and porting software across platforms with Perplexity Computer. This user's mechanical keyboard app was Windows only, with no Linux support and no documentation. Computer downloaded the binary in its cloud sandbox, decompiled it with headless Ghidra, and ported it to a native Rust app for Linux.\n\nComputer read the decompiled code to learn how the app drives the keyboard, then rebuilt it piece by piece, complete with keyboard lighting that syncs to music over PipeWire, a 3D view, key remapping, macros and profiles.\n\nhttps://t.co/eDZwppdI6c\n\nhttps://t.co/OPmnDMqurt",
     "url": "https://x.com/AravSrinivas/status/2110389625277813212",
-    "postedAt": "2026-10-14T15:17:50Z"
+    "postedAt": "2026-10-14T15:17:50Z",
+    "take": "Agents can now read decompiled code and move apps between platforms. Old software with no documentation is suddenly a migration project, not a dead end."
   },
   {
     "name": "Elon Musk",
@@ -21,7 +22,8 @@
     "avatarUrl": "https://pbs.twimg.com/profile_images/1347621377503711233/bHg3ipfD_400x400.jpg",
     "text": "6 days and $40,000 of compute with GPT-5.6 Sol to find a critical vulnerability in Chrome, claiming Google’s first full-chain reward in 2026 for a vulnerability that would affect an estimated 1 billion users.\n\nHighlights the opportunity for defenders to utilize these tools to secure their software to unprecedented levels:",
     "url": "https://x.com/gdb/status/2110063893016096831",
-    "postedAt": "2026-10-13T17:43:29Z"
+    "postedAt": "2026-10-13T17:43:29Z",
+    "take": "Finding serious bugs just got cheap. If you ship software, budget for AI-assisted security reviews now, before attackers do the same maths."
   },
   {
     "name": "Demis Hassabis",
@@ -29,7 +31,8 @@
     "avatarUrl": "https://pbs.twimg.com/profile_images/1990472620614053888/xrAu0wQL_400x400.jpg",
     "text": "Gemini 4 Argon is amazing for knowledge work and coding - and it’s super fun to build with! We asked it to create this wizard chess game and it's so cool to see Argon's physics understanding & 3D modelling capabilities, makes me nostalgic for Battlechess on the Amiga - fun times!\n\nArgon is rolling out today to Google Ultra and Pro subscribers in the @GeminiApp and Search, and Ultra subscribers in @antigravity! More info & full availability in the blog: https://t.co/7d3791mRNH",
     "url": "https://x.com/demishassabis/status/2110041008100843835",
-    "postedAt": "2026-10-13T16:12:33Z"
+    "postedAt": "2026-10-13T16:12:33Z",
+    "take": "A new top-tier model you may already pay for. Try it on one real task from your week before you decide anything."
   },
   {
     "name": "Aravind Srinivas",

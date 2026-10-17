@@ -7,6 +7,8 @@ export type XPost = {
   text: string
   url: string
   postedAt: string
+  /** Optional editor's note shown as "Our take" on the front page. Posts with a take are featured first. */
+  take?: string
 }
 
 export const xPosts = posts as XPost[]
