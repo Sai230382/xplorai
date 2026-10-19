@@ -17,7 +17,7 @@ export function Brief({ onOpenStory, onOpenNote }: Props) {
           <div>
             <p className="v4-cap">The Brief · {edition}</p>
             <h2 id="v4-brief-title">
-              What changed this week,
+              What changed today,
               <br />
               and what to do about it
             </h2>

@@ -22,7 +22,7 @@ import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion"
 type RouteId = "front" | "brief" | "academy" | "tools" | "playbook" | "shipped"
 
 const ROUTE_TITLES: Record<Exclude<RouteId, "front">, string> = {
-  brief: "Weekly Brief — XplorAI",
+  brief: "Daily Brief — XplorAI",
   tools: "Tools Radar — XplorAI",
   academy: "AI Academy — XplorAI",
   playbook: "Strategy Playbook — XplorAI",
@@ -422,7 +422,7 @@ export default function App() {
   const [showTop, setShowTop] = useState(false)
   const [logoFlutter, setLogoFlutter] = useState(false)
 
-  // Modal state for Weekly Brief stories & Editor's Note
+  // Modal state for Daily Brief stories & Editor's Note
   const [activeStoryModal, setActiveStoryModal] = useState<EditionStory | null>(() => {
     if (typeof window === "undefined") return null
     const raw = window.location.hash.replace(/^#/, "")
@@ -1108,7 +1108,7 @@ export default function App() {
                 <a
                   className="col col-brief"
                   href="#brief"
-                  aria-label="Open the Brief. What changed in AI this week — and what it means at work."
+                  aria-label="Open the Brief. What changed in AI today — and what it means at work."
                   onClick={(event) => {
                     event.preventDefault()
                     navigate("brief")
@@ -1120,7 +1120,7 @@ export default function App() {
                       Open the Brief →
                     </span>
                   </span>
-                  <h2>What changed in AI this week — and what it means at work.</h2>
+                  <h2>What changed in AI today — and what it means at work.</h2>
                   <ul className="paint-lines">
                     {briefLines.map((item) => (
                       <li key={item.id}>{item.headline}</li>
@@ -1231,7 +1231,7 @@ export default function App() {
               <h2 id="what-is-xplorai">What is XplorAI</h2>
               <p>
                 XplorAI is a short briefing for people who use AI at work and are tired of sorting the noise.
-                Three times a week it says what changed, why it matters for your job, and what to do next —
+                Every morning it says what changed, why it matters for your job, and what to do next —
                 in plain words, checked against a real source. The Academy is there when you want to go
                 deeper. The Tools pulse is a few niche launches worth a look, not every tool on the internet.
               </p>
@@ -1286,12 +1286,12 @@ export default function App() {
           </section>
         ) : null}
 
-        {/* ——— DOOR 1: WEEKLY BRIEF (Concise Editorial Cards + Story Modal) ——— */}
-          <section id="brief" className="dest is-active" aria-label="Weekly Brief">
+        {/* ——— DOOR 1: DAILY BRIEF (Concise Editorial Cards + Story Modal) ——— */}
+          <section id="brief" className="dest is-active" aria-label="Daily Brief">
             <div className="dest-shell">
               <div className="dest-mast">
                 <div>
-                  <p className="kicker">Weekly Brief</p>
+                  <p className="kicker">Daily Brief</p>
                   <h2 tabIndex={-1}>{site.edition}</h2>
                 </div>
                 <p className="dest-meta">
@@ -1300,14 +1300,14 @@ export default function App() {
               </div>
 
               <p className="dest-lede">
-                {verifiedLabel} this week. Scan the one-line takeaways below, or click any story to open its full briefing and work notes in a modal.
+                {verifiedLabel} today. Scan the one-line takeaways below, or click any story to open its full briefing and work notes in a modal.
               </p>
 
               {/* Concise 3-column At-a-Glance Strip (replaces the giant wall-of-text Editor's Note) */}
               <article className="edition-glance painterly-card brief-glass">
                 <div className="glance-head">
                   <div>
-                    <span className="desk">This week at a glance · {site.date}</span>
+                    <span className="desk">Today at a glance · {site.date}</span>
                     <h3>The 60-second executive summary</h3>
                   </div>
                   <button
@@ -1606,7 +1606,7 @@ export default function App() {
               <div className="dest-mast">
                 <div>
                   <p className="kicker">Tools Radar</p>
-                  <h2 tabIndex={-1}>On the scope this week</h2>
+                  <h2 tabIndex={-1}>On the scope today</h2>
                 </div>
                 <p className="dest-meta">
                   {radarPulse.launches.length} niche launches · last pulse{" "}
@@ -1682,7 +1682,7 @@ export default function App() {
                   </article>
 
                   <div className="niche-trends-col">
-                    <span className="desk">Niche Launch Patterns This Week</span>
+                    <span className="desk">Niche Launch Patterns Today</span>
                     {radarPulse.trends.map((trend) => (
                       <article key={trend.title} className="niche-trend-card painterly-panel">
                         <h4>{trend.title}</h4>
@@ -1893,7 +1893,7 @@ export default function App() {
             </h3>
 
             <div className="modal-section">
-              <span className="desk">Full weekly synthesis</span>
+              <span className="desk">Full daily synthesis</span>
               <p>{todayBriefing.summary}</p>
             </div>
 

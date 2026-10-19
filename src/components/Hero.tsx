@@ -77,7 +77,7 @@ function TickerSet({ items, hidden }: { items: string[]; hidden?: boolean }) {
 
 function Ticker({ items }: { items: string[] }) {
   return (
-    <div className="hero-ticker" aria-label="This week’s desks">
+    <div className="hero-ticker" aria-label="Today’s desks">
       <div className="hero-ticker-track">
         <TickerSet items={items} />
         <TickerSet items={items} hidden />
@@ -116,7 +116,7 @@ export function Hero() {
               </a>
             </div>
             <span className="read-dir">
-              Scroll to read the week <i>→</i>
+              Scroll to read today <i>→</i>
             </span>
           </div>
 

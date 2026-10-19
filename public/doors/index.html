@@ -7,7 +7,7 @@
     <title>XplorAI</title>
     <meta
       name="description"
-      content="Review mock of the XplorAI front door. Home, Weekly Brief, Tools Radar, and AI Academy."
+      content="Review mock of the XplorAI front door. Home, Daily Brief, Tools Radar, and AI Academy."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1707,7 +1707,7 @@
           <div class="pile-sky" id="pile-sky" aria-hidden="true">
             <img src="xplorai-door-land.png" alt="" />
           </div>
-          <p class="reel-line" id="reel-line">This week, still in a pile.</p>
+          <p class="reel-line" id="reel-line">Today, still in a pile.</p>
           <div class="collage" id="collage" aria-hidden="true">
             <svg class="web" id="web"></svg>
             <article class="clip" data-bucket="brief" data-paint="brief-1" data-stack="16,42,-7,0.78" data-spread="14,28,-6,1" data-dock="13,66,-3,0.46">
@@ -1747,14 +1747,14 @@
             </article>
           </div>
       <div class="columns">
-        <a class="col col-brief" href="#brief" aria-label="Weekly Brief. What changed in AI this week — and what it means at work.">
+        <a class="col col-brief" href="#brief" aria-label="Daily Brief. What changed in AI today — and what it means at work.">
           <span class="top">
             <span class="meta">understand</span>
             <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 12h15M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-          <h2>What changed in AI this week — and what it means at work.</h2>
+          <h2>What changed in AI today — and what it means at work.</h2>
           <ul class="paint-lines">
             <li>FTC opens a probe into OpenAI and Anthropic</li>
             <li>Hawley previews liability for rogue agents</li>
@@ -1812,11 +1812,11 @@
       </div>
 
       <!-- WEEKLY BRIEF -->
-      <section id="brief" class="dest" style="--panel: var(--paper-2)" aria-label="Weekly Brief">
+      <section id="brief" class="dest" style="--panel: var(--paper-2)" aria-label="Daily Brief">
         <div class="dest-shell">
           <div class="dest-mast">
             <div>
-              <p class="kicker">Weekly Brief</p>
+              <p class="kicker">Daily Brief</p>
               <h2 tabindex="-1">Briefing 18</h2>
             </div>
             <p class="dest-meta">2 October 2026 · one sitting</p>
@@ -1878,12 +1878,12 @@
           <div class="dest-mast">
             <div>
               <p class="kicker">Tools Radar</p>
-              <h2 tabindex="-1">On the scope this week</h2>
+              <h2 tabindex="-1">On the scope today</h2>
             </div>
             <p class="dest-meta">5 on the shelf · 2 October 2026</p>
           </div>
           <p class="dest-lede">
-            A shelf, not a feed. These are the things worth pulling down this week.
+            A shelf, not a feed. These are the things worth pulling down today.
           </p>
           <div class="radar-shelf"><div class="shelf-row">
             <article class="tome" style="background-image:url('obj-bowl.jpg?v=3')">
@@ -1963,7 +1963,7 @@
     <script>
       (function () {
         var routes = {
-          brief: "Weekly Brief — XplorAI",
+          brief: "Daily Brief — XplorAI",
           tools: "Tools Radar — XplorAI",
           academy: "AI Academy — XplorAI",
           playbook: "Strategy Playbook — XplorAI",
@@ -2125,7 +2125,7 @@
           columns.style.opacity = String(doors);
           columns.style.pointerEvents = doors > 0.92 ? "auto" : "none";
 
-          if (p < 0.16) line.textContent = "This week, still in a pile.";
+          if (p < 0.16) line.textContent = "Today, still in a pile.";
           else if (p < 0.7) line.textContent = "Understand what changed. Learn it. Then use it.";
           line.style.opacity = String(1 - smooth(span(p, 0.58, 0.74)));
         }

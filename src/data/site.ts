@@ -5,8 +5,8 @@ export const site = {
   domain: "xplorai.in",
   headline: "AI keeps moving. Your work can keep up.",
   bridge: "What changed. What to learn. What to try.",
-  tagline: "Three times a week: what changed in AI, and what to do about it.",
-  taglineLines: ["Three times a week:", "what changed in AI,", "and what to do about it."],
+  tagline: "Every morning: what changed in AI, and what to do about it.",
+  taglineLines: ["Every morning:", "what changed in AI,", "and what to do about it."],
   lede: "A short briefing for people who use AI at work. What changed, why it matters for your job, and what to do next.",
   email: "hello@xplorai.in",
   edition: currentEdition.edition,
@@ -21,6 +21,6 @@ export const nav = [
 ] as const
 
 export const ctas = {
-  briefing: { label: "Read this week’s brief", href: "#news" },
+  briefing: { label: "Read today’s brief", href: "#news" },
   how: { label: "Open the tools radar", href: "#launches" },
 } as const

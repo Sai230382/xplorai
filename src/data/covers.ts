@@ -1,6 +1,6 @@
 import type { DeskId } from "./edition"
 
-/** Painted covers for this week’s desks — New Yorker energy, XplorAI palette. */
+/** Painted covers for today’s desks — New Yorker energy, XplorAI palette. */
 export const weekCover = "/issue/cover-week.jpg"
 
 export const deskCovers: Record<DeskId, string> = {

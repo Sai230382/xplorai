@@ -83,7 +83,7 @@ export function Footer() {
               </button>
             </form>
           )}
-          <p className="news-note">One briefing a week, no noise. Unsubscribe anytime.</p>
+          <p className="news-note">Every morning, no noise. Unsubscribe anytime.</p>
         </div>
       </div>
       <div className="copy">

@@ -1,5 +1,41 @@
 [
   {
+    "name": "Anthropic",
+    "handle": "AnthropicAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg",
+    "text": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit.\n\nIt will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can contribute up to an extra 2%, subject to our board’s discretion.\n\nIn total, this means that roughly 20% of Anthropic’s shares are committed to the public good. Our co-founders have already pledged to donate 80% of their equity, and around half our employees are donating a portion of their equity as part of a donation matching program we’ve run since our founding.\n\nIn the post below, we share more details about our new fund.\n\nhttps://t.co/XzDntVH0vH",
+    "url": "https://x.com/AnthropicAI/status/2111881963657412903",
+    "postedAt": "2026-10-18T18:07:51Z",
+    "take": "A big pledge with the rules still to come. Watch who decides how the money is spent before judging it."
+  },
+  {
+    "name": "OpenCode",
+    "handle": "opencode",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1973794620233433088/nBn75BTm_400x400.png",
+    "text": "We had a security breach last night related to a large scale distillation attack that impacted 1.4% of OpenCode Console users\n\nWe have notified them all this morning via email. If you did not get an email you were not impacted, it was a subset of users who had external providers linked\n\nThe incident is ongoing so we cannot share more details at this point but we are working with Anthropic, OpenAI, and Google to remediate",
+    "url": "https://x.com/opencode/status/2111519637049319818",
+    "postedAt": "2026-10-17T18:08:06Z",
+    "take": "If a tool stores your AI keys, it can run up your bill. Put a spending cap on every key today."
+  },
+  {
+    "name": "dax",
+    "handle": "thdxr",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1602333093485891584/mmVqjFNI_400x400.jpg",
+    "text": "they've been non stop trying to attack our systems for the past 48 hours\n\na side effect is everything is getting hardened but damn we basically need agents going 24/7\n\nbecause that's what they have",
+    "url": "https://x.com/thdxr/status/2111790511409258796",
+    "postedAt": "2026-10-18T12:04:27Z",
+    "take": "Attackers now work around the clock with automation. Defenders without the same help fall behind."
+  },
+  {
+    "name": "DeepSeek",
+    "handle": "deepseek_ai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_400x400.jpg",
+    "text": "🚀 DeepSeek-V4.1-Flash-1017 is here!\n\nStronger benchmark performance, faster task completion, and shorter outputs than the previous version—a Pareto improvement in performance and cost. Now live on our website, app, and API.\n\n🛠️ Optimized for @DeepSeekHarness, Tencent CodeBuddy, WorkBuddy, and more. Upgrade to DeepSeek Harness v0.2.1-rc.1 or later for the best experience with the new model.\n\n1/4",
+    "url": "https://x.com/deepseek_ai/status/2111375640717033777",
+    "postedAt": "2026-10-17T08:35:54Z",
+    "take": "Another strong open model you can run yourself. Test it on your own tasks before trusting the benchmark chart."
+  },
+  {
     "name": "Aravind Srinivas",
     "handle": "AravSrinivas",
     "avatarUrl": "https://pbs.twimg.com/profile_images/2099903483457703936/U-W6QQk__400x400.jpg",

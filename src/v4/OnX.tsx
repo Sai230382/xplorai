@@ -18,7 +18,7 @@ export function OnX() {
       <header className="v4-scene-head">
         <p className="v4-scene-note">what people are saying</p>
         <h2 id="v4-onx-title">Worth reading on X</h2>
-        <p>We read the timeline so you don’t have to. Three posts this week, and why each one is worth your time.</p>
+        <p>We read the timeline so you don’t have to. Three posts today, and why each one is worth your time.</p>
       </header>
 
       <div className="v4-posts">

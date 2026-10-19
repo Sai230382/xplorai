@@ -1,9 +1,9 @@
 export const methodology = {
   kicker: "Methodology",
-  title: "How a loud week becomes a short briefing.",
-  dek: "XplorAI is a weekly desk, not a firehose. Four passes sit between the pile and the page.",
+  title: "How a loud day becomes a short briefing.",
+  dek: "XplorAI is a daily desk, not a firehose. Four passes sit between the pile and the page.",
   pipeline: [
-    { id: "market", label: "This week", count: 4200, unit: "items" },
+    { id: "market", label: "Today", count: 4200, unit: "items" },
     { id: "filter", label: "Filter", count: 310, unit: "candidates" },
     { id: "verify", label: "Verify", count: 41, unit: "sourced" },
     { id: "synthesize", label: "Synthesize", count: 5, unit: "themes" },
@@ -28,7 +28,7 @@ export const methodology = {
     {
       id: "present",
       title: "Present",
-      body: "You see the pattern first, then the evidence. The week’s tool sits beside the brief so you can try the idea, not only read it.",
+      body: "You see the pattern first, then the evidence. Today’s tool sits beside the brief so you can try the idea, not only read it.",
     },
   ],
 } as const
@@ -36,11 +36,11 @@ export const methodology = {
 export const about = {
   kicker: "About",
   title: "Understand what matters.",
-  body: "XplorAI exists because AI produces more language than understanding. We treat attention as finite: a short weekly briefing, and an honest look at the week’s tool. The site you are reading is the first public prototype of that desk.",
+  body: "XplorAI exists because AI produces more language than understanding. We treat attention as finite: a short daily briefing, and an honest look at today’s tool. The site you are reading is the first public prototype of that desk.",
 } as const
 
 export const problem = {
   kicker: "The problem",
   title: "More information does not automatically create more understanding.",
-  body: "Every week there are new helpers, new bills, new rules, and new reasons not to trust a video. The volume feels like progress. It is often just weather. XplorAI is built for the moment after the weather — when a few things have actually changed, and a working person needs to know which.",
+  body: "Every day there are new helpers, new bills, new rules, and new reasons not to trust a video. The volume feels like progress. It is often just weather. XplorAI is built for the moment after the weather — when a few things have actually changed, and a working person needs to know which.",
 } as const

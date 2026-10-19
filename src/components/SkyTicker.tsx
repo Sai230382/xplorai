@@ -49,7 +49,7 @@ export function SkyTicker({
   if (reduced) {
     return (
       <p className={`sky-ticker is-static sky-ticker-${variant}`}>
-        <span className="sr-only">This week. </span>
+        <span className="sr-only">Today. </span>
         {staticLine.join("  ·  ")}
       </p>
     )

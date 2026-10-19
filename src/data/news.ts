@@ -34,7 +34,7 @@ export const newsStories: NewsStory[] = currentEdition.stories.map((story: Editi
 
 export const deskStats = [
   ...(typeof currentEdition.stats.scanned === "number"
-    ? [{ id: "scanned" as const, label: "Items scanned", value: currentEdition.stats.scanned, note: "this week’s pile" }]
+    ? [{ id: "scanned" as const, label: "Items scanned", value: currentEdition.stats.scanned, note: "today’s pile" }]
     : []),
   { id: "filtered" as const, label: "Passed filter", value: currentEdition.stats.filtered, note: "changed a decision" },
   {

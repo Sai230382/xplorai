@@ -10,14 +10,14 @@ export function LaunchLab() {
           <span className="bubble gold">Tools radar · 110 lesser-known tools</span>
           <Misprint as="h2" id="launch-title" text="The tools." className="section-title" />
           <p className="section-body">
-            Search by what you need. The radar is the lesser-known shelf — not a second write-up of this week’s brief.
+            Search by what you need. The radar is the lesser-known shelf — not a second write-up of today’s brief.
             Mainstream launches stay in the brief; they appear here only as a pointer.
           </p>
         </div>
 
         <article className="lab-featured">
           <div>
-            <span className="bubble lav">From this week’s brief · {featuredLaunch.released}</span>
+            <span className="bubble lav">From today’s brief · {featuredLaunch.released}</span>
             <h3>{featuredLaunch.name}</h3>
             <p className="lab-featured-maker">{featuredLaunch.maker}</p>
             <p>
