@@ -596,7 +596,7 @@ button {
 .v4-brief {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: clip;
   background: var(--ground);
 }
 
