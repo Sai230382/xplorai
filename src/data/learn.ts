@@ -31,7 +31,7 @@ export const featuredModule = {
       id: "scope",
       title: "Scope the question so a machine can finish it",
       minutes: 10,
-      body: "Write one sentence that names the subject, the time window, and the output. “What matters in AI today for a product lead” is a task. “Tell me about AI” is a fog.",
+      body: "Write one sentence that names the subject, the time window, and the output. “What matters in AI this week for a product lead” is a task. “Tell me about AI” is a fog.",
       example:
         "Output: a 400-word briefing with three changes, three implications, and three things to watch. Sources must be from the last ten days.",
     },

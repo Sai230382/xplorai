@@ -7,7 +7,7 @@ export type LaunchSignal = {
 }
 
 export const featuredLaunch = {
-  kicker: "Today’s tool",
+  kicker: "This week’s tool",
   name: "Salesforce in Claude",
   maker: "Anthropic · with Salesforce",
   released: "15 September 2026",

@@ -582,6 +582,10 @@ button {
 }
 
 .v4-glance-body {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
   font-size: 14px;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.92);
@@ -1448,6 +1452,10 @@ button {
 
   .v4-glance {
     grid-template-columns: 1fr;
+  }
+
+  .v4-glance-body {
+    -webkit-line-clamp: unset;
   }
 
   .v4-glance-card {

@@ -35,7 +35,7 @@ export function Shipped() {
       <div className="v4-scene-wash" aria-hidden="true" />
       <header className="v4-scene-head v4-scene-head-row">
         <div>
-          <p className="v4-scene-note">built with AI today</p>
+          <p className="v4-scene-note">built with AI lately</p>
           <h2 id="v4-shipped-title">What people are making</h2>
         </div>
         {rest.length > 0 && (

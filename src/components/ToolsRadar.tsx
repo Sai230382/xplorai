@@ -220,10 +220,10 @@ export function ToolsRadar() {
         <>
           {!query && category === "All" ? (
             <div className="radar-pulse">
-              <p className="radar-kicker">Daily pulse · {radarPulse.week}</p>
+              <p className="radar-kicker">Weekly pulse · {radarPulse.week}</p>
               <p className="radar-pulse-lede">
                 Lesser-known launches and the ops layer around them. Mainstream headlines live in{" "}
-                <a href="#news">today’s brief</a>, not here.
+                <a href="#news">this week’s brief</a>, not here.
               </p>
 
               <section className="radar-sec">
@@ -280,7 +280,7 @@ export function ToolsRadar() {
               </section>
 
               <section className="radar-sec">
-                <h3 className="radar-sec-label">What today is doing</h3>
+                <h3 className="radar-sec-label">What this week is doing</h3>
                 {radarPulse.trends.map((trend) => (
                   <article key={trend.title} className="radar-note radar-note-wide">
                     <h4>{trend.title}</h4>

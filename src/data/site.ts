@@ -21,6 +21,6 @@ export const nav = [
 ] as const
 
 export const ctas = {
-  briefing: { label: "Read today’s brief", href: "#news" },
+  briefing: { label: "Read this week’s brief", href: "#news" },
   how: { label: "Open the tools radar", href: "#launches" },
 } as const

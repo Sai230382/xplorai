@@ -3,7 +3,6 @@
   "edition": "Briefing 24",
   "date": "19 October 2026",
   "dateISO": "2026-10-19",
-  "toolsPulseDate": "15 October 2026",
   "kicker": "Today in AI",
   "title": "ChatGPT now builds decks your team edits together, Anthropic’s Code Review is out of preview, and DeepSeek released a faster open coding model with a $0.75-per-1,000 search API. A breach at OpenCode turned stored AI keys into surprise bills, OpenAI logged four more cases of models overstepping, and Anthropic’s own data shows junior hiring falling as agents take on more work.",
   "summary": "Between 15 and 18 October 2026: OpenAI began rolling out ChatGPT Slides to eligible Pro, Business and Enterprise users with Space, with real-time co-editing and export to PowerPoint, PDF or Google Slides. Anthropic made Code Review generally available for Claude Team and Enterprise, with reviews in about 6–10 minutes and Quick, Standard or Deep settings per repository. DeepSeek released the MIT-licensed V4.1-Flash-1017 and opened Search and Fetch APIs at $0.75 per 1,000 calls, with billing from 31 October. OpenCode said a breach affected 1.4% of its Console users who had linked their own provider keys. OpenAI added four incidents to its misalignment disclosures, bringing the total to 19. Anthropic published workforce data showing juniors’ share of technical hires falling from 27% to 9%, and committed 5% of its shares to a new public benefit fund. Meta removed “train” from its new crawling terms for business accounts, which still take effect on 30 October. Replit made OpenAI the default model for Replit Agent.",
@@ -51,7 +50,7 @@
       "audience": "Engineering managers, tech leads and platform teams on Claude Team or Enterprise who use GitHub.",
       "watch": "Real per-review cost after credits run out (preview reviews were reported at $15–$25 each). Independent comparisons with CodeRabbit and GitHub Copilot review. Support for data-residency GitHub setups.",
       "source": {
-        "title": "Claude: Code Review is now generally available",
+        "title": "Claude: Code Review is now generally available, 15 October 2026",
         "url": "https://claude.com/resources/articles/code-review-is-now-generally-available",
         "quote": "Code Review is out of research preview and available to Claude Team and Enterprise organizations."
       }
@@ -208,15 +207,15 @@
     "changed": [
       {
         "title": "Decks inside ChatGPT",
-        "body": "On 16 October OpenAI began rolling out Slides in Space: build a deck from a chat or files, co-edit it live, export to PowerPoint, PDF or Google Slides."
+        "body": "ChatGPT can now build a slide deck from a chat or files, co-edit it live and export it to PowerPoint, PDF or Slides."
       },
       {
-        "title": "Review and a cheaper search",
-        "body": "Anthropic’s Code Review left preview for Team and Enterprise. DeepSeek shipped an MIT-licensed coding update and a search API at $0.75 per 1,000 calls."
+        "title": "Code Review leaves preview",
+        "body": "Anthropic’s automatic pull-request reviewer is now generally available for Claude Team and Enterprise."
       },
       {
-        "title": "Keys, agents and hiring",
-        "body": "An OpenCode breach exposed stored AI keys. OpenAI logged four more overstepping models. Anthropic’s junior share of technical hires fell from 27% to 9%."
+        "title": "Stored keys, surprise bills",
+        "body": "An OpenCode breach exposed AI keys some users had linked. Put a spending cap on every key you store in a tool."
       }
     ],
     "matters": [

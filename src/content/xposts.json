@@ -18,15 +18,6 @@
     "take": "If a tool stores your AI keys, it can run up your bill. Put a spending cap on every key today."
   },
   {
-    "name": "dax",
-    "handle": "thdxr",
-    "avatarUrl": "https://pbs.twimg.com/profile_images/1602333093485891584/mmVqjFNI_400x400.jpg",
-    "text": "they've been non stop trying to attack our systems for the past 48 hours\n\na side effect is everything is getting hardened but damn we basically need agents going 24/7\n\nbecause that's what they have",
-    "url": "https://x.com/thdxr/status/2111790511409258796",
-    "postedAt": "2026-10-18T12:04:27Z",
-    "take": "Attackers now work around the clock with automation. Defenders without the same help fall behind."
-  },
-  {
     "name": "DeepSeek",
     "handle": "deepseek_ai",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_400x400.jpg",
@@ -34,6 +25,15 @@
     "url": "https://x.com/deepseek_ai/status/2111375640717033777",
     "postedAt": "2026-10-17T08:35:54Z",
     "take": "Another strong open model you can run yourself. Test it on your own tasks before trusting the benchmark chart."
+  },
+  {
+    "name": "dax",
+    "handle": "thdxr",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1602333093485891584/mmVqjFNI_400x400.jpg",
+    "text": "they've been non stop trying to attack our systems for the past 48 hours\n\na side effect is everything is getting hardened but damn we basically need agents going 24/7\n\nbecause that's what they have",
+    "url": "https://x.com/thdxr/status/2111790511409258796",
+    "postedAt": "2026-10-18T12:04:27Z",
+    "take": "Attackers now work around the clock with automation. Defenders without the same help fall behind."
   },
   {
     "name": "Aravind Srinivas",

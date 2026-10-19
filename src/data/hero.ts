@@ -114,14 +114,14 @@ export function coverFromEdition(edition: Edition = currentEdition): CoverConten
   }
 
   return {
-    kicker: `${edition.edition} · today`,
+    kicker: `${edition.edition} · this week`,
     edition: edition.edition,
     date: edition.date,
     tagline: site.tagline,
     taglineLines: site.taglineLines,
     lede: site.lede,
     plateAlt:
-      "Cover painting for today’s briefing: a person at a desk, with a violet hand reaching toward the work.",
+      "Cover painting for this week’s briefing: a person at a desk, with a violet hand reaching toward the work.",
     plateCaption: `Cover · ${edition.edition}`,
     plateDate: edition.date,
     wire: wire.length
@@ -131,5 +131,5 @@ export function coverFromEdition(edition: Edition = currentEdition): CoverConten
   }
 }
 
-/** Live cover copy. Daily updates flow from edition.json — nothing here is issue-specific. */
+/** Live cover copy. Weekly updates flow from edition.json — nothing here is issue-specific. */
 export const cover = coverFromEdition()

@@ -18,7 +18,7 @@ export function BriefsReel() {
         <p className="mag-kicker">
           {todayBriefing.kicker} · {site.edition} · {site.date}
         </p>
-        <Misprint as="h2" id="news-title" text="Today’s brief" className="mag-title" />
+        <Misprint as="h2" id="news-title" text="This week’s brief" className="mag-title" />
       </header>
 
       <article className="mag-issue">

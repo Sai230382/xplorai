@@ -4,7 +4,7 @@ import { currentEdition, desks, type DeskId, type Edition, type EditionStory } f
 const BRAND_LINES = [
   "What changed in AI",
   "What it means for your work",
-  "Every morning",
+  "Three times a week",
 ] as const
 
 const TRAIL = new Set([
