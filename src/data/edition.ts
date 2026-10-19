@@ -1,4 +1,5 @@
 import edition from "../content/edition.json"
+import { radarPulse } from "./radar"
 
 export const desks = [
   { id: "all", label: "All themes" },
@@ -49,7 +50,7 @@ export type Edition = {
   dateISO: string
   /**
    * Date of the tools-radar pulse currently on the page.
-   * This is not the briefing date. Leave it unset to fall back to radar.json `pulse.week`.
+   * Derived from radar.json `pulse.week` so the Brief and the radar cannot drift.
    * Card dates still live on each launch in radar.json.
    */
   toolsPulseDate?: string
@@ -75,4 +76,7 @@ export type Edition = {
 }
 
 /** Live edition. Grokbot writes a draft JSON; approve copies it here. */
-export const currentEdition: Edition = edition as Edition
+export const currentEdition: Edition = {
+  ...(edition as Edition),
+  toolsPulseDate: radarPulse.week,
+}

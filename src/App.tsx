@@ -17,7 +17,7 @@ export default function App() {
   return (
     <>
       <a className="v4-skip" href="#brief">
-        Skip to this week’s Brief
+        Skip to today’s Brief
       </a>
       <SiteNav />
       <main>

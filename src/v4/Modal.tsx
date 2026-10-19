@@ -83,7 +83,7 @@ export function NoteModal({ onClose }: { onClose: () => void }) {
   const e = currentEdition
   return (
     <Modal title={e.kicker} kicker={`${e.edition} · ${e.date}`} onClose={onClose}>
-      <h3>The week in one paragraph</h3>
+      <h3>This edition in one paragraph</h3>
       <p>{e.summary}</p>
       <h3>What we’re still unsure about</h3>
       <p>{e.uncertainty}</p>

@@ -37,15 +37,15 @@ export function Hero() {
         </p>
         <div className="v4-hero-ctas">
           <a className="v4-pill v4-pill-indigo v4-pill-lg" href="#brief">
-            Read this week’s Brief <span aria-hidden="true">→</span>
+            Read today’s Brief <span aria-hidden="true">→</span>
           </a>
           <span className="v4-hero-note">{site.tagline.split(":")[0]}, free</span>
         </div>
       </div>
 
-      <div className="v4-glance" aria-label="This week in 60 seconds">
+      <div className="v4-glance" aria-label="Today in 60 seconds">
         <div className="v4-glance-label">
-          <span className="v4-cap v4-cap-light">This week in</span>
+          <span className="v4-cap v4-cap-light">Today in</span>
           <span className="v4-glance-big">60 seconds</span>
         </div>
         {glance.map((item, i) => (
