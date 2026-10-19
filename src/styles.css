@@ -643,11 +643,6 @@ button {
   align-items: start;
 }
 
-.v4-brief .v4-plate {
-  position: sticky;
-  top: 110px;
-}
-
 .v4-brief .v4-plate img {
   aspect-ratio: 3 / 4;
 }
@@ -1378,10 +1373,6 @@ button {
   .v4-brief-body {
     grid-template-columns: 1fr;
     gap: 48px;
-  }
-
-  .v4-brief .v4-plate {
-    position: static;
   }
 
   .v4-brief .v4-plate img {
