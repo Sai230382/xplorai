@@ -596,7 +596,7 @@ button {
 .v4-brief {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: clip;
   background: var(--ground);
 }
 
@@ -641,6 +641,11 @@ button {
   grid-template-columns: 420px minmax(0, 1fr);
   gap: 72px;
   align-items: start;
+}
+
+.v4-brief .v4-plate {
+  position: sticky;
+  top: 110px;
 }
 
 .v4-brief .v4-plate img {
@@ -1373,6 +1378,10 @@ button {
   .v4-brief-body {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .v4-brief .v4-plate {
+    position: static;
   }
 
   .v4-brief .v4-plate img {
