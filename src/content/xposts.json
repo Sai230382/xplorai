@@ -1,5 +1,41 @@
 [
   {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg",
+    "text": "Our latest model advances bring stronger capabilities for building and migrating software in low-resource programming languages such as COBOL, Fortran, and Visual Basic.\n\nThese languages power software that banks, governments, and businesses depend on. Progress here means understanding decades of business logic and helping developers modernize those systems while preserving what works.\n\nWe’re building these capabilities around the challenges developers and enterprise customers bring us. If your team is working on these systems, tell us which languages and workflows we should tackle next.\n\nhttps://t.co/2TbnkQixJ1",
+    "url": "https://x.com/OpenAI/status/2112310345863930168",
+    "postedAt": "2026-10-19T22:30:05Z",
+    "take": "Promising for old banking and government code, but these are OpenAI’s own tests. Pilot on one well-tested program first."
+  },
+  {
+    "name": "anthony cimino",
+    "handle": "ajcimino",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1250891915718995972/vZSSw7hu_400x400.jpg",
+    "text": "I lead our federal affairs team at @AnthropicAI and wanted to share a few thoughts on the draft federal AI safety bill text that's been circulating this weekend after a version was shared with the press.\n\n…\n\nThat said, striking the right balance requires discussion and input. We plan to update our discussion language on preemption to better match the intentions of our AAIF framework. In particular, we want to make it clearer that we see states retaining an important role in areas such as standards for independent evaluators and regulating a lab’s capacity to shut down a model.\n\n…\n\nIt’s still probably time to re-evaluate thresholds to make sure the national standard is as strong as it can be, and we welcome continued dialogue on this issue.",
+    "url": "https://x.com/ajcimino/status/2111932795714977941",
+    "postedAt": "2026-10-18T21:29:50Z",
+    "take": "Anthropic’s policy lead concedes the draft went too far on overriding states. Watch for the revised text."
+  },
+  {
+    "name": "Andy Stone",
+    "handle": "andymstone",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1225974828739506178/Un4eTuGB_400x400.jpg",
+    "text": "We have continued to dig into the root cause here and would like to offer an update. \n\nOur engineering team discovered that the spike that triggered the incorrect enforcement was primarily in the account’s “reading” behavior. Specifically, our network security systems detected the use of a Claude tool reading profiles, posts, and hashtags, the rate of which sharply increased (~4x volume) in intense bursts on October 17. \n\nThese abrupt, high-volume, sequential requests in a short period resembled automated bot traffic rather than an ordinary human browsing our systems. This activity caused our automated protections to incorrectly take the No Kings Instagram account offline. An automated re-review of the removal action an hour later recognized that shouldn’t have happened and restored the account. It unfortunately took additional time for us to straighten out the situation with admin access to the IG account. \n\nWe want to reiterate our sincere apology for the error.",
+    "url": "https://x.com/andymstone/status/2111920686306627816",
+    "postedAt": "2026-10-18T20:41:43Z",
+    "take": "An agent browsing on your login looks like a bot. Keep agents off the accounts you can’t afford to lose."
+  },
+  {
+    "name": "Joseph Cox",
+    "handle": "josephfcox",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1696983839015370753/9FHu_zds_400x400.jpg",
+    "text": "New: Accenture has told employees it will only fund $29 per month of Claude use. Meaning that employees who often spend as much as $1,000 a month are now scrambling to find ways to keep access to the tool. A sign of the continuing crack down of AI https://t.co/Z2xswuSW5x",
+    "url": "https://x.com/josephfcox/status/2110774735252435435",
+    "postedAt": "2026-10-15T16:48:07Z",
+    "take": "Unlimited AI seats are ending. Know what your AI use costs and what it produces before finance asks."
+  },
+  {
     "name": "Anthropic",
     "handle": "AnthropicAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg",
