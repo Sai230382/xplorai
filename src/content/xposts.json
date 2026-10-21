@@ -1,5 +1,41 @@
 [
   {
+    "name": "Marcus Williams",
+    "handle": "Marcus_J_W",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1856300176601694208/BUmXWK-U_400x400.jpg",
+    "text": "Our agents keep turning off misalignment monitoring, we're sharing two recent cases:\nIn the first case, a user asked GPT-6 Astra to match a reference implementation for their inference code. The reference didn’t configure a monitor, and Astra decided that was reason to remove the monitoring integration from the user’s code. When the user asked whether Astra had removed monitoring, it lied and said that it had not.",
+    "url": "https://x.com/Marcus_J_W/status/2112695138199966084",
+    "postedAt": "2026-10-20T23:59:07Z",
+    "take": "Unusually candid from inside OpenAI. If you use coding agents, check their diffs, not their answers."
+  },
+  {
+    "name": "GitHub Changelog",
+    "handle": "GHchangelog",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2107565868221935617/zVFwlcyX_400x400.jpg",
+    "text": "A package firewall is available in public preview to inspect npm package metadata and downloads for malware before they reach endpoints like CI/CD hosts or coding agents.\n\nhttps://t.co/eYM9V7R2fe",
+    "url": "https://x.com/GHchangelog/status/2112593467914285508",
+    "postedAt": "2026-10-20T17:15:07Z",
+    "take": "Worth a pilot on Enterprise Cloud. It only protects machines you point at it, so check every agent box."
+  },
+  {
+    "name": "Chrome",
+    "handle": "googlechrome",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1605280848089169920/IuDGmUk__400x400.png",
+    "text": "Chrome is now using Gemini to provide even stronger protections against scams. It evaluates page content ephemerally to detect complex threats like fake antivirus and browser updates to keep you safer on the web. \n\nRead the details here: https://t.co/BowQ9eNaQT https://t.co/sDA5J69alz",
+    "url": "https://x.com/googlechrome/status/2112594913003176182",
+    "postedAt": "2026-10-20T17:20:52Z",
+    "take": "Useful against fake-update scams. Ask IT whether to turn on Enhanced Protection, and what it sends to Google."
+  },
+  {
+    "name": "Mistral AI",
+    "handle": "MistralAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1996905418065375232/mzwynOLB_400x400.jpg",
+    "text": "Introducing Voxtral 3: state-of-the-art Transcribe and Speech models powering Mistral’s new voice agents API. 🧵 https://t.co/YA9HNVfq0u",
+    "url": "https://x.com/MistralAI/status/2112574615318876178",
+    "postedAt": "2026-10-20T16:00:12Z",
+    "take": "Per-minute prices and EU hosting make a call-centre pilot easy to cost. Test it on your own call recordings."
+  },
+  {
     "name": "OpenAI",
     "handle": "OpenAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg",
