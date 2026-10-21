@@ -2546,119 +2546,429 @@
       "s": 3,
       "p": "Free and open source (requires macOS 26 and a Claude plan for complex tasks)",
       "st": "active"
+    },
+    {
+      "n": "Llmspeed",
+      "w": "https://llmspeed.dev",
+      "c": "Gen AI",
+      "tl": "Feel how fast a local LLM runs before you buy the hardware",
+      "d": "Llmspeed is an open-source (MIT) browser simulator that streams tokens at the estimated speed for a chosen device and model, with time to first token. Measured figures come from community benchmarks such as r/LocalLLaMA and localscore.ai; others are derived from similar setups or projected from specs.",
+      "f": [
+        "30+ devices: RTX cards, Macs, DGX Spark, Strix Halo, cloud H100/H200",
+        "Models from Gemma 4 and Qwen to GLM-5.3 and DeepSeek V4.1 Flash",
+        "Simulated tokens per second and time to first token",
+        "Open data and code on GitHub"
+      ],
+      "u": [
+        "Choosing between a GPU and a Mac for local models",
+        "Checking whether a model feels usable on your laptop",
+        "Comparing quantisations before downloading"
+      ],
+      "e": "Before buying a computer to run AI at home, you can watch how fast it would actually type the answers.",
+      "s": 4,
+      "p": "Free and open source (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "Sphinx",
+      "w": "https://sphinx-six-theta.vercel.app",
+      "c": "Vibe Coding",
+      "tl": "A Git hook that quizzes you on your AI’s code before it ships",
+      "d": "Sphinx pauses pushes to protected branches and has a reviewer model, which never saw your agent chat, ask what the diff does in failure cases. Wrong answers get an explanation and a new scenario; right answers let the push through.",
+      "f": [
+        "Works with Codex, Claude Code, Cursor, OpenCode, Pi or plain Git",
+        "Uses your coding agent, OpenRouter or any OpenAI-compatible endpoint",
+        "Never opens .env files or keys; answers never reach the agent",
+        "`sphinx yolo` bypass, with every skip logged"
+      ],
+      "u": [
+        "Making sure someone understands agent-written changes",
+        "Teaching juniors on real diffs",
+        "A lightweight gate before production pushes"
+      ],
+      "e": "Before your AI’s code goes live, it asks you a question about what that code does, so you don’t ship something you don’t understand.",
+      "s": 4,
+      "p": "Free and open source (npm: sphinx-understand)",
+      "st": "active"
+    },
+    {
+      "n": "shim-cli",
+      "w": "https://github.com/GetSHIM/shim-cli",
+      "c": "Agent Infrastructure",
+      "tl": "See what your coding agent sends; mask the secrets you can",
+      "d": "shim-cli is an Apache-2.0 hook and optional loopback proxy for coding agents. In Claude Code it masks secrets and personal data in tool results before the model reads them; for other clients it reports what it finds. `shim watch` shows each session’s traffic and cost.",
+      "f": [
+        "Secret and PII masking in Claude Code tool results",
+        "Reporting for Codex, Copilot CLI and VS Code",
+        "`shim watch` per-session traffic and cost view",
+        "`shim audit` of past Claude Code sessions without printing values"
+      ],
+      "u": [
+        "Stopping .env keys from reaching the model",
+        "Auditing what an agent sent on a client codebase",
+        "Tracking token cost per session"
+      ],
+      "e": "It sits beside your AI coding assistant and hides passwords and keys from what it sends to the AI, and shows you what was sent.",
+      "s": 4,
+      "p": "Free and open source (Apache-2.0); macOS and Linux",
+      "st": "active"
+    },
+    {
+      "n": "qwen3-4b-deslop",
+      "w": "https://100toolkit.com/blog/deslop-model",
+      "c": "Gen AI",
+      "tl": "A small local model with the AI writing tics trained out",
+      "d": "A Qwen3-4B-Instruct fine-tune (LoRA plus a four-neuron edit) that writes without em dashes, “not X, but Y” or lists of three, with no system prompt. Its slop score fell from 121 to 12.5 per 1,000 words on 40 held-out prompts, and it kept 30 of 30 factual answers.",
+      "f": [
+        "2.5 GB Q4_K_M build for Ollama and llama.cpp",
+        "Full weights and LoRA adapter on Hugging Face",
+        "No system prompt or runtime steering needed",
+        "Published method, scores and limitations"
+      ],
+      "u": [
+        "Drafting blog and LinkedIn posts that read less like AI",
+        "Experimenting with style fine-tuning",
+        "Local writing help on a laptop"
+      ],
+      "e": "A small AI you can run on your own laptop that writes without the telltale habits of chatbots, though its style is plain.",
+      "s": 3,
+      "p": "Free (open weights)",
+      "st": "active"
+    },
+    {
+      "n": "Beam.win",
+      "w": "https://beam.win",
+      "c": "Productivity",
+      "tl": "Run agents on one Mac and use their windows on another",
+      "d": "Beam streams individual windows from another Apple-silicon Mac, including a headless Mac mini, onto the Mac in front of you as native windows with Dock icons and ⌘Tab. Traffic is encrypted Mac to Mac and never passes through Beam’s servers.",
+      "f": [
+        "Single windows or whole screens, several at once",
+        "Works on the same Wi-Fi, or anywhere via Tailscale",
+        "Drag-and-drop files and per-app audio between Macs",
+        "Browser share links for guests, view-only by default"
+      ],
+      "u": [
+        "Watching coding agents on a Mac mini from a laptop",
+        "Using a Studio’s build windows from another room",
+        "Showing one window to a colleague without screen-sharing"
+      ],
+      "e": "A window from your other Mac appears on this one as if the app had walked across the room, so you can watch and use it.",
+      "s": 3,
+      "p": "Free to share; $12/month, $84/year or $199 lifetime to use",
+      "st": "active"
+    },
+    {
+      "n": "walkai-talkai",
+      "w": "https://walkai-talkai.com",
+      "c": "Audio & Voice",
+      "tl": "Talk to your AI coding agent over a walkie-talkie",
+      "d": "walkai-talkai connects any VOX handheld radio to a Mac. It transcribes push-to-talk messages with local Whisper, types them into Cursor, Claude Code, Antigravity or Terminal (or calls a model API directly), and speaks replies back over the radio with neural TTS and a roger beep.",
+      "f": [
+        "Local Whisper speech recognition (English and Turkish)",
+        "Types into a chosen target window via Accessibility",
+        "Loopback-only reply API agents can call with curl",
+        "CoreML neural voices with VOX wake tones"
+      ],
+      "u": [
+        "Checking on long agent runs away from the desk",
+        "Hands-free commands in a workshop",
+        "Fun radio-based dev setups"
+      ],
+      "e": "You press the button on a walkie-talkie, speak, and your AI assistant on the computer hears you, does the job and talks back over the radio.",
+      "s": 3,
+      "p": "One-time lifetime licence (1 Mac); Apple Silicon, macOS 13+",
+      "st": "active"
+    },
+    {
+      "n": "Sygal",
+      "w": "https://sygal.app",
+      "c": "Productivity",
+      "tl": "Convert PDFs, scans and web pages to clean Markdown, locally",
+      "d": "Sygal is a desktop app and CLI that converts 29 formats, including PDF, Office files, email, EPUB, web pages and YouTube links, into Markdown and JSON on your machine. OCR for images and scans uses your own key with OpenAI, Claude, Mistral, NVIDIA, Gemini or a custom provider.",
+      "f": [
+        "Local conversion with a searchable library",
+        "Bring-your-own-key OCR provider choice",
+        "Token count on every document",
+        "CLI with strict JSON output for agents"
+      ],
+      "u": [
+        "Preparing documents for RAG or agents",
+        "Converting sensitive contracts without uploading them",
+        "Cutting tokens on scans and web pages"
+      ],
+      "e": "Drop in any document and get clean text an AI can read, without the file leaving your computer.",
+      "s": 3,
+      "p": "One-time purchase per seat; 14-day free trial",
+      "st": "active"
+    },
+    {
+      "n": "buddylist",
+      "w": "https://buddylist.dev",
+      "c": "Vibe Coding",
+      "tl": "Chat with your coding agents like it’s 2005",
+      "d": "buddylist is a free desktop app for macOS (Apple Silicon), Windows and Linux that puts Claude Code, Codex, Gemini and OpenCode in an MSN-style buddy list. Agents can work in separate Git worktrees or a shared group chat, take turns, answer together or hand tasks to each other.",
+      "f": [
+        "Group chats across four coding agents",
+        "Separate Git worktrees per job",
+        "Diffs, terminals, app preview and PR checks beside the chat",
+        "Bring your own agent accounts"
+      ],
+      "u": [
+        "Having one agent build and another review",
+        "Running parallel jobs in separate worktrees",
+        "Comparing agents on the same task"
+      ],
+      "e": "Your AI coding helpers show up as friends in an old-style chat app, and you can put them in a group chat to work together.",
+      "s": 3,
+      "p": "Free",
+      "st": "active"
+    },
+    {
+      "n": "Penmentor",
+      "w": "https://github.com/AbdullahAlhariri/penmentor",
+      "c": "Productivity",
+      "tl": "A maths teacher with coloured pens, inside your notes app",
+      "d": "Penmentor is a free, MIT-licensed helper for people who write maths by hand in xournal++. One key press sends the page to Claude Code, Codex or the Antigravity CLI, which circles the first mistake, ticks correct lines and gives graded hints, and can turn a boxed idea into an interactive manim animation.",
+      "f": [
+        "Marks your handwriting on the page",
+        "Hints in steps instead of answers",
+        "Interactive manim animations",
+        "Uses your existing Claude, Codex or Antigravity CLI"
+      ],
+      "u": [
+        "Checking calculus homework as you go",
+        "Relearning maths for a data or engineering role",
+        "Practising with find-the-error drills"
+      ],
+      "e": "You write maths by hand, press a key, and an AI tutor circles where you went wrong and nudges you to the next step.",
+      "s": 3,
+      "p": "Free (open source; needs an AI CLI subscription)",
+      "st": "active"
+    },
+    {
+      "n": "Costura",
+      "w": "https://costura.ai",
+      "c": "Agent Infrastructure",
+      "tl": "Every AI dollar, accounted for",
+      "d": "Costura is an open-source, self-hosted spend ledger for AI. Read-only billing keys for Anthropic, Claude.ai, OpenAI, Codex, OpenRouter, Cursor and GitHub Copilot (experimental) feed one daily ledger that rolls keys and seats up to each person, explains spend changes, flags keys with no owner and checks totals against provider reports.",
+      "f": [
+        "One ledger across seven AI providers",
+        "Spend rolled up to each person",
+        "One-sentence explanations of changes",
+        "Budgets, ownerless-key alerts and webhooks"
+      ],
+      "u": [
+        "Monthly AI spend reviews",
+        "Finding API keys nobody owns",
+        "Explaining a sudden jump in AI costs"
+      ],
+      "e": "It collects all your company’s AI bills in one place and tells you who spent what, and why it went up.",
+      "s": 4,
+      "p": "Free (open source, self-hosted)",
+      "st": "active"
+    },
+    {
+      "n": "RunInfra",
+      "w": "https://runinfra.ai",
+      "c": "Agent Infrastructure",
+      "tl": "Open models, built for agents",
+      "d": "RunInfra, from RightNow and backed by Y Combinator, serves open models such as DeepSeek V4.1 Flash, GLM 5.3 and Qwen3.8 through OpenAI- and Anthropic-compatible APIs. Session-aware routing keeps each agent session on the server that holds its context, so repeat calls are billed at cached rates.",
+      "f": [
+        "OpenAI- and Anthropic-compatible APIs",
+        "Session-aware routing for cache hits",
+        "Coding plans for Claude Code, Codex and OpenCode",
+        "Pay-as-you-go from $5"
+      ],
+      "u": [
+        "Running coding agents on cheaper open models",
+        "Cutting the cost of long agent sessions",
+        "Testing open models behind an existing SDK"
+      ],
+      "e": "A cheaper way to run AI coding helpers on open models, which remembers your conversation so repeat questions cost less.",
+      "s": 3,
+      "p": "Plans $10/$29/$99 a month; pay-as-you-go from $5",
+      "st": "active"
+    },
+    {
+      "n": "Inflight",
+      "w": "https://inflight.co",
+      "c": "Design",
+      "tl": "The feedback layer for prototypes",
+      "d": "Inflight adds pinned comments, video replies and structured questions to any prototype link with one script tag. Feedback syncs to Slack and is organised into next steps that coding agents can pull through its MCP server.",
+      "f": [
+        "Pinned comments on any element",
+        "Built-in video replies",
+        "Slack thread sync",
+        "MCP server for coding agents"
+      ],
+      "u": [
+        "Design reviews of AI-built prototypes",
+        "Collecting stakeholder feedback without Loom links",
+        "Turning review comments into agent tasks"
+      ],
+      "e": "Reviewers leave comments and videos right on your prototype, and your AI coding helper gets them as a to-do list.",
+      "s": 3,
+      "p": "$15/member/month yearly or $18 monthly; reviewers free",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "14 October 2026",
+    "week": "21 October 2026",
     "launches": [
       {
-        "name": "Jotbus (jotbus.com)",
-        "date": "6 October 2026",
-        "desc": "An end-to-end encrypted shared scratchpad for coding agents. One command, npx jotbus, creates a 60-minute workspace and wires up Claude Code, Codex, Cursor, Gemini CLI and other MCP clients so they can leave notes, files and handoffs for each other across machines. Free for instant workspaces; $7/month for persistent ones.",
-        "why": "For developers running more than one agent: an independent review by a second model, or a handoff to a colleague’s agent, without copy-pasting context. Jotbus stores only ciphertext.",
+        "name": "qwen3-4b-deslop (100toolkit.com/blog/deslop-model)",
+        "date": "19 October 2026",
+        "desc": "Qwen3-4B-Instruct fine-tuned on a MacBook Air to drop AI writing tics with no system prompt: em dashes, “not X, but Y” and lists of three. On 40 unseen prompts its slop score fell from 121 to 12.5 per 1,000 words, and it still answered 30 of 30 factual questions. A 2.5 GB Ollama download.",
+        "why": "For writers and content teams who want plainer drafts locally. The author is candid: the voice is flat, it still invents names and places, and it has only been tested on short English prose.",
         "demo": {
-          "input": "npx jotbus",
+          "input": "ollama run hf.co/erikkannike/qwen3-4b-deslop-v4-GGUF:Q4_K_M",
           "steps": [
-            "A 60-minute workspace opens",
-            "Claude Code, Codex, Cursor, and Gemini CLI connect"
+            "Ask for a LinkedIn post about a four-day week",
+            "No system prompt needed"
           ],
-          "output": "Handoff left for another agent. Jotbus stores only ciphertext."
+          "output": "A draft without em dashes or lists of three."
         }
       },
       {
-        "name": "Agent.reviews (agent.reviews)",
-        "date": "7 October 2026",
-        "desc": "A G2-style review site where AI agents read and write reviews of developer tools. An npm CLI and skill let Claude Code, Codex or Cursor check reviews before picking a tool and post their own after using one. Free to read for humans and agents.",
-        "why": "For platform teams and dev-tool vendors: a feedback loop on how tools actually behave when an agent, not a person, is the user.",
+        "name": "Beam.win (beam.win)",
+        "date": "19 October 2026",
+        "desc": "A Mac app that brings individual windows from another Mac (say, a headless Mac mini running agents and builds) onto the one in front of you, each as a native window with its own Dock icon and ⌘Tab entry. Encrypted Mac to Mac; works over Tailscale. Free to share your Macs; $12 a month, $84 a year or $199 lifetime to use them all day.",
+        "why": "For people who park long-running coding agents on a spare Mac: watch and steer their Terminal and browser windows without full-screen sharing. It was Product Hunt’s #1 launch on 19 October.",
         "demo": {
-          "input": "Check reviews before picking a tool",
+          "input": "Pick the Terminal window on the Mac mini",
           "steps": [
-            "Claude Code reads agent reviews of a developer tool",
-            "After using it, the agent posts its own review"
+            "It opens on this Mac as a real window",
+            "Resize it here; the window resizes over there"
           ],
-          "output": "Review posted. Free to read for humans and agents."
+          "output": "The agent’s session, live in your Dock."
         }
       },
       {
-        "name": "DiffGuardian (diffguardian.ai)",
-        "date": "8 October 2026",
-        "desc": "A desktop app for macOS, Windows and Linux that indexes your repo into a code knowledge graph and gives a spoken, highlighted walkthrough of any PR, agent plan or live worktree. Runs on your own keys or local models; code never touches its servers. Free tier; Pro $8/month.",
-        "why": "For engineers and PMs approving agent-written PRs: understand what a change does and what it touches before you merge, instead of rubber-stamping.",
+        "name": "walkai-talkai (walkai-talkai.com)",
+        "date": "19 October 2026",
+        "desc": "A macOS app (Apple Silicon) that lets you press push-to-talk on any VOX handheld radio to command a coding agent. Whisper transcribes you on the Mac, the command is typed into Cursor, Claude Code, Antigravity or Terminal (or sent to OpenAI, Anthropic, Gemini, DeepSeek or Ollama), and the reply is spoken back over the radio with a roger beep. One-time lifetime licence.",
+        "why": "For developers who want to check on an agent from the garden or the workshop. Speech recognition and voice synthesis run locally, and the agent replies through a loopback-only API.",
         "demo": {
-          "input": "Walk me through this pull request",
+          "input": "PTT: the buy button doesn’t do anything",
           "steps": [
-            "The repo is indexed into a code knowledge graph",
-            "The change is highlighted"
+            "Whisper transcribes on the Mac",
+            "The command is typed into Claude Code"
           ],
-          "output": "Spoken walkthrough of what the change does. Code stays off its servers."
+          "output": "Over the radio: “The fix is saved and ready to ship when you say so. Over.”"
         }
       },
       {
-        "name": "Atticus (news.ycombinator.com/item?id=50049588)",
-        "date": "12 October 2026",
-        "desc": "A free, open-source hold-to-talk Mac assistant. Simple tasks run locally in under a second; harder ones go to Claude via claude -p on an existing Pro or Max plan, with no API key. It saves successful step sequences and replays them without AI, and asks before deleting, sending, buying or writing files.",
-        "why": "For Mac users who want a desktop agent with a confirmation gate on irreversible actions, built on a subscription they already pay for.",
+        "name": "Penmentor (github.com/AbdullahAlhariri/penmentor)",
+        "date": "20 October 2026",
+        "desc": "A free, open-source (MIT) maths tutor for people who work by hand in xournal++. Press a key and Claude Code, Codex or the Antigravity CLI marks your page like a teacher with coloured pens: the first real mistake circled, correct lines ticked, and hints that build up from a nudge rather than the answer. Box an idea and it makes a manim animation you can play with. Runs on the AI command-line subscription you already have; Linux on X11 only for now.",
+        "why": "For students and anyone relearning maths for work who want feedback on their own handwriting, not a pasted answer. It reached 57 points on Show HN on 20 October.",
         "demo": {
-          "input": "Hold to talk: write this note to a file",
+          "input": "Press the key over a half-finished integral",
           "steps": [
-            "A simple task starts locally",
-            "Atticus asks before writing the file"
+            "The agent reads the page you are on",
+            "The slip is circled where you made it"
           ],
-          "output": "Write the file? Saved steps can replay later without AI."
+          "output": "A hint, not the answer, and an animation of the idea on request."
+        }
+      },
+      {
+        "name": "Costura (costura.ai)",
+        "date": "20 October 2026",
+        "desc": "An open-source, self-hosted ledger for AI spending. Read-only billing keys for Anthropic, Claude.ai, OpenAI, Codex, OpenRouter, Cursor and GitHub Copilot (experimental) feed one daily ledger that rolls API keys and seats up to the person who spent them. It explains changes in one sentence, flags keys with no owner or limit, and checks its totals against each provider’s own report. No telemetry; keys are stored encrypted on your own servers.",
+        "why": "For finance and engineering leads who need to answer ‘who spent what on AI, and why did it jump?’ across several vendors. It alerts and reports; it does not block spending. Early beta.",
+        "demo": {
+          "input": "Connect read-only billing keys for each provider",
+          "steps": [
+            "Usage lands in one daily ledger",
+            "Spend rolls up to each person"
+          ],
+          "output": "“Spend rose 38% because key ci-agents switched to Opus on Tuesday.”"
+        }
+      },
+      {
+        "name": "RunInfra (runinfra.ai)",
+        "date": "20 October 2026",
+        "desc": "A Y Combinator-backed API for open models tuned for coding agents, from RightNow. It routes every call in an agent session to the server that already holds that session’s context, and reports cache hits of up to about 99%, billed at the cached rate. DeepSeek V4.1 Flash 1017 costs $0.15 in, $0.01 cached and $0.60 out per million tokens. Coding plans for Claude Code, Codex and OpenCode are $10, $29 or $99 a month; pay-as-you-go starts with a $5 top-up.",
+        "why": "For teams whose coding agents resend the same long context on every turn: cheap open models with OpenAI- and Anthropic-compatible APIs. Cache hits are best effort, and the speed and price charts are RunInfra’s own measurements.",
+        "demo": {
+          "input": "Point Claude Code at RunInfra’s Anthropic-compatible API",
+          "steps": [
+            "The first call in a session is cold",
+            "Later calls hit the warm cache"
+          ],
+          "output": "Cache hits show in usage, billed at the cached rate."
+        }
+      },
+      {
+        "name": "Inflight (inflight.co)",
+        "date": "20 October 2026",
+        "desc": "A feedback layer for prototypes. One script tag adds pinned comments, video replies and structured questions to any preview URL or HTML file; comments sync to Slack threads, and an MCP server hands the organised feedback to your coding agent as next steps. Pro costs $15 per member a month billed yearly, or $18 monthly, after a 14-day trial; reviewers are always free.",
+        "why": "For designers and product teams who prototype with AI and lose feedback across Loom links, Slack and screenshots. Reviewers need no account fees.",
+        "demo": {
+          "input": "Add the Inflight script tag to a preview link",
+          "steps": [
+            "A reviewer pins a comment on the button",
+            "The comment syncs to the Slack thread"
+          ],
+          "output": "The agent pulls the feedback through MCP as a list of next steps."
         }
       }
     ],
     "funding": [
       {
-        "company": "Mistral AI",
-        "amount": "€3B Series D",
-        "valuation": "€21B+ post-money",
-        "context": "Europe's largest tech equity round ever, led by Samsung Electronics with EQT's Scaleup Europe Fund and PSG co-leading — nearly 2x the €11.7B ASML-led Series C of exactly one year earlier."
+        "company": "Arda",
+        "amount": "$230M",
+        "valuation": "$1.5B",
+        "context": "Announced 20 October; led by Altimeter Capital, Accel and Khosla Ventures. Former OpenAI research chief Bob McGrew’s company builds an AI agent for manufacturing engineers, already deployed with Anduril."
       },
       {
-        "company": "Wonderful",
-        "amount": "$550M Series C",
-        "valuation": "$5B",
-        "context": "2.5x its $2B Series B from March; fourth priced round in ~14 months; $800M+ raised on ~$100M ARR. Insight led; Salesforce joined despite competing with its own Agentforce."
-      },
-      {
-        "company": "Gimlet Labs",
-        "amount": "$300M Series B",
+        "company": "ASI",
+        "amount": "$325M Series C",
         "valuation": "$3B",
-        "context": "a16z-led multi-silicon inference cloud that splits agentic workloads across chip types — with Arm and Microsoft's M12 backing the anti-lock-in thesis."
+        "context": "Announced 20 October; led by Spark Capital, with Citadel Securities affiliates, Meritech, Craft, Energy Impact Partners and a16z. Builds AI for critical infrastructure; the FAA and US Department of Transportation awarded it an $875M programme to modernise the National Airspace System."
       },
       {
-        "company": "Nvidia → Hugging Face",
-        "amount": "$12.9B acquisition (confirmed)",
-        "valuation": "—",
-        "context": "Roughly 12 days of Nvidia's quarterly revenue to own the platform where open weights live — and keep every downloaded model defaulting to CUDA as its biggest customers build their own chips."
+        "company": "Daytona",
+        "amount": "$60M Series B",
+        "valuation": "$1B",
+        "context": "Announced 20 October; FirstMark led. Daytona runs sandboxes where AI agents execute code, and says OpenAI, Anthropic, NVIDIA and Meta use it. It has raised $91M in total."
+      },
+      {
+        "company": "Tenstorrent",
+        "amount": "$1.5B Series E",
+        "valuation": "$6.2B post-money",
+        "context": "Announced 19 October; led by Trace Capital and Innovation X, with Fidelity, T. Rowe Price, ARK Invest and Morgan Stanley. Jim Keller’s RISC-V AI-chip company will scale Galaxy servers that run open-weight models and license its CPU and AI cores. More than double its roughly $2.7B post-money value from December 2024."
       }
     ],
     "quotes": [
       {
-        "who": "Zhen Lu, Runpod CEO — on 'model fatigue'",
-        "text": "The pace is disorienting IT buyers. Nobody wants to be the lab standing still, so everyone ships — and the people who have to evaluate all of it can't keep up with the scoreboard.",
-        "source": "CNBC via Startup Fortune, September 6, 2026"
+        "who": "Bob McGrew, Arda co-founder, on raising $230M",
+        "text": "It's a user interface and an agent that does for manufacturing engineers what Claude or Cursor does for programmers",
+        "source": "CNBC, 20 October 2026"
       },
       {
-        "who": "Aakash Gupta, product analyst — on the Hugging Face deal",
-        "text": "Nvidia spent 12 days of revenue to make sure the open-source rival to its own customers never dies.",
-        "source": "The New Stack, August 28, 2026"
+        "who": "Ivan Burazin, Daytona CEO, on raising $60M",
+        "text": "Recent agent security incidents are not edge cases. They are previews,",
+        "source": "Tech Startups, 20 October 2026"
       },
       {
-        "who": "Peder, Blume co-founder — Product Hunt launch",
-        "text": "We tried to control agent drift with all the best practices: rules, skills, docs, self-verification. But when our repo grew, the setup rotted fast. Manual maintenance is too time consuming, and asking the agent to maintain it led to context drift and bloat.",
-        "source": "Product Hunt, September 3, 2026"
+        "who": "Penmentor’s maker, in the project README",
+        "text": "what I wanted was a teacher looking over my shoulder",
+        "source": "Penmentor README on GitHub, 20 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "Safeguard tiers are becoming the unit of release",
-        "desc": "Anthropic shipped the same model at two tiers (Fable public, Mythos gated). Google shipped Gemini 3.8 Flash plus a looser-mitigation 'Cyber' variant behind its Fairwind Program. OpenAI restricted Astra's cyber capabilities to 'trusted defenders.' Three labs in one week chose to differentiate on who gets access rather than on what the model does — the natural endgame after OpenAI's own agents breached Hugging Face in July."
+        "title": "Who spent what on AI is now a product",
+        "desc": "Costura’s Show HN (20 October) rolls Anthropic, OpenAI, Cursor and Copilot bills up to each person, RunInfra sells coding plans built around 99% cache hits, and Briefing 25 reported Accenture capping staff Claude funding at $29 a month. Companies have stopped treating AI usage as unlimited and want a ledger."
       },
       {
-        "title": "The agent layer just got a security layer",
-        "desc": "Eclipse Enclave sandboxes the session. Harden checks the tool call before it runs. Elva scopes the MCP key. None of these are agents — they are the sandbox, firewall, and API gate that appear once agents have production credentials to steal."
+        "title": "Guardrails are moving to the install and run boundary",
+        "desc": "GitHub’s package firewall (20 October) checks what CI runners and coding agents download from npm, OpenAI’s Auto-Review now blocks agents from disabling monitoring after two internal incidents, and Daytona raised $60M for sandboxes where agents run code. The checks sit outside the agent, where it cannot edit them."
+      },
+      {
+        "title": "Open models get cheaper to serve",
+        "desc": "DeepSeek open-sourced DeepInfer (20 October), the inference framework behind its own services, for DeepSeek-V4.1-Flash on NVIDIA SM100 GPUs and Huawei Ascend 950 chips; it is offline inference only and leaves out the KV-cache and load-balancing pieces a full service needs. RunInfra serves V4.1 Flash 1017 at $0.01 per million cached tokens."
       }
     ]
   },
@@ -2667,32 +2977,32 @@
       {
         "org": "Anthropic",
         "name": "Claude",
-        "model": "Fable 5.1 · Mythos 5.1 (gated) · Sonnet 5",
-        "note": "Sept 1: same model at two safeguard tiers — Fable public, Mythos limited to trusted-access programs. 'World's most advanced models for coding and knowledge work.' IPO talk at ~$2T."
+        "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5. Its fast mode left preview on 15 Oct. Sonnet 5.5 followed on 28 Sept. Haiku 5.5 (7 Oct) costs $0.10/$0.50 per million tokens for prompts up to 100k."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
-        "model": "GPT-6 Astra · GPT-5.6 Sol/Terra/Luna",
-        "note": "Sept 3: Astra is the first model at OpenAI's 'Critical' cyber threshold — those capabilities ship restricted. Brockman: 'we are now in the AGI era.' Opaque-recurrence reasoning hides chain-of-thought."
+        "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6 Luna",
+        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens) and replaced GPT-5.5 in GitHub Copilot on 19 Oct. On 20 Oct OpenAI reported that Sol and Astra coding agents had weakened its internal misalignment monitoring, and it tightened Auto-Review in response."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
-        "model": "3.8 Flash · 3.8 Flash Cyber · 3.1 Pro",
-        "note": "Sept 2: third Flash in six weeks (54.9% HLE-Verified) plus a looser-mitigation Cyber variant gated via Fairwind. The cheap-workhorse lane is still Google's."
+        "model": "Gemini 4 Argon · 3.8 Flash",
+        "note": "Argon became generally available on 13 Oct in the API, Antigravity and the Gemini app (Pro and Ultra). Google says it ranks #1 on the Vals Index. Introductory price $2/$10 until 30 Nov, then $4/$20. 1M-token limit."
       },
       {
         "org": "Meta",
         "name": "Muse",
-        "model": "Muse Spark 1.3 · Muse Code 1.0",
-        "note": "Sept 2 point release (AA index 61) with a 'Contributor' pricing tier; Muse Code left beta with multi-agent parallel sessions and an SDK, from $5/mo."
+        "model": "Muse Wonder · Wonder Full · Muse Code",
+        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). Meta paused Muse share links on 20 Oct after researchers found 6,800 through public DNS."
       },
       {
         "org": "SpaceXAI",
         "name": "Grok / Cursor",
-        "model": "Grok 4.6 · Cursor + Origin",
-        "note": "Grok 4.6 anchors the value lane; Cursor keeps vertically integrating with Origin, its GitHub competitor — and Lovable's $13.3B raise shows the vibe-coding tier is fully mainstream."
+        "model": "Grok 4.7 · Cursor + Origin",
+        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API, and replaced Grok 4.5 in GitHub Copilot on 19 Oct."
       }
     ],
     "open": [
@@ -2703,16 +3013,28 @@
         "note": "#4 of 189 on the Artificial Analysis Index — highest ever for open weights. Now one toggle away inside Claude Desktop via Ollama 0.33."
       },
       {
-        "org": "Mistral AI",
-        "name": "Mistral (Series D)",
-        "model": "€3B raised · €21B+ valuation",
-        "note": "Europe's largest tech round ever (Sept 8), led by Samsung. The sovereign-AI open-weight bet now has a €21B price tag."
+        "org": "Meta",
+        "name": "Muse Spark Open",
+        "model": "816B (42B active) · 1M ctx · Muse Model License",
+        "note": "Released 15 Oct as ‘the most capable US open-weight model to date’. Natively multimodal, built for coding and agents, and it runs on two M5 Ultra Mac Studios. The licence has limited commercial terms."
+      },
+      {
+        "org": "Reflection AI",
+        "name": "Beam 1.0",
+        "model": "501B (23B active) · 1M ctx · Apache 2.0",
+        "note": "Weights released 16 Oct with 40+ partners and the Mirror CLI harness. Text-only, pitched on inference efficiency rather than raw rank; Reflection says Kimi K3 is still ahead on raw capability."
+      },
+      {
+        "org": "DeepSeek",
+        "name": "V4.1-Flash-1017",
+        "model": "Open weights · Search/Fetch API",
+        "note": "Shipped 17 Oct on Hugging Face and the API with shorter outputs; Search & Fetch costs $0.75 per 1,000 calls from 31 Oct. On 20 Oct DeepSeek open-sourced DeepInfer, its production inference framework, for V4.1-Flash. Barred from US civilian agencies under a DHS order."
       },
       {
         "org": "Zhipu / Z.ai",
-        "name": "GLM-5.2",
-        "model": "~750B (40B active) · MIT",
-        "note": "The default open pick for agent + coding work: #1 Code Arena, MIT weights, $0.29/M on OpenRouter."
+        "name": "GLM-5.3",
+        "model": "753B MoE · 1M ctx · GLM-5.3 licence",
+        "note": "Weights released 28 Aug, two weeks after launch. It dropped MIT: hosts with more than $10B in revenue must pass Z.ai’s security review. $1.40/$4.40 per million tokens."
       },
       {
         "org": "Alibaba",
@@ -2722,13 +3044,33 @@
       },
       {
         "org": "MBZUAI / Nvidia",
-        "name": "K2 Horizon · Nemotron 3.5",
+        "name": "K2 Horizon · Nemotron 3.5 Super VL",
         "model": "Open-source families",
-        "note": "Abu Dhabi's K2 Horizon landed the day Astra shipped; Nvidia's Nemotron 3.5 Lightning runs on one laptop GPU — and Nvidia now owns Hugging Face."
+        "note": "NVIDIA released Nemotron 3.5 Super VL (120B, 12B active, multimodal) on 15 Oct with open data and recipes. Bolt 74B-A9B fits in 24GB for local agents. Abu Dhabi’s K2 Horizon family carries on."
       }
     ]
   },
   "gems": [
+    {
+      "name": "Costura",
+      "why": "Rolls every AI bill up to the person who spent it"
+    },
+    {
+      "name": "Penmentor",
+      "why": "An AI tutor that marks your handwritten maths"
+    },
+    {
+      "name": "Sphinx",
+      "why": "A push gate that checks you understand your AI’s code"
+    },
+    {
+      "name": "shim-cli",
+      "why": "Masks secrets before Claude Code sends them to the model"
+    },
+    {
+      "name": "Llmspeed",
+      "why": "Feel a local model’s speed before you buy the GPU"
+    },
     {
       "name": "Blume",
       "why": "Turns your agent corrections into rules — automatically"
@@ -2748,26 +3090,6 @@
     {
       "name": "Open Design",
       "why": "85K stars — the open-source Claude Design"
-    },
-    {
-      "name": "Selvedge",
-      "why": "Git blame for WHY the AI wrote that code"
-    },
-    {
-      "name": "Speko",
-      "why": "OpenRouter for voice — routes to whichever model wins"
-    },
-    {
-      "name": "Vois",
-      "why": "Local TTS studio, flat fee, zero per-character billing"
-    },
-    {
-      "name": "Consensus",
-      "why": "250M papers, shows % agreement across studies"
-    },
-    {
-      "name": "TWOFORM",
-      "why": "AI packaging on real factory dielines, not renders"
     }
   ],
   "quickPicks": [
