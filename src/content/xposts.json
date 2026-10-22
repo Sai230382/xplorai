@@ -1,5 +1,41 @@
 [
   {
+    "name": "The PHP Foundation",
+    "handle": "ThePHPF",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1462756177696206854/YcHaTzic_400x400.jpg",
+    "text": "We have posted more information about today's security releases, including the sequence of events that led to the discovery, how the PHP security team is improving their processes, and what we need from you to continue this critical work. #php #security https://t.co/gbGTmk7yh1",
+    "url": "https://x.com/ThePHPF/status/2112919684748320822",
+    "postedAt": "2026-10-21T14:51:23Z",
+    "take": "The best account of how PHP2Shell was found and why the fix took time. Patch first, then read it."
+  },
+  {
+    "name": "LiteLLM (YC W23)",
+    "handle": "LiteLLM",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2104772826146480128/HQNmm5lF_400x400.jpg",
+    "text": "Hello,\n\nAt 6:32 a.m. PDT we became aware of malicious LiteLLM 1.107.0 artifacts published to PyPI, Docker Hub, and GHCR, which were published at approximately 4:40 a.m. PDT. Enterprise deployments pulling only from our private registry are unaffected by this incident.\n\nWe are coordinating communication around this incident in this GitHub issue (https://t.co/JQ6nlZ9XXE).\n\nWe have removed the malicious releases and images. If you installed or ran them, please follow the remediation guidance in the above-linked issue and treat credentials accessible to those deployments as exposed.\n\nSincerely,\nOliver Jensen\nDirector of Security - LiteLLM",
+    "url": "https://x.com/LiteLLM/status/2112945728565993864",
+    "postedAt": "2026-10-21T16:34:52Z",
+    "take": "If anything of yours pulled LiteLLM on 21 October, treat every key it could reach as stolen."
+  },
+  {
+    "name": "Claude",
+    "handle": "claudeai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_400x400.jpg",
+    "text": "We’re opening a research preview of Claude Duet, a new app where Claude works as a proactive agent.\n\nIt comes to you with what needs your attention, completes tasks you ask of it, keeps working when you step away, and checks with you before it acts on your behalf. https://t.co/kt8gAbWuX8",
+    "url": "https://x.com/claudeai/status/2112984664256241837",
+    "postedAt": "2026-10-21T19:09:35Z",
+    "take": "The approval step is the safeguard. Start with one or two apps and read every action before you approve it."
+  },
+  {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg",
+    "text": "OpenAI models are coming to Google Cloud.\n\nWe're bringing our frontier models and Codex agentic workflows to Google Cloud's Model Garden, so enterprises can use our technology where they already build.\n\nhttps://t.co/gjuLVALjDm",
+    "url": "https://x.com/OpenAI/status/2112988118471295323",
+    "postedAt": "2026-10-21T19:23:19Z",
+    "take": "On Google Cloud? Ask how GPT usage will count against your existing commitment before you sign anything new."
+  },
+  {
     "name": "Marcus Williams",
     "handle": "Marcus_J_W",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1856300176601694208/BUmXWK-U_400x400.jpg",

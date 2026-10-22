@@ -2810,53 +2810,77 @@
       "s": 3,
       "p": "$15/member/month yearly or $18 monthly; reviewers free",
       "st": "active"
+    },
+    {
+      "n": "Flint",
+      "w": "https://recursive.com/updates/introducing-recursive-flint",
+      "c": "Vibe Coding",
+      "tl": "A fast coding model that lives on your laptop",
+      "d": "Flint, from Recursive, is a free Apache-2.0 coding model with 40 billion parameters, 2.5 billion of them active per token, built to run agentic coding locally. Recursive says it generates more than 125 tokens a second on an M4 Pro MacBook Pro, and it works with llama.cpp, Ollama, LM Studio, vLLM and SGLang.",
+      "f": [
+        "Open weights under Apache 2.0",
+        "Runs locally on Apple Silicon and NVIDIA RTX Spark",
+        "Up to 512k tokens of context",
+        "Works with Ollama, LM Studio, llama.cpp, vLLM and SGLang"
+      ],
+      "u": [
+        "Coding offline or on sensitive code",
+        "Cutting API bills for routine coding tasks",
+        "Trying agentic coding without a cloud account"
+      ],
+      "e": "A free AI coding helper you download and run on your own laptop, so your code never leaves it.",
+      "s": 4,
+      "p": "Free (open weights, Apache 2.0)",
+      "st": "active"
+    },
+    {
+      "n": "Omnara",
+      "w": "https://github.com/omnara-ai/omnara",
+      "c": "Agent Infrastructure",
+      "tl": "Open-source managed agents on any model and machine",
+      "d": "Omnara is an Apache-2.0 platform for launching and managing AI agents through one API, on models from OpenAI, Anthropic, OpenRouter or your own servers, and on sandboxes or your own machines. Tools, skills, MCP, secrets, permissions, approvals and event streaming are built in, with every agent’s history kept in Postgres.",
+      "f": [
+        "REST API and TypeScript SDK",
+        "Any model, any machine",
+        "Approvals from CLI, dashboard, Slack or GitHub",
+        "Self-hostable under Apache 2.0"
+      ],
+      "u": [
+        "Running internal agents without vendor lock-in",
+        "Embedding agents in your own product",
+        "Keeping agent history on your own infrastructure"
+      ],
+      "e": "A free, self-hostable control room for AI agents, so you are not tied to one AI company’s agent service.",
+      "s": 3,
+      "p": "Free to self-host; Omnara Cloud pay-as-you-go",
+      "st": "active"
+    },
+    {
+      "n": "Opposable",
+      "w": "https://getopposable.com",
+      "c": "Workflow Automation",
+      "tl": "Let an AI use your Android phone, even offline",
+      "d": "Opposable is an Android app that reads the screen and taps and types in other apps. Claude, ChatGPT or Codex can drive it from a computer, or a 2-billion-parameter screen model can run on the phone itself with no server; around forty common tasks run as fixed code without any model.",
+      "f": [
+        "Operates any Android app through accessibility",
+        "On-device 2B screen model, no server needed",
+        "Hands hard tasks to Claude, ChatGPT or Codex",
+        "Fast NPU path on Snapdragon phones"
+      ],
+      "u": [
+        "Automating repetitive phone tasks",
+        "Testing mobile apps with an agent",
+        "Phone automation without sending screens to the cloud"
+      ],
+      "e": "An app that lets AI tap and type on your Android phone for you, with a small model that can work entirely on the phone.",
+      "s": 3,
+      "p": "Free (Android app)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "21 October 2026",
+    "week": "22 October 2026",
     "launches": [
-      {
-        "name": "qwen3-4b-deslop (100toolkit.com/blog/deslop-model)",
-        "date": "19 October 2026",
-        "desc": "Qwen3-4B-Instruct fine-tuned on a MacBook Air to drop AI writing tics with no system prompt: em dashes, “not X, but Y” and lists of three. On 40 unseen prompts its slop score fell from 121 to 12.5 per 1,000 words, and it still answered 30 of 30 factual questions. A 2.5 GB Ollama download.",
-        "why": "For writers and content teams who want plainer drafts locally. The author is candid: the voice is flat, it still invents names and places, and it has only been tested on short English prose.",
-        "demo": {
-          "input": "ollama run hf.co/erikkannike/qwen3-4b-deslop-v4-GGUF:Q4_K_M",
-          "steps": [
-            "Ask for a LinkedIn post about a four-day week",
-            "No system prompt needed"
-          ],
-          "output": "A draft without em dashes or lists of three."
-        }
-      },
-      {
-        "name": "Beam.win (beam.win)",
-        "date": "19 October 2026",
-        "desc": "A Mac app that brings individual windows from another Mac (say, a headless Mac mini running agents and builds) onto the one in front of you, each as a native window with its own Dock icon and ⌘Tab entry. Encrypted Mac to Mac; works over Tailscale. Free to share your Macs; $12 a month, $84 a year or $199 lifetime to use them all day.",
-        "why": "For people who park long-running coding agents on a spare Mac: watch and steer their Terminal and browser windows without full-screen sharing. It was Product Hunt’s #1 launch on 19 October.",
-        "demo": {
-          "input": "Pick the Terminal window on the Mac mini",
-          "steps": [
-            "It opens on this Mac as a real window",
-            "Resize it here; the window resizes over there"
-          ],
-          "output": "The agent’s session, live in your Dock."
-        }
-      },
-      {
-        "name": "walkai-talkai (walkai-talkai.com)",
-        "date": "19 October 2026",
-        "desc": "A macOS app (Apple Silicon) that lets you press push-to-talk on any VOX handheld radio to command a coding agent. Whisper transcribes you on the Mac, the command is typed into Cursor, Claude Code, Antigravity or Terminal (or sent to OpenAI, Anthropic, Gemini, DeepSeek or Ollama), and the reply is spoken back over the radio with a roger beep. One-time lifetime licence.",
-        "why": "For developers who want to check on an agent from the garden or the workshop. Speech recognition and voice synthesis run locally, and the agent replies through a loopback-only API.",
-        "demo": {
-          "input": "PTT: the buy button doesn’t do anything",
-          "steps": [
-            "Whisper transcribes on the Mac",
-            "The command is typed into Claude Code"
-          ],
-          "output": "Over the radio: “The fix is saved and ready to ship when you say so. Over.”"
-        }
-      },
       {
         "name": "Penmentor (github.com/AbdullahAlhariri/penmentor)",
         "date": "20 October 2026",
@@ -2912,9 +2936,63 @@
           ],
           "output": "The agent pulls the feedback through MCP as a list of next steps."
         }
+      },
+      {
+        "name": "Recursive Flint (huggingface.co/RecursiveSI/flint)",
+        "date": "21 October 2026",
+        "desc": "A free coding model that runs on your own laptop, from Recursive, the start-up led by former Salesforce chief scientist Richard Socher. It is a mixture-of-experts model with 40 billion parameters, of which 2.5 billion work on each token, released under Apache 2.0. Recursive says it leads models under 50 billion parameters on agentic coding tests and generates more than 125 tokens a second on an M4 Pro MacBook Pro. It works with llama.cpp, Ollama, LM Studio, vLLM and SGLang, and takes up to 512k tokens of context (256k recommended).",
+        "why": "For developers who want a coding helper that works offline, keeps code on their machine and has no API bill. Recursive says it needs more guidance than the big paid assistants, so break work into small steps. The benchmarks and speeds are Recursive’s own.",
+        "demo": {
+          "input": "Load Flint in Ollama or LM Studio on a Mac with plenty of memory",
+          "steps": [
+            "Give it one small coding task at a time",
+            "Your code never leaves the laptop"
+          ],
+          "output": "Working code, written offline with no per-token bill."
+        }
+      },
+      {
+        "name": "Omnara (github.com/omnara-ai/omnara)",
+        "date": "21 October 2026",
+        "desc": "An open-source (Apache 2.0) platform for running managed AI agents, pitched as a self-hostable alternative to Claude Managed Agents and OpenAI’s Agents API. One REST API and TypeScript SDK launch agents on any model (OpenAI, Anthropic, OpenRouter or self-hosted) and any machine (a sandbox, laptop, VM or container), with tools, skills, MCP, secrets, permissions, approvals and streaming built in. Each agent’s history is kept as an event log in Postgres, and teams can follow agents from a CLI, dashboard, Slack, Discord or GitHub.",
+        "why": "For teams that want managed agents without being tied to one lab’s hosted service. Free to self-host; Omnara Cloud charges pay-as-you-go for managed resources. The relaunch drew 31 points on Show HN on 21 October. Its local defaults are deliberately insecure, so follow the deployment guide.",
+        "demo": {
+          "input": "Describe an agent in agent.yaml and run npx omnara agents launch",
+          "steps": [
+            "The agent runs on the machine you chose",
+            "Its tool calls stream to the dashboard"
+          ],
+          "output": "You reply to it or approve steps from the terminal, Slack or the dashboard."
+        }
+      },
+      {
+        "name": "Opposable (getopposable.com)",
+        "date": "21 October 2026",
+        "desc": "A free Android app that reads the screen through Android’s accessibility service and taps and types in other apps. Claude, ChatGPT or Codex can drive it from a computer; with none connected, a 2-billion-parameter screen model (Alibaba’s GUI-Owl 1.5, a 1.5 GB download) runs the same loop on the phone with no server involved. About forty common tasks, such as setting an alarm or texting a contact, run as fixed code with no model at all.",
+        "why": "For people trying phone automation who do not want screenshots sent to a cloud. Its maker’s write-up on 21 October is candid: a step takes about 7 seconds on a laptop CPU, only Snapdragon phones get the fast NPU path so far, and unfamiliar apps are handed to a cloud model.",
+        "demo": {
+          "input": "Ask it to open Clock and start the stopwatch",
+          "steps": [
+            "The on-phone model reads the screen",
+            "It taps the right button"
+          ],
+          "output": "Done, with no model outside the phone."
+        }
       }
     ],
     "funding": [
+      {
+        "company": "Legora",
+        "amount": "$550M Series E",
+        "valuation": "$8.8B post-money",
+        "context": "Announced 21 October; led by Atreides Management, with Baron Capital, Capital Group, Fidelity, Glade Brook and J.P. Morgan joining. Legora sells an ‘agentic operating system’ for lawyers and says annual recurring revenue has passed $200M, with in-house legal teams making up more than 40% of new customers in the third quarter. Its previous round valued it at $5.6B."
+      },
+      {
+        "company": "Flapping Airplanes",
+        "amount": "$1B Series A",
+        "valuation": "$6B",
+        "context": "Announced 21 October; co-led by Index and Lux, with Sequoia, GV and Kleiner Perkins. The year-old lab is trying to train capable models with far less data; its seed round valued it at $1.5B (TechCrunch)."
+      },
       {
         "company": "Arda",
         "amount": "$230M",
@@ -2922,53 +3000,41 @@
         "context": "Announced 20 October; led by Altimeter Capital, Accel and Khosla Ventures. Former OpenAI research chief Bob McGrew’s company builds an AI agent for manufacturing engineers, already deployed with Anduril."
       },
       {
-        "company": "ASI",
-        "amount": "$325M Series C",
-        "valuation": "$3B",
-        "context": "Announced 20 October; led by Spark Capital, with Citadel Securities affiliates, Meritech, Craft, Energy Impact Partners and a16z. Builds AI for critical infrastructure; the FAA and US Department of Transportation awarded it an $875M programme to modernise the National Airspace System."
-      },
-      {
         "company": "Daytona",
         "amount": "$60M Series B",
         "valuation": "$1B",
         "context": "Announced 20 October; FirstMark led. Daytona runs sandboxes where AI agents execute code, and says OpenAI, Anthropic, NVIDIA and Meta use it. It has raised $91M in total."
-      },
-      {
-        "company": "Tenstorrent",
-        "amount": "$1.5B Series E",
-        "valuation": "$6.2B post-money",
-        "context": "Announced 19 October; led by Trace Capital and Innovation X, with Fidelity, T. Rowe Price, ARK Invest and Morgan Stanley. Jim Keller’s RISC-V AI-chip company will scale Galaxy servers that run open-weight models and license its CPU and AI cores. More than double its roughly $2.7B post-money value from December 2024."
       }
     ],
     "quotes": [
       {
-        "who": "Bob McGrew, Arda co-founder, on raising $230M",
-        "text": "It's a user interface and an agent that does for manufacturing engineers what Claude or Cursor does for programmers",
-        "source": "CNBC, 20 October 2026"
+        "who": "Max Junestrand, Legora CEO, on raising $550M",
+        "text": "The opportunity in legal is enormous and we are still early.",
+        "source": "Legora, 21 October 2026"
       },
       {
-        "who": "Ivan Burazin, Daytona CEO, on raising $60M",
-        "text": "Recent agent security incidents are not edge cases. They are previews,",
-        "source": "Tech Startups, 20 October 2026"
+        "who": "Recursive, launching its Flint coding model",
+        "text": "While Flint is very capable, it may need more guidance than the larger closed-source coding models you’re used to.",
+        "source": "Recursive launch post, 21 October 2026"
       },
       {
-        "who": "Penmentor’s maker, in the project README",
-        "text": "what I wanted was a teacher looking over my shoulder",
-        "source": "Penmentor README on GitHub, 20 October 2026"
+        "who": "Opposable’s maker, on its on-phone screen model",
+        "text": "The model is also much weaker than a cloud model on apps it hasn't seen, and the app hands those tasks to Claude, ChatGPT or Codex when one is connected.",
+        "source": "Opposable blog, 21 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "Who spent what on AI is now a product",
-        "desc": "Costura’s Show HN (20 October) rolls Anthropic, OpenAI, Cursor and Copilot bills up to each person, RunInfra sells coding plans built around 99% cache hits, and Briefing 25 reported Accenture capping staff Claude funding at $29 a month. Companies have stopped treating AI usage as unlimited and want a ledger."
+        "title": "AI keys are what attackers want",
+        "desc": "LiteLLM’s poisoned 1.107.0 release (21 October) stole credentials from machines that installed it, Railway said the same day that an intruder may have read customers’ decrypted environment variables in attacks aimed at AI inference providers, and GitHub let CLI users opt in to tokens that expire within hours. Gateways and agent machines that hold many providers’ keys need the care of a production database."
       },
       {
-        "title": "Guardrails are moving to the install and run boundary",
-        "desc": "GitHub’s package firewall (20 October) checks what CI runners and coding agents download from npm, OpenAI’s Auto-Review now blocks agents from disabling monitoring after two internal incidents, and Daytona raised $60M for sandboxes where agents run code. The checks sit outside the agent, where it cannot edit them."
+        "title": "Agents get their own accounts, limits and rules",
+        "desc": "Walmart’s Agent Profiles give each shopping agent a separate profile and spending cap, Claude Duet waits for approval before it pays, sends, signs or deletes, and OpenAI will require approval for model routers and gateways from 20 November while introducing SafetyIDs for end users. Agents are being treated like an extra cardholder, not like the user."
       },
       {
-        "title": "Open models get cheaper to serve",
-        "desc": "DeepSeek open-sourced DeepInfer (20 October), the inference framework behind its own services, for DeepSeek-V4.1-Flash on NVIDIA SM100 GPUs and Huawei Ascend 950 chips; it is offline inference only and leaves out the KV-cache and load-balancing pieces a full service needs. RunInfra serves V4.1 Flash 1017 at $0.01 per million cached tokens."
+        "title": "Useful AI is moving onto your own devices",
+        "desc": "Recursive’s Flint (21 October) is an Apache-2.0 coding model that its maker says runs at more than 125 tokens a second on an M4 Pro MacBook Pro, and Opposable runs a 2-billion-parameter screen model on an Android phone. Both say plainly that hard tasks still go better with a large cloud model."
       }
     ]
   },
@@ -2978,19 +3044,19 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5. Its fast mode left preview on 15 Oct. Sonnet 5.5 followed on 28 Sept. Haiku 5.5 (7 Oct) costs $0.10/$0.50 per million tokens for prompts up to 100k."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5. Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct ($0.10/$0.50 per million tokens for prompts up to 100k). Claude Duet, the proactive agent app previewed on 21 Oct, is built around Opus 5.5."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6 Luna",
-        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens) and replaced GPT-5.5 in GitHub Copilot on 19 Oct. On 20 Oct OpenAI reported that Sol and Astra coding agents had weakened its internal misalignment monitoring, and it tightened Auto-Review in response."
+        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens). On 21 Oct OpenAI said its frontier models and Codex are coming to Google Cloud’s Model Garden (general availability in the coming weeks), and that from 20 Nov model routers and AI gateways need its approval to offer its models. Calif used GPT-5.6 Sol to find the PHP2Shell flaws."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Argon · 3.8 Flash",
-        "note": "Argon became generally available on 13 Oct in the API, Antigravity and the Gemini app (Pro and Ultra). Google says it ranks #1 on the Vals Index. Introductory price $2/$10 until 30 Nov, then $4/$20. 1M-token limit."
+        "note": "Argon became generally available on 13 Oct in the API, Antigravity and the Gemini app (Pro and Ultra). Introductory price $2/$10 until 30 Nov, then $4/$20. 1M-token limit. Wiz says Argon made an ‘invaluable contribution’ to finding PHP2Shell (21 Oct), and OpenAI models are coming to Google Cloud and Antigravity."
       },
       {
         "org": "Meta",
@@ -3052,6 +3118,14 @@
   },
   "gems": [
     {
+      "name": "Flint",
+      "why": "A free coding model that runs fast on a laptop"
+    },
+    {
+      "name": "Omnara",
+      "why": "Self-hostable managed agents on any model"
+    },
+    {
       "name": "Costura",
       "why": "Rolls every AI bill up to the person who spent it"
     },
@@ -3082,14 +3156,6 @@
     {
       "name": "Headlong",
       "why": "An agent that keeps thinking after you stop talking"
-    },
-    {
-      "name": "Lenz",
-      "why": "8 models debate a claim before it gets a verdict"
-    },
-    {
-      "name": "Open Design",
-      "why": "85K stars — the open-source Claude Design"
     }
   ],
   "quickPicks": [
