@@ -1,5 +1,77 @@
 [
   {
+    "name": "1Password",
+    "handle": "1Password",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1675829358953484288/nkB3lOvM_400x400.png",
+    "text": "Today we announce 1Password for Agents platform, building with companies @Muse, SpaceX Super Intelligence Grok @Bot, @AnthropicAI’s @Claudeai, @OpenAI, @TownAI, @Browserbase, @Browser_use, @heydana_ai, Instinct, @usekernel, @Perplexity_ai, @tryramp, @Tomo, and @wajo_ai,  with https://t.co/505moAiIfO",
+    "url": "https://x.com/1Password/status/2113276767582498943",
+    "postedAt": "2026-10-22T14:30:18Z",
+    "take": "Agents can now sign in through 1Password without seeing the password. Try it before pasting logins into a chat."
+  },
+  {
+    "name": "Claude",
+    "handle": "claudeai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_400x400.jpg",
+    "text": "Starting next week, sessions across Claude web, desktop, and mobile apps will run in auto mode by default on Pro, Max, and Team plans.\n\nRather than asking you to approve each step, an automated check blocks risky actions. Switch back to manual anytime. https://t.co/g9yvbMWH6X",
+    "url": "https://x.com/claudeai/status/2113360845409583307",
+    "postedAt": "2026-10-22T20:04:24Z",
+    "take": "Fewer approval prompts in Claude from next week. Decide now which work should stay on manual."
+  },
+  {
+    "name": "OpenAI Developers",
+    "handle": "OpenAIDevs",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2022002720971096064/l3Kyt4qt_400x400.jpg",
+    "text": "Add near real-time decisions to your workflow with the Decisions API, now generally available.\n\nBuild faster, more cost-efficient apps and agents that can classify text and images, evaluate inputs, and determine what happens next without generating a full model response. https://t.co/XxNe5Sqb2b",
+    "url": "https://x.com/OpenAIDevs/status/2113346642787086538",
+    "postedAt": "2026-10-22T19:07:58Z",
+    "take": "A cheap, fast way to route and check things inside apps. Worth testing on ticket triage."
+  },
+  {
+    "name": "Canva",
+    "handle": "canva",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1542647040756568064/YbE5Hs-5_400x400.jpg",
+    "text": "Introducing Canva Craft 🚀\n\nExtraordinary image generation is now available to everyone, powered by our first frontier model built specifically for design.\n\nWith Craft, Canva is now the world's second most advanced AI lab for image generation on @DesignArena's global leaderboard. https://t.co/j8T6ssAHJP",
+    "url": "https://x.com/canva/status/2113348707223753165",
+    "postedAt": "2026-10-22T19:16:10Z",
+    "take": "Canva’s own image model is in Dream Lab now. Test it on a layout with real text before trusting the leaderboard claim."
+  },
+  {
+    "name": "The PHP Foundation",
+    "handle": "ThePHPF",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1462756177696206854/YcHaTzic_400x400.jpg",
+    "text": "We have posted more information about today's security releases, including the sequence of events that led to the discovery, how the PHP security team is improving their processes, and what we need from you to continue this critical work. #php #security https://t.co/gbGTmk7yh1",
+    "url": "https://x.com/ThePHPF/status/2112919684748320822",
+    "postedAt": "2026-10-21T14:51:23Z",
+    "take": "The best account of how PHP2Shell was found and why the fix took time. Patch first, then read it."
+  },
+  {
+    "name": "LiteLLM (YC W23)",
+    "handle": "LiteLLM",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2104772826146480128/HQNmm5lF_400x400.jpg",
+    "text": "Hello,\n\nAt 6:32 a.m. PDT we became aware of malicious LiteLLM 1.107.0 artifacts published to PyPI, Docker Hub, and GHCR, which were published at approximately 4:40 a.m. PDT. Enterprise deployments pulling only from our private registry are unaffected by this incident.\n\nWe are coordinating communication around this incident in this GitHub issue (https://t.co/JQ6nlZ9XXE).\n\nWe have removed the malicious releases and images. If you installed or ran them, please follow the remediation guidance in the above-linked issue and treat credentials accessible to those deployments as exposed.\n\nSincerely,\nOliver Jensen\nDirector of Security - LiteLLM",
+    "url": "https://x.com/LiteLLM/status/2112945728565993864",
+    "postedAt": "2026-10-21T16:34:52Z",
+    "take": "If anything of yours pulled LiteLLM on 21 October, treat every key it could reach as stolen."
+  },
+  {
+    "name": "Claude",
+    "handle": "claudeai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_400x400.jpg",
+    "text": "We’re opening a research preview of Claude Duet, a new app where Claude works as a proactive agent.\n\nIt comes to you with what needs your attention, completes tasks you ask of it, keeps working when you step away, and checks with you before it acts on your behalf. https://t.co/kt8gAbWuX8",
+    "url": "https://x.com/claudeai/status/2112984664256241837",
+    "postedAt": "2026-10-21T19:09:35Z",
+    "take": "The approval step is the safeguard. Start with one or two apps and read every action before you approve it."
+  },
+  {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg",
+    "text": "OpenAI models are coming to Google Cloud.\n\nWe're bringing our frontier models and Codex agentic workflows to Google Cloud's Model Garden, so enterprises can use our technology where they already build.\n\nhttps://t.co/gjuLVALjDm",
+    "url": "https://x.com/OpenAI/status/2112988118471295323",
+    "postedAt": "2026-10-21T19:23:19Z",
+    "take": "On Google Cloud? Ask how GPT usage will count against your existing commitment before you sign anything new."
+  },
+  {
     "name": "Marcus Williams",
     "handle": "Marcus_J_W",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1856300176601694208/BUmXWK-U_400x400.jpg",
