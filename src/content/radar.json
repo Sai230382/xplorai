@@ -2876,67 +2876,77 @@
       "s": 3,
       "p": "Free (Android app)",
       "st": "active"
+    },
+    {
+      "n": "Decido",
+      "w": "https://github.com/decido-ai/decido",
+      "c": "Agent Infrastructure",
+      "tl": "Yes/no and pick-one decisions about a document, on a laptop CPU",
+      "d": "Decido is an Apache-2.0 decision model, a LoRA fine-tune of Gemma 4 26B-A4B shipped as an 8-bit GGUF, that returns calibrated probabilities for yes/no, pick-one and rating questions about a document. It runs locally through llama.cpp and includes a server that speaks the same API as TypeSafe’s Jev, so existing Jev apps can switch with one setting.",
+      "f": [
+        "Yes/no, choice (2–255 options) and score questions",
+        "Runs on a CPU, about 30 GB of RAM",
+        "Jev-compatible HTTP API on your own machine",
+        "Same input gives the same answer on a given machine"
+      ],
+      "u": [
+        "Routing tickets and forms without a cloud API",
+        "Classifying sensitive documents locally",
+        "Testing a local alternative to hosted decision APIs"
+      ],
+      "e": "A free model that answers simple questions about a document, like ‘is this a refund request?’, on your own computer.",
+      "s": 3,
+      "p": "Free (open weights, Apache 2.0)",
+      "st": "active"
+    },
+    {
+      "n": "agent-usage-guard",
+      "w": "https://github.com/rbartoli/agent-usage-guard",
+      "c": "Vibe Coding",
+      "tl": "Stops Claude Code burning your usage window",
+      "d": "agent-usage-guard is a free, MIT-licensed Claude Code mod that holds subagent fan-out, heavy-context prompts and retry loops before they spend your plan’s five-hour or weekly window. It reads Claude Code’s usage percentages, limits agents across every session on the machine, and asks in Claude Code’s own dialog, storing no prompt text.",
+      "f": [
+        "Plan-aware limits at 80% and 95% of a window",
+        "Caps parallel agents across all sessions",
+        "Asks before huge-context prompts",
+        "Local only, fails open"
+      ],
+      "u": [
+        "Avoiding lockouts on Pro, Max or Team plans",
+        "Keeping research prompts from spawning hundreds of agents",
+        "Seeing what spent your usage with /agent-guard report"
+      ],
+      "e": "A free add-on that stops Claude Code from using up your plan’s allowance in a few minutes of runaway work.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "CATT",
+      "w": "https://github.com/Coverage-Cat/consumer-agent-testing-tool",
+      "c": "Agent Infrastructure",
+      "tl": "Test how AI assistants use your MCP server, site or API",
+      "d": "CATT (Consumer Agent Testing Tool) runs a scripted or model-driven surrogate assistant, emulating Muse or Instinct, against your MCP server, MCP app, website or HTTP API. It applies account and approval rules, checks what your service actually recorded, and keeps sealed evidence you can replay and diff across builds. MIT-licensed; it does not certify compatibility with any hosted assistant.",
+      "f": [
+        "Muse and Instinct surrogate agents",
+        "Checks service-side outcomes, not just answers",
+        "Sealed, replayable evidence and run diffs",
+        "MCP, MCP apps, websites and HTTP APIs"
+      ],
+      "u": [
+        "Testing an MCP connector before agents use it",
+        "Catching regressions in agent flows in CI",
+        "Checking approval rules hold when an agent books or pays"
+      ],
+      "e": "A free testing tool that pretends to be an AI assistant using your service, and checks your service did the right thing.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "22 October 2026",
+    "week": "23 October 2026",
     "launches": [
-      {
-        "name": "Penmentor (github.com/AbdullahAlhariri/penmentor)",
-        "date": "20 October 2026",
-        "desc": "A free, open-source (MIT) maths tutor for people who work by hand in xournal++. Press a key and Claude Code, Codex or the Antigravity CLI marks your page like a teacher with coloured pens: the first real mistake circled, correct lines ticked, and hints that build up from a nudge rather than the answer. Box an idea and it makes a manim animation you can play with. Runs on the AI command-line subscription you already have; Linux on X11 only for now.",
-        "why": "For students and anyone relearning maths for work who want feedback on their own handwriting, not a pasted answer. It reached 57 points on Show HN on 20 October.",
-        "demo": {
-          "input": "Press the key over a half-finished integral",
-          "steps": [
-            "The agent reads the page you are on",
-            "The slip is circled where you made it"
-          ],
-          "output": "A hint, not the answer, and an animation of the idea on request."
-        }
-      },
-      {
-        "name": "Costura (costura.ai)",
-        "date": "20 October 2026",
-        "desc": "An open-source, self-hosted ledger for AI spending. Read-only billing keys for Anthropic, Claude.ai, OpenAI, Codex, OpenRouter, Cursor and GitHub Copilot (experimental) feed one daily ledger that rolls API keys and seats up to the person who spent them. It explains changes in one sentence, flags keys with no owner or limit, and checks its totals against each provider’s own report. No telemetry; keys are stored encrypted on your own servers.",
-        "why": "For finance and engineering leads who need to answer ‘who spent what on AI, and why did it jump?’ across several vendors. It alerts and reports; it does not block spending. Early beta.",
-        "demo": {
-          "input": "Connect read-only billing keys for each provider",
-          "steps": [
-            "Usage lands in one daily ledger",
-            "Spend rolls up to each person"
-          ],
-          "output": "“Spend rose 38% because key ci-agents switched to Opus on Tuesday.”"
-        }
-      },
-      {
-        "name": "RunInfra (runinfra.ai)",
-        "date": "20 October 2026",
-        "desc": "A Y Combinator-backed API for open models tuned for coding agents, from RightNow. It routes every call in an agent session to the server that already holds that session’s context, and reports cache hits of up to about 99%, billed at the cached rate. DeepSeek V4.1 Flash 1017 costs $0.15 in, $0.01 cached and $0.60 out per million tokens. Coding plans for Claude Code, Codex and OpenCode are $10, $29 or $99 a month; pay-as-you-go starts with a $5 top-up.",
-        "why": "For teams whose coding agents resend the same long context on every turn: cheap open models with OpenAI- and Anthropic-compatible APIs. Cache hits are best effort, and the speed and price charts are RunInfra’s own measurements.",
-        "demo": {
-          "input": "Point Claude Code at RunInfra’s Anthropic-compatible API",
-          "steps": [
-            "The first call in a session is cold",
-            "Later calls hit the warm cache"
-          ],
-          "output": "Cache hits show in usage, billed at the cached rate."
-        }
-      },
-      {
-        "name": "Inflight (inflight.co)",
-        "date": "20 October 2026",
-        "desc": "A feedback layer for prototypes. One script tag adds pinned comments, video replies and structured questions to any preview URL or HTML file; comments sync to Slack threads, and an MCP server hands the organised feedback to your coding agent as next steps. Pro costs $15 per member a month billed yearly, or $18 monthly, after a 14-day trial; reviewers are always free.",
-        "why": "For designers and product teams who prototype with AI and lose feedback across Loom links, Slack and screenshots. Reviewers need no account fees.",
-        "demo": {
-          "input": "Add the Inflight script tag to a preview link",
-          "steps": [
-            "A reviewer pins a comment on the button",
-            "The comment syncs to the Slack thread"
-          ],
-          "output": "The agent pulls the feedback through MCP as a list of next steps."
-        }
-      },
       {
         "name": "Recursive Flint (huggingface.co/RecursiveSI/flint)",
         "date": "21 October 2026",
@@ -2978,63 +2988,105 @@
           ],
           "output": "Done, with no model outside the phone."
         }
+      },
+      {
+        "name": "Decido (github.com/decido-ai/decido)",
+        "date": "22 October 2026",
+        "desc": "An open-weight decision model that answers yes/no, pick-one and rating questions about a document on a laptop CPU, with a probability for every answer. It is a LoRA fine-tune of Gemma 4 26B-A4B (about 4 billion active parameters), shipped as an 8-bit GGUF for llama.cpp, and includes a local server that speaks the same API as TypeSafe’s Jev, so Jev apps can point at it by changing one setting. Apache 2.0; v1.0 released on 22 October.",
+        "why": "For teams that want the kind of routing and classification calls OpenAI’s Decisions API makes, without sending documents to a cloud. Its maker reports a six-benchmark mean of 85.38 against Jev 1.13’s published 83.85, but it needs about 30 GB of RAM and takes about 4.1 seconds for a 1,000-token document and five questions on an M4 Pro CPU, against about 0.3 seconds for the hosted API.",
+        "demo": {
+          "input": "Send it ‘I was charged twice for order 4821’ with the questions ‘refund?’ and ‘which team?’",
+          "steps": [
+            "It reads the text once on your CPU",
+            "It scores every answer"
+          ],
+          "output": "A probability for ‘refund: yes’ and for billing versus shipping, computed locally."
+        }
+      },
+      {
+        "name": "agent-usage-guard (github.com/rbartoli/agent-usage-guard)",
+        "date": "22 October 2026",
+        "desc": "A free Claude Code mod (MIT) that steps in before subagent fan-out, heavy-context prompts and retry loops burn through your plan’s five-hour or weekly usage window. It reads the usage percentages Claude Code reports and counts agents across every session on the machine; by default it asks before a fifth parallel agent, before new agents once a window is 80% full, and refuses them at 95%. It asks in Claude Code’s own dialog, stores no prompt text, and fails open if it breaks. v1.1.0 and v1.1.1 shipped on 22 October, the day it was on Show HN.",
+        "why": "For anyone on a Claude Pro, Max or Team plan who has been locked out mid-task. Its maker says one max-effort research prompt spawned 394 subagent calls and pushed 84 million context tokens through in ten minutes. It needs Claude Code v2.1.287 or later.",
+        "demo": {
+          "input": "Ask Claude Code for a broad research task at max effort",
+          "steps": [
+            "Claude tries to start a fifth agent at once",
+            "The guard asks first"
+          ],
+          "output": "You approve, or Claude batches the work instead of spending the window."
+        }
+      },
+      {
+        "name": "CATT – Consumer Agent Testing Tool (github.com/Coverage-Cat/consumer-agent-testing-tool)",
+        "date": "22 October 2026",
+        "desc": "An open-source (MIT) test harness that checks how an AI assistant uses your service. It runs a scripted or model-driven agent against your MCP server, MCP app, website or HTTP API, applies account and approval rules, checks what your service actually did, and keeps sealed evidence you can replay and compare across builds. It can emulate Meta’s Muse (the default) or Instinct as the calling assistant. v0.2.1 shipped on 22 October.",
+        "why": "For companies building connectors or sites that shoppers’ and workers’ agents will use, such as the agent gateways banks and retailers are now setting rules for. Its README is clear that it approximates an assistant and that a pass does not certify compatibility with Muse or any hosted assistant.",
+        "demo": {
+          "input": "Point connector-run at your MCP server with a booking scenario",
+          "steps": [
+            "A surrogate Muse agent books through your tools",
+            "CATT checks the booking your service recorded"
+          ],
+          "output": "A pass or fail with sealed evidence, comparable with the next build."
+        }
       }
     ],
     "funding": [
+      {
+        "company": "OpenAI",
+        "amount": "Up to $30B (reported)",
+        "valuation": "$1.25T pre-money (reported)",
+        "context": "CNBC reported on 22 October that OpenAI is working on raising up to $30 billion in a round led by Coatue and investors in the UAE, possibly alongside a UAE computing deal. Terms are still being negotiated and OpenAI declined to comment (via TechCrunch). Its March round valued it at $852 billion."
+      },
+      {
+        "company": "DeepSeek",
+        "amount": "About $15B (reported)",
+        "valuation": "Not disclosed",
+        "context": "Bloomberg reported on 22 October that DeepSeek has raised about 100 billion yuan, two days after the US ordered federal civilian agencies to remove its technology. Potential investors include CATL and Tencent (via TechCrunch). It raised more than $7 billion at a $50 billion valuation in June."
+      },
+      {
+        "company": "Nirva",
+        "amount": "$25M pre-Series A",
+        "valuation": "Not disclosed",
+        "context": "Announced 22 October, bringing its total to $33 million after an $8 million round earlier this year from investors including Lightspeed and South Park Commons. Nirva makes an 8-gram pendant that listens only to the wearer’s own speech and, by default, keeps no audio or transcripts after processing (TechCrunch)."
+      },
       {
         "company": "Legora",
         "amount": "$550M Series E",
         "valuation": "$8.8B post-money",
         "context": "Announced 21 October; led by Atreides Management, with Baron Capital, Capital Group, Fidelity, Glade Brook and J.P. Morgan joining. Legora sells an ‘agentic operating system’ for lawyers and says annual recurring revenue has passed $200M, with in-house legal teams making up more than 40% of new customers in the third quarter. Its previous round valued it at $5.6B."
-      },
-      {
-        "company": "Flapping Airplanes",
-        "amount": "$1B Series A",
-        "valuation": "$6B",
-        "context": "Announced 21 October; co-led by Index and Lux, with Sequoia, GV and Kleiner Perkins. The year-old lab is trying to train capable models with far less data; its seed round valued it at $1.5B (TechCrunch)."
-      },
-      {
-        "company": "Arda",
-        "amount": "$230M",
-        "valuation": "$1.5B",
-        "context": "Announced 20 October; led by Altimeter Capital, Accel and Khosla Ventures. Former OpenAI research chief Bob McGrew’s company builds an AI agent for manufacturing engineers, already deployed with Anduril."
-      },
-      {
-        "company": "Daytona",
-        "amount": "$60M Series B",
-        "valuation": "$1B",
-        "context": "Announced 20 October; FirstMark led. Daytona runs sandboxes where AI agents execute code, and says OpenAI, Anthropic, NVIDIA and Meta use it. It has raised $91M in total."
       }
     ],
     "quotes": [
       {
-        "who": "Max Junestrand, Legora CEO, on raising $550M",
-        "text": "The opportunity in legal is enormous and we are still early.",
-        "source": "Legora, 21 October 2026"
+        "who": "CJ Moses, Amazon CISO, on PHP2Shell",
+        "text": "defenders should not assume the public disclosure date is the earliest date of exploitation",
+        "source": "AWS Security Blog, 21 October 2026"
       },
       {
-        "who": "Recursive, launching its Flint coding model",
-        "text": "While Flint is very capable, it may need more guidance than the larger closed-source coding models you’re used to.",
-        "source": "Recursive launch post, 21 October 2026"
+        "who": "Sumanth Sukumar, Uber VP of engineering, on rolling out ChatGPT Work",
+        "text": "Our approach is to make powerful AI tools available across Uber while giving teams room to experiment,",
+        "source": "TechCrunch, 22 October 2026"
       },
       {
-        "who": "Opposable’s maker, on its on-phone screen model",
-        "text": "The model is also much weaker than a cloud model on apps it hasn't seen, and the app hands those tasks to Claude, ChatGPT or Codex when one is connected.",
-        "source": "Opposable blog, 21 October 2026"
+        "who": "agent-usage-guard, a Claude Code mod on Show HN",
+        "text": "Stops Claude Code from spending your five-hour usage window in ten minutes.",
+        "source": "agent-usage-guard README, 22 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "AI keys are what attackers want",
-        "desc": "LiteLLM’s poisoned 1.107.0 release (21 October) stole credentials from machines that installed it, Railway said the same day that an intruder may have read customers’ decrypted environment variables in attacks aimed at AI inference providers, and GitHub let CLI users opt in to tokens that expire within hours. Gateways and agent machines that hold many providers’ keys need the care of a production database."
+        "title": "Attacks now move at agent speed",
+        "desc": "Microsoft says Storm-0940 used the ARTEX agent framework to try more than 2,250 Microsoft 365 tenants through ConnectWise’s backup app, sometimes reaching privileged access in under three hours, and Amazon saw PHP2Shell attempts four days before the patch. Patch windows and alert response times built for humans are too slow."
       },
       {
-        "title": "Agents get their own accounts, limits and rules",
-        "desc": "Walmart’s Agent Profiles give each shopping agent a separate profile and spending cap, Claude Duet waits for approval before it pays, sends, signs or deletes, and OpenAI will require approval for model routers and gateways from 20 November while introducing SafetyIDs for end users. Agents are being treated like an extra cardholder, not like the user."
+        "title": "Agents get their own way in",
+        "desc": "Big US banks are blocking agents that log in with customers’ passwords and moving to read-only access, 1Password for Agents fills logins without the agent seeing them, and CATT tests how assistants use your service. Expect sign-in, approval and testing built for agents, not shared human logins."
       },
       {
-        "title": "Useful AI is moving onto your own devices",
-        "desc": "Recursive’s Flint (21 October) is an Apache-2.0 coding model that its maker says runs at more than 125 tokens a second on an M4 Pro MacBook Pro, and Opposable runs a 2-billion-parameter screen model on an Android phone. Both say plainly that hard tasks still go better with a large cloud model."
+        "title": "Small decision models get cheap",
+        "desc": "OpenAI’s Decisions API is generally available at $0.10 per million input tokens with no output charge, and the open Decido model answers the same kind of yes/no and pick-one questions on a laptop CPU through a Jev-compatible API. Routing and checks are splitting off from the big chat models."
       }
     ]
   },
@@ -3044,13 +3096,13 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5. Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct ($0.10/$0.50 per million tokens for prompts up to 100k). Claude Duet, the proactive agent app previewed on 21 Oct, is built around Opus 5.5."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 22 Oct the full Claude Platform became generally available on Google Cloud (Anthropic managed) with all four models, and Fast mode for Opus 5.5 (up to 2.5x faster, $8/$40). Claude apps switch to auto mode by default next week."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6 Luna",
-        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens). On 21 Oct OpenAI said its frontier models and Codex are coming to Google Cloud’s Model Garden (general availability in the coming weeks), and that from 20 Nov model routers and AI gateways need its approval to offer its models. Calif used GPT-5.6 Sol to find the PHP2Shell flaws."
+        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens) and is the default in Uber’s ChatGPT Work rollout to 30,000+ staff (22 Oct). The Decisions API, built with GPT-6 Luna, became generally available on 22 Oct at $0.10 per million input tokens and no output charge. Frontier models and Codex are coming to Google Cloud’s Model Garden."
       },
       {
         "org": "Google DeepMind",
@@ -3094,7 +3146,7 @@
         "org": "DeepSeek",
         "name": "V4.1-Flash-1017",
         "model": "Open weights · Search/Fetch API",
-        "note": "Shipped 17 Oct on Hugging Face and the API with shorter outputs; Search & Fetch costs $0.75 per 1,000 calls from 31 Oct. On 20 Oct DeepSeek open-sourced DeepInfer, its production inference framework, for V4.1-Flash. Barred from US civilian agencies under a DHS order."
+        "note": "Shipped 17 Oct on Hugging Face and the API with shorter outputs; Search & Fetch costs $0.75 per 1,000 calls from 31 Oct. On 20 Oct DeepSeek open-sourced DeepInfer, its production inference framework, for V4.1-Flash. Barred from US civilian agencies under a DHS order; Bloomberg reported a raise of about $15B on 22 Oct."
       },
       {
         "org": "Zhipu / Z.ai",
@@ -3117,6 +3169,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "Decido",
+      "why": "Local yes/no and pick-one decisions, Jev-compatible"
+    },
+    {
+      "name": "agent-usage-guard",
+      "why": "Stops Claude Code burning your usage window"
+    },
     {
       "name": "Flint",
       "why": "A free coding model that runs fast on a laptop"
@@ -3148,14 +3208,6 @@
     {
       "name": "Blume",
       "why": "Turns your agent corrections into rules — automatically"
-    },
-    {
-      "name": "Moadim",
-      "why": "Cron for AI agents, MIT-licensed, runs from your crontab"
-    },
-    {
-      "name": "Headlong",
-      "why": "An agent that keeps thinking after you stop talking"
     }
   ],
   "quickPicks": [

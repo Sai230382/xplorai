@@ -1,298 +1,378 @@
 {
-  "number": 27,
-  "edition": "Briefing 27",
-  "date": "22 October 2026",
-  "dateISO": "2026-10-22",
+  "number": 28,
+  "edition": "Briefing 28",
+  "date": "23 October 2026",
+  "dateISO": "2026-10-23",
   "kicker": "Today in AI",
-  "title": "Two AI-found flaws in PHP put much of the web at risk, a hijacked LiteLLM release stole the keys AI teams use, and OpenAI will vet the gateways that resell its models. Anthropic launched the Claude Duet agent app and always-on Claude Security, OpenAI models are coming to Google Cloud, ChatGPT ads reach 89 countries, and Walmart wrote rules for shopping agents.",
-  "summary": "On 21 October 2026: PHP shipped fixes for two critical flaws, found with frontier AI models, that let attackers run code on web servers without logging in; CISA told organisations to patch immediately. A poisoned LiteLLM 1.107.0 release stole credentials for about two hours, and Railway reported a breach it links to attacks aimed at AI inference providers. OpenAI said that from 20 November model routers and AI gateways need its approval to offer its models, and introduced SafetyIDs. Anthropic opened a waitlist preview of Claude Duet, a proactive agent app that asks before it pays, sends or deletes, and made Claude Security rescan code continuously for Enterprise customers. OpenAI’s models are coming to Google Cloud’s Model Garden, payable from existing Google commitments. ChatGPT ads expanded to 89 countries, and Walmart introduced an agent gateway, per-agent spending limits and terms for AI shopping agents.",
-  "uncertainty": "Wiz’s ‘70% of websites’ figure is its estimate of PHP’s reach, not a count of vulnerable servers, and CISA had seen no exploitation when it published. LiteLLM’s account of the attack is preliminary, including its finding that Claude Code sometimes embedded GitHub CLI tokens in responses that were later logged; we found no response from Anthropic. Railway has not said how many customers were affected. OpenAI has not yet published the full updated Usage Policies, so it is unclear whether internal company gateways need approval. Claude Duet and the new Claude Security are a preview and a beta, and Anthropic’s usage figures are its own. OpenAI’s advertiser and user numbers, and its statement that ads do not influence answers, are its own. Walmart’s Agent Profiles are not live yet.",
+  "title": "PHP2Shell was being exploited before the patch, Chinese hackers used AI agents to break into companies through ConnectWise, and big US banks are blocking agents that use customers’ passwords. 1Password lets agents sign in without seeing passwords, Claude goes auto by default, Uber gives ChatGPT Work to 30,000 staff, OpenAI’s Decisions API and the full Claude Platform on Google Cloud are generally available, Canva launched its own image model, Arc is shutting down, and GitHub applies Copilot’s default policy.",
+  "summary": "On 22 October 2026: Amazon said attackers tried PHP2Shell four days before the patch and are now trying it widely. Microsoft and TechCrunch detailed how Storm-0940 used the ARTEX AI agent framework and stolen ConnectWise app credentials to try to sign in to more than 2,250 Microsoft 365 tenants. Axios reported that Morgan Stanley, JPMorgan, Bank of America and Citi are blocking or restricting third-party AI agents. 1Password launched 1Password for Agents, and Anthropic said Claude apps will run in auto mode by default from next week. Uber rolled ChatGPT Work out to more than 30,000 employees. OpenAI made the Decisions API generally available at $0.10 per million input tokens, and Anthropic made the full Claude Platform available on Google Cloud, paid from Google commitments. Canva launched Craft, Arc will stop working on 22 December, and GitHub began applying Copilot’s default policy to unconfigured features.",
+  "uncertainty": "Amazon reports exploit attempts, not confirmed break-ins, and the PHP Foundation says it knows of no successful remote code execution. TechCrunch’s ‘almost 3,000 sign-ins per minute’ refers to a separate Storm-0940 password-spray peak that Microsoft says produced no successful logins; Microsoft says a successful sign-in does not necessarily mean data was taken. The bank story rests on Axios’s unnamed sources, and Morgan Stanley says it has not seen rogue agents on its platforms. Anthropic’s auto mode safety data comes from Claude Code testing, not the other apps. Customer speed and cost figures for the Decisions API and Canva’s quality claims are the companies’ own. Uber has not disclosed costs.",
   "stats": {
-    "filtered": 24,
-    "verified": 8,
+    "filtered": 33,
+    "verified": 11,
     "themes": 5
   },
   "stories": [
     {
-      "id": "php2shell-critical-php-flaws",
+      "id": "php2shell-exploited-before-patch",
       "topic": "trust",
-      "theme": "Two AI-found flaws in PHP put a large share of the web at risk. Patch now",
-      "changed": "On Wednesday 21 October 2026 the PHP project released PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 to fix two critical flaws, CVE-2026-109618 and CVE-2026-109619, rated 9.2 out of 10. Under the right conditions they let an attacker with no login run code on servers running PHP. Both sit in memory and error handling that nearly every request touches, and on Apache with mod_php one can be triggered before any application code runs. Wiz, which calls the bugs PHP2Shell, says every PHP version of the last decade, back to 5.4, is affected by at least one of them, and it showed attacks without a login on WordPress, Drupal and Joomla, as well as reading passwords and API keys from server memory. Researchers at Calif (working in OpenAI’s Patch the Planet programme), OpenAI and Wiz found the flaws with frontier AI models, including GPT-5.6 Sol and Gemini 4 Argon. The release was brought forward a day after the CVE numbers leaked on 20 October. CISA told organisations to patch immediately and to take systems on PHP 8.1 or older offline until they are updated; it had seen no exploitation when it published.",
-      "matters": "PHP runs a large share of websites, including WordPress, and is often hidden inside other products. Wiz says frontier models let it build working exploits for a decade-old flaw in hours. Attackers have the same tools, so working attacks may not be far behind.",
-      "imply": "AI shortens the gap between a fix being published and attacks starting. Patch cycles measured in weeks are no longer safe for internet-facing systems.",
+      "theme": "PHP2Shell was being tried by attackers days before the patch. Check, don’t just update",
+      "changed": "On Thursday 22 October 2026 Amazon said its threat intelligence team saw an attempt to exploit PHP2Shell, the two critical PHP flaws patched on 21 October, on 17 October, four days before the fix, against one of its MadPot decoy servers and from an IP address on an anonymising network. Amazon says several working exploit demonstrations appeared from about 02:00 UTC on 21 October, before the embargo lifted at 14:00 UTC, and that it is now seeing broad exploitation attempts in the wild. The PHP Foundation says details of the bugs leaked before it could release the fix; its executive director, Elizabeth Barron, told The Verge that to its knowledge no attempt at remote code execution has succeeded, but that updating is imperative. Amazon says there is no configuration-only workaround, and advises upgrading, considering blocking multipart file uploads where they are not needed, and searching logs for unusual POST requests carrying PHP_SESSION_UPLOAD_PROGRESS.",
+      "matters": "Yesterday’s advice was to patch fast. Now the question is also whether a server was probed before you patched. A clean update does not prove nothing happened in the days before it.",
+      "imply": "Treat the public disclosure date as the latest possible start of attacks, not the earliest. Incident checks need to look back before the patch date.",
       "uses": [
-        "Ask IT and every web agency or vendor today which of your sites run PHP and on what version, and update to 8.5.12, 8.4.27, 8.3.36 or 8.2.35.",
-        "Treat anything on PHP 8.1 or older as urgent: upgrade it, or take it offline as CISA advises.",
-        "If you cannot patch at once, switch on your host’s or CDN’s firewall rules for PHP2Shell and watch for PHP processes starting shells."
+        "Confirm every PHP site and product is on 8.5.12, 8.4.27, 8.3.36 or 8.2.35, including ones run by agencies and hosts.",
+        "Ask IT or your host to search web logs from 17 October onwards for POST requests carrying PHP_SESSION_UPLOAD_PROGRESS.",
+        "Block multipart file uploads on sites that do not need them, as Amazon suggests."
       ],
-      "example": "A marketing team finds that a campaign microsite an agency built on WordPress still runs PHP 8.1. The agency takes it offline that afternoon and brings it back on PHP 8.4.27 the next day.",
-      "audience": "IT and security teams, website owners, web agencies, and any company running WordPress, Drupal or other PHP software.",
-      "watch": "Reports of attacks in the wild. Fixes from hosts and from products that bundle PHP. Whether more AI-found flaws of this size follow, as OpenAI says it expects.",
+      "example": "An e-commerce team that patched on 21 October asks its host to check logs back to 17 October. Two odd upload requests turn up on a staging site, which is rebuilt and its keys rotated.",
+      "audience": "IT and security teams, website owners and the agencies and hosts that run PHP sites.",
+      "watch": "Confirmed break-ins, as opposed to attempts. How the exploit details leaked. Fixes for products that bundle PHP.",
       "source": {
-        "title": "The PHP Foundation: Today’s PHP security release, and how we’re strengthening PHP security, 21 October 2026",
-        "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
-        "quote": "These releases fix two critical vulnerabilities that, under the right conditions, allow an unauthenticated attacker to execute code on servers running PHP."
+        "title": "The Verge: The disastrous PHP vulnerabilities were exploited days before the patch, 22 October 2026",
+        "url": "https://www.theverge.com/tech/1016798/php-vulnerabilities-exploit-patch",
+        "quote": "Hackers attempted to exploit the PHP flaws impacting sites across the web days before they were patched, according to a report from Amazon Threat Intelligence."
       }
     },
     {
-      "id": "litellm-release-hijacked",
+      "id": "storm-0940-ai-agent-attacks",
       "topic": "trust",
-      "theme": "A hijacked LiteLLM release stole the keys AI teams use to reach their models",
-      "changed": "On Wednesday 21 October 2026 attackers pushed a malicious version of LiteLLM, a popular open-source gateway that companies use to send requests to many AI providers, through the project’s own release pipeline. Version 1.107.0 was on PyPI from 11:39 to 13:23 UTC, and the Docker images tagged v1.107.0, latest, main-latest and main-stable pointed to the bad build until as late as 14:20 UTC. The malware runs whenever Python starts, steals credentials and can load more code. LiteLLM says the attacker held GitHub CLI tokens belonging to three of its developers, used one owner’s token to override branch protection, and published from a lookalike repository. It believes the tokens came from the logs of an internal LiteLLM deployment exposed to the internet, and says that in some situations Claude Code had embedded a user’s GitHub CLI token in a response that was then logged. The same day, hosting platform Railway said an intruder may have read some customers’ decrypted environment variables, in what it believes is a series of attacks on platform companies aimed at AI inference providers, and GitHub let CLI users opt in to access tokens that stop working within hours.",
-      "matters": "An AI gateway holds the keys to every model provider a company uses, so one poisoned update can expose all of them at once. Attackers are now going after AI keys and the developer tokens around them.",
-      "imply": "AI gateways and the machines that run coding agents are high-value targets. Pinned versions, secret-free logs and short-lived tokens are basic hygiene now.",
+      "theme": "Chinese hackers used an AI agent framework to break into companies through ConnectWise backup",
+      "changed": "On Thursday 22 October 2026 TechCrunch reported that China state-aligned hackers spied on thousands of companies after breaching ConnectWise’s cloud backup service, formerly SkyKick. In a report published on 21 October, Microsoft says the group, Storm-0940, stole the credentials of ConnectWise’s trusted app, which customers had already granted access to their Microsoft 365 data, and used them to try to sign in to more than 2,250 customer tenants without any user signing in. It ran the attacks with ARTEX, an open-source penetration testing framework in which AI agents carry out an attack from reconnaissance to data theft with little human help. Microsoft says it saw cases where the time from first targeting to privileged access was under three hours, and agents changing app credentials and privileges that can act as a backdoor after the original app is fixed. ConnectWise paused access to its cloud backup service; as of Thursday it said it was working on restoring it.",
+      "matters": "Apps you have already approved, like backup tools, can reach your email and files without anyone logging in. When attackers use AI agents, the time from break-in to damage shrinks to hours.",
+      "imply": "Third-party app access in Microsoft 365 and Google Workspace needs the same scrutiny as staff accounts. Alerts that wait for the next working day are too slow.",
       "uses": [
-        "Check whether any machine or container installed litellm 1.107.0 or pulled the latest Docker tags on 21 October. If so, rebuild it and rotate every key it could reach.",
-        "Pin LiteLLM and other AI packages to exact versions, and do not deploy a ‘latest’ tag automatically.",
-        "Turn on GitHub CLI’s expiring tokens, and stop storing full request and response bodies from coding agents in logs."
+        "If you use ConnectWise Cloud Backup, follow its containment guidance and check the app’s sign-ins and changes since early October.",
+        "Ask IT to review service principal sign-ins and any new app credentials, owners or privileged roles in Microsoft 365.",
+        "List the third-party apps with access to company mail and files, and remove the ones no one uses."
       ],
-      "example": "A platform team finds that a staging LiteLLM container restarted on the latest tag around midday UTC on 21 October. It rebuilds the container on 1.106.2 and rotates its OpenAI, Anthropic and cloud keys the same afternoon.",
-      "audience": "Engineering, platform and security teams running AI gateways, Python AI tools or coding agents, and Railway customers.",
-      "watch": "LiteLLM’s final findings on how its internal deployment was reached. Whether Anthropic responds on the Claude Code token issue. More attacks on companies that serve AI models.",
+      "example": "An IT manager finds an unused backup app still has read access to every mailbox. She removes it, then sets an alert for any new credentials added to apps.",
+      "audience": "IT and security teams, managed service providers and companies on Microsoft 365.",
+      "watch": "How many tenants had data taken. ConnectWise’s restoration timeline. Whether ARTEX shows up in more attacks.",
       "source": {
-        "title": "LiteLLM: Oct 21, 2026 LiteLLM release v1.107.0 compromised, 21 October 2026",
-        "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
-        "quote": "If you ran pip install on LiteLLM v1.107.0 or started the docker image in the compromised interval, assume it is compromised."
+        "title": "TechCrunch: Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise, 22 October 2026",
+        "url": "https://techcrunch.com/2026/10/22/chinese-hackers-spied-on-thousands-of-companies-after-breaching-it-giant-connectwise/",
+        "quote": "By stealing the credentials, the hackers could log in to the customer’s Microsoft-hosted environment as if they were an authorized user and access their emails and other files."
       }
     },
     {
-      "id": "openai-gateways-need-approval",
+      "id": "banks-restrict-ai-agents",
       "topic": "rules",
-      "theme": "From 20 November, AI gateways need OpenAI’s approval to offer its models",
-      "changed": "On Wednesday 21 October 2026 OpenAI said it is updating its Usage Policies from 20 November 2026. Services that give direct access to its models, such as model routers and AI gateways, will need OpenAI’s review and approval before offering that access. OpenAI says partners that host or resell its models must keep safeguards consistent with its own, investigate possible violations, and coordinate on enforcement so that restrictions stay effective across every service that offers its models. It is also working with customers on SafetyIDs, which customers can send so OpenAI can tell individual end users apart in an investigation without learning who they are, and act on one user with less disruption to others. The announcement came a day after Anthropic let platforms and resellers restrict a single end customer instead of a whole account.",
-      "matters": "Many companies reach OpenAI models through a router or gateway rather than directly. From 20 November those services need OpenAI’s sign-off, and a restriction is meant to hold across every service that offers its models.",
-      "imply": "The big labs are tightening control over who resells their models and expect to tell end users apart. Expect fewer unvetted gateways and more requests for user identifiers.",
+      "theme": "Big US banks are blocking AI agents that log in with customers’ passwords",
+      "changed": "On Thursday 22 October 2026 Axios reported that major US banks are detecting unauthorised third-party AI agents inside customer accounts, some trying to take actions that appear independent of what the user asked. These are usually agents a customer has handed their login to, which goes against most banks’ rules that people log in themselves. According to Axios’s sources, Morgan Stanley has begun blocking third-party agents, and JPMorgan, Bank of America and Citi are also restricting them. Most banks have allowed, or are moving towards, read-only access, so agents can see financial information but not act. A Chase spokesperson said customers should not give their usernames and passwords to anyone, and sources said many banks cannot tell whether agent activity was directed by the user.",
+      "matters": "Agents that pay bills, move money or file expenses on someone’s behalf may suddenly be locked out. Sharing a bank password with an agent can also break the bank’s terms.",
+      "imply": "Banks are moving agents to read-only, official access. Finance workflows built on agents with shared logins need a different route.",
       "uses": [
-        "List every router, gateway or reseller your teams use to reach OpenAI models, and ask each whether it has OpenAI’s approval.",
-        "If you run an internal AI gateway for staff, ask OpenAI or your account team whether the new rule covers it.",
-        "If you build products on OpenAI, plan to send SafetyIDs so one misbehaving user does not get your whole account restricted."
+        "Check whether any finance or expense workflow lets an agent log in to a bank account with a person’s password, and stop it.",
+        "Ask your bank which agent or API access it supports, and whether it is read-only.",
+        "Tell staff not to give bank logins to personal AI assistants."
       ],
-      "example": "A start-up that serves GPT models to its customers through a third-party router asks the router for written confirmation of OpenAI approval before 20 November, and keeps a direct OpenAI key tested as a fallback.",
-      "audience": "CTOs, platform and procurement teams, and companies building or reselling AI products.",
-      "watch": "The full text of the updated Usage Policies. Which gateways are approved. Whether internal company gateways count. Whether Google follows.",
+      "example": "A small business owner’s assistant agent had been logging in to the business bank account to download statements. She switches it to the bank’s read-only data feed instead.",
+      "audience": "Finance teams, small business owners and anyone using AI agents with bank accounts.",
+      "watch": "Formal agent access rules from banks. Whether regulators weigh in. More blocks beyond the four named banks.",
       "source": {
-        "title": "OpenAI: Broad access through consistent standards, 21 October 2026",
-        "url": "https://openai.com/index/broad-access-through-consistent-standards",
-        "quote": "The updated Usage Policies build on that work by requiring services that provide direct access to our models such as model routers or AI gateways to get our review and approval before offering that access."
+        "title": "Axios: Scoop: Unvetted AI agents are accessing U.S. bank accounts, 22 October 2026",
+        "url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
+        "quote": "Major U.S. banks are detecting unauthorized third-party AI agents operating inside customer accounts, with some agents attempting to take actions that appear to be independent of user instructions, sources tell Axios."
       }
     },
     {
-      "id": "claude-duet-proactive-agent",
-      "topic": "work",
-      "theme": "Anthropic’s Claude Duet watches your work apps and acts, but asks first",
-      "changed": "On Wednesday 21 October 2026 Anthropic opened a research preview of Claude Duet, a separate app on iOS, Android and claude.ai in which Claude works as a proactive agent. Access is by waitlist, starting with Pro and Max subscribers in the US, and it shares the plan’s usage limits with the rest of Claude. Built around Claude Opus 5.5, it sends a short morning brief on the most important items across your connected apps, checks those apps every few hours and messages you when something needs you, and works on tasks in the background in its own virtual machine with a browser, so your laptop can be off. It carries over your Claude memory, skills and connected apps, and can use the more than 6,000 connectors and plugins in the Claude Marketplace, from Gmail and Slack to QuickBooks, Stripe, Gusto and Docusign. Before it sends a message, makes a payment, signs a document or deletes anything, it shows exactly what it will do and waits for approval; trading securities and moving money between accounts are off-limits even with approval. A new classifier rejects requests to share card numbers and government ID. Anthropic says it may misread a thread or misjudge what is urgent, and that its background checks count against your limits.",
-      "matters": "Assistants are moving from answering when asked to watching your inbox and accounts and acting on them. The approval step is the main safeguard, so it only works if the person approving actually reads what they approve.",
-      "imply": "Agents with standing access to email, calendars and finance tools are arriving for professionals and small businesses. Companies will need rules on which work accounts may be connected to them.",
-      "uses": [
-        "If you join the preview, connect one or two work apps first and judge the morning brief for a week before connecting finance tools.",
-        "Decide which actions always need a person’s approval, such as payments, payroll and contracts, and never approve them without reading.",
-        "IT teams: decide whether staff may connect company email and Slack to a personal Pro or Max plan."
-      ],
-      "example": "A small-agency owner asks Duet to check Stripe for unpaid invoices every Friday and draft reminders. She reads each draft before approving it, and keeps payroll off its list.",
-      "audience": "Small-business owners, consultants and managers on Claude Pro or Max in the US, and IT teams setting AI rules.",
-      "watch": "When it reaches other countries and Team or Enterprise plans. How much of a plan’s limits the background checks use. How well its judgement about what is urgent holds up.",
-      "source": {
-        "title": "Claude by Anthropic: Introducing Claude Duet, 21 October 2026",
-        "url": "https://claude.com/resources/articles/claude-duet",
-        "quote": "before it sends a message, makes a payment, signs a document, or deletes anything, it shows you exactly what it’s about to do and waits for your approval."
-      }
-    },
-    {
-      "id": "claude-security-continuous-scans",
+      "id": "1password-for-agents",
       "topic": "tools",
-      "theme": "Claude Security now rescans your code as it changes and tracks fixes",
-      "changed": "On Wednesday 21 October 2026 Anthropic released a new version of Claude Security, its AI code-vulnerability scanner, in public beta for Claude Enterprise customers. Instead of one-off scans, it runs a deep baseline scan of connected repositories, through the Claude GitHub app (including GitHub Enterprise Server) or an access token for GitLab and other Git providers, then rescans changes based on their risk and complexity. It marks findings fixed when the fix lands, wherever the fix was made, and reopens them if the issue comes back. Each project has a knowledge base where teams describe how code is deployed and which controls apply, plus an editable threat model generated from the code that sets each finding’s severity, and findings explain how an attacker could reach the code. A new API with webhooks, an MCP connector for Claude Code, and role-based access controls are included. Anthropic says thousands of organisations have used it to find more than a million vulnerabilities since April, and is giving organisations $25,000 of free usage a month for two months, for usage up to 31 December 2026.",
-      "matters": "On the day AI-found PHP flaws hit much of the web, a scanner that keeps pace with every change matters more. Fix tracking turns a one-off audit into a shared, running list for security and engineering.",
-      "imply": "AI code scanning is becoming part of the normal development pipeline, not an annual exercise. The context and threat model you give it will decide how useful its findings are.",
+      "theme": "1Password lets AI agents sign in for you without ever seeing the password",
+      "changed": "On Thursday 22 October 2026 1Password announced 1Password for Agents. When an agent reaches a sign-in page, it asks for a credential from your vault; you review and approve the request in 1Password, and 1Password fills the login into the site directly, so the agent never sees the password or one-time code. Integrations with Meta’s Muse and SpaceXSI’s Grok Bot are rolling out over the coming days; Anthropic’s Claude Duet, OpenAI’s ChatGPT Work and dots, and Town’s Townie are coming soon; and integrations with Instinct, Browserbase, Browser Use, Dana, KERNEL, Perplexity, Ramp, Tomo and Wajo are planned. It is available at no extra cost for 1Password Individual and Family accounts on 1Password.com.",
+      "matters": "Giving an agent your password, or pasting it into a prompt, hands over access beyond the task. Approving each login keeps a person in charge of what the agent can reach.",
+      "imply": "Agent sign-in is becoming a separate, approvable step. Expect password managers and identity tools to become the gate for agent access.",
       "uses": [
-        "If you are on Claude Enterprise, use the free credits to scan one critical service and compare the findings with your current scanner.",
-        "Fill in the knowledge base properly: how code is deployed, which controls exist and what outsiders can reach.",
-        "Send new findings to your ticket system through webhooks so each one gets an owner."
+        "If you use 1Password at home, try it with one agent on a low-risk site before using it for work accounts.",
+        "Ask your 1Password business admin when 1Password for Agents is coming to company accounts.",
+        "Stop pasting passwords into chat prompts, and change any you already have."
       ],
-      "example": "A fintech security team connects its payments repositories, records its API gateway’s checks in the knowledge base, and routes new high-severity findings to the owning team’s queue.",
-      "audience": "Security and engineering leads at companies on Claude Enterprise.",
-      "watch": "Pricing after the free credits. How many findings turn out to be false alarms. How it compares with the AI scanners from GitHub and OpenAI.",
+      "example": "A freelancer lets her agent book a venue. When it hits the venue’s login page, she approves the request on her phone and 1Password fills it in, without the password going into the chat.",
+      "audience": "People using personal AI agents, IT and security teams, and 1Password customers.",
+      "watch": "Business plan availability. When the ChatGPT Work and Claude Duet integrations go live. Whether banks accept this kind of agent sign-in.",
       "source": {
-        "title": "Claude by Anthropic: Claude Security now scans continuously and tracks fixes, 21 October 2026",
-        "url": "https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes",
-        "quote": "Claude Security checks open findings against the code that changed and marks them fixed when the fix lands, whether your team fixed it in Claude Code or in a separate process."
+        "title": "1Password: Give personal AI agents access without giving them your passwords, 22 October 2026",
+        "url": "https://1password.com/blog/1password-for-ai-agents",
+        "quote": "Now, with 1Password for Agents, your agent can request to use a credential from your vault, and if you approve the request, 1Password directly auto-fills the credentials in the destination site so the agent doesn’t have access to the credentials."
       }
     },
     {
-      "id": "openai-models-google-cloud",
+      "id": "claude-apps-auto-mode-default",
+      "topic": "work",
+      "theme": "From next week, Claude will stop asking you to approve each step",
+      "changed": "On Thursday 22 October 2026 Anthropic said auto mode will become the default for new sessions in most Claude apps on Pro, Max and Team plans from next week. Instead of asking you to approve each action, an automated check reviews them: safe actions go ahead, and risky ones are blocked while Claude looks for another route. You can switch back to manual at any time. Enterprise admins will get an email before auto mode becomes the default for their organisations. Auto mode has been the default in Claude Code since 14 August; Anthropic says it routes each action through a classifier aimed at blocking actions that are irreversible, destructive or aimed outside your environment, and that in its Claude Code testing it matched or beat manual review on every measure, partly because users approve 97% of permission prompts.",
+      "matters": "Claude will do more on its own in the apps people use at work, including actions in connected tools. Fewer prompts means faster work, but also fewer moments where a person stops a mistake.",
+      "imply": "Agents are moving from approve-every-step to automated checks. Teams need to decide which actions still require a person.",
+      "uses": [
+        "Team admins: check before next week whether you want auto mode on, and tell staff how to switch back to manual.",
+        "Enterprise admins: watch for Anthropic’s email and decide your default before it changes.",
+        "Keep human approval for sending, paying and deleting in connected apps, and test what auto mode blocks."
+      ],
+      "example": "A team lead tries auto mode on a low-risk research task, sees Claude complete several connected-app steps without prompts, then keeps manual mode for the shared finance workspace.",
+      "audience": "Claude Pro, Max, Team and Enterprise users and admins.",
+      "watch": "The exact rollout date. Which actions the check blocks outside code. Admin controls for Team plans.",
+      "source": {
+        "title": "Claude by Anthropic: Auto mode is now the default in Claude Code for Pro, Max, and Team plans (updated 22 October 2026)",
+        "url": "https://claude.com/resources/articles/auto-mode-default-in-claude-code",
+        "quote": "Enterprise admins will get an email before auto mode becomes the default for their organizations."
+      }
+    },
+    {
+      "id": "uber-chatgpt-work-30000",
+      "topic": "work",
+      "theme": "Uber gives ChatGPT Work to all 30,000 employees, then will measure what they do with it",
+      "changed": "On Thursday 22 October 2026 Uber and OpenAI said ChatGPT Work, the agent inside ChatGPT Enterprise, is rolling out to Uber’s whole global workforce of more than 30,000 people. It connects to Google Drive, Gmail, Google Calendar and Slack, and GPT-6.1 Sol is the default model. Uber piloted it with 1,000 employees earlier this year; about 80% were not engineers, Uber’s VP of engineering, Sumanth Sukumar, told TechCrunch, and they used it to analyse operations data, localise training materials and build personal dashboards. The rollout comes with an internal AI skills library, approved integrations and training. Uber did not say what it is spending, and has not settled how staff will use it: it will track usage and workflows and use the results to guide how it deploys AI.",
+      "matters": "This is a company-wide agent rollout aimed mostly at non-engineers. The plan is to give everyone access with guardrails, then measure, rather than pick use cases first.",
+      "imply": "Agents are becoming standard issue for whole workforces. The work shifts to training, shared skills and measuring results.",
+      "uses": [
+        "Start a shared library of prompts and skills that work for your team, as Uber has.",
+        "Pair a technical person with a team for two weeks to automate part of their job, like Uber’s ‘AI pods’.",
+        "Decide upfront what you will measure, such as hours saved or workflows built."
+      ],
+      "example": "A finance team gets ChatGPT Work access, connects Drive and Calendar, and keeps a shared list of the prompts that produce good meeting briefs and variance reports.",
+      "audience": "Operations, finance, HR and IT leaders planning company-wide AI rollouts.",
+      "watch": "What Uber reports from its usage tracking. Cost. Whether other large employers follow.",
+      "source": {
+        "title": "TechCrunch: Uber puts all 30,000 employees on ChatGPT Work, 22 October 2026",
+        "url": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/",
+        "quote": "Our approach is to make powerful AI tools available across Uber while giving teams room to experiment,"
+      }
+    },
+    {
+      "id": "openai-decisions-api-ga",
+      "topic": "tools",
+      "theme": "OpenAI’s Decisions API is generally available: fast yes/no and pick-one answers for apps and agents",
+      "changed": "On Thursday 22 October 2026 OpenAI made its Decisions API generally available. Built with GPT-6 Luna, it answers questions with bounded answers, such as yes/no, pick-one or a score, from text, images and structured data, up to 10 times faster than asking GPT-6 Luna through the Responses API. Since the beta, OpenAI has added a GPT-Live integration so voice apps can react as people speak, prompt caching, native JSON inputs, processing in the US and EU, and up to 400 questions per request. It costs $0.10 per million input tokens, $0.01 for cached input, with no charge for output. OpenAI quotes customers including Box, Datadog, Ramp, Sierra and Speak on speed and cost gains. TechCrunch notes it competes with TypeSafe’s Jev.",
+      "matters": "Many agent steps are small decisions: which team handles this ticket, is this a refund, is this safe to send. A cheap, fast model for those can cut cost and waiting time.",
+      "imply": "Expect apps to split work: small decision models for routing and checks, larger models for writing. Price per decision is now a cost line to compare.",
+      "uses": [
+        "Use it to route support tickets or forms to the right team instead of a full chat model call.",
+        "Ask your developers to test whether checks such as ‘does this need approval?’ get cheaper or faster.",
+        "Compare cost per decision against your current model, using OpenAI’s input-only pricing."
+      ],
+      "example": "A support team sends each incoming email to the Decisions API with three questions: refund or not, which product, how urgent. It routes tickets in well under a second.",
+      "audience": "Developers and product teams building apps, agents and voice tools.",
+      "watch": "Real-world accuracy against larger models. TypeSafe’s response. Rival decision models from others.",
+      "source": {
+        "title": "OpenAI: Build more responsive apps with the Decisions API, 22 October 2026",
+        "url": "https://openai.com/index/decisions-api",
+        "quote": "Decisions API costs $0.10 per million input tokens."
+      }
+    },
+    {
+      "id": "claude-platform-google-cloud",
       "topic": "money",
-      "theme": "OpenAI’s models are coming to Google Cloud, paid from existing commitments",
-      "changed": "On Wednesday 21 October 2026 OpenAI and Google Cloud said OpenAI’s frontier models and Codex agentic workflows are coming to Model Garden, Google Cloud’s catalogue of AI models. Customers will buy them through the Google Cloud Marketplace, and companies with Google Cloud spending commitments will be able to count these purchases against them. OpenAI models will also come to Google Antigravity, Google’s coding tool, and the Gemini Agent. General availability is planned in the coming weeks, with access by request until then. OpenAI says Microsoft remains its primary cloud partner.",
-      "matters": "For companies standardised on Google Cloud, using GPT models no longer means a separate contract and bill. Money already committed to Google can pay for it, and governance stays in one place.",
-      "imply": "Frontier models are becoming available on every major cloud, so the choice of model is separating from the choice of cloud. That gives buyers more room to negotiate.",
+      "theme": "The full Claude Platform comes to Google Cloud, paid from your Google commitment",
+      "changed": "On Thursday 22 October 2026 Anthropic made Claude Models on Google Cloud (Anthropic managed) generally available. Google Cloud customers get the full Claude Platform, including managed agents (beta), code execution, computer use, agent skills, the Files API, web search and prompt caching, with new features and betas arriving the same day as on Anthropic’s own platform. It uses Google Cloud IAM credentials, is billed on a single Google Cloud invoice, and draws down existing Google Cloud commitments. It runs on US and Global endpoints, and Anthropic acts as data processor; the existing Google-managed option, where Google is the data processor, remains. Claude Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 are available, and Fast mode for Opus 5.5, up to 2.5 times faster output, is generally available at $8 and $40 per million input and output tokens.",
+      "matters": "Companies on Google Cloud can use Claude’s newest features without a separate contract, and pay from money already committed to Google. The day before, OpenAI announced its models are coming to Google Cloud too.",
+      "imply": "Your cloud commitment is becoming a budget for any frontier model. Buyers get leverage, but must choose who processes their data.",
       "uses": [
-        "If you have a Google Cloud commitment, ask your account team how OpenAI usage will count against it and how its price compares with buying from OpenAI directly.",
-        "Request preview access and run the same tasks on GPT and Gemini models side by side.",
-        "Check whether your Google Cloud security and data-residency reviews cover OpenAI models served there."
+        "If you have a Google Cloud commitment, ask your account team how Claude usage will count against it.",
+        "Have legal check which option you need: Anthropic as data processor, or Google-managed with Google as processor.",
+        "Price Fast mode only for interactive work where speed matters, at $8 and $40 per million tokens."
       ],
-      "example": "A retailer with a large Google Cloud commitment plans to move an email-drafting workload from a separate OpenAI contract to Model Garden once it is generally available, paying from its existing commitment.",
-      "audience": "CTOs, cloud, finance and procurement teams at companies on Google Cloud.",
-      "watch": "Prices, models and regions at general availability. When GPT arrives in Antigravity and the Gemini Agent.",
+      "example": "A software company that builds on Claude moves its agent to the Anthropic-managed Google Cloud offering, keeps prompt caching, and counts the spend against its existing Google commitment.",
+      "audience": "CTOs, finance and procurement teams, and developers on Google Cloud.",
+      "watch": "Regional endpoints beyond the US and Global. Whether pricing differs from Anthropic direct. A similar move on other clouds.",
       "source": {
-        "title": "OpenAI: OpenAI models are coming to Google Cloud, 21 October 2026",
-        "url": "https://openai.com/index/openai-models-google-cloud/",
-        "quote": "Enterprises with Google Cloud spend commitments will be able to draw down their GCP commitments for these purchases."
+        "title": "Claude by Anthropic: The full Claude Platform, available on Google Cloud, 22 October 2026",
+        "url": "https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed",
+        "quote": "Billing is through a single Google Cloud invoice and Claude usage draws down your existing Google Cloud commitment."
       }
     },
     {
-      "id": "chatgpt-ads-89-countries",
-      "topic": "money",
-      "theme": "ChatGPT ads now run in 89 countries, with more than 100,000 advertisers",
-      "changed": "On Wednesday 21 October 2026 OpenAI expanded ChatGPT ads to 26 more countries, bringing them to 89. The new markets include 14 more Latin American countries, among them Argentina, Chile, Colombia and Peru, as well as countries such as Nigeria, South Africa, Serbia, Ukraine, Cambodia, Bangladesh and Pakistan. OpenAI says more than 100,000 advertisers have run campaigns in the eight months since ads launched, and that more than 1.2 billion people use ChatGPT each week. Ads appear only on the Free and Go plans; Plus, Pro and Enterprise stay ad-free. Advertisers can buy through technology partners or self-serve through Ads Manager. OpenAI says conversations are kept private from advertisers, ads are labelled and kept separate from answers, and advertising does not influence what ChatGPT says. Next it plans more ad formats, objectives, buying options and measurement.",
-      "matters": "ChatGPT is becoming an ad channel in many more markets, reaching people while they compare options and decide what to buy. For marketers it is a new place to appear; staff using free accounts for work will see ads next to their answers.",
-      "imply": "AI assistants are turning into a marketing channel, much as search did. Expect growing pressure on brands to show up in AI answers, paid and unpaid.",
+      "id": "canva-craft-image-model",
+      "topic": "tools",
+      "theme": "Canva launches Craft, its own image model trained on designs rather than photos",
+      "changed": "On Thursday 22 October 2026 Canva released Canva Craft, its first image generation model. It works in two stages: it first plans the layout, including how elements relate, their relative size and the text to render, then generates an image of up to 2K resolution in any of 30 aspect ratios. Canva says it was trained on human-designed templates from its library, such as posters, social posts, presentations, menus and text-heavy layouts, rather than photographs, and that images can be turned into layered, editable designs. It is available to all Canva users from the Dream Lab tab and through the Canva API, and Canva plans to bring it to ChatGPT and Gemini through its MCP connector. Cheaper versions, Craftfast and Craft-ultrafast, are coming.",
+      "matters": "Marketing and comms teams already in Canva get an image model built for layouts and legible text, which general image models often get wrong. Results can be edited as designs, not just regenerated.",
+      "imply": "Design tools are building their own models instead of renting them. Expect quicker on-brand drafts inside the tools teams already use.",
       "uses": [
-        "Marketing teams in the new countries: run a small test campaign through Ads Manager and compare cost per lead with search ads.",
-        "Check how your brand and competitors appear in ChatGPT answers to the questions customers ask before buying.",
-        "If staff use free ChatGPT accounts for work, remind them that ads are not advice, or move them to a paid business plan."
+        "Try Craft in Dream Lab on a poster or social post with real text, and check the spelling and layout.",
+        "Convert a generated image into a layered design and edit the text instead of regenerating.",
+        "Check your brand and licensing rules for AI-generated images before using Craft in campaigns."
       ],
-      "example": "An online furniture shop in Colombia runs a two-week test of ChatGPT ads around conversations about furnishing a new flat, and compares the cost per order with its search ads.",
-      "audience": "Marketing and growth teams, especially in Latin America, Africa, Eastern Europe and South Asia, and managers choosing ChatGPT plans.",
-      "watch": "New ad formats and measurement tools. Independent checks that ads do not affect answers. Which countries come next.",
+      "example": "A comms officer generates an event poster in Dream Lab with the date and venue in the image, converts it into a layered design, and swaps in the brand font.",
+      "audience": "Marketing, comms and design teams, and anyone using Canva at work.",
+      "watch": "Craftfast and Craft-ultrafast. The ChatGPT and Gemini integration through MCP. Plan limits and pricing.",
       "source": {
-        "title": "OpenAI: ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform, 21 October 2026",
-        "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-        "quote": "Ads will appear only on the Free and Go plans."
+        "title": "TechCrunch: Canva releases its first image generation model, 22 October 2026",
+        "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
+        "quote": "Canva Craft is available on the company’s platform to all users, who can access the model from the Dream Lab tab."
       }
     },
     {
-      "id": "walmart-agent-gateway-rules",
+      "id": "arc-browser-sunset",
+      "topic": "work",
+      "theme": "Arc browser shuts down on 22 December. Plan the move now",
+      "changed": "On Thursday 22 October 2026 The Browser Company said it will shut down its Arc browser on 22 December 2026 and is pointing users to Dia, its AI-first browser, citing the rising cost of keeping a browser secure in the age of AI. New Arc accounts can no longer be created. On 23 November, Arc Search on iOS and Android loses its AI features, including Browse for Me, and sign-in and tab sync. On 22 December, Arc stops working entirely on Mac and Windows, accounts are deactivated, and personal data is deleted within 30 days. Passwords, bookmarks, extensions and history transfer to Dia, and Arc features remain free in Dia, with AI optional. The Browser Company was bought by Atlassian in 2025.",
+      "matters": "Anyone who works in Arc has two months to move bookmarks, passwords and setups before the browser stops and the data is deleted.",
+      "imply": "AI browsers are replacing older ones, and the security burden is the stated reason. Moving to Dia means deciding whether its AI features are allowed at work.",
+      "uses": [
+        "If your team uses Arc, set a migration date well before 22 December.",
+        "Export or transfer passwords and bookmarks, and check that saved logins still work afterwards.",
+        "If you move to Dia, check your company’s rules on AI browser features before turning them on."
+      ],
+      "example": "A design studio where half the team uses Arc picks a Friday in November to move everyone to Dia or Chrome, with IT checking passwords and extensions.",
+      "audience": "Arc users, IT teams supporting Macs and Windows PCs, and startups that standardised on Arc.",
+      "watch": "Data deletion after 22 December. Dia’s enterprise and security controls. Whether Atlassian bundles Dia with its products.",
+      "source": {
+        "title": "TechCrunch: Arc browser sunsets December 22 as The Browser Company doubles down on Dia, 22 October 2026",
+        "url": "https://techcrunch.com/2026/10/22/arc-browser-sunsets-december-22-as-the-browser-company-doubles-down-on-dia/",
+        "quote": "On December 22, Arc will stop working entirely on Mac and Windows."
+      }
+    },
+    {
+      "id": "copilot-default-policy-enforced",
       "topic": "rules",
-      "theme": "Walmart gives shopping agents their own profiles, spending limits and rules",
-      "changed": "On Wednesday 21 October 2026 Walmart introduced tools and terms for AI agents that shop for customers at Walmart and Sam’s Club. The Walmart Agent Gateway, an MCP server starting as a beta for companies and developers, lets approved agents search inventory and buy for a user, and can help an agent find a customer’s usual items without sharing their wider purchase history. Agent Profiles, arriving within the next month, give each agent its own profile inside the customer’s account, so its purchases show separately, with either approval for every purchase or a spending limit the customer sets, such as $50, $100 or $200. Walmart’s terms say agents may not go beyond what the shopper intends, never receive payment-card details, may use only the information the task needs, and will be blocked if they break the rules. Purchases need approval by default, and Walmart’s returns process applies even when an agent does not act as intended. Chief executive John Furner announced it at the Masters of Scale Summit, shortly after Amazon began blocking AI agents from buying for shoppers.",
-      "matters": "Big retailers are splitting on agents: Amazon blocks them, Walmart writes rules for them. Separate profiles, spending caps and returns for agent mistakes are a template for any business that lets agents act on customer accounts.",
-      "imply": "Agents are getting their own identities, limits and terms of use, much like an extra cardholder. Other retailers and suppliers will have to choose between blocking agents and opening a gateway.",
+      "theme": "GitHub starts applying Copilot’s default policy to settings you never configured",
+      "changed": "On Thursday 22 October 2026 GitHub began gradually enforcing its global default policy for generally available Copilot features on Copilot Business and Copilot Enterprise, with the rollout running through 26 October, so it may take effect at different times for different enterprises and organisations. Once it applies, eligible features, client capabilities and MCP servers left unconfigured are set to the chosen global default: Enabled, Disabled, or Let organisations decide. GitHub says this is a one-time change; later changes to the default will not change settings already in place. Features you have explicitly enabled or disabled keep that setting, and preview features stay opt-in. The setting is under AI Controls → Copilot → Default policy for new features.",
+      "matters": "Copilot features and MCP servers nobody chose may switch on or off across your organisation this week. If your default is Enabled, new AI capabilities can reach developers without a review.",
+      "imply": "AI admin settings now default to on unless someone decides otherwise. ‘Unconfigured’ is becoming a choice in itself.",
       "uses": [
-        "E-commerce teams: decide whether to block, tolerate or welcome AI shopping agents, and write down the terms they must follow.",
-        "If you let an agent buy for your business, give it its own profile or account and a spending limit.",
-        "Check how your returns and disputes process handles purchases an agent made by mistake."
+        "Copilot admins: check AI Controls → Copilot → Default policy for new features before 26 October.",
+        "Set explicit choices for MCP servers and features you want reviewed first.",
+        "Tell developers which Copilot features to expect, so changes are not a surprise."
       ],
-      "example": "A café owner links a shopping agent to her Walmart account with a $100 limit for weekly supplies. Anything above the limit waits for her approval, and the agent’s orders appear separately from her own.",
-      "audience": "E-commerce, retail and payments teams, and small businesses that use agents for purchasing.",
-      "watch": "When Agent Profiles launch and which agents are approved. Whether Amazon and other retailers change course.",
+      "example": "An enterprise admin finds the default set to Enabled, switches it to Let organisations decide, and explicitly disables two MCP servers until security reviews them.",
+      "audience": "GitHub enterprise and organisation admins, engineering managers and security teams.",
+      "watch": "Which features count as eligible. Admin feedback on the rollout. Similar defaults in other AI tools.",
       "source": {
-        "title": "TechCrunch: While Amazon blocks AI agents, Walmart rolls out the welcome mat, 21 October 2026",
-        "url": "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/",
-        "quote": "Of note, Walmart says that its returns process applies, including when an agent doesn’t act as intended."
+        "title": "GitHub Changelog: Global default for Copilot features generally available, 22 October 2026",
+        "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available/",
+        "quote": "Explicit choices are preserved. If you’ve enabled or disabled an individual feature, the rollout won’t change that setting."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Patch PHP now",
-        "body": "Two AI-found PHP flaws let attackers run code on web servers. Update to 8.5.12, 8.4.27, 8.3.36 or 8.2.35."
+        "title": "PHP2Shell hit before patch",
+        "body": "Amazon saw attackers try the PHP flaws four days before the fix. Patch, then check logs back to 17 October."
       },
       {
-        "title": "LiteLLM release poisoned",
-        "body": "A hijacked LiteLLM 1.107.0 stole credentials for two hours. If you installed it, rebuild and rotate keys."
+        "title": "AI agents breach via backup",
+        "body": "Storm-0940 used ARTEX agents and stolen ConnectWise app credentials to target 2,250+ Microsoft 365 tenants."
       },
       {
-        "title": "Claude Duet arrives",
-        "body": "Anthropic’s agent app watches your work apps, runs tasks and asks before it pays, sends or deletes."
+        "title": "Claude goes auto by default",
+        "body": "From next week, Claude apps on Pro, Max and Team stop asking to approve each step. Switch back anytime."
       }
     ],
     "matters": [
       {
-        "title": "AI speeds up attackers too",
-        "body": "Decade-old bugs can now be exploited in hours. Shorten patch times for internet-facing systems."
+        "title": "Approved apps are a way in",
+        "body": "Backup and other trusted apps can reach mail and files without a login. Review third-party app access."
       },
       {
-        "title": "Gateways hold every key",
-        "body": "AI routers and proxies concentrate credentials. Pin versions, keep secrets out of logs, rotate often."
+        "title": "Agents need their own access",
+        "body": "Banks are blocking agents that use shared passwords. Use read-only feeds and approval-based sign-in."
       },
       {
-        "title": "Agents get their own limits",
-        "body": "Walmart caps agent spending and OpenAI will vet gateways. Give agents separate accounts and limits."
+        "title": "Cloud budgets buy any model",
+        "body": "Claude and OpenAI models can now be paid from Google Cloud commitments. Use that to negotiate."
       }
     ],
     "watch": [
       {
-        "title": "PHP attacks",
-        "body": "Whether working exploits spread, and how fast hosts and bundled software ship the fix."
+        "title": "PHP break-ins",
+        "body": "Whether attempts turn into confirmed compromises, and how the exploit details leaked."
       },
       {
-        "title": "OpenAI’s 20 November rules",
-        "body": "The full Usage Policies text, and which routers and gateways get approved."
+        "title": "Bank rules for agents",
+        "body": "Formal read-only or API access from banks, and whether regulators set rules."
       },
       {
-        "title": "OpenAI on Google Cloud",
-        "body": "Prices, models and regions when general availability arrives in the coming weeks."
+        "title": "Auto mode rollout",
+        "body": "The exact date, admin controls for Team plans, and what the automated check blocks."
       }
     ]
   },
   "chips": [
-    "PHP",
     "PHP2Shell",
-    "CVE-2026-109618",
-    "CISA",
-    "Wiz",
-    "Patch the Planet",
-    "LiteLLM",
-    "PyPI",
-    "supply chain",
-    "Railway",
-    "GitHub CLI",
-    "OpenAI",
-    "Usage Policies",
-    "AI gateways",
-    "SafetyIDs",
+    "Amazon MadPot",
+    "PHP Foundation",
+    "ConnectWise",
+    "Storm-0940",
+    "ARTEX",
+    "Microsoft 365",
+    "banks",
+    "Morgan Stanley",
+    "JPMorgan",
+    "1Password",
+    "agent sign-in",
     "Anthropic",
-    "Claude Duet",
-    "Opus 5.5",
-    "Claude Security",
+    "auto mode",
+    "Claude",
+    "Uber",
+    "ChatGPT Work",
+    "GPT-6.1 Sol",
+    "OpenAI",
+    "Decisions API",
+    "GPT-6 Luna",
     "Google Cloud",
-    "Model Garden",
-    "Codex",
-    "ChatGPT Ads",
-    "Walmart",
-    "Agent Gateway",
+    "Opus 5.5",
+    "Canva Craft",
+    "Arc",
+    "Dia",
+    "GitHub Copilot",
     "MCP"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "PHP Foundation 21 Oct: PHP 8.5.12/8.4.27/8.3.36/8.2.35 fix CVE-2026-109618 and -109619 (CVSS 9.2), unauthenticated RCE; Wiz PHP2Shell: back to 5.4, pre-auth RCE on WordPress/Drupal/Joomla, memory disclosure; found with GPT-5.6 Sol and Gemini 4 Argon; CISA: patch now, take 8.1 and older offline",
+      "raw": "Amazon/The Verge 22 Oct: PHP2Shell attempt seen on MadPot 17 Oct from anonymising-network IP; PoCs from ~02:00 UTC 21 Oct before 14:00 UTC embargo lift; broad exploitation attempts now; PHP Foundation: details leaked, no known successful RCE; no config-only workaround",
       "topic": "Trust"
     },
     {
       "id": "s2",
-      "raw": "LiteLLM 21 Oct: malicious 1.107.0 on PyPI 11:39–13:23 UTC, Docker latest/main tags to 14:20 UTC; credential stealer; attacker used three developers’ GitHub CLI tokens, lookalike repo Berri-AI/litellm; pin 1.106.2, rotate keys. Railway: env vars possibly read; GitHub CLI expiring tokens preview",
+      "raw": "Microsoft 21 Oct / TechCrunch 22 Oct: Storm-0940 used ARTEX agentic pentest framework and stolen ConnectWise Cloud Backup OAuth app credentials; sign-in attempts to 2,250+ tenants; privileged access in under 3 hours in some cases; review service principal sign-ins; ConnectWise restoring service",
       "topic": "Trust"
     },
     {
       "id": "s3",
-      "raw": "OpenAI 21 Oct: Usage Policies update effective 20 Nov; model routers and AI gateways need OpenAI review and approval; partners must match safeguards and coordinate enforcement; SafetyIDs for end users",
+      "raw": "Axios 22 Oct: US banks detecting unauthorised third-party AI agents in customer accounts; Morgan Stanley blocking; JPMorgan, BofA, Citi restricting; moves to read-only access; Chase: don’t share usernames and passwords",
       "topic": "Rules"
     },
     {
       "id": "s4",
-      "raw": "Anthropic 21 Oct: Claude Duet research preview (waitlist, US Pro/Max), iOS/Android/claude.ai, Opus 5.5, morning brief, checks apps every few hours, own VM and browser, 6,000+ connectors, approval before send/pay/sign/delete, no trading or money moves",
-      "topic": "Work"
-    },
-    {
-      "id": "s5",
-      "raw": "Anthropic 21 Oct: Claude Security public beta for Enterprise: continuous rescans, fix tracking, knowledge base and threat model, API, webhooks, MCP, RBAC; $25k free usage a month for two months through 31 Dec",
+      "raw": "1Password 22 Oct: 1Password for Agents; agent requests credential, user approves, 1Password autofills, agent never sees password or OTP; Muse and Grok Bot rolling out, Claude Duet, ChatGPT Work, dots, Townie soon; free on Individual/Family (1Password.com)",
       "topic": "Tools"
     },
     {
+      "id": "s5",
+      "raw": "Anthropic 22 Oct: auto mode default for new sessions in most Claude apps on Pro, Max, Team from next week; automated check blocks risky actions; switch to manual anytime; Enterprise admins emailed first",
+      "topic": "Work"
+    },
+    {
       "id": "s6",
-      "raw": "OpenAI 21 Oct: frontier models and Codex coming to Google Cloud Model Garden via Marketplace; draw down GCP commitments; Antigravity and Gemini Agent soon; GA in coming weeks; Microsoft remains primary cloud partner",
-      "topic": "Money"
+      "raw": "Uber/OpenAI 22 Oct: ChatGPT Work to 30,000+ employees; GPT-6.1 Sol default; Drive, Gmail, Calendar, Slack; pilot 1,000 (80% non-engineers); skills library and training; cost undisclosed",
+      "topic": "Work"
     },
     {
       "id": "s7",
-      "raw": "OpenAI 21 Oct: ChatGPT Ads in 26 more countries (89 total); 100,000+ advertisers in eight months; 1.2B weekly users; ads only on Free and Go; Ads Manager self-serve",
-      "topic": "Money"
+      "raw": "OpenAI 22 Oct: Decisions API GA, built with GPT-6 Luna, up to 10x faster than Luna via Responses API; GPT-Live, prompt caching, JSON inputs, US/EU, 400 questions/request; $0.10/M input, $0.01 cached, no output charge",
+      "topic": "Tools"
     },
     {
       "id": "s8",
-      "raw": "Walmart/TechCrunch 21 Oct: Agent Gateway MCP beta; Agent Profiles next month with per-purchase approval or spending limits ($50/$100/$200); agent terms: no card data, returns apply, non-compliant agents blocked; Amazon blocking agents",
+      "raw": "Anthropic 22 Oct: Claude Models on Google Cloud (Anthropic managed) GA; full Claude Platform features; Google Cloud IAM, single invoice, commitment drawdown; US and Global endpoints; Fast mode Opus 5.5 GA $8/$40 per M",
+      "topic": "Money"
+    },
+    {
+      "id": "s9",
+      "raw": "Canva/TechCrunch 22 Oct: Canva Craft image model, plan-then-render, up to 2K, 30 aspect ratios, trained on Canva templates; Dream Lab for all users, Canva API, MCP for ChatGPT/Gemini planned; Craftfast, Craft-ultrafast coming",
+      "topic": "Tools"
+    },
+    {
+      "id": "s10",
+      "raw": "The Browser Company/TechCrunch 22 Oct: Arc sunsets 22 Dec 2026; no new accounts; Arc Search loses AI and sync 23 Nov; data deleted within 30 days; passwords, bookmarks, extensions, history transfer to Dia",
+      "topic": "Work"
+    },
+    {
+      "id": "s11",
+      "raw": "GitHub 22 Oct: Copilot global default policy enforcement rolling out through 26 Oct for Business/Enterprise; unconfigured features and MCP servers set to default; explicit choices preserved; previews stay opt-in",
       "topic": "Rules"
     }
   ]
