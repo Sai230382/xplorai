@@ -21,9 +21,12 @@ export function SiteNav() {
 
   return (
     <header className={`v4-nav${solid ? " is-solid" : ""}${open ? " is-open" : ""}`}>
-      <a className="v4-brand" href="#top" aria-label="XplorAI, back to top">
-        <Logo />
-      </a>
+      <div className="v4-brand-lockup">
+        <a className="v4-brand" href="#top" aria-label="XplorAI, back to top">
+          <Logo />
+        </a>
+        <span className="v4-byline">by S.AI</span>
+      </div>
       <button
         className="v4-nav-toggle"
         type="button"

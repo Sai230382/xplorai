@@ -271,6 +271,23 @@ button {
   text-decoration: none;
 }
 
+.v4-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.v4-byline {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 .v4-logo {
   display: inline-flex;
   align-items: center;
@@ -1249,6 +1266,29 @@ button {
   margin: 0 auto;
   padding: 24px var(--gutter) 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.v4-footer-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+}
+
+.v4-credit {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--on-night-muted);
+}
+
+.v4-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
 .v4-footer-bottom nav {
