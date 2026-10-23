@@ -26,9 +26,19 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="v4-footer-bottom">
-        <a className="v4-brand" href="#top" aria-label="XplorAI, back to top">
-          <Logo tone="light" />
-        </a>
+        <div className="v4-footer-brand">
+          <a className="v4-brand" href="#top" aria-label="XplorAI, back to top">
+            <Logo tone="light" />
+          </a>
+          <p className="v4-credit">
+            {"by S.AI ("}
+            <a href="https://x.com/Shoonyagyaan" target="_blank" rel="noopener">
+              Sai Kiran
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            {")"}
+          </p>
+        </div>
         <nav aria-label="Footer">
           <a href="#brief">The Brief</a>
           <a href="#on-x">On X</a>
