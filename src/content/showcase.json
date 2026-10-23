@@ -1,23 +1,203 @@
 [
   {
-    "id": "2108369354991759658",
-    "url": "https://x.com/techartist_/status/2108369354991759658",
-    "author_name": "Techartist",
-    "author_handle": "@techartist_",
-    "created_at": "2026-10-09T01:30:00.000Z",
-    "text": "I built a 3D game where you fly a plane through an entire hurricane.\n\nBuilt with Claude Opus 5.5 using Three.js, runs in the browser. https://t.co/BZqr9tC1Gp",
-    "model_or_tool": "Claude Opus 5.5 (with Three.js)",
-    "what_they_built": "A browser-based 3D flight game where you pilot a plane through a hurricane.",
+    "id": "2111861310619029557",
+    "url": "https://x.com/RafaCrackYT/status/2111861310619029557",
+    "author_name": "Rafa",
+    "author_handle": "@RafaCrackYT",
+    "created_at": "2026-10-18T16:45:47.000Z",
+    "text": "🇫🇷 I asked 4 AI models to take me back to Paris in 1996. 100% code. 🇫🇷\n\nSame prompt, one-shot:\nOpus 5.5: $73.80 · 2h56m\nGemini 4 Argon: ~$2.50 · 30m\nDeepSeek Flash 1017: $0.34 · 46m\nGrok 4.7: ~$7 · 2h07m\n\nOpus nailed the vibe, but DeepSeek got almost on its level for 217x less 🤯 https://t.co/D0KTSW315S",
+    "model_or_tool": "Opus 5.5, Gemini 4 Argon, DeepSeek Flash 1017, Grok 4.7",
+    "what_they_built": "A one-shot, all-code 3D recreation of Paris in 1996, built side by side by four different AI models.",
     "has_media": true,
     "public_metrics": {
-      "bookmark_count": 1010,
-      "impression_count": 131881,
-      "like_count": 2485,
-      "quote_count": 36,
-      "reply_count": 130,
-      "retweet_count": 185
+      "bookmark_count": 322,
+      "impression_count": 103366,
+      "like_count": 980,
+      "quote_count": 15,
+      "reply_count": 75,
+      "repost_count": 47
     },
-    "preview": "/showcase/2108369354991759658.webp"
+    "preview": "/showcase/2111861310619029557.webp"
+  },
+  {
+    "id": "2111256122040406443",
+    "url": "https://x.com/aimikoda/status/2111256122040406443",
+    "author_name": "Kōda",
+    "author_handle": "@aimikoda",
+    "created_at": "2026-10-17T00:40:59.000Z",
+    "text": "Supper Run\nLoved these characters! Had to animate them.\n\nGenerated with Seedance 2.5, color grading made with Opus 5.5\nAlso upscaled this video using a local upscaler I built with Opus 5.5. It was tailored to my computer's hardware and upscaling to 4K took about 3 hours using https://t.co/aDyDkwpjcY https://t.co/UAEblpBBuR",
+    "model_or_tool": "Seedance 2.5, Opus 5.5",
+    "what_they_built": "An animated short called Supper Run, color-graded and upscaled to 4K with a local tool built using Opus 5.5.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 302,
+      "impression_count": 19002,
+      "like_count": 590,
+      "quote_count": 2,
+      "reply_count": 41,
+      "repost_count": 42
+    },
+    "preview": "/showcase/2111256122040406443.webp"
+  },
+  {
+    "id": "2112213933272490380",
+    "url": "https://x.com/sorenxet/status/2112213933272490380",
+    "author_name": "sorenxet",
+    "author_handle": "@sorenxet",
+    "created_at": "2026-10-19T16:06:59.000Z",
+    "text": "I made a cozy fishing game alone with Claude Opus 5.5, Blender, a 3D model generator and Unity 6, and the whole method is one rule: every tool gets one job and never touches another.\n\nThe setup:\n\nStep 1 -&gt; Tripo Smart Mesh P2 generates every model: palms, rocks, the pier, the https://t.co/RZATnMUSGE https://t.co/9ZAV69fKZZ",
+    "model_or_tool": "Claude Opus 5.5 (with Blender, Tripo, Unity 6)",
+    "what_they_built": "A cozy 3D island fishing game made solo, with AI-generated models and Blender animation wired up by Claude.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 396,
+      "impression_count": 35477,
+      "like_count": 505,
+      "quote_count": 3,
+      "reply_count": 26,
+      "repost_count": 21
+    },
+    "preview": "/showcase/2112213933272490380.webp"
+  },
+  {
+    "id": "2110948510040502475",
+    "url": "https://x.com/RuzainaMeer/status/2110948510040502475",
+    "author_name": "Ruzaina",
+    "author_handle": "@RuzainaMeer",
+    "created_at": "2026-10-16T04:18:38.000Z",
+    "text": "What if you could walk through London 600 years ago? 🏰⚔️\nI built a 30-second travel vlog set in 1400s medieval London — the markets the food the chaos the streets — all of it completely real completely alive.\nMade with Seedance 2.5 on @supercool_hq 🎬✨ https://t.co/xzZ83mD9Nk",
+    "model_or_tool": "Seedance 2.5",
+    "what_they_built": "A 30-second travel-vlog-style video walking through the markets and streets of medieval 1400s London.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 25,
+      "impression_count": 35813,
+      "like_count": 269,
+      "quote_count": 2,
+      "reply_count": 50,
+      "repost_count": 99
+    },
+    "preview": "/showcase/2110948510040502475.webp"
+  },
+  {
+    "id": "2111868813507473437",
+    "url": "https://x.com/inspiredDZN/status/2111868813507473437",
+    "author_name": "InspiredDZN",
+    "author_handle": "@inspiredDZN",
+    "created_at": "2026-10-18T17:15:36.000Z",
+    "text": "Every design here was made with Claude Opus 5.5, using a system I built around my own work.\n\nHere’s how it works:\n\nI used my Inspired Pin Saver to collect my best designs on Pinterest. That collection became my reference library: my layouts, my colours, my typography, my taste. https://t.co/TriIz8zvWV https://t.co/LpbqEiVQ43",
+    "model_or_tool": "Claude Opus 5.5 (with Nano Banana 2.1, GPT Image 2.5, Figma)",
+    "what_they_built": "A set of poster and ad designs made by a custom Claude skill that learned the designer's own style and builds layouts in Figma.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 75,
+      "impression_count": 5712,
+      "like_count": 179,
+      "quote_count": 2,
+      "reply_count": 9,
+      "repost_count": 8
+    },
+    "preview": "/showcase/2111868813507473437.webp"
+  },
+  {
+    "id": "2112215957276070188",
+    "url": "https://x.com/kevin_t_ngo/status/2112215957276070188",
+    "author_name": "Kevin Ngo",
+    "author_handle": "@kevin_t_ngo",
+    "created_at": "2026-10-19T16:15:01.000Z",
+    "text": "I built a realistic ant colony simulator.\n\nDrop something sweet on the kitchen counter, like a sugar cube, and ants come out of the wall to find it.\n\nClick on any ant to follow her. You can also see inside the nest to watch the queen, eggs and larvae.\n\nMade with Claude Opus 5.5. https://t.co/RzaWqyzAV5",
+    "model_or_tool": "Claude Opus 5.5",
+    "what_they_built": "A realistic ant colony simulator where ants leave the wall to find sugar and you can look inside the nest.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 59,
+      "impression_count": 9539,
+      "like_count": 171,
+      "quote_count": 3,
+      "reply_count": 22,
+      "repost_count": 7
+    },
+    "preview": "/showcase/2112215957276070188.webp"
+  },
+  {
+    "id": "2113022598368067751",
+    "url": "https://x.com/icreatelife/status/2113022598368067751",
+    "author_name": "Kris Kashtanova",
+    "author_handle": "@icreatelife",
+    "created_at": "2026-10-21T21:40:20.000Z",
+    "text": "I built a cozy game to learn Japanese kanji 🍁\n\nYou sail a little boat around an autumn lake and collect glowing kanji floating over the things they mean. Mountain, temple, lake, leaves.\n\nI made it with Claude Opus 5.5 \nIt cost me $6 to bring this idea to life.\n\nPlay it  here👇 https://t.co/OyRuh0nFwk",
+    "model_or_tool": "Claude Opus 5.5",
+    "what_they_built": "A cozy browser game for learning Japanese kanji by sailing a boat around an autumn lake.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 23,
+      "impression_count": 5458,
+      "like_count": 170,
+      "quote_count": 1,
+      "reply_count": 40,
+      "repost_count": 13
+    },
+    "preview": "/showcase/2113022598368067751.webp"
+  },
+  {
+    "id": "2111533418068804062",
+    "url": "https://x.com/notjazii/status/2111533418068804062",
+    "author_name": "J A Z I I",
+    "author_handle": "@notjazii",
+    "created_at": "2026-10-17T19:02:51.000Z",
+    "text": "kimi k3 vs deepseek v4.1-1017\n\ntested both models with same prompt at highest reasoning available and results came out different\n\n&gt; kimi took 2.5 hours and cost $35\n&gt; deepseek took 1.5 hours and cost $0.80\n\nkimi was expensive but made full game with nether, end world and good https://t.co/Wv0v51kDvI https://t.co/nUrGEoYDOG",
+    "model_or_tool": "Kimi K3, DeepSeek V4.1 Flash 1017",
+    "what_they_built": "Two playable Minecraft-style games built from the same prompt by Kimi K3 and DeepSeek, compared on cost and quality.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 21,
+      "impression_count": 10875,
+      "like_count": 158,
+      "quote_count": 2,
+      "reply_count": 21,
+      "repost_count": 2
+    },
+    "preview": "/showcase/2111533418068804062.webp"
+  },
+  {
+    "id": "2112499188957344210",
+    "url": "https://x.com/thebuggeddev/status/2112499188957344210",
+    "author_name": "The Bugged Dev",
+    "author_handle": "@thebuggeddev",
+    "created_at": "2026-10-20T11:00:29.000Z",
+    "text": "I gave Gemini 4 Argon one hell of a challenge. \n\nTo Rebuild the Cathedral of Football, Wembley Stadium, in the browser 🏟️\n\nAnd result is a fully interactive 3D stadium with 90,360 individually clickable seats, allowing you to select any Block, Row and Seat and fly straight to https://t.co/6RAgujZThH",
+    "model_or_tool": "Gemini 4 Argon (Three.js WebGPU)",
+    "what_they_built": "An interactive 3D Wembley Stadium in the browser with 90,000+ clickable seats that fly you to that seat's view.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 53,
+      "impression_count": 8583,
+      "like_count": 147,
+      "quote_count": 2,
+      "reply_count": 12,
+      "repost_count": 7
+    },
+    "preview": "/showcase/2112499188957344210.webp"
+  },
+  {
+    "id": "2111200797430370485",
+    "url": "https://x.com/superalesha/status/2111200797430370485",
+    "author_name": "Alexey Fateev",
+    "author_handle": "@superalesha",
+    "created_at": "2026-10-16T21:01:08.000Z",
+    "text": "I made a full multiplayer Bodycam-style shooter that runs in the browser. Opus 5.5, Astra and Kimi K3 built it, GLM-5.3 helped a bit. \n\nDark, oppressive atmosphere. 2 maps, PvP and PvE with bots, 8 guns, destructible environment.\n\nJust watch the trailer. This is a genuinely https://t.co/1bFZdmgjX4",
+    "model_or_tool": "Opus 5.5, GPT-6 Astra, Kimi K3, GLM-5.3",
+    "what_they_built": "A dark multiplayer bodycam-style shooter that runs in the browser, with PvP, bots and destructible maps.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 27,
+      "impression_count": 6577,
+      "like_count": 93,
+      "quote_count": 3,
+      "reply_count": 19,
+      "repost_count": 6
+    },
+    "preview": "/showcase/2111200797430370485.webp"
   },
   {
     "id": "2110057926799073462",
@@ -58,185 +238,5 @@
       "retweet_count": 80
     },
     "preview": "/showcase/2110333960702091428.webp"
-  },
-  {
-    "id": "2108432503128354890",
-    "url": "https://x.com/M__Houser/status/2108432503128354890",
-    "author_name": "Mike Houser",
-    "author_handle": "@M__Houser",
-    "created_at": "2026-10-09T05:40:56.000Z",
-    "text": "I spent my last $1400 building my Permadeath ARPG with AI in a weekend and it already has over 5000 hours of playtime with over 1100 players made with Opus 5.5 on @TesanaAI \n\nI built the first version of Aestra: The Last Wish in a weekend for around $100. A real-time pixel action https://t.co/B7oWFypCTA",
-    "model_or_tool": "Opus 5.5",
-    "what_they_built": "A permadeath action RPG built in a weekend that already has 1,100+ players.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 139,
-      "impression_count": 16884,
-      "like_count": 211,
-      "quote_count": 1,
-      "reply_count": 26,
-      "retweet_count": 18
-    },
-    "preview": "/showcase/2108432503128354890.webp"
-  },
-  {
-    "id": "2107828818165833976",
-    "url": "https://x.com/Rubzem/status/2107828818165833976",
-    "author_name": "S",
-    "author_handle": "@Rubzem",
-    "created_at": "2026-10-07T13:42:06.000Z",
-    "text": "My original \"No Man's Sky\" game built with 1 prompt went viral: 3M+ views and 12,000+ unique players. \n\nSo I kept going and added 1000-player multiplayer + an enormous Ringworld. I'm now on my fourth prompt on @TesanaAI\n\nMy original game now has:\n→ 1000+ player multiplayer. https://t.co/sboVYxvtAI",
-    "model_or_tool": null,
-    "what_they_built": "A one-prompt 'No Man's Sky'-style space game, now extended with 1000-player multiplayer.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 556,
-      "impression_count": 79442,
-      "like_count": 841,
-      "quote_count": 12,
-      "reply_count": 86,
-      "retweet_count": 81
-    },
-    "preview": "/showcase/2107828818165833976.webp"
-  },
-  {
-    "id": "2109685404383228023",
-    "url": "https://x.com/brudvik/status/2109685404383228023",
-    "author_name": "Morten Brudvik",
-    "author_handle": "@brudvik",
-    "created_at": "2026-10-12T16:39:31.000Z",
-    "text": "A song sung by an AI agent that wants you to click \"Always allow\".\n\nMade the way @anabology made ESCAPE VELOCITY: Claude Code ran the production, with Midjourney stills, Seedance 2.5 motion and every graphic drawn in code on the beat. Thank you for the inspiration and the method. https://t.co/Mq3C3rWcsN",
-    "model_or_tool": "Claude Code, Midjourney",
-    "what_they_built": "An AI-produced song and music video sung by an agent asking you to click 'Always allow'.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 346,
-      "impression_count": 27343,
-      "like_count": 478,
-      "quote_count": 13,
-      "reply_count": 33,
-      "retweet_count": 59
-    },
-    "preview": "/showcase/2109685404383228023.webp"
-  },
-  {
-    "id": "2107520888497393888",
-    "url": "https://x.com/0xInk_/status/2107520888497393888",
-    "author_name": "INK",
-    "author_handle": "@0xInk_",
-    "created_at": "2026-10-06T17:18:30.000Z",
-    "text": "SOLO LEVELING\n\nMade with Midjourney, GPT image 2 and Seedance 2.5 https://t.co/RhMeg1ovzN",
-    "model_or_tool": "Midjourney, GPT Image 2, Seedance 2.5",
-    "what_they_built": "A cinematic Solo Leveling fan video made from AI images and video.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 255,
-      "impression_count": 23799,
-      "like_count": 679,
-      "quote_count": 3,
-      "reply_count": 38,
-      "retweet_count": 35
-    },
-    "preview": "/showcase/2107520888497393888.webp"
-  },
-  {
-    "id": "2109024841290654186",
-    "url": "https://x.com/premiumtantan/status/2109024841290654186",
-    "author_name": "Tân Tân Nguyễn",
-    "author_handle": "@premiumtantan",
-    "created_at": "2026-10-10T20:54:40.000Z",
-    "text": "Revisiting a book design I made when I was in school for typography. Flipping interactions &amp; texture added with Opus 5.5. https://t.co/7qPXXCF0pQ",
-    "model_or_tool": "Opus 5.5",
-    "what_they_built": "An interactive flip-through typography book design with added textures.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 654,
-      "impression_count": 48822,
-      "like_count": 761,
-      "quote_count": 14,
-      "reply_count": 18,
-      "retweet_count": 92
-    },
-    "preview": "/showcase/2109024841290654186.webp"
-  },
-  {
-    "id": "2108501673878634959",
-    "url": "https://x.com/marouane53/status/2108501673878634959",
-    "author_name": "Marouane Lamharzi Alaoui",
-    "author_handle": "@marouane53",
-    "created_at": "2026-10-09T10:15:47.000Z",
-    "text": "I built GeoInt, an open-source skill for Codex and Claude Code that finds where any photo was taken, with proof.\n\nIt reads every detail in the image, like signs, plates, buildings, plants and the light. It searches several reverse image engines, runs multiple vision models on https://t.co/lsKroFNTiB",
-    "model_or_tool": "Codex / Claude Code",
-    "what_they_built": "GeoInt, an open-source agent skill that geolocates any photo with evidence.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 495,
-      "impression_count": 62432,
-      "like_count": 933,
-      "quote_count": 12,
-      "reply_count": 81,
-      "retweet_count": 51
-    },
-    "preview": "/showcase/2108501673878634959.webp"
-  },
-  {
-    "id": "2107641212291424400",
-    "url": "https://x.com/tradphi/status/2107641212291424400",
-    "author_name": "Rish Dodhia",
-    "author_handle": "@tradphi",
-    "created_at": "2026-10-07T01:16:37.000Z",
-    "text": "Conveyor belt software doesn’t have to feel like conveyor belt software.\n\nManage a mine like you’re playing a strategy game.\n\nBuilt with Opus 5.5 https://t.co/qnlVxkI4Lf",
-    "model_or_tool": "Opus 5.5",
-    "what_they_built": "Mine-management software designed to feel like a strategy game.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 205,
-      "impression_count": 9462,
-      "like_count": 238,
-      "quote_count": 0,
-      "reply_count": 6,
-      "retweet_count": 15
-    },
-    "preview": "/showcase/2107641212291424400.webp"
-  },
-  {
-    "id": "2109740471891448202",
-    "url": "https://x.com/kellyeld/status/2109740471891448202",
-    "author_name": "Kelly Boesch🏳️‍🌈",
-    "author_handle": "@kellyeld",
-    "created_at": "2026-10-12T20:18:20.000Z",
-    "text": "AI Art Installations. I just love making these. Images: #Midjourney #Anination #VEO The song was made using #Suno. I made up lyrics as an experiment. It’s called “Kala Vai”. \n\n#ai #aiart #music #aivideo https://t.co/t7FX43O2zI",
-    "model_or_tool": "Midjourney, Veo, Suno",
-    "what_they_built": "Animated AI art installations set to an original AI-generated song.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 184,
-      "impression_count": 15940,
-      "like_count": 752,
-      "quote_count": 14,
-      "reply_count": 53,
-      "retweet_count": 141
-    },
-    "preview": "/showcase/2109740471891448202.webp"
-  },
-  {
-    "id": "2110035757691703722",
-    "url": "https://x.com/chiziaruhoma/status/2110035757691703722",
-    "author_name": "Chizi",
-    "author_handle": "@chiziaruhoma",
-    "created_at": "2026-10-13T15:51:41.000Z",
-    "text": "Introducing Eleven: reverse engineering with your agent.\n\ni've always wanted to open any app and just ask what a function does, instead of staring at assembly for hours. so i built it\n\nwith Eleven you can:\n→ open Mac apps, Android APKs, Windows and Linux binaries, and read every https://t.co/y7UakNgVnb",
-    "model_or_tool": null,
-    "what_they_built": "Eleven, a tool for reverse-engineering apps by asking your agent what functions do.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 725,
-      "impression_count": 72255,
-      "like_count": 746,
-      "quote_count": 11,
-      "reply_count": 48,
-      "retweet_count": 136
-    },
-    "preview": "/showcase/2110035757691703722.webp"
   }
 ]
