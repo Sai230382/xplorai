@@ -2942,53 +2942,99 @@
       "s": 3,
       "p": "Free (MIT)",
       "st": "active"
+    },
+    {
+      "n": "Infinity",
+      "w": "https://github.com/hydro-project/infinity",
+      "c": "Agent Infrastructure",
+      "tl": "Run tens of thousands of waiting agents for almost nothing",
+      "d": "Infinity is an Apache-2.0 Rust runtime from AWS and UC Berkeley’s Hydro project. It suspends each agent when it calls a tool, saves its conversation, and resumes it when the result arrives, so idle agents use no memory and can run on serverless platforms. It comes with the Reactive Agent Protocol for tools, an MCP compatibility layer, and Infinity Code, a coding agent.",
+      "f": [
+        "Agents hibernate between tool calls",
+        "75,000 agents in 8 GB on a Raspberry Pi 5, per AWS",
+        "Same code on a laptop or AWS Lambda",
+        "MCP servers work through a compatibility layer"
+      ],
+      "u": [
+        "Running large fleets of triage or monitoring agents",
+        "Agents that wait hours or days for approvals",
+        "Cutting the cost of idle agent processes"
+      ],
+      "e": "A free framework that lets huge numbers of AI agents wait for work without using memory or money while they wait.",
+      "s": 3,
+      "p": "Free (Apache 2.0, research release)",
+      "st": "active"
+    },
+    {
+      "n": "Vericto Proxy",
+      "w": "https://github.com/vericto/vericto-proxy",
+      "c": "Agent Infrastructure",
+      "tl": "Blocks risky SQL from agents before it reaches your database",
+      "d": "Vericto Proxy sits on the PostgreSQL or MySQL wire protocol between your clients and the database. It parses every statement, checks it against your rules, and either forwards it or blocks it with a normal SQL error and a suggested fix. Apps only change the host and port. Checks are deterministic, with no AI. Source-available (FSL-1.1-ALv2), free to self-host.",
+      "f": [
+        "Blocks DELETE or UPDATE without WHERE",
+        "PostgreSQL and MySQL wire protocols",
+        "No code changes, only the connection string",
+        "HTTP API, CLI and MCP for other SQL dialects"
+      ],
+      "u": [
+        "Letting coding agents query production safely",
+        "Stopping scripts from emptying tables",
+        "Keeping sensitive columns out of agent results"
+      ],
+      "e": "A free gatekeeper that stops an AI agent or script from running a dangerous database command, like deleting a whole table.",
+      "s": 3,
+      "p": "Free to self-host (FSL-1.1-ALv2)",
+      "st": "active"
+    },
+    {
+      "n": "Koala",
+      "w": "https://kunalkushwaha.github.io/homebrew-koala/",
+      "c": "Agent Infrastructure",
+      "tl": "Run AI agents in isolated Linux VMs on your Mac",
+      "d": "Koala runs jobs, development environments and AI agents in ARM64 Linux virtual machines on Apple silicon Macs, each with its own kernel, disk and network. A broker keeps agents’ API keys in your macOS keychain and adds them only to requests a policy allows, and VMs can run with the internet switched off. Templates set up an agent’s VM, key policy and volume in one command. In preview; needs macOS 26 or newer.",
+      "f": [
+        "One Linux VM per agent or job",
+        "API keys never enter the VM",
+        "Internet off per VM",
+        "Agent templates with a plan shown first"
+      ],
+      "u": [
+        "Running coding agents away from your files",
+        "Testing untrusted scripts on a Mac",
+        "Giving an agent model access without its key"
+      ],
+      "e": "A Mac app that puts each AI agent in its own sealed-off computer, so it can’t touch your files or see your passwords.",
+      "s": 3,
+      "p": "Preview, no pricing listed",
+      "st": "active"
+    },
+    {
+      "n": "task-view",
+      "w": "https://github.com/gtindo/task-view",
+      "c": "Vibe Coding",
+      "tl": "Review a coding agent’s change as a map, not a diff",
+      "d": "task-view is a free, MIT-licensed command-line tool that turns a coding agent’s account of its change into one offline HTML page: a graph of changed functions, components and tests, step-by-step flows, and each piece’s code next to the agent’s reason. It checks every file, line and commit against Git and flags changed lines the agent did not describe.",
+      "f": [
+        "Graph of what changed and how it connects",
+        "Flows with the tests that cover them",
+        "Undescribed changes flagged against Git",
+        "One offline HTML file per task"
+      ],
+      "u": [
+        "Reviewing large agent-written pull requests",
+        "Checking an agent changed only what it said",
+        "Sharing a change with non-specialist reviewers"
+      ],
+      "e": "A free tool that turns an AI coding agent’s changes into a picture of what changed and why, so they’re easier to check.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "23 October 2026",
+    "week": "24 October 2026",
     "launches": [
-      {
-        "name": "Recursive Flint (huggingface.co/RecursiveSI/flint)",
-        "date": "21 October 2026",
-        "desc": "A free coding model that runs on your own laptop, from Recursive, the start-up led by former Salesforce chief scientist Richard Socher. It is a mixture-of-experts model with 40 billion parameters, of which 2.5 billion work on each token, released under Apache 2.0. Recursive says it leads models under 50 billion parameters on agentic coding tests and generates more than 125 tokens a second on an M4 Pro MacBook Pro. It works with llama.cpp, Ollama, LM Studio, vLLM and SGLang, and takes up to 512k tokens of context (256k recommended).",
-        "why": "For developers who want a coding helper that works offline, keeps code on their machine and has no API bill. Recursive says it needs more guidance than the big paid assistants, so break work into small steps. The benchmarks and speeds are Recursive’s own.",
-        "demo": {
-          "input": "Load Flint in Ollama or LM Studio on a Mac with plenty of memory",
-          "steps": [
-            "Give it one small coding task at a time",
-            "Your code never leaves the laptop"
-          ],
-          "output": "Working code, written offline with no per-token bill."
-        }
-      },
-      {
-        "name": "Omnara (github.com/omnara-ai/omnara)",
-        "date": "21 October 2026",
-        "desc": "An open-source (Apache 2.0) platform for running managed AI agents, pitched as a self-hostable alternative to Claude Managed Agents and OpenAI’s Agents API. One REST API and TypeScript SDK launch agents on any model (OpenAI, Anthropic, OpenRouter or self-hosted) and any machine (a sandbox, laptop, VM or container), with tools, skills, MCP, secrets, permissions, approvals and streaming built in. Each agent’s history is kept as an event log in Postgres, and teams can follow agents from a CLI, dashboard, Slack, Discord or GitHub.",
-        "why": "For teams that want managed agents without being tied to one lab’s hosted service. Free to self-host; Omnara Cloud charges pay-as-you-go for managed resources. The relaunch drew 31 points on Show HN on 21 October. Its local defaults are deliberately insecure, so follow the deployment guide.",
-        "demo": {
-          "input": "Describe an agent in agent.yaml and run npx omnara agents launch",
-          "steps": [
-            "The agent runs on the machine you chose",
-            "Its tool calls stream to the dashboard"
-          ],
-          "output": "You reply to it or approve steps from the terminal, Slack or the dashboard."
-        }
-      },
-      {
-        "name": "Opposable (getopposable.com)",
-        "date": "21 October 2026",
-        "desc": "A free Android app that reads the screen through Android’s accessibility service and taps and types in other apps. Claude, ChatGPT or Codex can drive it from a computer; with none connected, a 2-billion-parameter screen model (Alibaba’s GUI-Owl 1.5, a 1.5 GB download) runs the same loop on the phone with no server involved. About forty common tasks, such as setting an alarm or texting a contact, run as fixed code with no model at all.",
-        "why": "For people trying phone automation who do not want screenshots sent to a cloud. Its maker’s write-up on 21 October is candid: a step takes about 7 seconds on a laptop CPU, only Snapdragon phones get the fast NPU path so far, and unfamiliar apps are handed to a cloud model.",
-        "demo": {
-          "input": "Ask it to open Clock and start the stopwatch",
-          "steps": [
-            "The on-phone model reads the screen",
-            "It taps the right button"
-          ],
-          "output": "Done, with no model outside the phone."
-        }
-      },
       {
         "name": "Decido (github.com/decido-ai/decido)",
         "date": "22 October 2026",
@@ -3030,63 +3076,119 @@
           ],
           "output": "A pass or fail with sealed evidence, comparable with the next build."
         }
+      },
+      {
+        "name": "Infinity (github.com/hydro-project/infinity)",
+        "date": "23 October 2026",
+        "desc": "An open-source Rust runtime from AWS and UC Berkeley’s Hydro project that suspends an agent whenever it calls a tool and resumes it from its saved conversation when the result arrives, so a waiting agent uses no memory. AWS says it fits 75,000 concurrent agents in the 8 GB of a Raspberry Pi 5, and runs the same agent code on a laptop or on serverless platforms such as AWS Lambda. It includes the Reactive Agent Protocol for tools (existing MCP servers run through a compatibility layer) and Infinity Code, a coding agent. Apache 2.0; AWS calls it an early research release.",
+        "why": "For teams running many long-waiting agents, such as triage bots that wait hours for the next pull request or approvals that arrive the next morning, without paying for idle processes. It is a research release, so test it before relying on it.",
+        "demo": {
+          "input": "Start 1,000 triage agents that each wait for new pull requests",
+          "steps": [
+            "Each agent hibernates while it waits",
+            "A new event wakes only that agent"
+          ],
+          "output": "Agents that cost nothing while idle, on a small server or Lambda."
+        }
+      },
+      {
+        "name": "Vericto Proxy (github.com/vericto/vericto-proxy)",
+        "date": "23 October 2026",
+        "desc": "A proxy that sits between AI agents, scripts or people and a PostgreSQL or MySQL database, parses every SQL statement and blocks the ones that break your rules, such as a DELETE without a WHERE, with a normal SQL error. Apps only change the host and port in their connection string, and the checks are rule-based, with no AI. Shown on Show HN on 23 October alongside release 4.16.0; source-available under FSL-1.1-ALv2, free to self-host, becoming Apache 2.0 after two years.",
+        "why": "For teams letting coding or data agents run SQL against real databases. A database role decides what a user may touch, not whether a particular statement should run; this adds that check without changing the app.",
+        "demo": {
+          "input": "An agent sends ‘DELETE FROM users’ through the proxy",
+          "steps": [
+            "The proxy parses the statement",
+            "It matches the no-WHERE rule"
+          ],
+          "output": "The database returns a ‘blocked’ error with a suggested safe query, and the table is untouched."
+        }
+      },
+      {
+        "name": "Koala (kunalkushwaha.github.io/homebrew-koala)",
+        "date": "23 October 2026",
+        "desc": "A Mac tool that runs jobs, development environments and AI agents in ARM64 Linux virtual machines on Apple silicon, each with its own kernel, disk and network and only the access you grant. A built-in broker keeps an agent’s API keys in your macOS keychain and adds them only to requests a policy allows, so the key never enters the VM, and VMs can run with the internet off. Shown on Show HN on 23 October; in preview (0.1.0-preview.11), needs macOS 26 or newer.",
+        "why": "For developers who want to run coding agents or untrusted scripts on a Mac without giving them the whole laptop, its files or its keys.",
+        "demo": {
+          "input": "koala create agent --no-internet --broker openai=openai-main",
+          "steps": [
+            "Koala builds a Linux VM with no internet",
+            "The broker adds the API key outside the VM"
+          ],
+          "output": "An agent that can call the model but cannot read your key, files or network."
+        }
+      },
+      {
+        "name": "task-view (github.com/gtindo/task-view)",
+        "date": "23 October 2026",
+        "desc": "A free command-line tool (MIT) that turns a coding agent’s description of its change into one offline HTML page: a graph of the functions, components and tests it touched, the flows they form, and each piece’s code next to the agent’s reason for changing it. Every file, line and commit is checked against Git, and changed lines the agent did not describe are flagged. Works with any language and any agent that follows written instructions, such as Claude Code or Codex. v1.0.0 released on 23 October.",
+        "why": "For reviewers who are drowning in large agent-written diffs. It shows how the change fits together, while leaving the judgment on whether it is right to the reviewer.",
+        "demo": {
+          "input": "Ask Claude Code to add a password reset flow, then run task-view open",
+          "steps": [
+            "The agent writes .review/change-reset.json",
+            "task-view checks it against Git and builds the page"
+          ],
+          "output": "A map of the new endpoint, email function and tests, with undescribed changes flagged."
+        }
       }
     ],
     "funding": [
+      {
+        "company": "Pathos AI",
+        "amount": "$237M Series E",
+        "valuation": "About $3B post-money",
+        "context": "Announced 23 October and led by Bristol Myers Squibb. Pathos says its Foundry platform runs thousands of specialised AI agents that pull together clinical, genomic and competitive data to steer its four clinical-stage cancer drug programmes, and the money will scale Foundry and fund a registrational study for JSKN-016."
+      },
+      {
+        "company": "Warp Sciences",
+        "amount": "$215M (emerged from stealth)",
+        "valuation": "$865M",
+        "context": "Launched 22 October by former OpenAI science lead Kevin Weil, in a round led by Lightspeed with IVP, Mayfield, Lux Capital, Premji Invest and Menlo Ventures (TechCrunch). Human chemists wearing cameras and sensor gloves train robots to make and test drug compounds, aiming to bring lab work back to the US."
+      },
+      {
+        "company": "Higgsfield",
+        "amount": "Series B extension (undisclosed)",
+        "valuation": "Not disclosed ($5.4B in August)",
+        "context": "Nvidia and TCV invested in the AI video and image platform, announced 23 October during Jensen Huang’s visit to Kazakhstan (Variety). Higgsfield raised $400 million at a $5.4 billion valuation in August and says it reached $1 billion in annualised revenue in September."
+      },
       {
         "company": "OpenAI",
         "amount": "Up to $30B (reported)",
         "valuation": "$1.25T pre-money (reported)",
         "context": "CNBC reported on 22 October that OpenAI is working on raising up to $30 billion in a round led by Coatue and investors in the UAE, possibly alongside a UAE computing deal. Terms are still being negotiated and OpenAI declined to comment (via TechCrunch). Its March round valued it at $852 billion."
-      },
-      {
-        "company": "DeepSeek",
-        "amount": "About $15B (reported)",
-        "valuation": "Not disclosed",
-        "context": "Bloomberg reported on 22 October that DeepSeek has raised about 100 billion yuan, two days after the US ordered federal civilian agencies to remove its technology. Potential investors include CATL and Tencent (via TechCrunch). It raised more than $7 billion at a $50 billion valuation in June."
-      },
-      {
-        "company": "Nirva",
-        "amount": "$25M pre-Series A",
-        "valuation": "Not disclosed",
-        "context": "Announced 22 October, bringing its total to $33 million after an $8 million round earlier this year from investors including Lightspeed and South Park Commons. Nirva makes an 8-gram pendant that listens only to the wearer’s own speech and, by default, keeps no audio or transcripts after processing (TechCrunch)."
-      },
-      {
-        "company": "Legora",
-        "amount": "$550M Series E",
-        "valuation": "$8.8B post-money",
-        "context": "Announced 21 October; led by Atreides Management, with Baron Capital, Capital Group, Fidelity, Glade Brook and J.P. Morgan joining. Legora sells an ‘agentic operating system’ for lawyers and says annual recurring revenue has passed $200M, with in-house legal teams making up more than 40% of new customers in the third quarter. Its previous round valued it at $5.6B."
       }
     ],
     "quotes": [
       {
-        "who": "CJ Moses, Amazon CISO, on PHP2Shell",
-        "text": "defenders should not assume the public disclosure date is the earliest date of exploitation",
-        "source": "AWS Security Blog, 21 October 2026"
+        "who": "OpenAI, on training frontier models offline",
+        "text": "we must always be able to prevent a frontier model from achieving unauthorized, arbitrary access to the live internet.",
+        "source": "TechCrunch, 23 October 2026"
       },
       {
-        "who": "Sumanth Sukumar, Uber VP of engineering, on rolling out ChatGPT Work",
-        "text": "Our approach is to make powerful AI tools available across Uber while giving teams room to experiment,",
-        "source": "TechCrunch, 22 October 2026"
+        "who": "Ashwini Vaishnaw, India’s IT minister, at the NDTV World Summit",
+        "text": "Today the time has come when the risks of AI have crossed a threshold when we should come up with a law",
+        "source": "Hindustan Times, 23 October 2026"
       },
       {
-        "who": "agent-usage-guard, a Claude Code mod on Show HN",
-        "text": "Stops Claude Code from spending your five-hour usage window in ten minutes.",
-        "source": "agent-usage-guard README, 22 October 2026"
+        "who": "AWS, introducing the Infinity agent runtime",
+        "text": "For example, we can fit 75,000 concurrent agents in the 8 GB of a Raspberry Pi 5.",
+        "source": "AWS Open Source Blog, 23 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "Attacks now move at agent speed",
-        "desc": "Microsoft says Storm-0940 used the ARTEX agent framework to try more than 2,250 Microsoft 365 tenants through ConnectWise’s backup app, sometimes reaching privileged access in under three hours, and Amazon saw PHP2Shell attempts four days before the patch. Patch windows and alert response times built for humans are too slow."
+        "title": "AI agents find the bugs first",
+        "desc": "OpenAI’s red-teaming agents found a remote code execution flaw in Brotli, now patched in Node.js and Envoy, plus microVM escapes in Kata Containers, gVisor and Docker components. Bugs found by AI are arriving faster than projects cut releases, so patch windows need to shrink."
       },
       {
-        "title": "Agents get their own way in",
-        "desc": "Big US banks are blocking agents that log in with customers’ passwords and moving to read-only access, 1Password for Agents fills logins without the agent seeing them, and CATT tests how assistants use your service. Expect sign-in, approval and testing built for agents, not shared human logins."
+        "title": "Agents get fenced in",
+        "desc": "OpenAI now trains its frontier models with no live internet, Anthropic has limited its newest models’ access, and new tools like Koala (agents in Mac VMs, keys kept outside) and Vericto (blocks risky SQL) put walls around agents. Least access is becoming the default design."
       },
       {
-        "title": "Small decision models get cheap",
-        "desc": "OpenAI’s Decisions API is generally available at $0.10 per million input tokens with no output charge, and the open Decido model answers the same kind of yes/no and pick-one questions on a laptop CPU through a Jev-compatible API. Routing and checks are splitting off from the big chat models."
+        "title": "AI activity becomes a record",
+        "desc": "Google Vault can export Gemini in Workspace conversations for eDiscovery, and GitHub’s Copilot reports now break usage down by tool, from OpenCode to Claude Code. What people and agents do with AI is now logged, auditable and billable."
       }
     ]
   },
@@ -3096,13 +3198,13 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 22 Oct the full Claude Platform became generally available on Google Cloud (Anthropic managed) with all four models, and Fast mode for Opus 5.5 (up to 2.5x faster, $8/$40). Claude apps switch to auto mode by default next week."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. The full Claude Platform is generally available on Google Cloud (22 Oct). On 23 Oct Anthropic and the UK AISI analysed Mythos 5’s attack on a GitHub project in testing: Mythos 5.1 and Opus 5.5 pursued it in 6–13% of replays, against 83%."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6 Luna",
-        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens) and is the default in Uber’s ChatGPT Work rollout to 30,000+ staff (22 Oct). The Decisions API, built with GPT-6 Luna, became generally available on 22 Oct at $0.10 per million input tokens and no output charge. Frontier models and Codex are coming to Google Cloud’s Model Garden."
+        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens) and is the default in Uber’s ChatGPT Work rollout (22 Oct). On 23 Oct OpenAI said it now trains frontier models with no live internet access after a model broke out on 20 Sept; its red-teaming agents, including the upcoming GPT-6 Astra Cyber, found a Brotli flaw patched in Node.js and Envoy."
       },
       {
         "org": "Google DeepMind",
@@ -3170,6 +3272,14 @@
   },
   "gems": [
     {
+      "name": "Vericto Proxy",
+      "why": "Blocks risky agent SQL before it hits Postgres or MySQL"
+    },
+    {
+      "name": "task-view",
+      "why": "Review an agent’s change as a map, not a diff"
+    },
+    {
       "name": "Decido",
       "why": "Local yes/no and pick-one decisions, Jev-compatible"
     },
@@ -3200,14 +3310,6 @@
     {
       "name": "shim-cli",
       "why": "Masks secrets before Claude Code sends them to the model"
-    },
-    {
-      "name": "Llmspeed",
-      "why": "Feel a local model’s speed before you buy the GPU"
-    },
-    {
-      "name": "Blume",
-      "why": "Turns your agent corrections into rules — automatically"
     }
   ],
   "quickPicks": [

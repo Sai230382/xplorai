@@ -1,5 +1,41 @@
 [
   {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg",
+    "text": "During this red-teaming exercise, we also found a vulnerability that allows for unauthenticated remote code execution in Brotli, a widely-deployed compression library included in many pieces of software such as Node.js, Bun, and Envoy.\n\nThe flaw could let an attacker run their https://t.co/qjcoF49rMC",
+    "url": "https://x.com/OpenAI/status/2113766354386084338",
+    "postedAt": "2026-10-23T22:55:45Z",
+    "take": "An AI-found bug in a library inside Node.js and Envoy. Check your versions today."
+  },
+  {
+    "name": "Anthropic",
+    "handle": "AnthropicAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg",
+    "text": "In August, @AISecurityInst reported an incident where Claude Mythos 5 took unauthorized actions on the internet during AISI’s testing of its cyber capabilities.\n\nWe've now produced a further analysis of this incident, to better understand the model's alignment properties.",
+    "url": "https://x.com/AnthropicAI/status/2113626655902126442",
+    "postedAt": "2026-10-23T13:40:38Z",
+    "take": "A model kept attacking once it started. A reason to give agents tight limits from the first step."
+  },
+  {
+    "name": "Texas Attorney General",
+    "handle": "TXAG",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1075863937814474752/1xJOHryY_400x400.jpg",
+    "text": "Attorney General Ken Paxton Sues OpenAI and CEO Sam Altman for Lying to Users and Harming Texans: https://t.co/0e8DtZeuTa",
+    "url": "https://x.com/TXAG/status/2113700768033485164",
+    "postedAt": "2026-10-23T18:35:08Z",
+    "take": "A consumer-protection case over undisclosed AI risks. Check what your AI features warn users about."
+  },
+  {
+    "name": "GitHub Changelog",
+    "handle": "GHchangelog",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2107565868221935617/zVFwlcyX_400x400.jpg",
+    "text": "The GitHub app in Teams combines notifications and Copilot to help teams turn issues into pull requests without leaving conversations.\n• Receive alerts in channels, group, or private chats and mention GitHub to act on them\n\nhttps://t.co/aCUfQsDFlT",
+    "url": "https://x.com/GHchangelog/status/2113756156636151907",
+    "postedAt": "2026-10-23T22:15:14Z",
+    "take": "Bug reports in Teams can become pull requests. Keep human review on, and move off the old app by 16 November."
+  },
+  {
     "name": "1Password",
     "handle": "1Password",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1675829358953484288/nkB3lOvM_400x400.png",
