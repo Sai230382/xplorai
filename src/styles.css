@@ -1282,6 +1282,7 @@ button {
   font-weight: 500;
   line-height: 1.4;
   color: var(--on-night-muted);
+  white-space: nowrap;
 }
 
 .v4-credit a {
@@ -1289,6 +1290,32 @@ button {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+}
+
+.v4-social {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--on-night-muted);
+}
+
+.v4-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.v4-social-icon {
+  flex: none;
+  width: 14px;
+  height: 14px;
 }
 
 .v4-footer-bottom nav {
