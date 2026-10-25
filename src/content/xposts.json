@@ -1,5 +1,41 @@
 [
   {
+    "name": "Governor Josh Shapiro",
+    "handle": "GovernorShapiro",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1615387734180249603/zU0VItTZ_400x400.jpg",
+    "text": "BREAKING: I just signed into law a bipartisan bill that requires real transparency when it comes to AI use in advertising. \n\nPennsylvanians deserve to know if and when AI is being used in ads — and now, thanks to this new law, any advertisement in the Commonwealth that uses AI technology must make that crystal clear.",
+    "url": "https://x.com/GovernorShapiro/status/2113367920810106899",
+    "postedAt": "2026-10-22T20:32:31Z",
+    "take": "Ads that use AI content in a misleading way now need a label in Pennsylvania. Agree your label wording now."
+  },
+  {
+    "name": "Kimi.ai",
+    "handle": "Kimi_Moonshot",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2086719038798102529/diJGKpOE_400x400.jpg",
+    "text": "Introducing Kimi K3.1 Pro: our most capable 3T-class open-weight model.\n\n🔹 1M-token context, 2.8T total / 104B active params (MoE), Multimodal.\n🔹 Full-project coding: games in Unreal, Unity & Godot.\n🔹 Excels at parametric 3D modeling in Blender & CAD.\n🔹 More reliable at https://t.co/klydcszv02",
+    "url": "https://x.com/Kimi_Moonshot/status/2113680701770068067",
+    "postedAt": "2026-10-23T17:15:24Z",
+    "take": "An open-weight model close to the best closed ones on coding, by its maker’s numbers. Test it on your own tasks."
+  },
+  {
+    "name": "ClaudeDevs",
+    "handle": "ClaudeDevs",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2044472418815893504/xf14RxM8_400x400.png",
+    "text": "We’re adding support for MCP Tasks and Elicitations in Claude.\n\nTasks let Claude give plugins long-running jobs such as deep research and report back when they’re done. https://t.co/JOgGufK7yD",
+    "url": "https://x.com/ClaudeDevs/status/2113698001889927608",
+    "postedAt": "2026-10-23T18:24:08Z",
+    "take": "Agents can hand off slow jobs and ask before risky steps. Add a ‘confirm’ question before deploys."
+  },
+  {
+    "name": "Ars Technica",
+    "handle": "arstechnica",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2215576731/ars-logo_400x400.png",
+    "text": "Updated Google privacy policy says your Gmail might be used for advertising https://t.co/98zUi0daRa",
+    "url": "https://x.com/arstechnica/status/2113728349243944966",
+    "postedAt": "2026-10-23T20:24:44Z",
+    "take": "Connecting Gmail to Google’s AI search can now shape ads. Keep work files out of personal accounts."
+  },
+  {
     "name": "OpenAI",
     "handle": "OpenAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg",

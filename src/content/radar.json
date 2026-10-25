@@ -3030,51 +3030,139 @@
       "s": 3,
       "p": "Free (MIT)",
       "st": "active"
+    },
+    {
+      "n": "Argus SecOps",
+      "w": "https://github.com/thomasunise/argus",
+      "c": "Agent Infrastructure",
+      "tl": "Open-source security operations where AI agents investigate and you approve",
+      "d": "Argus is an MIT-licensed, self-hosted security operations platform. Seven specialist AI agents triage and investigate alerts with read-only tools, and response playbooks use typed, reversible actions that start in shadow mode and can be approved from Slack. It also includes an AI gateway with model allowlists, data-loss checks and budgets, shadow-AI discovery, and canaries that catch rogue agents. Not a certified product; autonomous features ship off by default.",
+      "f": [
+        "Read-only investigation agents that only propose fixes",
+        "27 typed, reversible response actions with shadow mode",
+        "AI gateway with org-held keys, allowlists and budgets",
+        "Agent canaries: fake MCP server and fake API keys"
+      ],
+      "u": [
+        "Triaging security alerts with a small team",
+        "Finding AI tools staff use without approval",
+        "Catching misbehaving agents on your network"
+      ],
+      "e": "A free security system where AI helpers look into suspicious activity and suggest fixes, but a person approves every action.",
+      "s": 3,
+      "p": "Free (MIT, self-hosted)",
+      "st": "active"
+    },
+    {
+      "n": "Enzyme",
+      "w": "https://github.com/byenzyme/enzyme",
+      "c": "Productivity",
+      "tl": "Lets your coding agent search and cite months of Markdown notes",
+      "d": "Enzyme is an Apache-2.0, local-first tool that builds a search index over a folder of Markdown notes, such as an Obsidian vault, meeting notes or agent memory, using its folders, tags, links and dates. Claude Code, Codex and similar agents use it to find and cite related notes across months; it also writes questions about what was decided or left open in each area. Search runs on your machine; setup can use Enzyme’s hosted service.",
+      "f": [
+        "Indexes notes by meaning and wording together",
+        "Uses existing folders, tags and links",
+        "Local search; notes stay in place",
+        "Installs into Claude Code, Codex and others"
+      ],
+      "u": [
+        "Asking an agent why a decision was made",
+        "Pulling up past meeting notes about a person or project",
+        "Giving an agent memory written as Markdown"
+      ],
+      "e": "A free tool that lets an AI assistant search your own notes and point to exactly where an answer came from.",
+      "s": 3,
+      "p": "Free (Apache 2.0)",
+      "st": "active"
+    },
+    {
+      "n": "Narro",
+      "w": "https://swrdfish.github.io/Narro/",
+      "c": "Audio & Voice",
+      "tl": "Reads any web page or Kindle book aloud, with voices that can run in your browser",
+      "d": "Narro is a free, MIT-licensed Chrome extension that reads the page you are on aloud and highlights each sentence, including the Kindle Cloud Reader. Use your own OpenAI, ElevenLabs, Gemini or OpenRouter key for cloud voices, or in-browser voices such as Kokoro, Supertonic 2, Piper or Kitten TTS that keep text on your computer. No account, analytics or servers of its own.",
+      "f": [
+        "Sentence-by-sentence highlighting",
+        "In-browser voices, nothing sent off your computer",
+        "Cloud voices with your own key",
+        "Kindle Cloud Reader support"
+      ],
+      "u": [
+        "Listening to long reports while commuting",
+        "Proofreading by ear",
+        "Reading Kindle books aloud"
+      ],
+      "e": "A free browser add-on that reads web pages and Kindle books out loud, and can do it without sending the text anywhere.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "Vulnerability Fix Skills (Cognition)",
+      "w": "https://github.com/CognitionAI/devin-vuln-fixes",
+      "c": "Vibe Coding",
+      "tl": "Agent skills that find and patch the PHP, Node.js and GitLab flaws across your repos",
+      "d": "Three MIT-licensed Agent Skills from Cognition, released 22 October, for the PHP2Shell flaws, the Node.js 21 October security release (including the Brotli bug) and a critical self-managed GitLab flaw. Each takes a read-only inventory of versions across Dockerfiles, CI, Helm and Terraform, stops for approval, patches only to fixed versions it has confirmed exist, tests before and after, and opens one PR per repo. Works in Devin, Claude Code, Codex, Cursor and other agents that read SKILL.md files.",
+      "f": [
+        "Read-only inventory before any change",
+        "Approval gate before patching",
+        "Checks the fixed version exists before editing",
+        "One PR per repo with tests and rollback target"
+      ],
+      "u": [
+        "Patching Node.js after the Brotli fix",
+        "Finding vulnerable PHP versions across many repos",
+        "Upgrading self-managed GitLab"
+      ],
+      "e": "Free instructions that let an AI coding assistant find and fix three serious software security holes across a company’s code.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "24 October 2026",
+    "week": "25 October 2026",
     "launches": [
       {
-        "name": "Decido (github.com/decido-ai/decido)",
-        "date": "22 October 2026",
-        "desc": "An open-weight decision model that answers yes/no, pick-one and rating questions about a document on a laptop CPU, with a probability for every answer. It is a LoRA fine-tune of Gemma 4 26B-A4B (about 4 billion active parameters), shipped as an 8-bit GGUF for llama.cpp, and includes a local server that speaks the same API as TypeSafe’s Jev, so Jev apps can point at it by changing one setting. Apache 2.0; v1.0 released on 22 October.",
-        "why": "For teams that want the kind of routing and classification calls OpenAI’s Decisions API makes, without sending documents to a cloud. Its maker reports a six-benchmark mean of 85.38 against Jev 1.13’s published 83.85, but it needs about 30 GB of RAM and takes about 4.1 seconds for a 1,000-token document and five questions on an M4 Pro CPU, against about 0.3 seconds for the hosted API.",
+        "name": "Argus (github.com/thomasunise/argus)",
+        "date": "24 October 2026",
+        "desc": "An open-source (MIT), self-hosted security operations platform where AI agents investigate and people approve. Seven specialist agents triage, investigate and hunt with read-only tools and can propose but never run a fix; response playbooks pick from 27 typed, reversible actions, start in shadow mode and roll themselves back unless kept, with approvals from Slack in one click. It also includes an AI gateway that puts OpenAI and Anthropic traffic behind company-held keys, model allowlists, data-loss checks and budgets, shadow-AI discovery, and canaries such as a fake MCP server and fake API keys that catch rogue agents. Released on GitHub and shown on Show HN on 24 October.",
+        "why": "For small security teams that want agent help with alerts and a view of which AI tools staff really use, without sending security data to a vendor. Its README says it is an open-source foundation, not a certified product, and every autonomous feature ships off by default.",
         "demo": {
-          "input": "Send it ‘I was charged twice for order 4821’ with the questions ‘refund?’ and ‘which team?’",
+          "input": "A detection fires for logins to a laptop from a new country",
           "steps": [
-            "It reads the text once on your CPU",
-            "It scores every answer"
+            "Argus agents investigate with read-only tools",
+            "A playbook proposes isolating the laptop in shadow mode"
           ],
-          "output": "A probability for ‘refund: yes’ and for billing versus shipping, computed locally."
+          "output": "A Slack message to approve, deny or roll back the isolation."
         }
       },
       {
-        "name": "agent-usage-guard (github.com/rbartoli/agent-usage-guard)",
-        "date": "22 October 2026",
-        "desc": "A free Claude Code mod (MIT) that steps in before subagent fan-out, heavy-context prompts and retry loops burn through your plan’s five-hour or weekly usage window. It reads the usage percentages Claude Code reports and counts agents across every session on the machine; by default it asks before a fifth parallel agent, before new agents once a window is 80% full, and refuses them at 95%. It asks in Claude Code’s own dialog, stores no prompt text, and fails open if it breaks. v1.1.0 and v1.1.1 shipped on 22 October, the day it was on Show HN.",
-        "why": "For anyone on a Claude Pro, Max or Team plan who has been locked out mid-task. Its maker says one max-effort research prompt spawned 394 subagent calls and pushed 84 million context tokens through in ten minutes. It needs Claude Code v2.1.287 or later.",
+        "name": "Enzyme (github.com/byenzyme/enzyme)",
+        "date": "24 October 2026",
+        "desc": "A local-first tool (Apache 2.0) that orients Claude Code, Codex and similar agents to a folder of Markdown notes, such as an Obsidian vault, meeting notes or agent memory. It reads how your notes are organised (folders, tags, links and dates), writes questions about what you decided, changed or left open, and builds a search index that runs on your machine, so an agent can pull up and cite related notes from months of writing. Your agent installs and sets it up from one prompt and shows you what it will read first. v0.13.1 shipped on 24 October, the day it was on Show HN.",
+        "why": "For people whose decisions and meeting notes live in Markdown and who want an agent to answer ‘why did we decide this?’ from them. Setup can use Enzyme’s hosted service to suggest settings; search itself runs locally.",
         "demo": {
-          "input": "Ask Claude Code for a broad research task at max effort",
+          "input": "Ask your agent ‘What keeps blocking the pricing project?’",
           "steps": [
-            "Claude tries to start a fifth agent at once",
-            "The guard asks first"
+            "The agent searches your notes with Enzyme",
+            "It reads the matching passages across months"
           ],
-          "output": "You approve, or Claude batches the work instead of spending the window."
+          "output": "An answer with links to the notes it came from."
         }
       },
       {
-        "name": "CATT – Consumer Agent Testing Tool (github.com/Coverage-Cat/consumer-agent-testing-tool)",
-        "date": "22 October 2026",
-        "desc": "An open-source (MIT) test harness that checks how an AI assistant uses your service. It runs a scripted or model-driven agent against your MCP server, MCP app, website or HTTP API, applies account and approval rules, checks what your service actually did, and keeps sealed evidence you can replay and compare across builds. It can emulate Meta’s Muse (the default) or Instinct as the calling assistant. v0.2.1 shipped on 22 October.",
-        "why": "For companies building connectors or sites that shoppers’ and workers’ agents will use, such as the agent gateways banks and retailers are now setting rules for. Its README is clear that it approximates an assistant and that a pass does not certify compatibility with Muse or any hosted assistant.",
+        "name": "Narro (github.com/swrdfish/narro)",
+        "date": "24 October 2026",
+        "desc": "A free Chrome extension (MIT) that reads the web page you are on aloud and highlights each sentence as it is spoken, including books in the Kindle Cloud Reader. Use a cloud voice from OpenAI, ElevenLabs, Google Gemini or OpenRouter with your own key, or a voice that runs entirely in your browser, such as Kokoro, Supertonic 2, Piper or Kitten TTS, with no account and no server. It has no analytics or servers of its own. v1.0.0 to v1.2.0 shipped on 24 October, the day it was on Show HN.",
+        "why": "For anyone who wants long reports or articles read aloud without sending the text anywhere. With in-browser voices nothing leaves your computer; cloud voices send the text to that provider.",
         "demo": {
-          "input": "Point connector-run at your MCP server with a booking scenario",
+          "input": "Open a 20-page policy report and click Narro",
           "steps": [
-            "A surrogate Muse agent books through your tools",
-            "CATT checks the booking your service recorded"
+            "Pick a local Kokoro voice",
+            "Narro reads and highlights sentence by sentence"
           ],
-          "output": "A pass or fail with sealed evidence, comparable with the next build."
+          "output": "The report read aloud, with no text sent off your machine."
         }
       },
       {
@@ -3136,16 +3224,22 @@
     ],
     "funding": [
       {
+        "company": "Utopai Studios",
+        "amount": "$60M growth equity (reported)",
+        "valuation": "$1B (reported)",
+        "context": "The Information reported on 23 October (via Dealroom) that the Mountain View AI film studio raised at a $1 billion valuation and holds term sheets for a follow-on round at $2 billion to $3 billion. It runs as its own studio, with more than 20 projects in the works, including three feature films due in theatres next year."
+      },
+      {
+        "company": "Flapping Airplanes",
+        "amount": "$1B Series A",
+        "valuation": "$6B",
+        "context": "Announced 21 October, co-led by Index and Lux (TechCrunch). The year-old San Francisco lab is working on training large models with far less data and compute; its valuation quadrupled from a $1.5 billion seed."
+      },
+      {
         "company": "Pathos AI",
         "amount": "$237M Series E",
         "valuation": "About $3B post-money",
         "context": "Announced 23 October and led by Bristol Myers Squibb. Pathos says its Foundry platform runs thousands of specialised AI agents that pull together clinical, genomic and competitive data to steer its four clinical-stage cancer drug programmes, and the money will scale Foundry and fund a registrational study for JSKN-016."
-      },
-      {
-        "company": "Warp Sciences",
-        "amount": "$215M (emerged from stealth)",
-        "valuation": "$865M",
-        "context": "Launched 22 October by former OpenAI science lead Kevin Weil, in a round led by Lightspeed with IVP, Mayfield, Lux Capital, Premji Invest and Menlo Ventures (TechCrunch). Human chemists wearing cameras and sensor gloves train robots to make and test drug compounds, aiming to bring lab work back to the US."
       },
       {
         "company": "Higgsfield",
@@ -3162,33 +3256,33 @@
     ],
     "quotes": [
       {
-        "who": "OpenAI, on training frontier models offline",
-        "text": "we must always be able to prevent a frontier model from achieving unauthorized, arbitrary access to the live internet.",
-        "source": "TechCrunch, 23 October 2026"
+        "who": "Mikael Wettercrantz, director of digitalisation at Sweden’s Government Offices",
+        "text": "We have seen several examples of problematic use of open AI services.",
+        "source": "Decrypt, 24 October 2026"
       },
       {
-        "who": "Ashwini Vaishnaw, India’s IT minister, at the NDTV World Summit",
-        "text": "Today the time has come when the risks of AI have crossed a threshold when we should come up with a law",
-        "source": "Hindustan Times, 23 October 2026"
+        "who": "Andy Jassy, Amazon CEO, on AWS capacity",
+        "text": "2027 is largely sold out.",
+        "source": "Reuters via CNA, 23 October 2026"
       },
       {
-        "who": "AWS, introducing the Infinity agent runtime",
-        "text": "For example, we can fit 75,000 concurrent agents in the 8 GB of a Raspberry Pi 5.",
-        "source": "AWS Open Source Blog, 23 October 2026"
+        "who": "Moonshot AI, on releasing Kimi K3.1 Pro’s weights",
+        "text": "First, we aim not to release open weights that would extend the absolute frontier of cyber capability.",
+        "source": "Kimi blog, 23 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "AI agents find the bugs first",
-        "desc": "OpenAI’s red-teaming agents found a remote code execution flaw in Brotli, now patched in Node.js and Envoy, plus microVM escapes in Kata Containers, gVisor and Docker components. Bugs found by AI are arriving faster than projects cut releases, so patch windows need to shrink."
+        "title": "Approved AI only",
+        "desc": "Sweden’s Government Offices block ChatGPT and Claude and keep a security-reviewed Copilot, and Claude Enterprise now sets which models each role may use. New tools like Argus find the AI services staff use without approval. Work AI is narrowing to tools with a contract and controls."
       },
       {
-        "title": "Agents get fenced in",
-        "desc": "OpenAI now trains its frontier models with no live internet, Anthropic has limited its newest models’ access, and new tools like Koala (agents in Mac VMs, keys kept outside) and Vericto (blocks risky SQL) put walls around agents. Least access is becoming the default design."
+        "title": "Agents take long jobs",
+        "desc": "Claude Code now hands slow jobs to tools with MCP Tasks and asks people questions mid-task, and Claude Enterprise keeps agent work running in the cloud after the laptop closes. Agents are being built to wait, check in and finish later."
       },
       {
-        "title": "AI activity becomes a record",
-        "desc": "Google Vault can export Gemini in Workspace conversations for eDiscovery, and GitHub’s Copilot reports now break usage down by tool, from OpenCode to Claude Code. What people and agents do with AI is now logged, auditable and billable."
+        "title": "AI content meets the rules",
+        "desc": "Pennsylvania requires labels on misleading AI ads, Elvis Presley’s rights holders sue Anthropic over 274 songs, and Meta’s crawling terms and Google’s ad policy draw scrutiny. What goes into and comes out of AI is now a legal question."
       }
     ]
   },
@@ -3198,7 +3292,7 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. The full Claude Platform is generally available on Google Cloud (22 Oct). On 23 Oct Anthropic and the UK AISI analysed Mythos 5’s attack on a GitHub project in testing: Mythos 5.1 and Opus 5.5 pursued it in 6–13% of replays, against 83%."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 23 Oct Claude Enterprise merged chat and Cowork, with an Efficient mode that keeps work on Sonnet and Haiku, and Claude Code gained MCP Tasks and Elicitations."
       },
       {
         "org": "OpenAI",
@@ -3228,9 +3322,9 @@
     "open": [
       {
         "org": "Moonshot AI",
-        "name": "Kimi K3",
-        "model": "2.8T · 1M ctx · vision",
-        "note": "#4 of 189 on the Artificial Analysis Index — highest ever for open weights. Now one toggle away inside Claude Desktop via Ollama 0.33."
+        "name": "Kimi K3.1 Pro",
+        "model": "2.8T (104B active) · 1M ctx · multimodal",
+        "note": "Released 23 Oct in Kimi’s apps and API with a 2–3× faster Highspeed version; full weights by 4 Nov. Moonshot reports 65.7% on Terminal-Bench 4.0, ahead of GPT-6 Astra and just behind Opus 5.5, and says it cut hacking-related training data before the open release."
       },
       {
         "org": "Meta",
@@ -3272,6 +3366,14 @@
   },
   "gems": [
     {
+      "name": "Argus SecOps",
+      "why": "Agents investigate alerts; people approve every action"
+    },
+    {
+      "name": "Enzyme",
+      "why": "Agent search over your Markdown notes, with citations"
+    },
+    {
       "name": "Vericto Proxy",
       "why": "Blocks risky agent SQL before it hits Postgres or MySQL"
     },
@@ -3302,14 +3404,6 @@
     {
       "name": "Penmentor",
       "why": "An AI tutor that marks your handwritten maths"
-    },
-    {
-      "name": "Sphinx",
-      "why": "A push gate that checks you understand your AI’s code"
-    },
-    {
-      "name": "shim-cli",
-      "why": "Masks secrets before Claude Code sends them to the model"
     }
   ],
   "quickPicks": [
