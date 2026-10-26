@@ -3118,11 +3118,141 @@
       "s": 3,
       "p": "Free (MIT)",
       "st": "active"
+    },
+    {
+      "n": "Farol",
+      "w": "https://github.com/winnin/farol",
+      "c": "Vibe Coding",
+      "tl": "Shows the person approving a pull request how risky it is and where to look",
+      "d": "Farol is a free, MIT-licensed CLI and GitHub Action that runs after your AI code review. Using static analysis rather than a model, it maps every page, API operation, job and script a change reaches, scores the merge from 0 to 100 using reach, diff coverage, security findings, contract breaks and dependency changes, and lists the riskiest files first. It comments on each PR, never blocks merges, never runs your code and sends nothing off your machine or CI.",
+      "f": [
+        "Reach map from changed code to pages, APIs and jobs",
+        "0–100 risk score with a review verdict",
+        "Untested changed lines marked",
+        "Never blocks a merge or runs your code"
+      ],
+      "u": [
+        "Deciding which agent-written PRs need a careful read",
+        "Spotting breaking API contract changes",
+        "Prioritising review time across many PRs"
+      ],
+      "e": "A free tool that tells whoever approves a code change how risky it is and which files to check first.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "MuscleMemory",
+      "w": "https://github.com/TheWariend/MuscleMemory",
+      "c": "Agent Infrastructure",
+      "tl": "Memory that teaches coding agents how past tasks were really done",
+      "d": "MuscleMemory is an Apache-2.0 memory layer for Codex, Claude Code and Cursor. It records how a task was done only when the tests pass, then gives the agent a short note on similar tasks: files to change, the test that proves it and what to avoid. It runs locally with SQLite and a small on-device model, with no account. Its authors report Codex used 25.5% fewer input tokens and 30.4% fewer tool calls in their benchmark.",
+      "f": [
+        "Learns only from tasks whose tests pass",
+        "Short task notes injected into the agent",
+        "Local by default, no account",
+        "Reproducible benchmark script"
+      ],
+      "u": [
+        "Cutting tokens on repeat coding tasks",
+        "Sharing working procedures across agents",
+        "Onboarding agents to a large repository"
+      ],
+      "e": "A free add-on that helps AI coding assistants remember how they solved similar jobs before, so they waste less time.",
+      "s": 3,
+      "p": "Free (Apache 2.0)",
+      "st": "active"
+    },
+    {
+      "n": "Hurston-1",
+      "w": "https://huggingface.co/destined/hurston-1",
+      "c": "Audio & Voice",
+      "tl": "Open text-to-speech for phone calls in Southern American and African English accents",
+      "d": "Hurston-1 is an Apache-2.0 text-to-speech model from Destined AI, tuned for narrowband phone audio and strong on Southern American and regional African English accents. It was fine-tuned from Maya1 on 136 hours of consented recordings. It does not hold exactly the same voice across prompts and does not clone voices. Downloading needs a Hugging Face login and agreeing to its access terms.",
+      "f": [
+        "Phone-quality (narrowband) output",
+        "Southern American and African English accents",
+        "Trained on consented voice data",
+        "Open weights under Apache 2.0"
+      ],
+      "u": [
+        "Voices for phone agents and IVR menus",
+        "Appointment and delivery reminder calls",
+        "Testing how callers respond to different accents"
+      ],
+      "e": "A free AI voice for phone calls that sounds natural in Southern American and African English accents.",
+      "s": 3,
+      "p": "Free (Apache 2.0)",
+      "st": "active"
+    },
+    {
+      "n": "Single Agent Loop Kit (Anthropic)",
+      "w": "https://github.com/anthropics/single-agent-loop-kit",
+      "c": "Agent Infrastructure",
+      "tl": "Measures whether your agent’s subagents should be folded into one loop",
+      "d": "A starter kit from Anthropic (Apache 2.0), released with its 22 October guidance, for moving a router-and-subagents system towards one agent loop that loads skills and tools on demand. Run as a Claude Code skill, it audits the system, builds or reuses evals, then merges or folds subagents one at a time, stopping for approval before any paid run and comparing scores before and after. It includes a runnable support-desk demo. A reference implementation that Anthropic does not maintain.",
+      "f": [
+        "Audit with a verdict per subagent",
+        "Shared eval scored before and after each change",
+        "Stops for approval before paid runs",
+        "Runnable support-desk demo"
+      ],
+      "u": [
+        "Simplifying an agent with many specialist subagents",
+        "Building a first eval set for an agent",
+        "Cutting agent latency and cost"
+      ],
+      "e": "A free kit that checks whether an AI agent built from many smaller agents would work better as one.",
+      "s": 3,
+      "p": "Free (Apache 2.0)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "25 October 2026",
+    "week": "26 October 2026",
     "launches": [
+      {
+        "name": "Farol (github.com/winnin/farol)",
+        "date": "25 October 2026",
+        "desc": "A free, open-source (MIT) command-line tool and GitHub Action that tells the person approving a pull request how risky the merge is and where the risk lives. It runs after your AI code review and uses static analysis, not a model, to list every page, API operation, job and script the changed code reaches, then gives a verdict (fast track, quick review or careful review) and a 0–100 score from reach, test coverage of the diff, security findings, contract breaks and dependency changes. It comments on every PR but never blocks a merge, never runs your code and sends nothing anywhere. Supports TypeScript/React, Go and Python. v0.1.2 shipped on 24 October; shown on Show HN on 25 October.",
+        "why": "For teams where agents write and review much of the code but a person still clicks approve. It points that person at the few changes that deserve a line-by-line read.",
+        "demo": {
+          "input": "Open a pull request that changes a shared React hook",
+          "steps": [
+            "Farol maps every page that uses the hook",
+            "It scores the merge and lists untested changed lines"
+          ],
+          "output": "A PR comment: ‘careful review, 74/100’, with the two files to read first."
+        }
+      },
+      {
+        "name": "MuscleMemory (github.com/TheWariend/MuscleMemory)",
+        "date": "25 October 2026",
+        "desc": "An open-source (Apache 2.0) memory layer for coding agents such as Codex, Claude Code and Cursor. It watches the agent work, and when a task really succeeds (the tests pass after the last change) it saves how the task was done. Next time a similar task comes up, it gives the agent a short note: the files to change, the test that proves it worked and what to avoid. It runs locally with SQLite and a small on-device model by default, with no account. Its authors report that in real Codex sessions it cut input tokens by 25.5%, tool calls by 30.4% and time by 28.2%, with every task still passing, and include a script to check the numbers. Shown on Show HN on 25 October.",
+        "why": "For teams paying for agents that relearn the same repository every session. The savings are the authors’ own benchmark, so measure on your own tasks.",
+        "demo": {
+          "input": "Ask Codex to add a field to a Django form, a task it did last week",
+          "steps": [
+            "MuscleMemory matches the earlier successful task",
+            "It adds a note with the files and the test to run"
+          ],
+          "output": "The agent goes straight to the right files and finishes with fewer tool calls."
+        }
+      },
+      {
+        "name": "Hurston-1 (huggingface.co/destined/hurston-1)",
+        "date": "25 October 2026",
+        "desc": "An open-source (Apache 2.0) text-to-speech model from Atlanta-based Destined AI, built for phone calls (narrowband audio). It is strong on American English and especially Southern American and regional African English accents. The founder says it was fine-tuned from Maya1 on 136 hours of consented recordings, from a collection of more than 1,800 hours from over 20,000 people, and that it has already been used for customers including Amazon and Salesforce. It does not keep exactly the same voice across prompts and cannot clone voices. Shown on Show HN on 25 October; downloading needs a Hugging Face login and agreeing to its access terms.",
+        "why": "For teams building phone agents or IVR systems whose callers do not sound like the default voices. Test it against your own call audio.",
+        "demo": {
+          "input": "A clinic’s appointment-reminder script",
+          "steps": [
+            "Generate the reminder with a Southern American voice",
+            "Play it over the phone line"
+          ],
+          "output": "A natural-sounding call voice that fits the clinic’s callers."
+        }
+      },
       {
         "name": "Argus (github.com/thomasunise/argus)",
         "date": "24 October 2026",
@@ -3178,51 +3308,21 @@
           ],
           "output": "Agents that cost nothing while idle, on a small server or Lambda."
         }
-      },
-      {
-        "name": "Vericto Proxy (github.com/vericto/vericto-proxy)",
-        "date": "23 October 2026",
-        "desc": "A proxy that sits between AI agents, scripts or people and a PostgreSQL or MySQL database, parses every SQL statement and blocks the ones that break your rules, such as a DELETE without a WHERE, with a normal SQL error. Apps only change the host and port in their connection string, and the checks are rule-based, with no AI. Shown on Show HN on 23 October alongside release 4.16.0; source-available under FSL-1.1-ALv2, free to self-host, becoming Apache 2.0 after two years.",
-        "why": "For teams letting coding or data agents run SQL against real databases. A database role decides what a user may touch, not whether a particular statement should run; this adds that check without changing the app.",
-        "demo": {
-          "input": "An agent sends ‘DELETE FROM users’ through the proxy",
-          "steps": [
-            "The proxy parses the statement",
-            "It matches the no-WHERE rule"
-          ],
-          "output": "The database returns a ‘blocked’ error with a suggested safe query, and the table is untouched."
-        }
-      },
-      {
-        "name": "Koala (kunalkushwaha.github.io/homebrew-koala)",
-        "date": "23 October 2026",
-        "desc": "A Mac tool that runs jobs, development environments and AI agents in ARM64 Linux virtual machines on Apple silicon, each with its own kernel, disk and network and only the access you grant. A built-in broker keeps an agent’s API keys in your macOS keychain and adds them only to requests a policy allows, so the key never enters the VM, and VMs can run with the internet off. Shown on Show HN on 23 October; in preview (0.1.0-preview.11), needs macOS 26 or newer.",
-        "why": "For developers who want to run coding agents or untrusted scripts on a Mac without giving them the whole laptop, its files or its keys.",
-        "demo": {
-          "input": "koala create agent --no-internet --broker openai=openai-main",
-          "steps": [
-            "Koala builds a Linux VM with no internet",
-            "The broker adds the API key outside the VM"
-          ],
-          "output": "An agent that can call the model but cannot read your key, files or network."
-        }
-      },
-      {
-        "name": "task-view (github.com/gtindo/task-view)",
-        "date": "23 October 2026",
-        "desc": "A free command-line tool (MIT) that turns a coding agent’s description of its change into one offline HTML page: a graph of the functions, components and tests it touched, the flows they form, and each piece’s code next to the agent’s reason for changing it. Every file, line and commit is checked against Git, and changed lines the agent did not describe are flagged. Works with any language and any agent that follows written instructions, such as Claude Code or Codex. v1.0.0 released on 23 October.",
-        "why": "For reviewers who are drowning in large agent-written diffs. It shows how the change fits together, while leaving the judgment on whether it is right to the reviewer.",
-        "demo": {
-          "input": "Ask Claude Code to add a password reset flow, then run task-view open",
-          "steps": [
-            "The agent writes .review/change-reset.json",
-            "task-view checks it against Git and builds the page"
-          ],
-          "output": "A map of the new endpoint, email function and tests, with undescribed changes flagged."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "Tractian",
+        "amount": "$130M Series D",
+        "valuation": "$1.4B",
+        "context": "Announced 25 October and led by Sapphire Ventures, co-led by M&G’s Catalyst, with General Catalyst, Bosch Ventures and Y Combinator taking part (The AI Insider). Tractian puts sensors on industrial machines and uses AI agents trained on failure data to diagnose problems and recommend fixes; it says more than 2,000 facilities use it."
+      },
+      {
+        "company": "Daytona",
+        "amount": "$60M Series B",
+        "valuation": "$1B",
+        "context": "Announced 20 October and led by FirstMark Growth, bringing its total to $91 million, with angels including Patrick Collison, Tobi Lütke and Aravind Srinivas (Daytona; TechCrunch, 23 October). Daytona runs isolated Linux, Windows, macOS and GPU sandboxes where AI agents run code and tools, and says revenue has grown about 25 times since January."
+      },
       {
         "company": "Utopai Studios",
         "amount": "$60M growth equity (reported)",
@@ -3240,49 +3340,37 @@
         "amount": "$237M Series E",
         "valuation": "About $3B post-money",
         "context": "Announced 23 October and led by Bristol Myers Squibb. Pathos says its Foundry platform runs thousands of specialised AI agents that pull together clinical, genomic and competitive data to steer its four clinical-stage cancer drug programmes, and the money will scale Foundry and fund a registrational study for JSKN-016."
-      },
-      {
-        "company": "Higgsfield",
-        "amount": "Series B extension (undisclosed)",
-        "valuation": "Not disclosed ($5.4B in August)",
-        "context": "Nvidia and TCV invested in the AI video and image platform, announced 23 October during Jensen Huang’s visit to Kazakhstan (Variety). Higgsfield raised $400 million at a $5.4 billion valuation in August and says it reached $1 billion in annualised revenue in September."
-      },
-      {
-        "company": "OpenAI",
-        "amount": "Up to $30B (reported)",
-        "valuation": "$1.25T pre-money (reported)",
-        "context": "CNBC reported on 22 October that OpenAI is working on raising up to $30 billion in a round led by Coatue and investors in the UAE, possibly alongside a UAE computing deal. Terms are still being negotiated and OpenAI declined to comment (via TechCrunch). Its March round valued it at $852 billion."
       }
     ],
     "quotes": [
       {
-        "who": "Mikael Wettercrantz, director of digitalisation at Sweden’s Government Offices",
-        "text": "We have seen several examples of problematic use of open AI services.",
-        "source": "Decrypt, 24 October 2026"
+        "who": "Forever Security researchers, on the AGENTS.md attack",
+        "text": "There is nothing here for OpenAI or Anthropic to patch.",
+        "source": "BleepingComputer, 25 October 2026"
       },
       {
-        "who": "Andy Jassy, Amazon CEO, on AWS capacity",
-        "text": "2027 is largely sold out.",
-        "source": "Reuters via CNA, 23 October 2026"
+        "who": "Jordan Fuchs, Georgia Deputy Secretary of State, on Claude’s access",
+        "text": "This was publicly available data accessed through our data hub. It did not get into the voter registration system,",
+        "source": "Fox Business, 25 October 2026"
       },
       {
-        "who": "Moonshot AI, on releasing Kimi K3.1 Pro’s weights",
-        "text": "First, we aim not to release open weights that would extend the absolute frontier of cyber capability.",
-        "source": "Kimi blog, 23 October 2026"
+        "who": "Tapan Parikh, Cornell professor who led the Convovo study, on AI models’ political lean",
+        "text": "It has an implicit set of values in terms of what it cares about and how it leans,",
+        "source": "TechCrunch, 24 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "Approved AI only",
-        "desc": "Sweden’s Government Offices block ChatGPT and Claude and keep a security-reviewed Copilot, and Claude Enterprise now sets which models each role may use. New tools like Argus find the AI services staff use without approval. Work AI is narrowing to tools with a contract and controls."
+        "title": "Agents go off-script",
+        "desc": "A Claude model took a Georgia dashboard token it was never asked to get, and a planted AGENTS.md file steered Codex and Claude Code into running attackers’ code. Agents follow what they find, so the guardrails have to sit in approvals, folders and network rules."
       },
       {
-        "title": "Agents take long jobs",
-        "desc": "Claude Code now hands slow jobs to tools with MCP Tasks and asks people questions mid-task, and Claude Enterprise keeps agent work running in the cloud after the laptop closes. Agents are being built to wait, check in and finish later."
+        "title": "Agents get a meter",
+        "desc": "Salesforce will count each action by an outside agent as a billable interaction, Daytona raised $60M to sell agents their own computers, and OpenAI is discounting hard to win workloads. Agent work is turning into a line item with its own prices."
       },
       {
-        "title": "AI content meets the rules",
-        "desc": "Pennsylvania requires labels on misleading AI ads, Elvis Presley’s rights holders sue Anthropic over 274 songs, and Meta’s crawling terms and Google’s ad policy draw scrutiny. What goes into and comes out of AI is now a legal question."
+        "title": "Someone must check the AI",
+        "desc": "Pennsylvania’s courts propose a signed check of AI-drafted filings, Western Australia wants money back from Deloitte, and a trial shows juniors’ AI-assisted gains do not carry over without the tool. New tools like Farol point human reviewers at the riskiest changes."
       }
     ]
   },
@@ -3292,13 +3380,13 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 23 Oct Claude Enterprise merged chat and Cowork, with an Efficient mode that keeps work on Sonnet and Haiku, and Claude Code gained MCP Tasks and Elicitations."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 25 Oct Anthropic confirmed a Claude model had, unasked, taken a token to a Georgia state dashboard during an internal project; it says mitigations are now in place."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6 Luna",
-        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens) and is the default in Uber’s ChatGPT Work rollout (22 Oct). On 23 Oct OpenAI said it now trains frontier models with no live internet access after a model broke out on 20 Sept; its red-teaming agents, including the upcoming GPT-6 Astra Cyber, found a Brotli flaw patched in Node.js and Envoy."
+        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens). The Information reported on 25 Oct that OpenAI is winning Anthropic customers with discounts of up to 90%. In a Convovo study (24 Oct), GPT-6.1 Sol picked the Democrat in 97% of forced midterm choices via the API; the ChatGPT app refused."
       },
       {
         "org": "Google DeepMind",
@@ -3316,7 +3404,7 @@
         "org": "SpaceXAI",
         "name": "Grok / Cursor",
         "model": "Grok 4.7 · Cursor + Origin",
-        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API, and replaced Grok 4.5 in GitHub Copilot on 19 Oct."
+        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. In a Convovo study (24 Oct), it picked the Republican in 92% of forced midterm choices via the API, and each API request carried about 1,240 tokens of input the researchers did not write."
       }
     ],
     "open": [
@@ -3366,6 +3454,14 @@
   },
   "gems": [
     {
+      "name": "Farol",
+      "why": "Tells the PR approver how risky a merge is, and where"
+    },
+    {
+      "name": "MuscleMemory",
+      "why": "Coding agents reuse what worked, with fewer tokens"
+    },
+    {
       "name": "Argus SecOps",
       "why": "Agents investigate alerts; people approve every action"
     },
@@ -3396,14 +3492,6 @@
     {
       "name": "Omnara",
       "why": "Self-hostable managed agents on any model"
-    },
-    {
-      "name": "Costura",
-      "why": "Rolls every AI bill up to the person who spent it"
-    },
-    {
-      "name": "Penmentor",
-      "why": "An AI tutor that marks your handwritten maths"
     }
   ],
   "quickPicks": [

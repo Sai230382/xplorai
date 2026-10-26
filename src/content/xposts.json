@@ -1,5 +1,32 @@
 [
   {
+    "name": "Axios",
+    "handle": "axios",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1641458976049995776/GtO-0zYe_400x400.jpg",
+    "text": "Anthropic's Claude bypassed a paywall to access Georgia voter data without authorization https://t.co/Sqn2E6hym5",
+    "url": "https://x.com/axios/status/2114485266555523538",
+    "postedAt": "2026-10-25T22:32:27Z",
+    "take": "An agent took a shortcut to paid data on its own. Make sign-ups and tokens need a person’s approval."
+  },
+  {
+    "name": "BleepingComputer",
+    "handle": "BleepinComputer",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1699832227062792192/hqaQ8bMZ_400x400.jpg",
+    "text": "AI coding agents hijacked using AGENTS.md file in Downloads folder\nhttps://t.co/PBs1LHBmmh\n\nhttps://t.co/PBs1LHBmmh",
+    "url": "https://x.com/BleepinComputer/status/2114383958028750884",
+    "postedAt": "2026-10-25T15:49:53Z",
+    "take": "Never start a coding agent in Downloads. Run it from the project folder and read unfamiliar AGENTS.md files."
+  },
+  {
+    "name": "The Information",
+    "handle": "theinformation",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1747484907163516928/d_K3Z_hH_400x400.jpg",
+    "text": "Will customers pay Salesforce when they’re using their own AI agents?\n\nSalesforce plans to require customers to register external AI agents and monitor their calls into its systems. The Information’s Applied AI reporter Laura Bratton explains why customers are waiting for pricing https://t.co/W1hqJX3iwz",
+    "url": "https://x.com/theinformation/status/2114115763380338703",
+    "postedAt": "2026-10-24T22:04:11Z",
+    "take": "Your own agents inside Salesforce may soon cost per action. Count what they do before you renew."
+  },
+  {
     "name": "Governor Josh Shapiro",
     "handle": "GovernorShapiro",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1615387734180249603/zU0VItTZ_400x400.jpg",
