@@ -118,4 +118,4 @@ Exactly two options. A before/after or A-versus-B toggle. Each option has 1–6 
 }
 ```
 
-The live edition uses this type for Rippling’s reported coding-workload shares (16% and 57%, then 52% and 18%).
+The live edition uses this type for Anthropic’s S-1: first-half revenue of $16.28 billion (about $13.1 billion, roughly 80%, from usage) set against compute commitments of at least $475 billion.

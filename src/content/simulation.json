@@ -1,37 +1,38 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "openai-discounts-win-anthropic-customers",
+  "storyId": "anthropic-s1-filing-customers-can-walk",
   "kicker": "Play with today’s story",
-  "title": "Rippling’s coding workload, at the two shares that were named",
-  "intro": "Parker Conrad said OpenAI’s share of Rippling’s coding workload rose from 16% to 52%, while Anthropic’s fell from 57% to 18%. Switch between those two reported points. Nothing here is estimated.",
-  "note": "These are shares of one company’s coding workload, as Conrad reported them. The Decoder retold the figures from The Information. Other coding work sits outside the OpenAI and Anthropic shares in each snapshot.",
+  "title": "Half-year revenue, set next to the compute already promised",
+  "intro": "Fortune’s account of Anthropic’s S-1 puts first-half revenue at $16.28 billion, up 1,300%. About $13.1 billion of that, roughly 80%, is usage customers can cut. Compute commitments are at least $475 billion. Switch between those reported figures.",
+  "note": "Revenue and the usage split are for the first half. The 1,300% is the rise Fortune reports for that half. Compute is a commitment, not cash already spent, and “at least $475 billion” is the floor in the same article. This block does not divide one figure by the other.",
   "sources": [
     {
-      "label": "The Decoder, 25 October 2026",
-      "url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/"
+      "label": "Fortune: Anthropic’s S-1 makes clear it’s on the hook for billions in compute. Its customers can walk at any time, 26 October 2026",
+      "url": "https://fortune.com/2026/10/26/anthropics-s-1-makes-clear-its-on-the-hook-for-billions-in-compute-its-customers-can-walk-at-any-time-2/"
     }
   ],
   "widget": {
     "type": "compare",
-    "label": "Reported share",
+    "label": "Reported figure",
     "options": [
       {
-        "id": "earlier",
-        "label": "Earlier",
-        "caption": "Where Conrad said the shares stood before",
+        "id": "revenue",
+        "label": "Revenue",
+        "caption": "First half, as Fortune reports the S-1",
         "stats": [
-          { "label": "OpenAI share", "value": "16%" },
-          { "label": "Anthropic share", "value": "57%" }
+          { "label": "Half-year revenue", "value": "$16.28 billion" },
+          { "label": "Rise in that half", "value": "1,300%" },
+          { "label": "Paid by usage", "value": "about $13.1 billion" },
+          { "label": "Usage share", "value": "roughly 80%" }
         ]
       },
       {
-        "id": "later",
-        "label": "Later",
-        "caption": "Where Conrad said the shares stood after",
+        "id": "compute",
+        "label": "Compute",
+        "caption": "Commitments named in the same account",
         "stats": [
-          { "label": "OpenAI share", "value": "52%" },
-          { "label": "Anthropic share", "value": "18%" }
+          { "label": "Future cloud compute", "value": "at least $475 billion" }
         ]
       }
     ]
