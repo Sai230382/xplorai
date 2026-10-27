@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react"
+import { useState, type CSSProperties, type PointerEvent } from "react"
 import { desks, type EditionStory } from "../data/edition"
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion"
 
@@ -34,12 +34,28 @@ function TickerList({ stories, hidden }: { stories: readonly EditionStory[]; hid
 /** Slim headline wire for the current edition. Static when motion is reduced. */
 export function BriefTicker({ edition, stories }: Props) {
   const reduced = usePrefersReducedMotion()
+  const [paused, setPaused] = useState(false)
   if (stories.length === 0) return null
 
   const style = { "--v4-ticker-duration": `${durationSeconds(stories)}s` } as CSSProperties
+  const hold = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "touch") return
+    setPaused(true)
+  }
+  const release = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "touch") return
+    setPaused(false)
+  }
 
   return (
-    <div className="v4-ticker" role="region" aria-label={`Headlines from ${edition}`} style={style}>
+    <div
+      className={`v4-ticker${paused ? " is-paused" : ""}`}
+      role="region"
+      aria-label={`Headlines from ${edition}`}
+      style={style}
+      onPointerEnter={hold}
+      onPointerLeave={release}
+    >
       <div className="v4-ticker-viewport">
         <div className="v4-ticker-track">
           <TickerList stories={stories} />

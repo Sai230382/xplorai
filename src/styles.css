@@ -680,7 +680,7 @@ button {
   gap: 16px;
   padding: 36px 0;
   border-bottom: 1px solid var(--rule);
-  scroll-margin-top: 96px;
+  scroll-margin-top: 16px;
 }
 
 .v4-story:first-child {
@@ -822,6 +822,10 @@ button {
   .v4-ticker:hover .v4-ticker-track {
     animation-play-state: paused;
   }
+}
+
+.v4-ticker.is-paused .v4-ticker-track {
+  animation-play-state: paused;
 }
 
 .v4-ticker:focus-within .v4-ticker-viewport {
