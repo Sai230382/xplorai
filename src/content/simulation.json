@@ -1,0 +1,40 @@
+{
+  "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
+  "enabled": true,
+  "storyId": "anthropic-s1-filing-customers-can-walk",
+  "kicker": "Play with today’s story",
+  "title": "Half-year revenue, set next to the compute already promised",
+  "intro": "Fortune’s account of Anthropic’s S-1 puts first-half revenue at $16.28 billion, up 1,300%. About $13.1 billion of that, roughly 80%, is usage customers can cut. Compute commitments are at least $475 billion. Switch between those reported figures.",
+  "note": "Revenue and the usage split are for the first half. The 1,300% is the rise Fortune reports for that half. Compute is a commitment, not cash already spent, and “at least $475 billion” is the floor in the same article. This block does not divide one figure by the other.",
+  "sources": [
+    {
+      "label": "Fortune: Anthropic’s S-1 makes clear it’s on the hook for billions in compute. Its customers can walk at any time, 26 October 2026",
+      "url": "https://fortune.com/2026/10/26/anthropics-s-1-makes-clear-its-on-the-hook-for-billions-in-compute-its-customers-can-walk-at-any-time-2/"
+    }
+  ],
+  "widget": {
+    "type": "compare",
+    "label": "Reported figure",
+    "options": [
+      {
+        "id": "revenue",
+        "label": "Revenue",
+        "caption": "First half, as Fortune reports the S-1",
+        "stats": [
+          { "label": "Half-year revenue", "value": "$16.28 billion" },
+          { "label": "Rise in that half", "value": "1,300%" },
+          { "label": "Paid by usage", "value": "about $13.1 billion" },
+          { "label": "Usage share", "value": "roughly 80%" }
+        ]
+      },
+      {
+        "id": "compute",
+        "label": "Compute",
+        "caption": "Commitments named in the same account",
+        "stats": [
+          { "label": "Future cloud compute", "value": "at least $475 billion" }
+        ]
+      }
+    ]
+  }
+}

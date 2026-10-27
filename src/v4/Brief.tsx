@@ -1,4 +1,6 @@
 import { currentEdition, type EditionStory } from "../data/edition"
+import { StorySimulation } from "./Simulation"
+import { BriefTicker } from "./Ticker"
 
 type Props = {
   onOpenStory: (story: EditionStory) => void
@@ -12,6 +14,7 @@ export function Brief({ onOpenStory, onOpenNote }: Props) {
     <section id="brief" className="v4-brief" aria-labelledby="v4-brief-title">
       <img className="v4-brief-backdrop" src="/scenes/brief-station.jpg" alt="" />
       <div className="v4-brief-fade" aria-hidden="true" />
+      <BriefTicker edition={edition} stories={stories} />
       <div className="v4-section">
         <header className="v4-head">
           <div>
@@ -25,6 +28,8 @@ export function Brief({ onOpenStory, onOpenNote }: Props) {
           <p className="v4-head-meta">{stories.length} verified stories · every one linked to its source</p>
         </header>
 
+        <StorySimulation onOpenStory={onOpenStory} />
+
         <div className="v4-brief-body">
           <figure className="v4-plate">
             <img src="/doors/brief.jpg" alt="Oil painting of a stack of paper washed with indigo ink beside a cup" />
@@ -36,7 +41,7 @@ export function Brief({ onOpenStory, onOpenNote }: Props) {
 
           <ol className="v4-stories">
             {stories.map((story, i) => (
-              <li key={story.id} className="v4-story">
+              <li key={story.id} id={`story-${story.id}`} className="v4-story">
                 <div className="v4-story-meta">
                   <span className="v4-story-num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="v4-chip">{story.topic}</span>
