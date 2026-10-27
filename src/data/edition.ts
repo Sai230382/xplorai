@@ -75,7 +75,11 @@ export type Edition = {
   signals: EditionSignal[]
 }
 
-/** Live edition. Grokbot writes a draft JSON; approve copies it here. */
+/**
+ * Live edition. Grokbot writes a draft JSON; approve copies it here.
+ * The "Play with today's story" block is src/content/simulation.json
+ * (schema in src/content/SIMULATION.md), kept out of the daily edition file.
+ */
 export const currentEdition: Edition = {
   ...(edition as Edition),
   toolsPulseDate: radarPulse.week,

@@ -1,0 +1,39 @@
+{
+  "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
+  "enabled": true,
+  "storyId": "openai-discounts-win-anthropic-customers",
+  "kicker": "Play with today’s story",
+  "title": "Rippling’s coding workload, at the two shares that were named",
+  "intro": "Parker Conrad said OpenAI’s share of Rippling’s coding workload rose from 16% to 52%, while Anthropic’s fell from 57% to 18%. Switch between those two reported points. Nothing here is estimated.",
+  "note": "These are shares of one company’s coding workload, as Conrad reported them. The Decoder retold the figures from The Information. Other coding work sits outside the OpenAI and Anthropic shares in each snapshot.",
+  "sources": [
+    {
+      "label": "The Decoder, 25 October 2026",
+      "url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/"
+    }
+  ],
+  "widget": {
+    "type": "compare",
+    "label": "Reported share",
+    "options": [
+      {
+        "id": "earlier",
+        "label": "Earlier",
+        "caption": "Where Conrad said the shares stood before",
+        "stats": [
+          { "label": "OpenAI share", "value": "16%" },
+          { "label": "Anthropic share", "value": "57%" }
+        ]
+      },
+      {
+        "id": "later",
+        "label": "Later",
+        "caption": "Where Conrad said the shares stood after",
+        "stats": [
+          { "label": "OpenAI share", "value": "52%" },
+          { "label": "Anthropic share", "value": "18%" }
+        ]
+      }
+    ]
+  }
+}
