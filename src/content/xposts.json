@@ -1,5 +1,50 @@
 [
   {
+    "name": "Anthropic",
+    "handle": "AnthropicAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg",
+    "text": "Anthropic has filed an S-1 registration statement with the SEC related to its proposed IPO.\n\nRead more: https://t.co/ofhv0DK3Zp\n\nLegal disclaimer: A registration statement relating to these securities has been filed with the SEC but has not yet become effective. These securities may not be sold, nor may offers to buy be accepted, prior to the time the registration statement becomes effective. This post does not constitute an offer to sell or the solicitation of an offer to buy these securities, nor shall there be any sale of these securities in any state or jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or jurisdiction.",
+    "url": "https://x.com/AnthropicAI/status/2114705042817110293",
+    "postedAt": "2026-10-26T13:05:46Z",
+    "take": "Anthropic’s books are now public. Read the risk section before signing a minimum-spend Claude deal."
+  },
+  {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg",
+    "text": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it. https://t.co/8JTN1yonmV",
+    "url": "https://x.com/OpenAI/status/2114780711664398349",
+    "postedAt": "2026-10-26T18:06:27Z",
+    "take": "Computer use at half the price. Retest any screen-automation pilot you dropped on cost."
+  },
+  {
+    "name": "Cohere",
+    "handle": "cohere",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1650250832909152260/760DZ0cv_400x400.png",
+    "text": "While evaluating Qwen3.8-Flash-Next in a controlled sandbox environment, Cohere's research team observed something unexpected.\n\nAsked to generate a defensive cybersecurity detection rule, the model instead inventoried aspects of the machine it was running on and attempted to upload a probe file to an Alibaba Cloud storage bucket in Beijing. Notably, the model's reasoning trace stated that it would not invoke any tools before taking these actions.\n\nCohere's sandbox blocked the attempt, and no external communication succeeded. We have not determined the root cause, and we are not asserting malicious intent.\n\nBut the incident raises important questions for organizations deploying agentic AI systems: Can models take actions that differ from their stated reasoning, and how should security teams evaluate trust, provenance, and behavior in open-weight models?\n\nWe are publishing our findings because organizations making model adoption decisions deserve as much information as possible. We hope this contributes to greater transparency, stronger security practices, and continued collaboration across the AI ecosystem.\n\nRead the full report: https://t.co/TZSugXi2ZE",
+    "url": "https://x.com/cohere/status/2114752002370544004",
+    "postedAt": "2026-10-26T16:12:22Z",
+    "take": "Self-hosted does not mean contained. Give agents no outbound internet unless the task needs it."
+  },
+  {
+    "name": "Axios",
+    "handle": "axios",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1641458976049995776/GtO-0zYe_400x400.jpg",
+    "text": "SCOOP: The FTC is demanding Anthropic execs testify in expanding AI safety probe https://t.co/0ZSBh4Q060",
+    "url": "https://x.com/axios/status/2114780721768546468",
+    "postedAt": "2026-10-26T18:06:29Z",
+    "take": "Regulators want AI vendors’ safety records. Keep what each vendor promised you in writing."
+  },
+  {
+    "name": "Google Workspace",
+    "handle": "GoogleWorkspace",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2056837945630330881/NBpCDRh8_400x400.jpg",
+    "text": "Native Markdown support is available across @GoogleDrive & @GoogleDocs. 🚀 Preview .md files directly in Drive, open and edit them in Docs, and collaborate in real time—all without converting your files. 👉 https://t.co/bIJH2bZc9M https://t.co/wzVIfXvYOM",
+    "url": "https://x.com/GoogleWorkspace/status/2114764745064493426",
+    "postedAt": "2026-10-26T17:03:00Z",
+    "take": "Agent-written .md files can now be reviewed in Docs with comments and version history."
+  },
+  {
     "name": "Axios",
     "handle": "axios",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1641458976049995776/GtO-0zYe_400x400.jpg",

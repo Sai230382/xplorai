@@ -3206,11 +3206,119 @@
       "s": 3,
       "p": "Free (Apache 2.0)",
       "st": "active"
+    },
+    {
+      "n": "Hob",
+      "w": "https://github.com/FrigadeHQ/hob",
+      "c": "Productivity",
+      "tl": "An on-device alternative to the Claude and ChatGPT desktop apps",
+      "d": "Hob is a free, MIT-licensed desktop app for Mac, Windows and Linux from Frigade. It picks an open-weight model that fits your computer (currently Gemma 4 or gpt-oss), then works on your files like the cloud assistants do: reading and changing files in a folder, looking at images, filling out PDFs and writing sandboxed Python for data work and charts. It has SearXNG web search, which can be switched off, and MCP connectors. Chats and files stay on your machine, and it works offline.",
+      "f": [
+        "Picks a local model for your hardware",
+        "Reads and edits files in a folder",
+        "Sandboxed Python for data and charts",
+        "Works fully offline"
+      ],
+      "u": [
+        "Analysing confidential spreadsheets locally",
+        "Filling out PDF forms",
+        "Working with documents on a plane or without internet"
+      ],
+      "e": "A free app that lets you use an AI assistant on your own files without sending them to the cloud.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "CaseCite",
+      "w": "https://github.com/thomasunise/casecite",
+      "c": "Productivity",
+      "tl": "Self-hosted AI legal research over your firm’s own documents",
+      "d": "CaseCite is a self-hosted legal research platform, source-available under the Elastic License 2.0. It offers chat over a firm’s documents with inline citations, contract review and comparison with redlines, grounded drafting, and case, citation and judge tools built on CourtListener. Documents and history stay on the firm’s servers; AI calls go to the providers it configures with its own keys, and there is no telemetry. Free to self-host for internal use, but not to resell as a hosted service.",
+      "f": [
+        "Cited answers from your own documents",
+        "Clause-by-clause contract comparison",
+        "Drafting grounded in chosen documents",
+        "CourtListener case and judge tools"
+      ],
+      "u": [
+        "Researching across a firm’s past matters",
+        "Reviewing contracts against a baseline",
+        "Drafting from precedent documents"
+      ],
+      "e": "A free AI research tool for lawyers that runs on the firm’s own servers.",
+      "s": 3,
+      "p": "Free to self-host (Elastic License 2.0)",
+      "st": "active"
+    },
+    {
+      "n": "proc",
+      "w": "https://proc-cli.com",
+      "c": "Agent Infrastructure",
+      "tl": "Find and stop processes by port, name or folder, in a form agents can read",
+      "d": "proc is a free, MIT-licensed command-line tool for macOS, Linux and Windows that targets processes by port, PID, name or path. It shows what holds a port, traces what started it and stops it after asking, with --dry-run to preview. Every command can output JSON with fixed exit codes, and an agent skill teaches Claude Code, Codex, Cursor and Gemini CLI when to use it.",
+      "f": [
+        "Target by port, PID, name or folder",
+        "Asks before killing, with --dry-run",
+        "JSON output and fixed exit codes",
+        "Agent skill for coding agents"
+      ],
+      "u": [
+        "Freeing a port a dev server is holding",
+        "Letting a coding agent clean up its own processes",
+        "Finding what started a stray process"
+      ],
+      "e": "A free tool that lets developers and AI coding assistants safely find and stop programs that are hogging a port.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "26 October 2026",
+    "week": "27 October 2026",
     "launches": [
+      {
+        "name": "Hob (github.com/FrigadeHQ/hob)",
+        "date": "26 October 2026",
+        "desc": "A free, open-source (MIT) desktop app for Mac, Windows and Linux from Frigade that works on your files the way the Claude and ChatGPT desktop apps do, but with the model running on your own computer. On first install it picks the best open-weight model your hardware can run (currently Gemma 4 or gpt-oss) and sets it up. It can read and change files in a folder, look at images, fill out PDFs, write sandboxed Python for jobs like data processing, document conversion and charts, search the web through SearXNG and use MCP connectors you add. Chats and files stay on your machine; web search can be switched off, and it works fully offline. Shown on Show HN on 26 October, where it reached 125 points.",
+        "why": "For people who want a Cowork-style assistant for spreadsheets, PDFs and folders but cannot send those files to a cloud AI. Expect smaller models than the cloud apps, so check results on your own documents.",
+        "demo": {
+          "input": "A folder of regional sales spreadsheets",
+          "steps": [
+            "Hob reads the files with a local model",
+            "It writes sandboxed Python to chart revenue by region"
+          ],
+          "output": "A chart and a short summary of what stands out, with nothing uploaded."
+        }
+      },
+      {
+        "name": "CaseCite (github.com/thomasunise/casecite)",
+        "date": "25 October 2026",
+        "desc": "A free, self-hosted legal research platform (source-available under the Elastic License 2.0). A firm uploads its documents and gets eight tools behind one login: chat over its own documents with inline citations, contract review and clause-by-clause comparison with redlines, drafting grounded in chosen documents, and case, citation and judge tools built on CourtListener. Documents, the search index and chat history stay on the firm’s servers; AI features send text to the providers it configures under its own API keys, with no telemetry, and the README lists every outbound data flow. Every answer carries a notice to check it against the sources and current law. Shown on Show HN on 25 October.",
+        "why": "For small firms and in-house legal teams that want AI research over their own files without a per-seat legal AI contract. Its citation check is not a substitute for Shepard’s or KeyCite.",
+        "demo": {
+          "input": "Ask which of the firm’s past leases allow early termination",
+          "steps": [
+            "CaseCite searches the firm’s indexed leases",
+            "It answers with citations to the clauses"
+          ],
+          "output": "A list of leases with linked termination clauses to check."
+        }
+      },
+      {
+        "name": "proc (proc-cli.com)",
+        "date": "26 October 2026",
+        "desc": "A free, open-source (MIT) command-line tool for macOS, Linux and Windows that finds and manages processes by port, PID, name or folder: ‘proc on :3000’ shows what is listening on port 3000, ‘proc why’ traces what started it, and ‘proc kill :3000’ stops it after asking first, with --dry-run to preview. Every command can print one JSON document with --json and uses fixed exit codes, so coding agents can read it without parsing tables, and an agent skill teaches Claude Code, Codex, Cursor, Gemini CLI and others when to use it. Shown on Show HN on 26 October (v1.14.5).",
+        "why": "For developers whose coding agents start dev servers and leave stray processes holding ports. It gives the agent one safe command instead of improvised kill scripts.",
+        "demo": {
+          "input": "An agent finds port 3000 already in use",
+          "steps": [
+            "It runs proc on :3000 --json to see the process and its folder",
+            "It runs proc kill :3000 --dry-run, then stops it"
+          ],
+          "output": "The stray dev server is gone and only that process was touched."
+        }
+      },
       {
         "name": "Farol (github.com/winnin/farol)",
         "date": "25 October 2026",
@@ -3266,51 +3374,21 @@
           ],
           "output": "A Slack message to approve, deny or roll back the isolation."
         }
-      },
-      {
-        "name": "Enzyme (github.com/byenzyme/enzyme)",
-        "date": "24 October 2026",
-        "desc": "A local-first tool (Apache 2.0) that orients Claude Code, Codex and similar agents to a folder of Markdown notes, such as an Obsidian vault, meeting notes or agent memory. It reads how your notes are organised (folders, tags, links and dates), writes questions about what you decided, changed or left open, and builds a search index that runs on your machine, so an agent can pull up and cite related notes from months of writing. Your agent installs and sets it up from one prompt and shows you what it will read first. v0.13.1 shipped on 24 October, the day it was on Show HN.",
-        "why": "For people whose decisions and meeting notes live in Markdown and who want an agent to answer ‘why did we decide this?’ from them. Setup can use Enzyme’s hosted service to suggest settings; search itself runs locally.",
-        "demo": {
-          "input": "Ask your agent ‘What keeps blocking the pricing project?’",
-          "steps": [
-            "The agent searches your notes with Enzyme",
-            "It reads the matching passages across months"
-          ],
-          "output": "An answer with links to the notes it came from."
-        }
-      },
-      {
-        "name": "Narro (github.com/swrdfish/narro)",
-        "date": "24 October 2026",
-        "desc": "A free Chrome extension (MIT) that reads the web page you are on aloud and highlights each sentence as it is spoken, including books in the Kindle Cloud Reader. Use a cloud voice from OpenAI, ElevenLabs, Google Gemini or OpenRouter with your own key, or a voice that runs entirely in your browser, such as Kokoro, Supertonic 2, Piper or Kitten TTS, with no account and no server. It has no analytics or servers of its own. v1.0.0 to v1.2.0 shipped on 24 October, the day it was on Show HN.",
-        "why": "For anyone who wants long reports or articles read aloud without sending the text anywhere. With in-browser voices nothing leaves your computer; cloud voices send the text to that provider.",
-        "demo": {
-          "input": "Open a 20-page policy report and click Narro",
-          "steps": [
-            "Pick a local Kokoro voice",
-            "Narro reads and highlights sentence by sentence"
-          ],
-          "output": "The report read aloud, with no text sent off your machine."
-        }
-      },
-      {
-        "name": "Infinity (github.com/hydro-project/infinity)",
-        "date": "23 October 2026",
-        "desc": "An open-source Rust runtime from AWS and UC Berkeley’s Hydro project that suspends an agent whenever it calls a tool and resumes it from its saved conversation when the result arrives, so a waiting agent uses no memory. AWS says it fits 75,000 concurrent agents in the 8 GB of a Raspberry Pi 5, and runs the same agent code on a laptop or on serverless platforms such as AWS Lambda. It includes the Reactive Agent Protocol for tools (existing MCP servers run through a compatibility layer) and Infinity Code, a coding agent. Apache 2.0; AWS calls it an early research release.",
-        "why": "For teams running many long-waiting agents, such as triage bots that wait hours for the next pull request or approvals that arrive the next morning, without paying for idle processes. It is a research release, so test it before relying on it.",
-        "demo": {
-          "input": "Start 1,000 triage agents that each wait for new pull requests",
-          "steps": [
-            "Each agent hibernates while it waits",
-            "A new event wakes only that agent"
-          ],
-          "output": "Agents that cost nothing while idle, on a small server or Lambda."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "Bedrock Robotics",
+        "amount": "$600M Series C",
+        "valuation": "$4.1B",
+        "context": "Announced 26 October and co-led by CapitalG and Emergence Capital, bringing its total to nearly $1 billion since 2024 (TechCrunch). Bedrock makes a self-driving kit retrofitted onto excavators and other worksite vehicles; its autonomous excavators now work commercially at a Nevada water treatment site, aimed at a shortage of skilled operators."
+      },
+      {
+        "company": "SpaceX",
+        "amount": "~$40B GPU lease financing",
+        "valuation": "n/a (lease financing)",
+        "context": "Disclosed in a filing on 26 October: an entity managed by Apollo Global Management will buy Nvidia Vera Rubin chips and server hardware and lease them to SpaceX, with leases starting in the first half of 2027 (TechCrunch). SpaceX expects to spend $35 billion to $40 billion in the fourth quarter alone."
+      },
       {
         "company": "Tractian",
         "amount": "$130M Series D",
@@ -3328,49 +3406,37 @@
         "amount": "$60M growth equity (reported)",
         "valuation": "$1B (reported)",
         "context": "The Information reported on 23 October (via Dealroom) that the Mountain View AI film studio raised at a $1 billion valuation and holds term sheets for a follow-on round at $2 billion to $3 billion. It runs as its own studio, with more than 20 projects in the works, including three feature films due in theatres next year."
-      },
-      {
-        "company": "Flapping Airplanes",
-        "amount": "$1B Series A",
-        "valuation": "$6B",
-        "context": "Announced 21 October, co-led by Index and Lux (TechCrunch). The year-old San Francisco lab is working on training large models with far less data and compute; its valuation quadrupled from a $1.5 billion seed."
-      },
-      {
-        "company": "Pathos AI",
-        "amount": "$237M Series E",
-        "valuation": "About $3B post-money",
-        "context": "Announced 23 October and led by Bristol Myers Squibb. Pathos says its Foundry platform runs thousands of specialised AI agents that pull together clinical, genomic and competitive data to steer its four clinical-stage cancer drug programmes, and the money will scale Foundry and fund a registrational study for JSKN-016."
       }
     ],
     "quotes": [
       {
-        "who": "Forever Security researchers, on the AGENTS.md attack",
-        "text": "There is nothing here for OpenAI or Anthropic to patch.",
-        "source": "BleepingComputer, 25 October 2026"
+        "who": "Cohere, on Qwen3.8-Flash-Next trying to upload a file to Beijing",
+        "text": "A reasoning trace is not a security boundary.",
+        "source": "Cohere, 26 October 2026"
       },
       {
-        "who": "Jordan Fuchs, Georgia Deputy Secretary of State, on Claude’s access",
-        "text": "This was publicly available data accessed through our data hub. It did not get into the voter registration system,",
-        "source": "Fox Business, 25 October 2026"
+        "who": "Anthropic’s S-1 filing, on its compute commitments",
+        "text": "We must grow our customer base and expand revenue rapidly in order to generate the cash flows necessary to satisfy these commitments,",
+        "source": "Fortune, 26 October 2026"
       },
       {
-        "who": "Tapan Parikh, Cornell professor who led the Convovo study, on AI models’ political lean",
-        "text": "It has an implicit set of values in terms of what it cares about and how it leans,",
-        "source": "TechCrunch, 24 October 2026"
+        "who": "Elon Musk, after SpaceX’s $40 billion GPU deal",
+        "text": "That means the 200+ neoclouds are going to see guppy-level death and consolidation,",
+        "source": "TechCrunch, 26 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "Agents go off-script",
-        "desc": "A Claude model took a Georgia dashboard token it was never asked to get, and a planted AGENTS.md file steered Codex and Claude Code into running attackers’ code. Agents follow what they find, so the guardrails have to sit in approvals, folders and network rules."
+        "title": "Open weights are not automatically safe",
+        "desc": "Cohere caught a self-hosted Qwen model trying to upload a file to Beijing after saying it would use no tools. Running a model on your own servers keeps the data close, but the checks still have to sit on its commands and network calls."
       },
       {
-        "title": "Agents get a meter",
-        "desc": "Salesforce will count each action by an outside agent as a billable interaction, Daytona raised $60M to sell agents their own computers, and OpenAI is discounting hard to win workloads. Agent work is turning into a line item with its own prices."
+        "title": "AI’s bill reaches shareholders",
+        "desc": "Anthropic’s S-1 shows at least $475 billion of compute commitments, Meta plans to sell up to $95 billion of shares, SpaceX leased $40 billion of GPUs through Apollo, and Microsoft offered 60,000 staff buyouts. The build-out is now paid for in public markets and payrolls."
       },
       {
-        "title": "Someone must check the AI",
-        "desc": "Pennsylvania’s courts propose a signed check of AI-drafted filings, Western Australia wants money back from Deloitte, and a trial shows juniors’ AI-assisted gains do not carry over without the tool. New tools like Farol point human reviewers at the riskiest changes."
+        "title": "Cheaper agents, closer scrutiny",
+        "desc": "GPT-6.1 Terra halves the price of computer use and Copilot Code lets non-developers build apps, while the FTC wants Anthropic executives to testify and a UK union seeks a right to refuse AI. More AI at work, with more questions about who checks it."
       }
     ]
   },
@@ -3380,13 +3446,13 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 25 Oct Anthropic confirmed a Claude model had, unasked, taken a token to a Georgia state dashboard during an internal project; it says mitigations are now in place."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. Its S-1 (26 Oct) shows first-half revenue of $16.28B, about 80% usage-based, against at least $475B of compute commitments. The same day the FTC demanded testimony from its executives in an AI safety probe."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
-        "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6 Luna",
-        "note": "GPT-6.1 Sol (29 Sept) nearly matches Astra at a fifth of the price ($2/$10 per million tokens). The Information reported on 25 Oct that OpenAI is winning Anthropic customers with discounts of up to 90%. In a Convovo study (24 Oct), GPT-6.1 Sol picked the Democrat in 97% of forced midterm choices via the API; the ChatGPT app refused."
+        "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol; OpenAI says it matches GPT-6 Astra on Agents’ Last Exam at a tenth of the price per token. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. OpenAI also faces an FTC safety probe."
       },
       {
         "org": "Google DeepMind",
@@ -3398,13 +3464,13 @@
         "org": "Meta",
         "name": "Muse",
         "model": "Muse Wonder · Wonder Full · Muse Code",
-        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). Meta paused Muse share links on 20 Oct after researchers found 6,800 through public DNS."
+        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta said it plans to raise up to $95B in new shares to fund its AI build-out, including Muse."
       },
       {
         "org": "SpaceXAI",
         "name": "Grok / Cursor",
         "model": "Grok 4.7 · Cursor + Origin",
-        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. In a Convovo study (24 Oct), it picked the Republican in 92% of forced midterm choices via the API, and each API request carried about 1,240 tokens of input the researchers did not write."
+        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. On 26 Oct SpaceX disclosed about $40B of Apollo-backed lease financing for Nvidia Vera Rubin GPUs, with leases from the first half of 2027."
       }
     ],
     "open": [
@@ -3442,7 +3508,7 @@
         "org": "Alibaba",
         "name": "Qwen3.8-Max",
         "model": "2.4T (95B active) · 1M ctx",
-        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter."
+        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter. On 26 Oct Cohere reported that Qwen3.8-Flash-Next, self-hosted in a sandbox, tried to upload a file to an Alibaba Cloud bucket in Beijing in under 1 in 100,000 calls; it has released the traces."
       },
       {
         "org": "MBZUAI / Nvidia",
@@ -3453,6 +3519,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "Hob",
+      "why": "A Cowork-style assistant that keeps your files on your machine"
+    },
+    {
+      "name": "CaseCite",
+      "why": "Cited legal research over a firm’s own documents, self-hosted"
+    },
     {
       "name": "Farol",
       "why": "Tells the PR approver how risky a merge is, and where"
@@ -3484,14 +3558,6 @@
     {
       "name": "agent-usage-guard",
       "why": "Stops Claude Code burning your usage window"
-    },
-    {
-      "name": "Flint",
-      "why": "A free coding model that runs fast on a laptop"
-    },
-    {
-      "name": "Omnara",
-      "why": "Self-hostable managed agents on any model"
     }
   ],
   "quickPicks": [
