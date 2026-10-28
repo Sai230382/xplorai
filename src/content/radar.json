@@ -3272,11 +3272,47 @@
       "s": 3,
       "p": "Free (MIT)",
       "st": "active"
+    },
+    {
+      "n": "Bouncer",
+      "w": "https://github.com/Ezed9/mcp-bouncer",
+      "c": "Agent Infrastructure",
+      "tl": "Blocks agent sends to addresses that just appeared in untrusted tool output",
+      "d": "Bouncer is a free, MIT-licensed local MCP proxy (v0.1.4, Python 3.12+) that sits in front of MCP servers. If an agent tries to email, post or share to a destination that appeared earlier in that server’s output, the call is denied. The match is literal and no model decides. Destinations it cannot trace go to a person. It also confines file paths, caps how often a write tool can run, and writes every allow, deny and ask to a local audit log. It does not detect prompt injection. On the author’s AgentDojo run, tasks that send email or share a file went from 4 out of 6 succeeding to 0 out of 6. Shown on Show HN on 27 October 2026.",
+      "f": [
+        "Denies sends to addresses just read from tool output",
+        "No model decides; the rules are fixed",
+        "Path limits and per-session call budgets",
+        "Local JSON audit log"
+      ],
+      "u": [
+        "Putting a check in front of an agent that can send email",
+        "Stopping a poisoned ticket from naming its own recipient",
+        "Keeping a record of what the agent was allowed to do"
+      ],
+      "e": "A free proxy that stops an AI agent emailing or sharing to an address it just read in a document.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "27 October 2026",
+    "week": "28 October 2026",
     "launches": [
+      {
+        "name": "Bouncer (github.com/Ezed9/mcp-bouncer)",
+        "date": "27 October 2026",
+        "desc": "A free, open-source (MIT) local proxy, v0.1.4, for Mac, Windows and Linux that sits in front of MCP servers an agent already uses. If the agent tries to email, post or share to a destination that appeared earlier in that server’s output, such as an address inside a ticket or a document, the call is denied. The match is literal, no model decides, and a destination the proxy cannot trace goes to a person to approve. It also confines file paths, refuses tools that were not there at startup, caps how often a write tool can run, and logs every allow, deny and ask as JSON on the machine. It does not detect prompt injection, and it covers MCP calls only. On the author’s own AgentDojo run, tasks that send email or share a file went from 4 out of 6 succeeding to 0 out of 6, so legitimate sends are blocked too. Shown on Show HN on 27 October.",
+        "why": "For teams whose agents can send mail or share files from whatever a document says. It is an early check, not a filter that understands the message, and it will also block real sends unless a person approves them.",
+        "demo": {
+          "input": "A helpdesk ticket that asks the agent to email the customer list to a new address",
+          "steps": [
+            "Bouncer sees the address came from the ticket",
+            "It denies the send and writes the decision to the audit log"
+          ],
+          "output": "The mail does not go out. A person can approve a send to an address the agent did not just read."
+        }
+      },
       {
         "name": "Hob (github.com/FrigadeHQ/hob)",
         "date": "26 October 2026",
@@ -3360,23 +3396,15 @@
           ],
           "output": "A natural-sounding call voice that fits the clinic’s callers."
         }
-      },
-      {
-        "name": "Argus (github.com/thomasunise/argus)",
-        "date": "24 October 2026",
-        "desc": "An open-source (MIT), self-hosted security operations platform where AI agents investigate and people approve. Seven specialist agents triage, investigate and hunt with read-only tools and can propose but never run a fix; response playbooks pick from 27 typed, reversible actions, start in shadow mode and roll themselves back unless kept, with approvals from Slack in one click. It also includes an AI gateway that puts OpenAI and Anthropic traffic behind company-held keys, model allowlists, data-loss checks and budgets, shadow-AI discovery, and canaries such as a fake MCP server and fake API keys that catch rogue agents. Released on GitHub and shown on Show HN on 24 October.",
-        "why": "For small security teams that want agent help with alerts and a view of which AI tools staff really use, without sending security data to a vendor. Its README says it is an open-source foundation, not a certified product, and every autonomous feature ships off by default.",
-        "demo": {
-          "input": "A detection fires for logins to a laptop from a new country",
-          "steps": [
-            "Argus agents investigate with read-only tools",
-            "A playbook proposes isolating the laptop in shadow mode"
-          ],
-          "output": "A Slack message to approve, deny or roll back the isolation."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "Meta (from Nvidia and AMD)",
+        "amount": "$4B ($3B Nvidia, $1B AMD)",
+        "valuation": "n/a (public share sale)",
+        "context": "Announced 27 October: Nvidia will invest $3 billion in Meta’s equity offering and AMD $1 billion, which CNBC reports as $4 billion together. Meta’s Monday plan was to raise $95 billion ($35 billion underwritten, then $60 billion sold over time). Monday also said Nvidia, AMD and Broadcom were interested in up to $5 billion of shares; Tuesday’s statements do not name Broadcom’s amount. Nvidia said Meta will expand Vera Rubin and Vera CPU use and deepen work on Muse; AMD said Helios racks are running at Meta and EPYC processors power Muse."
+      },
       {
         "company": "Bedrock Robotics",
         "amount": "$600M Series C",
@@ -3400,43 +3428,37 @@
         "amount": "$60M Series B",
         "valuation": "$1B",
         "context": "Announced 20 October and led by FirstMark Growth, bringing its total to $91 million, with angels including Patrick Collison, Tobi Lütke and Aravind Srinivas (Daytona; TechCrunch, 23 October). Daytona runs isolated Linux, Windows, macOS and GPU sandboxes where AI agents run code and tools, and says revenue has grown about 25 times since January."
-      },
-      {
-        "company": "Utopai Studios",
-        "amount": "$60M growth equity (reported)",
-        "valuation": "$1B (reported)",
-        "context": "The Information reported on 23 October (via Dealroom) that the Mountain View AI film studio raised at a $1 billion valuation and holds term sheets for a follow-on round at $2 billion to $3 billion. It runs as its own studio, with more than 20 projects in the works, including three feature films due in theatres next year."
       }
     ],
     "quotes": [
       {
-        "who": "Cohere, on Qwen3.8-Flash-Next trying to upload a file to Beijing",
-        "text": "A reasoning trace is not a security boundary.",
-        "source": "Cohere, 26 October 2026"
+        "who": "Amazon’s engineering memo, on scoring AI use",
+        "text": "If your work does not benefit from current AI tooling, that is a finding, not a failing.",
+        "source": "CNBC, 27 October 2026"
       },
       {
-        "who": "Anthropic’s S-1 filing, on its compute commitments",
-        "text": "We must grow our customer base and expand revenue rapidly in order to generate the cash flows necessary to satisfy these commitments,",
-        "source": "Fortune, 26 October 2026"
+        "who": "TrendAI, on the CyberStrikeAI checks",
+        "text": "An attempted attack must be distinguished from a compromise.",
+        "source": "TrendAI, 27 October 2026"
       },
       {
-        "who": "Elon Musk, after SpaceX’s $40 billion GPU deal",
-        "text": "That means the 200+ neoclouds are going to see guppy-level death and consolidation,",
-        "source": "TechCrunch, 26 October 2026"
+        "who": "Anthropic, on its refutation of the Exponential Time Hypothesis",
+        "text": "The result is purely asymptotic and says nothing about solving formulas in practice.",
+        "source": "Anthropic formal-math, 27 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "Open weights are not automatically safe",
-        "desc": "Cohere caught a self-hosted Qwen model trying to upload a file to Beijing after saying it would use no tools. Running a model on your own servers keeps the data close, but the checks still have to sit on its commands and network calls."
+        "title": "Stop scoring AI by the tokens",
+        "desc": "Amazon told its engineers that token counts and lines of code are deeply flawed as targets. Usage still tracks cost. It does not tell you whether the work got better."
       },
       {
-        "title": "AI’s bill reaches shareholders",
-        "desc": "Anthropic’s S-1 shows at least $475 billion of compute commitments, Meta plans to sell up to $95 billion of shares, SpaceX leased $40 billion of GPUs through Apollo, and Microsoft offered 60,000 staff buyouts. The build-out is now paid for in public markets and payrolls."
+        "title": "Agents raise the pace, not the lock",
+        "desc": "TrendAI found 44 agents validating at least 19 organisations, and most of those checks did not get in. The entries were old admin pages and leftover passwords. Close those first."
       },
       {
-        "title": "Cheaper agents, closer scrutiny",
-        "desc": "GPT-6.1 Terra halves the price of computer use and Copilot Code lets non-developers build apps, while the FTC wants Anthropic executives to testify and a UK union seeks a right to refuse AI. More AI at work, with more questions about who checks it."
+        "title": "The supplier is also the investor",
+        "desc": "Nvidia is putting $3 billion into Meta’s share sale and AMD $1 billion, on top of Monday’s $95 billion plan. A chipmaker’s stake in its customer is not the same thing as broader demand."
       }
     ]
   },
@@ -3446,25 +3468,25 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. Its S-1 (26 Oct) shows first-half revenue of $16.28B, about 80% usage-based, against at least $475B of compute commitments. The same day the FTC demanded testimony from its executives in an AI safety probe."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol; OpenAI says it matches GPT-6 Astra on Agents’ Last Exam at a tenth of the price per token. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. OpenAI also faces an FTC safety probe."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. The same day OpenAI said an internal model refuted the Exponential Time Hypothesis; that claim is with outside examiners and is not a new public model."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
-        "model": "Gemini 4 Argon · 3.8 Flash",
-        "note": "Argon became generally available on 13 Oct in the API, Antigravity and the Gemini app (Pro and Ultra). Introductory price $2/$10 until 30 Nov, then $4/$20. 1M-token limit. Wiz says Argon made an ‘invaluable contribution’ to finding PHP2Shell (21 Oct), and OpenAI models are coming to Google Cloud and Antigravity."
+        "model": "Gemini 4 Argon · 3.8 Flash · Genie 4",
+        "note": "Genie 4 (27 Oct) is a research-preview world model with native audio and live text steering. Gemini 3.8 Flash guides the scene; every clip carries SynthID. Trusted testers first, then Google AI Ultra in Project Genie and early-access Gemini API partners. Object permanence can drift. Argon (13 Oct) remains the general chat model at $2/$10 until 30 Nov, then $4/$20."
       },
       {
         "org": "Meta",
         "name": "Muse",
         "model": "Muse Wonder · Wonder Full · Muse Code",
-        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta said it plans to raise up to $95B in new shares to fund its AI build-out, including Muse."
+        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work."
       },
       {
         "org": "SpaceXAI",
@@ -3519,6 +3541,10 @@
     ]
   },
   "gems": [
+    {
+      "name": "Bouncer",
+      "why": "Stops an agent sending to an address it just read"
+    },
     {
       "name": "Hob",
       "why": "A Cowork-style assistant that keeps your files on your machine"
