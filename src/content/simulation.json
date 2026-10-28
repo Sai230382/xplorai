@@ -1,38 +1,49 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "anthropic-s1-filing-customers-can-walk",
+  "storyId": "cyberstrikeai-44-agents-japan",
   "kicker": "Play with today’s story",
-  "title": "Half-year revenue, set next to the compute already promised",
-  "intro": "Fortune’s account of Anthropic’s S-1 puts first-half revenue at $16.28 billion, up 1,300%. About $13.1 billion of that, roughly 80%, is usage customers can cut. Compute commitments are at least $475 billion. Switch between those reported figures.",
-  "note": "Revenue and the usage split are for the first half. The 1,300% is the rise Fortune reports for that half. Compute is a commitment, not cash already spent, and “at least $475 billion” is the floor in the same article. This block does not divide one figure by the other.",
+  "title": "Three attack setups, and the counts TrendAI could confirm",
+  "intro": "TrendAI’s English report of 27 October describes three infrastructures aimed mainly at Japan. Move across them. Each figure is a lower bound from files on the attackers’ own servers.",
+  "note": "These are lower-bound estimates, not a full census, and not a count of confirmed breaches. The report says the actual numbers may be higher. For many CyberStrikeAI targets the platform recorded no session, no web shell and no exfiltration. Case C’s use of AI is a high-confidence reading of writing style, not a recovered prompt. The Japanese article was 23 October; this English edition is 27 October.",
   "sources": [
     {
-      "label": "Fortune: Anthropic’s S-1 makes clear it’s on the hook for billions in compute. Its customers can walk at any time, 26 October 2026",
-      "url": "https://fortune.com/2026/10/26/anthropics-s-1-makes-clear-its-on-the-hook-for-billions-in-compute-its-customers-can-walk-at-any-time-2/"
+      "label": "TrendAI: Not Only ARTEX: The Different Levels AI is Used in Attacks Targeting Japan, 27 October 2026",
+      "url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan"
     }
   ],
   "widget": {
-    "type": "compare",
-    "label": "Reported figure",
-    "options": [
+    "type": "stepper",
+    "label": "Attack setup in the TrendAI report",
+    "items": [
       {
-        "id": "revenue",
-        "label": "Revenue",
-        "caption": "First half, as Fortune reports the S-1",
+        "label": "A",
+        "name": "CyberStrikeAI",
+        "caption": "Agents ran the whole workflow. October 2026, a short period.",
         "stats": [
-          { "label": "Half-year revenue", "value": "$16.28 billion" },
-          { "label": "Rise in that half", "value": "1,300%" },
-          { "label": "Paid by usage", "value": "about $13.1 billion" },
-          { "label": "Usage share", "value": "roughly 80%" }
+          { "label": "Agents sharing the work", "value": "44" },
+          { "label": "Organisations validated", "value": "at least 19" },
+          { "label": "Of those, in Japan", "value": "at least 16" },
+          { "label": "Deep compromise", "value": "a very small proportion" }
         ]
       },
       {
-        "id": "compute",
-        "label": "Compute",
-        "caption": "Commitments named in the same account",
+        "label": "B",
+        "name": "Human-led, with AI help",
+        "caption": "August–September 2026. AI planned and wrote tools; a person ran the attack.",
         "stats": [
-          { "label": "Future cloud compute", "value": "at least $475 billion" }
+          { "label": "Japanese IP addresses scanned", "value": "at least 6,000" },
+          { "label": "Length of the activity", "value": "about 24 days" }
+        ]
+      },
+      {
+        "label": "C",
+        "name": "AI-like scripts",
+        "caption": "January–October 2026. High confidence of AI help, not confirmed from a prompt.",
+        "stats": [
+          { "label": "WebLogic candidates", "value": "at least 1,300" },
+          { "label": "VPN entry points", "value": "at least 35" },
+          { "label": "Campaigns in 2026", "value": "at least six" }
         ]
       }
     ]
