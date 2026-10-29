@@ -3294,11 +3294,155 @@
       "s": 3,
       "p": "Free (MIT)",
       "st": "active"
+    },
+    {
+      "n": "Enframe",
+      "w": "https://github.com/erwinkramer/enframe",
+      "c": "Agent Infrastructure",
+      "tl": "Turns an OpenAPI spec into a local MCP server",
+      "d": "Enframe is a sidecar that wraps a Swagger 2.0 or OpenAPI 3 spec into an MCP server, so an agent can call the API’s operations as tools. It infers API-key and OAuth setup from the spec, ships as a container of about 43 MB, and listens on port 8080 by default. The licence is CC BY-NC-SA 4.0, so commercial use needs a separate grant. Shown on Show HN on 28 October 2026.",
+      "f": [
+        "One tool per OpenAPI operation",
+        "API key and OAuth inferred from the spec",
+        "Container of about 43 MB",
+        "Non-commercial licence (CC BY-NC-SA 4.0)"
+      ],
+      "u": [
+        "Letting an agent call an internal API that already has a spec",
+        "Trying a public OpenAPI before writing a custom MCP server",
+        "Checking which operations the spec marks as destructive"
+      ],
+      "e": "A small sidecar that lets an AI agent call an existing API, using the API’s own spec as the menu of tools.",
+      "s": 3,
+      "p": "Free for non-commercial use (CC BY-NC-SA 4.0)",
+      "st": "active"
+    },
+    {
+      "n": "Silo",
+      "w": "https://github.com/Asdivyansh/silo-cli",
+      "c": "Agent Infrastructure",
+      "tl": "Runs an untrusted agent in a Docker sandbox, with the keys kept on the host",
+      "d": "Silo is a free, MIT-licensed command-line tool (npm package cli-silo) that runs an agent inside a locked-down Docker container. API keys stay on the host. A proxy injects them, checks each outbound call against a YAML policy, and writes the calls to a JSONL log. It needs Node.js 18 or later and Docker. Shown on Show HN on 28 October 2026.",
+      "f": [
+        "Agent runs in a restricted container",
+        "Keys stay on the host and are injected per call",
+        "YAML rules for which hosts the agent may reach",
+        "JSONL audit log"
+      ],
+      "u": [
+        "Trying an agent you do not fully trust",
+        "Keeping provider keys out of the agent’s shell",
+        "Reviewing what an agent sent off the machine"
+      ],
+      "e": "A free tool that puts an AI agent in a locked container and keeps the passwords on your machine.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "ThreadShelf",
+      "w": "https://github.com/ChrystianSchutz/ThreadShelf",
+      "c": "Productivity",
+      "tl": "A local archive and search for chats from ChatGPT, Claude, Grok and others",
+      "d": "ThreadShelf is a free, MIT-licensed local archive for exported chats from ChatGPT, Claude, Google AI Studio, OpenRouter, LM Studio and Grok. Parsing, embeddings, storage, search, the HTTP API and the MCP server run on the machine. You can continue a thread with a local llama.cpp model. Choosing the marked OpenRouter option sends the selected context off the machine. Shown on Show HN on 28 October 2026. Install is the npm package threadshelf; the project says other installers are not official.",
+      "f": [
+        "Imports exported chats from several assistants",
+        "Local embeddings and search",
+        "MCP server over the same index",
+        "OpenRouter is explicitly off-device"
+      ],
+      "u": [
+        "Finding an old prompt without reopening five chat apps",
+        "Letting a local agent search your own past chats",
+        "Continuing a thread on a model that stays on the machine"
+      ],
+      "e": "A free app that keeps your old AI chats on your computer and lets you search them by meaning.",
+      "s": 3,
+      "p": "Free (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "CleanSlate",
+      "w": "https://github.com/TheWariend/CleanSlate",
+      "c": "Vibe Coding",
+      "tl": "A local coding workspace that can reuse skills MuscleMemory has already checked",
+      "d": "CleanSlate is a free, MIT-licensed AI workspace for agents, chats, files, a terminal and a browser, with the desktop app built on VS Code. Connected to MuscleMemory, it can recall a procedure only after tests passed and, by default, after two later checks and your approval. Published builds are macOS on Apple silicon, version 1.2.0. The project says Developer ID signing and notarisation are temporarily off while an Apple developer account is renewed, so Gatekeeper may block the app. Windows, Linux and Intel Mac builds are not published. Shown on Show HN on 28 October 2026.",
+      "f": [
+        "Desktop workspace plus a CLI and SDK",
+        "Optional link to MuscleMemory skills",
+        "Plan mode is read-only",
+        "Current macOS builds are not notarised"
+      ],
+      "u": [
+        "Reviewing an agent’s diff beside the chat",
+        "Reusing a checked coding procedure on the next task",
+        "Running the same agent from the terminal"
+      ],
+      "e": "A free coding workspace that can hand an AI agent the steps that worked last time, once you have approved them.",
+      "s": 3,
+      "p": "Free (MIT); optional Pro for managed models",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "28 October 2026",
+    "week": "29 October 2026",
     "launches": [
+      {
+        "name": "Enframe (github.com/erwinkramer/enframe)",
+        "date": "28 October 2026",
+        "desc": "A sidecar that wraps a Swagger 2.0 or OpenAPI 3 spec into an MCP server, so an agent can call each operation as a tool. API-key and OAuth settings are inferred from the spec. The container is about 43 MB and listens on port 8080 by default. The licence is CC BY-NC-SA 4.0, which allows non-commercial use and asks for the same licence on adaptations. Shown on Show HN on 28 October.",
+        "why": "For teams that already document an internal API and want an agent to call it without a hand-written MCP server. Read the non-commercial licence before you ship it inside a product.",
+        "demo": {
+          "input": "The OpenAPI spec for an internal catalogue API",
+          "steps": [
+            "Start Enframe with the spec URL",
+            "Point the agent at the local MCP address"
+          ],
+          "output": "The agent can call the spec’s operations. A commercial product still needs a licence beyond CC BY-NC-SA."
+        }
+      },
+      {
+        "name": "Silo (github.com/Asdivyansh/silo-cli)",
+        "date": "28 October 2026",
+        "desc": "A free, open-source (MIT) command-line tool, installed as the npm package cli-silo, that runs an agent inside a locked-down Docker container. Keys stay on the host. A proxy injects them when a call is allowed, checks outbound HTTP against a YAML policy, and writes every proxied call to a JSONL log. It needs Node.js 18 or later and a running Docker engine. Shown on Show HN on 28 October.",
+        "why": "For anyone about to give an unfamiliar agent a shell and a provider key. The key does not sit in the container, and the log shows what left the machine.",
+        "demo": {
+          "input": "An agent that needs a shell and an API key",
+          "steps": [
+            "Silo starts a restricted container",
+            "The host proxy checks each outbound call and writes a JSONL line"
+          ],
+          "output": "The agent runs. The key stayed on the host, and the log lists the calls."
+        }
+      },
+      {
+        "name": "ThreadShelf (github.com/ChrystianSchutz/ThreadShelf)",
+        "date": "28 October 2026",
+        "desc": "A free, open-source (MIT) local archive for exported chats from ChatGPT, Claude, Google AI Studio, OpenRouter, LM Studio and Grok. Parsing, embeddings, LanceDB storage, search, the HTTP API and the MCP server run on the machine. A thread can be continued with a local llama.cpp model. The OpenRouter option is marked as external and sends the selected context off the machine. The project says the only official install is the threadshelf npm package. Shown on Show HN on 28 October.",
+        "why": "For people who cannot find last month’s prompt because it lives in four chat products. The archive stays local unless you choose the external provider.",
+        "demo": {
+          "input": "Exported JSON chats from Claude and ChatGPT",
+          "steps": [
+            "ThreadShelf embeds them on the machine",
+            "Search opens the original thread"
+          ],
+          "output": "The old conversation, found locally. OpenRouter is a separate, off-device choice."
+        }
+      },
+      {
+        "name": "CleanSlate (github.com/TheWariend/CleanSlate)",
+        "date": "28 October 2026",
+        "desc": "A free, open-source (MIT) workspace that puts an agent, project chats, files, a terminal and a browser in one desktop app built on VS Code. If you connect MuscleMemory, a procedure is recalled only after the tests passed and, by default, after two later passing checks and your approval. The published desktop build is macOS on Apple silicon, version 1.2.0. The project says Developer ID signing and notarisation are paused while an Apple developer account is renewed, so Gatekeeper may block the app. Windows, Linux and Intel Mac builds are not published; those platforms build from source. A CLI and SDK are also published. Shown on Show HN on 28 October.",
+        "why": "For people who already looked at MuscleMemory and want a place to review the agent’s diff. The current Mac download is not notarised, so treat the install as you would any unsigned app.",
+        "demo": {
+          "input": "A bug an agent fixed last week, with tests that passed",
+          "steps": [
+            "MuscleMemory, if connected and approved, offers that procedure",
+            "CleanSlate shows the new diff beside the chat"
+          ],
+          "output": "The next agent starts from the checked steps. You still approve the skill."
+        }
+      },
       {
         "name": "Bouncer (github.com/Ezed9/mcp-bouncer)",
         "date": "27 October 2026",
@@ -3328,20 +3472,6 @@
         }
       },
       {
-        "name": "CaseCite (github.com/thomasunise/casecite)",
-        "date": "25 October 2026",
-        "desc": "A free, self-hosted legal research platform (source-available under the Elastic License 2.0). A firm uploads its documents and gets eight tools behind one login: chat over its own documents with inline citations, contract review and clause-by-clause comparison with redlines, drafting grounded in chosen documents, and case, citation and judge tools built on CourtListener. Documents, the search index and chat history stay on the firm’s servers; AI features send text to the providers it configures under its own API keys, with no telemetry, and the README lists every outbound data flow. Every answer carries a notice to check it against the sources and current law. Shown on Show HN on 25 October.",
-        "why": "For small firms and in-house legal teams that want AI research over their own files without a per-seat legal AI contract. Its citation check is not a substitute for Shepard’s or KeyCite.",
-        "demo": {
-          "input": "Ask which of the firm’s past leases allow early termination",
-          "steps": [
-            "CaseCite searches the firm’s indexed leases",
-            "It answers with citations to the clauses"
-          ],
-          "output": "A list of leases with linked termination clauses to check."
-        }
-      },
-      {
         "name": "proc (proc-cli.com)",
         "date": "26 October 2026",
         "desc": "A free, open-source (MIT) command-line tool for macOS, Linux and Windows that finds and manages processes by port, PID, name or folder: ‘proc on :3000’ shows what is listening on port 3000, ‘proc why’ traces what started it, and ‘proc kill :3000’ stops it after asking first, with --dry-run to preview. Every command can print one JSON document with --json and uses fixed exit codes, so coding agents can read it without parsing tables, and an agent skill teaches Claude Code, Codex, Cursor, Gemini CLI and others when to use it. Shown on Show HN on 26 October (v1.14.5).",
@@ -3356,49 +3486,27 @@
         }
       },
       {
-        "name": "Farol (github.com/winnin/farol)",
+        "name": "CaseCite (github.com/thomasunise/casecite)",
         "date": "25 October 2026",
-        "desc": "A free, open-source (MIT) command-line tool and GitHub Action that tells the person approving a pull request how risky the merge is and where the risk lives. It runs after your AI code review and uses static analysis, not a model, to list every page, API operation, job and script the changed code reaches, then gives a verdict (fast track, quick review or careful review) and a 0–100 score from reach, test coverage of the diff, security findings, contract breaks and dependency changes. It comments on every PR but never blocks a merge, never runs your code and sends nothing anywhere. Supports TypeScript/React, Go and Python. v0.1.2 shipped on 24 October; shown on Show HN on 25 October.",
-        "why": "For teams where agents write and review much of the code but a person still clicks approve. It points that person at the few changes that deserve a line-by-line read.",
+        "desc": "A free, self-hosted legal research platform (source-available under the Elastic License 2.0). A firm uploads its documents and gets eight tools behind one login: chat over its own documents with inline citations, contract review and clause-by-clause comparison with redlines, drafting grounded in chosen documents, and case, citation and judge tools built on CourtListener. Documents, the search index and chat history stay on the firm’s servers; AI features send text to the providers it configures under its own API keys, with no telemetry, and the README lists every outbound data flow. Every answer carries a notice to check it against the sources and current law. Shown on Show HN on 25 October.",
+        "why": "For small firms and in-house legal teams that want AI research over their own files without a per-seat legal AI contract. Its citation check is not a substitute for Shepard’s or KeyCite.",
         "demo": {
-          "input": "Open a pull request that changes a shared React hook",
+          "input": "Ask which of the firm’s past leases allow early termination",
           "steps": [
-            "Farol maps every page that uses the hook",
-            "It scores the merge and lists untested changed lines"
+            "CaseCite searches the firm’s indexed leases",
+            "It answers with citations to the clauses"
           ],
-          "output": "A PR comment: ‘careful review, 74/100’, with the two files to read first."
-        }
-      },
-      {
-        "name": "MuscleMemory (github.com/TheWariend/MuscleMemory)",
-        "date": "25 October 2026",
-        "desc": "An open-source (Apache 2.0) memory layer for coding agents such as Codex, Claude Code and Cursor. It watches the agent work, and when a task really succeeds (the tests pass after the last change) it saves how the task was done. Next time a similar task comes up, it gives the agent a short note: the files to change, the test that proves it worked and what to avoid. It runs locally with SQLite and a small on-device model by default, with no account. Its authors report that in real Codex sessions it cut input tokens by 25.5%, tool calls by 30.4% and time by 28.2%, with every task still passing, and include a script to check the numbers. Shown on Show HN on 25 October.",
-        "why": "For teams paying for agents that relearn the same repository every session. The savings are the authors’ own benchmark, so measure on your own tasks.",
-        "demo": {
-          "input": "Ask Codex to add a field to a Django form, a task it did last week",
-          "steps": [
-            "MuscleMemory matches the earlier successful task",
-            "It adds a note with the files and the test to run"
-          ],
-          "output": "The agent goes straight to the right files and finishes with fewer tool calls."
-        }
-      },
-      {
-        "name": "Hurston-1 (huggingface.co/destined/hurston-1)",
-        "date": "25 October 2026",
-        "desc": "An open-source (Apache 2.0) text-to-speech model from Atlanta-based Destined AI, built for phone calls (narrowband audio). It is strong on American English and especially Southern American and regional African English accents. The founder says it was fine-tuned from Maya1 on 136 hours of consented recordings, from a collection of more than 1,800 hours from over 20,000 people, and that it has already been used for customers including Amazon and Salesforce. It does not keep exactly the same voice across prompts and cannot clone voices. Shown on Show HN on 25 October; downloading needs a Hugging Face login and agreeing to its access terms.",
-        "why": "For teams building phone agents or IVR systems whose callers do not sound like the default voices. Test it against your own call audio.",
-        "demo": {
-          "input": "A clinic’s appointment-reminder script",
-          "steps": [
-            "Generate the reminder with a Southern American voice",
-            "Play it over the phone line"
-          ],
-          "output": "A natural-sounding call voice that fits the clinic’s callers."
+          "output": "A list of leases with linked termination clauses to check."
         }
       }
     ],
     "funding": [
+      {
+        "company": "Upwind",
+        "amount": "$400M Series C",
+        "valuation": "$3.8B",
+        "context": "Announced 28 October and led by Bessemer Venture Partners, with Canapi Ventures as a new investor and existing investors including Greylock, Cyberstarts, Craft, Salesforce Ventures and TCV (Upwind; GlobeNewswire). Upwind says the round follows its $250 million Series B at a $1.5 billion valuation in January, that revenue has quadrupled in 2026, and that total funding is now over $800 million. It sells runtime security for cloud and AI workloads."
+      },
       {
         "company": "Meta (from Nvidia and AMD)",
         "amount": "$4B ($3B Nvidia, $1B AMD)",
@@ -3422,43 +3530,37 @@
         "amount": "$130M Series D",
         "valuation": "$1.4B",
         "context": "Announced 25 October and led by Sapphire Ventures, co-led by M&G’s Catalyst, with General Catalyst, Bosch Ventures and Y Combinator taking part (The AI Insider). Tractian puts sensors on industrial machines and uses AI agents trained on failure data to diagnose problems and recommend fixes; it says more than 2,000 facilities use it."
-      },
-      {
-        "company": "Daytona",
-        "amount": "$60M Series B",
-        "valuation": "$1B",
-        "context": "Announced 20 October and led by FirstMark Growth, bringing its total to $91 million, with angels including Patrick Collison, Tobi Lütke and Aravind Srinivas (Daytona; TechCrunch, 23 October). Daytona runs isolated Linux, Windows, macOS and GPU sandboxes where AI agents run code and tools, and says revenue has grown about 25 times since January."
       }
     ],
     "quotes": [
       {
-        "who": "Amazon’s engineering memo, on scoring AI use",
-        "text": "If your work does not benefit from current AI tooling, that is a finding, not a failing.",
-        "source": "CNBC, 27 October 2026"
+        "who": "Google, on who gets Gemini 4 Carbon",
+        "text": "Starting this week, we will make Carbon available to a subset of cyber defenders and will gradually phase access to additional trusted partners through our Fairwind Program.",
+        "source": "Google, 28 October 2026"
       },
       {
-        "who": "TrendAI, on the CyberStrikeAI checks",
-        "text": "An attempted attack must be distinguished from a compromise.",
-        "source": "TrendAI, 27 October 2026"
+        "who": "Anthropic, on Claude Enterprise smart reports",
+        "text": "Smart reports help admins understand adoption and inform investment planning, but they aren’t for evaluating individual performance or making employment decisions.",
+        "source": "Anthropic, 28 October 2026"
       },
       {
-        "who": "Anthropic, on its refutation of the Exponential Time Hypothesis",
-        "text": "The result is purely asymptotic and says nothing about solving formulas in practice.",
-        "source": "Anthropic formal-math, 27 October 2026"
+        "who": "Microsoft, in its Form 10-Q",
+        "text": "For the three months ended September 30, 2026, we recorded revenue from commercial arrangements with OpenAI, inclusive of revenue-sharing payments, of $10.0 billion.",
+        "source": "Microsoft Form 10-Q, filed 28 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "Stop scoring AI by the tokens",
-        "desc": "Amazon told its engineers that token counts and lines of code are deeply flawed as targets. Usage still tracks cost. It does not tell you whether the work got better."
+        "title": "The strongest model is on a list",
+        "desc": "Gemini 4 Carbon leads Google’s own cyber scores and is going first to selected defenders. A ranking is not access. Ask whether your team can call the model."
       },
       {
-        "title": "Agents raise the pace, not the lock",
-        "desc": "TrendAI found 44 agents validating at least 19 organisations, and most of those checks did not get in. The entries were old admin pages and leftover passwords. Close those first."
+        "title": "The bill needs a receipt",
+        "desc": "Anthropic will show a Claude team what it produced and what that cost. Microsoft’s quarter included $10.0 billion from OpenAI. Usage, by itself, is no longer the whole story."
       },
       {
-        "title": "The supplier is also the investor",
-        "desc": "Nvidia is putting $3 billion into Meta’s share sale and AMD $1 billion, on top of Monday’s $95 billion plan. A chipmaker’s stake in its customer is not the same thing as broader demand."
+        "title": "The answer is an ad slot",
+        "desc": "Google is putting ads in AI Mode in more countries while Search ad growth slowed to 12%. Check the campaigns that now sit inside the answer."
       }
     ]
   },
@@ -3479,8 +3581,8 @@
       {
         "org": "Google DeepMind",
         "name": "Gemini",
-        "model": "Gemini 4 Argon · 3.8 Flash · Genie 4",
-        "note": "Genie 4 (27 Oct) is a research-preview world model with native audio and live text steering. Gemini 3.8 Flash guides the scene; every clip carries SynthID. Trusted testers first, then Google AI Ultra in Project Genie and early-access Gemini API partners. Object permanence can drift. Argon (13 Oct) remains the general chat model at $2/$10 until 30 Nov, then $4/$20."
+        "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4",
+        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model."
       },
       {
         "org": "Meta",
@@ -3534,13 +3636,25 @@
       },
       {
         "org": "MBZUAI / Nvidia",
-        "name": "K2 Horizon · Nemotron 3.5 Super VL",
-        "model": "Open-source families",
-        "note": "NVIDIA released Nemotron 3.5 Super VL (120B, 12B active, multimodal) on 15 Oct with open data and recipes. Bolt 74B-A9B fits in 24GB for local agents. Abu Dhabi’s K2 Horizon family carries on."
+        "name": "K2 Horizon · Nemotron 3.5",
+        "model": "Transcribe · Super VL · open families",
+        "note": "On 28 Oct NVIDIA published Nemotron 3.5 Transcribe, an open speech model (about 4.3B active parameters, OpenMDW-1.1) for 40 languages on recordings up to an hour. It reports mean word error rates of 4.71% (English Open ASR) and 4.62% (multilingual). Nemotron 3.5 Super VL (120B, 12B active, multimodal) shipped on 15 Oct. Abu Dhabi’s K2 Horizon family carries on."
       }
     ]
   },
   "gems": [
+    {
+      "name": "Silo",
+      "why": "Runs an untrusted agent in Docker and keeps the keys on the host"
+    },
+    {
+      "name": "Enframe",
+      "why": "Turns an OpenAPI spec into an MCP server the agent can call"
+    },
+    {
+      "name": "ThreadShelf",
+      "why": "Searches your old AI chats locally, across several products"
+    },
     {
       "name": "Bouncer",
       "why": "Stops an agent sending to an address it just read"

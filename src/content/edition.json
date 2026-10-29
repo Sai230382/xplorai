@@ -1,275 +1,214 @@
 {
-  "number": 33,
-  "edition": "Briefing 33",
-  "date": "28 October 2026",
-  "dateISO": "2026-10-28",
+  "number": 34,
+  "edition": "Briefing 34",
+  "date": "29 October 2026",
+  "dateISO": "2026-10-29",
   "kicker": "Today in AI",
-  "title": "Amazon tells engineers that token counts are a flawed target, DeepMind’s Genie 4 adds sound and live steering to simulated worlds, and TrendAI finds a 44-agent pen-test tool probing organisations in Japan. Nvidia and AMD are putting $4 billion into Meta’s AI share sale, a report says the UK Home Office is embedding AI in near-total secrecy, Anthropic says its refutation of a core computing conjecture does nothing for real formulas, and Apple is adding assistants to Pages, Keynote and Numbers.",
-  "summary": "On 27 October 2026 Amazon published a memo telling engineers not to treat token use or lines of code as the target for AI. Google DeepMind released Genie 4, a research-preview world model with native audio and live text steering. TrendAI’s English report described an open-source tool, CyberStrikeAI, running 44 agents against at least 19 organisations, mostly in Japan, with few deep compromises. Nvidia said it would invest $3 billion in Meta’s share sale and AMD $1 billion, $4 billion in total, after Meta’s $95 billion plan. The Guardian reported an Open Rights Group study of AI across the UK Home Office. Anthropic published a proof that the Exponential Time Hypothesis is false and said it does not help solve real formulas. Apple said Creator Studio subscribers will get AI assistants in Pages, Keynote and Numbers in November.",
-  "uncertainty": "Amazon’s memo text is on its site; CNBC dates the public posting to 27 October and the internal circulation to September, and the May leaderboard shutdown and the lack of a token cap come from CNBC, not the memo. Genie 4’s limits are DeepMind’s own; it is not generally available. TrendAI’s counts are lower bounds from files on attacker servers; the Japanese article was 23 October and the English report 27 October; Case C’s AI use is inferred from writing style. Nvidia’s $3 billion and AMD’s $1 billion are what the companies announced, as CNBC reports; Broadcom’s share of the earlier “up to $5 billion” interest was not stated on Tuesday. The Home Office account is the Open Rights Group’s, via The Guardian; the department says staff still make asylum decisions. Anthropic’s ETH paper is its own claim, published 27 October, and says nothing about practical solving; OpenAI’s related claim, posted 26 October, is still with outside examiners. Apple’s assistants are a November beta for Creator Studio subscribers, in US English, on Apple Intelligence devices.",
+  "title": "Google is holding Gemini 4 Carbon for selected cyber defenders, Anthropic is showing companies what their Claude spend produced, Microsoft recorded $10 billion from OpenAI in one quarter, Google is taking ads in AI Mode to more countries, and Nvidia released an open model that transcribes recordings in 40 languages.",
+  "summary": "On 28 October 2026 Google announced Gemini 4 Carbon, a frontier model it is giving first to a subset of cyber defenders through the Fairwind Program, at the same introductory price as Argon. Anthropic made smart reports, in-app surveys and pooled group budgets generally available for Claude Enterprise. Microsoft’s Form 10-Q, filed the same day, recorded $10.0 billion of quarterly revenue from commercial arrangements with OpenAI, and $7.2 billion still owed. On Alphabet’s earnings call, Google said it is expanding ads in AI Mode to international markets as Search ad growth slowed to 12%. Nvidia published Nemotron 3.5 Transcribe, an open speech model for recordings of up to an hour.",
+  "uncertainty": "Carbon’s scores and prices are Google’s, from its 28 October post. The three cybersecurity benchmarks were run without guardrails. Google does not give a date for general access, and the Fairwind page still describes Gemini 4 Argon, so the size of the Carbon group is not stated. Anthropic’s product page does not carry a date; TechCrunch reported the launch on 28 October. The cap of 10 reports a month, and the fact that reports stay off until an admin turns them on, are from Anthropic’s help center. Microsoft’s figures are from the Form 10-Q filed 28 October for the quarter ended 30 September. The filing does not split the $10.0 billion between cloud use and revenue-sharing, and it does not state a full-year OpenAI total. Azure’s $33,165 million and the 48% increase are in the same filing; the product table is in millions of dollars. The ad figures are TechCrunch’s account of Alphabet’s 28 October call. Nemotron’s error rates are Nvidia’s own leaderboard reading.",
   "stats": {
-    "filtered": 16,
-    "verified": 7,
-    "themes": 5
+    "filtered": 11,
+    "verified": 5,
+    "themes": 4
   },
   "stories": [
     {
-      "id": "amazon-token-counts-flawed",
+      "id": "gemini-4-carbon",
+      "topic": "trust",
+      "theme": "Google’s Gemini 4 Carbon leads its cyber benchmarks, and only selected defenders can use it",
+      "changed": "On Wednesday 28 October 2026 Google announced Gemini 4 Carbon, which it calls its strongest model, built for cybersecurity and for long jobs that run on. Koray Kavukcuoglu, Google DeepMind’s chief AI architect, wrote the post. Google says Carbon ranks first on version 5.0 of the Artificial Analysis Intelligence Index, with a score of 59. On external tests run without guardrails, it reports 88.2% on SEC-bench Pro for finding vulnerabilities, 54.8% on ExploitGym for checking whether a flaw can be exploited, and 71.0% on Collinear’s CWE-bench for writing a fix. On Google’s own tests, Carbon more than doubles Argon’s success rate at writing secure code. Google says the Chrome team found Carbon more than 10 times better than another lab’s large frontier model at writing high-quality patches. It does not name that lab. Carbon also cut successful cheating on Terminal-Bench 4.0 to 0.0%, with cheat attempts at 0.4%, and high-severity misalignment alerts in Google’s own coding work fell by almost 80%. On Gray Swan’s indirect prompt-injection benchmark, Google says Argon’s attack success rate was 0.7% and Carbon’s is 0.0%. It reduced overreach by 26% and under-service by 29%, and it is fourth on WebDev Arena at 1768, up 89 elo. The introductory price matches Argon: $2 per million input tokens and $10 per million output tokens, with cached input at 95% off the input price. After the introductory period, the price is $4 per million input tokens and $20 per million output tokens. Google does not say when that period ends. Access starts this week with a subset of cyber defenders, then more trusted partners in the Fairwind Program, while Google is in the US government’s voluntary pre-release testing. Developers, businesses and consumers are told to wait.",
+      "matters": "A model that finds flaws, tries exploits and writes patches is useful to a security team and useful to an attacker. Google is choosing who gets it, and the scores are the maker’s.",
+      "imply": "Do not put Carbon on a roadmap, a vendor comparison or a board slide until your team can actually call it. If someone quotes 88.2%, ask them to add that Google ran that test without guardrails.",
+      "uses": [
+        "If you are a security team, ask whether you are in the Fairwind Program before you plan a pilot.",
+        "Keep your current review tools. Carbon is not a patch you can buy this week.",
+        "When a pitch cites Carbon’s benchmark lead, ask for the test, the guardrails, and who else has rerun it."
+      ],
+      "example": "A security lead is asked to switch the team’s coding assistant to Carbon because it ‘tops the chart’. She replies that the team is not on the defender list, that the 88.2% figure is Google’s and was run without guardrails, and that the pilot stays on the model they can call today.",
+      "audience": "Security leads, anyone buying coding agents, and people who brief leadership on model rankings.",
+      "watch": "When Google names a date for developers and for the API. Independent reruns of SEC-bench, ExploitGym and CWE-bench. Whether Fairwind’s terms for Carbon match the Argon rules already on that page.",
+      "source": {
+        "title": "Google: Introducing Gemini 4 Carbon, 28 October 2026",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "quote": "Starting this week, we will make Carbon available to a subset of cyber defenders and will gradually phase access to additional trusted partners through our Fairwind Program."
+      }
+    },
+    {
+      "id": "claude-smart-reports",
       "topic": "work",
-      "theme": "Amazon tells engineers that token counts and lines of code are a flawed way to score AI use",
-      "changed": "On Tuesday 27 October 2026 Amazon published a revised role guideline for its software engineers, a memo CNBC says had circulated internally in September. Written by Terk Terkowitz, a vice president and distinguished engineer, it says the outcomes that matter are unchanged: impact on customers, the business and the team. It says input metrics such as token usage, adoption of AI tools, and code changes and reviews are deeply flawed as targets because they are disconnected from what matters. Used as a target, they drive higher cost, which the memo calls tokenmaxxing and says is at odds with frugality, and more complexity, because measuring lines of code is at odds with keeping things simple. The memo still says those metrics can be used with care and judgement, and tells leaders to look at the 10th percentile of AI adoption, teams that are not using it, and the 90th, teams using it heavily, and ask whether delivery has risen to match. It says if your work does not benefit from current AI tools, that is a finding, not a failing. CNBC reports that a spokesperson said Amazon has not capped token use, and that in May the company shut an internal leaderboard after staff used AI heavily to climb it. Marc Brooker, an AWS vice president, told CNBC the company looks at feature velocity: how many launches, and how many successful changes reach production.",
-      "matters": "Many companies have started scoring teams on how much AI they consume. Amazon, one of the largest, is now saying that score can reward waste.",
-      "imply": "If your dashboard ranks people by tokens or lines generated, it is measuring the wrong thing. Keep the usage data, and judge the work.",
+      "theme": "Anthropic will show a Claude Enterprise team what it produced, what it cost, and where the work stalled",
+      "changed": "On Wednesday 28 October 2026, TechCrunch reported that Anthropic had made a new set of Claude Enterprise controls generally available. Anthropic’s own page describes three of them. Smart reports: an admin picks a team, a date range and the products to include, and Claude reads a sample of that team’s transcripts, groups the work into workstreams, and shows the spend, the deliverables and the common friction, such as a missing connector or a failed tool call. Each report ends with one list of recommendations, including workflows to turn into skills. Findings can be shared as an artifact. Owners can let a team lead who is not an admin run a report for their own group. The page says the reports are for understanding adoption and planning spend, and that they are not for evaluating individual performance or making employment decisions. In-app surveys ask people, in the tool they are already using, what Claude changed about the time a task took and what would break if access went away. Survey answers are treated as the customer’s data. Pooled group budgets give a group one shared monthly budget, with each person’s own limit still in place. Every request counts against both, and the person stops at whichever runs out first. Admins with billing permission get email at 50%, 75%, 95% and 100% of a budget. Availability depends on configuration, including organisations that use a HIPAA setup or customer-managed encryption keys. Anthropic’s help center, updated with the launch, says reports are off until an admin turns them on, and that each organisation can run up to 10 reports a month at no charge. A queued or in-progress report counts; a failed one does not.",
+      "matters": "Leaders have been asked what the AI bill bought. This is Anthropic’s answer for its own product: a sample of the transcripts, a cost, and a warning not to turn it into a score for a person.",
+      "imply": "Turn the report on for one team and read the friction list. Keep performance reviews on the work itself. A sample of transcripts is not the whole month.",
       "uses": [
-        "Stop using token totals or lines of AI-written code as a target in performance reviews.",
-        "For teams at the heavy end of AI use, check whether launches and successful production changes actually rose.",
-        "Let someone record where AI does not help their work, and treat that as useful information."
+        "Run one report for a team whose Claude bill you already question, and read the workstreams beside the spend.",
+        "Write down that the report is not an input to a performance review, and say so when you share it.",
+        "If you use customer-managed keys, a HIPAA configuration, or want Claude Code included under zero data retention, check the help center before you promise the board a report."
       ],
-      "example": "An engineering director retires a weekly token leaderboard. She keeps the usage report for cost, and in reviews asks each team what shipped and where the assistant got in the way.",
-      "audience": "Engineering managers, HR and finance teams who are scoring AI adoption, and the people being scored.",
-      "watch": "Whether Amazon’s next guideline names a replacement metric. Whether other large employers drop token targets. What happens to its AI bill.",
+      "example": "An engineering director runs the one free report she needs this month on the platform team. It shows a workstream stuck on a missing connector. She sends that finding to the admin who owns connectors, and she leaves the report out of the promotion packet.",
+      "audience": "Claude Enterprise admins, finance partners who see the token bill, and the managers who will be handed the report.",
+      "watch": "Whether the 10-report cap changes. Whether OpenAI and Google ship a report a manager can share without it becoming a score. How customers with encryption keys are told they are left out.",
       "source": {
-        "title": "Amazon: An update from Amazon engineering leadership on the role of the developer in the age of AI, posted 27 October 2026",
-        "url": "https://www.aboutamazon.com/news/company-news/amazon-software-engineer-role-guideline-ai",
-        "quote": "If your work does not benefit from current AI tooling, that is a finding, not a failing"
+        "title": "Anthropic: Smart reports, surveys, and pooled group budgets for Claude Enterprise",
+        "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
+        "quote": "Smart reports help admins understand adoption and inform investment planning, but they aren’t for evaluating individual performance or making employment decisions."
       }
     },
     {
-      "id": "genie-4-interactive-worlds",
-      "topic": "tools",
-      "theme": "DeepMind’s Genie 4 simulates a scene you can steer, with native sound, and it is still a research preview",
-      "changed": "On Tuesday 27 October 2026 Google DeepMind announced Genie 4, a world model for real-time interactive simulation. It is the lab’s first real-time world model to generate audio natively: ambient sound, music and dialogue, produced with the picture. A person can change a running scene with text, such as the weather, the camera, or a new person or object, and Gemini adapts the prompt to the scene. Gemini 3.8 Flash sits in the loop as a guiding agent, breaking a goal into steps and checking frames. DeepMind has also tried pairing it with Gemini 4 Argon for robotics research, including a simulated humanoid playing checkers. Genie 4 is rolling out as a research preview to trusted testers, then to Google AI Ultra subscribers in Project Genie and to early-access partners of the Gemini API and Google AI Studio. Every video and audio clip carries SynthID, Google’s watermark. DeepMind says it is early: visual detail and object permanence can drift as a session runs longer, after complex edits, or as you move through a scene. Legible text, audio accuracy and long-term consistency are still open problems.",
-      "matters": "Teams that storyboard, prototype a game or rehearse a robot task may get a steerable scene instead of a still. It is not a finished shot, and you cannot have it yet unless you are on the tester list.",
-      "imply": "Treat Genie 4 as a draft of a place, not a record of one. Check anything that has to stay put, including text, and expect a wait for access and a price.",
-      "uses": [
-        "If you storyboard or pre-visualise, join the Project Genie waitlist and try one scene you already know well.",
-        "Do not use a Genie clip as evidence of a real place or event. It cannot reproduce real locations accurately, and it is watermarked.",
-        "Robotics and game teams: use it to sketch a scenario, then test the same task in your own simulator."
-      ],
-      "example": "A studio’s previz lead asks Genie 4 for a street scene and steers the camera with text. She exports the clip for a meeting, notes that a shop sign smeared as the shot ran on, and still builds the real set in her usual tools.",
-      "audience": "Film and game teams, robotics groups, and anyone asked to approve synthetic footage.",
-      "watch": "When it leaves the tester list, and what it costs. Independent checks of how long a scene stays coherent. Whether rivals ship a steerable world model.",
-      "source": {
-        "title": "Google DeepMind: Genie 4: A new generation of world simulation, 27 October 2026",
-        "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
-        "quote": "Genie 4 is our first real-time world model to generate audio natively."
-      }
-    },
-    {
-      "id": "cyberstrikeai-44-agents-japan",
-      "topic": "trust",
-      "theme": "TrendAI found a 44-agent pen-test tool validating at least 19 organisations, mostly in Japan, with few deep break-ins",
-      "changed": "On 27 October 2026 TrendAI published the English edition of a report first issued in Japanese on 23 October. It analysed three attack setups aimed mainly at Japan, reconstructed from files the attackers left on their own servers, not from victim logs. In the clearest case, an exposed console was running CyberStrikeAI, an open-source penetration-testing tool. A log line, “credential-search agent 8/44”, showed 44 agents splitting the work: reconnaissance, vulnerability checks, exploitation, command and control, persistence, data theft and report writing. The platform also wrote Japanese forms and fake login pages, and it throttled traffic so each target saw little of it. In a short period in October it ran validation against at least 19 identifiable organisations, at least 16 of them in Japan, plus targets in Taiwan and Hong Kong. Each got a report in the same format. Deep compromise was a very small proportion. For many targets the platform itself recorded no session, no web shell and no exfiltration. The clearest intrusion started at an unauthenticated admin page on an old web system, not a new flaw. A second, human-led case in August and September scanned at least 6,000 Japanese IP addresses over about 24 days and also went after AI and GPU services. A third, from January to October, showed AI-like writing in its scripts, which TrendAI rates as high confidence rather than confirmed, and listed at least 1,300 WebLogic candidates and at least 35 VPN entry points. TrendAI says all of these figures are lower bounds.",
-      "matters": "One operator with an agent tool can knock on many doors at once, quietly. The doors in this report were still the old ones: exposed admin pages, default passwords and leftover VPN credentials.",
-      "imply": "An “AI attack” headline is not a count of breaches. Ask what was actually entered. The useful work is still finding the systems you did not mean to leave on the internet.",
-      "uses": [
-        "List public admin pages, old web apps and VPN devices, and close or patch the ones that should not be reachable.",
-        "Check edge devices for passwords left in configuration files, not only for new vulnerabilities.",
-        "When a report cites an AI attack, separate attempts from confirmed access before you brief the board."
-      ],
-      "example": "A security lead reads the report and spends the week on three checks: admin pages open to the internet, default logins on older web apps, and VPN configs that still contain reusable passwords.",
-      "audience": "Security teams, IT leads at smaller firms and public bodies, and anyone briefing leadership on AI-driven attacks.",
-      "watch": "Whether TrendAI names indicators to block. Whether CyberStrikeAI’s maintainers restrict the tool. How often the same pattern shows up outside Japan.",
-      "source": {
-        "title": "TrendAI: Not Only ARTEX: The Different Levels AI is Used in Attacks Targeting Japan, 27 October 2026",
-        "url": "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/not-only-artex-the-different-levels-ai-is-used-in-attacks-targeting-japan",
-        "quote": "An attempted attack must be distinguished from a compromise."
-      }
-    },
-    {
-      "id": "nvidia-amd-buy-into-meta",
+      "id": "microsoft-openai-quarter",
       "topic": "money",
-      "theme": "Nvidia is putting $3 billion into Meta’s share sale and AMD $1 billion, $4 billion in all",
-      "changed": "On Tuesday 27 October 2026 Nvidia said it will invest $3 billion in Meta’s equity offering, and AMD said it will invest $1 billion. CNBC reports the two together as $4 billion. This follows Meta’s announcement on Monday, covered in Briefing 32, of a plan to raise $95 billion for AI infrastructure: $35 billion in underwritten share sales and a further $60 billion sold gradually on the market. Monday’s announcement said Nvidia, AMD and Broadcom were interested in buying up to $5 billion of shares between them. Tuesday’s statements name Nvidia’s and AMD’s amounts; they do not state Broadcom’s. Nvidia said Meta will expand its use of Vera Rubin chips and Vera CPUs, and that the two will do more work together on Muse, Meta’s assistant. AMD said its Helios racks are running at Meta and its EPYC processors power Muse. CNBC says AMD’s shares rose 3% on Tuesday, Nvidia was flat and Meta fell 1%.",
-      "matters": "The companies selling Meta its chips are also buying Meta’s new shares. Part of the money raised for AI capacity goes back to the suppliers.",
-      "imply": "A supplier’s stake is not proof that demand is broader than the deal itself. When you read an AI spending figure, check who is on both sides of it.",
+      "theme": "Microsoft recorded $10 billion from OpenAI in the September quarter, and $7.2 billion is still owed",
+      "changed": "On Wednesday 28 October 2026 Microsoft filed its Form 10-Q for the quarter ended 30 September 2026. The filing says Microsoft holds an equity-method investment in OpenAI of an approximate 24% interest on an as-converted basis, and that OpenAI is a related party. For the three months ended 30 September 2026, Microsoft recorded revenue from commercial arrangements with OpenAI, inclusive of revenue-sharing payments, of $10.0 billion. Accounts receivable from OpenAI were $7.2 billion at 30 September, and $6.0 billion at 30 June. Microsoft has made funding commitments of $13.0 billion, of which $12.0 billion was funded as of 30 September. The same filing’s product table, which is in millions of dollars, lists Azure revenue at $33,165 million for the quarter, against $22,384 million a year earlier, and total revenue at $92,279 million. In the narrative, Microsoft says Azure revenue increased 48%. The filing does not say how much of the $10.0 billion was cloud computing and how much was revenue sharing.",
+      "matters": "A large slice of a cloud giant’s quarter is one AI lab that also owes it $7.2 billion. That is demand, and it is concentration.",
+      "imply": "When a forecast treats Azure growth as broad enterprise demand, ask how much of the quarter was OpenAI. The filing gives you the OpenAI line. It does not give you the split inside it.",
       "uses": [
-        "If you hold Meta, Nvidia or AMD, note that the chipmakers are financing a customer, which can muddy the demand signal.",
-        "In a vendor pitch that cites Meta’s build-out, ask whether the vendor is also buying the customer’s shares.",
-        "Do not treat Broadcom as committed to a set amount. Tuesday’s announcements did not name one."
+        "If you buy from both, note that your cloud bill and their revenue-sharing sit in the same disclosed total.",
+        "In a board note on cloud growth, separate the OpenAI line from the rest of Azure. The 10-Q now lets you do that for the total, not for the mix.",
+        "Treat the $7.2 billion receivable as money not yet collected, which is what the filing says it is."
       ],
-      "example": "A fund analyst updates her note: Nvidia $3 billion and AMD $1 billion are now stated, against Monday’s “up to $5 billion” that also named Broadcom. She leaves Broadcom’s line blank.",
-      "audience": "Investors, finance teams and anyone reading AI spending as a demand forecast.",
-      "watch": "Whether Broadcom states an amount. The pricing of Meta’s share sale. Whether other chip buyers take supplier money on the same terms.",
+      "example": "A treasurer updating the cloud forecast writes two lines: OpenAI arrangements, $10.0 billion of Microsoft revenue this quarter, and OpenAI receivables, $7.2 billion. She leaves the cloud-versus-sharing split blank because the filing does.",
+      "audience": "Finance teams, investors, and anyone reading Azure’s growth as a signal of wider AI demand.",
+      "watch": "Whether the next 10-Q splits cloud revenue from revenue sharing. Whether the receivable rises or gets collected. Any change to the approximate 24% stake.",
       "source": {
-        "title": "CNBC: Nvidia, AMD to invest $4 billion in Meta as tech giants deepen AI partnership, 27 October 2026",
-        "url": "https://www.cnbc.com/2026/10/27/nvidia-invest-meta.html",
-        "quote": "Nvidia on Tuesday said it would invest $3 billion in Meta's equity offering, with AMD announcing it would invest $1 billion."
+        "title": "Microsoft Form 10-Q for the quarter ended 30 September 2026, filed 28 October 2026",
+        "url": "https://microsoft.gcs-web.com/static-files/f84ad3d9-6d9c-4c63-9163-2f5d954f15f7",
+        "quote": "For the three months ended September 30, 2026, we recorded revenue from commercial arrangements with OpenAI, inclusive of revenue-sharing payments, of $10.0 billion."
       }
     },
     {
-      "id": "home-office-ai-in-secret",
-      "topic": "rules",
-      "theme": "A report says the UK Home Office is embedding AI across immigration in near-total secrecy",
-      "changed": "On 27 October 2026 The Guardian reported a new Open Rights Group study, Automated Discrimination: Unpacking the Digital Hostile Environment. The group says AI now sits across Home Office work and that officials routinely cite national security to refuse freedom-of-information requests. The uses it describes include spotting possible sham marriages, estimating the age of people seeking asylum, checking phones of new arrivals, live facial recognition, and drones and satellites at the border. AI is also used to summarise asylum interviews and the country-policy information used in them, and to prioritise cases through a tool called Identify and Prioritise Immigration Cases. The group wants AI regulated, a ban on uses that risk people’s rights, including ChatGPT tools in asylum applications, a public register of government AI tools, and tighter limits on the national security excuse. A Home Office spokesperson told The Guardian that AI does not replace human decision-makers, that trained caseworkers make asylum decisions, and that the tools only help staff navigate interview records and policy information. They cannot be used on their own and do not decide claims. The department says it monitors the tools and has committed to publishing updated evaluations.",
-      "matters": "Summaries and priority scores can shape a decision even when a person signs it. People subject to those systems are not being told, the report says, and the paperwork is hard to get.",
-      "imply": "If you sell AI to a government, or you run one, “a human decides” is not an answer unless you can show what the model drafted and who checked it. Secrecy is now the argument against the system, not only the error rate.",
+      "id": "google-ai-mode-ads",
+      "topic": "money",
+      "theme": "Google is putting ads in AI Mode outside the United States as Search ad growth slows",
+      "changed": "On Wednesday 28 October 2026, during Alphabet’s quarterly earnings call, Google said it is expanding ads in AI Mode beyond the United States. TechCrunch reported the call. Philipp Schindler, Google’s chief business officer, said the company is scaling ads within AI Overviews in AI Mode to more users and queries, taking that monetisation global for the first time, and that it is also adding multi-turn ads in AI Mode in the US. He said click-through rates for sponsored product listings in AI Mode are already comparable to those for organic listings, and that user research finds the ads relevant. TechCrunch reports Alphabet revenue of $127.6 billion, up 25% from a year earlier, and that the shares fell 8% after the results. Google Search revenue grew 12% in the third quarter, after 17% in the second quarter and 19% in the first. Sundar Pichai said Search queries grew at their fastest year-over-year rate in five years, without giving the rate. He said queries in AI Mode are three times longer on average than traditional searches, and that one in five AI Mode searches globally involves voice, images or documents. Google has also passed 50 billion visual searches a month. Google Services revenue was $96.3 billion, up 11%. Google Cloud revenue was $30.7 billion, up 103%.",
+      "matters": "The answer box is becoming an ad slot in more countries. If you buy search ads, or you depend on the free listing above them, the place your customer looks has changed.",
+      "imply": "Check whether your ads are eligible for AI Mode in each country you sell in. A longer query is a different keyword plan. ‘Comparable’ click-through is Google’s description, not a rate you can put in a forecast.",
       "uses": [
-        "If a model drafts or ranks a decision about a person, record that fact and let the person see the draft.",
-        "Publish the tool on the register you already have, and do not answer a disclosure request with a blanket security claim.",
-        "Suppliers: keep the evaluation the buyer can publish, including where the tool was wrong."
+        "Ask your search team which countries just gained ads inside AI Mode, and which campaigns are opted in.",
+        "Pull a week of AI Mode queries before you rewrite keywords. Pichai says they are three times longer on average.",
+        "If you live on organic traffic, look at whether a sponsored listing now sits in the AI answer for your product terms."
       ],
-      "example": "A team bidding to summarise case files for a public body writes into the contract that staff see the summary beside the source text, that the person affected can request it, and that the system is listed on the public AI register.",
-      "audience": "Public-sector IT and legal teams, govtech suppliers, and anyone whose product drafts a decision about a person.",
-      "watch": "Whether the Home Office publishes the evaluations it promised. Whether the inspector of borders opens a formal probe. Whether ministers accept a public register.",
+      "example": "A retail media lead adds AI Mode placements to the UK and Germany accounts, keeps the US multi-turn ads in a separate line, and tells finance she will not book a click-through rate until she has her own numbers.",
+      "audience": "Search and media buyers, ecommerce teams, and anyone whose pipeline starts with a Google query.",
+      "watch": "Which countries are actually live. Whether Google publishes a click-through rate rather than ‘comparable’. How organic results move once the ad is inside the answer.",
       "source": {
-        "title": "The Guardian: ‘Digital hostile environment’: AI secretly being embedded across Home Office, report claims, 27 October 2026",
-        "url": "https://www.theguardian.com/politics/2026/oct/27/digital-hostile-environment-ai-secretly-embedded-home-office-report",
-        "quote": "Migration is a human phenomenon and experience, not a technical problem that can be fixed by artificial intelligence."
+        "title": "TechCrunch: Google expands AI Search ads globally as core ad growth slows, 28 October 2026",
+        "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
+        "quote": "Today, we’re announcing the expansion of ads in AI mode into international markets alongside multi-turn ads and AI mode in the U.S."
       }
     },
     {
-      "id": "eth-refutation-not-for-production",
-      "topic": "trust",
-      "theme": "Anthropic published a proof that a famous computing conjecture is false, and says it does not speed up real problems",
-      "changed": "On 27 October 2026 Anthropic added a paper and a Lean 4 proof to its public formal-math repository: a deterministic algorithm that, it says, solves 3-SAT in time that grows slower than any fixed exponential, which would refute the Exponential Time Hypothesis. The same write-up says the algorithm counts solutions, not only yes or no, in time 2 to the power of O(n log log n over the square root of log n). It says the result was discovered by an internal Claude research model, that the folder is a research artifact, and that the result is purely asymptotic and says nothing about solving formulas in practice. This follows OpenAI’s post on 26 October, which was not in Briefing 32. OpenAI said its own models found a natural-language disproof of the same hypothesis on 16 October and a Lean formalisation on 17 October, and that a group led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams will examine it. OpenAI says finding usable algorithms, and turning the theory into a practical speed-up, will take significant further research. The same OpenAI post also described a mathematics proof and a physics existence proof; the physics materials are being held for an outside group to write up.",
-      "matters": "A lab saying a foundational assumption has fallen will show up in strategy decks. The authors of the new paper say it does not make today’s hard problems faster.",
-      "imply": "Do not change a production system, a security assumption or a research plan because a model produced a proof. Wait until people who did not write it have checked it, and read the sentence about practice.",
-      "uses": [
-        "If someone cites this result in a roadmap, ask them to quote the line that it says nothing about solving real formulas.",
-        "Keep scheduling, search and cryptography work on the algorithms you have measured. This paper does not replace them.",
-        "If your team uses AI to draft proofs, copy Anthropic’s habit: publish the proof, say what was checked by machine, and say what it does not do."
-      ],
-      "example": "A research lead is asked to brief the board on “AI disproved a core limit.” She sends the Anthropic note that the result is asymptotic, names the outside group looking at OpenAI’s version, and recommends no change to the product.",
-      "audience": "Research leads, CTOs, and anyone asked to act on an AI-produced scientific claim.",
-      "watch": "What Impagliazzo, Paturi and Williams report. Whether the two proofs are the same result. Any claim of a speed-up on problems people actually run.",
-      "source": {
-        "title": "Anthropic: A 2^o(n) Time Algorithm for 3-SAT, formal-math repository, commit 27 October 2026",
-        "url": "https://github.com/anthropics/formal-math/blob/main/eth/README.md",
-        "quote": "The result is purely asymptotic and says nothing about solving formulas in practice."
-      }
-    },
-    {
-      "id": "apple-pages-keynote-numbers-assistants",
+      "id": "nemotron-transcribe",
       "topic": "tools",
-      "theme": "Apple is putting AI assistants, and outside agents, inside Pages, Keynote and Numbers",
-      "changed": "On Tuesday 27 October 2026 Apple said Creator Studio updates coming to the App Store in November add an intelligent assistant, in beta, to Keynote, Pages and Numbers. It is built on Apple’s models and OpenAI’s, and it uses the document in front of you: designing and animating slides, drafting and restructuring text, and calculating, charting and building tables. The assistant needs an Apple Intelligence device on iOS 27, iPadOS 27 or macOS 27 or later, and it is US English only. The same apps gain Model Context Protocol support on macOS 27 or later, so an outside AI agent can read the file, edit it and run actions. The update is free for existing Creator Studio subscribers. New subscribers pay $12.99 a month or $129 a year in the US. Apple says the free versions of Keynote, Pages and Numbers continue. Keynote also gets an open JSON bundle format, .keyx, meant to be readable by other tools and agents.",
-      "matters": "The documents many offices already use can now be edited by an assistant, and, on a Mac, by an outside agent. That is useful, and it is a new place for a company file to be read.",
-      "imply": "Turn on the assistant for a draft you would have written anyway. Before you enable outside agents, decide which documents they may open.",
+      "theme": "Nvidia’s open Nemotron 3.5 Transcribe turns a recording into a transcript, with speakers, in 40 languages",
+      "changed": "On Wednesday 28 October 2026 Nvidia published Nemotron 3.5 Transcribe, a speech model it is releasing under the OpenMDW-1.1 licence, with a fine-tuning toolkit in NeMo Speech. One model does verbatim or cleaned-up transcripts, speaker labels, translation, spoken language identification in 40 languages, and word-level timestamps, on recordings of up to one hour. The style is chosen with a written instruction for that request, without retraining. Nvidia says it has about 4.3 billion active parameters. It reports a mean word error rate of 4.71% on the nine public test sets of the English Open ASR Leaderboard and 4.62% on the multilingual Open ASR Leaderboard, and calls that the best open-weights result on those boards. Given a list of expected names, it says named-entity errors on ContextASR-Bench fall six-fold. With its NVFP4 checkpoint and a DFlash2 draft model, served by the Nemotron Transcribe NIM, it says the model transcribes up to 2,238 seconds of audio per second on one RTX PRO 6000 Blackwell GPU. Nvidia also says that on 17 tasks the model can be adapted on a single GPU, typically within 0.5 to 2.3 GPU-hours per task. Checkpoints include BF16, FP8, NVFP4, GGUF and a DFlash2 draft.",
+      "matters": "Meeting notes and call transcripts are a daily job. An open model you can prompt, and run where you choose, is a different offer from a closed transcription API.",
+      "imply": "Try it on a recording you already have a human transcript for. The error rates are Nvidia’s. A one-hour recording is the length it states. Judge the names, the speakers and the language you actually use.",
       "uses": [
-        "Try the assistant on a draft deck or a first pass of a memo, then edit it yourself. It is a beta, and only in US English.",
-        "If you administer Macs, decide whether MCP access to Pages, Keynote and Numbers is allowed, and for which files.",
-        "Keep the free apps if you do not want the subscription. The assistant is part of Creator Studio."
+        "Transcribe one real meeting, with a prompt that says whether you want every false start or a cleaned paragraph, and compare it with the notes you trust.",
+        "If the recording has product names, pass them in the prompt. Nvidia’s six-fold claim is for that setup, on its benchmark.",
+        "Keep live call-centre audio on the system you have until you have tested this model on recordings of that length and accent."
       ],
-      "example": "A communications lead drafts a board update in Pages with the assistant, checks every figure, and asks IT to leave MCP off on machines that hold customer spreadsheets in Numbers.",
-      "audience": "Anyone who writes in Pages, Keynote or Numbers, and the IT admins who allow agents on Macs.",
-      "watch": "When it leaves beta and US English. What admins can block. Whether Microsoft and Google match the outside-agent access.",
+      "example": "An operations lead runs last Tuesday’s customer call through Nemotron, asks for speaker labels and a cleaned transcript, and checks the account names against the CRM before anyone files the note.",
+      "audience": "Teams that transcribe meetings, support calls or research interviews, and the IT group that decides where audio is allowed to go.",
+      "watch": "Independent word-error rates, especially outside English. Whether a local build on ordinary hardware matches the Blackwell figure. How the OpenMDW licence treats a commercial deployment.",
       "source": {
-        "title": "Apple Newsroom: Apple Creator Studio adds powerful new AI features and even more creative tools, 27 October 2026",
-        "url": "https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/",
-        "quote": "The assistant understands document context to help users accomplish more without leaving their work."
+        "title": "NVIDIA: Nemotron 3.5 Transcribe, published 28 October 2026",
+        "url": "https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/",
+        "quote": "The transcription style is chosen with a natural language instruction for each request, without retraining."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Amazon drops token targets",
-        "body": "Its memo says token counts and lines of code are deeply flawed targets. Measure the outcome of the work."
+        "title": "Carbon is not on sale yet",
+        "body": "Google's cyber model tops its own benchmarks, at $2 and $10 per million tokens. Only selected defenders can use it."
       },
       {
-        "title": "Genie 4 steers a scene",
-        "body": "DeepMind’s world model adds native sound and live text edits. It is a research preview, watermarked with SynthID."
+        "title": "See what Claude spent",
+        "body": "Enterprise reports show a team's work, its cost and where it stalled. Do not use them to score people."
       },
       {
-        "title": "44 agents, few break-ins",
-        "body": "TrendAI found 44 agents checking at least 19 organisations, at least 16 in Japan. Most checks did not get in."
+        "title": "OpenAI, $10 billion",
+        "body": "Microsoft recorded $10.0 billion from OpenAI in the September quarter. Another $7.2 billion is still owed."
       }
     ],
     "matters": [
       {
-        "title": "Usage is not the result",
-        "body": "Amazon says a token leaderboard rewards waste. Keep the cost data, and judge what shipped."
+        "title": "The chart is the maker's",
+        "body": "Carbon's 88.2% vulnerability score was run without guardrails. Ask who else has rerun it."
       },
       {
-        "title": "The doors were already open",
-        "body": "The Japan attacks scaled with agents and still entered through old admin pages and leftover passwords."
+        "title": "A report is not a review",
+        "body": "Anthropic says the Claude spend report is for planning, not for judging a person's work."
       },
       {
-        "title": "A proof is not a speed-up",
-        "body": "Anthropic’s refutation of a core computing conjecture says it does nothing for formulas people actually run."
+        "title": "Ads inside the answer",
+        "body": "Google is taking AI Mode ads to more countries. Search ad growth this quarter was 12%."
       }
     ],
     "watch": [
       {
-        "title": "Who else drops token scores",
-        "body": "Whether other employers follow Amazon and stop grading staff on how much AI they consume."
+        "title": "When Carbon opens up",
+        "body": "Google has no date for developers, businesses or the API. Fairwind still describes Argon."
       },
       {
-        "title": "Genie 4’s waiting list",
-        "body": "When the world model leaves trusted testers, what it costs, and how long a scene stays coherent."
+        "title": "The unpaid $7.2 billion",
+        "body": "Watch whether OpenAI's receivable at Microsoft rises or gets collected next quarter."
       },
       {
-        "title": "The Home Office register",
-        "body": "Whether the department publishes the tool evaluations it promised, and lists the systems it uses."
+        "title": "Test the transcript",
+        "body": "Nemotron's error rates are Nvidia's. Check it on a recording you already had typed."
       }
     ]
   },
   "chips": [
-    "Amazon",
-    "tokenmaxxing",
-    "feature velocity",
-    "Google DeepMind",
-    "Genie 4",
-    "Gemini 3.8 Flash",
-    "SynthID",
-    "Project Genie",
-    "TrendAI",
-    "CyberStrikeAI",
-    "Japan",
-    "Nvidia",
-    "AMD",
-    "Meta",
-    "Muse",
-    "Vera Rubin",
-    "Home Office",
-    "Open Rights Group",
-    "asylum",
+    "Google",
+    "Gemini 4 Carbon",
+    "Fairwind",
+    "SEC-bench Pro",
+    "ExploitGym",
+    "CWE-bench",
+    "Artificial Analysis",
     "Anthropic",
-    "Exponential Time Hypothesis",
-    "Lean",
+    "Claude Enterprise",
+    "smart reports",
+    "pooled budgets",
+    "Microsoft",
     "OpenAI",
-    "Apple",
-    "Pages",
-    "Keynote",
-    "Numbers",
-    "Creator Studio",
-    "MCP"
+    "Form 10-Q",
+    "Azure",
+    "AI Mode",
+    "Philipp Schindler",
+    "Nvidia",
+    "Nemotron 3.5 Transcribe",
+    "Open ASR"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "CNBC 27 Oct: Amazon posted an engineering memo (circulated in September) calling token use, AI adoption and code throughput deeply flawed as targets; 10th and 90th percentile check; no token cap; May leaderboard shut after tokenmaxxing; Brooker cites feature velocity",
-      "topic": "Work"
-    },
-    {
-      "id": "s2",
-      "raw": "DeepMind 27 Oct: Genie 4 research preview; first real-time world model with native audio; live text steering; Gemini 3.8 Flash as guiding agent; SynthID on video and audio; trusted testers, then AI Ultra and Gemini API early access; object permanence can drift",
-      "topic": "Tools"
-    },
-    {
-      "id": "s3",
-      "raw": "TrendAI English report 27 Oct (Japanese 23 Oct): CyberStrikeAI, 44 agents, at least 19 organisations including at least 16 in Japan; many targets recorded no session, no web shell, no exfiltration; lower bounds; second case at least 6,000 Japanese IPs over about 24 days; third case at least 1,300 WebLogic candidates and at least 35 VPN entry points",
+      "raw": "Google blog 28 Oct: Gemini 4 Carbon; Artificial Analysis v5.0 score 59; SEC-bench Pro 88.2%, ExploitGym 54.8%, CWE-bench 71.0%, without guardrails; intro price $2/$10 per million tokens, cached input 95% off; later $4/$20; Fairwind defenders first; Gray Swan attack success 0.0% versus Argon 0.7%; Terminal-Bench cheating 0.0%",
       "topic": "Trust"
     },
     {
+      "id": "s2",
+      "raw": "Anthropic product page, launch reported by TechCrunch 28 Oct: Claude Enterprise smart reports, surveys and pooled group budgets; reports are not for employment decisions; help center says off by default and up to 10 reports a month; budget alerts at 50%, 75%, 95% and 100%",
+      "topic": "Work"
+    },
+    {
+      "id": "s3",
+      "raw": "Microsoft 10-Q filed 28 Oct, quarter ended 30 Sep: $10.0 billion revenue from OpenAI commercial arrangements including revenue sharing; receivables $7.2 billion versus $6.0 billion at 30 June; approximate 24% as-converted stake; commitments $13.0 billion, $12.0 billion funded; Azure $33,165 million, up 48%; total revenue $92,279 million",
+      "topic": "Money"
+    },
+    {
       "id": "s4",
-      "raw": "CNBC 27 Oct: Nvidia to invest $3 billion in Meta’s equity offering, AMD $1 billion, $4 billion total; Monday plan was $95 billion with up to $5 billion of interest from Nvidia, AMD and Broadcom; Vera Rubin, Vera CPU, Muse, Helios, EPYC; AMD +3%, Nvidia flat, Meta -1%",
+      "raw": "TechCrunch 28 Oct, Alphabet call: ads in AI Mode expanding internationally, plus multi-turn ads in the US; Search revenue growth 12% after 17% and 19%; Alphabet revenue $127.6 billion, shares down 8%; AI Mode queries three times longer; one in five multimodal; Google Cloud $30.7 billion, up 103%",
       "topic": "Money"
     },
     {
       "id": "s5",
-      "raw": "Guardian 27 Oct: ORG report says Home Office AI covers sham marriages, age estimation, phone checks, facial recognition, drones, asylum summaries and Ipic, with FOI blocked; Home Office says caseworkers decide and tools only assist",
-      "topic": "Rules"
-    },
-    {
-      "id": "s6",
-      "raw": "Anthropic formal-math commit 27 Oct: 3-SAT in 2^o(n), counting in 2^O(n log log n / sqrt(log n)); purely asymptotic, nothing about practice; internal Claude model. OpenAI 26 Oct: disproof found 16 Oct, Lean 17 Oct; Impagliazzo, Paturi and Williams to examine; practical speed-up needs more research",
-      "topic": "Trust"
-    },
-    {
-      "id": "s7",
-      "raw": "Apple Newsroom 27 Oct: November Creator Studio update; beta assistant in Keynote, Pages and Numbers on Apple and OpenAI models; US English; Apple Intelligence device on iOS 27, iPadOS 27 or macOS 27; MCP on macOS 27; $12.99/month or $129/year; free apps remain",
+      "raw": "Nvidia 28 Oct: Nemotron 3.5 Transcribe, OpenMDW-1.1, about 4.3B active parameters, 40 languages, recordings up to one hour; English Open ASR mean WER 4.71%, multilingual 4.62%; named-entity errors down six-fold on ContextASR-Bench when names are provided",
       "topic": "Tools"
     }
   ]

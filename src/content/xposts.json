@@ -1,5 +1,32 @@
 [
   {
+    "name": "Google",
+    "handle": "Google",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_400x400.jpg",
+    "text": "Introducing Gemini 4 Carbon, our latest frontier model.\n\nCarbon delivers improved performance across domains — ranking #1 on v5.0 of the @ArtificialAnlys Intelligence Index and sets a new state-of-the-art in cybersecurity and long-horizon capabilities.\n\nIt’s rolling out starting https://t.co/oQrHzxvMSo",
+    "url": "https://x.com/Google/status/2115489522603466766",
+    "postedAt": "2026-10-28T17:03:00.000Z",
+    "take": "Carbon leads Google’s own chart and is rolling out to selected defenders first. Do not plan a switch until your team can actually call it."
+  },
+  {
+    "name": "TechCrunch",
+    "handle": "TechCrunch",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_400x400.png",
+    "text": "Microsoft said it made $10 billion in revenue from commercial arrangements with OpenAI, including revenue-sharing payments, in the quarter ending September 30. It underscores the still-enormous financial dependency of the partnership.\nhttps://t.co/YIx3WscwO9",
+    "url": "https://x.com/TechCrunch/status/2115558995830214922",
+    "postedAt": "2026-10-28T21:39:04.000Z",
+    "take": "Ten billion dollars of Microsoft’s quarter came from OpenAI, and the 10-Q says $7.2 billion is still owed. Read that line before you treat Azure growth as broad demand."
+  },
+  {
+    "name": "NVIDIA AI",
+    "handle": "NVIDIAAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_400x400.png",
+    "text": "Meet NVIDIA Nemotron 3.5 Transcribe 🎙️\n\nAn open-weight, promptable 30B MoE model with ~4B active parameters that brings transcription in 40 languages, speaker attribution, translation, contextual prompting and audio understanding into one checkpoint.\n\nWatch it keep track of who https://t.co/PEH1PeURIv",
+    "url": "https://x.com/NVIDIAAI/status/2115462300241141882",
+    "postedAt": "2026-10-28T15:14:50.000Z",
+    "take": "One open model for a transcript, speaker labels and a translation, on recordings of up to an hour. Try it on a meeting you already had typed."
+  },
+  {
     "name": "Google DeepMind",
     "handle": "GoogleDeepMind",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_400x400.jpg",
