@@ -1,215 +1,216 @@
 {
-  "number": 34,
-  "edition": "Briefing 34",
-  "date": "29 October 2026",
-  "dateISO": "2026-10-29",
+  "number": 35,
+  "edition": "Briefing 35",
+  "date": "30 October 2026",
+  "dateISO": "2026-10-30",
   "kicker": "Today in AI",
-  "title": "Google is holding Gemini 4 Carbon for selected cyber defenders, Anthropic is showing companies what their Claude spend produced, Microsoft recorded $10 billion from OpenAI in one quarter, Google is taking ads in AI Mode to more countries, and Nvidia released an open model that transcribes recordings in 40 languages.",
-  "summary": "On 28 October 2026 Google announced Gemini 4 Carbon, a frontier model it is giving first to a subset of cyber defenders through the Fairwind Program, at the same introductory price as Argon. Anthropic made smart reports, in-app surveys and pooled group budgets generally available for Claude Enterprise. Microsoft’s Form 10-Q, filed the same day, recorded $10.0 billion of quarterly revenue from commercial arrangements with OpenAI, and $7.2 billion still owed. On Alphabet’s earnings call, Google said it is expanding ads in AI Mode to international markets as Search ad growth slowed to 12%. Nvidia published Nemotron 3.5 Transcribe, an open speech model for recordings of up to an hour.",
-  "uncertainty": "Carbon’s scores and prices are Google’s, from its 28 October post. The three cybersecurity benchmarks were run without guardrails. Google does not give a date for general access, and the Fairwind page still describes Gemini 4 Argon, so the size of the Carbon group is not stated. Anthropic’s product page does not carry a date; TechCrunch reported the launch on 28 October. The cap of 10 reports a month, and the fact that reports stay off until an admin turns them on, are from Anthropic’s help center. Microsoft’s figures are from the Form 10-Q filed 28 October for the quarter ended 30 September. The filing does not split the $10.0 billion between cloud use and revenue-sharing, and it does not state a full-year OpenAI total. Azure’s $33,165 million and the 48% increase are in the same filing; the product table is in millions of dollars. The ad figures are TechCrunch’s account of Alphabet’s 28 October call. Nemotron’s error rates are Nvidia’s own leaderboard reading.",
+  "title": "Mistral publishes the weights of Large 4, Canada takes a stake of up to $1.6 billion in Cohere, Reddit says Google’s AI Mode does not send it traffic, OpenAI rewrites the rules it wants its models to follow, and a relay is turning the sandbox off on Codex and Claude Code.",
+  "summary": "On 29 October 2026 Mistral released the weights of Mistral Large 4, the trillion-parameter model it had previewed on 6 October, at $0.70 per million input tokens and $2.10 per million output tokens. The same day Cohere announced the initial close of a Series E targeting up to CAD $7 billion, and the Prime Minister of Canada said the government will invest up to $1.6 billion in the company, in stages. On Reddit’s earnings call, Steve Huffman said AI Mode does not drive traffic, and that October search referrals fell by more than 1 million a week. OpenAI reorganised its Model Spec around five values and said current models do not yet fully reflect it. Symantec’s Threat Hunter Team reported an unauthorised relay that installs the real Codex and Claude Code tools and switches their sandbox off.",
+  "uncertainty": "Large 4’s prices, the licence line and the scores named in the story are from Mistral’s weights post of 29 October. The preview post is dated 6 October. Hugging Face’s launch post the same day says the model is about 1 trillion parameters in total, about 49 billion active, with a 1 million token context. That post also reports different figures on tests Mistral names: Terminal-Bench 4 at 28.3% where Mistral says 41%, a Coding Agent Index of 49.8% where Mistral says 48%, 82% on the reproduce-and-patch slice of the Artificial Analysis Cyber Index where Mistral states a Cyber Index of 51%, and 93.3% attack resistance on Lakera’s B3 where Mistral says 97.1% against a 93.3% preview. The posts do not say the settings match. Cohere’s CAD $7 billion and CAD $35.7 billion are a target and the valuation that target would represent, not cash it says it has received. Canada’s $1.6 billion and $1.7 billion are the ceilings and the commitments on the Prime Minister’s release, to be made in stages. The 165% ARR growth and the 300 customers are Cohere’s. Reddit’s “more than 1 million” is not a precise count, and it is Reddit’s own search referrals. The relay account is Symantec’s, via Broadcom’s 29 October bulletin. It says there is no evidence of abuse so far.",
   "stats": {
-    "filtered": 11,
+    "filtered": 12,
     "verified": 5,
-    "themes": 4
+    "themes": 5
   },
   "stories": [
     {
-      "id": "gemini-4-carbon",
-      "topic": "trust",
-      "theme": "Google’s Gemini 4 Carbon leads its cyber benchmarks, and only selected defenders can use it",
-      "changed": "On Wednesday 28 October 2026 Google announced Gemini 4 Carbon, which it calls its strongest model, built for cybersecurity and for long jobs that run on. Koray Kavukcuoglu, Google DeepMind’s chief AI architect, wrote the post. Google says Carbon ranks first on version 5.0 of the Artificial Analysis Intelligence Index, with a score of 59. On external tests run without guardrails, it reports 88.2% on SEC-bench Pro for finding vulnerabilities, 54.8% on ExploitGym for checking whether a flaw can be exploited, and 71.0% on Collinear’s CWE-bench for writing a fix. On Google’s own tests, Carbon more than doubles Argon’s success rate at writing secure code. Google says the Chrome team found Carbon more than 10 times better than another lab’s large frontier model at writing high-quality patches. It does not name that lab. Carbon also cut successful cheating on Terminal-Bench 4.0 to 0.0%, with cheat attempts at 0.4%, and high-severity misalignment alerts in Google’s own coding work fell by almost 80%. On Gray Swan’s indirect prompt-injection benchmark, Google says Argon’s attack success rate was 0.7% and Carbon’s is 0.0%. It reduced overreach by 26% and under-service by 29%, and it is fourth on WebDev Arena at 1768, up 89 elo. The introductory price matches Argon: $2 per million input tokens and $10 per million output tokens, with cached input at 95% off the input price. After the introductory period, the price is $4 per million input tokens and $20 per million output tokens. Google does not say when that period ends. Access starts this week with a subset of cyber defenders, then more trusted partners in the Fairwind Program, while Google is in the US government’s voluntary pre-release testing. Developers, businesses and consumers are told to wait.",
-      "matters": "A model that finds flaws, tries exploits and writes patches is useful to a security team and useful to an attacker. Google is choosing who gets it, and the scores are the maker’s.",
-      "imply": "Do not put Carbon on a roadmap, a vendor comparison or a board slide until your team can actually call it. If someone quotes 88.2%, ask them to add that Google ran that test without guardrails.",
-      "uses": [
-        "If you are a security team, ask whether you are in the Fairwind Program before you plan a pilot.",
-        "Keep your current review tools. Carbon is not a patch you can buy this week.",
-        "When a pitch cites Carbon’s benchmark lead, ask for the test, the guardrails, and who else has rerun it."
-      ],
-      "example": "A security lead is asked to switch the team’s coding assistant to Carbon because it ‘tops the chart’. She replies that the team is not on the defender list, that the 88.2% figure is Google’s and was run without guardrails, and that the pilot stays on the model they can call today.",
-      "audience": "Security leads, anyone buying coding agents, and people who brief leadership on model rankings.",
-      "watch": "When Google names a date for developers and for the API. Independent reruns of SEC-bench, ExploitGym and CWE-bench. Whether Fairwind’s terms for Carbon match the Argon rules already on that page.",
-      "source": {
-        "title": "Google: Introducing Gemini 4 Carbon, 28 October 2026",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-        "quote": "Starting this week, we will make Carbon available to a subset of cyber defenders and will gradually phase access to additional trusted partners through our Fairwind Program."
-      }
-    },
-    {
-      "id": "claude-smart-reports",
-      "topic": "work",
-      "theme": "Anthropic will show a Claude Enterprise team what it produced, what it cost, and where the work stalled",
-      "changed": "On Wednesday 28 October 2026, TechCrunch reported that Anthropic had made a new set of Claude Enterprise controls generally available. Anthropic’s own page describes three of them. Smart reports: an admin picks a team, a date range and the products to include, and Claude reads a sample of that team’s transcripts, groups the work into workstreams, and shows the spend, the deliverables and the common friction, such as a missing connector or a failed tool call. Each report ends with one list of recommendations, including workflows to turn into skills. Findings can be shared as an artifact. Owners can let a team lead who is not an admin run a report for their own group. The page says the reports are for understanding adoption and planning spend, and that they are not for evaluating individual performance or making employment decisions. In-app surveys ask people, in the tool they are already using, what Claude changed about the time a task took and what would break if access went away. Survey answers are treated as the customer’s data. Pooled group budgets give a group one shared monthly budget, with each person’s own limit still in place. Every request counts against both, and the person stops at whichever runs out first. Admins with billing permission get email at 50%, 75%, 95% and 100% of a budget. Availability depends on configuration, including organisations that use a HIPAA setup or customer-managed encryption keys. Anthropic’s help center, updated with the launch, says reports are off until an admin turns them on, and that each organisation can run up to 10 reports a month at no charge. A queued or in-progress report counts; a failed one does not.",
-      "matters": "Leaders have been asked what the AI bill bought. This is Anthropic’s answer for its own product: a sample of the transcripts, a cost, and a warning not to turn it into a score for a person.",
-      "imply": "Turn the report on for one team and read the friction list. Keep performance reviews on the work itself. A sample of transcripts is not the whole month.",
-      "uses": [
-        "Run one report for a team whose Claude bill you already question, and read the workstreams beside the spend.",
-        "Write down that the report is not an input to a performance review, and say so when you share it.",
-        "If you use customer-managed keys, a HIPAA configuration, or want Claude Code included under zero data retention, check the help center before you promise the board a report."
-      ],
-      "example": "An engineering director runs the one free report she needs this month on the platform team. It shows a workstream stuck on a missing connector. She sends that finding to the admin who owns connectors, and she leaves the report out of the promotion packet.",
-      "audience": "Claude Enterprise admins, finance partners who see the token bill, and the managers who will be handed the report.",
-      "watch": "Whether the 10-report cap changes. Whether OpenAI and Google ship a report a manager can share without it becoming a score. How customers with encryption keys are told they are left out.",
-      "source": {
-        "title": "Anthropic: Smart reports, surveys, and pooled group budgets for Claude Enterprise",
-        "url": "https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets",
-        "quote": "Smart reports help admins understand adoption and inform investment planning, but they aren’t for evaluating individual performance or making employment decisions."
-      }
-    },
-    {
-      "id": "microsoft-openai-quarter",
-      "topic": "money",
-      "theme": "Microsoft recorded $10 billion from OpenAI in the September quarter, and $7.2 billion is still owed",
-      "changed": "On Wednesday 28 October 2026 Microsoft filed its Form 10-Q for the quarter ended 30 September 2026. The filing says Microsoft holds an equity-method investment in OpenAI of an approximate 24% interest on an as-converted basis, and that OpenAI is a related party. For the three months ended 30 September 2026, Microsoft recorded revenue from commercial arrangements with OpenAI, inclusive of revenue-sharing payments, of $10.0 billion. Accounts receivable from OpenAI were $7.2 billion at 30 September, and $6.0 billion at 30 June. Microsoft has made funding commitments of $13.0 billion, of which $12.0 billion was funded as of 30 September. The same filing’s product table, which is in millions of dollars, lists Azure revenue at $33,165 million for the quarter, against $22,384 million a year earlier, and total revenue at $92,279 million. In the narrative, Microsoft says Azure revenue increased 48%. The filing does not say how much of the $10.0 billion was cloud computing and how much was revenue sharing.",
-      "matters": "A large slice of a cloud giant’s quarter is one AI lab that also owes it $7.2 billion. That is demand, and it is concentration.",
-      "imply": "When a forecast treats Azure growth as broad enterprise demand, ask how much of the quarter was OpenAI. The filing gives you the OpenAI line. It does not give you the split inside it.",
-      "uses": [
-        "If you buy from both, note that your cloud bill and their revenue-sharing sit in the same disclosed total.",
-        "In a board note on cloud growth, separate the OpenAI line from the rest of Azure. The 10-Q now lets you do that for the total, not for the mix.",
-        "Treat the $7.2 billion receivable as money not yet collected, which is what the filing says it is."
-      ],
-      "example": "A treasurer updating the cloud forecast writes two lines: OpenAI arrangements, $10.0 billion of Microsoft revenue this quarter, and OpenAI receivables, $7.2 billion. She leaves the cloud-versus-sharing split blank because the filing does.",
-      "audience": "Finance teams, investors, and anyone reading Azure’s growth as a signal of wider AI demand.",
-      "watch": "Whether the next 10-Q splits cloud revenue from revenue sharing. Whether the receivable rises or gets collected. Any change to the approximate 24% stake.",
-      "source": {
-        "title": "Microsoft Form 10-Q for the quarter ended 30 September 2026, filed 28 October 2026",
-        "url": "https://microsoft.gcs-web.com/static-files/f84ad3d9-6d9c-4c63-9163-2f5d954f15f7",
-        "quote": "For the three months ended September 30, 2026, we recorded revenue from commercial arrangements with OpenAI, inclusive of revenue-sharing payments, of $10.0 billion."
-      }
-    },
-    {
-      "id": "google-ai-mode-ads",
-      "topic": "money",
-      "theme": "Google is putting ads in AI Mode outside the United States as Search ad growth slows",
-      "changed": "On Wednesday 28 October 2026, during Alphabet’s quarterly earnings call, Google said it is expanding ads in AI Mode beyond the United States. TechCrunch reported the call. Philipp Schindler, Google’s chief business officer, said the company is scaling ads within AI Overviews in AI Mode to more users and queries, taking that monetisation global for the first time, and that it is also adding multi-turn ads in AI Mode in the US. He said click-through rates for sponsored product listings in AI Mode are already comparable to those for organic listings, and that user research finds the ads relevant. TechCrunch reports Alphabet revenue of $127.6 billion, up 25% from a year earlier, and that the shares fell 8% after the results. Google Search revenue grew 12% in the third quarter, after 17% in the second quarter and 19% in the first. Sundar Pichai said Search queries grew at their fastest year-over-year rate in five years, without giving the rate. He said queries in AI Mode are three times longer on average than traditional searches, and that one in five AI Mode searches globally involves voice, images or documents. Google has also passed 50 billion visual searches a month. Google Services revenue was $96.3 billion, up 11%. Google Cloud revenue was $30.7 billion, up 103%.",
-      "matters": "The answer box is becoming an ad slot in more countries. If you buy search ads, or you depend on the free listing above them, the place your customer looks has changed.",
-      "imply": "Check whether your ads are eligible for AI Mode in each country you sell in. A longer query is a different keyword plan. ‘Comparable’ click-through is Google’s description, not a rate you can put in a forecast.",
-      "uses": [
-        "Ask your search team which countries just gained ads inside AI Mode, and which campaigns are opted in.",
-        "Pull a week of AI Mode queries before you rewrite keywords. Pichai says they are three times longer on average.",
-        "If you live on organic traffic, look at whether a sponsored listing now sits in the AI answer for your product terms."
-      ],
-      "example": "A retail media lead adds AI Mode placements to the UK and Germany accounts, keeps the US multi-turn ads in a separate line, and tells finance she will not book a click-through rate until she has her own numbers.",
-      "audience": "Search and media buyers, ecommerce teams, and anyone whose pipeline starts with a Google query.",
-      "watch": "Which countries are actually live. Whether Google publishes a click-through rate rather than ‘comparable’. How organic results move once the ad is inside the answer.",
-      "source": {
-        "title": "TechCrunch: Google expands AI Search ads globally as core ad growth slows, 28 October 2026",
-        "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
-        "quote": "Today, we’re announcing the expansion of ads in AI mode into international markets alongside multi-turn ads and AI mode in the U.S."
-      }
-    },
-    {
-      "id": "nemotron-transcribe",
+      "id": "mistral-large-4-weights",
       "topic": "tools",
-      "theme": "Nvidia’s open Nemotron 3.5 Transcribe turns a recording into a transcript, with speakers, in 40 languages",
-      "changed": "On Wednesday 28 October 2026 Nvidia published Nemotron 3.5 Transcribe, a speech model it is releasing under the OpenMDW-1.1 licence, with a fine-tuning toolkit in NeMo Speech. One model does verbatim or cleaned-up transcripts, speaker labels, translation, spoken language identification in 40 languages, and word-level timestamps, on recordings of up to one hour. The style is chosen with a written instruction for that request, without retraining. Nvidia says it has about 4.3 billion active parameters. It reports a mean word error rate of 4.71% on the nine public test sets of the English Open ASR Leaderboard and 4.62% on the multilingual Open ASR Leaderboard, and calls that the best open-weights result on those boards. Given a list of expected names, it says named-entity errors on ContextASR-Bench fall six-fold. With its NVFP4 checkpoint and a DFlash2 draft model, served by the Nemotron Transcribe NIM, it says the model transcribes up to 2,238 seconds of audio per second on one RTX PRO 6000 Blackwell GPU. Nvidia also says that on 17 tasks the model can be adapted on a single GPU, typically within 0.5 to 2.3 GPU-hours per task. Checkpoints include BF16, FP8, NVFP4, GGUF and a DFlash2 draft.",
-      "matters": "Meeting notes and call transcripts are a daily job. An open model you can prompt, and run where you choose, is a different offer from a closed transcription API.",
-      "imply": "Try it on a recording you already have a human transcript for. The error rates are Nvidia’s. A one-hour recording is the length it states. Judge the names, the speakers and the language you actually use.",
+      "theme": "Mistral published the weights of Large 4, a trillion-parameter model you can host, with a licence catch if you resell it",
+      "changed": "On Thursday 29 October 2026 Mistral released the weights of Mistral Large 4, which it calls Le Chonk. The preview had gone up on 6 October, with the weights promised by the end of the month. Mistral describes it as a 1-trillion-parameter model that takes text and images. Hugging Face’s launch post the same day says about 1 trillion parameters in total, about 49 billion active, and a context of 1 million tokens. On Mistral’s API, from 29 October, the price is $0.70 per million input tokens, $0.07 per million cached input tokens, and $2.10 per million output tokens. The weights are under the Mistral Ecosystem Open-Weight licence, which Mistral calls a modified MIT licence: free to use, modify, fine-tune and commercialise, except that a business running a model-as-a-service has to take a separate commercial licence. Mistral says three more weeks of reinforcement learning put it first among open models on Cognition’s private FrontierCode 2.0, at 19.7%, and on Terminal-Bench 4.0, at 41%, up 13 percentage points from the preview, with 30% fewer output tokens. On the Artificial Analysis Coding Agent Index it reports 48%, tied with GLM-5.3, using 47% fewer tokens per task. It offers three reasoning modes, low, medium and high, and high is the default. On its cyber tests it reports 51% on the Artificial Analysis Cyber Index and an average refusal of 96.6% on malicious cyber requests, which it calls the highest it measures among open models, on the cyber prompts of JailbreakBench, StrongREJECT and AgentHarm. It reports 73.3% on FinWorkBench, second among open models to Kimi K3, BrowseComp at 84.5% against 75% for an earlier checkpoint, and 97.1% attack resistance on the B3 benchmark against 93.3% in the preview. Hugging Face’s post the same day gives other readings of some of those tests: 28.3% on Terminal-Bench 4, a Coding Agent Index of 49.8%, 82% on the reproduce-and-patch part of the Cyber Index, and 93.3% on B3. The two posts do not say the settings were the same.",
+      "matters": "A model this size can now sit on hardware you control, at a posted API price you can put in a spreadsheet. The scoreboard that comes with it is the maker’s, and it does not match every figure published the same day.",
+      "imply": "Download it if you need to host the model. If you would sell access to other people, read the licence line before you do. Do not put a single percentage in a board slide until you have said whose test it is.",
       "uses": [
-        "Transcribe one real meeting, with a prompt that says whether you want every false start or a cleaned paragraph, and compare it with the notes you trust.",
-        "If the recording has product names, pass them in the prompt. Nvidia’s six-fold claim is for that setup, on its benchmark.",
-        "Keep live call-centre audio on the system you have until you have tested this model on recordings of that length and accent."
+        "Price a pilot at $0.70 per million input tokens and $2.10 per million output tokens, or run the weights yourself if the data cannot leave.",
+        "If the plan is to offer Large 4 as a service, get Mistral’s commercial licence first. Use inside your own company is the case the modified MIT allows.",
+        "Keep FrontierCode’s 19.7% and Terminal-Bench’s 41% labelled as Mistral’s. Note that Hugging Face published 28.3% for Terminal-Bench 4 the same day."
       ],
-      "example": "An operations lead runs last Tuesday’s customer call through Nemotron, asks for speaker labels and a cleaned transcript, and checks the account names against the CRM before anyone files the note.",
-      "audience": "Teams that transcribe meetings, support calls or research interviews, and the IT group that decides where audio is allowed to go.",
-      "watch": "Independent word-error rates, especially outside English. Whether a local build on ordinary hardware matches the Blackwell figure. How the OpenMDW licence treats a commercial deployment.",
+      "example": "A bank’s model team downloads the weights for a coding assistant that has to stay in its own network. It does not put 41% in the vendor note. It writes that Mistral reports 41% and Hugging Face reports 28.3%, and that legal still has to clear any plan to host the model for a client.",
+      "audience": "Teams choosing an open model they can run themselves, and anyone about to resell access to one.",
+      "watch": "Whether Mistral and Hugging Face say which settings produced the two Terminal-Bench numbers. The commercial-licence terms for a hosted service. Independent reruns of FrontierCode and the Cyber Index.",
       "source": {
-        "title": "NVIDIA: Nemotron 3.5 Transcribe, published 28 October 2026",
-        "url": "https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/",
-        "quote": "The transcription style is chosen with a natural language instruction for each request, without retraining."
+        "title": "Mistral: Mistral Large 4 (Le Chonk) is now open weight, 29 October 2026",
+        "url": "https://mistral.ai/news/mistral-large-4-oss/",
+        "quote": "The model is free to use, modify, fine-tune, and commercialize, with a single condition: businesses that operate a Model-as-a-Service offering must obtain a separate commercial license from Mistral before using the model commercially."
+      }
+    },
+    {
+      "id": "cohere-series-e",
+      "topic": "money",
+      "theme": "Canada will invest up to $1.6 billion in Cohere, and Cohere’s round is targeting up to CAD $7 billion",
+      "changed": "On Thursday 29 October 2026 Cohere said it had completed the initial close of a Series E targeting up to CAD $7 billion, which it said would represent a CAD $35.7 billion valuation. It called that the largest private financing round a Canadian technology company has undertaken. Schwarz Group is the lead. Cohere names Bell Ventures, Bullhound Capital and the Government of Canada as new investors, and Inovia Capital, NVIDIA and Prosperity7 Ventures as returning ones. The same day the Prime Minister, Mark Carney, said the Government of Canada will make an equity investment of up to $1.6 billion, on commercial terms, in stages, with reporting against the commitments. In return Cohere will create at least 1,000 new Canadian technical jobs by 2030, commit at least $1.7 billion to additional computing infrastructure in Canada by 2030, keep its Canadian incorporation and headquarters, fund research partnerships, and keep working with the Canadian AI Safety Institute. Cohere said that since launching North, its agent platform, it ended the third quarter with 165% year-over-year growth in annual recurring revenue, and that over the past year its customer count rose 20-fold to 300. Named customers include Bell Canada, RBC, TD Bank, Fujitsu, PwC and Aston Martin Aramco. Cohere’s blog the same day says the round is meant to build frontier models, a platform customers can run themselves, and cyber defence, including a planned acquisition of AISLE.",
+      "matters": "A government is buying a share of a model company, and attaching jobs and a compute build to the stake. The headline number is a target, not a wire transfer.",
+      "imply": "If you buy from Cohere, your vendor now has a state on the cap table. If you cite CAD $7 billion, say “targeting up to”. If you cite $1.6 billion, say “up to”, and “in stages”.",
+      "uses": [
+        "In a vendor note, separate three figures: Canada’s ceiling of $1.6 billion, Cohere’s target of up to CAD $7 billion, and the CAD $35.7 billion valuation Cohere says that target would represent.",
+        "Write down the conditions you can check later: 1,000 Canadian technical jobs and $1.7 billion of compute in Canada by 2030, headquarters staying in Canada.",
+        "Treat the 165% revenue growth and the 300 customers as Cohere’s account of its own year."
+      ],
+      "example": "A procurement lead adds a line to the Cohere file: the Canadian government is taking a staged stake of up to $1.6 billion, the company has promised 1,000 technical jobs and $1.7 billion of compute in Canada by 2030, and the CAD $7 billion round is a target at the initial close.",
+      "audience": "Finance and procurement teams who buy model access, and anyone reading a funding headline as cash in the bank.",
+      "watch": "How much of the CAD $7 billion is actually closed, and when. Whether Canada’s stake is reported against the jobs and the compute. What the AISLE combination changes for customers who wanted cyber work on their own machines.",
+      "source": {
+        "title": "Prime Minister of Canada: Canada announces landmark investment in Cohere, 29 October 2026",
+        "url": "https://www.pm.gc.ca/en/news/news-releases/2026/10/29/canada-announces-landmark-investment-cohere-scale-secure-sovereign-ai",
+        "quote": "Canada’s equity investment in Cohere will total up to approximately $1.6 billion and will be made in stages."
+      }
+    },
+    {
+      "id": "reddit-ai-mode-referrals",
+      "topic": "work",
+      "theme": "Reddit says Google’s AI Mode does not drive traffic, and October search referrals fell by more than 1 million a week",
+      "changed": "On Thursday 29 October 2026, on Reddit’s third-quarter earnings call, chief executive Steve Huffman said Google’s AI Mode does not drive traffic. The Verge reported the call. Huffman said: “Not for us, and not to anybody, as far as I know. That’s just a fundamental shift in how Google works. It used to be a traffic driver, now it’s not.” Reddit said search referrals in October dropped by more than 1 million a week on average. Huffman tied part of the loss to AI Mode and AI Overviews, which he said have evolved and, at a minimum, push everyone down the search page. He also said Reddit believes its machine-translated pages are ranking lower, which would fall mostly outside the United States. He said Reddit is still a top search term, that people still want Reddit, and that Google is crawling the site as hard as ever. Reddit said it will require people to log in, which Huffman said is better for the product, for ads, for safety rules, and for protecting Reddit’s data.",
+      "matters": "A site that lives on Google clicks is saying the new answer box does not send the visit. If your own pipeline starts the same way, October is the month to count.",
+      "imply": "Do not paste Reddit’s sentence onto your forecast. Count your own referrals. “More than 1 million a week” is Reddit’s figure, and it is not a precise count.",
+      "uses": [
+        "Pull October referral traffic from Google and set it next to September before anyone rewrites the acquisition plan.",
+        "Separate AI Mode from the ordinary blue links. Huffman is talking about the answer box, not about every Google visit.",
+        "If a login wall is the proposed fix, say what it is for: ads, safety, and keeping the pages from being scraped. It does not put the Google click back."
+      ],
+      "example": "A publisher’s audience lead stops a slide that says “AI Mode will replace our Google traffic.” She adds October’s referral line, leaves the number as “down, and still being counted,” and asks search to split AI Mode from the rest.",
+      "audience": "Publishers, shops and marketers whose customers arrive from Google, and the finance partners who forecast that traffic.",
+      "watch": "Whether Reddit publishes a precise referral count rather than “more than 1 million.” Whether Google answers the claim. What happens to logged-out traffic once the login wall is up.",
+      "source": {
+        "title": "The Verge: Reddit’s CEO says Google’s AI Mode ‘does not drive traffic’, 29 October 2026",
+        "url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
+        "quote": "The reality is, AI Mode does not drive traffic."
+      }
+    },
+    {
+      "id": "openai-model-spec",
+      "topic": "rules",
+      "theme": "OpenAI rewrote its Model Spec around five values, and says today’s models do not fully follow it yet",
+      "changed": "On Thursday 29 October 2026 OpenAI updated the Model Spec, its public description of how it wants its models to behave. The revision organises the document around five values: faithfulness to human intent, harm minimisation, honesty and transparency, human agency, and care. OpenAI says faithfulness is the foundation: the model should understand what OpenAI, the developer and the user intend, not only follow an instruction word for word, and it should show assumptions so a person can correct them. A new section, “Consider context carefully,” says conversations, memories and other context should inform that reading in a way that respects privacy and the user’s control. OpenAI also added defaults on supporting human agency and on following relevant social norms, and expanded the guidance on side effects. It retired most of the detailed style rules. Style, it says, should follow what people prefer, while stronger defaults remain, including approaching questions objectively. The model should not take a side merely because it thinks that is what someone wants to hear. Throughout the Spec, the model is now called “GPT” rather than “the assistant.” OpenAI says it is exploring training methods so models learn why the principles matter. It also says the Spec is the behaviour it is working toward, and that current models do not yet fully reflect it.",
+      "matters": "The written rules for a widely used model just changed, including how memory and earlier chats should shape an answer. The company says the models have not caught up.",
+      "imply": "If your acceptable-use policy quotes an old style guide, it is quoting something OpenAI has mostly withdrawn. If someone says the model now “follows the new Spec,” ask them to read the sentence that says it does not yet.",
+      "uses": [
+        "Replace any internal note that lists the old style rules. The five values are what OpenAI says it is aiming at.",
+        "Ask whoever runs your workspace what the model is allowed to remember, and how a person clears it. The new section is about that context.",
+        "Do not tell staff or customers that behaviour has already changed. OpenAI says the models do not fully reflect the Spec yet."
+      ],
+      "example": "A compliance lead updates the one-page note on ChatGPT. She deletes the line about a fixed tone, writes down the five values, and adds that OpenAI says current models do not yet fully follow the document.",
+      "audience": "People who write the rules for how staff may use ChatGPT, and anyone who has to explain a model’s behaviour to a customer.",
+      "watch": "When OpenAI says a named model actually reflects the new Spec. How “consider context carefully” shows up in memory controls an admin can switch. Whether developers can still override the defaults that are not safety boundaries.",
+      "source": {
+        "title": "OpenAI: An updated Model Spec for more capable and beneficial AI, 29 October 2026",
+        "url": "https://openai.com/index/updated-model-spec",
+        "quote": "The Model Spec describes the behavior we are working toward; our models do not yet fully reflect it."
+      }
+    },
+    {
+      "id": "coding-agent-relay",
+      "topic": "trust",
+      "theme": "A relay is installing the real Codex and Claude Code tools and switching their sandbox off",
+      "changed": "On Thursday 29 October 2026 Broadcom published a Symantec Threat Hunter bulletin: an unauthorised relay has been installing the genuine OpenAI Codex and Anthropic Claude Code command-line tools on company machines, then rewriting the configuration. The sandbox is switched off. On Codex, Symantec says, it is set to “danger-full-access.” Requests go to the relay’s servers instead of OpenAI’s or Anthropic’s. Symantec says this is not a flaw in the tools. They are doing what the changed settings tell them to do. Threat Hunter found the relay at a dozen organisations, in use since early 2026, mainly in mainland China, in markets where the vendors do not officially sell. There is no evidence the operator is abusing that position. The configuration, Symantec says, strips out the safeguards that are meant to contain the agent, and can expose an organisation whose staff use it.",
+      "matters": "The dangerous part is not a fake program. It is the real coding agent, with the box that limits it turned off, and with the prompts going somewhere else.",
+      "imply": "A normal-looking install is not enough. Check where the tool sends its requests, and whether the sandbox is still on. A dozen organisations is Symantec’s count, not a census.",
+      "uses": [
+        "On machines that run Codex, look for a sandbox set to danger-full-access, and for a server address that is not OpenAI’s or Anthropic’s.",
+        "Treat a setup script that someone runs just after the official install as something to read first, especially if it came from a domain that only looks like the vendor.",
+        "If a machine used the relay, assume the prompts and files that passed through it could have been read. Symantec has not reported abuse. That is not the same as a clean machine."
+      ],
+      "example": "An IT lead searches the developer fleet for Codex configs pointing at an unfamiliar host. She finds two laptops, takes them off the network, and has the owners rotate every key those sessions could see.",
+      "audience": "Security and IT teams who allow Codex or Claude Code, and the developers who install them.",
+      "watch": "Whether OpenAI or Anthropic publish indicators of their own. Whether Symantec names the domains. How often the same pattern shows up outside the markets named in the bulletin.",
+      "source": {
+        "title": "Broadcom, reporting Symantec Threat Hunter: Sandbox flipped to danger-full-access, 29 October 2026",
+        "url": "https://www.broadcom.com/support/security-center/protection-bulletin/sandbox-flipped-to-danger-full-access-unauthorized-ai-relays-create-risk-for-organizations",
+        "quote": "This is not a vulnerability in Codex or Claude Code. The tools are behaving as designed once their configuration has been changed."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Carbon is not on sale yet",
-        "body": "Google's cyber model tops its own benchmarks, at $2 and $10 per million tokens. Only selected defenders can use it."
+        "title": "Large 4 weights are out",
+        "body": "Mistral published Large 4. It costs $0.70 and $2.10 per million tokens. A hosted service needs its own licence."
       },
       {
-        "title": "See what Claude spent",
-        "body": "Enterprise reports show a team's work, its cost and where it stalled. Do not use them to score people."
+        "title": "Canada buys into Cohere",
+        "body": "Canada will invest up to $1.6 billion in Cohere, in stages. The round targets up to CAD $7 billion."
       },
       {
-        "title": "OpenAI, $10 billion",
-        "body": "Microsoft recorded $10.0 billion from OpenAI in the September quarter. Another $7.2 billion is still owed."
+        "title": "AI Mode sends less traffic",
+        "body": "Reddit says October search referrals fell by more than 1 million a week. Its CEO says AI Mode does not drive traffic."
       }
     ],
     "matters": [
       {
-        "title": "The chart is the maker's",
-        "body": "Carbon's 88.2% vulnerability score was run without guardrails. Ask who else has rerun it."
+        "title": "The scores do not agree",
+        "body": "Mistral reports 41% on Terminal-Bench 4.0. Hugging Face’s same-day post says 28.3%. Say whose figure you are using."
       },
       {
-        "title": "A report is not a review",
-        "body": "Anthropic says the Claude spend report is for planning, not for judging a person's work."
+        "title": "A target is not cash",
+        "body": "Cohere’s CAD $7 billion is what the round is targeting. Canada’s $1.6 billion is a ceiling, paid in stages."
       },
       {
-        "title": "Ads inside the answer",
-        "body": "Google is taking AI Mode ads to more countries. Search ad growth this quarter was 12%."
+        "title": "The rules are ahead of the model",
+        "body": "OpenAI’s new Model Spec sets five values. OpenAI says current models do not yet fully follow it."
       }
     ],
     "watch": [
       {
-        "title": "When Carbon opens up",
-        "body": "Google has no date for developers, businesses or the API. Fairwind still describes Argon."
+        "title": "The licence, if you resell",
+        "body": "Using Large 4 inside your company is allowed. Offering it as a service needs a separate commercial licence."
       },
       {
-        "title": "The unpaid $7.2 billion",
-        "body": "Watch whether OpenAI's receivable at Microsoft rises or gets collected next quarter."
+        "title": "Jobs and compute, by 2030",
+        "body": "Cohere committed to at least 1,000 Canadian technical jobs and $1.7 billion of compute in Canada."
       },
       {
-        "title": "Test the transcript",
-        "body": "Nemotron's error rates are Nvidia's. Check it on a recording you already had typed."
+        "title": "Sandbox set to danger",
+        "body": "Symantec found a relay switching Codex to danger-full-access at a dozen organisations. Check the config."
       }
     ]
   },
   "chips": [
-    "Google",
-    "Gemini 4 Carbon",
-    "Fairwind",
-    "SEC-bench Pro",
-    "ExploitGym",
-    "CWE-bench",
-    "Artificial Analysis",
-    "Anthropic",
-    "Claude Enterprise",
-    "smart reports",
-    "pooled budgets",
-    "Microsoft",
-    "OpenAI",
-    "Form 10-Q",
-    "Azure",
+    "Mistral",
+    "Mistral Large 4",
+    "Le Chonk",
+    "FrontierCode",
+    "Terminal-Bench",
+    "Hugging Face",
+    "Cohere",
+    "Series E",
+    "Canada",
+    "Mark Carney",
+    "Schwarz Group",
+    "North",
+    "Reddit",
+    "Steve Huffman",
     "AI Mode",
-    "Philipp Schindler",
-    "Nvidia",
-    "Nemotron 3.5 Transcribe",
-    "Open ASR"
+    "OpenAI",
+    "Model Spec",
+    "Symantec",
+    "Codex",
+    "Claude Code",
+    "danger-full-access"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Google blog 28 Oct: Gemini 4 Carbon; Artificial Analysis v5.0 score 59; SEC-bench Pro 88.2%, ExploitGym 54.8%, CWE-bench 71.0%, without guardrails; intro price $2/$10 per million tokens, cached input 95% off; later $4/$20; Fairwind defenders first; Gray Swan attack success 0.0% versus Argon 0.7%; Terminal-Bench cheating 0.0%",
-      "topic": "Trust"
+      "raw": "Mistral 29 Oct: Large 4 weights; API $0.70 input, $0.07 cached, $2.10 output per million tokens; modified MIT, model-as-a-service needs a commercial licence; FrontierCode 2.0 19.7%; Terminal-Bench 4.0 41%, up 13 points, 30% fewer output tokens; Coding Agent Index 48% and 47% fewer tokens; Cyber Index 51%; malicious refusal 96.6%; Finch 73.3%; BrowseComp 84.5% from 75%; B3 97.1% vs 93.3% preview. HF same day: about 1T / 49B active / 1M context; Terminal-Bench 4 28.3%; Coding Agent Index 49.8%; reproduce-and-patch 82%; B3 93.3%. Preview was 6 Oct.",
+      "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Anthropic product page, launch reported by TechCrunch 28 Oct: Claude Enterprise smart reports, surveys and pooled group budgets; reports are not for employment decisions; help center says off by default and up to 10 reports a month; budget alerts at 50%, 75%, 95% and 100%",
-      "topic": "Work"
+      "raw": "Cohere and the Prime Minister, 29 Oct: initial close of a Series E targeting up to CAD $7 billion, which would represent CAD $35.7 billion; Schwarz leads; Canada will invest up to $1.6 billion in stages; at least 1,000 Canadian technical jobs and at least $1.7 billion of compute in Canada by 2030; Cohere says Q3 ARR up 165% year over year and customers up 20x to 300",
+      "topic": "Money"
     },
     {
       "id": "s3",
-      "raw": "Microsoft 10-Q filed 28 Oct, quarter ended 30 Sep: $10.0 billion revenue from OpenAI commercial arrangements including revenue sharing; receivables $7.2 billion versus $6.0 billion at 30 June; approximate 24% as-converted stake; commitments $13.0 billion, $12.0 billion funded; Azure $33,165 million, up 48%; total revenue $92,279 million",
-      "topic": "Money"
+      "raw": "The Verge, 29 Oct, Reddit earnings call: Huffman says AI Mode does not drive traffic; October search referrals down by more than 1 million a week on average; AI Overviews and AI Mode push results down the page; Reddit will require login",
+      "topic": "Work"
     },
     {
       "id": "s4",
-      "raw": "TechCrunch 28 Oct, Alphabet call: ads in AI Mode expanding internationally, plus multi-turn ads in the US; Search revenue growth 12% after 17% and 19%; Alphabet revenue $127.6 billion, shares down 8%; AI Mode queries three times longer; one in five multimodal; Google Cloud $30.7 billion, up 103%",
-      "topic": "Money"
+      "raw": "OpenAI 29 Oct: Model Spec reorganised around faithfulness to human intent, harm minimisation, honesty and transparency, human agency, and care; most style rules retired; model called GPT rather than the assistant; current models do not yet fully reflect the Spec",
+      "topic": "Rules"
     },
     {
       "id": "s5",
-      "raw": "Nvidia 28 Oct: Nemotron 3.5 Transcribe, OpenMDW-1.1, about 4.3B active parameters, 40 languages, recordings up to one hour; English Open ASR mean WER 4.71%, multilingual 4.62%; named-entity errors down six-fold on ContextASR-Bench when names are provided",
-      "topic": "Tools"
+      "raw": "Symantec via Broadcom, 29 Oct: unauthorised relay installs genuine Codex and Claude Code, sets Codex sandbox to danger-full-access, routes traffic to its own servers; a dozen organisations since early 2026, mainly mainland China; not a vulnerability in the tools; no evidence of abuse so far",
+      "topic": "Trust"
     }
   ]
 }

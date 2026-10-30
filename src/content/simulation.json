@@ -1,52 +1,66 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "gemini-4-carbon",
+  "storyId": "mistral-large-4-weights",
   "kicker": "Play with today’s story",
-  "title": "The scores Google published for Gemini 4 Carbon",
-  "intro": "Google’s 28 October announcement gives four figures for Carbon. Move across them. Each one is a different test, so the numbers are not a single scale.",
-  "note": "These are Google’s figures, from its own post. The three cybersecurity scores were measured without guardrails. The index score is Google’s reading of Artificial Analysis Intelligence Index v5.0. This is not an independent rerun. Carbon is available to a subset of cyber defenders, not generally.",
+  "title": "Five figures Mistral published with the Large 4 weights",
+  "intro": "Move across the prices and the scores on Mistral’s 29 October weights post. Each stop is a different measure. The page does not combine them.",
+  "note": "These are Mistral’s figures. The prices are what its API charges per million tokens. FrontierCode 2.0 is Cognition’s private benchmark, as Mistral reports it. The 96.6% refusal is the average Mistral states for the cyber prompts of JailbreakBench, StrongREJECT and AgentHarm. Finch and BrowseComp are Mistral’s readings; it says the 75% was an earlier checkpoint. Left off this slider, because a Hugging Face post the same day gives different numbers: Terminal-Bench 4 (Mistral 41%, Hugging Face 28.3%), the Coding Agent Index (48% and 49.8%), and Lakera’s B3 (Mistral 97.1% against a 93.3% preview; Hugging Face states 93.3%). The posts do not say the settings match. This is not an independent rerun.",
   "sources": [
     {
-      "label": "Google: Introducing Gemini 4 Carbon, 28 October 2026",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      "label": "Mistral: Mistral Large 4 (Le Chonk) is now open weight, 29 October 2026",
+      "url": "https://mistral.ai/news/mistral-large-4-oss/"
+    },
+    {
+      "label": "Hugging Face: Welcome Le Chonk, Mistral Large 4 on Hugging Face, 29 October 2026",
+      "url": "https://huggingface.co/blog/mistral-large4"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Score Google published for Gemini 4 Carbon",
+    "label": "Figure from Mistral’s Large 4 weights post",
     "items": [
       {
-        "label": "Index",
-        "name": "Artificial Analysis v5.0",
-        "caption": "Google says Carbon ranks first on this index.",
+        "label": "Price",
+        "name": "Mistral API, per million tokens",
+        "caption": "The price Mistral set on 29 October.",
         "stats": [
-          { "label": "Score", "value": "59" },
-          { "label": "Rank Google states", "value": "#1" }
+          { "label": "Input", "value": "$0.70" },
+          { "label": "Cached input", "value": "$0.07" },
+          { "label": "Output", "value": "$2.10" }
         ]
       },
       {
-        "label": "Find",
-        "name": "SEC-bench Pro",
-        "caption": "Finding vulnerabilities. Google says this run had no guardrails.",
+        "label": "Code",
+        "name": "FrontierCode 2.0",
+        "caption": "Cognition’s private benchmark. Mistral says Large 4 leads open models here.",
         "stats": [
-          { "label": "Score", "value": "88.2%" }
+          { "label": "Score Mistral reports", "value": "19.7%" }
         ]
       },
       {
-        "label": "Exploit",
-        "name": "ExploitGym",
-        "caption": "Checking whether a flaw can be exploited. No guardrails, Google says.",
+        "label": "Refuse",
+        "name": "Malicious cyber requests",
+        "caption": "Average refusal Mistral states on JailbreakBench, StrongREJECT and AgentHarm.",
         "stats": [
-          { "label": "Score", "value": "54.8%" }
+          { "label": "Refusal rate", "value": "96.6%" }
         ]
       },
       {
-        "label": "Patch",
-        "name": "CWE-bench",
-        "caption": "Collinear’s CWE-bench, for writing a fix. No guardrails, Google says.",
+        "label": "Sheets",
+        "name": "FinWorkBench (Finch)",
+        "caption": "Mistral says this is second among open models, behind Kimi K3.",
         "stats": [
-          { "label": "Score", "value": "71.0%" }
+          { "label": "Score", "value": "73.3%" }
+        ]
+      },
+      {
+        "label": "Web",
+        "name": "BrowseComp",
+        "caption": "Mistral says reinforcement learning lifted the score from an earlier checkpoint.",
+        "stats": [
+          { "label": "Score", "value": "84.5%" },
+          { "label": "Earlier checkpoint", "value": "75%" }
         ]
       }
     ]

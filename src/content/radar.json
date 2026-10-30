@@ -3382,11 +3382,83 @@
       "s": 3,
       "p": "Free (MIT); optional Pro for managed models",
       "st": "active"
+    },
+    {
+      "n": "Charter",
+      "w": "https://github.com/r28ai/charter",
+      "c": "Agent Infrastructure",
+      "tl": "Checks each agent call against the fields your API actually allows",
+      "d": "Charter is an open-source Python library (Apache-2.0, package charter-ai) for agents that act in a customer’s account through an HTTP API. Each tool is a Pydantic model of that API’s fields, with your rules on top, and every call is checked against it before it is sent. The application sets whose account the call is for; the model cannot change that field. It runs in your process: no proxy, no per-call price, and no telemetry. It needs Python 3.10 or later. Shown on Show HN on 29 October 2026.",
+      "f": [
+        "One Pydantic model per API tool",
+        "The app, not the model, sets the customer",
+        "Calls are checked before they are sent",
+        "Runs in-process, with no telemetry"
+      ],
+      "u": [
+        "Letting an agent look up one customer’s orders and not another’s",
+        "Showing a security review which fields each tool can reach",
+        "Keeping provider keys in your own process"
+      ],
+      "e": "A free library that stops an AI agent from asking an API for a customer it was not given.",
+      "s": 3,
+      "p": "Free (Apache-2.0)",
+      "st": "active"
+    },
+    {
+      "n": "korea-data-mcp",
+      "w": "https://github.com/YoungsoonLee/korea-data-mcp",
+      "c": "Agent Infrastructure",
+      "tl": "Korean public-data APIs, with the traps an agent usually misreads already handled",
+      "d": "korea-data-mcp is a free, Apache-2.0 MCP server for Korean corporate filings, stock prices, apartment trades, business status, holidays, statutes and court rulings, from the official OpenDART, data.go.kr and law.go.kr APIs. It exposes 15 tools. The author lists 47 traps in the live APIs, including a half-year revenue field that is easy to misread, laws that are printed before they take effect, and cancelled apartment deals, and says each is covered by a test. A small evaluation in the repo says agents with the server answered 10 of 10 questions in one call each; with the raw APIs they needed about three times the calls and missed one. Keys and questions stay between the machine and the government APIs. Shown on Show HN on 30 October 2026.",
+      "f": [
+        "15 tools over three official Korean APIs",
+        "47 documented traps, each with a test",
+        "Runs locally, with no telemetry",
+        "Free government API keys"
+      ],
+      "u": [
+        "Asking an agent for a Korean filing without it reading the wrong revenue field",
+        "Checking whether a statute is in force on a given date",
+        "Pulling apartment trades with cancelled deals left out"
+      ],
+      "e": "A free connector that gives an AI agent Korean public data with the usual misreadings already corrected.",
+      "s": 3,
+      "p": "Free (Apache-2.0)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "29 October 2026",
+    "week": "30 October 2026",
     "launches": [
+      {
+        "name": "korea-data-mcp (github.com/YoungsoonLee/korea-data-mcp)",
+        "date": "30 October 2026",
+        "desc": "A free, open-source (Apache-2.0) MCP server for Korean public data: corporate filings and financials from OpenDART, stock prices, apartment trades, business status and holidays from data.go.kr, and statutes and court rulings from law.go.kr. It exposes 15 tools. The author documents 47 traps in the live APIs, including a half-year revenue total that sits in a different field from the quarter, laws printed before they take effect, and cancelled apartment deals, and says each trap has a test. A small evaluation in the repository says agents using the server answered 10 of 10 questions with one call each; with the raw APIs they needed about three times as many calls and missed one. It runs on the machine. Keys go only to the government APIs, and there is no telemetry. Shown on Show HN on 30 October.",
+        "why": "For anyone asking an agent about Korean filings, prices or statutes. The useful part is the field it refuses to misread, not a general search over the web.",
+        "demo": {
+          "input": "What was Samsung Electronics’ revenue in the first half of 2025?",
+          "steps": [
+            "The server calls OpenDART",
+            "It returns the half-year total separately from the quarter"
+          ],
+          "output": "The half-year figure, with the quarter beside it, instead of the quarter labelled as the half."
+        }
+      },
+      {
+        "name": "Charter (github.com/r28ai/charter)",
+        "date": "29 October 2026",
+        "desc": "A free, open-source (Apache-2.0) Python library, installed as charter-ai, for agents that call a customer’s account through an HTTP API. Each tool is a Pydantic model of the API’s fields, your rules sit on that model, and the call is checked before it is sent. The application sets which customer the call is for. The model cannot change that field. It runs inside your process: no proxy, no per-call price, and no telemetry. It needs Python 3.10 or later, and depends on pydantic and httpx. Shown on Show HN on 29 October.",
+        "why": "For a product whose agent can already call a customer API. The check is the field list you wrote, not a second model deciding what is safe.",
+        "demo": {
+          "input": "An agent asked to fetch an order for the customer in this session",
+          "steps": [
+            "The app sets the customer id",
+            "Charter rejects an order id that belongs to someone else"
+          ],
+          "output": "The call is not sent. The allowed fields are the ones in the model."
+        }
+      },
       {
         "name": "Enframe (github.com/erwinkramer/enframe)",
         "date": "28 October 2026",
@@ -3470,37 +3542,15 @@
           ],
           "output": "A chart and a short summary of what stands out, with nothing uploaded."
         }
-      },
-      {
-        "name": "proc (proc-cli.com)",
-        "date": "26 October 2026",
-        "desc": "A free, open-source (MIT) command-line tool for macOS, Linux and Windows that finds and manages processes by port, PID, name or folder: ‘proc on :3000’ shows what is listening on port 3000, ‘proc why’ traces what started it, and ‘proc kill :3000’ stops it after asking first, with --dry-run to preview. Every command can print one JSON document with --json and uses fixed exit codes, so coding agents can read it without parsing tables, and an agent skill teaches Claude Code, Codex, Cursor, Gemini CLI and others when to use it. Shown on Show HN on 26 October (v1.14.5).",
-        "why": "For developers whose coding agents start dev servers and leave stray processes holding ports. It gives the agent one safe command instead of improvised kill scripts.",
-        "demo": {
-          "input": "An agent finds port 3000 already in use",
-          "steps": [
-            "It runs proc on :3000 --json to see the process and its folder",
-            "It runs proc kill :3000 --dry-run, then stops it"
-          ],
-          "output": "The stray dev server is gone and only that process was touched."
-        }
-      },
-      {
-        "name": "CaseCite (github.com/thomasunise/casecite)",
-        "date": "25 October 2026",
-        "desc": "A free, self-hosted legal research platform (source-available under the Elastic License 2.0). A firm uploads its documents and gets eight tools behind one login: chat over its own documents with inline citations, contract review and clause-by-clause comparison with redlines, drafting grounded in chosen documents, and case, citation and judge tools built on CourtListener. Documents, the search index and chat history stay on the firm’s servers; AI features send text to the providers it configures under its own API keys, with no telemetry, and the README lists every outbound data flow. Every answer carries a notice to check it against the sources and current law. Shown on Show HN on 25 October.",
-        "why": "For small firms and in-house legal teams that want AI research over their own files without a per-seat legal AI contract. Its citation check is not a substitute for Shepard’s or KeyCite.",
-        "demo": {
-          "input": "Ask which of the firm’s past leases allow early termination",
-          "steps": [
-            "CaseCite searches the firm’s indexed leases",
-            "It answers with citations to the clauses"
-          ],
-          "output": "A list of leases with linked termination clauses to check."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "Cohere",
+        "amount": "Series E targeting up to CAD $7B",
+        "valuation": "CAD $35.7B (if the target is reached)",
+        "context": "Announced 29 October. Cohere said the initial close of its Series E is targeting up to CAD $7 billion, which would represent a CAD $35.7 billion valuation, led by Schwarz Group, with the Government of Canada, Bell Ventures and Bullhound Capital as new investors and Inovia, NVIDIA and Prosperity7 returning (Cohere). The Prime Minister’s office said Canada will invest up to $1.6 billion in stages. Cohere committed to at least 1,000 Canadian technical jobs and at least $1.7 billion of computing infrastructure in Canada by 2030. Cohere also said third-quarter annual recurring revenue grew 165% year over year and that its customer count rose 20-fold to 300 over the past year."
+      },
       {
         "company": "Upwind",
         "amount": "$400M Series C",
@@ -3524,43 +3574,37 @@
         "amount": "~$40B GPU lease financing",
         "valuation": "n/a (lease financing)",
         "context": "Disclosed in a filing on 26 October: an entity managed by Apollo Global Management will buy Nvidia Vera Rubin chips and server hardware and lease them to SpaceX, with leases starting in the first half of 2027 (TechCrunch). SpaceX expects to spend $35 billion to $40 billion in the fourth quarter alone."
-      },
-      {
-        "company": "Tractian",
-        "amount": "$130M Series D",
-        "valuation": "$1.4B",
-        "context": "Announced 25 October and led by Sapphire Ventures, co-led by M&G’s Catalyst, with General Catalyst, Bosch Ventures and Y Combinator taking part (The AI Insider). Tractian puts sensors on industrial machines and uses AI agents trained on failure data to diagnose problems and recommend fixes; it says more than 2,000 facilities use it."
       }
     ],
     "quotes": [
       {
-        "who": "Google, on who gets Gemini 4 Carbon",
-        "text": "Starting this week, we will make Carbon available to a subset of cyber defenders and will gradually phase access to additional trusted partners through our Fairwind Program.",
-        "source": "Google, 28 October 2026"
+        "who": "Mistral, on the Large 4 licence",
+        "text": "The model is free to use, modify, fine-tune, and commercialize, with a single condition: businesses that operate a Model-as-a-Service offering must obtain a separate commercial license from Mistral before using the model commercially.",
+        "source": "Mistral, 29 October 2026"
       },
       {
-        "who": "Anthropic, on Claude Enterprise smart reports",
-        "text": "Smart reports help admins understand adoption and inform investment planning, but they aren’t for evaluating individual performance or making employment decisions.",
-        "source": "Anthropic, 28 October 2026"
+        "who": "Prime Minister of Canada, on the Cohere stake",
+        "text": "Canada’s equity investment in Cohere will total up to approximately $1.6 billion and will be made in stages.",
+        "source": "Prime Minister of Canada, 29 October 2026"
       },
       {
-        "who": "Microsoft, in its Form 10-Q",
-        "text": "For the three months ended September 30, 2026, we recorded revenue from commercial arrangements with OpenAI, inclusive of revenue-sharing payments, of $10.0 billion.",
-        "source": "Microsoft Form 10-Q, filed 28 October 2026"
+        "who": "Steve Huffman, Reddit’s chief executive",
+        "text": "The reality is, AI Mode does not drive traffic.",
+        "source": "The Verge, reporting Reddit’s earnings call, 29 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "The strongest model is on a list",
-        "desc": "Gemini 4 Carbon leads Google’s own cyber scores and is going first to selected defenders. A ranking is not access. Ask whether your team can call the model."
+        "title": "The weights are public, the licence is not blank",
+        "desc": "Mistral Large 4 can be downloaded. Using it inside your company is allowed. Offering it as a service needs a separate licence. The scores are the maker’s, and they do not all match Hugging Face’s same-day post."
       },
       {
-        "title": "The bill needs a receipt",
-        "desc": "Anthropic will show a Claude team what it produced and what that cost. Microsoft’s quarter included $10.0 billion from OpenAI. Usage, by itself, is no longer the whole story."
+        "title": "A government is on the cap table",
+        "desc": "Canada is taking a staged stake of up to $1.6 billion in Cohere. The CAD $7 billion round is a target, not cash already received."
       },
       {
-        "title": "The answer is an ad slot",
-        "desc": "Google is putting ads in AI Mode in more countries while Search ad growth slowed to 12%. Check the campaigns that now sit inside the answer."
+        "title": "The answer kept the click",
+        "desc": "Reddit says AI Mode does not drive traffic, and that October search referrals fell by more than 1 million a week. Count your own referrals before you borrow that sentence."
       }
     ]
   },
@@ -3576,7 +3620,7 @@
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. The same day OpenAI said an internal model refuted the Exponential Time Hypothesis; that claim is with outside examiners and is not a new public model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model."
       },
       {
         "org": "Google DeepMind",
@@ -3598,6 +3642,12 @@
       }
     ],
     "open": [
+      {
+        "org": "Mistral",
+        "name": "Mistral Large 4",
+        "model": "Le Chonk · ~1T (~49B active) · 1M ctx · open weights",
+        "note": "Weights released 29 Oct, after a public preview on 6 Oct. Mistral’s API price is $0.70 input and $2.10 output per million tokens, with cached input at $0.07. A modified MIT licence allows commercial use; a model-as-a-service needs a separate licence. Mistral reports 19.7% on FrontierCode 2.0 and 41% on Terminal-Bench 4.0. Hugging Face’s same-day post says 28.3% on Terminal-Bench 4. The posts do not say the settings match."
+      },
       {
         "org": "Moonshot AI",
         "name": "Kimi K3.1 Pro",
@@ -3643,6 +3693,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "Charter",
+      "why": "Checks an agent’s API call against the customer your app set"
+    },
+    {
+      "name": "korea-data-mcp",
+      "why": "Korean public-data APIs, with the fields agents usually misread"
+    },
     {
       "name": "Silo",
       "why": "Runs an untrusted agent in Docker and keeps the keys on the host"
