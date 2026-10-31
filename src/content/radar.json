@@ -3426,11 +3426,83 @@
       "s": 3,
       "p": "Free (Apache-2.0)",
       "st": "active"
+    },
+    {
+      "n": "Cerebellum",
+      "w": "https://github.com/cerebellum-labs/cerebellum",
+      "c": "Agent Infrastructure",
+      "tl": "A robot’s own model acts; a cloud model approves what it cannot undo",
+      "d": "Cerebellum is a free, MIT-licensed decision layer for a robot fleet, shown on Show HN on 30 October 2026. The robot’s code marks each action as a reflex, reversible, or irreversible. A reflex, such as stopping when a person is in view, happens on the robot. A reversible action, such as putting fruit in a basket, can be taken by the local model and reviewed later if confidence is under the threshold you set (0.9 in the fruit-sorter demo). An irreversible action, such as throwing an item away, waits for NVIDIA Nemotron 3.5 Super VL on Nebius Token Factory. Nemotron picks among the options the robot offers and does not drive the motors. The robot keeps a SQLite journal and syncs when the network returns. The README says the local model takes about 65 ms on a Raspberry Pi in the demo, an irreversible decision about 1 second and 40 output tokens with reasoning off, and a review about 2 seconds and 300–500 tokens with reasoning on. A demo decision is about $0.0002. The author says it is early: one robot, 19 decisions, versions 0.x, and the API may still change.",
+      "f": [
+        "Three action classes: reflex, reversible, irreversible",
+        "Nemotron reviews unsure calls and decides what cannot be undone",
+        "SQLite journal on the robot, so a network drop queues the decision",
+        "MIT licence. A Nebius key is required for the cloud review"
+      ],
+      "u": [
+        "Letting a sorter act on its own model and hold the throw-away step",
+        "Reviewing a low-confidence basket decision after the fact",
+        "Seeing who decided, and what the cloud call cost, in one journal"
+      ],
+      "e": "A free layer that lets a robot’s small model handle the safe step and asks a cloud model before it does something it cannot take back.",
+      "s": 3,
+      "p": "Free (MIT). Cloud review needs a Nebius Token Factory key; the README says a demo decision is about $0.0002",
+      "st": "active"
+    },
+    {
+      "n": "nesformer",
+      "w": "https://github.com/dbreunig/nesformer",
+      "c": "Gen AI",
+      "tl": "An NES processor compiled into Qwen weights, not trained",
+      "d": "nesformer is a free, MIT-licensed demonstration, shown on Show HN on 30 October 2026. A compiler writes an NES 6502 processor, 2 KB of work RAM and a cartridge’s program into a stock Qwen3.5-shaped checkpoint. Nobody trained the weights. The picture, the controllers and the sound stay in a small host program. The checkpoint is 466.6 million parameters in bf16 (933 MB), of which 9.3 million are nonzero, so the weights zip to 3.3 MB. It loads with an ordinary Hugging Face Qwen class. It runs NROM cartridges only (mapper 0), official opcodes only, and the README says it is 150–290 times slower than the console: about 1,650 tokens a second on one CPU core with the fast engine, against about 700,000 tokens a second for a real NES. Ten seconds of game time is about 25 minutes. Python 3.11 or newer.",
+      "f": [
+        "6502 core, RAM and program ROM in the weights",
+        "Picture, controller and sound stay in the host",
+        "NROM cartridges only",
+        "MIT licence. The compiler reuses Qwenputer"
+      ],
+      "u": [
+        "Seeing a CPU stored as model weights rather than as a learned policy",
+        "Checking a trace against a reference 6502",
+        "Loading the same checkpoint in stock transformers"
+      ],
+      "e": "A free experiment that compiles a games console’s processor into a model file. The picture is still drawn by an ordinary program.",
+      "s": 3,
+      "p": "Free (MIT). Needs Python 3.11 or newer",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "30 October 2026",
+    "week": "31 October 2026",
     "launches": [
+      {
+        "name": "Cerebellum (github.com/cerebellum-labs/cerebellum)",
+        "date": "30 October 2026",
+        "desc": "A free, open-source (MIT) decision layer for a robot fleet. You mark each action as a reflex, reversible, or irreversible. The robot’s own model handles what it is allowed to do. NVIDIA Nemotron 3.5 Super VL, called through Nebius Token Factory, decides anything that cannot be undone and reviews a low-confidence call afterwards. Nemotron chooses among the robot’s options and does not drive the motors. A SQLite journal on the robot syncs when the network returns. The README says the local model takes about 65 ms on a Raspberry Pi in the fruit-sorter demo, an irreversible decision about 1 second, and a review about 2 seconds. A demo decision is about $0.0002. The author, on Show HN the same day, says it is one robot and 19 decisions, and that nothing was stress tested. Versions are 0.x. Shown on Show HN on 30 October.",
+        "why": "For anyone about to let a robot act on a small model. The useful part is the line you mark irreversible. It is a hackathon build, so read the 19-decision caveat before you put it on a machine.",
+        "demo": {
+          "input": "A kiwi the local detector does not recognise, so the robot wants to throw it away",
+          "steps": [
+            "Discard is marked irreversible, so the robot waits",
+            "Nemotron picks basket or discard from the options the robot offered"
+          ],
+          "output": "The throw does not happen until the cloud model answers. A network drop leaves the decision in the queue."
+        }
+      },
+      {
+        "name": "nesformer (github.com/dbreunig/nesformer)",
+        "date": "30 October 2026",
+        "desc": "A free, open-source (MIT) demonstration that compiles an NES 6502 processor, 2 KB of work RAM and a cartridge’s program into a stock Qwen3.5-shaped checkpoint. The README says nobody trained the weights. The picture, the controllers and the sound stay in a host program. The file is 466.6 million parameters (933 MB), of which 9.3 million are nonzero, so it zips to 3.3 MB. It runs NROM games only and, the README says, 150–290 times slower than the console. Shown on Show HN on 30 October. The thread had 205 points when this pulse was checked on 31 October.",
+        "why": "For anyone who hears that a model “learned” a machine. Here the processor was compiled into the weights. It is a demonstration, not a product you would ship.",
+        "demo": {
+          "input": "An NROM cartridge, such as the bundled test ROM",
+          "steps": [
+            "The weights step the 6502 one token at a time",
+            "The host draws the frame and reads the controller"
+          ],
+          "output": "A short GIF. Ten seconds of game time takes about 25 minutes."
+        }
+      },
       {
         "name": "korea-data-mcp (github.com/YoungsoonLee/korea-data-mcp)",
         "date": "30 October 2026",
@@ -3514,34 +3586,6 @@
           ],
           "output": "The next agent starts from the checked steps. You still approve the skill."
         }
-      },
-      {
-        "name": "Bouncer (github.com/Ezed9/mcp-bouncer)",
-        "date": "27 October 2026",
-        "desc": "A free, open-source (MIT) local proxy, v0.1.4, for Mac, Windows and Linux that sits in front of MCP servers an agent already uses. If the agent tries to email, post or share to a destination that appeared earlier in that server’s output, such as an address inside a ticket or a document, the call is denied. The match is literal, no model decides, and a destination the proxy cannot trace goes to a person to approve. It also confines file paths, refuses tools that were not there at startup, caps how often a write tool can run, and logs every allow, deny and ask as JSON on the machine. It does not detect prompt injection, and it covers MCP calls only. On the author’s own AgentDojo run, tasks that send email or share a file went from 4 out of 6 succeeding to 0 out of 6, so legitimate sends are blocked too. Shown on Show HN on 27 October.",
-        "why": "For teams whose agents can send mail or share files from whatever a document says. It is an early check, not a filter that understands the message, and it will also block real sends unless a person approves them.",
-        "demo": {
-          "input": "A helpdesk ticket that asks the agent to email the customer list to a new address",
-          "steps": [
-            "Bouncer sees the address came from the ticket",
-            "It denies the send and writes the decision to the audit log"
-          ],
-          "output": "The mail does not go out. A person can approve a send to an address the agent did not just read."
-        }
-      },
-      {
-        "name": "Hob (github.com/FrigadeHQ/hob)",
-        "date": "26 October 2026",
-        "desc": "A free, open-source (MIT) desktop app for Mac, Windows and Linux from Frigade that works on your files the way the Claude and ChatGPT desktop apps do, but with the model running on your own computer. On first install it picks the best open-weight model your hardware can run (currently Gemma 4 or gpt-oss) and sets it up. It can read and change files in a folder, look at images, fill out PDFs, write sandboxed Python for jobs like data processing, document conversion and charts, search the web through SearXNG and use MCP connectors you add. Chats and files stay on your machine; web search can be switched off, and it works fully offline. Shown on Show HN on 26 October, where it reached 125 points.",
-        "why": "For people who want a Cowork-style assistant for spreadsheets, PDFs and folders but cannot send those files to a cloud AI. Expect smaller models than the cloud apps, so check results on your own documents.",
-        "demo": {
-          "input": "A folder of regional sales spreadsheets",
-          "steps": [
-            "Hob reads the files with a local model",
-            "It writes sandboxed Python to chart revenue by region"
-          ],
-          "output": "A chart and a short summary of what stands out, with nothing uploaded."
-        }
       }
     ],
     "funding": [
@@ -3578,33 +3622,33 @@
     ],
     "quotes": [
       {
-        "who": "Mistral, on the Large 4 licence",
-        "text": "The model is free to use, modify, fine-tune, and commercialize, with a single condition: businesses that operate a Model-as-a-Service offering must obtain a separate commercial license from Mistral before using the model commercially.",
-        "source": "Mistral, 29 October 2026"
+        "who": "Google, on Computer Use screenshot checks",
+        "text": "Prompt injection detection is an opt-in feature. The default is false.",
+        "source": "Gemini API Computer Use documentation, read 31 October 2026"
       },
       {
-        "who": "Prime Minister of Canada, on the Cohere stake",
-        "text": "Canada’s equity investment in Cohere will total up to approximately $1.6 billion and will be made in stages.",
-        "source": "Prime Minister of Canada, 29 October 2026"
+        "who": "Tony Xu, DoorDash’s chief executive",
+        "text": "we’re seeing maybe several hundred orders in total from some of these third-party agents",
+        "source": "DoorDash Q3 2026 earnings call, 29 October 2026"
       },
       {
-        "who": "Steve Huffman, Reddit’s chief executive",
-        "text": "The reality is, AI Mode does not drive traffic.",
-        "source": "The Verge, reporting Reddit’s earnings call, 29 October 2026"
+        "who": "OpenAI, on the shared training signal",
+        "text": "We aim to implement the signal in the coming months, and will share another update with details about our implementation when we do so.",
+        "source": "OpenAI, 30 October 2026"
       }
     ],
     "trends": [
       {
-        "title": "The weights are public, the licence is not blank",
-        "desc": "Mistral Large 4 can be downloaded. Using it inside your company is allowed. Offering it as a service needs a separate licence. The scores are the maker’s, and they do not all match Hugging Face’s same-day post."
+        "title": "The screenshot check is off",
+        "desc": "Computer Use is generally available. Google’s docs say the check for hidden instructions in a screenshot defaults to false. Turn it on before the agent reads a page you do not control."
       },
       {
-        "title": "A government is on the cap table",
-        "desc": "Canada is taking a staged stake of up to $1.6 billion in Cohere. The CAD $7 billion round is a target, not cash already received."
+        "title": "The agent did not place the order",
+        "desc": "DoorDash described several hundred orders from outside agents, across the whole time they have been running. The quarter was 993 million orders. Those are not a rate."
       },
       {
-        "title": "The answer kept the click",
-        "desc": "Reddit says AI Mode does not drive traffic, and that October search referrals fell by more than 1 million a week. Count your own referrals before you borrow that sentence."
+        "title": "The opt-out is not live yet",
+        "desc": "A robots.txt token, __usage_ai-training, can express a training preference. OpenAI says the coming months. Google says 2027. Microsoft says 1 February 2027. A star rule does not count."
       }
     ]
   },
@@ -3614,7 +3658,7 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch."
       },
       {
         "org": "OpenAI",
@@ -3626,7 +3670,7 @@
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4",
-        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model."
+        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later."
       },
       {
         "org": "Meta",
@@ -3693,6 +3737,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "Cerebellum",
+      "why": "A robot’s small model acts; Nemotron approves what it cannot undo"
+    },
+    {
+      "name": "nesformer",
+      "why": "An NES processor compiled into Qwen weights, picture still in the host"
+    },
     {
       "name": "Charter",
       "why": "Checks an agent’s API call against the customer your app set"
