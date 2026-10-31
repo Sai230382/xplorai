@@ -1,66 +1,43 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "mistral-large-4-weights",
+  "storyId": "doordash-agent-orders",
   "kicker": "Play with today’s story",
-  "title": "Five figures Mistral published with the Large 4 weights",
-  "intro": "Move across the prices and the scores on Mistral’s 29 October weights post. Each stop is a different measure. The page does not combine them.",
-  "note": "These are Mistral’s figures. The prices are what its API charges per million tokens. FrontierCode 2.0 is Cognition’s private benchmark, as Mistral reports it. The 96.6% refusal is the average Mistral states for the cyber prompts of JailbreakBench, StrongREJECT and AgentHarm. Finch and BrowseComp are Mistral’s readings; it says the 75% was an earlier checkpoint. Left off this slider, because a Hugging Face post the same day gives different numbers: Terminal-Bench 4 (Mistral 41%, Hugging Face 28.3%), the Coding Agent Index (48% and 49.8%), and Lakera’s B3 (Mistral 97.1% against a 93.3% preview; Hugging Face states 93.3%). The posts do not say the settings match. This is not an independent rerun.",
+  "title": "A quarter of orders, set next to several hundred from outside agents",
+  "intro": "Switch between DoorDash’s third-quarter total and what Tony Xu said about orders from outside AI agents. The page does not divide one by the other.",
+  "note": "993 million is every completed order in the third quarter of 2026. The 28% is the year-over-year change in that total. The 17% is the same change with the Deliveroo acquisition left out. Both are from DoorDash’s 30 October earnings release. “Several hundred” is Tony Xu’s description, on the 29 October call, of third-party agent orders across the whole time those agents have been running. He also said “maybe several hundred.” It is not a precise count, not a quarterly figure, and not DoorDash’s own Ask, text or connector tools. The two sides are not a rate.",
   "sources": [
     {
-      "label": "Mistral: Mistral Large 4 (Le Chonk) is now open weight, 29 October 2026",
-      "url": "https://mistral.ai/news/mistral-large-4-oss/"
+      "label": "DoorDash: third-quarter 2026 results, 30 October 2026",
+      "url": "https://ir.doordash.com/news/news-details/2026/DoorDash-Releases-Third-Quarter-2026-Financial-Results/default.aspx"
     },
     {
-      "label": "Hugging Face: Welcome Le Chonk, Mistral Large 4 on Hugging Face, 29 October 2026",
-      "url": "https://huggingface.co/blog/mistral-large4"
+      "label": "DoorDash Q3 2026 earnings call, 29 October 2026, filed with the SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1792789/000114036126041195/ef20084600_425.htm"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "Figure from Mistral’s Large 4 weights post",
-    "items": [
+    "type": "compare",
+    "label": "Which DoorDash count you are looking at",
+    "options": [
       {
-        "label": "Price",
-        "name": "Mistral API, per million tokens",
-        "caption": "The price Mistral set on 29 October.",
+        "id": "quarter",
+        "label": "Third quarter",
+        "caption": "Every completed order, from the 30 October earnings release.",
         "stats": [
-          { "label": "Input", "value": "$0.70" },
-          { "label": "Cached input", "value": "$0.07" },
-          { "label": "Output", "value": "$2.10" }
+          { "label": "Total orders", "value": "993 million" },
+          { "label": "Year over year", "value": "28%" },
+          { "label": "Growth, Deliveroo left out", "value": "17%" }
         ]
       },
       {
-        "label": "Code",
-        "name": "FrontierCode 2.0",
-        "caption": "Cognition’s private benchmark. Mistral says Large 4 leads open models here.",
+        "id": "agents",
+        "label": "Outside agents",
+        "caption": "Tony Xu on the 29 October call. Not a quarter, and not a precise count.",
         "stats": [
-          { "label": "Score Mistral reports", "value": "19.7%" }
-        ]
-      },
-      {
-        "label": "Refuse",
-        "name": "Malicious cyber requests",
-        "caption": "Average refusal Mistral states on JailbreakBench, StrongREJECT and AgentHarm.",
-        "stats": [
-          { "label": "Refusal rate", "value": "96.6%" }
-        ]
-      },
-      {
-        "label": "Sheets",
-        "name": "FinWorkBench (Finch)",
-        "caption": "Mistral says this is second among open models, behind Kimi K3.",
-        "stats": [
-          { "label": "Score", "value": "73.3%" }
-        ]
-      },
-      {
-        "label": "Web",
-        "name": "BrowseComp",
-        "caption": "Mistral says reinforcement learning lifted the score from an earlier checkpoint.",
-        "stats": [
-          { "label": "Score", "value": "84.5%" },
-          { "label": "Earlier checkpoint", "value": "75%" }
+          { "label": "Orders he described", "value": "several hundred" },
+          { "label": "How long", "value": "the whole time they have been running" },
+          { "label": "His description", "value": "a fairly low use case" }
         ]
       }
     ]

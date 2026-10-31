@@ -1,215 +1,210 @@
 {
-  "number": 35,
-  "edition": "Briefing 35",
-  "date": "30 October 2026",
-  "dateISO": "2026-10-30",
+  "number": 36,
+  "edition": "Briefing 36",
+  "date": "31 October 2026",
+  "dateISO": "2026-10-31",
+  "toolsPulseDate": "31 October 2026",
   "kicker": "Today in AI",
-  "title": "Mistral publishes the weights of Large 4, Canada takes a stake of up to $1.6 billion in Cohere, Reddit says Google’s AI Mode does not send it traffic, OpenAI rewrites the rules it wants its models to follow, and a relay is turning the sandbox off on Codex and Claude Code.",
-  "summary": "On 29 October 2026 Mistral released the weights of Mistral Large 4, the trillion-parameter model it had previewed on 6 October, at $0.70 per million input tokens and $2.10 per million output tokens. The same day Cohere announced the initial close of a Series E targeting up to CAD $7 billion, and the Prime Minister of Canada said the government will invest up to $1.6 billion in the company, in stages. On Reddit’s earnings call, Steve Huffman said AI Mode does not drive traffic, and that October search referrals fell by more than 1 million a week. OpenAI reorganised its Model Spec around five values and said current models do not yet fully reflect it. Symantec’s Threat Hunter Team reported an unauthorised relay that installs the real Codex and Claude Code tools and switches their sandbox off.",
-  "uncertainty": "Large 4’s prices, the licence line and the scores named in the story are from Mistral’s weights post of 29 October. The preview post is dated 6 October. Hugging Face’s launch post the same day says the model is about 1 trillion parameters in total, about 49 billion active, with a 1 million token context. That post also reports different figures on tests Mistral names: Terminal-Bench 4 at 28.3% where Mistral says 41%, a Coding Agent Index of 49.8% where Mistral says 48%, 82% on the reproduce-and-patch slice of the Artificial Analysis Cyber Index where Mistral states a Cyber Index of 51%, and 93.3% attack resistance on Lakera’s B3 where Mistral says 97.1% against a 93.3% preview. The posts do not say the settings match. Cohere’s CAD $7 billion and CAD $35.7 billion are a target and the valuation that target would represent, not cash it says it has received. Canada’s $1.6 billion and $1.7 billion are the ceilings and the commitments on the Prime Minister’s release, to be made in stages. The 165% ARR growth and the 300 customers are Cohere’s. Reddit’s “more than 1 million” is not a precise count, and it is Reddit’s own search referrals. The relay account is Symantec’s, via Broadcom’s 29 October bulletin. It says there is no evidence of abuse so far.",
+  "title": "Google’s Computer Use tool is generally available, and the check for hidden instructions in a screenshot stays off unless you turn it on. DoorDash says outside AI agents have produced several hundred orders, against 993 million in the quarter. A shared robots.txt line can refuse AI training, and the clocks run into 2027. Blackstone expects Anthropic to come out of its IPO with a high junk rating. A tampered Claude Code extension sat in Cursor’s marketplace for hours and tried to leave a backdoor.",
+  "summary": "On 30 October 2026 Google marked the Gemini API Computer Use tool generally available on the Interactions and GenerateContent APIs. The same documentation says screenshot prompt-injection detection is opt-in and that the default is false. On DoorDash’s 29 October earnings call, chief executive Tony Xu said third-party AI agents have produced several hundred orders across the time they have been running. The company’s 30 October release said third-quarter orders were 993 million, up 28% year over year. The same day OpenAI, Google and Microsoft said they will honor a shared robots.txt token for AI training, on different dates, and an IETF draft named the token __usage_ai-training. TechCrunch, citing the Financial Times, said Blackstone expects Anthropic to receive a high junk rating after its IPO. Microsoft published an analysis of a tampered Claude Code extension that Cursor says was in its marketplace for hours on 29 October.",
+  "uncertainty": "The general-availability line is the Gemini API changelog for 30 October. The default of false, the model list, and the safety categories are from the Computer Use documentation, which says the injection check applies to Gemini 3.5 Flash-Lite or later. The public preview date in that changelog is 24 June 2026. DoorDash’s “several hundred” and “maybe several hundred” are Tony Xu’s words on the 29 October call, filed with the SEC, not a precise count and not a share of the quarter. The 993 million, the 28% and the 17% excluding Deliveroo are from the 30 October earnings release. They are different counts. This briefing does not divide them. The robots.txt token, the rule that a User-Agent star group does not count, and the 3 May 2027 expiry are from Kevin Kelley’s individual Internet-Draft of 30 October, which says it is work in progress and not an IETF standard. OpenAI’s “coming months,” Google’s “2027,” and Microsoft’s 1 February 2027 and 1 March 2027 are each company’s own post. The Verge reported that Anthropic has already adopted the signal. This briefing did not find a separate Anthropic post that says so. The Anthropic rating is TechCrunch’s account of a Financial Times report. TechCrunch says Anthropic and Blackstone declined to comment. It is an expectation of a double-B range, not a rating published by S&P, Moody’s or Fitch. The $63 billion is the chip-financing deal TechCrunch describes, not cash raised on 30 October. The extension window, 2:27am to 1:35pm PT on 29 October, and the versions 2.1.312 and 2.1.313 are Cursor’s. Microsoft’s analysis is dated 30 October. Cursor says the tunnel step fails without administrator rights on most hosts, and that the key and the persistence can still be written.",
   "stats": {
-    "filtered": 12,
+    "filtered": 9,
     "verified": 5,
     "themes": 5
   },
   "stories": [
     {
-      "id": "mistral-large-4-weights",
+      "id": "gemini-computer-use-ga",
       "topic": "tools",
-      "theme": "Mistral published the weights of Large 4, a trillion-parameter model you can host, with a licence catch if you resell it",
-      "changed": "On Thursday 29 October 2026 Mistral released the weights of Mistral Large 4, which it calls Le Chonk. The preview had gone up on 6 October, with the weights promised by the end of the month. Mistral describes it as a 1-trillion-parameter model that takes text and images. Hugging Face’s launch post the same day says about 1 trillion parameters in total, about 49 billion active, and a context of 1 million tokens. On Mistral’s API, from 29 October, the price is $0.70 per million input tokens, $0.07 per million cached input tokens, and $2.10 per million output tokens. The weights are under the Mistral Ecosystem Open-Weight licence, which Mistral calls a modified MIT licence: free to use, modify, fine-tune and commercialise, except that a business running a model-as-a-service has to take a separate commercial licence. Mistral says three more weeks of reinforcement learning put it first among open models on Cognition’s private FrontierCode 2.0, at 19.7%, and on Terminal-Bench 4.0, at 41%, up 13 percentage points from the preview, with 30% fewer output tokens. On the Artificial Analysis Coding Agent Index it reports 48%, tied with GLM-5.3, using 47% fewer tokens per task. It offers three reasoning modes, low, medium and high, and high is the default. On its cyber tests it reports 51% on the Artificial Analysis Cyber Index and an average refusal of 96.6% on malicious cyber requests, which it calls the highest it measures among open models, on the cyber prompts of JailbreakBench, StrongREJECT and AgentHarm. It reports 73.3% on FinWorkBench, second among open models to Kimi K3, BrowseComp at 84.5% against 75% for an earlier checkpoint, and 97.1% attack resistance on the B3 benchmark against 93.3% in the preview. Hugging Face’s post the same day gives other readings of some of those tests: 28.3% on Terminal-Bench 4, a Coding Agent Index of 49.8%, 82% on the reproduce-and-patch part of the Cyber Index, and 93.3% on B3. The two posts do not say the settings were the same.",
-      "matters": "A model this size can now sit on hardware you control, at a posted API price you can put in a spreadsheet. The scoreboard that comes with it is the maker’s, and it does not match every figure published the same day.",
-      "imply": "Download it if you need to host the model. If you would sell access to other people, read the licence line before you do. Do not put a single percentage in a board slide until you have said whose test it is.",
+      "theme": "Google’s Computer Use tool is generally available, and the screenshot injection check stays off unless you turn it on",
+      "changed": "On Friday 30 October 2026 the Gemini API changelog said Google released the Computer Use tool to general availability across the Interactions API and the GenerateContent API. The same changelog dates the public preview to 24 June 2026, on Gemini 3.5 Flash. The tool lets a model look at a screenshot and return the next click, keystroke or scroll. Your own code has to carry the action out. The documentation lists four models: Gemini 4 Argon, which it calls the most capable, Gemini 3.8 Flash, which it recommends, Gemini 3.5 Flash-Lite, and Gemini 3 Flash Preview. It supports browser, mobile and desktop. Gemini 4 and Gemini 3.x include built-in safety categories that can ask for a person’s confirmation, covering payments, sensitive records, sending messages, creating accounts, changing or deleting data, cookie banners and legal terms. You can switch selected categories off. A separate check looks for hidden instructions in a screenshot, such as “Ignore previous commands,” and blocks the step when it finds them. The documentation says that check is for Gemini 3.5 Flash-Lite or later, that it is opt-in, and that the default is false. Google also says the tool may contain errors and security vulnerabilities, and that you should supervise it closely and keep it off tasks that involve critical decisions, sensitive data, or actions that cannot be undone.",
+      "matters": "A computer-use agent can now be called as a supported API, and the check that reads the screen for hidden instructions is off until you turn it on.",
+      "imply": "If a pilot was waiting on the preview label, the label has changed. Turn the screenshot check on before the agent reads mail, tickets or the open web. Keep a person on anything that spends money or cannot be undone.",
       "uses": [
-        "Price a pilot at $0.70 per million input tokens and $2.10 per million output tokens, or run the weights yourself if the data cannot leave.",
-        "If the plan is to offer Large 4 as a service, get Mistral’s commercial licence first. Use inside your own company is the case the modified MIT allows.",
-        "Keep FrontierCode’s 19.7% and Terminal-Bench’s 41% labelled as Mistral’s. Note that Hugging Face published 28.3% for Terminal-Bench 4 the same day."
+        "Treat 30 October as the day Computer Use left preview. The model still returns an action. Your application still has to perform it.",
+        "Set prompt-injection detection on for any agent whose screenshots include pages, inboxes or documents you do not control. The documented default is false.",
+        "Leave the built-in categories on for payments, messages, new accounts and legal agreements unless you have a reason to disable one, and still handle a confirmation the model asks for."
       ],
-      "example": "A bank’s model team downloads the weights for a coding assistant that has to stay in its own network. It does not put 41% in the vendor note. It writes that Mistral reports 41% and Hugging Face reports 28.3%, and that legal still has to clear any plan to host the model for a client.",
-      "audience": "Teams choosing an open model they can run themselves, and anyone about to resell access to one.",
-      "watch": "Whether Mistral and Hugging Face say which settings produced the two Terminal-Bench numbers. The commercial-licence terms for a hosted service. Independent reruns of FrontierCode and the Cyber Index.",
+      "example": "A support team wants an agent to update a ticket from a screenshot of a customer’s email. Before the pilot, they turn screenshot injection detection on, leave the message-sending category in place, and keep a person on any step that would reply to the customer.",
+      "audience": "Teams building or buying an agent that clicks through a browser, a phone or a desktop.",
+      "watch": "Whether Google changes the default. Which of the four named models your account can actually call. How often a real inbox still gets an action through with the check switched on.",
       "source": {
-        "title": "Mistral: Mistral Large 4 (Le Chonk) is now open weight, 29 October 2026",
-        "url": "https://mistral.ai/news/mistral-large-4-oss/",
-        "quote": "The model is free to use, modify, fine-tune, and commercialize, with a single condition: businesses that operate a Model-as-a-Service offering must obtain a separate commercial license from Mistral before using the model commercially."
+        "title": "Gemini API changelog: Computer Use generally available, 30 October 2026",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog",
+        "quote": "Released the Computer Use tool to general availability (GA) across the Interactions and GenerateContent APIs."
       }
     },
     {
-      "id": "cohere-series-e",
-      "topic": "money",
-      "theme": "Canada will invest up to $1.6 billion in Cohere, and Cohere’s round is targeting up to CAD $7 billion",
-      "changed": "On Thursday 29 October 2026 Cohere said it had completed the initial close of a Series E targeting up to CAD $7 billion, which it said would represent a CAD $35.7 billion valuation. It called that the largest private financing round a Canadian technology company has undertaken. Schwarz Group is the lead. Cohere names Bell Ventures, Bullhound Capital and the Government of Canada as new investors, and Inovia Capital, NVIDIA and Prosperity7 Ventures as returning ones. The same day the Prime Minister, Mark Carney, said the Government of Canada will make an equity investment of up to $1.6 billion, on commercial terms, in stages, with reporting against the commitments. In return Cohere will create at least 1,000 new Canadian technical jobs by 2030, commit at least $1.7 billion to additional computing infrastructure in Canada by 2030, keep its Canadian incorporation and headquarters, fund research partnerships, and keep working with the Canadian AI Safety Institute. Cohere said that since launching North, its agent platform, it ended the third quarter with 165% year-over-year growth in annual recurring revenue, and that over the past year its customer count rose 20-fold to 300. Named customers include Bell Canada, RBC, TD Bank, Fujitsu, PwC and Aston Martin Aramco. Cohere’s blog the same day says the round is meant to build frontier models, a platform customers can run themselves, and cyber defence, including a planned acquisition of AISLE.",
-      "matters": "A government is buying a share of a model company, and attaching jobs and a compute build to the stake. The headline number is a target, not a wire transfer.",
-      "imply": "If you buy from Cohere, your vendor now has a state on the cap table. If you cite CAD $7 billion, say “targeting up to”. If you cite $1.6 billion, say “up to”, and “in stages”.",
-      "uses": [
-        "In a vendor note, separate three figures: Canada’s ceiling of $1.6 billion, Cohere’s target of up to CAD $7 billion, and the CAD $35.7 billion valuation Cohere says that target would represent.",
-        "Write down the conditions you can check later: 1,000 Canadian technical jobs and $1.7 billion of compute in Canada by 2030, headquarters staying in Canada.",
-        "Treat the 165% revenue growth and the 300 customers as Cohere’s account of its own year."
-      ],
-      "example": "A procurement lead adds a line to the Cohere file: the Canadian government is taking a staged stake of up to $1.6 billion, the company has promised 1,000 technical jobs and $1.7 billion of compute in Canada by 2030, and the CAD $7 billion round is a target at the initial close.",
-      "audience": "Finance and procurement teams who buy model access, and anyone reading a funding headline as cash in the bank.",
-      "watch": "How much of the CAD $7 billion is actually closed, and when. Whether Canada’s stake is reported against the jobs and the compute. What the AISLE combination changes for customers who wanted cyber work on their own machines.",
-      "source": {
-        "title": "Prime Minister of Canada: Canada announces landmark investment in Cohere, 29 October 2026",
-        "url": "https://www.pm.gc.ca/en/news/news-releases/2026/10/29/canada-announces-landmark-investment-cohere-scale-secure-sovereign-ai",
-        "quote": "Canada’s equity investment in Cohere will total up to approximately $1.6 billion and will be made in stages."
-      }
-    },
-    {
-      "id": "reddit-ai-mode-referrals",
+      "id": "doordash-agent-orders",
       "topic": "work",
-      "theme": "Reddit says Google’s AI Mode does not drive traffic, and October search referrals fell by more than 1 million a week",
-      "changed": "On Thursday 29 October 2026, on Reddit’s third-quarter earnings call, chief executive Steve Huffman said Google’s AI Mode does not drive traffic. The Verge reported the call. Huffman said: “Not for us, and not to anybody, as far as I know. That’s just a fundamental shift in how Google works. It used to be a traffic driver, now it’s not.” Reddit said search referrals in October dropped by more than 1 million a week on average. Huffman tied part of the loss to AI Mode and AI Overviews, which he said have evolved and, at a minimum, push everyone down the search page. He also said Reddit believes its machine-translated pages are ranking lower, which would fall mostly outside the United States. He said Reddit is still a top search term, that people still want Reddit, and that Google is crawling the site as hard as ever. Reddit said it will require people to log in, which Huffman said is better for the product, for ads, for safety rules, and for protecting Reddit’s data.",
-      "matters": "A site that lives on Google clicks is saying the new answer box does not send the visit. If your own pipeline starts the same way, October is the month to count.",
-      "imply": "Do not paste Reddit’s sentence onto your forecast. Count your own referrals. “More than 1 million a week” is Reddit’s figure, and it is not a precise count.",
+      "theme": "DoorDash says outside AI agents have produced several hundred orders, against 993 million in the quarter",
+      "changed": "On Thursday 29 October 2026, on DoorDash’s third-quarter earnings call, chief executive Tony Xu answered a question about AI agents. He said: “if you look at where AI agents are today, we’re seeing maybe several hundred orders in total from some of these third-party agents.” Later on the same call he said: “right now, AI agents are generating several hundred orders across the time that they’ve been up and running. So it’s been a fairly low use case.” He said everyday food orders still come through the DoorDash app, and that he sees more room for agents on long decisions and on tasks a person is not actively making. DoorDash’s own letter, published with the results, says the company recently shipped Ask DoorDash, Text DoorDash, and a Model Context Protocol connector for external agents, including corporate lunch orders. The 30 October earnings release says total orders rose 28% year over year to 993 million. Excluding the Deliveroo acquisition, total orders rose 17%. Xu’s “several hundred” is about third-party agents, over the whole time they have been running. It is not a figure for the quarter, and it is not a precise count.",
+      "matters": "A company that completes hundreds of millions of orders a quarter is saying outside agents have barely placed any. The two numbers are not a rate.",
+      "imply": "Do not put “agents will take the order” into a forecast until you have your own count. “Several hundred” is a description, not a number you can divide into 993 million.",
       "uses": [
-        "Pull October referral traffic from Google and set it next to September before anyone rewrites the acquisition plan.",
-        "Separate AI Mode from the ordinary blue links. Huffman is talking about the answer box, not about every Google visit.",
-        "If a login wall is the proposed fix, say what it is for: ads, safety, and keeping the pages from being scraped. It does not put the Google click back."
+        "If a vendor says agents are already ordering for your customers, ask for the count and the period. DoorDash’s figure is “several hundred,” across the whole time, not for one quarter.",
+        "Keep DoorDash’s own tools separate. Ask DoorDash, Text DoorDash and the corporate connector are not the third-party total Xu gave.",
+        "Use 993 million, 28% and 17% only as the quarter’s order totals. Do not turn them into a share of agent orders."
       ],
-      "example": "A publisher’s audience lead stops a slide that says “AI Mode will replace our Google traffic.” She adds October’s referral line, leaves the number as “down, and still being counted,” and asks search to split AI Mode from the rest.",
-      "audience": "Publishers, shops and marketers whose customers arrive from Google, and the finance partners who forecast that traffic.",
-      "watch": "Whether Reddit publishes a precise referral count rather than “more than 1 million.” Whether Google answers the claim. What happens to logged-out traffic once the login wall is up.",
+      "example": "A retailer’s partnerships lead stops a slide that says “agent checkout is here.” She writes that DoorDash described several hundred third-party orders in total, against 993 million orders in the quarter, and that the company has not published a precise agent count.",
+      "audience": "Anyone forecasting that an assistant will place orders, book, or buy on a customer’s behalf.",
+      "watch": "Whether DoorDash ever replaces “several hundred” with a count. How its own Ask, text and connector volumes compare with outside agents. Whether a simple order stays in the app while longer decisions move.",
       "source": {
-        "title": "The Verge: Reddit’s CEO says Google’s AI Mode ‘does not drive traffic’, 29 October 2026",
-        "url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
-        "quote": "The reality is, AI Mode does not drive traffic."
+        "title": "DoorDash Q3 2026 earnings call, 29 October 2026, filed with the SEC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1792789/000114036126041195/ef20084600_425.htm",
+        "quote": "if you look at where AI agents are today, we’re seeing maybe several hundred orders in total from some of these third-party agents"
       }
     },
     {
-      "id": "openai-model-spec",
+      "id": "robots-txt-training-token",
       "topic": "rules",
-      "theme": "OpenAI rewrote its Model Spec around five values, and says today’s models do not fully follow it yet",
-      "changed": "On Thursday 29 October 2026 OpenAI updated the Model Spec, its public description of how it wants its models to behave. The revision organises the document around five values: faithfulness to human intent, harm minimisation, honesty and transparency, human agency, and care. OpenAI says faithfulness is the foundation: the model should understand what OpenAI, the developer and the user intend, not only follow an instruction word for word, and it should show assumptions so a person can correct them. A new section, “Consider context carefully,” says conversations, memories and other context should inform that reading in a way that respects privacy and the user’s control. OpenAI also added defaults on supporting human agency and on following relevant social norms, and expanded the guidance on side effects. It retired most of the detailed style rules. Style, it says, should follow what people prefer, while stronger defaults remain, including approaching questions objectively. The model should not take a side merely because it thinks that is what someone wants to hear. Throughout the Spec, the model is now called “GPT” rather than “the assistant.” OpenAI says it is exploring training methods so models learn why the principles matter. It also says the Spec is the behaviour it is working toward, and that current models do not yet fully reflect it.",
-      "matters": "The written rules for a widely used model just changed, including how memory and earlier chats should shape an answer. The company says the models have not caught up.",
-      "imply": "If your acceptable-use policy quotes an old style guide, it is quoting something OpenAI has mostly withdrawn. If someone says the model now “follows the new Spec,” ask them to read the sentence that says it does not yet.",
+      "theme": "One robots.txt line can refuse AI training, and most of the companies say they will not honor it until 2027",
+      "changed": "On Friday 30 October 2026 OpenAI said it will honor a common signal in robots.txt for whether a site’s content may be used to train foundation generative models. It said the signal will not replace the crawler controls it already has, and that it aims to implement it in the coming months. The same day Google said it plans to support a shared policy token in robots.txt, and that it aims to do so, with other providers, in 2027. If a site uses the token to opt out and does not mention Google-Extended, Google plans to treat that as a disallow of Google-Extended, its own training control since 2023. A site that specifically allows Google-Extended stays eligible to appear in Gemini app answers. Microsoft, the same day, said it will honor the new training and grounding preferences as it crawls, starting 1 February 2027. Training can be set in robots.txt or on a page. Grounding, which Microsoft describes as using a page to inform a generated answer, is a separate page-level setting: allow, disallow, or DisallowExtended, which limits grounding to Microsoft’s own products such as Copilot and Microsoft 365. Both default to allow. Bing search eligibility does not change. Microsoft says neither choice guarantees inclusion, traffic or payment. Sites that use NoArchive or NoCache are asked to publish the new preferences before 1 March 2027, after which those tags will no longer be read as a training or grounding preference. The token itself is in an individual Internet-Draft submitted the same day by Kevin Kelley, who gives his affiliation as Anthropic. The token is __usage_ai-training, written on the User-Agent line. A disallow on that group is a preference against using the path to modify the learned parameters of a generative model. The draft says a User-Agent star group must not be read as this preference, that a file with no line for the token expresses no preference, and that the token is not a directive for crawling. The draft expires on 3 May 2027 and says it is work in progress, not an IETF standard. The Verge reported that Anthropic has already adopted the signal, and that Meta’s communications head welcomed a common signal without saying Meta will honor it. This briefing did not find a separate Anthropic post that confirms the crawler honors the token today.",
+      "matters": "Publishers may get one line instead of a list of crawler names. Writing it today does not switch the large crawlers off on a shared date.",
+      "imply": "Keep the crawler rules you already have. Add the token if you want the preference on file. Do not delete GPTBot or Google-Extended and expect the new line to be live.",
       "uses": [
-        "Replace any internal note that lists the old style rules. The five values are what OpenAI says it is aiming at.",
-        "Ask whoever runs your workspace what the model is allowed to remember, and how a person clears it. The new section is about that context.",
-        "Do not tell staff or customers that behaviour has already changed. OpenAI says the models do not fully reflect the Spec yet."
+        "If you want to refuse training, add a robots.txt group whose User-Agent is __usage_ai-training. A star rule does not count, and an ordinary crawl block is a separate decision.",
+        "Write down three clocks: OpenAI says the coming months, Google says 2027, Microsoft says 1 February 2027 for the new preferences and 1 March 2027 for the old NoArchive and NoCache tags.",
+        "Decide training and grounding separately. Microsoft’s post says a training refusal does not by itself keep a page out of an answer, and Google’s post ties Gemini grounding to Google-Extended."
       ],
-      "example": "A compliance lead updates the one-page note on ChatGPT. She deletes the line about a fixed tone, writes down the five values, and adds that OpenAI says current models do not yet fully follow the document.",
-      "audience": "People who write the rules for how staff may use ChatGPT, and anyone who has to explain a model’s behaviour to a customer.",
-      "watch": "When OpenAI says a named model actually reflects the new Spec. How “consider context carefully” shows up in memory controls an admin can switch. Whether developers can still override the defaults that are not safety boundaries.",
+      "example": "A publisher’s web lead adds the token, leaves the existing GPTBot and Google-Extended lines in place, and puts 1 February 2027 and “coming months” on the ticket so nobody tells the newsroom the opt-out is already in force.",
+      "audience": "Publishers, shops and anyone else who already maintains a robots.txt file, and the lawyers who have been asked for one rule that covers every model company.",
+      "watch": "When OpenAI says the signal is actually on. Whether Google names a day inside 2027. Whether Anthropic publishes its own implementation note. Whether the draft changes before 3 May 2027.",
       "source": {
-        "title": "OpenAI: An updated Model Spec for more capable and beneficial AI, 29 October 2026",
-        "url": "https://openai.com/index/updated-model-spec",
-        "quote": "The Model Spec describes the behavior we are working toward; our models do not yet fully reflect it."
+        "title": "OpenAI: Making it easier for websites to express AI training preferences, 30 October 2026",
+        "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+        "quote": "We aim to implement the signal in the coming months, and will share another update with details about our implementation when we do so."
       }
     },
     {
-      "id": "coding-agent-relay",
-      "topic": "trust",
-      "theme": "A relay is installing the real Codex and Claude Code tools and switching their sandbox off",
-      "changed": "On Thursday 29 October 2026 Broadcom published a Symantec Threat Hunter bulletin: an unauthorised relay has been installing the genuine OpenAI Codex and Anthropic Claude Code command-line tools on company machines, then rewriting the configuration. The sandbox is switched off. On Codex, Symantec says, it is set to “danger-full-access.” Requests go to the relay’s servers instead of OpenAI’s or Anthropic’s. Symantec says this is not a flaw in the tools. They are doing what the changed settings tell them to do. Threat Hunter found the relay at a dozen organisations, in use since early 2026, mainly in mainland China, in markets where the vendors do not officially sell. There is no evidence the operator is abusing that position. The configuration, Symantec says, strips out the safeguards that are meant to contain the agent, and can expose an organisation whose staff use it.",
-      "matters": "The dangerous part is not a fake program. It is the real coding agent, with the box that limits it turned off, and with the prompts going somewhere else.",
-      "imply": "A normal-looking install is not enough. Check where the tool sends its requests, and whether the sandbox is still on. A dozen organisations is Symantec’s count, not a census.",
+      "id": "anthropic-junk-rating",
+      "topic": "money",
+      "theme": "Blackstone expects Anthropic to come out of its IPO with a high junk rating",
+      "changed": "On Friday 30 October 2026 TechCrunch reported, citing the Financial Times, that Blackstone expects Anthropic to receive a high junk rating from credit agencies after its initial public offering. TechCrunch says Blackstone is the anchor investor in a recent $63 billion deal to finance Anthropic’s chips, and that Blackstone told investors in that deal it expects the rating. TechCrunch says Blackstone had previously said the opposite: that Anthropic would receive an investment-grade rating before 2027. It now expects a double-B rating, which TechCrunch calls the top tier of speculative junk grade. TechCrunch reached out to Anthropic and Blackstone, and both declined to comment. TechCrunch says the forecast is a prediction, and that a junk rating would make it more difficult and more expensive for Anthropic to raise money for its spending. Anthropic filed to go public earlier in the week. The article does not say that S&P, Moody’s or Fitch has published a rating for the company.",
+      "matters": "The new fact is a lender’s change of mind about the rating, told to investors in a chip deal. It is not a rating on the screen, and it is not a new model.",
+      "imply": "If a note says Anthropic will borrow at an investment-grade rate after the listing, that is no longer what Blackstone is reported to be telling its investors. Say “expects,” and say who declined to comment.",
       "uses": [
-        "On machines that run Codex, look for a sandbox set to danger-full-access, and for a server address that is not OpenAI’s or Anthropic’s.",
-        "Treat a setup script that someone runs just after the official install as something to read first, especially if it came from a domain that only looks like the vendor.",
-        "If a machine used the relay, assume the prompts and files that passed through it could have been read. Symantec has not reported abuse. That is not the same as a clean machine."
+        "Separate three things: the IPO filing already public, the $63 billion chip deal TechCrunch describes, and a reported expectation of a double-B rating.",
+        "Do not write that the agencies have rated Anthropic. TechCrunch’s account is Blackstone’s expectation, via the Financial Times, and both companies declined to comment.",
+        "If you are modelling Anthropic’s cost of debt, label this as a forecast that can move, not as a coupon."
       ],
-      "example": "An IT lead searches the developer fleet for Codex configs pointing at an unfamiliar host. She finds two laptops, takes them off the network, and has the owners rotate every key those sessions could see.",
-      "audience": "Security and IT teams who allow Codex or Claude Code, and the developers who install them.",
-      "watch": "Whether OpenAI or Anthropic publish indicators of their own. Whether Symantec names the domains. How often the same pattern shows up outside the markets named in the bulletin.",
+      "example": "A finance partner rewrites a line that said Anthropic’s debt would be investment grade before 2027. The new line says Blackstone is reported to expect a double-B rating after the IPO, that the companies declined to comment, and that the big agencies are not quoted as having published a rating.",
+      "audience": "Anyone who lends to, buys from, or models the cost of capital of a frontier lab that is about to list.",
+      "watch": "Whether S&P, Moody’s or Fitch publish a rating. Whether Blackstone corrects the account. How much of the $63 billion deal has actually been placed.",
       "source": {
-        "title": "Broadcom, reporting Symantec Threat Hunter: Sandbox flipped to danger-full-access, 29 October 2026",
-        "url": "https://www.broadcom.com/support/security-center/protection-bulletin/sandbox-flipped-to-danger-full-access-unauthorized-ai-relays-create-risk-for-organizations",
-        "quote": "This is not a vulnerability in Codex or Claude Code. The tools are behaving as designed once their configuration has been changed."
+        "title": "TechCrunch, citing the Financial Times: Anthropic expected to receive a high junk rating after its IPO, 30 October 2026",
+        "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+        "quote": "Now Blackstone expects double B range rating, the top tier of speculative “junk” grade, according to the reporting."
+      }
+    },
+    {
+      "id": "cursor-claude-code-extension",
+      "topic": "trust",
+      "theme": "A tampered Claude Code extension sat in Cursor’s marketplace for hours and tried to leave a backdoor",
+      "changed": "On Thursday 29 October 2026 Cursor said a maliciously modified copy of the Claude Code extension, anthropic.claude-code versions 2.1.312 and 2.1.313, for Windows and macOS, was available in the Cursor extension marketplace from about 2:27am to 1:35pm Pacific time. Cursor says those versions were not developed by Anthropic, and that the incident does not affect other extensions from that marketplace. The extension tries to install a persistent SSH backdoor. Cursor says it collects host and user details, tries to add an attacker-controlled SSH key, tries to turn on the local SSH service, and tries to open a reverse tunnel. Cursor says that on most macOS and Windows machines the extension does not have administrator rights, so turning SSH on fails, and that errors in the malicious code mean the tunnel step would fail unless Cursor had been started with those rights. Cursor also says the extension still added the attacker’s key, installed persistence, and sent host details, and that uninstalling may not be enough because the payload leaves scripts that keep running. Cursor says the attacker’s server was taken offline. On Friday 30 October Cursor updated the indicators and clarified the versions. The same day Microsoft published its own analysis. Microsoft says the packages were not on the Visual Studio Marketplace or on npm, that Anthropic told Microsoft its systems were not compromised and that it did not develop the package, and that the evidence points to the Cursor marketplace only. Microsoft says the loader may still write the key and the persistence even when the tunnel fails, and that a callback sent names of environment variables, not their values. This is a different incident from the relay that changes the settings of the real Codex and Claude Code command-line tools.",
+      "matters": "The copy in the marketplace was not Anthropic’s, it was only up for part of a day, and removing the extension does not by itself remove what it already wrote.",
+      "imply": "Check the version and the install time before you assume a developer machine is clean. A machine that never installed those two versions from that marketplace is outside the window Cursor describes.",
+      "uses": [
+        "On macOS and Windows, look for anthropic.claude-code 2.1.312 or 2.1.313 installed from the Cursor marketplace between 2:27am and 1:35pm Pacific on 29 October.",
+        "If a machine is in that window, follow Cursor’s remediation. Cursor says uninstalling can leave persistence behind, and that credentials reachable from the machine should be rotated from a trusted system.",
+        "Do not fold this into the earlier report of a relay that turns the sandbox off. That was a changed configuration of the real tools. This was a tampered extension in one marketplace."
+      ],
+      "example": "An IT lead searches the developer fleet for those two extension versions. Two laptops match the window. She takes them off the network, runs Cursor’s cleanup, and has the owners rotate keys from a machine that was not in the window.",
+      "audience": "Security and IT teams who allow Cursor, and developers who install extensions from its marketplace.",
+      "watch": "Whether Cursor or Microsoft revise the window or the versions. Whether the same package shows up in another marketplace. Whether Anthropic publishes its own note.",
+      "source": {
+        "title": "Microsoft Security: a malicious Claude Code-branded extension in the Cursor marketplace, 30 October 2026",
+        "url": "https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/",
+        "quote": "Anthropic confirmed to Microsoft that their systems were not compromised and they did not develop the malicious package posted in Cursor marketplace."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Large 4 weights are out",
-        "body": "Mistral published Large 4. It costs $0.70 and $2.10 per million tokens. A hosted service needs its own licence."
+        "title": "Computer Use is on for real",
+        "body": "Google’s Computer Use tool left preview on 30 October. The screenshot injection check stays off unless you turn it on."
       },
       {
-        "title": "Canada buys into Cohere",
-        "body": "Canada will invest up to $1.6 billion in Cohere, in stages. The round targets up to CAD $7 billion."
+        "title": "Agents barely order the food",
+        "body": "DoorDash has seen several hundred orders from outside AI agents. The quarter’s total was 993 million orders."
       },
       {
-        "title": "AI Mode sends less traffic",
-        "body": "Reddit says October search referrals fell by more than 1 million a week. Its CEO says AI Mode does not drive traffic."
+        "title": "One line can refuse training",
+        "body": "A shared robots.txt token can opt a site out of AI training. Microsoft starts honoring it on 1 February 2027."
       }
     ],
     "matters": [
       {
-        "title": "The scores do not agree",
-        "body": "Mistral reports 41% on Terminal-Bench 4.0. Hugging Face’s same-day post says 28.3%. Say whose figure you are using."
+        "title": "The check is off",
+        "body": "Google’s docs say the screenshot injection check is opt-in. The default is false."
       },
       {
-        "title": "A target is not cash",
-        "body": "Cohere’s CAD $7 billion is what the round is targeting. Canada’s $1.6 billion is a ceiling, paid in stages."
+        "title": "Several hundred is not a rate",
+        "body": "993 million is every order in the quarter. Several hundred covers the whole time outside agents have run."
       },
       {
-        "title": "The rules are ahead of the model",
-        "body": "OpenAI’s new Model Spec sets five values. OpenAI says current models do not yet fully follow it."
+        "title": "The rating is a forecast",
+        "body": "Blackstone expects a high junk rating after the IPO. S&P, Moody’s and Fitch have not published one."
       }
     ],
     "watch": [
       {
-        "title": "The licence, if you resell",
-        "body": "Using Large 4 inside your company is allowed. Offering it as a service needs a separate commercial licence."
+        "title": "The token is not live yet",
+        "body": "OpenAI says the coming months. Google aims for 2027. A User-Agent star rule does not count."
       },
       {
-        "title": "Jobs and compute, by 2030",
-        "body": "Cohere committed to at least 1,000 Canadian technical jobs and $1.7 billion of compute in Canada."
+        "title": "Old Bing tags stop in March",
+        "body": "Sites on NoArchive or NoCache need the new preferences before 1 March 2027, or those tags stop counting."
       },
       {
-        "title": "Sandbox set to danger",
-        "body": "Symantec found a relay switching Codex to danger-full-access at a dozen organisations. Check the config."
+        "title": "Check those two versions",
+        "body": "Claude Code 2.1.312 and 2.1.313 were in Cursor’s marketplace for hours on 29 October. Uninstalling may not be enough."
       }
     ]
   },
   "chips": [
-    "Mistral",
-    "Mistral Large 4",
-    "Le Chonk",
-    "FrontierCode",
-    "Terminal-Bench",
-    "Hugging Face",
-    "Cohere",
-    "Series E",
-    "Canada",
-    "Mark Carney",
-    "Schwarz Group",
-    "North",
-    "Reddit",
-    "Steve Huffman",
-    "AI Mode",
+    "Google",
+    "Gemini",
+    "Computer Use",
+    "Gemini 3.8 Flash",
+    "DoorDash",
+    "Tony Xu",
     "OpenAI",
-    "Model Spec",
-    "Symantec",
-    "Codex",
-    "Claude Code",
-    "danger-full-access"
+    "robots.txt",
+    "Google-Extended",
+    "Microsoft Bing",
+    "IETF",
+    "Anthropic",
+    "Blackstone",
+    "Cursor",
+    "Claude Code"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Mistral 29 Oct: Large 4 weights; API $0.70 input, $0.07 cached, $2.10 output per million tokens; modified MIT, model-as-a-service needs a commercial licence; FrontierCode 2.0 19.7%; Terminal-Bench 4.0 41%, up 13 points, 30% fewer output tokens; Coding Agent Index 48% and 47% fewer tokens; Cyber Index 51%; malicious refusal 96.6%; Finch 73.3%; BrowseComp 84.5% from 75%; B3 97.1% vs 93.3% preview. HF same day: about 1T / 49B active / 1M context; Terminal-Bench 4 28.3%; Coding Agent Index 49.8%; reproduce-and-patch 82%; B3 93.3%. Preview was 6 Oct.",
+      "raw": "Gemini API changelog, 30 Oct: Computer Use generally available on the Interactions and GenerateContent APIs. Docs: models are Gemini 4 Argon, 3.8 Flash (recommended), 3.5 Flash-Lite, and 3 Flash Preview. Screenshot prompt-injection detection is opt-in for 3.5 Flash-Lite or later. The default is false. Preview was 24 June 2026.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Cohere and the Prime Minister, 29 Oct: initial close of a Series E targeting up to CAD $7 billion, which would represent CAD $35.7 billion; Schwarz leads; Canada will invest up to $1.6 billion in stages; at least 1,000 Canadian technical jobs and at least $1.7 billion of compute in Canada by 2030; Cohere says Q3 ARR up 165% year over year and customers up 20x to 300",
-      "topic": "Money"
-    },
-    {
-      "id": "s3",
-      "raw": "The Verge, 29 Oct, Reddit earnings call: Huffman says AI Mode does not drive traffic; October search referrals down by more than 1 million a week on average; AI Overviews and AI Mode push results down the page; Reddit will require login",
+      "raw": "DoorDash earnings call, 29 Oct, SEC filing: Tony Xu says maybe several hundred orders in total from third-party agents, across the time they have been running, a fairly low use case. Earnings release, 30 Oct: total orders 993 million, up 28% year over year, 17% excluding Deliveroo.",
       "topic": "Work"
     },
     {
-      "id": "s4",
-      "raw": "OpenAI 29 Oct: Model Spec reorganised around faithfulness to human intent, harm minimisation, honesty and transparency, human agency, and care; most style rules retired; model called GPT rather than the assistant; current models do not yet fully reflect the Spec",
+      "id": "s3",
+      "raw": "30 Oct: OpenAI will honor a shared robots.txt training signal in the coming months. Google aims to support it in 2027. Microsoft starts 1 February 2027; NoArchive and NoCache stop counting for training and grounding on 1 March 2027. IETF draft the same day names the token __usage_ai-training, says a star rule does not count, and expires 3 May 2027. The Verge says Anthropic has already adopted it.",
       "topic": "Rules"
     },
     {
+      "id": "s4",
+      "raw": "TechCrunch, 30 Oct, citing the Financial Times: Blackstone expects Anthropic to receive a high junk, double-B rating after the IPO, reversing earlier guidance of investment grade before 2027. Anchor investor in a $63 billion chip deal. Anthropic and Blackstone declined to comment.",
+      "topic": "Money"
+    },
+    {
       "id": "s5",
-      "raw": "Symantec via Broadcom, 29 Oct: unauthorised relay installs genuine Codex and Claude Code, sets Codex sandbox to danger-full-access, routes traffic to its own servers; a dozen organisations since early 2026, mainly mainland China; not a vulnerability in the tools; no evidence of abuse so far",
+      "raw": "Cursor, 29 Oct, updated 30 Oct: anthropic.claude-code 2.1.312 and 2.1.313 on the Cursor marketplace, about 2:27am to 1:35pm PT, not developed by Anthropic. Tries an SSH backdoor. Tunnel step fails without admin on most hosts. Key and persistence can still be written. Uninstalling may not be enough. Microsoft, 30 Oct: not on the Visual Studio Marketplace or npm. Anthropic told Microsoft its systems were not compromised.",
       "topic": "Trust"
     }
   ]
