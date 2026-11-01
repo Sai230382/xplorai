@@ -1,43 +1,39 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "doordash-agent-orders",
+  "storyId": "openai-round-target",
   "kicker": "Play with today’s story",
-  "title": "A quarter of orders, set next to several hundred from outside agents",
-  "intro": "Switch between DoorDash’s third-quarter total and what Tony Xu said about orders from outside AI agents. The page does not divide one by the other.",
-  "note": "993 million is every completed order in the third quarter of 2026. The 28% is the year-over-year change in that total. The 17% is the same change with the Deliveroo acquisition left out. Both are from DoorDash’s 30 October earnings release. “Several hundred” is Tony Xu’s description, on the 29 October call, of third-party agent orders across the whole time those agents have been running. He also said “maybe several hundred.” It is not a precise count, not a quarterly figure, and not DoorDash’s own Ask, text or connector tools. The two sides are not a rate.",
+  "title": "The earlier ask, set next to the one CNBC confirmed",
+  "intro": "Switch between the fundraising target CNBC says OpenAI pared back and the ask CNBC confirmed on 31 October. The page does not subtract one from the other.",
+  "note": "“Up to $30 billion” is the earlier target CNBC describes. “Up to $20 billion” is the ask CNBC confirmed on 31 October 2026. CNBC says the round is still in progress and has not closed, so both figures can change. The $10 billion reduction and the $1.25 trillion post-money valuation are what CNBC says the Financial Times reported. This briefing did not read the FT article. OpenAI did not immediately comment. None of these figures is cash received, and the page does not divide one by another.",
   "sources": [
     {
-      "label": "DoorDash: third-quarter 2026 results, 30 October 2026",
-      "url": "https://ir.doordash.com/news/news-details/2026/DoorDash-Releases-Third-Quarter-2026-Financial-Results/default.aspx"
-    },
-    {
-      "label": "DoorDash Q3 2026 earnings call, 29 October 2026, filed with the SEC",
-      "url": "https://www.sec.gov/Archives/edgar/data/1792789/000114036126041195/ef20084600_425.htm"
+      "label": "CNBC: OpenAI pares fundraising goal, now seeking up to $20 billion, 31 October 2026",
+      "url": "https://www.cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html"
     }
   ],
   "widget": {
     "type": "compare",
-    "label": "Which DoorDash count you are looking at",
+    "label": "Which OpenAI figure you are looking at",
     "options": [
       {
-        "id": "quarter",
-        "label": "Third quarter",
-        "caption": "Every completed order, from the 30 October earnings release.",
+        "id": "earlier",
+        "label": "Earlier target",
+        "caption": "What CNBC says OpenAI pared back. Not a closed round.",
         "stats": [
-          { "label": "Total orders", "value": "993 million" },
-          { "label": "Year over year", "value": "28%" },
-          { "label": "Growth, Deliveroo left out", "value": "17%" }
+          { "label": "Ask CNBC describes", "value": "up to $30 billion" },
+          { "label": "When CNBC reported the change", "value": "31 October 2026" },
+          { "label": "Round", "value": "not closed" }
         ]
       },
       {
-        "id": "agents",
-        "label": "Outside agents",
-        "caption": "Tony Xu on the 29 October call. Not a quarter, and not a precise count.",
+        "id": "current",
+        "label": "Current ask",
+        "caption": "CNBC confirmed this on Saturday. The valuation line is the FT’s, via CNBC.",
         "stats": [
-          { "label": "Orders he described", "value": "several hundred" },
-          { "label": "How long", "value": "the whole time they have been running" },
-          { "label": "His description", "value": "a fairly low use case" }
+          { "label": "Ask CNBC confirmed", "value": "up to $20 billion" },
+          { "label": "Cut the FT reported", "value": "$10 billion" },
+          { "label": "Post-money, as the FT reported", "value": "$1.25 trillion" }
         ]
       }
     ]

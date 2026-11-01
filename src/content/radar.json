@@ -3470,11 +3470,119 @@
       "s": 3,
       "p": "Free (MIT). Needs Python 3.11 or newer",
       "st": "active"
+    },
+    {
+      "n": "bootgpt",
+      "w": "https://github.com/kerlenton/bootgpt",
+      "c": "Gen AI",
+      "tl": "A char-level model whose engine fits in a 510-byte boot sector",
+      "d": "bootgpt is a free, MIT-licensed demonstration, shown on Show HN on 31 October 2026. The author, Semyon Usachev, says the inference engine is 510 bytes of the master boot record. The README says that record is 512 bytes of handwritten assembly, and that it loads an 11.5 KB int8 model from the next 23 sectors and runs it in 16-bit real mode on a 386, with no operating system. The model has 8 characters of context and one hidden layer. It was trained on 3 MB of synthetic Linux boot logs, and the README says the Python simulator and the boot sector match character for character. The output is a fake boot log for hardware that does not exist. A keypress reboots the machine.",
+      "f": [
+        "Inference engine in 510 bytes of the boot sector",
+        "11.5 KB of int8 weights in the following sectors",
+        "One hidden layer and 8 characters of context",
+        "MIT licence. The README says the Python sim matches the boot sector"
+      ],
+      "u": [
+        "Seeing how small a character model can be and still emit text",
+        "Checking the boot-sector output against the Python simulator",
+        "Running the image in QEMU without installing an operating system"
+      ],
+      "e": "A free experiment that boots a PC into a tiny model, which then prints a made-up Linux startup log.",
+      "s": 3,
+      "p": "Free (MIT). Needs NASM, QEMU and Python with NumPy to build",
+      "st": "active"
+    },
+    {
+      "n": "Winch",
+      "w": "https://getwinch.app",
+      "c": "Productivity",
+      "tl": "App Store and Play listing work, driven by the coding agent you already pay for",
+      "d": "Winch is a Mac app, shown on Show HN on 31 October 2026, that tracks App Store and Google Play keywords in 175 countries and can draft listings and store art. It runs on the model you already have: Claude Code, Codex, OpenCode, Ollama or an OpenRouter key. Winch says it has no model of its own and sells no AI credits. The site says all 84 tools are also an MCP server, that the five tools which write to a store ask first, and that the in-app agent is never offered those write tools. It says data stays on the Mac, with no telemetry and no account. It requires macOS 13 or later, on Apple silicon or Intel. The site says a one-day trial needs no card, and that the licence is $69 once for the first 100 licences and $89 after that.",
+      "f": [
+        "Keyword ranks on the App Store and Google Play, 175 countries",
+        "84 MCP tools, using Claude Code, Codex, OpenCode, Ollama or OpenRouter",
+        "The five store-writing tools ask before they send",
+        "macOS 13 or later. The site says there is no telemetry"
+      ],
+      "u": [
+        "Asking which keywords moved, and reading the rank before you change a listing",
+        "Drafting a listing in another language and checking it before anything is submitted",
+        "Letting a coding agent you already pay for drive the research while the write stays behind a confirmation"
+      ],
+      "e": "A Mac app that lets your existing coding agent check store ranks and draft a listing, and waits for you before it sends anything to the store.",
+      "s": 3,
+      "p": "$69 once for the first 100 licences, then $89. One-day trial, no card. macOS 13 or later",
+      "st": "active"
+    },
+    {
+      "n": "RE-USE browser demo",
+      "w": "https://re-use-demo.geronimo-labs.com/",
+      "c": "Audio & Voice",
+      "tl": "An unofficial browser demo of Nvidia’s 9.6-million-parameter speech cleaner",
+      "d": "Geronimo Labs published an unofficial WebGPU page, shown on Show HN on 31 October 2026, that runs NVIDIA NemotronLabs RE-USE in the browser. The page quotes Nvidia’s description of the model as a 9.6-million-parameter multilingual speech enhancer, meant to restore speech while preserving fidelity. You drop in a WAV, MP3, M4A or MP4, or play one of the page’s examples, including a noisy-microphone clip. The page prints the OpenMDW-1.1 licence and says use of the model is governed by it. It is a demo page, not Nvidia’s own product site.",
+      "f": [
+        "Runs in the browser on WebGPU",
+        "The page quotes a 9.6-million-parameter model",
+        "Accepts WAV, MP3, M4A and MP4",
+        "OpenMDW-1.1, printed on the page. Unofficial demo"
+      ],
+      "u": [
+        "Trying a noisy clip in the browser before you set up Nvidia’s own inference script",
+        "Hearing the difference on the page’s noisy-microphone example",
+        "Reading the OpenMDW-1.1 terms on the same page as the demo"
+      ],
+      "e": "A free browser page that cleans a noisy recording with Nvidia’s small speech model. The page says it is an unofficial demo.",
+      "s": 3,
+      "p": "Free in the browser. The model licence on the page is OpenMDW-1.1",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "31 October 2026",
+    "week": "1 November 2026",
     "launches": [
+      {
+        "name": "Winch (getwinch.app)",
+        "date": "31 October 2026",
+        "desc": "A Mac app for App Store and Google Play keyword ranks in 175 countries. It drafts listings and store art using the coding agent you already pay for: Claude Code, Codex, OpenCode, a local Ollama model, or an OpenRouter key. The site says Winch has no model of its own and sells no credits. All 84 jobs are also exposed as an MCP server. The five tools that write to a store ask first, and the in-app agent is never offered them. The site says everything it learns stays on the Mac, with no telemetry and no account. It needs macOS 13 or later. A one-day trial needs no card. The licence is $69 once for the first 100 licences, then $89. Shown on Show HN on 31 October.",
+        "why": "For a small app team that already pays for a coding agent and keeps losing track of which search terms moved. The write to the store stays behind a confirmation.",
+        "demo": {
+          "input": "Which of this app’s keywords moved today, in the US",
+          "steps": [
+            "Winch runs the searches and marks the rows that moved",
+            "A listing draft is scored against those searches"
+          ],
+          "output": "A draft you can read. The site says nothing is sent to the store until you confirm."
+        }
+      },
+      {
+        "name": "RE-USE browser demo (re-use-demo.geronimo-labs.com)",
+        "date": "31 October 2026",
+        "desc": "An unofficial WebGPU page that runs NVIDIA NemotronLabs RE-USE in the browser. The page quotes Nvidia’s description: a 9.6-million-parameter multilingual speech enhancer, meant to restore speech across real-world damage while preserving fidelity. You drop in a WAV, MP3, M4A or MP4, or play a built-in example, including a noisy-microphone clip. The page prints the OpenMDW-1.1 licence and says that licence governs use of the model. Shown on Show HN on 31 October. It is a demo, not an Nvidia product page.",
+        "why": "For anyone who wants to hear a speech cleaner on a real clip before they install Nvidia’s own stack. Read the licence on the page, and treat the demo as unofficial.",
+        "demo": {
+          "input": "The page’s noisy-microphone example, or a WAV of your own",
+          "steps": [
+            "The browser loads the model with WebGPU",
+            "The page plays the enhanced clip"
+          ],
+          "output": "A cleaned recording. The model stays the 9.6-million-parameter one the page quotes."
+        }
+      },
+      {
+        "name": "bootgpt (github.com/kerlenton/bootgpt)",
+        "date": "31 October 2026",
+        "desc": "A free, MIT-licensed demonstration that puts a character-level language model in a PC’s boot sector. The author says the inference engine is 510 bytes of assembly. The README says the master boot record is 512 bytes of handwritten assembly, loads an 11.5 KB int8 model from the next 23 sectors, and runs in 16-bit real mode on a 386 with no operating system. The network has 8 characters of context and one hidden layer. It was trained on 3 MB of synthetic Linux boot logs, and the README says the Python simulator matches the boot sector character for character. What it prints is a fake boot log, including hardware that does not exist. Shown on Show HN on 31 October. The author’s post the same day says “510 bytes of asm, 11.5 KB of weights.”",
+        "why": "For anyone who hears that a language model needs a data centre. This one fits in a boot sector and only dreams a startup log. It is a demonstration, not a model you would ask a question.",
+        "demo": {
+          "input": "Boot the built disk image in QEMU",
+          "steps": [
+            "The boot sector loads the int8 weights from the next sectors",
+            "The model prints one character at a time"
+          ],
+          "output": "A fake Linux boot log. A keypress reboots the machine."
+        }
+      },
       {
         "name": "Cerebellum (github.com/cerebellum-labs/cerebellum)",
         "date": "30 October 2026",
@@ -3544,51 +3652,15 @@
           ],
           "output": "The agent can call the spec’s operations. A commercial product still needs a licence beyond CC BY-NC-SA."
         }
-      },
-      {
-        "name": "Silo (github.com/Asdivyansh/silo-cli)",
-        "date": "28 October 2026",
-        "desc": "A free, open-source (MIT) command-line tool, installed as the npm package cli-silo, that runs an agent inside a locked-down Docker container. Keys stay on the host. A proxy injects them when a call is allowed, checks outbound HTTP against a YAML policy, and writes every proxied call to a JSONL log. It needs Node.js 18 or later and a running Docker engine. Shown on Show HN on 28 October.",
-        "why": "For anyone about to give an unfamiliar agent a shell and a provider key. The key does not sit in the container, and the log shows what left the machine.",
-        "demo": {
-          "input": "An agent that needs a shell and an API key",
-          "steps": [
-            "Silo starts a restricted container",
-            "The host proxy checks each outbound call and writes a JSONL line"
-          ],
-          "output": "The agent runs. The key stayed on the host, and the log lists the calls."
-        }
-      },
-      {
-        "name": "ThreadShelf (github.com/ChrystianSchutz/ThreadShelf)",
-        "date": "28 October 2026",
-        "desc": "A free, open-source (MIT) local archive for exported chats from ChatGPT, Claude, Google AI Studio, OpenRouter, LM Studio and Grok. Parsing, embeddings, LanceDB storage, search, the HTTP API and the MCP server run on the machine. A thread can be continued with a local llama.cpp model. The OpenRouter option is marked as external and sends the selected context off the machine. The project says the only official install is the threadshelf npm package. Shown on Show HN on 28 October.",
-        "why": "For people who cannot find last month’s prompt because it lives in four chat products. The archive stays local unless you choose the external provider.",
-        "demo": {
-          "input": "Exported JSON chats from Claude and ChatGPT",
-          "steps": [
-            "ThreadShelf embeds them on the machine",
-            "Search opens the original thread"
-          ],
-          "output": "The old conversation, found locally. OpenRouter is a separate, off-device choice."
-        }
-      },
-      {
-        "name": "CleanSlate (github.com/TheWariend/CleanSlate)",
-        "date": "28 October 2026",
-        "desc": "A free, open-source (MIT) workspace that puts an agent, project chats, files, a terminal and a browser in one desktop app built on VS Code. If you connect MuscleMemory, a procedure is recalled only after the tests passed and, by default, after two later passing checks and your approval. The published desktop build is macOS on Apple silicon, version 1.2.0. The project says Developer ID signing and notarisation are paused while an Apple developer account is renewed, so Gatekeeper may block the app. Windows, Linux and Intel Mac builds are not published; those platforms build from source. A CLI and SDK are also published. Shown on Show HN on 28 October.",
-        "why": "For people who already looked at MuscleMemory and want a place to review the agent’s diff. The current Mac download is not notarised, so treat the install as you would any unsigned app.",
-        "demo": {
-          "input": "A bug an agent fixed last week, with tests that passed",
-          "steps": [
-            "MuscleMemory, if connected and approved, offers that procedure",
-            "CleanSlate shows the new diff beside the chat"
-          ],
-          "output": "The next agent starts from the checked steps. You still approve the skill."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "OpenAI",
+        "amount": "Seeking up to $20B (round open)",
+        "valuation": "$1.25T post-money (FT, via CNBC)",
+        "context": "CNBC confirmed on 31 October that OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. A person familiar with the deal told CNBC the round has not closed and the figures can change. OpenAI did not immediately comment. CNBC says the Financial Times first reported a $10 billion cut to the target and a post-money valuation of $1.25 trillion. CNBC says investors from the United Arab Emirates are leading the round alongside Coatue."
+      },
       {
         "company": "Cohere",
         "amount": "Series E targeting up to CAD $7B",
@@ -3622,33 +3694,33 @@
     ],
     "quotes": [
       {
-        "who": "Google, on Computer Use screenshot checks",
-        "text": "Prompt injection detection is an opt-in feature. The default is false.",
-        "source": "Gemini API Computer Use documentation, read 31 October 2026"
+        "who": "CNBC, on OpenAI’s round",
+        "text": "The funding round is still in progress and has not closed, so the figures are subject to change.",
+        "source": "CNBC, 31 October 2026"
       },
       {
-        "who": "Tony Xu, DoorDash’s chief executive",
-        "text": "we’re seeing maybe several hundred orders in total from some of these third-party agents",
-        "source": "DoorDash Q3 2026 earnings call, 29 October 2026"
+        "who": "Cisco Talos, on VOLTA",
+        "text": "If a model refuses to perform the target assessment, VOLTA fails over to a three-model chain.",
+        "source": "Cisco Talos, 31 October 2026"
       },
       {
-        "who": "OpenAI, on the shared training signal",
-        "text": "We aim to implement the signal in the coming months, and will share another update with details about our implementation when we do so.",
-        "source": "OpenAI, 30 October 2026"
+        "who": "OpenAI Help Center, on ChatGPT and Codex",
+        "text": "Starting in December, Plus, Pro, and Business plans’ usage allowance will be shared across ChatGPT and Codex.",
+        "source": "OpenAI Help Center, read 1 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "The screenshot check is off",
-        "desc": "Computer Use is generally available. Google’s docs say the check for hidden instructions in a screenshot defaults to false. Turn it on before the agent reads a page you do not control."
+        "title": "The round is still open",
+        "desc": "CNBC says OpenAI is seeking up to $20 billion, down from about $30 billion. The round has not closed, and OpenAI did not comment. The $1.25 trillion figure is the FT’s, as CNBC reports it."
       },
       {
-        "title": "The agent did not place the order",
-        "desc": "DoorDash described several hundred orders from outside agents, across the whole time they have been running. The quarter was 993 million orders. Those are not a rate."
+        "title": "A refusal is another call",
+        "desc": "Talos says VOLTA asks Claude Opus 4.6 to rank a victim, then tries Kimi K2 and Gemini 2.5 Flash. The theft still runs if no model key is set."
       },
       {
-        "title": "The opt-out is not live yet",
-        "desc": "A robots.txt token, __usage_ai-training, can express a training preference. OpenAI says the coming months. Google says 2027. Microsoft says 1 February 2027. A star rule does not count."
+        "title": "One allowance in December",
+        "desc": "OpenAI’s help page says Plus, Pro and Business will share a ChatGPT and Codex allowance from December, counted in tokens. Instant chat is left out. No day and no token count yet."
       }
     ]
   },
@@ -3658,13 +3730,13 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model."
       },
       {
         "org": "Google DeepMind",
@@ -3732,11 +3804,23 @@
         "org": "MBZUAI / Nvidia",
         "name": "K2 Horizon · Nemotron 3.5",
         "model": "Transcribe · Super VL · open families",
-        "note": "On 28 Oct NVIDIA published Nemotron 3.5 Transcribe, an open speech model (about 4.3B active parameters, OpenMDW-1.1) for 40 languages on recordings up to an hour. It reports mean word error rates of 4.71% (English Open ASR) and 4.62% (multilingual). Nemotron 3.5 Super VL (120B, 12B active, multimodal) shipped on 15 Oct. Abu Dhabi’s K2 Horizon family carries on."
+        "note": "On 28 Oct NVIDIA published Nemotron 3.5 Transcribe, an open speech model (about 4.3B active parameters, OpenMDW-1.1) for 40 languages on recordings up to an hour. It reports mean word error rates of 4.71% (English Open ASR) and 4.62% (multilingual). Nemotron 3.5 Super VL (120B, 12B active, multimodal) shipped on 15 Oct. Abu Dhabi’s K2 Horizon family carries on. On 31 Oct an unofficial WebGPU page started running NVIDIA NemotronLabs RE-USE, which the page describes as a 9.6-million-parameter speech enhancer, in the browser under OpenMDW-1.1. It is a demo of that model, not a new general model."
       }
     ]
   },
   "gems": [
+    {
+      "name": "bootgpt",
+      "why": "A language model whose engine fits in a 510-byte boot sector"
+    },
+    {
+      "name": "Winch",
+      "why": "Store ranks and listing drafts, driven by the agent you already pay for"
+    },
+    {
+      "name": "RE-USE browser demo",
+      "why": "Cleans a noisy recording in the browser. The page says it is unofficial"
+    },
     {
       "name": "Cerebellum",
       "why": "A robot’s small model acts; Nemotron approves what it cannot undo"
