@@ -1,5 +1,23 @@
 [
   {
+    "name": "Semyon Usachev",
+    "handle": "krlntn",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2061474075336155136/3ktG91DZ_400x400.jpg",
+    "text": "I put an LLM in the boot sector of my PC. Now it wakes up and dreams a Linux boot log before any OS exists\n\n510 bytes of asm, 11.5 KB of weights, 16-bit real mode. A 386 would do https://t.co/8DkNFgwONE",
+    "url": "https://x.com/krlntn/status/2116514628457185757",
+    "postedAt": "2026-10-31T12:56:25.000Z",
+    "take": "The engine is 510 bytes and the weights are another 11.5 KB. It prints a fake Linux boot log. It is a demonstration, not a model you would ask a question."
+  },
+  {
+    "name": "Claude",
+    "handle": "claudeai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_400x400.jpg",
+    "text": "We’re renaming our Max plans: \n\nMax 5x → Max\nMax 20x → Ultra\n\nMax is still $100/month, and Ultra is still $200. If you’re a subscriber, there’s nothing you need to do.\n\nWe’re also removing the 5-hour limit for verified Ultra accounts, starting today with most existing subscribers. Newer accounts keep a temporary limit until they’re verified, which helps us prevent fraud and abuse. You'll get an email when it's removed.\n\nWeekly limits remain unchanged. View our plans here:  https://t.co/niRpyGF5Me",
+    "url": "https://x.com/claudeai/status/2116220869479428500",
+    "postedAt": "2026-10-30T17:29:07.000Z",
+    "take": "The $200 plan lost its five-hour cap for accounts Anthropic has verified. The weekly limit did not move, and a newer account can still be waiting on that check."
+  },
+  {
     "name": "Mistral AI",
     "handle": "MistralAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1996905418065375232/mzwynOLB_400x400.jpg",
