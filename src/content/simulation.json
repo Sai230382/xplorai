@@ -1,39 +1,47 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "openai-round-target",
+  "storyId": "spacexai-turbine-case",
   "kicker": "Play with today’s story",
-  "title": "The earlier ask, set next to the one CNBC confirmed",
-  "intro": "Switch between the fundraising target CNBC says OpenAI pared back and the ask CNBC confirmed on 31 October. The page does not subtract one from the other.",
-  "note": "“Up to $30 billion” is the earlier target CNBC describes. “Up to $20 billion” is the ask CNBC confirmed on 31 October 2026. CNBC says the round is still in progress and has not closed, so both figures can change. The $10 billion reduction and the $1.25 trillion post-money valuation are what CNBC says the Financial Times reported. This briefing did not read the FT article. OpenAI did not immediately comment. None of these figures is cash received, and the page does not divide one by another.",
+  "title": "Two published counts of the turbines, side by side",
+  "intro": "Switch between the turbine count CNBC says the lawsuit alleges and the count TechCrunch quotes from the Southern Environmental Law Center. The page does not add them, and it does not treat either as the judge’s finding.",
+  "note": "“27” is what CNBC, on 31 October 2026, says the complaint alleges: turbines installed and operated in Southaven between August and December 2025, without an air permit. “At least 35” is what TechCrunch, the same day, says the Southern Environmental Law Center said, and TechCrunch’s phrase includes other sources of air pollution at the Colossus site, not turbines alone. Judge Debra M. Brown’s order of 30 October does not choose a count and does not find that a permit was missing. The order says the plaintiffs seek a civil penalty of up to $124,426 per day per violation. That number is a request. It is not on this control, because multiplying it by a number of days would invent a total the order does not state. SpaceX did not immediately comment to CNBC.",
   "sources": [
     {
-      "label": "CNBC: OpenAI pares fundraising goal, now seeking up to $20 billion, 31 October 2026",
-      "url": "https://www.cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html"
+      "label": "CNBC: SpaceX loses bid to toss NAACP suit over data center pollution, 31 October 2026",
+      "url": "https://www.cnbc.com/2026/10/31/xai-naacp-clean-air-act-lawsuit-dismissal.html"
+    },
+    {
+      "label": "TechCrunch: Judge allows NAACP lawsuit over xAI data center pollution to move forward, 31 October 2026",
+      "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/"
+    },
+    {
+      "label": "U.S. District Court, N.D. Mississippi, opinion and order, 30 October 2026",
+      "url": "https://law.justia.com/cases/federal/district-courts/mississippi/msndce/3:2026cv00074/52261/139/"
     }
   ],
   "widget": {
     "type": "compare",
-    "label": "Which OpenAI figure you are looking at",
+    "label": "Which published turbine count you are reading",
     "options": [
       {
-        "id": "earlier",
-        "label": "Earlier target",
-        "caption": "What CNBC says OpenAI pared back. Not a closed round.",
+        "id": "cnbc",
+        "label": "CNBC, on the suit",
+        "caption": "What CNBC says the complaint alleges. Not a finding.",
         "stats": [
-          { "label": "Ask CNBC describes", "value": "up to $30 billion" },
-          { "label": "When CNBC reported the change", "value": "31 October 2026" },
-          { "label": "Round", "value": "not closed" }
+          { "label": "Turbines the suit alleges", "value": "27" },
+          { "label": "Period CNBC names", "value": "August to December 2025" },
+          { "label": "Place CNBC names", "value": "Southaven, Mississippi" }
         ]
       },
       {
-        "id": "current",
-        "label": "Current ask",
-        "caption": "CNBC confirmed this on Saturday. The valuation line is the FT’s, via CNBC.",
+        "id": "selc",
+        "label": "SELC, via TechCrunch",
+        "caption": "What TechCrunch says the Southern Environmental Law Center said the same day.",
         "stats": [
-          { "label": "Ask CNBC confirmed", "value": "up to $20 billion" },
-          { "label": "Cut the FT reported", "value": "$10 billion" },
-          { "label": "Post-money, as the FT reported", "value": "$1.25 trillion" }
+          { "label": "Turbines and other sources", "value": "at least 35" },
+          { "label": "Permits, as the SELC put it", "value": "none obtained" },
+          { "label": "What the judge decided", "value": "the claims proceed" }
         ]
       }
     ]
