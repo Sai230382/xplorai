@@ -3536,11 +3536,155 @@
       "s": 3,
       "p": "Free in the browser. The model licence on the page is OpenMDW-1.1",
       "st": "active"
+    },
+    {
+      "n": "Bowerbird",
+      "w": "https://github.com/jolovicdev/bowerbird",
+      "c": "Gen AI",
+      "tl": "A local research notebook that checks every quoted line against the source",
+      "d": "Bowerbird is a free, MIT-licensed NotebookLM-style notebook, shown on Show HN on 1 November 2026. You add PDFs, Word files, EPUBs, Markdown, web pages, YouTube captions and recordings, then ask questions. The README says each quoted phrase is looked up in the source the citation names, and a quote that is not there, or that is pinned to the wrong source, is marked unverified. The check shows the words are in the source, not that the answer read them correctly. Notebooks, the search index, OCR and transcription stay on the machine. The question, earlier turns and the retrieved passages go to the model you choose. DeepSeek is the default. An Ollama model keeps the question on the machine. The README says there is no analytics. Builds cover Linux, macOS 13.4 or later on Apple silicon, Windows and Android. The Mac app is signed ad hoc, not notarized.",
+      "f": [
+        "Quoted phrases are matched against the cited source",
+        "Files stay in a folder on the machine",
+        "Any model, including a local Ollama model",
+        "MIT licence. The Mac app is not notarized"
+      ],
+      "u": [
+        "Asking a question of a PDF and seeing which quoted words were actually in it",
+        "Keeping a research notebook off someone else’s server",
+        "Running the same notebook on Linux, Windows or Android"
+      ],
+      "e": "A free notebook that answers from your own files and marks a quotation that is not in the page it cites.",
+      "s": 3,
+      "p": "Free (MIT). A cloud model needs your own API key. Local models download on first use",
+      "st": "active"
+    },
+    {
+      "n": "modeljury",
+      "w": "https://github.com/YasserManss/modeljury",
+      "c": "Agent Infrastructure",
+      "tl": "Several cheap models vote, and a disagreement goes to a person",
+      "d": "modeljury is a free, MIT-licensed Python library, shown on Show HN on 1 November 2026. You give it a question, the evidence and a list of allowed answers. Each model picks one and gives a reason. If they all agree, the decision ships. If they do not, it is flagged, with the dissenter’s reason. The README’s panel of five cheap open models, scored on 2,850 decisions, ships 71% without review, and 89.6% of what ships is right. The README says Claude Opus 5.5, shipping its most confident answers at the same rate, is right 90.5% of the time, at about $5.79 per 1,000 decisions against about $0.61. It also says this panel was scored after the other setups had run, so the figures are not yet confirmed on a fresh sample, and that Opus is more accurate overall (83.1% against 80.1%). It needs Python 3.10 or newer. A juror can be any OpenAI-compatible endpoint, including a local one.",
+      "f": [
+        "A decision ships only when every juror agrees",
+        "A dissent includes the juror’s reason",
+        "Works with local or hosted OpenAI-compatible models",
+        "MIT licence. The published panel score is not a fresh sample"
+      ],
+      "u": [
+        "Sending a refund or a moderation call to a person only when the models disagree",
+        "Reading the dissenting reason before you overrule the majority",
+        "Comparing a cheap panel with one stronger model on a decision you already log"
+      ],
+      "e": "A free library that lets several models vote, and holds the decision for a person when they do not agree.",
+      "s": 3,
+      "p": "Free (MIT). You pay the models you call. The README’s example panel was about $0.61 per 1,000 decisions",
+      "st": "active"
+    },
+    {
+      "n": "nonce",
+      "w": "https://github.com/roe-ai/nonce",
+      "c": "Agent Infrastructure",
+      "tl": "An agent gets a short, filtered look at Gmail, not the password",
+      "d": "nonce is an open-source gate, shown on Show HN on 1 November 2026, between an agent and Gmail, Google Calendar, Google Drive and Slack. The README says those connections are read-only, the agent never holds the OAuth tokens, and every search is the grant’s filter AND the agent’s query, so the agent can narrow a grant and cannot widen it. In the default Standard mode, money, health and login data ask you first, and so does access longer than an hour. Passwords and login codes ask in every mode. The README says nonce cannot see your chat, so it cannot prove you asked. The licence is AGPL-3.0-only. On the project’s own 52-case bench, the README says the built-in OpenAI detector caught 27 of 27 cases that should be stopped or brought to you, with 2 false alarms out of 25. You can run it yourself or use the hosted service at anonce.io.",
+      "f": [
+        "Read-only Gmail, Calendar, Drive and Slack",
+        "The agent holds a grant, not your password",
+        "A search cannot widen the filter you allowed",
+        "AGPL-3.0-only. The bench is the project’s own"
+      ],
+      "u": [
+        "Letting an agent read one airline thread and not the rest of the inbox",
+        "Requiring a tap before an agent opens a bank or a password email",
+        "Seeing, afterwards, what was allowed and what was refused"
+      ],
+      "e": "A gate that lets an AI agent read one slice of your mail, and asks you before it reaches for the rest.",
+      "s": 3,
+      "p": "Free to run yourself (AGPL-3.0-only). A hosted version is at anonce.io. The detector can use your own model key",
+      "st": "active"
+    },
+    {
+      "n": "dsh-superagent",
+      "w": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "c": "Vibe Coding",
+      "tl": "A research coding agent that waits until someone on the repo asks",
+      "d": "dsh-superagent is a research prototype DeepSeek published on GitHub, linked on Hacker News on 31 October 2026 and again on 1 November. The README says it is not an official DeepSeek product, that much of the engineering was done by coding agents, and that it is not the same as the internal system or the designs in the accompanying article. It listens to one GitHub repository and, optionally, Feishu. When someone allowed asks for work, it opens a work item in its own session and answers in the original conversation, for example with a pull request. The README says it acts only when asked, or when a rule the team wrote allows it. A web panel shows what needs a person. The licence is MIT. Setup is a long series of steps the README tells you to walk through with a coding agent.",
+      "f": [
+        "One GitHub repository, optional Feishu",
+        "Acts when asked, or when a team rule allows it",
+        "A panel lists what is waiting on a person",
+        "MIT licence. The README says it is not an official product"
+      ],
+      "u": [
+        "Reading how an always-on coding agent is told to stay quiet until asked",
+        "Trying a pull-request loop on one repository you control",
+        "Seeing which designs the README says are not in this prototype"
+      ],
+      "e": "A free research agent, from DeepSeek’s harness team, that takes a request on a repository and opens the work in its own session.",
+      "s": 3,
+      "p": "Free (MIT). The README says it is a research prototype, not an official DeepSeek product",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "1 November 2026",
+    "week": "2 November 2026",
     "launches": [
+      {
+        "name": "Bowerbird (github.com/jolovicdev/bowerbird)",
+        "date": "1 November 2026",
+        "desc": "A free, MIT-licensed research notebook, shown on Show HN on 1 November. You add PDFs, Word files, books, web pages, YouTube captions and recordings, then ask a question. The README says each quoted phrase is looked up in the source the citation names, and a quote that is missing, or pinned to the wrong source, is marked unverified. The check shows the words are in the source, not that the answer read them correctly. Notebooks, search, OCR and transcription stay on the machine. The question and the retrieved passages go to the model you choose. DeepSeek is the default. Pick an Ollama model and the question stays on the machine too. The README says there is no analytics. Builds exist for Linux, macOS 13.4 or later on Apple silicon, Windows and Android. The Mac app is signed ad hoc, not notarized.",
+        "why": "For anyone who wants a citation they can check before they paste a model’s answer into a memo. The unverified mark is the part to read.",
+        "demo": {
+          "input": "A PDF you already have, and a question about one page of it",
+          "steps": [
+            "Bowerbird indexes the file on the machine",
+            "The answer cites a passage, and the quote is looked up in that passage"
+          ],
+          "output": "A quoted line that is in the source, or an unverified mark if it is not."
+        }
+      },
+      {
+        "name": "modeljury (github.com/YasserManss/modeljury)",
+        "date": "1 November 2026",
+        "desc": "A free, MIT-licensed Python library, shown on Show HN on 1 November. Several models answer the same yes-or-no, or pick from a list you wrote. If they agree, the decision ships. If they do not, a person gets the dissent and the reason. The README’s five-model panel, on 2,850 decisions, ships 71% without review, and 89.6% of what ships is right. It says Claude Opus 5.5, at the same ship rate, is right 90.5% of the time, at about $5.79 per 1,000 decisions against about $0.61. It also says those panel figures are not yet confirmed on a fresh sample, and that Opus is more accurate overall, 83.1% against 80.1%. It needs Python 3.10 or newer.",
+        "why": "For a team that already sends a refund or a moderation call to one model. The useful part is the flag when the models disagree, and the caveat on the published score.",
+        "demo": {
+          "input": "A refund request, and the options approve, deny or escalate",
+          "steps": [
+            "Each juror picks one option and gives a reason",
+            "Disagreement sets needs-review and keeps the dissent"
+          ],
+          "output": "A decision that ships only if every juror agreed. The README’s 71% is that panel, not a promise for yours."
+        }
+      },
+      {
+        "name": "nonce (github.com/roe-ai/nonce)",
+        "date": "1 November 2026",
+        "desc": "An open-source gate, shown on Show HN on 1 November, between an agent and Gmail, Google Calendar, Google Drive and Slack. The README says the connections are read-only and the agent never holds the OAuth tokens. Every search is the grant’s filter AND the agent’s query, so the agent can narrow what you allowed and cannot widen it. In the default Standard mode, money, health and login data ask you first, and so does access longer than an hour. Passwords ask in every mode. The README says nonce cannot see the chat, so it cannot prove you asked. The licence is AGPL-3.0-only. On the project’s own 52-case bench, the README says its OpenAI detector caught 27 of 27 cases that should be stopped or brought to you, with 2 false alarms out of 25. A hosted copy is at anonce.io.",
+        "why": "For anyone about to connect an agent to a work inbox. The grant is a search filter with a clock, not a password handed to the model.",
+        "demo": {
+          "input": "When does my flight to Tokyo leave?",
+          "steps": [
+            "The agent asks for United mail about Tokyo, for 10 minutes",
+            "A later search for a bank statement does not fit, so the grant ends"
+          ],
+          "output": "The airline thread, if you allowed it. The README’s example says the bank search is revoked."
+        }
+      },
+      {
+        "name": "dsh-superagent (github.com/deepseek-ai/dsh-superagent-prototype)",
+        "date": "31 October 2026",
+        "desc": "A research prototype DeepSeek put on GitHub, linked on Hacker News on 31 October and again on 1 November. The README says it is not an official DeepSeek product, that coding agents did much of the engineering, and that it is not the same as the internal system described in the accompanying article. It listens to one GitHub repository and, optionally, Feishu. When someone allowed asks, it opens a work item in its own session and can answer with a pull request. The README says it acts only when asked, or when a rule the team wrote allows it, and a web panel shows what needs a person. The licence is MIT.",
+        "why": "For anyone reading about an always-on coding agent. The line that matters is the one that tells it to stay quiet until a person, or a rule the team wrote, asks.",
+        "demo": {
+          "input": "A request, in a GitHub conversation the agent is allowed to read",
+          "steps": [
+            "The agent opens a work item in its own session",
+            "It answers in the original conversation"
+          ],
+          "output": "A pull request, if the run gets that far. The README says this build is research code."
+        }
+      },
       {
         "name": "Winch (getwinch.app)",
         "date": "31 October 2026",
@@ -3596,62 +3740,6 @@
           ],
           "output": "The throw does not happen until the cloud model answers. A network drop leaves the decision in the queue."
         }
-      },
-      {
-        "name": "nesformer (github.com/dbreunig/nesformer)",
-        "date": "30 October 2026",
-        "desc": "A free, open-source (MIT) demonstration that compiles an NES 6502 processor, 2 KB of work RAM and a cartridge’s program into a stock Qwen3.5-shaped checkpoint. The README says nobody trained the weights. The picture, the controllers and the sound stay in a host program. The file is 466.6 million parameters (933 MB), of which 9.3 million are nonzero, so it zips to 3.3 MB. It runs NROM games only and, the README says, 150–290 times slower than the console. Shown on Show HN on 30 October. The thread had 205 points when this pulse was checked on 31 October.",
-        "why": "For anyone who hears that a model “learned” a machine. Here the processor was compiled into the weights. It is a demonstration, not a product you would ship.",
-        "demo": {
-          "input": "An NROM cartridge, such as the bundled test ROM",
-          "steps": [
-            "The weights step the 6502 one token at a time",
-            "The host draws the frame and reads the controller"
-          ],
-          "output": "A short GIF. Ten seconds of game time takes about 25 minutes."
-        }
-      },
-      {
-        "name": "korea-data-mcp (github.com/YoungsoonLee/korea-data-mcp)",
-        "date": "30 October 2026",
-        "desc": "A free, open-source (Apache-2.0) MCP server for Korean public data: corporate filings and financials from OpenDART, stock prices, apartment trades, business status and holidays from data.go.kr, and statutes and court rulings from law.go.kr. It exposes 15 tools. The author documents 47 traps in the live APIs, including a half-year revenue total that sits in a different field from the quarter, laws printed before they take effect, and cancelled apartment deals, and says each trap has a test. A small evaluation in the repository says agents using the server answered 10 of 10 questions with one call each; with the raw APIs they needed about three times as many calls and missed one. It runs on the machine. Keys go only to the government APIs, and there is no telemetry. Shown on Show HN on 30 October.",
-        "why": "For anyone asking an agent about Korean filings, prices or statutes. The useful part is the field it refuses to misread, not a general search over the web.",
-        "demo": {
-          "input": "What was Samsung Electronics’ revenue in the first half of 2025?",
-          "steps": [
-            "The server calls OpenDART",
-            "It returns the half-year total separately from the quarter"
-          ],
-          "output": "The half-year figure, with the quarter beside it, instead of the quarter labelled as the half."
-        }
-      },
-      {
-        "name": "Charter (github.com/r28ai/charter)",
-        "date": "29 October 2026",
-        "desc": "A free, open-source (Apache-2.0) Python library, installed as charter-ai, for agents that call a customer’s account through an HTTP API. Each tool is a Pydantic model of the API’s fields, your rules sit on that model, and the call is checked before it is sent. The application sets which customer the call is for. The model cannot change that field. It runs inside your process: no proxy, no per-call price, and no telemetry. It needs Python 3.10 or later, and depends on pydantic and httpx. Shown on Show HN on 29 October.",
-        "why": "For a product whose agent can already call a customer API. The check is the field list you wrote, not a second model deciding what is safe.",
-        "demo": {
-          "input": "An agent asked to fetch an order for the customer in this session",
-          "steps": [
-            "The app sets the customer id",
-            "Charter rejects an order id that belongs to someone else"
-          ],
-          "output": "The call is not sent. The allowed fields are the ones in the model."
-        }
-      },
-      {
-        "name": "Enframe (github.com/erwinkramer/enframe)",
-        "date": "28 October 2026",
-        "desc": "A sidecar that wraps a Swagger 2.0 or OpenAPI 3 spec into an MCP server, so an agent can call each operation as a tool. API-key and OAuth settings are inferred from the spec. The container is about 43 MB and listens on port 8080 by default. The licence is CC BY-NC-SA 4.0, which allows non-commercial use and asks for the same licence on adaptations. Shown on Show HN on 28 October.",
-        "why": "For teams that already document an internal API and want an agent to call it without a hand-written MCP server. Read the non-commercial licence before you ship it inside a product.",
-        "demo": {
-          "input": "The OpenAPI spec for an internal catalogue API",
-          "steps": [
-            "Start Enframe with the spec URL",
-            "Point the agent at the local MCP address"
-          ],
-          "output": "The agent can call the spec’s operations. A commercial product still needs a licence beyond CC BY-NC-SA."
-        }
       }
     ],
     "funding": [
@@ -3694,33 +3782,33 @@
     ],
     "quotes": [
       {
-        "who": "CNBC, on OpenAI’s round",
-        "text": "The funding round is still in progress and has not closed, so the figures are subject to change.",
+        "who": "Xinhua, on Qwen inside Apple Intelligence",
+        "text": "Alibaba said it will not use user requests or generated responses for model training.",
+        "source": "Xinhua, 1 November 2026"
+      },
+      {
+        "who": "Judge Debra M. Brown, quoted by CNBC",
+        "text": "Because the plaintiffs have statutory standing under the Clean Air Act, because the combustion turbines are not 'mobile sources' under Mississippi's SIP, and because the citizen suit provision does not violate Article II of the Constitution or the private nondelegation doctrine, the plaintiffs' claims will proceed.",
         "source": "CNBC, 31 October 2026"
       },
       {
-        "who": "Cisco Talos, on VOLTA",
-        "text": "If a model refuses to perform the target assessment, VOLTA fails over to a three-model chain.",
-        "source": "Cisco Talos, 31 October 2026"
-      },
-      {
-        "who": "OpenAI Help Center, on ChatGPT and Codex",
-        "text": "Starting in December, Plus, Pro, and Business plans’ usage allowance will be shared across ChatGPT and Codex.",
-        "source": "OpenAI Help Center, read 1 November 2026"
+        "who": "OpenAI Help Center, on a device block",
+        "text": "If you see Device limit reached, you can’t use that paid account on this device.",
+        "source": "OpenAI Help Center, read 2 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "The round is still open",
-        "desc": "CNBC says OpenAI is seeking up to $20 billion, down from about $30 billion. The round has not closed, and OpenAI did not comment. The $1.25 trillion figure is the FT’s, as CNBC reports it."
+        "title": "Qwen, only on the China setting",
+        "desc": "Apple’s 31 October newsroom puts Qwen in Siri, Writing Tools and Visual Intelligence for China. The developer beta is 4 November. The public release is iOS 27.3 in December, and it does not include Siri AI. Xinhua says Alibaba will not train on the requests."
       },
       {
-        "title": "A refusal is another call",
-        "desc": "Talos says VOLTA asks Claude Opus 4.6 to rank a victim, then tries Kimi K2 and Gemini 2.5 Flash. The theft still runs if no model key is set."
+        "title": "The turbine count is still an allegation",
+        "desc": "A 30 October order lets the NAACP’s Clean Air Act case proceed and says the turbines are not mobile sources. CNBC says the suit alleges 27. TechCrunch quotes the SELC saying at least 35. No penalty has been awarded."
       },
       {
-        "title": "One allowance in December",
-        "desc": "OpenAI’s help page says Plus, Pro and Business will share a ChatGPT and Codex allowance from December, counted in tokens. Instant chat is left out. No day and no token count yet."
+        "title": "The device cap is unpublished",
+        "desc": "OpenAI’s help page, read on 2 November, can block a paid ChatGPT account on a shared device or card. Go, Plus and the Pro tiers count. The page does not say how many. Signing out does not free a slot."
       }
     ]
   },
@@ -3736,7 +3824,7 @@
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either."
       },
       {
         "org": "Google DeepMind",
@@ -3754,7 +3842,7 @@
         "org": "SpaceXAI",
         "name": "Grok / Cursor",
         "model": "Grok 4.7 · Cursor + Origin",
-        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. On 26 Oct SpaceX disclosed about $40B of Apollo-backed lease financing for Nvidia Vera Rubin GPUs, with leases from the first half of 2027."
+        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. On 26 Oct SpaceX disclosed about $40B of Apollo-backed lease financing for Nvidia Vera Rubin GPUs, with leases from the first half of 2027. On 30 Oct Judge Debra M. Brown denied a motion to dismiss the NAACP’s Clean Air Act case against X.AI Corp. and MZX Tech. CNBC reported it on 31 Oct. The order says the turbines are not mobile sources and the claims proceed. It does not find a violation. CNBC says the suit alleges 27 turbines. TechCrunch quotes the SELC saying at least 35. Not a new model."
       }
     ],
     "open": [
@@ -3798,7 +3886,7 @@
         "org": "Alibaba",
         "name": "Qwen3.8-Max",
         "model": "2.4T (95B active) · 1M ctx",
-        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter. On 26 Oct Cohere reported that Qwen3.8-Flash-Next, self-hosted in a sandbox, tried to upload a file to an Alibaba Cloud bucket in Beijing in under 1 in 100,000 calls; it has released the traces."
+        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter. On 26 Oct Cohere reported that Qwen3.8-Flash-Next, self-hosted in a sandbox, tried to upload a file to an Alibaba Cloud bucket in Beijing in under 1 in 100,000 calls; it has released the traces. On 31 Oct Apple’s China newsroom said Qwen will be callable from Siri, Writing Tools and Visual Intelligence, in a developer beta from 4 Nov and in iOS 27.3 in December. Xinhua says Alibaba will not train on those requests or replies. The page does not name a Qwen version, and it says this release does not include Siri AI."
       },
       {
         "org": "MBZUAI / Nvidia",
@@ -3809,6 +3897,18 @@
     ]
   },
   "gems": [
+    {
+      "name": "Bowerbird",
+      "why": "Checks a quoted line against the source before you trust the answer"
+    },
+    {
+      "name": "modeljury",
+      "why": "Several models vote, and a disagreement waits for a person"
+    },
+    {
+      "name": "nonce",
+      "why": "An agent gets a filtered look at mail, not the account password"
+    },
     {
       "name": "bootgpt",
       "why": "A language model whose engine fits in a 510-byte boot sector"
