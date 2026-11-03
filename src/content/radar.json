@@ -3624,11 +3624,119 @@
       "s": 3,
       "p": "Free (MIT). The README says it is a research prototype, not an official DeepSeek product",
       "st": "active"
+    },
+    {
+      "n": "Subvocal",
+      "w": "https://subvocal.company/",
+      "c": "Audio & Voice",
+      "tl": "Glasses that turn silent mouthing into text, decoded in the cloud",
+      "d": "Subvocal is a pair of smart glasses, shown on Show HN on 2 November 2026 by Aarush and Arnav of The Subvocal Company (YC F26). The post says the frames emit radio waves and that foundation models decode how those waves change across the tongue, lips and soft palate, including when the lips stay closed. The post says people were paid to read prompts so the model would work across faces. Preorders are open for a first batch of 500, with a $200 discount. The post does not print the full price, and it says shipping is aimed at the first quarter of 2027. In the thread the author says decoding runs in a companion app in the cloud, usually in under 500 milliseconds, and that launch will be cloud inference.",
+      "f": [
+        "Silent mouthing, including with the lips closed",
+        "Radio sensing in the frames, a model in the cloud",
+        "Preorders for 500. The full price is not on the post",
+        "The author says local inference is not in the launch"
+      ],
+      "u": [
+        "Dictating in an open office without speaking aloud",
+        "Reading the author’s own line that the signal goes to the cloud",
+        "Waiting on the first-quarter 2027 ship date before planning a rollout"
+      ],
+      "e": "Glasses that read a sentence you mouth, and send that signal to a model in the cloud.",
+      "s": 3,
+      "p": "Preorder open for a first batch of 500, with a $200 discount. The Show HN post does not print the full price",
+      "st": "active"
+    },
+    {
+      "n": "beacon.sh",
+      "w": "https://beacon.sh/",
+      "c": "Agent Infrastructure",
+      "tl": "Session memory for coding agents, reviewed before it is reused",
+      "d": "beacon.sh is an open-source memory layer, first on Product Hunt’s board for 2 November 2026. The GitHub repository, asymptote-labs/agent-beacon, was created in May 2026 and is MIT-licensed. The README says it captures sessions from Claude Code, Cursor, Codex, OpenCode and 20 or more other harnesses, and turns workflows and corrections into skills a later agent can fetch through MCP or Agent Skills. A person reviews a skill before it is kept. Interactive setup signs in through beacon.sh and preselects Beacon Cloud, with an explicit local opt-out.",
+      "f": [
+        "One history across many coding agents",
+        "A person approves what becomes a skill",
+        "MCP and Agent Skills for the next session",
+        "MIT licence. Cloud is the preset, local is a choice"
+      ],
+      "u": [
+        "Keeping a signing rule that one agent already found",
+        "Refusing a skill that describes a setup you have since changed",
+        "Staying local if you do not want the session in Beacon Cloud"
+      ],
+      "e": "A free memory layer that saves what a coding agent learned, after you approve it.",
+      "s": 3,
+      "p": "Free and open source (MIT). Hosted Beacon Cloud is the preset during interactive setup. Local is an explicit opt-out",
+      "st": "active"
+    },
+    {
+      "n": "Clayzo",
+      "w": "https://clayzo.com/",
+      "c": "Animation & Motion",
+      "tl": "Motion graphics written and checked by the coding agent you already run",
+      "d": "Clayzo is a free animation engine, listed on Product Hunt’s board for 2 November 2026. The site says you ask Claude Code, Codex or Cursor for motion graphics, product animations and interactive web animations. The agent writes them, checks every frame, and ships them to play on the web or natively in Swift. The start command on the site is npx clayzo@latest init. The site does not print a paid tier.",
+      "f": [
+        "The coding agent writes the animation",
+        "The agent checks frames before you do",
+        "Playback on the web and in Swift",
+        "The site says the engine is free"
+      ],
+      "u": [
+        "Asking for a short product animation of a screen you already ship",
+        "Checking the frames yourself before the animation goes on a site",
+        "Starting from npx clayzo@latest init in a repo you control"
+      ],
+      "e": "A free engine that lets a coding agent write a motion graphic and look at the frames.",
+      "s": 3,
+      "p": "Free, as the site states. No paid tier is printed there",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "2 November 2026",
+    "week": "3 November 2026",
     "launches": [
+      {
+        "name": "Subvocal (subvocal.company)",
+        "date": "2 November 2026",
+        "desc": "Smart glasses that turn silent mouthing into text, shown on Show HN on 2 November by Aarush and Arnav of The Subvocal Company (YC F26). The post says the frames emit radio waves, similar to Bluetooth, and that foundation models decode how those waves change as they cross the tongue, lips and soft palate. The post says you do not have to open your mouth. It says the company paid people to read prompts in booths so the model would work across faces, and that a short 20-sentence calibration was enough for the demo video. Preorders are open for a first batch of 500, with a $200 discount off the final price. The post does not print that price. It says the product is aimed at shipping in the first quarter of 2027. In the thread, the author says decoding runs in a companion app, in the cloud, usually in under 500 milliseconds, and that launch will be cloud inference, with local models only hoped for later.",
+        "why": "For anyone who dictates in an open office and does not want the room to hear it. The part to read first is that the words go to a cloud model.",
+        "demo": {
+          "input": "A sentence mouthed with the lips closed",
+          "steps": [
+            "The glasses sense the mouth with radio waves",
+            "A companion app decodes that signal in the cloud"
+          ],
+          "output": "Text, if the demo holds. The author says launch is cloud inference, not on the glasses."
+        }
+      },
+      {
+        "name": "beacon.sh (github.com/asymptote-labs/agent-beacon)",
+        "date": "2 November 2026",
+        "desc": "An open-source memory layer for coding agents, first on Product Hunt’s board for 2 November. The GitHub repository was created in May 2026. The README says Beacon captures session history across Claude Code, Cursor, Codex, OpenCode and 20 or more other harnesses, then turns workflows, corrections and debugging patterns into knowledge a later agent can retrieve through MCP or Agent Skills. A person reviews it before it is kept. The README says interactive setup signs in through beacon.sh and preselects Beacon Cloud, with an explicit choice to stay local. The licence on the repository is MIT.",
+        "why": "For anyone who re-explains the same bug every time they switch from one coding agent to another. The review step is the part that stops a stale lesson being saved.",
+        "demo": {
+          "input": "A webhook bug an agent fixed once, including the signing rule that made the fix work",
+          "steps": [
+            "Beacon keeps the session and drafts a skill",
+            "You approve it, and a later agent can fetch it"
+          ],
+          "output": "A skill the next agent can read. The README says Cloud is the preset, and local is a choice."
+        }
+      },
+      {
+        "name": "Clayzo (clayzo.com)",
+        "date": "2 November 2026",
+        "desc": "A free animation engine for coding agents, listed on Product Hunt’s board for 2 November. The site says you ask Claude Code, Codex or Cursor for motion graphics, product animations and interactive web animations. The agent writes them, checks every frame, and ships them to play on the web or natively in Swift. The start command on the site is npx clayzo@latest init. The site does not print a paid tier.",
+        "why": "For a product team that already pays for a coding agent and keeps handing motion to someone else. The check of each frame is the claim to test on one real screen.",
+        "demo": {
+          "input": "One sentence asking for a product animation of a screen you already ship",
+          "steps": [
+            "The agent writes the motion in Clayzo",
+            "It checks the frames before you look"
+          ],
+          "output": "An animation that plays on the web or in Swift, if the run gets that far. The site says the engine is free."
+        }
+      },
       {
         "name": "Bowerbird (github.com/jolovicdev/bowerbird)",
         "date": "1 November 2026",
@@ -3698,51 +3806,21 @@
           ],
           "output": "A draft you can read. The site says nothing is sent to the store until you confirm."
         }
-      },
-      {
-        "name": "RE-USE browser demo (re-use-demo.geronimo-labs.com)",
-        "date": "31 October 2026",
-        "desc": "An unofficial WebGPU page that runs NVIDIA NemotronLabs RE-USE in the browser. The page quotes Nvidia’s description: a 9.6-million-parameter multilingual speech enhancer, meant to restore speech across real-world damage while preserving fidelity. You drop in a WAV, MP3, M4A or MP4, or play a built-in example, including a noisy-microphone clip. The page prints the OpenMDW-1.1 licence and says that licence governs use of the model. Shown on Show HN on 31 October. It is a demo, not an Nvidia product page.",
-        "why": "For anyone who wants to hear a speech cleaner on a real clip before they install Nvidia’s own stack. Read the licence on the page, and treat the demo as unofficial.",
-        "demo": {
-          "input": "The page’s noisy-microphone example, or a WAV of your own",
-          "steps": [
-            "The browser loads the model with WebGPU",
-            "The page plays the enhanced clip"
-          ],
-          "output": "A cleaned recording. The model stays the 9.6-million-parameter one the page quotes."
-        }
-      },
-      {
-        "name": "bootgpt (github.com/kerlenton/bootgpt)",
-        "date": "31 October 2026",
-        "desc": "A free, MIT-licensed demonstration that puts a character-level language model in a PC’s boot sector. The author says the inference engine is 510 bytes of assembly. The README says the master boot record is 512 bytes of handwritten assembly, loads an 11.5 KB int8 model from the next 23 sectors, and runs in 16-bit real mode on a 386 with no operating system. The network has 8 characters of context and one hidden layer. It was trained on 3 MB of synthetic Linux boot logs, and the README says the Python simulator matches the boot sector character for character. What it prints is a fake boot log, including hardware that does not exist. Shown on Show HN on 31 October. The author’s post the same day says “510 bytes of asm, 11.5 KB of weights.”",
-        "why": "For anyone who hears that a language model needs a data centre. This one fits in a boot sector and only dreams a startup log. It is a demonstration, not a model you would ask a question.",
-        "demo": {
-          "input": "Boot the built disk image in QEMU",
-          "steps": [
-            "The boot sector loads the int8 weights from the next sectors",
-            "The model prints one character at a time"
-          ],
-          "output": "A fake Linux boot log. A keypress reboots the machine."
-        }
-      },
-      {
-        "name": "Cerebellum (github.com/cerebellum-labs/cerebellum)",
-        "date": "30 October 2026",
-        "desc": "A free, open-source (MIT) decision layer for a robot fleet. You mark each action as a reflex, reversible, or irreversible. The robot’s own model handles what it is allowed to do. NVIDIA Nemotron 3.5 Super VL, called through Nebius Token Factory, decides anything that cannot be undone and reviews a low-confidence call afterwards. Nemotron chooses among the robot’s options and does not drive the motors. A SQLite journal on the robot syncs when the network returns. The README says the local model takes about 65 ms on a Raspberry Pi in the fruit-sorter demo, an irreversible decision about 1 second, and a review about 2 seconds. A demo decision is about $0.0002. The author, on Show HN the same day, says it is one robot and 19 decisions, and that nothing was stress tested. Versions are 0.x. Shown on Show HN on 30 October.",
-        "why": "For anyone about to let a robot act on a small model. The useful part is the line you mark irreversible. It is a hackathon build, so read the 19-decision caveat before you put it on a machine.",
-        "demo": {
-          "input": "A kiwi the local detector does not recognise, so the robot wants to throw it away",
-          "steps": [
-            "Discard is marked irreversible, so the robot waits",
-            "Nemotron picks basket or discard from the options the robot offered"
-          ],
-          "output": "The throw does not happen until the cloud model answers. A network drop leaves the decision in the queue."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "Trajectory",
+        "amount": "$45M Series A",
+        "valuation": "$300M",
+        "context": "Announced 2 November. TechCrunch said the 18-person company raised $45 million at a $300 million valuation, led by Sequoia, with Nvidia, Bessemer Venture Partners and Bain Capital Ventures. It sells a continual-learning platform that retrains an open model from feedback, and said the platform is now publicly available. TechCrunch named Harvey, Rogo, Decagon, Mercor and Nvidia as customers. Those customer names and the “publicly available” line are the company’s, as TechCrunch reports them."
+      },
+      {
+        "company": "42AI",
+        "amount": "$62.5M over three years",
+        "valuation": "Not a priced outside round",
+        "context": "TechCrunch, 2 November: 42AI came out of stealth saying it has a behavioral world model already used at financial brokerages. The $62.5 million came from the founders and Infinity Group over three years, not as one outside round. Infinity was founded by Amir Gal-Or, who is 42AI’s chairman and a co-founder. CEO Amit Gal-Or said the company works with 10 large brokerages and plans to raise more. A claim of 98% accuracy, Gal-Or told TechCrunch, measures whether trading flows fall in a predicted range, not whether each trade was predicted. He also said one brokerage generated about $30 million of additional value. That figure is the company’s."
+      },
       {
         "company": "OpenAI",
         "amount": "Seeking up to $20B (round open)",
@@ -3782,33 +3860,33 @@
     ],
     "quotes": [
       {
-        "who": "Xinhua, on Qwen inside Apple Intelligence",
-        "text": "Alibaba said it will not use user requests or generated responses for model training.",
-        "source": "Xinhua, 1 November 2026"
+        "who": "Anthropic, quoted by Reuters",
+        "text": "Certain of our compute providers and infrastructure partners depend on third-party financing or credit support to acquire chips and develop capacity, and if such financing or support becomes unavailable or more costly, contracted capacity may be delayed, repriced, reduced, or not delivered.",
+        "source": "Reuters, 2 November 2026"
       },
       {
-        "who": "Judge Debra M. Brown, quoted by CNBC",
-        "text": "Because the plaintiffs have statutory standing under the Clean Air Act, because the combustion turbines are not 'mobile sources' under Mississippi's SIP, and because the citizen suit provision does not violate Article II of the Constitution or the private nondelegation doctrine, the plaintiffs' claims will proceed.",
-        "source": "CNBC, 31 October 2026"
+        "who": "Elon Musk, on Grok Bot",
+        "text": "The cost of serving Grok Bot was unsustainably high relative to revenue",
+        "source": "X, 1 November 2026"
       },
       {
-        "who": "OpenAI Help Center, on a device block",
-        "text": "If you see Device limit reached, you can’t use that paid account on this device.",
-        "source": "OpenAI Help Center, read 2 November 2026"
+        "who": "OpenAI, on the Georgia campus",
+        "text": "Our agreement with Georgia Power also includes up to 1,000 megawatts of flexible demand response, freeing up power to help keep air conditioning running in hundreds of thousands of homes during extreme heat.",
+        "source": "OpenAI, 2 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Qwen, only on the China setting",
-        "desc": "Apple’s 31 October newsroom puts Qwen in Siri, Writing Tools and Visual Intelligence for China. The developer beta is 4 November. The public release is iOS 27.3 in December, and it does not include Siri AI. Xinhua says Alibaba will not train on the requests."
+        "title": "Read the operating line",
+        "desc": "Reuters says Anthropic’s third quarter was $16.96 billion of revenue and a $567 million operating loss. The $23.29 billion net loss includes convertible bonds. The $895.4 billion is a commitment, and about $69.8 billion of it is due in the next 12 months."
       },
       {
-        "title": "The turbine count is still an allegation",
-        "desc": "A 30 October order lets the NAACP’s Clean Air Act case proceed and says the turbines are not mobile sources. CNBC says the suit alleges 27. TechCrunch quotes the SELC saying at least 35. No penalty has been awarded."
+        "title": "The summary is a separate choice",
+        "desc": "Turkey’s 2 November notice opens a probe of Google’s AI Overviews and AI Mode. Interim terms, decided 8 October, say publishers should set that use apart from indexing. No violation has been found."
       },
       {
-        "title": "The device cap is unpublished",
-        "desc": "OpenAI’s help page, read on 2 November, can block a paid ChatGPT account on a shared device or card. Go, Plus and the Pro tiers count. The page does not say how many. Signing out does not free a slot."
+        "title": "The allowance has no new number",
+        "desc": "On 1 November Musk said serving Grok Bot cost too much next to revenue. TechCrunch says some meters jumped over the weekend, and that he has not published the next limit."
       }
     ]
   },
@@ -3818,19 +3896,19 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. Not a new model."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4",
-        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later."
+        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. Not a new model."
       },
       {
         "org": "Meta",
@@ -3842,7 +3920,7 @@
         "org": "SpaceXAI",
         "name": "Grok / Cursor",
         "model": "Grok 4.7 · Cursor + Origin",
-        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. On 26 Oct SpaceX disclosed about $40B of Apollo-backed lease financing for Nvidia Vera Rubin GPUs, with leases from the first half of 2027. On 30 Oct Judge Debra M. Brown denied a motion to dismiss the NAACP’s Clean Air Act case against X.AI Corp. and MZX Tech. CNBC reported it on 31 Oct. The order says the turbines are not mobile sources and the claims proceed. It does not find a violation. CNBC says the suit alleges 27 turbines. TechCrunch quotes the SELC saying at least 35. Not a new model."
+        "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. On 26 Oct SpaceX disclosed about $40B of Apollo-backed lease financing for Nvidia Vera Rubin GPUs, with leases from the first half of 2027. On 30 Oct Judge Debra M. Brown denied a motion to dismiss the NAACP’s Clean Air Act case against X.AI Corp. and MZX Tech. CNBC reported it on 31 Oct. The order says the turbines are not mobile sources and the claims proceed. It does not find a violation. CNBC says the suit alleges 27 turbines. TechCrunch quotes the SELC saying at least 35. Not a new model. On 1 Nov Elon Musk wrote that the cost of serving Grok Bot was unsustainably high relative to revenue. TechCrunch, on 2 Nov, said he has not said how the weekly limits change. Not a new model."
       }
     ],
     "open": [
@@ -3897,6 +3975,18 @@
     ]
   },
   "gems": [
+    {
+      "name": "Subvocal",
+      "why": "Silent dictation in glasses. The author says the decoding runs in the cloud"
+    },
+    {
+      "name": "beacon.sh",
+      "why": "Coding-agent memory you approve before the next session can use it"
+    },
+    {
+      "name": "Clayzo",
+      "why": "A coding agent writes the animation and checks the frames. The site says it is free"
+    },
     {
       "name": "Bowerbird",
       "why": "Checks a quoted line against the source before you trust the answer"

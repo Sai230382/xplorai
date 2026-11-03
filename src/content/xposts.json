@@ -1,5 +1,32 @@
 [
   {
+    "name": "Elon Musk",
+    "handle": "elonmusk",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+    "text": "@DogecoinNorway The cost of serving Grok Bot was unsustainably high relative to revenue",
+    "url": "https://x.com/elonmusk/status/2116992258520064397",
+    "postedAt": "2026-11-01T20:34:20.000Z",
+    "take": "That is the whole reply. It does not say what the weekly limit is now, or whether a meter that jumped will be put back."
+  },
+  {
+    "name": "TechCrunch",
+    "handle": "TechCrunch",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_normal.png",
+    "text": "The New York Times is suing privacy-focused web browser company Brave for allegedly scraping the outlet’s copyrighted and unlawfully distributing it to its own customers, like Anthropic and Perplexity.\nhttps://t.co/zSVsKmH275",
+    "url": "https://x.com/TechCrunch/status/2117337220466057337",
+    "postedAt": "2026-11-02T19:25:06.000Z",
+    "take": "The suit names Anthropic, Perplexity, Mistral, xAI and Cohere as customers of the index. TechCrunch says Brave had not commented."
+  },
+  {
+    "name": "CNBC",
+    "handle": "CNBC",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1999829242431811587/iTRuu0Me_normal.jpg",
+    "text": "Anthropic reported updated financials as part of an amended Form S-1 filing with the Securities and Exchange Commission on Monday, giving investors a more comprehensive look into the state of its business.\n\nThe artificial intelligence company said it generated $33.24 billion in https://t.co/zvq4w9dOZM",
+    "url": "https://x.com/CNBC/status/2117290669437747288",
+    "postedAt": "2026-11-02T16:20:07.000Z",
+    "take": "The nine-month figure in the post is $33.24 billion. Reuters, the same day, puts the third quarter alone at $16.96 billion, and the net loss at $23.29 billion."
+  },
+  {
     "name": "Yicai 第一财经",
     "handle": "yicaichina",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1990256002575523840/LaxRUhMU_normal.jpg",
