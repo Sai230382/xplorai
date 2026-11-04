@@ -1,207 +1,178 @@
 {
-  "number": 39,
-  "edition": "Briefing 39",
-  "date": "3 November 2026",
-  "dateISO": "2026-11-03",
-  "toolsPulseDate": "3 November 2026",
+  "number": 40,
+  "edition": "Briefing 40",
+  "date": "4 November 2026",
+  "dateISO": "2026-11-04",
+  "toolsPulseDate": "4 November 2026",
   "kicker": "Today in AI",
-  "title": "Anthropic’s amended S-1 puts third-quarter revenue at $16.96 billion and the net loss at $23.29 billion. Turkey opened a competition probe of Google’s AI Overviews and AI Mode, and ordered interim terms. The New York Times sued Brave over an index the complaint says holds more than 30 billion pages. Elon Musk said serving Grok Bot cost too much next to revenue, and did not say the new limit. OpenAI’s Georgia pilot includes up to 1,000 megawatts the campus can stop drawing, and the campus is not running.",
-  "summary": "On Monday 2 November 2026 Anthropic filed an amendment to its S-1. Reuters said third-quarter revenue was $16.96 billion, up 47% from the quarter before, and that the net loss was $23.29 billion. Reuters said the operating loss was $567 million, after operating income of $974 million the quarter before. CNBC, the same day, said roughly $17 billion of third-quarter revenue, a nine-month revenue of $33.24 billion, and a nine-month net loss of $104 billion, most of it from the change in fair value of convertible notes and derivative liabilities. Both said purchase and lease commitments were about $895.4 billion. On 2 November Turkey’s Competition Authority announced an investigation of Google’s AI Overviews and AI Mode, and interim measures decided at its 8 October meeting. The announcement is not a finding that Google broke the law. On 2 November the New York Times sued Brave Software in Manhattan. TechCrunch said a separate suit, filed the same day by the New York Daily News, the Chicago Tribune and the Orlando Sentinel, makes a similar claim. The Times complaint, as TechCrunch quotes it, says Brave built an index of more than 30 billion web pages. On Sunday 1 November Elon Musk replied on X that the cost of serving Grok Bot was unsustainably high relative to revenue. TechCrunch, on 2 November, said he has not said how subscribers’ limits change. On 2 November OpenAI announced the Grid Protectors Program and said a planned campus in Effingham County, Georgia, is still in development. The post says the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response.",
-  "uncertainty": "Reuters says third-quarter revenue was $16.96 billion. CNBC, the same morning, says roughly $17 billion and about 1,127% above the same quarter a year earlier. Those are two roundings of one filing, not two revenues. CNBC’s nine-month net loss of $104 billion is not the operating loss. CNBC says most of it was the change in fair value of convertible notes and derivative liabilities. Reuters’s operating loss of $567 million is the line for running the business in the quarter. Reuters does not print the prior quarter’s revenue in dollars, only that revenue had risen 144% in that quarter. Do not back into a dollar figure. The $895.4 billion is a commitment, as both outlets describe the filing. Reuters says about $69.8 billion of it is due in the 12 months after 30 September 2026, and that the company expects to incur nearly half before 31 December 2030. It is not a bill that has been paid, and it is not a quarterly expense. Turkey’s 2 November page announces an investigation and interim measures. The preliminary inquiry decision is dated 27 August 2026. The interim-measures decision is dated 8 October 2026. The page says the indications reached “strong suspicion.” It does not say a violation was found, and it does not name a fine. The “more than 30 billion” pages are what TechCrunch says the Times complaint says. The Verge’s quotes from the Times, from the other papers’ lawyer, and from Perplexity are statements, not findings. TechCrunch says Brave did not immediately comment. The Verge says Brave, Anthropic, Mistral, SpaceXSI and Cohere did not immediately reply. Perplexity did. TechCrunch’s “roughly $250 million” raised is what it attributes to private-market trackers, not to a Brave filing, so it is not used below. On Grok Bot, “as low as 50% to 100%” is TechCrunch’s report of what some users posted. It is not a meter reading from SpaceX. Musk’s sentence does not say the weekly allowance was cut by a stated amount, and TechCrunch says he has not said how limits change from here. The 52% of income, the $431 million profit and the $1.2 billion of Cursor costs are what TechCrunch says a filing last month already showed. They are not new figures from this weekend. OpenAI’s “roughly 700,000 households” is its own scale for up to 1,000 megawatts. It is not a count of homes that have received power. The campus is still in development. Georgia Power’s approximately $950 million a year from 2029, and at least $15 a month, are what OpenAI says the utility projects from a portfolio of large-load agreements and expected growth, including Project Camellia. They are not a saving OpenAI attributes to Effingham alone. The post’s line that U.S. data center capacity is projected to exceed 100 gigawatts by 2030 cites a link and does not name the study in the paragraph, so that figure is left out.",
+  "title": "Google will turn Gemini and Search off for K-12 student accounts until a school turns them on, and Search that is on still includes AI. OpenAI says ChatGPT’s web-search volume now equals 20 percent of Google’s, and did not name Google’s source. Meta priced five dollar notes on 3 November. Reuters calls the sale $15 billion, and the sheet says settlement is 5 November. On a laptop, Qwen 3.8 27B named three of four tiny game networks from their weights, and missed one.",
+  "summary": "On Tuesday 3 November 2026 Google’s education blog said access to Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be entirely off for K-12 student accounts until a school administrator turns them on. The post does not give a calendar date. Education Week, the same day, said Chris Phillips told a 2 November meeting that the changes start early next year, and that a school which wants AI off will not have Search. NBC News said a later statement the same day allows Search without the other Gemini products, and that Search still includes AI features. Guided Learning in Google Classroom starts on 3 November. A Search pilot is for select U.S. schools later this month. On 3 November The Verge reported that Adam Fry, at a press event on Monday, said the volume of search queries in ChatGPT equals 20 percent of the volume run through Google. The Verge said he counts a query that triggers a web search, and that he did not name the source of Google’s figure. On 3 November Meta published a pricing term sheet for five dollar senior notes. Reuters, the same day, said Meta is raising $15 billion in a five-part dollar sale to fund AI infrastructure. The sheet’s trade date is 3 November and its settlement date is 5 November. Earlier on 3 November CNBC said people familiar expected $20 billion to $25 billion, including euros. That target is not the sheet. On 3 November Simon Willison reported that Qwen 3.8 27B, running on his laptop with no tools, named Pac-Man, Pong and Breakout from raw weights and missed Freeway.",
+  "uncertainty": "Google’s 3 November blog lists four products that stay off until an administrator turns them on. It does not, in that post, say Search can be switched on without Gemini, and it does not say “early next year.” Education Week attributes “early next year,” and the sentence “Search and AI are deeply integrated,” to Phillips at a 2 November meeting. Education Week also says a 3 November Google statement allows an administrator to turn Search on, Gemini on, or both, and that AI Mode and AI Overviews will offer step-by-step guided learning. NBC says that, after criticism, Google said schools can enable Search alone, without the other Gemini products, and that Search still includes AI features. Those accounts can sit together. They are not a finding that a no-AI Search exists. New York City’s ban through 8th grade and Los Angeles Unified’s moratorium are Education Week’s background, not lines in the blog. Social posts on 4 November cite a Tokyo trial of +8.1 points against +5.3. The 3 November blog, as fetched, does not print those figures, so they are not used. The Verge’s 20 percent is what it says Fry announced. The article does not quote the 20 percent as his words. It says he did not specify the source of Google’s volume. The Verge’s comparison with Bing, about 3 percent of search market share in 2023 testimony, is market share, not this volume measure, so it is left out. Writeups the same day that say ChatGPT has 1.2 billion weekly users are not in The Verge piece that was fetched, so that figure is not used. Fry’s lines about ads are his, as The Verge quotes them. They are not a survey. Meta’s pricing term sheet lists five principal amounts and does not print the words “$15 billion.” Reuters states the $15 billion. The sheet’s coupons are 5.850% and 6.250% where Reuters writes 5.85% and 6.25%. CNBC’s $20 billion to $25 billion, two-thirds dollars and one-third euros, is from people familiar, earlier on 3 November, and Meta declined to comment to CNBC. It is not a second total for this sheet. Reuters’s $25 billion April sale and $30 billion sale last year are Reuters’s comparison, not lines on the sheet. Reuters’s $97.5 billion equity figure and CNBC’s $95 billion plan, from last week, are not reconciled here. Capex of $135 billion to $145 billion is what Reuters says Meta has said, and what CNBC attributes to last month’s earnings. The negative free cash flow of $2.12 billion is CNBC on that earnings report, not cash raised on 3 November. The ratings on the sheet are Aa3/Stable (Moody’s) and AA-/Negative (S&P). The sheet says a rating is not a recommendation. Willison’s 72%, 75% and 88% are the confidence the model printed, not a measured accuracy. He gives a time for all three hits and a token count only for Pac-Man. He does not give a time or a confidence for the Freeway miss. The paper’s 10x10 grids and the model’s 8x8 descriptions are both in his post. He does not say which board size is the network. The abstract figures he quotes, including 0.016% of the weights and MATH-500 moving from 7.9% to 48.1%, are the paper’s claims about GPT-6 Astra. He did not rerun that edit. Kimi K3.1 Pro’s 9 minutes 41 seconds and 19,493 tokens are one Breakout run through OpenRouter, not the laptop.",
   "stats": {
-    "filtered": 5,
-    "verified": 5,
-    "themes": 5
+    "filtered": 4,
+    "verified": 4,
+    "themes": 4
   },
   "stories": [
     {
-      "id": "anthropic-q3-filing",
-      "topic": "money",
-      "theme": "Anthropic’s amended S-1 shows $16.96 billion of third-quarter revenue and a $23.29 billion net loss",
-      "changed": "On Monday 2 November 2026 Anthropic filed an amendment to the S-1 it had filed the week before. The first filing had stopped at the first half of the year. Reuters said the amendment shows third-quarter revenue of $16.96 billion, up 47% from the quarter before. Reuters said revenue had risen 144% in the second quarter, and that the pace slowed. CNBC, the same day, said Anthropic generated roughly $17 billion in the third quarter, up about 1,127% from the same quarter a year earlier, and that third-quarter growth of around 47% was down from 144% in the second quarter and 132% in the first. CNBC said revenue for the nine months ended 30 September was $33.24 billion, up roughly 1,200% from a year earlier. Reuters said the third-quarter net loss was $23.29 billion, down from $66.3 billion the quarter before. CNBC reported that same third-quarter net loss of $23.29 billion. Reuters said the operating loss in the third quarter was $567 million, compared with operating income of $974 million in the second quarter. Reuters said the operating loss is the cost of running the business, including computing and research, and that the net loss also includes non-operating items related to bonds that convert into shares. CNBC said the nine-month net loss was $104 billion, though most of that was the change in fair value of convertible notes and derivative liabilities, and that the loss over the same stretch in 2025 was $25.1 billion. In the amendment, as CNBC quotes it, Anthropic said it has purchase commitments and lease agreements with an aggregate committed spend of about $895.4 billion, “substantially all of which is related to compute and infrastructure.” Reuters said the company expects to incur nearly half of that $895.4 billion before 31 December 2030, with about $69.8 billion due in the 12 months after 30 September 2026. Reuters said Anthropic incurred $5 billion in additional compute costs during the quarter, and that this reduced revenue per dollar of compute from the quarter before. Reuters does not say by how much. Reuters quoted the filing: certain compute providers and infrastructure partners depend on third-party financing or credit support to acquire chips and develop capacity, and if that financing becomes unavailable or more costly, contracted capacity may be delayed, repriced, reduced, or not delivered. Reuters said Anthropic had more than 11,900 customers generating at least $100,000 of revenue on a trailing 12-month basis as of 30 September, up from more than 1,500 at the end of 2025. CNBC said compute and infrastructure expenses rose by $14.4 billion for the nine months, up 329% from a year earlier.",
-      "matters": "A buyer reading only the net loss will think the quarter cost $23.29 billion to run. Reuters says the operating loss was $567 million.",
-      "imply": "Do not put $23.29 billion, or $104 billion, on a slide as the cost of serving Claude. Say which line it is. Do not turn 47% growth into a dollar figure for the quarter before. Reuters does not print that quarter’s revenue.",
-      "uses": [
-        "Write the quarter as Reuters gives it: revenue $16.96 billion, up 47% from the quarter before; net loss $23.29 billion; operating loss $567 million. If you use CNBC’s “roughly $17 billion,” say it is CNBC’s rounding of the same quarter.",
-        "Keep the $895.4 billion as a commitment. Reuters says about $69.8 billion is due in the 12 months after 30 September 2026. Do not call the rest a bill for this year.",
-        "If a vendor’s capacity depends on someone else’s financing, the filing line Reuters quotes is the one to put in the renewal note: contracted capacity may be delayed, repriced, reduced, or not delivered."
-      ],
-      "example": "A procurement lead renewing a Claude minimum updates the one-pager. The third quarter, as Reuters reports the 2 November amendment, is $16.96 billion of revenue and a $567 million operating loss. The $23.29 billion net loss stays in a second line, with CNBC’s note that the nine-month $104 billion is mostly the value of convertible notes. The $895.4 billion stays labeled as commitments, with $69.8 billion due in the next 12 months.",
-      "audience": "Anyone who buys Claude against a minimum, signs a capacity deal, or has to tell a board what Anthropic’s quarter was.",
-      "watch": "Whether a later amendment revises $16.96 billion, $23.29 billion or $567 million. Whether Anthropic or a cloud partner says a commitment slipped. Whether the “more than 11,900” customers at $100,000 is updated. The model names did not change with this filing.",
-      "source": {
-        "title": "Reuters, via Investing.com: Anthropic revenue growth slows ahead of IPO, 2 November 2026",
-        "url": "https://www.investing.com/news/stock-market-news/anthropics-quarterly-loss-shrinks-revenue-jumps-ahead-of-blockbuster-ipo-4992139",
-        "quote": "Certain of our compute providers and infrastructure partners depend on third-party financing or credit support to acquire chips and develop capacity, and if such financing or support becomes unavailable or more costly, contracted capacity may be delayed, repriced, reduced, or not delivered."
-      }
-    },
-    {
-      "id": "turkey-google-ai-overviews",
+      "id": "google-school-search",
       "topic": "rules",
-      "theme": "Turkey opened a competition probe of Google’s AI Overviews and AI Mode, and ordered interim terms",
-      "changed": "On Monday 2 November 2026 Turkey’s Competition Authority published an English notice, dated 2.11.2026, that an investigation has been launched under Article 41 of Act no 4054. The question is whether Alphabet Inc., Google Ireland Limited, Google LLC, Google International LLC and Google Reklamcılık ve Pazarlama Ltd. Şti. violated Article 6 through AI Overviews and AI Mode in Google Search. The notice says a preliminary inquiry, begun with a board decision dated 27 August 2026 and numbered 26-31/932-M, examined four things: whether those features changed how people get information and hurt traffic to news publishers and other content creators; whether the terms in publisher agreements are unfair; whether the features shut out publishers, other creators and AI chatbots; and whether publishers were treated differently when their content was chosen or licensed for the features. The notice says that, because the indications of exclusionary and exploitative behavior toward news publishers had reached the level of strong suspicion, the board also decided, at its meeting of 8 October 2026, decision 26-37/1000-423, to impose interim measures under Article 9.4. The measures concern Google’s use of news publishers’ content in AI Overviews and AI Mode, and the contract terms for that use. The notice says the measures are to ensure that Google sets conditions which would not lead to discrimination among news publishers, which reflect the economic value of using their content, and which let publishers set their options for that use independently of their visibility and indexing on Google’s other services. The notice does not say the board found a violation. It does not name a fine.",
-      "matters": "A publisher’s choice about the AI summary is supposed to be separable from whether the page stays in ordinary Search, and that is an order while the case is open, not a verdict.",
-      "imply": "Do not tell a newsroom the case is won, or that a fine has been set. Do tell them the interim terms are already the board’s decision of 8 October, announced on 2 November, and that one of the three terms is a choice that is not tied to indexing.",
+      "theme": "Google will turn Search and Gemini off for K-12 students until a school turns them on, and Search still includes AI",
+      "changed": "On Tuesday 3 November 2026 Google published an education post by Chris Phillips, vice president and general manager of education. It says that, after listening to schools, teachers, researchers and policymakers, Google is updating controls for Gemini, Gemini Notebook, Gemini in Classroom and Google Search. The sentence is: access to these products will be entirely off for K-12 student accounts until school administrators explicitly turn them on. The post says Google will share more specifics with schools in the coming months, ahead of the changes rolling out. It does not name a day. Education Week, the same day, said Phillips told a virtual meeting on 2 November that the changes will start early next year. Education Week quotes him: “If a school is not comfortable with that and simply wants AI off, then they have the choice to not have Search on at all.” He also said, “Search and AI are deeply integrated.” Education Week said a Google statement on 3 November allows an administrator to turn Search on, Gemini on, or both. It said the statement describes AI Mode and AI Overviews offering “step-by-step guided learning through problems” rather than handing over the answer. NBC News, the same day, said that after criticism Google said schools can enable Search alone, without turning on the other Gemini products, and that schools still cannot use Search without AI features such as AI-generated summaries. The blog, separately, says Guided Learning is starting in Google Classroom on 3 November, globally, when a student starts an activity a teacher assigned. Education Week said that Classroom rollout is for schools that already enabled Gemini. The blog says a Guided Learning pilot inside Search, for student accounts, starts in select U.S. schools later this month. Education Week said Brittany Siegal Mennuti, product lead for Classroom, said settings can differ by grade, and that a group barred from AI would also lose Search.",
+      "matters": "A school that wants no AI in front of students is being told it may also lose Search, and a Search that stays on is still an AI Search.",
+      "imply": "Do not tell a district that the 3 November blog already switched the tools off, or that a plain Search with no AI summary is on the menu. The blog says the default change is still ahead. Education Week’s “early next year” is Phillips at the 2 November meeting. NBC’s later statement separates the Gemini apps from Search, and it does not remove AI from Search.",
       "uses": [
-        "Write the status as “investigation announced 2 November 2026; interim measures decided 8 October 2026.” The defendants named on the page are the Alphabet and Google companies listed above.",
-        "If a contract says a publisher must allow AI Overviews in order to stay indexed, that is the term the order describes as something publishers should be able to set separately. The page does not say Google has already changed the contract.",
-        "Keep “strong suspicion” as the board’s words for why it ordered interim measures. It is not a finding that Article 6 was broken."
+        "Write the status as “announced 3 November 2026; off by default for K-12 student accounts until an administrator turns each product on; rollout date not on the blog.” The four products named on the blog are Gemini, Gemini Notebook, Gemini in Classroom and Google Search.",
+        "If a policy says “no generative AI, Search stays,” put Phillips’s sentence next to it: a school that wants AI off does not have Search. Then add NBC’s later line: Search can be on without the Gemini apps, and Search still includes AI Mode and AI Overviews.",
+        "Guided Learning in Classroom, the blog says, starts 3 November for an assigned activity. The Search version is a pilot in select U.S. schools later this month. Do not tell a teacher both are already on for every student."
       ],
-      "example": "A publisher that licenses stories to Google adds one line to the contract review: Turkey’s authority, on 2 November, said publishers should be able to choose whether their content is used in AI Overviews and AI Mode without that choice deciding their indexing elsewhere. The line is an interim measure. The investigation has not ended, and no fine is on the page.",
-      "audience": "News publishers, search and content-licensing teams, and anyone who has to say whether an AI summary is optional or part of being in Google.",
-      "watch": "Whether Google changes the publisher terms, or says the existing control already meets the order. Whether the board finds a violation or names a fine. Whether the 27 August inquiry or the 8 October decision is published in full, beyond this notice.",
+      "example": "A district technology lead who turned Gemini off in August reads the 3 November post before answering a principal. The coming default is off for Gemini and for Search, until an administrator turns them on. Search, if it is turned on, still teaches through AI Mode and AI Overviews, which is what Google’s 3 November statement describes. There is no date on the blog. Education Week says Phillips put the start early next year.",
+      "audience": "School and district administrators, the people who buy Google Workspace for Education, and anyone who has to say whether a student account still has Search.",
+      "watch": "Whether the admin console, when it ships, has a Search switch that is separate from Gemini, and whether that Search can be stripped of AI Mode and AI Overviews. The 3 November accounts say it cannot. Whether Google names the day. Whether the Search pilot, later this month, is the same Guided Learning as the Classroom tool that started on 3 November.",
       "source": {
-        "title": "Turkish Competition Authority: investigation and interim measures on Google AI Overviews and AI Mode, 2 November 2026",
-        "url": "https://www.rekabet.gov.tr/en/Guncel/investigation-launched-and-interim-measu-ac0cedbc94d6f111a671005056854155",
-        "quote": "allow publishers to set their options concerning the use of their content in the relevant services independently of their visibility and indexing on other services provided by Google."
+        "title": "Google: Designing responsible AI for learning, 3 November 2026",
+        "url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
+        "quote": "Access to these products will be entirely off for K-12 student accounts until school administrators explicitly turn them on."
       }
     },
     {
-      "id": "brave-index-suits",
-      "topic": "trust",
-      "theme": "The New York Times sued Brave over an index the complaint says holds more than 30 billion pages",
-      "changed": "On Monday 2 November 2026 TechCrunch reported that the New York Times sued Brave, alleging it scraped the Times’s copyrighted content and unlawfully distributed it to customers the suit names as Anthropic, Perplexity, Mistral, xAI and Cohere. TechCrunch said a separate lawsuit, filed the same day by the New York Daily News, the Chicago Tribune and the Orlando Sentinel, was brought in federal court in Manhattan as well. TechCrunch says the Times likens Brave to a supplier, dealer and distributor of stolen copyrighted content, and quotes the suit: “In this way, Brave acts both like a burglar that misappropriates the content of publishers, and an AI ‘fence’ that sells stolen content to third parties.” TechCrunch says the suit says Brave built an index of more than 30 billion web pages using an unidentified crawler, so publishers could not block it. TechCrunch says the suit also targets a browser feature that bypasses paywalls, and Brave’s practice of blocking publishers’ ads while selling its own. TechCrunch says the Times seeks an injunction and damages. It does not print a damages number. TechCrunch says Brave did not immediately respond to a request for comment. The Verge, the same day, quotes a complaint by the Daily News, the Chicago Tribune and the Orlando Sentinel saying Brave has monetized an index by providing AI companies with paid access to “real-time online content from the Brave Index,” and that those companies use the index to train models, to answer queries, or both. The Verge quotes that complaint: “Brave has never asked for the Publishers’ permission to access their websites, much less to copy the material and provide it to users or other AI companies.” The Verge quotes Times spokesperson Graham James: “While we believe in the ethical and responsible use and development of AI, Brave has flouted established copyright law and ignored repeated requests by The Times to stop its infringing conduct.” The Verge quotes Steven Lieberman, the attorney for the other three publications: “Buying stolen goods secondhand doesn’t make them legitimate.” The Verge says Perplexity’s chief communications officer, Jesse Dwyer, said: “The New York Times is overpaying its attorneys and underpaying its journalists. (Who could’ve easily identified the disinformation in this suit.)” The Verge says Brave, Anthropic, Mistral, SpaceXSI and Cohere did not immediately reply. A Verge update the same day says the three-paper suit was filed by those publications, not by the companies that run them.",
-      "matters": "A search index sold to a model can be the thing a publisher sues, even when the model company is named as a customer and is not the defendant.",
-      "imply": "If a product answers from “the Brave Index,” or from a feed whose crawler you cannot name in robots.txt, this complaint is the allegation to put on the review. It is not a ruling. No damages figure has been published.",
-      "uses": [
-        "Name the two suits. The Times sued Brave and named Anthropic, Perplexity, Mistral, xAI and Cohere as customers, TechCrunch says. The Daily News, the Chicago Tribune and the Orlando Sentinel sued separately, the same day, in Manhattan.",
-        "If the appeal of an index is that the crawler is not named, that is the fact the Times complaint treats as the problem. TechCrunch says the suit says publishers could not block an unidentified crawler.",
-        "Do not add a damages number. TechCrunch says the Times seeks an injunction and damages, and does not print an amount. Brave had not commented, TechCrunch says. Perplexity had, the Verge says."
-      ],
-      "example": "A team that buys a web index for a support bot writes down the 2 November suits before the renewal. The Times complaint, as TechCrunch reports it, says the index holds more than 30 billion pages and was sold on to named model companies. The note says Brave had not commented, that Perplexity called the suit disinformation, and that no court has set a sum.",
-      "audience": "Anyone who buys a web index for an assistant, or who has to explain where an answer’s pages came from.",
-      "watch": "Whether Brave answers. Whether a judge sets a schedule or a sum. Whether any named customer says it has stopped using the index. Whether the “more than 30 billion” figure is revised in an amended complaint.",
-      "source": {
-        "title": "TechCrunch: New York Times and other outlets sue Brave over alleged content scraping, 2 November 2026",
-        "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
-        "quote": "In this way, Brave acts both like a burglar that misappropriates the content of publishers, and an AI ‘fence’ that sells stolen content to third parties."
-      }
-    },
-    {
-      "id": "grok-bot-serving-cost",
+      "id": "chatgpt-search-share",
       "topic": "work",
-      "theme": "Musk said serving Grok Bot cost too much next to revenue, and did not say the new limit",
-      "changed": "On Sunday 1 November 2026 Elon Musk replied on X to a user, DogecoinNorway. The whole reply was: “The cost of serving Grok Bot was unsustainably high relative to revenue.” TechCrunch, on Monday 2 November, said some Grok Bot users found their weekly usage limits maxed out over Halloween weekend even if they had not been using the agent overnight. TechCrunch said some users reported on X that their usage jumped from as low as 50% to 100%. TechCrunch said Musk confirmed in that Sunday post that this was not a glitch. TechCrunch also said he has not addressed it on his main feed, and that he has not shared how subscribers’ usage limits will be affected from here. The same evening, in a separate post, Musk wrote that Grok Bot will research gifts friends and family would love and buy them. TechCrunch says Grok Bot has been described as a success for SpaceX, which said in a filing last month that AI now makes up 52% of company income, and that the renamed Super Intelligence division turned a profit of $431 million. TechCrunch says that profit would have been higher if not for $1.2 billion of one-time costs related to the acquisition of Cursor. Those filing figures are TechCrunch’s account of last month. They are not a new allowance, and they are not in Musk’s Sunday reply.",
-      "matters": "A weekly agent allowance can hit the ceiling over a weekend, and the only official sentence so far does not say what the ceiling is.",
-      "imply": "Do not plan a week of Grok Bot work against last week’s meter. Do not write a new cap, or a price, into the ticket. Musk’s reply does not contain one, and TechCrunch says he has not published the next limit.",
+      "theme": "OpenAI says ChatGPT’s web-search volume equals 20 percent of Google’s, and did not name Google’s source",
+      "changed": "On Tuesday 3 November 2026 The Verge reported that the volume of search queries run through ChatGPT now equals 20 percent of the volume run through Google. Adam Fry, OpenAI’s consumer product lead for ChatGPT, made the announcement at a press event on Monday. The Verge said he defines a search as any time a user inputs a query that results in a web search, as opposed to defining a term or a simple how-to. The Verge said he did not specify the source of the Google number. The same piece quotes him on ads. “Ads have not negatively impacted the product or the usage of the product,” he said, and “most people do not seem to mind ads in the product.” He also said, “Ads have maybe shown us that we could be doing this more, actually.” The Verge said OpenAI announced last month that ChatGPT would begin showing images of sponsored products and services, rather than only a name, a logo and a link. On what OpenAI calls Intelligent UI, Fry said, “That’s where the future of this technology goes. You’re talking to a canvas.” The Verge does not print a count of weekly users, and it does not print Google’s query total.",
+      "matters": "A buyer who hears “a fifth of Google” is hearing OpenAI’s comparison of one kind of query, against a Google total OpenAI did not source.",
+      "imply": "Do not put 20 percent on a slide as Google’s lost market share, or as the share of searches that never reach a publisher. The Verge’s definition is a ChatGPT query that triggers a web search. Fry did not say where the Google side came from.",
       "uses": [
-        "Quote the sentence and the date: 1 November 2026, a reply, not a help-page update. TechCrunch on 2 November says he has not said how limits change.",
-        "If someone says the meter moved from 50% to 100%, say that is what some users reported, as TechCrunch describes those posts. It is not a figure SpaceX has confirmed as the size of a cut.",
-        "Keep last month’s filing, as TechCrunch reports it, off the allowance. AI at 52% of income, a $431 million profit and $1.2 billion of Cursor costs do not say how many tasks a seat gets this week."
+        "Write “20 percent of the volume, as OpenAI defined a search on Monday and The Verge reported on 3 November. Source of Google’s volume: not stated.”",
+        "If someone treats the figure as ad revenue, or as referrals a site lost, stop there. The Verge does not give either number. Fry’s ad lines are that ads have not hurt usage, in his telling, and that OpenAI could do more of them.",
+        "The canvas line is a product direction. It is not a date for a new model, and the piece does not name one."
       ],
-      "example": "A team that runs a Monday agent queue on Grok Bot checks the meter before it loads the week. TechCrunch says some meters were already full on Sunday, and Musk’s reply named the cost, not a new number of tasks. The lead writes that down and does not invent the cap.",
-      "audience": "Anyone who budgets a week of agent work on a flat Grok Bot or Cursor seat, and the people who have to explain a sudden stop.",
-      "watch": "Whether SpaceX or Cursor publishes the new weekly limit, or says the weekend meters were a fault and will be restored. Whether a help page gets a date. Musk’s gift post the same evening is not that page.",
+      "example": "A search lead asked whether ChatGPT has taken a fifth of Google writes the sentence The Verge actually supports: Fry said web-search queries in ChatGPT equal 20 percent of Google’s volume, and he did not name Google’s source. The note underneath says this is not market share, and not a count of clicks a publisher lost.",
+      "audience": "Anyone who budgets search, ads or referrals, and anyone who has to correct a chart that treats 20 percent as Google’s lost share.",
+      "watch": "Whether OpenAI or a filing prints the Google total, the time window, or a definition that matches the Monday event. Whether the sponsored images Fry pointed to change what a commercial query returns. The piece does not say the model changed.",
       "source": {
-        "title": "Elon Musk on X, replying about Grok Bot, 1 November 2026",
-        "url": "https://x.com/elonmusk/status/2116992258520064397",
-        "quote": "The cost of serving Grok Bot was unsustainably high relative to revenue"
+        "title": "The Verge: OpenAI says ChatGPT is catching up to Google in search, 3 November 2026",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search",
+        "quote": "Ads have not negatively impacted the product or the usage of the product"
       }
     },
     {
-      "id": "openai-grid-protectors",
-      "topic": "work",
-      "theme": "OpenAI’s Georgia campus agreement includes up to 1,000 megawatts it can stop drawing, and the campus is not running",
-      "changed": "On Monday 2 November 2026 OpenAI announced the Grid Protectors Program. The post says OpenAI will work with utilities, regulators and policymakers so that future campuses reduce electricity demand when the grid is under strain. It says the arrangements will differ by location, and that further commitments will be shared as they are finalized. For a planned campus in Effingham County, Georgia, the post says OpenAI has committed to pay the full infrastructure and electric-service costs required to serve the project. It says that once the campus is operating, OpenAI can reduce the power it draws during times of need. It says the agreement with Georgia Power also includes up to 1,000 megawatts of flexible demand response, “freeing up power to help keep air conditioning running in hundreds of thousands of homes during extreme heat.” The next sentence says that, for scale, this is equivalent to the average electricity demand of roughly 700,000 households, and more households than Washington, D.C., and Boston combined. The post says the campus is still in development, and that OpenAI intends Effingham to be a pilot. It says Georgia Power says this flexibility can reduce the amount of new generation the utility needs to build. It says the utility projects approximately $950 million in annual customer savings beginning in 2029 from its portfolio of large-load agreements and expected growth, including Project Camellia, and estimates a benefit of at least $15 a month for a typical residential customer using 1,000 kilowatt-hours. Those two figures are the utility’s projection for that portfolio, as OpenAI reports it. The post does not say they are the saving from Effingham alone. It also says flexibility cannot replace investment in new supply and transmission.",
-      "matters": "The number a neighbour will hear is up to 1,000 megawatts given back in a strain. The campus that would do it is still in development.",
-      "imply": "Do not tell a council the campus is already keeping the air conditioning on, or that customers are already saving $950 million or $15 a month because of it. The post says the campus is not operating, and it ties those savings to a wider portfolio.",
+      "id": "meta-dollar-bond",
+      "topic": "money",
+      "theme": "Meta priced five dollar notes on 3 November. Reuters calls the sale $15 billion. Settlement on the sheet is 5 November",
+      "changed": "On Tuesday 3 November 2026 Meta Platforms published a pricing term sheet, an issuer free writing prospectus under registration number 333-295425, relating to a preliminary prospectus supplement of the same day. The sheet lists five senior notes. The 2031 notes are $3,250,000,000 at a 5.850% coupon, offered at 99.998% of principal, yield 5.850%, due 15 November 2031. The 2033 notes are $3,250,000,000 at 6.250%, offered at 99.778%, yield 6.289%, due 15 November 2033. The 2036 notes are $4,000,000,000 at 6.550%, offered at 99.982%, yield 6.552%, due 15 November 2036. The 2046 notes are $1,750,000,000 at 7.350%, offered at 99.903%, yield 7.359%, due 15 November 2046. The 2056 notes are $2,750,000,000 at 7.500%, offered at 99.629%, yield 7.531%, due 15 November 2056. The trade date on the sheet is 3 November 2026. The settlement date is 5 November 2026, T+2. The sheet says delivery against payment is expected on or about 5 November. The ratings line prints Aa3/Stable (Moody’s) and AA-/Negative (S&P). The sheet says a securities rating is not a recommendation to buy, sell or hold, and may be revised or withdrawn. Reuters, on 3 November, said Meta is raising $15 billion through a five-part dollar offering to help finance AI infrastructure, and it named the 2031 and 2033 notes at 5.85% and 6.25%, from a regulatory filing. Reuters also said Meta sold $25 billion of investment-grade bonds in April and $30 billion last year, and that Meta has said it expects capital expenditure of $135 billion to $145 billion this year, largely for AI. Earlier on 3 November, CNBC said Meta was seeking $20 billion to $25 billion, about two-thirds in dollars and one-third in euros, according to people familiar, and that Meta declined to comment. CNBC said final pricing was expected that afternoon.",
+      "matters": "The number to use for the dollar sale is the sheet’s five notes, which Reuters calls $15 billion. The $20 billion to $25 billion was a morning target that included euros, and this sheet is not that target.",
+      "imply": "Do not add the euros CNBC described onto the $15 billion. Do not tell a board the cash arrived on 3 November. The sheet says settlement is 5 November. Do not call Aa3, or AA-, a judgment that the AI spend will pay off. The sheet says a rating is not a recommendation.",
       "uses": [
-        "Write “up to 1,000 megawatts of flexible demand response” and “campus still in development.” OpenAI’s “roughly 700,000 households” is its scale for that megawatt figure. It is not a list of homes served.",
-        "If a slide uses $950 million a year from 2029, or at least $15 a month, say OpenAI attributes those estimates to Georgia Power’s portfolio of large-load agreements and expected growth, including Project Camellia.",
-        "The post says OpenAI has committed to pay the full infrastructure and electric-service costs to serve the Effingham project. That is a commitment about a campus that is not operating yet."
+        "Quote a tranche from the sheet, not from memory. The five principals are $3,250,000,000, $3,250,000,000, $4,000,000,000, $1,750,000,000 and $2,750,000,000. Coupons are 5.850%, 6.250%, 6.550%, 7.350% and 7.500%. Reuters’s $15 billion is Reuters’s total for the five-part dollar sale. The sheet does not print that total.",
+        "Keep CNBC’s $20 billion to $25 billion in a separate sentence, with “people familiar,” “including euros,” and “Meta declined to comment.” It is earlier the same day. It is not a revision of the sheet.",
+        "The April $25 billion and last year’s $30 billion are Reuters’s account of older sales. They are not on this sheet. Capex of $135 billion to $145 billion is what Reuters says Meta has said it expects this year. It is not the amount borrowed on 3 November."
       ],
-      "example": "A facilities lead asked whether the Georgia campus already frees power for the county writes the answer from the 2 November post: the agreement includes up to 1,000 megawatts of demand the campus can stop drawing, once it is operating. It is not operating. The household figure is OpenAI’s comparison. The $950 million is Georgia Power’s portfolio projection, as the post reports it.",
-      "audience": "Anyone who sites a compute campus, talks to a utility, or has to correct a claim that an AI site is already propping up the local grid.",
-      "watch": "Whether Effingham gets an operating date. Whether any other campus is added to Grid Protectors with its own megawatt figure. Whether Georgia Power’s $950 million projection is revised, or is ever tied to this campus alone.",
+      "example": "A treasurer asked what Meta borrowed on Tuesday reads the sheet, not the morning headline. Five dollar notes, trade date 3 November, settlement 5 November. Reuters calls that offering $15 billion. The $20 billion to $25 billion figure is CNBC’s earlier target, from people familiar, and it included euros that are not on this sheet.",
+      "audience": "Anyone who compares a cloud or model bill with how the buyer is funding it, or who has to say what “Meta raised $25 billion” referred to on Tuesday.",
+      "watch": "Whether the notes settle on 5 November. Whether a euro sale prices, and at what size. Whether Moody’s or S&P changes the ratings printed on the sheet. Whether a later filing ties these notes to a named data center. The model line did not change with the sheet.",
       "source": {
-        "title": "OpenAI: Introducing the Grid Protectors Program, 2 November 2026",
-        "url": "https://openai.com/index/grid-protectors-program",
-        "quote": "Our agreement with Georgia Power also includes up to 1,000 megawatts of flexible demand response, freeing up power to help keep air conditioning running in hundreds of thousands of homes during extreme heat."
+        "title": "Meta Platforms pricing term sheet, free writing prospectus, 3 November 2026",
+        "url": "https://pubt.io/view/77EFB712630EAB11B7FAFC4915874A022B9F51EB",
+        "quote": "It is expected that the delivery of the notes will be made against payment therefor on or about November 5, 2026"
+      }
+    },
+    {
+      "id": "qwen-reads-weights",
+      "topic": "tools",
+      "theme": "On a laptop, Qwen 3.8 27B named three of four tiny game networks from their weights, and missed one",
+      "changed": "On Tuesday 3 November 2026 Simon Willison wrote that Qwen 3.8 27B, running on his laptop, could name a game from the raw weights of a small network, with no code and no calculator. He was trying one test from a paper he says appeared the day before, “Sparks of Weight-Space Programming,” by Rikiya Takehi, Jayden Teoh, Alex Zhang and Omar Khattab. Willison says the paper trained four networks on simplified 10 by 10 versions of Breakout, Pong, Pac-Man and Freeway, then asked a model which game the weights belonged to. The prompt, which he quotes, says there are no tools and no code execution. He says the prompts differ only in the weights. On his laptop, through LM Studio, Qwen 3.8 27B is the 17GB copy he uses. The default context of 8,192 failed. Pac-Man took 46 minutes 12 seconds and 43,506 reasoning tokens. The model’s last lines called it a simplified Pac-Man-style grid, described an 8 by 8 maze, and printed confidence of 72%. Pong took 1 hour 4 minutes 54 seconds. The model called it a Pong-like paddle game and printed 75%. Breakout took 52 minutes 25 seconds. The model called it Breakout, or an Arkanoid-like game, and printed 88%. Freeway was wrong. Willison says the model called it “A simplified Pac-Man-like grid game: agent moves 4-directionally,” and that he gives no time and no confidence for that run. He also ran Kimi K3.1 Pro, through OpenRouter, on the Breakout prompt only. It named Breakout after 9 minutes 41 seconds and 19,493 reasoning tokens. He says Matthew Honnibal called the paper misleading for mixing the no-tools question with a second one, in which a model that is allowed to run code edits weights. He says Sean Goedecke took apart the paper’s Qwen edit as the steps a human researcher would take. He quotes the paper’s abstract on that second claim: GPT-6 Astra, without environment feedback, edits 0.016% of the weights of Qwen3.5-0.8B and, with the same sampling settings, raises MATH-500 from 7.9% to 48.1%. He did not rerun that edit. His own last line is that he is not ready to say machines are now editing their own weights in ways nobody can follow.",
+      "matters": "A laptop model named three toy games from a list of numbers. That is not the same claim as a model rewriting another model’s math skill.",
+      "imply": "Do not tell a security review that Qwen, or Astra, can safely inspect or patch a production model because of this post. Willison’s runs are four tiny game networks, one model, no tools, three names right and one wrong. The MATH-500 move is the paper’s claim about Astra, and he did not repeat it.",
+      "uses": [
+        "If a slide says a model “read the weights,” say which test. Willison’s laptop test is the name-the-game prompt. Pac-Man was 72% and 46 minutes 12 seconds. Pong was 75% and 1 hour 4 minutes 54 seconds. Breakout was 88% and 52 minutes 25 seconds. Those percents are what the model printed. Freeway was a wrong name.",
+        "Keep the paper’s 0.016% edit, and the move from 7.9% to 48.1% on MATH-500, in a second sentence, labeled as the abstract Willison quotes. He did not run it. Kimi’s 9 minutes 41 seconds is one Breakout call on OpenRouter, not a fourth laptop result.",
+        "The post says a person with a notepad could get there. It is a reason to read the trace, not a reason to hand a weight file to an agent and skip review."
+      ],
+      "example": "An engineer who saw a post claiming models can now rewrite other models opens Willison’s page before repeating it. The laptop run named three of four games and missed Freeway. The confidence numbers are the model’s. The weight edit that raises MATH-500 from 7.9% to 48.1% is the paper’s claim about GPT-6 Astra, and this post does not show that edit being repeated.",
+      "audience": "Anyone who evaluates a model, reviews an agent that can see a checkpoint, or has to say whether a viral weight-editing claim was actually rerun.",
+      "watch": "Whether the authors, or someone else, publish the editing run on a model a team can download, with the 0.016% and the 7.9% to 48.1% tied to a named file. Whether Willison’s Freeway miss, or the 8 by 8 lines against the paper’s 10 by 10, gets a correction. Nothing in the post says a product model changed.",
+      "source": {
+        "title": "Simon Willison: Qwen 3.8 27B on my laptop can interpret model weights, too, 3 November 2026",
+        "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+        "quote": "I’m not ready to declare that the age of source code is over and our future involves incomprehensible machines editing their own model weights in incomprehensible ways."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "The quarter, in two lines",
-        "body": "Reuters: $16.96 billion of third-quarter revenue. Net loss $23.29 billion. Operating loss $567 million."
+        "title": "Search stays tied to AI",
+        "body": "Google will turn Search and Gemini off for K-12 students until a school turns them on. Search still includes AI."
       },
       {
-        "title": "Turkey orders terms, not a fine",
-        "body": "Turkey opened a probe of Google’s AI Overviews and AI Mode, and set interim terms for news publishers."
+        "title": "Twenty percent, source unnamed",
+        "body": "OpenAI says ChatGPT web searches equal 20% of Google’s volume. Fry did not name Google’s source."
       },
       {
-        "title": "An index, now a lawsuit",
-        "body": "The Times sued Brave. The complaint says the index holds more than 30 billion pages."
+        "title": "Five notes, settle on the 5th",
+        "body": "Meta priced five dollar notes on 3 November. Reuters calls the sale $15 billion. Settlement is 5 November."
       }
     ],
     "matters": [
       {
-        "title": "The net loss is not the operating loss",
-        "body": "Reuters says the quarter’s operating loss was $567 million. The quarter before, operating income was $974 million."
+        "title": "No plain Search on the menu",
+        "body": "Phillips said a school that wants AI off will not have Search. NBC says Search can be on without the Gemini apps."
       },
       {
-        "title": "The AI choice is not the index",
-        "body": "Turkey says publishers should set AI use apart from whether Google indexes them. No violation has been found."
+        "title": "The morning target included euros",
+        "body": "CNBC said people familiar expected $20 billion to $25 billion, with euros. That target is not the dollar sheet."
       },
       {
-        "title": "The reply has no new cap",
-        "body": "Musk said serving Grok Bot cost too much next to revenue. He did not say what the weekly limit is."
+        "title": "Three names, one miss",
+        "body": "Qwen on a laptop named Pac-Man, Pong and Breakout from raw weights. It called Freeway a Pac-Man game."
       }
     ],
     "watch": [
       {
-        "title": "The campus is not on",
-        "body": "OpenAI’s Georgia agreement includes up to 1,000 megawatts it can stop drawing. The campus is still in development."
+        "title": "The blog has no start date",
+        "body": "Google says more specifics are coming before the school controls roll out. Phillips told Education Week early next year."
       },
       {
-        "title": "Most of $104 billion is the notes",
-        "body": "CNBC says the nine-month net loss was $104 billion, mostly from convertible notes, not from running Claude."
+        "title": "The confidence is the model’s",
+        "body": "Willison’s 72%, 75% and 88% are what Qwen printed. They are not a scored accuracy, and Freeway was wrong."
       },
       {
-        "title": "The near commitment is $69.8 billion",
-        "body": "Reuters says about $69.8 billion of the $895.4 billion in commitments is due in the next 12 months."
+        "title": "The edit was not rerun",
+        "body": "The paper’s claim that Astra lifted MATH-500 from 7.9% to 48.1% is not a result Willison repeated."
       }
     ]
   },
   "chips": [
-    "Anthropic",
-    "Reuters",
-    "CNBC",
-    "Turkey",
     "Google",
-    "Brave",
-    "New York Times",
-    "SpaceX",
-    "Grok",
+    "Gemini",
     "OpenAI",
-    "Georgia Power"
+    "ChatGPT",
+    "Meta",
+    "Reuters",
+    "Qwen",
+    "Simon Willison"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Anthropic amendment, 2 Nov. Reuters: third-quarter revenue $16.96 billion, up 47%; net loss $23.29 billion; operating loss $567 million, after operating income of $974 million the quarter before. CNBC: nine-month revenue $33.24 billion; nine-month net loss $104 billion, mostly convertible notes. Commitments about $895.4 billion. Reuters: about $69.8 billion due in the 12 months after 30 Sept 2026. Not a new model.",
-      "topic": "Money"
-    },
-    {
-      "id": "s2",
-      "raw": "Turkish Competition Authority, notice dated 2 Nov: investigation of Google AI Overviews and AI Mode under Act 4054. Interim measures decided 8 Oct (decision 26-37/1000-423), after a preliminary inquiry dated 27 Aug. Publishers should be able to set AI use independently of indexing. Strong suspicion, not a finding, and no fine on the page.",
+      "raw": "Google education blog, 3 Nov: Gemini, Gemini Notebook, Gemini in Classroom and Google Search stay off for K-12 student accounts until an administrator turns them on. No date on the post. Education Week: Phillips, at a 2 Nov meeting, said a school that wants AI off will not have Search, and that the change starts early next year. NBC: a later statement the same day allows Search without the Gemini apps, and Search still includes AI. Guided Learning in Classroom starts 3 Nov. Search pilot in select U.S. schools later this month. Not a new model.",
       "topic": "Rules"
     },
     {
+      "id": "s2",
+      "raw": "The Verge, 3 Nov: Adam Fry, at a Monday press event, said ChatGPT’s web-search query volume equals 20% of Google’s. He counts a query that triggers a web search. He did not name the source of Google’s figure. He said ads have not hurt usage. Not market share, and not a new model.",
+      "topic": "Work"
+    },
+    {
       "id": "s3",
-      "raw": "TechCrunch, 2 Nov: the Times sued Brave and named Anthropic, Perplexity, Mistral, xAI and Cohere as customers of the index. A separate Manhattan suit was filed the same day by the Daily News, the Chicago Tribune and the Orlando Sentinel. The complaint, as TechCrunch quotes it, says the index holds more than 30 billion pages. No damages figure. Brave had not commented. The Verge quotes Perplexity calling the suit disinformation.",
-      "topic": "Trust"
+      "raw": "Meta pricing term sheet, 3 Nov, registration 333-295425. Five notes: $3,250,000,000 at 5.850% due 2031; $3,250,000,000 at 6.250% due 2033; $4,000,000,000 at 6.550% due 2036; $1,750,000,000 at 7.350% due 2046; $2,750,000,000 at 7.500% due 2056. Trade date 3 Nov. Settlement 5 Nov. Reuters calls the sale $15 billion. CNBC’s earlier $20–25 billion, including euros, was from people familiar. Meta declined to comment to CNBC. Not a new model.",
+      "topic": "Money"
     },
     {
       "id": "s4",
-      "raw": "Elon Musk, 1 Nov, on X: “The cost of serving Grok Bot was unsustainably high relative to revenue.” TechCrunch, 2 Nov: some users reported meters jumping from as low as 50% to 100%. He has not said how the limits change. Last month’s filing figures in that piece, 52% of income and a $431 million profit, are not a new allowance.",
-      "topic": "Work"
-    },
-    {
-      "id": "s5",
-      "raw": "OpenAI, 2 Nov: Grid Protectors. Planned Effingham County campus is still in development. Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. OpenAI says that scale is roughly 700,000 households. Georgia Power’s $950 million a year from 2029 is a portfolio projection, as the post reports it, not Effingham alone.",
-      "topic": "Work"
+      "raw": "Simon Willison, 3 Nov: Qwen 3.8 27B on a laptop, no tools. Pac-Man in 46m 12s and 43,506 reasoning tokens, model confidence 72%. Pong in 1h 4m 54s, 75%. Breakout in 52m 25s, 88%. Freeway wrong. The paper’s Astra edit, 0.016% of weights and MATH-500 from 7.9% to 48.1%, is the abstract he quotes. He did not rerun it.",
+      "topic": "Tools"
     }
   ]
 }

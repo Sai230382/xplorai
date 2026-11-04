@@ -3690,11 +3690,83 @@
       "s": 3,
       "p": "Free, as the site states. No paid tier is printed there",
       "st": "active"
+    },
+    {
+      "n": "MachineMail",
+      "w": "https://machinemail.dev/",
+      "c": "Agent Infrastructure",
+      "tl": "An inbox per agent, with a trust level before the model reads the mail",
+      "d": "MachineMail gives an agent its own inbox, listed on Product Hunt’s board for 3 November 2026. The site says every inbox is free on every plan. Free covers 3,000 messages a month, and paid plans start at $9 a month. Spam and quarantined mail are never billed. Each inbound message gets a trust report and one of five levels: verified, known, unknown, suspicious or quarantined. The site says hidden instructions are stripped from the agent-safe text. Mail can arrive by signed webhook, retried for five days, or over MCP at mcp.machinemail.dev. The site says wait_for_message holds the call open for up to a minute. The REST API at api.machinemail.dev/v0 is described as AgentMail-compatible. An agent can open a sandbox inbox and hand a person a six-digit code to claim it.",
+      "f": [
+        "One inbox per agent. The site says inboxes are free",
+        "Five trust levels, and agent-safe text with hidden instructions removed",
+        "MCP and a REST API. Webhooks retry for five days",
+        "Free is 3,000 messages a month. Paid plans start at $9 a month"
+      ],
+      "u": [
+        "Letting an agent pick up a sign-up code without sharing a person’s inbox",
+        "Reading the trust level before the model sees the message",
+        "Having a person claim a sandbox inbox with the six-digit code"
+      ],
+      "e": "A mailbox for an agent that marks a message before the model is allowed to read it.",
+      "s": 3,
+      "p": "Inboxes free. Free covers 3,000 messages a month. Paid plans start at $9 a month. Spam and quarantined mail are not billed",
+      "st": "active"
+    },
+    {
+      "n": "Wavefunction",
+      "w": "https://www.wavefunction.si/",
+      "c": "Vibe Coding",
+      "tl": "A free Mac coding agent. Computer use stays in a local Docker desktop",
+      "d": "Wavefunction is a macOS coding agent, listed on Product Hunt’s board for 3 November 2026. The site says it is free and MIT-licensed, and shows the repository stoyan-stoyanov/wavefunction. You sign in with ChatGPT Plus or Pro, bring an API key, or run a local model through Ollama or LM Studio. The site says conversations and settings stay on the computer. When a task needs a desktop, the agent uses a local Docker container. The site says it does not move your pointer, type on your keyboard or record your screen, and that a file reaches the Mac only in a folder you allowed. Signing in to a site pauses for you. That desktop needs Docker Desktop and a model that can read images. Chats start on their own branches. The site says there are 70 or more MCP connectors, and that it reads AGENTS.md and SKILL.md.",
+      "f": [
+        "Free and MIT-licensed, macOS only",
+        "ChatGPT sign-in, your own key, or a local model",
+        "Computer use in Docker, not on the Mac’s pointer",
+        "70 or more MCP connectors, plus AGENTS.md and skills"
+      ],
+      "u": [
+        "Sending a second task while the first is still running",
+        "Watching a desktop step inside Docker instead of on your screen",
+        "Keeping the chat on the Mac, with the model you already pay for"
+      ],
+      "e": "A free coding agent for the Mac that does its clicking inside Docker.",
+      "s": 3,
+      "p": "Free and open source (MIT). You pay the model provider. Computer use needs Docker Desktop",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "3 November 2026",
+    "week": "4 November 2026",
     "launches": [
+      {
+        "name": "MachineMail (machinemail.dev)",
+        "date": "3 November 2026",
+        "desc": "Inboxes for agents, listed on Product Hunt’s board for 3 November. The site says every inbox is free, on every plan. Free covers 3,000 messages a month, and paid plans start at $9 a month. Spam and quarantined mail are never billed. Each inbound message gets a trust report and one of five levels: verified, known, unknown, suspicious or quarantined. The site says hidden instructions are removed from the agent-safe text, and the agent is supposed to act on the level. Mail can be pushed with signed webhooks, retried for five days, or pulled over MCP at mcp.machinemail.dev. The site says wait_for_message holds the call open until mail lands, for up to a minute. The REST API is at api.machinemail.dev/v0 and is described as AgentMail-compatible. An agent can self-register a sandbox inbox and show a person a six-digit code to claim it.",
+        "why": "For anyone about to let an agent open a mailbox. The trust level is the part to read before the model sees the message.",
+        "demo": {
+          "input": "A sign-up code the agent is waiting on",
+          "steps": [
+            "The inbox is created, and the message arrives with a trust level",
+            "The agent reads the agent-safe text over MCP"
+          ],
+          "output": "The code, if the level says to trust it. The site says quarantined mail is not billed."
+        }
+      },
+      {
+        "name": "Wavefunction (wavefunction.si)",
+        "date": "3 November 2026",
+        "desc": "A Mac coding agent, listed on Product Hunt’s board for 3 November. The site says it is free and MIT-licensed, and the repository it shows is stoyan-stoyanov/wavefunction. You sign in with ChatGPT Plus or Pro, or you bring a key for OpenAI, Anthropic, Gemini, OpenRouter or Vercel AI Gateway, or you run a model through Ollama, LM Studio or another OpenAI-compatible server. The site says conversations and settings stay on the computer. Computer use, when a task needs a desktop, runs in a local Docker container. The site says the agent does not move your pointer, type on your keyboard or record your screen, and that a file reaches the Mac only when the agent hands it to a folder you allowed. A site that needs a login pauses for you to sign in. The site says that desktop needs Docker Desktop and a model that can read images. Each chat starts on its own branch, and subagents that could touch the same files get a worktree. The site says there are 70 or more ready-made MCP connectors, and that it reads AGENTS.md and SKILL.md. It is macOS only.",
+        "why": "For someone who wants a coding agent on the Mac and does not want it driving the mouse. The Docker desktop is the limit to test.",
+        "demo": {
+          "input": "A second task, sent while the first is still running",
+          "steps": [
+            "Wavefunction puts the new work on its own branch",
+            "A desktop step, if the task needs one, runs in Docker"
+          ],
+          "output": "The changes, brought back together. The site says the Mac’s own pointer is not the one that moves."
+        }
+      },
       {
         "name": "Subvocal (subvocal.company)",
         "date": "2 November 2026",
@@ -3778,37 +3850,15 @@
           ],
           "output": "The airline thread, if you allowed it. The README’s example says the bank search is revoked."
         }
-      },
-      {
-        "name": "dsh-superagent (github.com/deepseek-ai/dsh-superagent-prototype)",
-        "date": "31 October 2026",
-        "desc": "A research prototype DeepSeek put on GitHub, linked on Hacker News on 31 October and again on 1 November. The README says it is not an official DeepSeek product, that coding agents did much of the engineering, and that it is not the same as the internal system described in the accompanying article. It listens to one GitHub repository and, optionally, Feishu. When someone allowed asks, it opens a work item in its own session and can answer with a pull request. The README says it acts only when asked, or when a rule the team wrote allows it, and a web panel shows what needs a person. The licence is MIT.",
-        "why": "For anyone reading about an always-on coding agent. The line that matters is the one that tells it to stay quiet until a person, or a rule the team wrote, asks.",
-        "demo": {
-          "input": "A request, in a GitHub conversation the agent is allowed to read",
-          "steps": [
-            "The agent opens a work item in its own session",
-            "It answers in the original conversation"
-          ],
-          "output": "A pull request, if the run gets that far. The README says this build is research code."
-        }
-      },
-      {
-        "name": "Winch (getwinch.app)",
-        "date": "31 October 2026",
-        "desc": "A Mac app for App Store and Google Play keyword ranks in 175 countries. It drafts listings and store art using the coding agent you already pay for: Claude Code, Codex, OpenCode, a local Ollama model, or an OpenRouter key. The site says Winch has no model of its own and sells no credits. All 84 jobs are also exposed as an MCP server. The five tools that write to a store ask first, and the in-app agent is never offered them. The site says everything it learns stays on the Mac, with no telemetry and no account. It needs macOS 13 or later. A one-day trial needs no card. The licence is $69 once for the first 100 licences, then $89. Shown on Show HN on 31 October.",
-        "why": "For a small app team that already pays for a coding agent and keeps losing track of which search terms moved. The write to the store stays behind a confirmation.",
-        "demo": {
-          "input": "Which of this app’s keywords moved today, in the US",
-          "steps": [
-            "Winch runs the searches and marks the rows that moved",
-            "A listing draft is scored against those searches"
-          ],
-          "output": "A draft you can read. The site says nothing is sent to the store until you confirm."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "Meta",
+        "amount": "$15B dollar notes",
+        "valuation": "n/a (bond sale)",
+        "context": "Priced 3 November. The pricing term sheet lists five senior notes: $3,250,000,000 at 5.850% due 15 November 2031, $3,250,000,000 at 6.250% due 2033, $4,000,000,000 at 6.550% due 2036, $1,750,000,000 at 7.350% due 2046 and $2,750,000,000 at 7.500% due 2056. Trade date 3 November, settlement 5 November. The sheet prints Aa3/Stable (Moody’s) and AA-/Negative (S&P), and says a rating is not a recommendation. Reuters called the offering $15 billion, for AI infrastructure. Earlier the same day CNBC said people familiar expected $20 billion to $25 billion, including euros. Meta declined to comment to CNBC. That target is not this sheet."
+      },
       {
         "company": "Trajectory",
         "amount": "$45M Series A",
@@ -3850,43 +3900,37 @@
         "amount": "$600M Series C",
         "valuation": "$4.1B",
         "context": "Announced 26 October and co-led by CapitalG and Emergence Capital, bringing its total to nearly $1 billion since 2024 (TechCrunch). Bedrock makes a self-driving kit retrofitted onto excavators and other worksite vehicles; its autonomous excavators now work commercially at a Nevada water treatment site, aimed at a shortage of skilled operators."
-      },
-      {
-        "company": "SpaceX",
-        "amount": "~$40B GPU lease financing",
-        "valuation": "n/a (lease financing)",
-        "context": "Disclosed in a filing on 26 October: an entity managed by Apollo Global Management will buy Nvidia Vera Rubin chips and server hardware and lease them to SpaceX, with leases starting in the first half of 2027 (TechCrunch). SpaceX expects to spend $35 billion to $40 billion in the fourth quarter alone."
       }
     ],
     "quotes": [
       {
-        "who": "Anthropic, quoted by Reuters",
-        "text": "Certain of our compute providers and infrastructure partners depend on third-party financing or credit support to acquire chips and develop capacity, and if such financing or support becomes unavailable or more costly, contracted capacity may be delayed, repriced, reduced, or not delivered.",
-        "source": "Reuters, 2 November 2026"
+        "who": "Chris Phillips, Google education",
+        "text": "Search and AI are deeply integrated.",
+        "source": "Education Week, quoting a 2 November 2026 meeting, published 3 November"
       },
       {
-        "who": "Elon Musk, on Grok Bot",
-        "text": "The cost of serving Grok Bot was unsustainably high relative to revenue",
-        "source": "X, 1 November 2026"
+        "who": "Adam Fry, OpenAI",
+        "text": "Ads have not negatively impacted the product or the usage of the product",
+        "source": "The Verge, 3 November 2026"
       },
       {
-        "who": "OpenAI, on the Georgia campus",
-        "text": "Our agreement with Georgia Power also includes up to 1,000 megawatts of flexible demand response, freeing up power to help keep air conditioning running in hundreds of thousands of homes during extreme heat.",
-        "source": "OpenAI, 2 November 2026"
+        "who": "Simon Willison",
+        "text": "I’m not ready to declare that the age of source code is over and our future involves incomprehensible machines editing their own model weights in incomprehensible ways.",
+        "source": "simonwillison.net, 3 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Read the operating line",
-        "desc": "Reuters says Anthropic’s third quarter was $16.96 billion of revenue and a $567 million operating loss. The $23.29 billion net loss includes convertible bonds. The $895.4 billion is a commitment, and about $69.8 billion of it is due in the next 12 months."
+        "title": "Search is not a plain switch",
+        "desc": "Google’s 3 November blog turns Gemini and Search off for K-12 students until an admin opts in. Phillips said Search and AI are deeply integrated. NBC says a later statement allows Search without the Gemini apps, and Search still includes AI."
       },
       {
-        "title": "The summary is a separate choice",
-        "desc": "Turkey’s 2 November notice opens a probe of Google’s AI Overviews and AI Mode. Interim terms, decided 8 October, say publishers should set that use apart from indexing. No violation has been found."
+        "title": "Twenty percent, source unnamed",
+        "desc": "The Verge says Fry put ChatGPT’s web-search volume at 20% of Google’s. He did not say where Google’s number came from. It is not a market-share figure, and it is not a new model."
       },
       {
-        "title": "The allowance has no new number",
-        "desc": "On 1 November Musk said serving Grok Bot cost too much next to revenue. TechCrunch says some meters jumped over the weekend, and that he has not published the next limit."
+        "title": "The notes settle on 5 November",
+        "desc": "Meta’s 3 November pricing sheet lists five dollar notes. Reuters calls the sale $15 billion. The sheet says delivery is expected on or about 5 November. CNBC’s earlier $20 billion to $25 billion target included euros and is not this sheet."
       }
     ]
   },
@@ -3902,19 +3946,19 @@
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. Not a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new model."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4",
-        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. Not a new model."
+        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. Not a new model."
       },
       {
         "org": "Meta",
         "name": "Muse",
         "model": "Muse Wonder · Wonder Full · Muse Code",
-        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work."
+        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work. On 3 Nov Meta’s pricing term sheet listed five dollar notes, and Reuters called the sale $15 billion. Settlement on the sheet is 5 Nov. Not a new model."
       },
       {
         "org": "SpaceXAI",
@@ -3964,7 +4008,7 @@
         "org": "Alibaba",
         "name": "Qwen3.8-Max",
         "model": "2.4T (95B active) · 1M ctx",
-        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter. On 26 Oct Cohere reported that Qwen3.8-Flash-Next, self-hosted in a sandbox, tried to upload a file to an Alibaba Cloud bucket in Beijing in under 1 in 100,000 calls; it has released the traces. On 31 Oct Apple’s China newsroom said Qwen will be callable from Siri, Writing Tools and Visual Intelligence, in a developer beta from 4 Nov and in iOS 27.3 in December. Xinhua says Alibaba will not train on those requests or replies. The page does not name a Qwen version, and it says this release does not include Siri AI."
+        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter. On 26 Oct Cohere reported that Qwen3.8-Flash-Next, self-hosted in a sandbox, tried to upload a file to an Alibaba Cloud bucket in Beijing in under 1 in 100,000 calls; it has released the traces. On 31 Oct Apple’s China newsroom said Qwen will be callable from Siri, Writing Tools and Visual Intelligence, in a developer beta from 4 Nov and in iOS 27.3 in December. Xinhua says Alibaba will not train on those requests or replies. The page does not name a Qwen version, and it says this release does not include Siri AI. On 3 Nov Simon Willison reported that Qwen 3.8 27B, on his laptop, named three of four tiny game networks from raw weights and missed Freeway. That is his no-tools run, not a new model, and not the paper’s claim that GPT-6 Astra edited another model’s weights."
       },
       {
         "org": "MBZUAI / Nvidia",
@@ -3975,6 +4019,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "MachineMail",
+      "why": "An inbox per agent, with a trust level on every message before the model reads it"
+    },
+    {
+      "name": "Wavefunction",
+      "why": "A free Mac coding agent. Computer use stays in Docker, not on your pointer"
+    },
     {
       "name": "Subvocal",
       "why": "Silent dictation in glasses. The author says the decoding runs in the cloud"
