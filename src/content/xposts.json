@@ -1,5 +1,32 @@
 [
   {
+    "name": "Bloomberg",
+    "handle": "business",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1631723279676317709/-fjgaR2p_normal.jpg",
+    "text": "Schools that want their K-12 students to have access to Google Search will soon have to turn it on themselves, and the AI features built into Search will come with it, under changes announced Tuesday https://t.co/0RUXpnVn9k",
+    "url": "https://x.com/business/status/2117772596443787267",
+    "postedAt": "2026-11-04T00:15:07.000Z",
+    "take": "A school that wants Google Search for K-12 students has to turn it on, and this post says the AI features built into Search come with that switch. Read it before telling a district they can keep a plain Search."
+  },
+  {
+    "name": "The Verge",
+    "handle": "verge",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1569656103528448000/d0BzVIPL_normal.jpg",
+    "text": "OpenAI says ChatGPT processes one-fifth the volume of search queries as Google. https://t.co/7UtW5Oo8zX",
+    "url": "https://x.com/verge/status/2117690759696777427",
+    "postedAt": "2026-11-03T18:49:56.000Z",
+    "take": "One-fifth is what OpenAI told The Verge about search-query volume. This post does not turn that into ad revenue, clicks, or a share of Google that a publisher lost."
+  },
+  {
+    "name": "Simon Willison",
+    "handle": "simonw",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/378800000261649705/be9cc55e64014e6d7663c50d7cb9fc75_normal.jpeg",
+    "text": "There's a buzzy new paper about GPT-6 Astra being able to directly interpret model weights (prompts full of floating point numbers) - I tried it with Qwen 3.8 27B on my laptop and found that, after 45+ minutes, that model could achieve the same thing https://t.co/6O7WltGP7K",
+    "url": "https://x.com/simonw/status/2117655816581071203",
+    "postedAt": "2026-11-03T16:31:05.000Z",
+    "take": "He ran the weight-reading test on a laptop model, and it took more than 45 minutes. Open the linked note before treating a checkpoint as something an agent can audit or rewrite."
+  },
+  {
     "name": "Elon Musk",
     "handle": "elonmusk",
     "avatarUrl": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
