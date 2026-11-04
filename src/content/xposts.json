@@ -1,5 +1,59 @@
 [
   {
+    "name": "Bloomberg",
+    "handle": "business",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1631723279676317709/-fjgaR2p_normal.jpg",
+    "text": "Schools that want their K-12 students to have access to Google Search will soon have to turn it on themselves, and the AI features built into Search will come with it, under changes announced Tuesday https://t.co/0RUXpnVn9k",
+    "url": "https://x.com/business/status/2117772596443787267",
+    "postedAt": "2026-11-04T00:15:07.000Z",
+    "take": "A school that wants Google Search for K-12 students has to turn it on, and this post says the AI features built into Search come with that switch. Read it before telling a district they can keep a plain Search."
+  },
+  {
+    "name": "The Verge",
+    "handle": "verge",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1569656103528448000/d0BzVIPL_normal.jpg",
+    "text": "OpenAI says ChatGPT processes one-fifth the volume of search queries as Google. https://t.co/7UtW5Oo8zX",
+    "url": "https://x.com/verge/status/2117690759696777427",
+    "postedAt": "2026-11-03T18:49:56.000Z",
+    "take": "One-fifth is what OpenAI told The Verge about search-query volume. This post does not turn that into ad revenue, clicks, or a share of Google that a publisher lost."
+  },
+  {
+    "name": "Simon Willison",
+    "handle": "simonw",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/378800000261649705/be9cc55e64014e6d7663c50d7cb9fc75_normal.jpeg",
+    "text": "There's a buzzy new paper about GPT-6 Astra being able to directly interpret model weights (prompts full of floating point numbers) - I tried it with Qwen 3.8 27B on my laptop and found that, after 45+ minutes, that model could achieve the same thing https://t.co/6O7WltGP7K",
+    "url": "https://x.com/simonw/status/2117655816581071203",
+    "postedAt": "2026-11-03T16:31:05.000Z",
+    "take": "He ran the weight-reading test on a laptop model, and it took more than 45 minutes. Open the linked note before treating a checkpoint as something an agent can audit or rewrite."
+  },
+  {
+    "name": "Elon Musk",
+    "handle": "elonmusk",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+    "text": "@DogecoinNorway The cost of serving Grok Bot was unsustainably high relative to revenue",
+    "url": "https://x.com/elonmusk/status/2116992258520064397",
+    "postedAt": "2026-11-01T20:34:20.000Z",
+    "take": "That is the whole reply. It does not say what the weekly limit is now, or whether a meter that jumped will be put back."
+  },
+  {
+    "name": "TechCrunch",
+    "handle": "TechCrunch",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_normal.png",
+    "text": "The New York Times is suing privacy-focused web browser company Brave for allegedly scraping the outlet’s copyrighted and unlawfully distributing it to its own customers, like Anthropic and Perplexity.\nhttps://t.co/zSVsKmH275",
+    "url": "https://x.com/TechCrunch/status/2117337220466057337",
+    "postedAt": "2026-11-02T19:25:06.000Z",
+    "take": "The suit names Anthropic, Perplexity, Mistral, xAI and Cohere as customers of the index. TechCrunch says Brave had not commented."
+  },
+  {
+    "name": "CNBC",
+    "handle": "CNBC",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1999829242431811587/iTRuu0Me_normal.jpg",
+    "text": "Anthropic reported updated financials as part of an amended Form S-1 filing with the Securities and Exchange Commission on Monday, giving investors a more comprehensive look into the state of its business.\n\nThe artificial intelligence company said it generated $33.24 billion in https://t.co/zvq4w9dOZM",
+    "url": "https://x.com/CNBC/status/2117290669437747288",
+    "postedAt": "2026-11-02T16:20:07.000Z",
+    "take": "The nine-month figure in the post is $33.24 billion. Reuters, the same day, puts the third quarter alone at $16.96 billion, and the net loss at $23.29 billion."
+  },
+  {
     "name": "Yicai 第一财经",
     "handle": "yicaichina",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1990256002575523840/LaxRUhMU_normal.jpg",
