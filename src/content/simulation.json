@@ -1,82 +1,55 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "meta-dollar-bond",
+  "storyId": "images-2-6",
   "kicker": "Play with today’s story",
-  "title": "The five dollar notes on Meta’s 3 November pricing sheet",
-  "intro": "Move across the five senior notes on Meta’s pricing term sheet of 3 November 2026. Each stop is one note. The page does not add them together, and it does not apply the coupon to the principal.",
-  "note": "Every figure on the control is printed on the 3 November 2026 pricing term sheet. Principals are $3,250,000,000, $3,250,000,000, $4,000,000,000, $1,750,000,000 and $2,750,000,000. Coupons are 5.850%, 6.250%, 6.550%, 7.350% and 7.500%. The offering prices and the yields are the sheet’s, and they are not the same number as the coupon except on the 2031 notes. The sheet does not print a total. Reuters, the same day, calls the five-part dollar sale $15 billion. That total is not on this control. CNBC’s $20 billion to $25 billion was an earlier target, from people familiar, for a sale that was to include euros. Meta declined to comment to CNBC. It is not on this control. Neither is Reuters’s April sale of $25 billion, last year’s $30 billion, or the $135 billion to $145 billion of capital expenditure Reuters says Meta expects this year. The sheet’s trade date is 3 November and its settlement date is 5 November. The ratings line prints Aa3/Stable (Moody’s) and AA-/Negative (S&P). The sheet says a rating is not a recommendation to buy, sell or hold.",
+  "title": "Four figures from OpenAI’s Images 2.6 post",
+  "intro": "Move across four lines from OpenAI’s 4 November 2026 post. Each stop is one sentence. The page does not turn the week into a day, and it does not apply the six seconds to every image.",
+  "note": "Every line on the control is from OpenAI’s post “Introducing Images 2.6,” dated 4 November 2026. The week is 4 billion images across ChatGPT, Codex and the API. The day is the post’s own next sentence, “more than half a billion,” which it calls an average. This control does not divide 4 billion by seven. “50 percent faster than before” does not name the earlier model, the prompt, or the quality setting. “As little as six seconds” is a different sentence: Flare, when quality is set to low. It is not a time for Sunburst, and it is not a time for Flare at medium, high, or any setting the post does not name. The post points to a pricing page and a system card. Neither is on this control. No price is printed in the post itself.",
   "sources": [
     {
-      "label": "Meta Platforms pricing term sheet, 3 November 2026",
-      "url": "https://pubt.io/view/77EFB712630EAB11B7FAFC4915874A022B9F51EB"
-    },
-    {
-      "label": "Reuters, via StreetInsider: Meta’s five-part dollar sale, 3 November 2026",
-      "url": "https://www.streetinsider.com/Reuters/Meta+raises+%2415+billion%C2%A0in+five-part+US+bond+sale+to+fund+AI+expansion/27283778.html"
-    },
-    {
-      "label": "CNBC: the earlier $20 billion to $25 billion target, 3 November 2026",
-      "url": "https://www.cnbc.com/2026/11/03/meta-bond-sale-ai-funding.html"
+      "label": "OpenAI: Introducing Images 2.6, 4 November 2026",
+      "url": "https://openai.com/index/introducing-images-2-6/"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Which note on the 3 November pricing sheet",
+    "label": "Which line from the 4 November Images 2.6 post",
     "items": [
       {
-        "label": "2031",
-        "name": "5.850% notes due 2031",
-        "caption": "Due 15 November 2031. The sheet’s yield matches the coupon.",
+        "label": "Week",
+        "name": "Images in a week",
+        "caption": "Across ChatGPT, Codex and the API. The post says people now create this many.",
         "stats": [
-          { "label": "Principal", "value": "$3,250,000,000" },
-          { "label": "Coupon", "value": "5.850%" },
-          { "label": "Offering price", "value": "99.998%" },
-          { "label": "Yield", "value": "5.850%" }
+          { "label": "Images", "value": "4 billion" },
+          { "label": "Where", "value": "ChatGPT, Codex and the API" }
         ]
       },
       {
-        "label": "2033",
-        "name": "6.250% notes due 2033",
-        "caption": "Due 15 November 2033. The yield is higher than the coupon.",
+        "label": "Day",
+        "name": "The post’s daily line",
+        "caption": "OpenAI calls this an average. The control does not divide the week by seven.",
         "stats": [
-          { "label": "Principal", "value": "$3,250,000,000" },
-          { "label": "Coupon", "value": "6.250%" },
-          { "label": "Offering price", "value": "99.778%" },
-          { "label": "Yield", "value": "6.289%" }
+          { "label": "Images", "value": "more than half a billion" },
+          { "label": "How the post puts it", "value": "on average" }
         ]
       },
       {
-        "label": "2036",
-        "name": "6.550% notes due 2036",
-        "caption": "Due 15 November 2036.",
+        "label": "Flare",
+        "name": "Flare, quality set to low",
+        "caption": "The six seconds belong to this setting. The post does not give Sunburst a time.",
         "stats": [
-          { "label": "Principal", "value": "$4,000,000,000" },
-          { "label": "Coupon", "value": "6.550%" },
-          { "label": "Offering price", "value": "99.982%" },
-          { "label": "Yield", "value": "6.552%" }
+          { "label": "Time", "value": "as little as six seconds" },
+          { "label": "Setting", "value": "quality set to low" }
         ]
       },
       {
-        "label": "2046",
-        "name": "7.350% notes due 2046",
-        "caption": "Due 15 November 2046.",
+        "label": "Speed",
+        "name": "Faster than before",
+        "caption": "The post does not name the earlier model.",
         "stats": [
-          { "label": "Principal", "value": "$1,750,000,000" },
-          { "label": "Coupon", "value": "7.350%" },
-          { "label": "Offering price", "value": "99.903%" },
-          { "label": "Yield", "value": "7.359%" }
-        ]
-      },
-      {
-        "label": "2056",
-        "name": "7.500% notes due 2056",
-        "caption": "Due 15 November 2056. Longest note on the sheet.",
-        "stats": [
-          { "label": "Principal", "value": "$2,750,000,000" },
-          { "label": "Coupon", "value": "7.500%" },
-          { "label": "Offering price", "value": "99.629%" },
-          { "label": "Yield", "value": "7.531%" }
+          { "label": "Faster", "value": "50 percent" },
+          { "label": "Compared with", "value": "before, unnamed" }
         ]
       }
     ]

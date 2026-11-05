@@ -1,178 +1,258 @@
 {
-  "number": 40,
-  "edition": "Briefing 40",
-  "date": "4 November 2026",
-  "dateISO": "2026-11-04",
-  "toolsPulseDate": "4 November 2026",
+  "number": 41,
+  "edition": "Briefing 41",
+  "date": "5 November 2026",
+  "dateISO": "2026-11-05",
+  "toolsPulseDate": "5 November 2026",
   "kicker": "Today in AI",
-  "title": "Google will turn Gemini and Search off for K-12 student accounts until a school turns them on, and Search that is on still includes AI. OpenAI says ChatGPT’s web-search volume now equals 20 percent of Google’s, and did not name Google’s source. Meta priced five dollar notes on 3 November. Reuters calls the sale $15 billion, and the sheet says settlement is 5 November. On a laptop, Qwen 3.8 27B named three of four tiny game networks from their weights, and missed one.",
-  "summary": "On Tuesday 3 November 2026 Google’s education blog said access to Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be entirely off for K-12 student accounts until a school administrator turns them on. The post does not give a calendar date. Education Week, the same day, said Chris Phillips told a 2 November meeting that the changes start early next year, and that a school which wants AI off will not have Search. NBC News said a later statement the same day allows Search without the other Gemini products, and that Search still includes AI features. Guided Learning in Google Classroom starts on 3 November. A Search pilot is for select U.S. schools later this month. On 3 November The Verge reported that Adam Fry, at a press event on Monday, said the volume of search queries in ChatGPT equals 20 percent of the volume run through Google. The Verge said he counts a query that triggers a web search, and that he did not name the source of Google’s figure. On 3 November Meta published a pricing term sheet for five dollar senior notes. Reuters, the same day, said Meta is raising $15 billion in a five-part dollar sale to fund AI infrastructure. The sheet’s trade date is 3 November and its settlement date is 5 November. Earlier on 3 November CNBC said people familiar expected $20 billion to $25 billion, including euros. That target is not the sheet. On 3 November Simon Willison reported that Qwen 3.8 27B, running on his laptop with no tools, named Pac-Man, Pong and Breakout from raw weights and missed Freeway.",
-  "uncertainty": "Google’s 3 November blog lists four products that stay off until an administrator turns them on. It does not, in that post, say Search can be switched on without Gemini, and it does not say “early next year.” Education Week attributes “early next year,” and the sentence “Search and AI are deeply integrated,” to Phillips at a 2 November meeting. Education Week also says a 3 November Google statement allows an administrator to turn Search on, Gemini on, or both, and that AI Mode and AI Overviews will offer step-by-step guided learning. NBC says that, after criticism, Google said schools can enable Search alone, without the other Gemini products, and that Search still includes AI features. Those accounts can sit together. They are not a finding that a no-AI Search exists. New York City’s ban through 8th grade and Los Angeles Unified’s moratorium are Education Week’s background, not lines in the blog. Social posts on 4 November cite a Tokyo trial of +8.1 points against +5.3. The 3 November blog, as fetched, does not print those figures, so they are not used. The Verge’s 20 percent is what it says Fry announced. The article does not quote the 20 percent as his words. It says he did not specify the source of Google’s volume. The Verge’s comparison with Bing, about 3 percent of search market share in 2023 testimony, is market share, not this volume measure, so it is left out. Writeups the same day that say ChatGPT has 1.2 billion weekly users are not in The Verge piece that was fetched, so that figure is not used. Fry’s lines about ads are his, as The Verge quotes them. They are not a survey. Meta’s pricing term sheet lists five principal amounts and does not print the words “$15 billion.” Reuters states the $15 billion. The sheet’s coupons are 5.850% and 6.250% where Reuters writes 5.85% and 6.25%. CNBC’s $20 billion to $25 billion, two-thirds dollars and one-third euros, is from people familiar, earlier on 3 November, and Meta declined to comment to CNBC. It is not a second total for this sheet. Reuters’s $25 billion April sale and $30 billion sale last year are Reuters’s comparison, not lines on the sheet. Reuters’s $97.5 billion equity figure and CNBC’s $95 billion plan, from last week, are not reconciled here. Capex of $135 billion to $145 billion is what Reuters says Meta has said, and what CNBC attributes to last month’s earnings. The negative free cash flow of $2.12 billion is CNBC on that earnings report, not cash raised on 3 November. The ratings on the sheet are Aa3/Stable (Moody’s) and AA-/Negative (S&P). The sheet says a rating is not a recommendation. Willison’s 72%, 75% and 88% are the confidence the model printed, not a measured accuracy. He gives a time for all three hits and a token count only for Pac-Man. He does not give a time or a confidence for the Freeway miss. The paper’s 10x10 grids and the model’s 8x8 descriptions are both in his post. He does not say which board size is the network. The abstract figures he quotes, including 0.016% of the weights and MATH-500 moving from 7.9% to 48.1%, are the paper’s claims about GPT-6 Astra. He did not rerun that edit. Kimi K3.1 Pro’s 9 minutes 41 seconds and 19,493 tokens are one Breakout run through OpenRouter, not the laptop.",
+  "title": "OpenAI put Images 2.6 in ChatGPT and Codex on 4 November. Flare, with quality set to low, can take as little as six seconds, and the post does not name the model it says is 50 percent slower. Meta is buying Conductor. Conductor Cloud goes read-only on 13 November and starts deleting data on 20 November. OpenAI will acquire Pierre. The deal is not closed, and neither post prints a price. Google agreed to backstop parts of Anthropic’s Kentucky leases. The 8-K does not print a dollar total. TeraWulf’s press release says the commitments are about $19 billion. Siri AI is open to developers in the 27.3 betas. App Store submission is in the spring. Kimi K3.1 Pro’s weights are on Hugging Face, and a model-as-a-service over $20 million in twelve months needs a separate deal. FlashProve can prove one token of an integer model. It is not a receipt on Claude.",
+  "summary": "On Wednesday 4 November 2026 OpenAI said Images 2.6 is in ChatGPT, Codex and the API, across all ChatGPT and Codex tiers, on desktop, mobile and web. The post says people create 4 billion images a week across those three surfaces, and that the average is more than half a billion a day. It says Images 2.6 is 50 percent faster than before, and it does not name before. Flare, with quality set to low, can generate an image in as little as six seconds. Sunburst is the model the post points to for higher detail, at medium or high quality. The post does not print a price. The same day, Charlie Holtz wrote that Conductor is joining Meta. The timeline on that page stops new sign-ups on 4 November, makes Conductor Cloud read-only on 13 November, and shuts the cloud down on 20 November, when deletion of cloud user data begins. Local Conductor keeps model updates and critical fixes until early 2027. TechCrunch said Meta confirmed the deal and gave no further details. OpenAI, the same day, said it will acquire Pierre Computer Company. Trees and Diffs are already in the Codex app. Closing needs regulatory approvals. Until then the companies stay separate. Axios said the price was not disclosed. TeraWulf’s 4 November 8-K says Google will backstop certain Anthropic lease obligations at Hawesville, on three buildings, effective when each building’s final data hall starts. The filing says the leases are 20 years, for about 401 megawatts, with delivery expected from late 2027 through the second quarter of 2028. The press release furnished with the filing says the financing supports about $19 billion of contracted lease commitments. On 3 November Apple opened a Siri AI developer preview in the 27.3 betas. Customers are “a few months” out, and App Store submission opens in the spring. The page says Siri AI is not in the EU on iOS, iPadOS and watchOS, is not for users under 13, and has daily limits it does not print. On 4 November Kimi.ai posted the weights of Kimi K3.1 Pro. The model card says 2.8 trillion parameters, 104 billion active, and a context of 1,048,576. The licence pulls hosted commercial use out of the grant once revenue exceeds $20 million in any twelve months. On 2 November Anthropic released FlashProve. On Llama 4 Maverick, one proof in the evaluation is 18.78 megabytes, and the post does not say Claude ships these proofs.",
+  "uncertainty": "OpenAI’s 4 November post says Images 2.6 generates images 50 percent faster than before. It does not name the previous model, the prompt, or the quality setting in that sentence. The six seconds are a different sentence: Flare, when quality is set to low, can generate images in as little as six seconds. That is not a time for Sunburst, and it is not a time for every quality setting. The 4 billion images a week, and the line that the average is more than half a billion a day, are OpenAI’s. This edition does not divide one by the other. The post points to a pricing page and a system card. Neither figure is copied here, because those pages were not the source of the sentences above. Conductor’s dates are the dates on Charlie Holtz’s 4 November page. TechCrunch, the same day, said Meta confirmed the acquisition and would not comment further. The price is not on the announcement. Axios, the same day, said financial terms were not disclosed. TechCrunch’s line that Conductor’s agents come from other labs, including Anthropic and OpenAI, is TechCrunch’s. The announcement does not name those labs. “Early 2027” is not a day. Pierre’s post does not print a price. Axios says the price was not disclosed. Axios also says OpenAI says Pando cut the time to push code by nearly 80 percent. The Pierre post names Pando and does not print 80 percent. This edition did not re-fetch the earlier Pando post, so 80 percent stays Axios’s attribution. TeraWulf’s Item 1.01 does not print “$19 billion.” That phrase is in the press release furnished as Exhibit 99.1, as “approximately $19 billion of contracted lease commitments.” It is not a cap on the backstop, and it is not cash paid on 4 November. The termination fee is described and not numbered. Item 8.01 says the leases were amended and does not print the amendments. The July 2026 lease is background in the 8-K, not a new lease signed on 4 November. Fluor’s guaranteed maximum price is “being established.” The press release’s line about 1 gigawatt at a different campus, Muskie, is not this backstop. Apple’s developer page does not print the daily limit or the future fee. “A few months” and “the spring” are the page’s words, not a calendar date. The EU line is iOS, iPadOS and watchOS. The page does not, in that bullet, say macOS. Kimi’s 65.7 on Terminal-Bench 4.0 is the model card’s figure, and the footnote says that run used the Claude Code harness. The card’s other scores are the card’s, under the settings and footnotes printed there. They are not rerun here. The $20 million and 100 million user lines are the licence file in the same repository, not a summary of the tweet. FlashProve’s 18.78 megabytes, 110 tokens per second, 223 seconds, 17 seconds, 21 seconds, about 39 minutes, about 6.5 megabytes and about 16 million requests are the evaluation section of the 2 November post, for Llama 4 Maverick, 4-bit weights, one H100 and a batch of 24. The post also gives a range against vLLM, about 72 times on one comparison and about 94 times on another. The proof is of an integer model under greedy decoding. The fast verifier is not the Lean verifier. The post does not say these proofs are attached to Claude.",
   "stats": {
-    "filtered": 4,
-    "verified": 4,
-    "themes": 4
+    "filtered": 7,
+    "verified": 7,
+    "themes": 5
   },
   "stories": [
     {
-      "id": "google-school-search",
-      "topic": "rules",
-      "theme": "Google will turn Search and Gemini off for K-12 students until a school turns them on, and Search still includes AI",
-      "changed": "On Tuesday 3 November 2026 Google published an education post by Chris Phillips, vice president and general manager of education. It says that, after listening to schools, teachers, researchers and policymakers, Google is updating controls for Gemini, Gemini Notebook, Gemini in Classroom and Google Search. The sentence is: access to these products will be entirely off for K-12 student accounts until school administrators explicitly turn them on. The post says Google will share more specifics with schools in the coming months, ahead of the changes rolling out. It does not name a day. Education Week, the same day, said Phillips told a virtual meeting on 2 November that the changes will start early next year. Education Week quotes him: “If a school is not comfortable with that and simply wants AI off, then they have the choice to not have Search on at all.” He also said, “Search and AI are deeply integrated.” Education Week said a Google statement on 3 November allows an administrator to turn Search on, Gemini on, or both. It said the statement describes AI Mode and AI Overviews offering “step-by-step guided learning through problems” rather than handing over the answer. NBC News, the same day, said that after criticism Google said schools can enable Search alone, without turning on the other Gemini products, and that schools still cannot use Search without AI features such as AI-generated summaries. The blog, separately, says Guided Learning is starting in Google Classroom on 3 November, globally, when a student starts an activity a teacher assigned. Education Week said that Classroom rollout is for schools that already enabled Gemini. The blog says a Guided Learning pilot inside Search, for student accounts, starts in select U.S. schools later this month. Education Week said Brittany Siegal Mennuti, product lead for Classroom, said settings can differ by grade, and that a group barred from AI would also lose Search.",
-      "matters": "A school that wants no AI in front of students is being told it may also lose Search, and a Search that stays on is still an AI Search.",
-      "imply": "Do not tell a district that the 3 November blog already switched the tools off, or that a plain Search with no AI summary is on the menu. The blog says the default change is still ahead. Education Week’s “early next year” is Phillips at the 2 November meeting. NBC’s later statement separates the Gemini apps from Search, and it does not remove AI from Search.",
-      "uses": [
-        "Write the status as “announced 3 November 2026; off by default for K-12 student accounts until an administrator turns each product on; rollout date not on the blog.” The four products named on the blog are Gemini, Gemini Notebook, Gemini in Classroom and Google Search.",
-        "If a policy says “no generative AI, Search stays,” put Phillips’s sentence next to it: a school that wants AI off does not have Search. Then add NBC’s later line: Search can be on without the Gemini apps, and Search still includes AI Mode and AI Overviews.",
-        "Guided Learning in Classroom, the blog says, starts 3 November for an assigned activity. The Search version is a pilot in select U.S. schools later this month. Do not tell a teacher both are already on for every student."
-      ],
-      "example": "A district technology lead who turned Gemini off in August reads the 3 November post before answering a principal. The coming default is off for Gemini and for Search, until an administrator turns them on. Search, if it is turned on, still teaches through AI Mode and AI Overviews, which is what Google’s 3 November statement describes. There is no date on the blog. Education Week says Phillips put the start early next year.",
-      "audience": "School and district administrators, the people who buy Google Workspace for Education, and anyone who has to say whether a student account still has Search.",
-      "watch": "Whether the admin console, when it ships, has a Search switch that is separate from Gemini, and whether that Search can be stripped of AI Mode and AI Overviews. The 3 November accounts say it cannot. Whether Google names the day. Whether the Search pilot, later this month, is the same Guided Learning as the Classroom tool that started on 3 November.",
-      "source": {
-        "title": "Google: Designing responsible AI for learning, 3 November 2026",
-        "url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
-        "quote": "Access to these products will be entirely off for K-12 student accounts until school administrators explicitly turn them on."
-      }
-    },
-    {
-      "id": "chatgpt-search-share",
-      "topic": "work",
-      "theme": "OpenAI says ChatGPT’s web-search volume equals 20 percent of Google’s, and did not name Google’s source",
-      "changed": "On Tuesday 3 November 2026 The Verge reported that the volume of search queries run through ChatGPT now equals 20 percent of the volume run through Google. Adam Fry, OpenAI’s consumer product lead for ChatGPT, made the announcement at a press event on Monday. The Verge said he defines a search as any time a user inputs a query that results in a web search, as opposed to defining a term or a simple how-to. The Verge said he did not specify the source of the Google number. The same piece quotes him on ads. “Ads have not negatively impacted the product or the usage of the product,” he said, and “most people do not seem to mind ads in the product.” He also said, “Ads have maybe shown us that we could be doing this more, actually.” The Verge said OpenAI announced last month that ChatGPT would begin showing images of sponsored products and services, rather than only a name, a logo and a link. On what OpenAI calls Intelligent UI, Fry said, “That’s where the future of this technology goes. You’re talking to a canvas.” The Verge does not print a count of weekly users, and it does not print Google’s query total.",
-      "matters": "A buyer who hears “a fifth of Google” is hearing OpenAI’s comparison of one kind of query, against a Google total OpenAI did not source.",
-      "imply": "Do not put 20 percent on a slide as Google’s lost market share, or as the share of searches that never reach a publisher. The Verge’s definition is a ChatGPT query that triggers a web search. Fry did not say where the Google side came from.",
-      "uses": [
-        "Write “20 percent of the volume, as OpenAI defined a search on Monday and The Verge reported on 3 November. Source of Google’s volume: not stated.”",
-        "If someone treats the figure as ad revenue, or as referrals a site lost, stop there. The Verge does not give either number. Fry’s ad lines are that ads have not hurt usage, in his telling, and that OpenAI could do more of them.",
-        "The canvas line is a product direction. It is not a date for a new model, and the piece does not name one."
-      ],
-      "example": "A search lead asked whether ChatGPT has taken a fifth of Google writes the sentence The Verge actually supports: Fry said web-search queries in ChatGPT equal 20 percent of Google’s volume, and he did not name Google’s source. The note underneath says this is not market share, and not a count of clicks a publisher lost.",
-      "audience": "Anyone who budgets search, ads or referrals, and anyone who has to correct a chart that treats 20 percent as Google’s lost share.",
-      "watch": "Whether OpenAI or a filing prints the Google total, the time window, or a definition that matches the Monday event. Whether the sponsored images Fry pointed to change what a commercial query returns. The piece does not say the model changed.",
-      "source": {
-        "title": "The Verge: OpenAI says ChatGPT is catching up to Google in search, 3 November 2026",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search",
-        "quote": "Ads have not negatively impacted the product or the usage of the product"
-      }
-    },
-    {
-      "id": "meta-dollar-bond",
-      "topic": "money",
-      "theme": "Meta priced five dollar notes on 3 November. Reuters calls the sale $15 billion. Settlement on the sheet is 5 November",
-      "changed": "On Tuesday 3 November 2026 Meta Platforms published a pricing term sheet, an issuer free writing prospectus under registration number 333-295425, relating to a preliminary prospectus supplement of the same day. The sheet lists five senior notes. The 2031 notes are $3,250,000,000 at a 5.850% coupon, offered at 99.998% of principal, yield 5.850%, due 15 November 2031. The 2033 notes are $3,250,000,000 at 6.250%, offered at 99.778%, yield 6.289%, due 15 November 2033. The 2036 notes are $4,000,000,000 at 6.550%, offered at 99.982%, yield 6.552%, due 15 November 2036. The 2046 notes are $1,750,000,000 at 7.350%, offered at 99.903%, yield 7.359%, due 15 November 2046. The 2056 notes are $2,750,000,000 at 7.500%, offered at 99.629%, yield 7.531%, due 15 November 2056. The trade date on the sheet is 3 November 2026. The settlement date is 5 November 2026, T+2. The sheet says delivery against payment is expected on or about 5 November. The ratings line prints Aa3/Stable (Moody’s) and AA-/Negative (S&P). The sheet says a securities rating is not a recommendation to buy, sell or hold, and may be revised or withdrawn. Reuters, on 3 November, said Meta is raising $15 billion through a five-part dollar offering to help finance AI infrastructure, and it named the 2031 and 2033 notes at 5.85% and 6.25%, from a regulatory filing. Reuters also said Meta sold $25 billion of investment-grade bonds in April and $30 billion last year, and that Meta has said it expects capital expenditure of $135 billion to $145 billion this year, largely for AI. Earlier on 3 November, CNBC said Meta was seeking $20 billion to $25 billion, about two-thirds in dollars and one-third in euros, according to people familiar, and that Meta declined to comment. CNBC said final pricing was expected that afternoon.",
-      "matters": "The number to use for the dollar sale is the sheet’s five notes, which Reuters calls $15 billion. The $20 billion to $25 billion was a morning target that included euros, and this sheet is not that target.",
-      "imply": "Do not add the euros CNBC described onto the $15 billion. Do not tell a board the cash arrived on 3 November. The sheet says settlement is 5 November. Do not call Aa3, or AA-, a judgment that the AI spend will pay off. The sheet says a rating is not a recommendation.",
-      "uses": [
-        "Quote a tranche from the sheet, not from memory. The five principals are $3,250,000,000, $3,250,000,000, $4,000,000,000, $1,750,000,000 and $2,750,000,000. Coupons are 5.850%, 6.250%, 6.550%, 7.350% and 7.500%. Reuters’s $15 billion is Reuters’s total for the five-part dollar sale. The sheet does not print that total.",
-        "Keep CNBC’s $20 billion to $25 billion in a separate sentence, with “people familiar,” “including euros,” and “Meta declined to comment.” It is earlier the same day. It is not a revision of the sheet.",
-        "The April $25 billion and last year’s $30 billion are Reuters’s account of older sales. They are not on this sheet. Capex of $135 billion to $145 billion is what Reuters says Meta has said it expects this year. It is not the amount borrowed on 3 November."
-      ],
-      "example": "A treasurer asked what Meta borrowed on Tuesday reads the sheet, not the morning headline. Five dollar notes, trade date 3 November, settlement 5 November. Reuters calls that offering $15 billion. The $20 billion to $25 billion figure is CNBC’s earlier target, from people familiar, and it included euros that are not on this sheet.",
-      "audience": "Anyone who compares a cloud or model bill with how the buyer is funding it, or who has to say what “Meta raised $25 billion” referred to on Tuesday.",
-      "watch": "Whether the notes settle on 5 November. Whether a euro sale prices, and at what size. Whether Moody’s or S&P changes the ratings printed on the sheet. Whether a later filing ties these notes to a named data center. The model line did not change with the sheet.",
-      "source": {
-        "title": "Meta Platforms pricing term sheet, free writing prospectus, 3 November 2026",
-        "url": "https://pubt.io/view/77EFB712630EAB11B7FAFC4915874A022B9F51EB",
-        "quote": "It is expected that the delivery of the notes will be made against payment therefor on or about November 5, 2026"
-      }
-    },
-    {
-      "id": "qwen-reads-weights",
+      "id": "images-2-6",
       "topic": "tools",
-      "theme": "On a laptop, Qwen 3.8 27B named three of four tiny game networks from their weights, and missed one",
-      "changed": "On Tuesday 3 November 2026 Simon Willison wrote that Qwen 3.8 27B, running on his laptop, could name a game from the raw weights of a small network, with no code and no calculator. He was trying one test from a paper he says appeared the day before, “Sparks of Weight-Space Programming,” by Rikiya Takehi, Jayden Teoh, Alex Zhang and Omar Khattab. Willison says the paper trained four networks on simplified 10 by 10 versions of Breakout, Pong, Pac-Man and Freeway, then asked a model which game the weights belonged to. The prompt, which he quotes, says there are no tools and no code execution. He says the prompts differ only in the weights. On his laptop, through LM Studio, Qwen 3.8 27B is the 17GB copy he uses. The default context of 8,192 failed. Pac-Man took 46 minutes 12 seconds and 43,506 reasoning tokens. The model’s last lines called it a simplified Pac-Man-style grid, described an 8 by 8 maze, and printed confidence of 72%. Pong took 1 hour 4 minutes 54 seconds. The model called it a Pong-like paddle game and printed 75%. Breakout took 52 minutes 25 seconds. The model called it Breakout, or an Arkanoid-like game, and printed 88%. Freeway was wrong. Willison says the model called it “A simplified Pac-Man-like grid game: agent moves 4-directionally,” and that he gives no time and no confidence for that run. He also ran Kimi K3.1 Pro, through OpenRouter, on the Breakout prompt only. It named Breakout after 9 minutes 41 seconds and 19,493 reasoning tokens. He says Matthew Honnibal called the paper misleading for mixing the no-tools question with a second one, in which a model that is allowed to run code edits weights. He says Sean Goedecke took apart the paper’s Qwen edit as the steps a human researcher would take. He quotes the paper’s abstract on that second claim: GPT-6 Astra, without environment feedback, edits 0.016% of the weights of Qwen3.5-0.8B and, with the same sampling settings, raises MATH-500 from 7.9% to 48.1%. He did not rerun that edit. His own last line is that he is not ready to say machines are now editing their own weights in ways nobody can follow.",
-      "matters": "A laptop model named three toy games from a list of numbers. That is not the same claim as a model rewriting another model’s math skill.",
-      "imply": "Do not tell a security review that Qwen, or Astra, can safely inspect or patch a production model because of this post. Willison’s runs are four tiny game networks, one model, no tools, three names right and one wrong. The MATH-500 move is the paper’s claim about Astra, and he did not repeat it.",
+      "theme": "Images 2.6 is in ChatGPT and Codex. Six seconds is Flare at low quality, and 50 percent does not name the earlier model",
+      "changed": "On Wednesday 4 November 2026 OpenAI published “Introducing Images 2.6.” The post says Images 2.6 is in ChatGPT, Codex and the API. It says people around the world now create 4 billion images per week across those three, and that on average that is more than half a billion images a day. It says Images 2.6 generates images 50 percent faster than before. It does not name the earlier model. In the API the post offers GPT-Image-2.6 Flare and GPT-Image-2.6 Sunburst. When quality is set to low, Flare can generate images in as little as six seconds. For work that needs greater detail, Sunburst is the model the post describes as higher quality, and as more consistent across edits, when quality is set to medium or high. The post also says Flare improves layout quality for posters, product imagery and other professional visuals. GIFs are part of the release. Image markup, which the post says is already in ChatGPT, comes to the API, so a team can mark the place to change. SVG export is in the API. A new complexity setting is separate from quality. The post says lower complexity suits quick edits, and it recommends low complexity for most editing, with medium or high when a scene has many elements or constraints. Images 2.6 is available globally, the post says, today, in ChatGPT and Codex, across all subscription tiers, on desktop, mobile and web. The two API models are available. The post points to a pricing page and does not print a price. It points to a system card for the safety evaluations. This edition did not use that card.",
+      "matters": "Six seconds and 50 percent faster are two different sentences. Six seconds is Flare with quality set to low. Fifty percent does not say faster than which model.",
+      "imply": "Do not put six seconds on a brief as the time for Sunburst, or for Flare at a higher quality. Do not tell finance that 4 billion images a week began on 4 November. The post says people now create that many. It does not say the count started with this launch.",
       "uses": [
-        "If a slide says a model “read the weights,” say which test. Willison’s laptop test is the name-the-game prompt. Pac-Man was 72% and 46 minutes 12 seconds. Pong was 75% and 1 hour 4 minutes 54 seconds. Breakout was 88% and 52 minutes 25 seconds. Those percents are what the model printed. Freeway was a wrong name.",
-        "Keep the paper’s 0.016% edit, and the move from 7.9% to 48.1% on MATH-500, in a second sentence, labeled as the abstract Willison quotes. He did not run it. Kimi’s 9 minutes 41 seconds is one Breakout call on OpenRouter, not a fourth laptop result.",
-        "The post says a person with a notepad could get there. It is a reason to read the trace, not a reason to hand a weight file to an agent and skip review."
+        "Write the speed line as two facts. Images 2.6 is 50 percent faster than before, and the 4 November post does not name before. Flare, with quality set to low, can take as little as six seconds.",
+        "If a workflow needs the same character or product across edits, the post points to Sunburst at medium or high quality. It does not give Sunburst a time.",
+        "Markup, SVG and GIFs are in the post. A price is not. The post says to see the pricing page. Do not invent one from the 50 percent."
       ],
-      "example": "An engineer who saw a post claiming models can now rewrite other models opens Willison’s page before repeating it. The laptop run named three of four games and missed Freeway. The confidence numbers are the model’s. The weight edit that raises MATH-500 from 7.9% to 48.1% is the paper’s claim about GPT-6 Astra, and this post does not show that edit being repeated.",
-      "audience": "Anyone who evaluates a model, reviews an agent that can see a checkpoint, or has to say whether a viral weight-editing claim was actually rerun.",
-      "watch": "Whether the authors, or someone else, publish the editing run on a model a team can download, with the 0.016% and the 7.9% to 48.1% tied to a named file. Whether Willison’s Freeway miss, or the 8 by 8 lines against the paper’s 10 by 10, gets a correction. Nothing in the post says a product model changed.",
+      "example": "A brand team asked whether the new image model makes a finished frame in six seconds writes the sentence the post supports. That time is Flare, with quality set to low. Sunburst is the model OpenAI describes for detail and for consistency across edits. The 50 percent is “faster than before,” and the post does not name before.",
+      "audience": "Anyone who generates or edits images in ChatGPT, Codex or the API, and anyone who has to say what “50 percent faster” was measured against.",
+      "watch": "Whether a later note names the model in the 50 percent line, or prints a time for Sunburst. Whether the pricing page changes which of the two a team can afford to loop. The chat models named on the frontier strip did not change in this post.",
       "source": {
-        "title": "Simon Willison: Qwen 3.8 27B on my laptop can interpret model weights, too, 3 November 2026",
-        "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
-        "quote": "I’m not ready to declare that the age of source code is over and our future involves incomprehensible machines editing their own model weights in incomprehensible ways."
+        "title": "OpenAI: Introducing Images 2.6, 4 November 2026",
+        "url": "https://openai.com/index/introducing-images-2-6/",
+        "quote": "When quality is set to low, Flare can generate images in as little as six seconds."
+      }
+    },
+    {
+      "id": "meta-conductor",
+      "topic": "work",
+      "theme": "Meta is buying Conductor. Cloud goes read-only on 13 November and starts deleting data on 20 November",
+      "changed": "On Wednesday 4 November 2026 Charlie Holtz published “Conductor is joining Meta.” The page says Conductor will keep working as normal until early next year, except Conductor Cloud, which shuts down over the next few weeks. The timeline on the page says that on Wednesday 4 November, new users can no longer sign up for Conductor or download the app. Existing free users cannot upgrade to a pro plan. Pro users can keep using pro features for free. On Friday 13 November, Conductor Cloud workspaces go read-only. Old chats can still be read, and data can still be exported. New messages cannot be sent. Active subscribers get a refund. On Friday 20 November, Conductor Cloud shuts down, and Conductor begins deleting Conductor Cloud user data. The page says to export before that date. A cloud workspace and its chats move to a Mac by a right-click and Transfer to local. A full archive is Settings, then Account, then Export data. Local Conductor continues to receive new models and critical bug fixes until early 2027. The page says Conductor has never sold or trained on user data, and still will not, and that all Conductor user data is deleted when the app shuts down in early 2027. It does not print a price, and it does not say what Meta will ship. TechCrunch, the same day, said Meta confirmed the acquisition and would not comment further or provide additional details. TechCrunch said the agents Conductor deploys are not built in-house. They come from labs including Anthropic and OpenAI. Axios, the same day, said financial terms were not disclosed.",
+      "matters": "The date that still lets someone act is 13 November for a last cloud message, and 20 November for cloud data. The Mac app is on a later clock.",
+      "imply": "Do not tell a team the desktop app ends on 20 November. That date is Conductor Cloud. Local Conductor keeps updates until early 2027, and the page does not name the day it stops. Do not tell them Meta published a price. TechCrunch says Meta confirmed the deal and did not add details.",
+      "uses": [
+        "If a workspace is in Conductor Cloud, the page’s own path is Transfer to local, or Settings, Account, Export data, before 20 November. On 13 November the cloud stops taking new messages.",
+        "Keep “Meta confirmed” in a separate sentence from the timeline. The timeline is Holtz’s page. The confirmation, and the refusal to add details, are what TechCrunch says Meta told TechCrunch.",
+        "The agents are not a new Muse model. TechCrunch says Conductor runs agents from other labs, including Anthropic and OpenAI. The announcement does not name a model."
+      ],
+      "example": "A lead who runs two coding agents in Conductor Cloud reads the timeline before the next sprint. On 13 November that workspace can still be read and exported, and it cannot take a new message. On 20 November Conductor begins deleting cloud user data. The Mac app is the one that continues, with model updates and critical fixes until early 2027.",
+      "audience": "Anyone with a Conductor Cloud workspace, and anyone who has to say whether a coding-agent tool they pay for still exists next month.",
+      "watch": "Whether Meta names a product, a price, or a day in early 2027. Whether the export still works on 19 November. The announcement does not say the Muse model line changed.",
+      "source": {
+        "title": "Conductor: Conductor is joining Meta, 4 November 2026",
+        "url": "https://www.conductor.build/announcement",
+        "quote": "I have big news: Conductor is joining Meta."
+      }
+    },
+    {
+      "id": "openai-pierre",
+      "topic": "work",
+      "theme": "OpenAI will acquire Pierre. The deal is not closed, and neither post prints a price",
+      "changed": "On Wednesday 4 November 2026 OpenAI said it will acquire Pierre Computer Company, Inc., the company behind Code Storage and a family of open-source developer tools. The post says that if you have browsed files or reviewed a change in the Codex app, you have already used Pierre’s Trees and Diffs libraries. Trees navigates a project’s files. Diffs shows what changed, and its Edit mode lets a reviewer fix a line where they see the problem. The post also names Highlights, a syntax highlighter Pierre recently released. Code Storage, the post says, lets apps store code and track its history using Git. After closing, customers can keep using Code Storage while OpenAI brings its features into Codex. Pierre’s open-source projects will remain open-source, and OpenAI says it will continue to contribute to them. Closing is subject to customary conditions, including regulatory approvals. Until closing, OpenAI and Pierre remain separate and independent companies. The post does not print a price. Axios, the same day, said OpenAI told Axios it will acquire Pierre, that financial terms were not disclosed, and that the open-source projects will remain open-source. Axios also writes that OpenAI says Pando, an in-house Git backend disclosed earlier in the week, reduced the time to push code changes by nearly 80 percent. The Pierre post names Pando. It does not print 80 percent.",
+      "matters": "Codex already uses Trees and Diffs. What is new is an agreement to buy the company, and that agreement has not closed.",
+      "imply": "Do not tell a developer that Code Storage now lives inside Codex. The post says that work comes after closing. Do not tell them the open-source libraries became proprietary on 4 November. The post says they stay open-source. Do not put a price on a slide. Neither the post nor Axios prints one.",
+      "uses": [
+        "Say “will acquire,” not “has acquired and folded in.” The post’s own last lines are regulatory approvals, and two companies that remain separate until closing.",
+        "If someone cites nearly 80 percent, label it as Axios saying that OpenAI says Pando did that. The Pierre announcement does not contain the figure, and this edition did not re-fetch the Pando post.",
+        "Trees and Diffs are already in the Codex app, on OpenAI’s account. That is not the same fact as Code Storage being inside Codex."
+      ],
+      "example": "A platform lead asked whether Codex replaced GitHub on Wednesday writes a narrower sentence. OpenAI agreed to buy Pierre. Trees and Diffs are already what the Codex app uses to browse files and review a change. Code Storage is still Pierre’s, until closing, and the price was not disclosed.",
+      "audience": "Anyone who stores code that an agent writes, or who has to say whether Codex and GitHub are the same system this week.",
+      "watch": "Whether regulators clear the deal, and whether Code Storage’s features then show up in Codex under a name a customer can point to. Whether the open-source repositories keep taking contributions. The model line did not change with the announcement.",
+      "source": {
+        "title": "OpenAI: OpenAI to acquire Pierre Computer Company, Inc., 4 November 2026",
+        "url": "https://openai.com/index/openai-to-acquire-pierre/",
+        "quote": "Until closing, OpenAI and Pierre will remain separate and independent companies."
+      }
+    },
+    {
+      "id": "terawulf-backstop",
+      "topic": "money",
+      "theme": "Google will backstop parts of Anthropic’s Kentucky leases. The 8-K does not print $19 billion",
+      "changed": "On Wednesday 4 November 2026 TeraWulf filed a current report. Item 1.01 says that on that day the company entered into three credit support agreements, for buildings CB-1, CB-2 and CB-3, with Raylan Data LLC, Justified DataPower LLC, Anthropic and Google LLC. Google agreed to backstop certain obligations of Anthropic under those leases. Each backstop becomes effective on the commencement date for the final data hall of that building. It ends on conditions in the agreements, including Anthropic, or an affiliate that has guaranteed the lease, achieving and maintaining certain investment-grade ratings for at least three months. If Anthropic misses a payment, or is in an insolvency event, then after notice from Raylan, Google can pay all rent currently due and assume the lease as tenant, or, under certain circumstances, pay a termination fee. If Google pays that fee, it is entitled to an equity interest in Raylan. Google may defer the choice for a specified period. During the deferral it pays unpaid rent and further rent that comes due. The filing says the termination fee amortizes over a defined term. It does not print the fee, or the length of the deferral. The leases themselves, the filing says, were signed in July 2026, for 20 years, for approximately 401 megawatts of critical IT load at Hawesville, Kentucky. Delivery is expected in phases beginning in late 2027 and concluding in the second quarter of 2028. Rent starts when each data hall is delivered. Item 1.01 does not print a dollar total. The press release furnished as Exhibit 99.1 says the agreements support debt financing of approximately $19 billion of contracted lease commitments with Anthropic. The same release says TeraWulf signed a definitive engineering and construction agreement with Fluor on a guaranteed-maximum-price basis, and that the price is being established as engineering and procurement progress. It does not print that price. Item 8.01 says the leases were amended on 4 November, in connection with the backstop, and does not print the amendments.",
+      "matters": "About $19 billion is the press release’s figure for the lease commitments. It is not a cheque from Google on 4 November, and the 8-K does not print a cap on what Google may have to pay.",
+      "imply": "Do not tell a board the Kentucky campus is online, or that Google has taken Anthropic’s place as tenant. Delivery is expected from late 2027. Assuming the lease is an option after a missed payment or an insolvency event. The backstop for each building starts when that building’s final data hall commences, not on 4 November.",
+      "uses": [
+        "Quote the megawatts from Item 1.01: approximately 401 megawatts, 20 years, three buildings, delivery expected from late 2027 through the second quarter of 2028. Quote the dollars from the press release: approximately $19 billion of contracted lease commitments. Say which document each number is in.",
+        "The backstop is an option to pay rent and assume the lease, or in some cases to pay a termination fee and take equity in Raylan. The fee is not a number in the filing.",
+        "Fluor’s price is not set in the release. The July lease is the filing’s background. It is not a lease signed on 4 November."
+      ],
+      "example": "A treasurer asked what Google paid Anthropic on Wednesday opens the 8-K first. Google agreed to backstop certain rent obligations, later, building by building, once the final data hall of that building starts. The approximately $19 billion is TeraWulf’s press release, for the lease commitments the financing is meant to support. It is not a wire on 4 November.",
+      "audience": "Anyone who has to say what “Google is behind Anthropic’s data center” means in cash, and when.",
+      "watch": "Whether a later filing prints the termination fee, the deferral, or the lease amendments. Whether a building’s final data hall is actually commenced, which is when that backstop starts. Whether Anthropic, or a guarantor, holds the investment-grade ratings for three months, which is one way the filing says the backstop can end. No model name changed with the agreements.",
+      "source": {
+        "title": "TeraWulf Form 8-K, 4 November 2026",
+        "url": "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001628280-26-069810/0001628280-26-069810.pdf",
+        "quote": "Google agreed to backstop certain obligations of Anthropic under the Justified Leases."
+      }
+    },
+    {
+      "id": "siri-ai-preview",
+      "topic": "rules",
+      "theme": "Siri AI is open to every developer in the 27.3 betas. The App Store comes in the spring",
+      "changed": "On Tuesday 3 November 2026 Apple’s developer news said a Developer Preview lets any developer integrate an app with Siri AI, starting that day in the iOS 27.3, iPadOS 27.3, macOS 27.3 and visionOS 27.3 betas. An app brings its content and actions in through App Intents. The post’s examples are checking a delivery, booking a reservation and placing an order. Skills let a developer teach Siri AI to combine several actions into one experience. Siri AI can surface any entity in the Spotlight semantic index, not only entities that already fit a schema. Apple says it has started rolling the same kind of actions out across its own apps, including Mail, Maps, Photos, Safari, Files and Finder, and gives as examples finding a coffee shop visited last week and archiving files that have not been opened in over a year. The post says the preview is early access before the feature first ships to customers in a few months, and that submission to the App Store opens in the spring. It says terms and usage policies will follow. A note on the same page says Siri AI is in beta on those systems and on watchOS 27.3, on an Apple Intelligence device set to a supported language. The languages listed are English, French, Japanese, Korean, Portuguese and Spanish. The note says Siri AI is currently unavailable in the EU in iOS, iPadOS and watchOS. It says Siri AI is not available for users under 13. It says features that rely on server-side models, including Siri AI, are subject to daily usage limits, and that expanded access will be available for a fee in the future. It does not print the limit or the fee.",
+      "matters": "A developer can try this in a beta. A customer on the App Store does not get a third-party Siri AI action from this preview yet.",
+      "imply": "Do not tell a product manager that Siri can place an order in the live app today. The post’s clock for customers is a few months, and the App Store opens in the spring. Do not tell a team shipping to the EU that the iPhone build includes it. The page says it does not, on iOS, iPadOS and watchOS. Do not invent the daily limit. The page does not print one.",
+      "uses": [
+        "Write the status as “developer preview, 3 November 2026, in the 27.3 betas named on the page. Customers in a few months. App Store submission in the spring. Terms still to come.”",
+        "The actions only exist if the app exposes them through App Intents. The post does not say Siri AI reads an app that has not done that work.",
+        "Under 13 is excluded. The EU exclusion, as written, is iOS, iPadOS and watchOS. Daily limits apply, and a future fee is mentioned, with no number on either."
+      ],
+      "example": "An app lead who wants Siri to book a table from the live iPhone app reads the date on the page before promising it. The preview is in the betas. The post says customers come in a few months, and the App Store in the spring. An iPhone in the EU is outside the note’s availability line.",
+      "audience": "Anyone who ships an iPhone, iPad or Mac app, and anyone who has to say whether a customer can already ask Siri to use it.",
+      "watch": "Whether Apple prints the daily limit, the fee, and the terms it said would follow. Whether the EU line moves. Whether “a few months” becomes a version number. This preview is not the China release that calls Qwen from Apple Intelligence.",
+      "source": {
+        "title": "Apple Developer: Siri AI is now open to all developers, 3 November 2026",
+        "url": "https://developer.apple.com/news/?id=gdk2umrf",
+        "quote": "This preview provides early access before first shipping to customers in a few months."
+      }
+    },
+    {
+      "id": "kimi-k31-weights",
+      "topic": "tools",
+      "theme": "Kimi K3.1 Pro’s weights are public. A hosted service over $20 million in twelve months needs a separate deal",
+      "changed": "On Wednesday 4 November 2026 the Kimi.ai account posted “Releasing the model weights of Kimi K3.1 Pro,” and linked the Hugging Face repository moonshotai/Kimi-K3.1-Pro. The model card calls it an open-weight, natively multimodal model, the first in the K3.1 series, post-trained from Kimi K3. The card’s table says 2.8 trillion total parameters, 104 billion activated, 896 experts of which 16 are selected per token, plus 2 shared experts, and a context length of 1,048,576. Quantization is MXFP4 weights and MXFP8 activations, from quantization-aware training. Modality on the card is text and image. The card says the API name on platform.kimi.ai is kimi-k3.1-pro, and it names vLLM, SGLang and TokenSpeed. The licence file in the repository is the Kimi K3.1-Pro License. It grants use, copying, modification and sale, including running and fine-tuning, subject to conditions. If the licensee or its affiliates operate a model as a service, defined as giving a third party language-model inference or fine-tuning with meaningful control over the inputs, parameters or training data, and if their aggregate revenue exceeds 20 million US dollars in any consecutive 12 months, they must enter a separate agreement with Moonshot AI before using the software, or a derivative, for any commercial purpose. If a commercial product has more than 100 million monthly active users, or more than 20 million US dollars of monthly revenue, the name Kimi K3.1-Pro must be displayed prominently. The licence says those two sections do not apply to internal use that does not make the software, its outputs or its capabilities available to third parties, or to use through Moonshot’s official products or certified inference partners. The card’s Terminal-Bench 4.0 cell is 65.7. The footnote says that Kimi figure was run with the Claude Code harness.",
+      "matters": "The weights are a file. The licence is not a blank cheque for a hosted API once revenue crosses 20 million dollars in a twelve-month stretch.",
+      "imply": "Do not tell a platform team that selling access to these weights is covered by the grant after that revenue line. The licence says a model-as-a-service business over 20 million dollars in any consecutive 12 months needs a separate agreement before commercial use. Do not quote 65.7 as a score from Kimi’s own harness. The footnote says Claude Code.",
+      "uses": [
+        "For a download, use the card’s own table: 2.8 trillion total, 104 billion active, context 1,048,576, text and image, MXFP4 weights and MXFP8 activations. The API name on the card is kimi-k3.1-pro.",
+        "For a hosted product, read section 2 of the licence before the grant. Model as a service, over 20 million US dollars of aggregate revenue in any consecutive 12 months, needs a separate agreement. Internal use is carved out. So is use through Moonshot’s own products or a certified partner.",
+        "The 100 million monthly users, or 20 million dollars of monthly revenue, is a display rule for the name. It is not the same test as the hosted-service agreement."
+      ],
+      "example": "A team that wants to host Kimi K3.1 Pro for customers opens the licence file in the repository before the model card’s benchmark table. Under 20 million dollars of aggregate revenue in a twelve-month stretch, the grant’s hosted-service condition is not the one that forces a separate agreement. Over that line, the licence says the agreement comes first. The 65.7 on Terminal-Bench 4.0 is the card’s number, run, the footnote says, with Claude Code.",
+      "audience": "Anyone who was waiting on the weights Moonshot said would follow the October API release, and anyone who has to say whether hosting them for other people is already licensed.",
+      "watch": "Whether Moonshot names the certified inference partners the licence mentions. Whether a later card revises the harness on the 65.7. The weights post does not say the API price changed.",
+      "source": {
+        "title": "Kimi K3.1-Pro License, Hugging Face repository moonshotai/Kimi-K3.1-Pro",
+        "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/LICENSE",
+        "quote": "If the Licensee or any of its affiliates operates a Model as a Service business, and the aggregate revenue of the Licensee and its affiliates exceeds 20 million US dollars (or the equivalent in other currencies) in total over any consecutive 12 months, the Licensee must enter into a separate agreement with Moonshot AI before using the Software or its derivative works for any commercial purpose."
+      }
+    },
+    {
+      "id": "flashprove",
+      "topic": "trust",
+      "theme": "FlashProve can prove one token of an integer model. The 2 November post does not put it on Claude",
+      "changed": "On Monday 2 November 2026 Anthropic’s Frontier Red Team published “Progress on provable inference for large language models” and released FlashProve, a prototype, under the Apache 2.0 licence, with code, a technical report and Lean proofs. The post says a provider can publish a short commitment to one set of weights, then a proof that those weights produced stated output tokens on a stated prompt. The weights stay hidden. The architecture is not hidden. The system that was measured is Llama 4 Maverick, a 400 billion parameter mixture of experts, about 17 billion parameters used per token, on the public 4-bit weights. The evaluation says the prover runs on one H100 and 24 CPU cores. The offline step takes about 39 minutes, and the resulting commitment is good for about 16 million requests. A batch of 24 requests takes about 223 seconds, which the post calls 110 tokens per second, and each proof is 18.78 megabytes. The client downloads a commitment of about 6.5 megabytes. Checking a proof takes 17 seconds on 24 threads and 21 seconds on a single thread. Each proof checks one token. The post says the system currently proves contexts of up to 1,024 tokens. It says the proof is of an integer model under greedy decoding. A floating-point reply, or a sampled reply, can leave the computation that was proved. It says there is no formal guarantee that the fast C++ verifier matches the Lean verifier. It says the C++ verifier agreed with the Lean verifier on every proof in their tests. The post calls the release intermediate progress, not a completed research agenda. It does not say Claude responses carry these proofs.",
+      "matters": "A receipt that a named model wrote a reply is what the prototype is for. The receipt that was measured is not a Claude receipt. It is one open model, one token at a time, on a greedy integer run, and the proof is 18.78 megabytes.",
+      "imply": "Do not tell a security review that FlashProve is on the Claude API, or that it covers a normal sampled chat. The post’s limit is greedy decoding of an integer model, and a context of up to 1,024 tokens. Do not treat the fast verifier as the one Lean proved. The post says the formal guarantee is on the slow Lean verifier.",
+      "uses": [
+        "If a slide says a lab can now prove which model answered, name the model that was measured. The evaluation is Llama 4 Maverick, 4-bit, one H100, 110 tokens per second on a batch of 24, and 18.78 megabytes a proof.",
+        "The check time to quote is 17 seconds on 24 threads, or 21 seconds on one thread. That is the evaluation’s verifier, not a phone, and not the time to generate the proof.",
+        "Keep the vLLM comparison in its own sentence. The post says proving a batch of 24 took about 72 times as long per GPU as vLLM on the same 24 requests at once, across a range of 66 to 77, and about 94 times as long at the highest load they tried. That is overhead, not a quality score."
+      ],
+      "example": "A buyer who wants every Claude reply signed opens the 2 November post before writing that into a contract. FlashProve is a prototype on Llama 4 Maverick. A proof in the evaluation is 18.78 megabytes and checks one token of an integer, greedy run. The post does not say Claude attaches these proofs.",
+      "audience": "Anyone who has to say whether a model provider can show that the model named in the contract is the model that answered, and anyone reviewing a claim that this is already on Claude.",
+      "watch": "Whether a later release attaches proofs to a named Claude model, lengthens the 1,024-token context, or covers sampled decoding. Whether the C++ verifier is brought under the Lean proof. Nothing in the post says a production model changed.",
+      "source": {
+        "title": "Anthropic: Progress on provable inference for large language models, 2 November 2026",
+        "url": "https://www.anthropic.com/research/provable-inference",
+        "quote": "This research post is meant to share intermediate progress, and not a completed research agenda."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Search stays tied to AI",
-        "body": "Google will turn Search and Gemini off for K-12 students until a school turns them on. Search still includes AI."
+        "title": "Six seconds is one setting",
+        "body": "Images 2.6 is in ChatGPT and Codex. Flare, at low quality, can take as little as six seconds."
       },
       {
-        "title": "Twenty percent, source unnamed",
-        "body": "OpenAI says ChatGPT web searches equal 20% of Google’s volume. Fry did not name Google’s source."
+        "title": "Cloud data ends on the 20th",
+        "body": "Meta is buying Conductor. Cloud goes read-only on 13 November and deletion starts on 20 November."
       },
       {
-        "title": "Five notes, settle on the 5th",
-        "body": "Meta priced five dollar notes on 3 November. Reuters calls the sale $15 billion. Settlement is 5 November."
+        "title": "Pierre has not closed",
+        "body": "OpenAI will acquire Pierre. The companies stay separate until closing. Neither post prints a price."
       }
     ],
     "matters": [
       {
-        "title": "No plain Search on the menu",
-        "body": "Phillips said a school that wants AI off will not have Search. NBC says Search can be on without the Gemini apps."
+        "title": "The backstop is not cash today",
+        "body": "Google’s backstop starts when a building’s final data hall does. Item 1.01 does not print $19 billion."
       },
       {
-        "title": "The morning target included euros",
-        "body": "CNBC said people familiar expected $20 billion to $25 billion, with euros. That target is not the dollar sheet."
+        "title": "The App Store is later",
+        "body": "Siri AI’s developer preview is in the 27.3 betas. Customers are a few months out. The spring is the App Store."
       },
       {
-        "title": "Three names, one miss",
-        "body": "Qwen on a laptop named Pac-Man, Pong and Breakout from raw weights. It called Freeway a Pac-Man game."
+        "title": "Hosting has a revenue line",
+        "body": "Kimi’s weights are public. A model-as-a-service over $20 million in twelve months needs another agreement."
       }
     ],
     "watch": [
       {
-        "title": "The blog has no start date",
-        "body": "Google says more specifics are coming before the school controls roll out. Phillips told Education Week early next year."
+        "title": "Fifty percent, model unnamed",
+        "body": "OpenAI says Images 2.6 is 50 percent faster than before. The post does not say faster than which model."
       },
       {
-        "title": "The confidence is the model’s",
-        "body": "Willison’s 72%, 75% and 88% are what Qwen printed. They are not a scored accuracy, and Freeway was wrong."
+        "title": "The proof is not on Claude",
+        "body": "FlashProve’s measured proof is 18.78 megabytes, for one integer token. The post does not put it on Claude."
       },
       {
-        "title": "The edit was not rerun",
-        "body": "The paper’s claim that Astra lifted MATH-500 from 7.9% to 48.1% is not a result Willison repeated."
+        "title": "The fee is not a number",
+        "body": "If Google pays the termination fee it can take equity in Raylan. The 8-K describes the fee and does not price it."
       }
     ]
   },
   "chips": [
-    "Google",
-    "Gemini",
     "OpenAI",
-    "ChatGPT",
+    "Images",
     "Meta",
-    "Reuters",
-    "Qwen",
-    "Simon Willison"
+    "Conductor",
+    "Pierre",
+    "Google",
+    "TeraWulf",
+    "Apple",
+    "Kimi",
+    "FlashProve"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Google education blog, 3 Nov: Gemini, Gemini Notebook, Gemini in Classroom and Google Search stay off for K-12 student accounts until an administrator turns them on. No date on the post. Education Week: Phillips, at a 2 Nov meeting, said a school that wants AI off will not have Search, and that the change starts early next year. NBC: a later statement the same day allows Search without the Gemini apps, and Search still includes AI. Guided Learning in Classroom starts 3 Nov. Search pilot in select U.S. schools later this month. Not a new model.",
-      "topic": "Rules"
+      "raw": "OpenAI, 4 Nov: Images 2.6 is in ChatGPT, Codex and the API, all tiers. 4 billion images a week, and on average more than half a billion a day. 50 percent faster than before, earlier model not named. Flare at low quality: as little as six seconds. Sunburst is the detail model at medium or high quality. No price in the post. Not a new chat model.",
+      "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "The Verge, 3 Nov: Adam Fry, at a Monday press event, said ChatGPT’s web-search query volume equals 20% of Google’s. He counts a query that triggers a web search. He did not name the source of Google’s figure. He said ads have not hurt usage. Not market share, and not a new model.",
+      "raw": "Charlie Holtz, 4 Nov: Conductor is joining Meta. No new sign-ups that day. Conductor Cloud read-only 13 Nov. Shutdown and cloud-data deletion begins 20 Nov. Local app gets model updates and critical fixes until early 2027. TechCrunch: Meta confirmed and gave no further details. Price not disclosed. Not a new Muse model.",
       "topic": "Work"
     },
     {
       "id": "s3",
-      "raw": "Meta pricing term sheet, 3 Nov, registration 333-295425. Five notes: $3,250,000,000 at 5.850% due 2031; $3,250,000,000 at 6.250% due 2033; $4,000,000,000 at 6.550% due 2036; $1,750,000,000 at 7.350% due 2046; $2,750,000,000 at 7.500% due 2056. Trade date 3 Nov. Settlement 5 Nov. Reuters calls the sale $15 billion. CNBC’s earlier $20–25 billion, including euros, was from people familiar. Meta declined to comment to CNBC. Not a new model.",
-      "topic": "Money"
+      "raw": "OpenAI, 4 Nov: will acquire Pierre Computer. Trees and Diffs already in the Codex app. Code Storage comes in after closing. Open source stays open. Closing needs regulatory approvals. Until then the companies stay separate. Axios: price not disclosed. Axios’s nearly 80 percent is about Pando, and it is not in the Pierre post.",
+      "topic": "Work"
     },
     {
       "id": "s4",
-      "raw": "Simon Willison, 3 Nov: Qwen 3.8 27B on a laptop, no tools. Pac-Man in 46m 12s and 43,506 reasoning tokens, model confidence 72%. Pong in 1h 4m 54s, 75%. Breakout in 52m 25s, 88%. Freeway wrong. The paper’s Astra edit, 0.016% of weights and MATH-500 from 7.9% to 48.1%, is the abstract he quotes. He did not rerun it.",
+      "raw": "TeraWulf 8-K, 4 Nov: three Google credit-support agreements, CB-1, CB-2, CB-3. Backstop of certain Anthropic lease obligations, effective at each building’s final data hall. About 401 MW, 20-year leases from July 2026, delivery expected late 2027 through Q2 2028. Press release: about $19 billion of contracted lease commitments. Termination fee not numbered. Not cash on 4 Nov.",
+      "topic": "Money"
+    },
+    {
+      "id": "s5",
+      "raw": "Apple Developer, 3 Nov: Siri AI developer preview in the iOS, iPadOS, macOS and visionOS 27.3 betas, via App Intents. Customers in a few months. App Store submission in the spring. Not in the EU on iOS, iPadOS and watchOS. Not for users under 13. Daily limits, number not printed. Not the China Qwen release.",
+      "topic": "Rules"
+    },
+    {
+      "id": "s6",
+      "raw": "Kimi.ai, 4 Nov: weights of Kimi K3.1 Pro on Hugging Face. Card: 2.8T total, 104B active, context 1,048,576, text and image, MXFP4 weights and MXFP8 activations. Licence: model-as-a-service over $20 million in any consecutive 12 months needs a separate agreement. Terminal-Bench 4.0 on the card is 65.7, and the footnote says Claude Code.",
       "topic": "Tools"
+    },
+    {
+      "id": "s7",
+      "raw": "Anthropic, 2 Nov: FlashProve, Apache 2.0, a prototype. Llama 4 Maverick, 4-bit, one H100. Batch of 24: about 223 seconds, 110 tokens per second, each proof 18.78 MB. Check: 17 seconds on 24 threads. Integer greedy decoding, context up to 1,024 tokens. Fast verifier is not the Lean one. Not described as shipping on Claude.",
+      "topic": "Trust"
     }
   ]
 }
