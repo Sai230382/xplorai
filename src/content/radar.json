@@ -3734,11 +3734,83 @@
       "s": 3,
       "p": "Free and open source (MIT). You pay the model provider. Computer use needs Docker Desktop",
       "st": "active"
+    },
+    {
+      "n": "Phonon",
+      "w": "https://github.com/blixt/phonon",
+      "c": "Audio & Voice",
+      "tl": "Browser speech, with a start and end time for every word",
+      "d": "Phonon is a WebGPU runtime for Gradium’s Phonon 31M text-to-speech model, shown on Show HN on 4 November 2026. The README says Gradium did not make this runtime. It speaks 24 kHz English in Gradium’s English voices and streams the audio. It reports the start and end of every word from one of the model’s attention heads, and the README says those times are not a forced alignment. A first visit downloads 44.3 MB. The README says the large matrices are stored as int8, against an official package of 66.8 MB. On the author’s machines it runs at 115 times real time on an M3 Max, against 31 times for Gradium’s own browser package, and at 26 times against 13 times on an iPhone 17 Pro. First audio, once the runtime is initialized, is about 3 milliseconds on the M3 Max. Without WebGPU it falls back to WebAssembly on the CPU. The 31M English weights are Apache-2.0. The README says Gradium’s larger 40M models, which this runtime can also run, are not for commercial use. It does not expand numbers, dates or currency into words.",
+      "f": [
+        "English speech in the browser, with a time for every word",
+        "44.3 MB download. Large matrices stored as int8",
+        "Apache-2.0 for the 31M English model. The 40M models are not for commercial use",
+        "CPU fallback when WebGPU is missing"
+      ],
+      "u": [
+        "Highlighting each word as a page reads it aloud",
+        "Checking the README’s speed on the machine you already have",
+        "Keeping the 40M models out of a commercial page"
+      ],
+      "e": "A web page that speaks, and tells you when each word starts, from a file of about 44 MB.",
+      "s": 3,
+      "p": "Apache-2.0 for Phonon 31M English. You pay nothing to Gradium for that model. The 40M models are not for commercial use",
+      "st": "active"
+    },
+    {
+      "n": "Gauge",
+      "w": "https://github.com/gauge-sh/gauge-cli",
+      "c": "Agent Infrastructure",
+      "tl": "An open-source CLI that reruns coding agents against your docs",
+      "d": "Gauge is an MIT-licensed CLI, shown on Show HN on 4 November 2026, for testing how coding agents use a product. The README says the full loop runs locally with Docker and the agent subscription or API key you already have, and that a Gauge account is not required. It runs tasks, reads the transcript for where the agent got stuck, and lets you retest a change. Local mode supports Skills, SDKs, CLIs and files. The README says hosted compute is what adds docs, authenticated MCP servers and authenticated APIs. Transcripts are normalized from Claude Code, Codex, Pi and OpenCode. The install line on the Show HN post is npm i -g @withgauge/cli. The repository was created on 20 October 2026. The 4 November post is the open-source release of the CLI.",
+      "f": [
+        "Local loop in Docker. No Gauge account for that loop",
+        "Skills, SDKs, CLIs and files locally. Docs and signed-in APIs need hosted mode",
+        "Transcripts from Claude Code, Codex, Pi and OpenCode",
+        "MIT licence"
+      ],
+      "u": [
+        "Finding the doc line that sends an agent to a command you retired",
+        "Retesting a skill before you publish it",
+        "Keeping the run on your machine when the task is a local CLI"
+      ],
+      "e": "A CLI that watches a coding agent fail at your docs, then lets you try the fix.",
+      "s": 3,
+      "p": "Free and open source (MIT). Local runs use your own agent subscription or API key. Hosted compute is separate",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "4 November 2026",
+    "week": "5 November 2026",
     "launches": [
+      {
+        "name": "Phonon (github.com/blixt/phonon)",
+        "date": "4 November 2026",
+        "desc": "A browser runtime for Gradium’s Phonon 31M text-to-speech model, shown on Show HN on 4 November. The README says Gradium did not make it. It speaks 24 kHz English, streams the audio, and reports a start and end time for every word from one attention head. The README says those times are not a forced alignment. A first visit downloads 44.3 MB, with the large matrices stored as int8, against Gradium’s own browser package of 66.8 MB. On the machines in the README it runs at 115 times real time on an M3 Max, against 31 times for that package, and at 26 times against 13 times on an iPhone 17 Pro. First audio after initialization is about 3 milliseconds on the M3 Max. Without WebGPU it uses the CPU. The 31M English model is Apache-2.0. The README says the larger 40M models are not for commercial use, and that this runtime does not expand numbers or dates into words. The demo is at blixt.xyz/phonon.",
+        "why": "For a page that should highlight the word being spoken. The licence split is the part to read before a commercial page uses a 40M voice.",
+        "demo": {
+          "input": "One English sentence, and a voice from the 31M catalog",
+          "steps": [
+            "The page downloads the 44.3 MB file on the first visit",
+            "Speech streams, and each word arrives with a start and an end"
+          ],
+          "output": "Audio, plus times. The README says the times follow the model’s attention, not a forced alignment."
+        }
+      },
+      {
+        "name": "Gauge (github.com/gauge-sh/gauge-cli)",
+        "date": "4 November 2026",
+        "desc": "An MIT-licensed CLI for testing how coding agents use a product, shown on Show HN on 4 November by Evan of Gauge. The README says the loop runs locally in Docker, with the agent subscription or key you already pay for, and that a Gauge account is not required for that loop. You define a task, run it, read where the agent got stuck, change the doc or the skill, and run it again. Local mode supports Skills, SDKs, CLIs and files. The README says hosted compute is what adds docs, authenticated MCP servers and authenticated APIs. Transcripts are normalized from Claude Code, Codex, Pi and OpenCode. The install line on the Show HN post is npm i -g @withgauge/cli. The GitHub repository was created on 20 October 2026. The 4 November post is the open-source release.",
+        "why": "For a docs or developer-relations team that keeps finding agents on a command they retired. The local loop is the part you can run without an account.",
+        "demo": {
+          "input": "A task a coding agent should be able to do from your CLI",
+          "steps": [
+            "Gauge starts a fresh Docker session and runs the agent",
+            "You read the friction, change the doc, and run the task again"
+          ],
+          "output": "A second transcript. The README says hosted mode is what covers signed-in docs and APIs."
+        }
+      },
       {
         "name": "MachineMail (machinemail.dev)",
         "date": "3 November 2026",
@@ -3820,39 +3892,23 @@
             "Bowerbird indexes the file on the machine",
             "The answer cites a passage, and the quote is looked up in that passage"
           ],
-          "output": "A quoted line that is in the source, or an unverified mark if it is not."
-        }
-      },
-      {
-        "name": "modeljury (github.com/YasserManss/modeljury)",
-        "date": "1 November 2026",
-        "desc": "A free, MIT-licensed Python library, shown on Show HN on 1 November. Several models answer the same yes-or-no, or pick from a list you wrote. If they agree, the decision ships. If they do not, a person gets the dissent and the reason. The README’s five-model panel, on 2,850 decisions, ships 71% without review, and 89.6% of what ships is right. It says Claude Opus 5.5, at the same ship rate, is right 90.5% of the time, at about $5.79 per 1,000 decisions against about $0.61. It also says those panel figures are not yet confirmed on a fresh sample, and that Opus is more accurate overall, 83.1% against 80.1%. It needs Python 3.10 or newer.",
-        "why": "For a team that already sends a refund or a moderation call to one model. The useful part is the flag when the models disagree, and the caveat on the published score.",
-        "demo": {
-          "input": "A refund request, and the options approve, deny or escalate",
-          "steps": [
-            "Each juror picks one option and gives a reason",
-            "Disagreement sets needs-review and keeps the dissent"
-          ],
-          "output": "A decision that ships only if every juror agreed. The README’s 71% is that panel, not a promise for yours."
-        }
-      },
-      {
-        "name": "nonce (github.com/roe-ai/nonce)",
-        "date": "1 November 2026",
-        "desc": "An open-source gate, shown on Show HN on 1 November, between an agent and Gmail, Google Calendar, Google Drive and Slack. The README says the connections are read-only and the agent never holds the OAuth tokens. Every search is the grant’s filter AND the agent’s query, so the agent can narrow what you allowed and cannot widen it. In the default Standard mode, money, health and login data ask you first, and so does access longer than an hour. Passwords ask in every mode. The README says nonce cannot see the chat, so it cannot prove you asked. The licence is AGPL-3.0-only. On the project’s own 52-case bench, the README says its OpenAI detector caught 27 of 27 cases that should be stopped or brought to you, with 2 false alarms out of 25. A hosted copy is at anonce.io.",
-        "why": "For anyone about to connect an agent to a work inbox. The grant is a search filter with a clock, not a password handed to the model.",
-        "demo": {
-          "input": "When does my flight to Tokyo leave?",
-          "steps": [
-            "The agent asks for United mail about Tokyo, for 10 minutes",
-            "A later search for a bank statement does not fit, so the grant ends"
-          ],
-          "output": "The airline thread, if you allowed it. The README’s example says the bank search is revoked."
-        }
+        "output": "A quoted line that is in the source, or an unverified mark if it is not."
+      }
       }
     ],
     "funding": [
+      {
+        "company": "TeraWulf (Google backstop for Anthropic)",
+        "amount": "Backstop; dollar cap not in the 8-K",
+        "valuation": "n/a (credit support)",
+        "context": "Filed 4 November. Three credit support agreements, for buildings CB-1, CB-2 and CB-3 at Hawesville, Kentucky. Google agreed to backstop certain obligations of Anthropic under 20-year leases for approximately 401 megawatts. Each backstop starts when that building’s final data hall commences. Delivery is expected from late 2027 through the second quarter of 2028. The press release furnished with the 8-K says the financing supports approximately $19 billion of contracted lease commitments. Item 1.01 does not print that total, and it does not print the termination fee. Not cash paid on 4 November."
+      },
+      {
+        "company": "Conductor (acquired by Meta)",
+        "amount": "Not disclosed",
+        "valuation": "Not disclosed",
+        "context": "Announced 4 November by Charlie Holtz. TechCrunch said Meta confirmed the acquisition and would not comment further. Axios said financial terms were not disclosed. Conductor Cloud goes read-only on 13 November and shuts down on 20 November, when deletion of cloud user data begins. Local Conductor keeps new models and critical fixes until early 2027. Not a priced round, and not a new Muse model."
+      },
       {
         "company": "Meta",
         "amount": "$15B dollar notes",
@@ -3888,49 +3944,37 @@
         "amount": "$400M Series C",
         "valuation": "$3.8B",
         "context": "Announced 28 October and led by Bessemer Venture Partners, with Canapi Ventures as a new investor and existing investors including Greylock, Cyberstarts, Craft, Salesforce Ventures and TCV (Upwind; GlobeNewswire). Upwind says the round follows its $250 million Series B at a $1.5 billion valuation in January, that revenue has quadrupled in 2026, and that total funding is now over $800 million. It sells runtime security for cloud and AI workloads."
-      },
-      {
-        "company": "Meta (from Nvidia and AMD)",
-        "amount": "$4B ($3B Nvidia, $1B AMD)",
-        "valuation": "n/a (public share sale)",
-        "context": "Announced 27 October: Nvidia will invest $3 billion in Meta’s equity offering and AMD $1 billion, which CNBC reports as $4 billion together. Meta’s Monday plan was to raise $95 billion ($35 billion underwritten, then $60 billion sold over time). Monday also said Nvidia, AMD and Broadcom were interested in up to $5 billion of shares; Tuesday’s statements do not name Broadcom’s amount. Nvidia said Meta will expand Vera Rubin and Vera CPU use and deepen work on Muse; AMD said Helios racks are running at Meta and EPYC processors power Muse."
-      },
-      {
-        "company": "Bedrock Robotics",
-        "amount": "$600M Series C",
-        "valuation": "$4.1B",
-        "context": "Announced 26 October and co-led by CapitalG and Emergence Capital, bringing its total to nearly $1 billion since 2024 (TechCrunch). Bedrock makes a self-driving kit retrofitted onto excavators and other worksite vehicles; its autonomous excavators now work commercially at a Nevada water treatment site, aimed at a shortage of skilled operators."
       }
     ],
     "quotes": [
       {
-        "who": "Chris Phillips, Google education",
-        "text": "Search and AI are deeply integrated.",
-        "source": "Education Week, quoting a 2 November 2026 meeting, published 3 November"
+        "who": "Charlie Holtz, Conductor",
+        "text": "I have big news: Conductor is joining Meta.",
+        "source": "conductor.build, 4 November 2026"
       },
       {
-        "who": "Adam Fry, OpenAI",
-        "text": "Ads have not negatively impacted the product or the usage of the product",
-        "source": "The Verge, 3 November 2026"
+        "who": "OpenAI",
+        "text": "Until closing, OpenAI and Pierre will remain separate and independent companies.",
+        "source": "OpenAI, 4 November 2026"
       },
       {
-        "who": "Simon Willison",
-        "text": "I’m not ready to declare that the age of source code is over and our future involves incomprehensible machines editing their own model weights in incomprehensible ways.",
-        "source": "simonwillison.net, 3 November 2026"
+        "who": "Anthropic Frontier Red Team",
+        "text": "This research post is meant to share intermediate progress, and not a completed research agenda.",
+        "source": "Anthropic, on FlashProve, 2 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Search is not a plain switch",
-        "desc": "Google’s 3 November blog turns Gemini and Search off for K-12 students until an admin opts in. Phillips said Search and AI are deeply integrated. NBC says a later statement allows Search without the Gemini apps, and Search still includes AI."
+        "title": "Six seconds is one setting",
+        "desc": "Images 2.6 is in ChatGPT and Codex. Flare, with quality set to low, can take as little as six seconds. The 50 percent line does not name the earlier model."
       },
       {
-        "title": "Twenty percent, source unnamed",
-        "desc": "The Verge says Fry put ChatGPT’s web-search volume at 20% of Google’s. He did not say where Google’s number came from. It is not a market-share figure, and it is not a new model."
+        "title": "Two deals, neither is a closed product",
+        "desc": "Meta is buying Conductor, and the cloud dates are 13 and 20 November. OpenAI will buy Pierre, and the companies stay separate until closing. Neither announcement prints a price."
       },
       {
-        "title": "The notes settle on 5 November",
-        "desc": "Meta’s 3 November pricing sheet lists five dollar notes. Reuters calls the sale $15 billion. The sheet says delivery is expected on or about 5 November. CNBC’s earlier $20 billion to $25 billion target included euros and is not this sheet."
+        "title": "The backstop starts with the hall",
+        "desc": "Google’s support for Anthropic’s Kentucky leases begins when a building’s final data hall does. The press release’s approximately $19 billion is the lease commitments, not a wire on 4 November."
       }
     ]
   },
@@ -3940,25 +3984,25 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
-        "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new model."
+        "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4",
-        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. Not a new model."
+        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model."
       },
       {
         "org": "Meta",
         "name": "Muse",
         "model": "Muse Wonder · Wonder Full · Muse Code",
-        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work. On 3 Nov Meta’s pricing term sheet listed five dollar notes, and Reuters called the sale $15 billion. Settlement on the sheet is 5 Nov. Not a new model."
+        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work. On 3 Nov Meta’s pricing term sheet listed five dollar notes, and Reuters called the sale $15 billion. Settlement on the sheet is 5 Nov. This edition has not seen a notice that delivery happened. On 4 Nov Charlie Holtz said Conductor is joining Meta. TechCrunch said Meta confirmed and gave no further details. Conductor Cloud shuts down on 20 Nov. Not a new model."
       },
       {
         "org": "SpaceXAI",
@@ -3978,7 +4022,7 @@
         "org": "Moonshot AI",
         "name": "Kimi K3.1 Pro",
         "model": "2.8T (104B active) · 1M ctx · multimodal",
-        "note": "Released 23 Oct in Kimi’s apps and API with a 2–3× faster Highspeed version; full weights by 4 Nov. Moonshot reports 65.7% on Terminal-Bench 4.0, ahead of GPT-6 Astra and just behind Opus 5.5, and says it cut hacking-related training data before the open release."
+        "note": "Released 23 Oct in Kimi’s apps and API. On 4 Nov Kimi.ai posted the weights, at huggingface.co/moonshotai/Kimi-K3.1-Pro. The card says 2.8T total, 104B active, context 1,048,576, text and image, MXFP4 weights and MXFP8 activations. The licence says a model-as-a-service business over $20 million of aggregate revenue in any consecutive 12 months needs a separate agreement before commercial use. The card’s Terminal-Bench 4.0 figure is 65.7, and the footnote says that run used the Claude Code harness."
       },
       {
         "org": "Meta",
@@ -4019,6 +4063,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "Phonon",
+      "why": "Browser speech with a time for every word. The 31M English model is Apache-2.0"
+    },
+    {
+      "name": "Gauge",
+      "why": "Reruns a coding agent against your docs, locally, without an account"
+    },
     {
       "name": "MachineMail",
       "why": "An inbox per agent, with a trust level on every message before the model reads it"

@@ -1,5 +1,32 @@
 [
   {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg",
+    "text": "Two new image models for developers: GPT-Image-2.6 Flare and Sunburst.\n\nFlare generates images in as little as six seconds. Sunburst brings higher-quality generation and greater consistency across edits.\n\nImage markup and SVG exports give you more ways to refine and use what you https://t.co/unnKQKKxhu",
+    "url": "https://x.com/OpenAI/status/2118124964197114039",
+    "postedAt": "2026-11-04T23:35:18.000Z",
+    "take": "Six seconds is the line for Flare. The post on the same day says that time is with quality set to low, and it does not give Sunburst a time."
+  },
+  {
+    "name": "Kimi.ai",
+    "handle": "Kimi_Moonshot",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2086719038798102529/diJGKpOE_normal.jpg",
+    "text": "Releasing the model weights of Kimi K3.1 Pro: https://t.co/tJXcYUeSCj\nWe'll keep advancing open intelligence. https://t.co/BbWCJUYYSQ",
+    "url": "https://x.com/Kimi_Moonshot/status/2118010528123773297",
+    "postedAt": "2026-11-04T16:00:35.000Z",
+    "take": "The weights are the release. The licence in the repository still asks for a separate deal if a model-as-a-service business clears 20 million dollars in any twelve months."
+  },
+  {
+    "name": "TechCrunch",
+    "handle": "TechCrunch",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_normal.png",
+    "text": "Called FlashProve, the system would let anyone check that an AI response really came from the model it claims to be from.\nhttps://t.co/38PWFh8G8n",
+    "url": "https://x.com/TechCrunch/status/2117749439259414860",
+    "postedAt": "2026-11-03T22:43:06.000Z",
+    "take": "The check is what the research post is for. The measured proof is on Llama 4 Maverick, one integer token at a time, and the post does not say Claude ships it."
+  },
+  {
     "name": "Bloomberg",
     "handle": "business",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1631723279676317709/-fjgaR2p_normal.jpg",
