@@ -3778,11 +3778,119 @@
       "s": 3,
       "p": "Free and open source (MIT). Local runs use your own agent subscription or API key. Hosted compute is separate",
       "st": "active"
+    },
+    {
+      "n": "Stroq",
+      "w": "https://stroq.dev/",
+      "c": "Agent Infrastructure",
+      "tl": "A local scan of what a coding agent ran, and a hook that asks first",
+      "d": "Stroq is a local security tool for coding agents, shown on Show HN on 5 November 2026. The docs say it reads Claude Code, Codex and Cursor session records and matches them against credentials on the machine, without printing the values. The site says the hooks do not call a model and do not use the network on the hot path. The default threshold in the docs is 0.6. On the Show HN thread the author said the report does not by itself block a command, and that the hooks from stroq init are a filter, not a sandbox. The repository is AGGIB/Stroq. The install line on the thread is npx @stroq/cli.",
+      "f": [
+        "Scans local Claude Code, Codex and Cursor sessions",
+        "Hooks ask before a flagged command. The author says this is not a sandbox",
+        "Default threshold 0.6 in the docs",
+        "Install line on the Show HN thread: npx @stroq/cli"
+      ],
+      "u": [
+        "Seeing whether a past session handled a known secret",
+        "Adding a prompt before a command the policy flags",
+        "Reading the author’s line that a report is not a lock"
+      ],
+      "e": "A local check of what a coding agent already ran, and a question before the next risky command.",
+      "s": 3,
+      "p": "Free to run locally. The Show HN install line is npx @stroq/cli",
+      "st": "active"
+    },
+    {
+      "n": "Firenook",
+      "w": "https://firenook.dev/",
+      "c": "Agent Infrastructure",
+      "tl": "Firebase emulators an agent can inspect locally, without Java",
+      "d": "Firenook is a drop-in for the Firebase emulators, on the 5 November 2026 Show HN board. The site says it is independent, Apache 2.0, and not made by Google, and that 0.2.0 is the first public release. It keeps firebase.json, the SDKs and the ports. It says it does not emulate Realtime Database, Hosting, App Hosting or Data Connect. Its summary of one two-hour run is a median write of 5.1 ms against 208.2 ms, and peak memory of 2.11 GiB against 22.57 GiB. A later table rounds those to 208 ms and 22.6 GiB. firenook mcp, the site says, gives a coding agent 54 tools over the local suite, and nothing leaves the machine.",
+      "f": [
+        "Same firebase.json and ports. No Java, the site says",
+        "54 MCP tools for a local agent. The site says traffic stays on the machine",
+        "Does not emulate Realtime Database, Hosting, App Hosting or Data Connect",
+        "Apache 2.0. The site says it is not a Google product"
+      ],
+      "u": [
+        "Letting an agent read emulator logs instead of a production project",
+        "Checking the site’s benchmark before quoting 40 times to a team",
+        "Keeping firebase-tools for deploy, which the site says Firenook does not do"
+      ],
+      "e": "A local Firebase emulator an agent can inspect, with the benchmark printed on the site.",
+      "s": 3,
+      "p": "Free and open source (Apache 2.0). The site says it is not affiliated with Google",
+      "st": "active"
+    },
+    {
+      "n": "Teletap",
+      "w": "https://teletap.dev/",
+      "c": "Agent Infrastructure",
+      "tl": "A stuck coding agent asks a person, and the answer returns to the session",
+      "d": "Teletap lets a remote coding agent ask a person when it is stuck, shown on Show HN on 5 November 2026 by Manuel of Tandem. The post says the agent picks from a short \"when to ask\" line or from AGENTS.md, and that the reply lands in the session even if it was idle. The post names Claude Code, Codex, Gemini, Hermes and Pi. The site also lists Cursor. Devices are peer to peer and encrypted. The post says the relay cannot read the content. The site says the default wait is 5 minutes. It says message text stays on the team’s devices, and that the server stores metadata unless that is turned off.",
+      "f": [
+        "The answer goes back into the agent session",
+        "Peer to peer, with a relay the post says cannot read the text",
+        "Default wait of 5 minutes, then the agent continues",
+        "Show HN names Claude Code, Codex, Gemini, Hermes and Pi. The site adds Cursor"
+      ],
+      "u": [
+        "Stopping a remote agent from guessing a pricing rule",
+        "Checking that an idle session still receives the answer",
+        "Reading what the server stores before you turn metadata off"
+      ],
+      "e": "A question from a stuck agent to the person whose line says they can answer it.",
+      "s": 3,
+      "p": "Install script on teletap.dev. The site does not print a price on the page read for this edition",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "5 November 2026",
+    "week": "6 November 2026",
     "launches": [
+      {
+        "name": "Stroq (stroq.dev)",
+        "date": "5 November 2026",
+        "desc": "A local audit for coding-agent sessions, shown on Show HN on 5 November by the author, with the repository AGGIB/Stroq. The docs say stroq sent reads local Claude Code, Codex and Cursor session records and matches tool arguments against credentials found on the machine, without printing the values. The site says hooks run with no model in the loop and no network on the hot path. The docs say a match at or above the default threshold of 0.6 marks a session suspect. On the Show HN thread the author wrote that the scan command generates a report and does not by itself prevent anything, and that stroq init sets hooks that ask before a dangerous command. The author called that a filter, not a sandbox. The install line on the thread is npx @stroq/cli.",
+        "why": "For anyone who wants a record of what a coding agent ran, before they call the machine locked down. The author’s own line is that the hooks are a filter.",
+        "demo": {
+          "input": "A coding-agent session that already ran on the machine",
+          "steps": [
+            "stroq sent reads the local record and looks for known secrets",
+            "stroq init, if you add it, asks before a command the policy flags"
+          ],
+          "output": "A report, or a prompt. The author says this is not a sandbox."
+        }
+      },
+      {
+        "name": "Firenook (firenook.dev)",
+        "date": "5 November 2026",
+        "desc": "A drop-in for the Firebase emulators, written up on the 5 November Show HN board and documented at firenook.dev. The site says it is an independent project, Apache 2.0, not made or endorsed by Google, and that 0.2.0 is the first release for public use. It says you keep firebase.json, the SDKs and the ports, and change the start command. It says it does not emulate Realtime Database, Hosting, App Hosting or Data Connect. On a two-hour run of one production app’s traffic, the site’s summary line is 5.1 ms against 208.2 ms for a median write, and 2.11 GiB against 22.57 GiB at peak. A later table on the same page rounds those to 208 ms and 22.6 GiB. The site says firenook mcp exposes 54 tools to a coding agent over the local suite, for Claude Code, Cursor and VS Code, and that nothing leaves the machine. It says Node 22, 24 or 26 runs Functions.",
+        "why": "For a team that lets an agent poke a Firebase project and does not want that poke to hit production. The 54 tools are local. The benchmark is one app, as the site measured it.",
+        "demo": {
+          "input": "A firebase.json you already use for the official emulators",
+          "steps": [
+            "The start command changes to firenook. The site says the ports stay",
+            "An agent can read logs and rules through the local MCP tools"
+          ],
+          "output": "A local suite. The site says it is not Google’s emulator, and not a deploy tool."
+        }
+      },
+      {
+        "name": "Teletap (teletap.dev)",
+        "date": "5 November 2026",
+        "desc": "A way for a stuck coding agent to ask a person, shown on Show HN on 5 November by Manuel, CTO of Tandem. The post says the agent picks someone from a short \"when to ask\" line, or from AGENTS.md, and that the answer goes back into the session even if the session is idle. The post names Claude Code, Codex, Gemini, Hermes and Pi. The site also lists Cursor. The post says devices talk peer to peer, encrypted, and fall back to a relay that does not see the content. The site says the default wait is 5 minutes, then the agent continues, and that a later answer still lands while the session runs. It says the server stores metadata unless the organization turns that off, and that message text stays on the team’s devices. The install line on the site is a shell script from app.teletap.dev.",
+        "why": "For a team whose remote agents guess when a person could have answered. The 5 minutes, and the fact that the relay is not supposed to read the text, are the lines to test.",
+        "demo": {
+          "input": "A remote agent that is stuck, and a person whose line says when to ask them",
+          "steps": [
+            "Teletap puts the question on that person’s machine",
+            "The answer goes back into the agent session"
+          ],
+          "output": "The session continues. The site says an unanswered question waits 5 minutes by default."
+        }
+      },
       {
         "name": "Phonon (github.com/blixt/phonon)",
         "date": "4 November 2026",
@@ -3852,51 +3960,15 @@
           ],
           "output": "Text, if the demo holds. The author says launch is cloud inference, not on the glasses."
         }
-      },
-      {
-        "name": "beacon.sh (github.com/asymptote-labs/agent-beacon)",
-        "date": "2 November 2026",
-        "desc": "An open-source memory layer for coding agents, first on Product Hunt’s board for 2 November. The GitHub repository was created in May 2026. The README says Beacon captures session history across Claude Code, Cursor, Codex, OpenCode and 20 or more other harnesses, then turns workflows, corrections and debugging patterns into knowledge a later agent can retrieve through MCP or Agent Skills. A person reviews it before it is kept. The README says interactive setup signs in through beacon.sh and preselects Beacon Cloud, with an explicit choice to stay local. The licence on the repository is MIT.",
-        "why": "For anyone who re-explains the same bug every time they switch from one coding agent to another. The review step is the part that stops a stale lesson being saved.",
-        "demo": {
-          "input": "A webhook bug an agent fixed once, including the signing rule that made the fix work",
-          "steps": [
-            "Beacon keeps the session and drafts a skill",
-            "You approve it, and a later agent can fetch it"
-          ],
-          "output": "A skill the next agent can read. The README says Cloud is the preset, and local is a choice."
-        }
-      },
-      {
-        "name": "Clayzo (clayzo.com)",
-        "date": "2 November 2026",
-        "desc": "A free animation engine for coding agents, listed on Product Hunt’s board for 2 November. The site says you ask Claude Code, Codex or Cursor for motion graphics, product animations and interactive web animations. The agent writes them, checks every frame, and ships them to play on the web or natively in Swift. The start command on the site is npx clayzo@latest init. The site does not print a paid tier.",
-        "why": "For a product team that already pays for a coding agent and keeps handing motion to someone else. The check of each frame is the claim to test on one real screen.",
-        "demo": {
-          "input": "One sentence asking for a product animation of a screen you already ship",
-          "steps": [
-            "The agent writes the motion in Clayzo",
-            "It checks the frames before you look"
-          ],
-          "output": "An animation that plays on the web or in Swift, if the run gets that far. The site says the engine is free."
-        }
-      },
-      {
-        "name": "Bowerbird (github.com/jolovicdev/bowerbird)",
-        "date": "1 November 2026",
-        "desc": "A free, MIT-licensed research notebook, shown on Show HN on 1 November. You add PDFs, Word files, books, web pages, YouTube captions and recordings, then ask a question. The README says each quoted phrase is looked up in the source the citation names, and a quote that is missing, or pinned to the wrong source, is marked unverified. The check shows the words are in the source, not that the answer read them correctly. Notebooks, search, OCR and transcription stay on the machine. The question and the retrieved passages go to the model you choose. DeepSeek is the default. Pick an Ollama model and the question stays on the machine too. The README says there is no analytics. Builds exist for Linux, macOS 13.4 or later on Apple silicon, Windows and Android. The Mac app is signed ad hoc, not notarized.",
-        "why": "For anyone who wants a citation they can check before they paste a model’s answer into a memo. The unverified mark is the part to read.",
-        "demo": {
-          "input": "A PDF you already have, and a question about one page of it",
-          "steps": [
-            "Bowerbird indexes the file on the machine",
-            "The answer cites a passage, and the quote is looked up in that passage"
-          ],
-        "output": "A quoted line that is in the source, or an unverified mark if it is not."
-      }
       }
     ],
     "funding": [
+      {
+        "company": "Anthropic (IPO timing)",
+        "amount": "Not a new round",
+        "valuation": "Discussed figure, not a term sheet",
+        "context": "Reuters, dateline 5 November, as carried by CNA. Four people familiar with investor discussions said investors doubt Anthropic can hold a roadshow next week in time for a November listing. Some view a recently discussed $1.5 trillion valuation as the high end. Anthropic declined to comment. The piece says Reuters had previously expected the roadshow the week of 9 November. Two of the people said October revenue was left blank in the updated S-1. The piece does not say the offering has been cancelled."
+      },
       {
         "company": "TeraWulf (Google backstop for Anthropic)",
         "amount": "Backstop; dollar cap not in the 8-K",
@@ -3948,33 +4020,33 @@
     ],
     "quotes": [
       {
-        "who": "Charlie Holtz, Conductor",
-        "text": "I have big news: Conductor is joining Meta.",
-        "source": "conductor.build, 4 November 2026"
-      },
-      {
         "who": "OpenAI",
-        "text": "Until closing, OpenAI and Pierre will remain separate and independent companies.",
-        "source": "OpenAI, 4 November 2026"
+        "text": "GPT-6 Cyber is initially available through the API and Codex to a select group of approved Daybreak Red customers.",
+        "source": "OpenAI, 5 November 2026"
       },
       {
-        "who": "Anthropic Frontier Red Team",
-        "text": "This research post is meant to share intermediate progress, and not a completed research agenda.",
-        "source": "Anthropic, on FlashProve, 2 November 2026"
+        "who": "METR",
+        "text": "As of October 2026, Anthropic is likely improving the capabilities of their models on well-specified tasks at around twice the rate they did between March 2024 and October 2025.",
+        "source": "METR, 5 November 2026"
+      },
+      {
+        "who": "Charles Lamanna, Microsoft",
+        "text": "By the end of 2026, organizations in the European Union (EU) and the European Free Trade Association (EFTA) will be able to use Claude models across Copilot experiences, including Copilot Cowork, with processing within the EU Data Boundary.",
+        "source": "Microsoft Copilot Blog, 5 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Six seconds is one setting",
-        "desc": "Images 2.6 is in ChatGPT and Codex. Flare, with quality set to low, can take as little as six seconds. The 50 percent line does not name the earlier model."
+        "title": "Cyber starts behind a door",
+        "desc": "GPT-6 Cyber is in the API and Codex for approved Daybreak Red customers. The 5 November post does not put it in ChatGPT. Critical is OpenAI’s label."
       },
       {
-        "title": "Two deals, neither is a closed product",
-        "desc": "Meta is buying Conductor, and the cloud dates are 13 and 20 November. OpenAI will buy Pierre, and the companies stay separate until closing. Neither announcement prints a price."
+        "title": "Fifteen seconds, one price",
+        "desc": "Gemini Omni 1.2 Flash runs to 15 seconds. The blog’s $0.07 a second is 720p, 30 percent under Omni 1.1. 4K is not priced there."
       },
       {
-        "title": "The backstop starts with the hall",
-        "desc": "Google’s support for Anthropic’s Kentucky leases begins when a building’s final data hall does. The press release’s approximately $19 billion is the lease commitments, not a wire on 4 November."
+        "title": "Twice, and a redacted file",
+        "desc": "METR’s public judgment is about twice, on well-specified tasks, with a band from 1.3 times to 3 times. Anthropic redacted most of the evidence METR weighed."
       }
     ]
   },
@@ -3984,19 +4056,19 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
-        "model": "GPT-6 Astra · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model."
+        "model": "GPT-6 Astra · GPT-6 Cyber · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
-        "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4",
-        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model."
+        "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4 · Omni 1.2 Flash",
+        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model. On 5 Nov Google made Gemini Omni 1.2 Flash generally available. The blog says clips run up to 15 seconds, up from 10, and prices 720p at $0.07 a second, 30 percent below Omni 1.1. Not a new chat model."
       },
       {
         "org": "Meta",
@@ -4063,6 +4135,18 @@
     ]
   },
   "gems": [
+    {
+      "name": "Stroq",
+      "why": "Reads a coding agent’s local session for known secrets. The author says the hook is a filter, not a sandbox"
+    },
+    {
+      "name": "Firenook",
+      "why": "Local Firebase emulators, with MCP tools for an agent. The site says it is not Google’s"
+    },
+    {
+      "name": "Teletap",
+      "why": "A stuck agent asks a person, and the answer returns to the session"
+    },
     {
       "name": "Phonon",
       "why": "Browser speech with a time for every word. The 31M English model is Apache-2.0"

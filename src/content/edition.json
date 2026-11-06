@@ -1,258 +1,205 @@
 {
-  "number": 41,
-  "edition": "Briefing 41",
-  "date": "5 November 2026",
-  "dateISO": "2026-11-05",
-  "toolsPulseDate": "5 November 2026",
+  "number": 42,
+  "edition": "Briefing 42",
+  "date": "6 November 2026",
+  "dateISO": "2026-11-06",
+  "toolsPulseDate": "6 November 2026",
   "kicker": "Today in AI",
-  "title": "OpenAI put Images 2.6 in ChatGPT and Codex on 4 November. Flare, with quality set to low, can take as little as six seconds, and the post does not name the model it says is 50 percent slower. Meta is buying Conductor. Conductor Cloud goes read-only on 13 November and starts deleting data on 20 November. OpenAI will acquire Pierre. The deal is not closed, and neither post prints a price. Google agreed to backstop parts of Anthropic’s Kentucky leases. The 8-K does not print a dollar total. TeraWulf’s press release says the commitments are about $19 billion. Siri AI is open to developers in the 27.3 betas. App Store submission is in the spring. Kimi K3.1 Pro’s weights are on Hugging Face, and a model-as-a-service over $20 million in twelve months needs a separate deal. FlashProve can prove one token of an integer model. It is not a receipt on Claude.",
-  "summary": "On Wednesday 4 November 2026 OpenAI said Images 2.6 is in ChatGPT, Codex and the API, across all ChatGPT and Codex tiers, on desktop, mobile and web. The post says people create 4 billion images a week across those three surfaces, and that the average is more than half a billion a day. It says Images 2.6 is 50 percent faster than before, and it does not name before. Flare, with quality set to low, can generate an image in as little as six seconds. Sunburst is the model the post points to for higher detail, at medium or high quality. The post does not print a price. The same day, Charlie Holtz wrote that Conductor is joining Meta. The timeline on that page stops new sign-ups on 4 November, makes Conductor Cloud read-only on 13 November, and shuts the cloud down on 20 November, when deletion of cloud user data begins. Local Conductor keeps model updates and critical fixes until early 2027. TechCrunch said Meta confirmed the deal and gave no further details. OpenAI, the same day, said it will acquire Pierre Computer Company. Trees and Diffs are already in the Codex app. Closing needs regulatory approvals. Until then the companies stay separate. Axios said the price was not disclosed. TeraWulf’s 4 November 8-K says Google will backstop certain Anthropic lease obligations at Hawesville, on three buildings, effective when each building’s final data hall starts. The filing says the leases are 20 years, for about 401 megawatts, with delivery expected from late 2027 through the second quarter of 2028. The press release furnished with the filing says the financing supports about $19 billion of contracted lease commitments. On 3 November Apple opened a Siri AI developer preview in the 27.3 betas. Customers are “a few months” out, and App Store submission opens in the spring. The page says Siri AI is not in the EU on iOS, iPadOS and watchOS, is not for users under 13, and has daily limits it does not print. On 4 November Kimi.ai posted the weights of Kimi K3.1 Pro. The model card says 2.8 trillion parameters, 104 billion active, and a context of 1,048,576. The licence pulls hosted commercial use out of the grant once revenue exceeds $20 million in any twelve months. On 2 November Anthropic released FlashProve. On Llama 4 Maverick, one proof in the evaluation is 18.78 megabytes, and the post does not say Claude ships these proofs.",
-  "uncertainty": "OpenAI’s 4 November post says Images 2.6 generates images 50 percent faster than before. It does not name the previous model, the prompt, or the quality setting in that sentence. The six seconds are a different sentence: Flare, when quality is set to low, can generate images in as little as six seconds. That is not a time for Sunburst, and it is not a time for every quality setting. The 4 billion images a week, and the line that the average is more than half a billion a day, are OpenAI’s. This edition does not divide one by the other. The post points to a pricing page and a system card. Neither figure is copied here, because those pages were not the source of the sentences above. Conductor’s dates are the dates on Charlie Holtz’s 4 November page. TechCrunch, the same day, said Meta confirmed the acquisition and would not comment further. The price is not on the announcement. Axios, the same day, said financial terms were not disclosed. TechCrunch’s line that Conductor’s agents come from other labs, including Anthropic and OpenAI, is TechCrunch’s. The announcement does not name those labs. “Early 2027” is not a day. Pierre’s post does not print a price. Axios says the price was not disclosed. Axios also says OpenAI says Pando cut the time to push code by nearly 80 percent. The Pierre post names Pando and does not print 80 percent. This edition did not re-fetch the earlier Pando post, so 80 percent stays Axios’s attribution. TeraWulf’s Item 1.01 does not print “$19 billion.” That phrase is in the press release furnished as Exhibit 99.1, as “approximately $19 billion of contracted lease commitments.” It is not a cap on the backstop, and it is not cash paid on 4 November. The termination fee is described and not numbered. Item 8.01 says the leases were amended and does not print the amendments. The July 2026 lease is background in the 8-K, not a new lease signed on 4 November. Fluor’s guaranteed maximum price is “being established.” The press release’s line about 1 gigawatt at a different campus, Muskie, is not this backstop. Apple’s developer page does not print the daily limit or the future fee. “A few months” and “the spring” are the page’s words, not a calendar date. The EU line is iOS, iPadOS and watchOS. The page does not, in that bullet, say macOS. Kimi’s 65.7 on Terminal-Bench 4.0 is the model card’s figure, and the footnote says that run used the Claude Code harness. The card’s other scores are the card’s, under the settings and footnotes printed there. They are not rerun here. The $20 million and 100 million user lines are the licence file in the same repository, not a summary of the tweet. FlashProve’s 18.78 megabytes, 110 tokens per second, 223 seconds, 17 seconds, 21 seconds, about 39 minutes, about 6.5 megabytes and about 16 million requests are the evaluation section of the 2 November post, for Llama 4 Maverick, 4-bit weights, one H100 and a batch of 24. The post also gives a range against vLLM, about 72 times on one comparison and about 94 times on another. The proof is of an integer model under greedy decoding. The fast verifier is not the Lean verifier. The post does not say these proofs are attached to Claude.",
+  "title": "OpenAI introduced GPT-6 Cyber on 5 November. It is in the API and Codex for a select group of approved Daybreak Red customers, and the post does not put it in ChatGPT. On ExploitGym the post says 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber. OpenAI rates the model Critical, up from High. Google made Gemini Omni 1.2 Flash generally available the same day. Clips run up to 15 seconds, and the blog prices 720p at $0.07 a second, 30 percent below Omni 1.1. METR said Anthropic is likely improving well-specified capabilities at about twice the March 2024 to October 2025 rate. The benchmark estimate is 1.9 times, and Anthropic redacted most of the evidence METR found most informative. Microsoft said Claude in Copilot will be processed inside the EU Data Boundary by the end of 2026. The setting stays off until an admin turns it on. Reuters said some potential investors doubt a roadshow the week of 9 November. Anthropic declined to comment.",
+  "summary": "On Thursday 5 November 2026 OpenAI said GPT-6 Cyber is initially available through the API and Codex to a select group of approved Daybreak Red customers. The post says that group will widen to all Daybreak Red customers soon. It does not say the model is in ChatGPT. On ExploitGym it says the model scores 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, a 51 percent relative improvement and about 16 percentage points. OpenAI classifies it as Critical under the Preparedness Framework, up from High. The post says researchers developed 948 Linux privilege-escalation exploits, against 166 for GPT-5.6 Sol on the same harness, and evidence for 81 novel Firefox vulnerabilities that Mozilla classified as high severity. The same day Google said Gemini Omni 1.2 Flash is generally available on the Gemini API and Gemini for business. The blog says video runs up to 15 seconds, up from 10, in one-second steps from 3 to 15, at $0.07 per second for 720p, 30 percent below Omni 1.1. It does not print a 4K price. METR’s 5 November assessment says that as of October 2026 Anthropic is likely improving well-specified capabilities at about twice the rate of March 2024 to October 2025, and that the authors would not be surprised by 1.3 times or 3 times. AECI growth since October 2025 is estimated at 1.9 times, with a 95 percent interval of 1.5 to 2.8. The post says a majority of the evidence behind the judgment was redacted. Microsoft’s Copilot Blog, the same day, said Claude processing for EU and EFTA organizations will sit inside the EU Data Boundary by the end of 2026, including Copilot Cowork, and that the setting is disabled by default. The Copilot privacy page, as read for this edition, still says Anthropic models are currently excluded. Reuters, dateline 5 November, said four people familiar with investor discussions doubt Anthropic can hold a roadshow next week in time for a November listing. Some view a discussed $1.5 trillion valuation as the high end. Anthropic declined to comment. This edition read that report in the copy carried by CNA.",
+  "uncertainty": "OpenAI’s 5 November post is the source for 48.5 percent, 32.1 percent, the 51 percent relative improvement, about 16 percentage points, 40.3 percent, 32.0 percent, 95 percent, 100 percent refused, 99.93 percent, 94.49 percent, 948, 166, 1,724, 304, 81, 30 and $1 billion. Those figures are OpenAI’s. This edition did not rerun them and did not read the system card. Critical is OpenAI’s Preparedness label. The 948 count is privilege-escalation exploits in Linux. The post says 948 is more than five times the 166 for GPT-5.6 Sol on the same research harness. This edition did not divide 948 by 166. The 81 are vulnerabilities the post says Mozilla classified as high severity. RemoteExploitBench, as the post describes it, is known vulnerabilities in a controlled environment. The $1 billion is a grant program in the post, not an API price. Private Safety Processing and the 30 days are the post’s description of Zero Data Retention customers. Google’s blog prices 720p at $0.07 a second and says the cut is 30 percent from Omni 1.1. It lists 360p as a draft resolution and does not give 360p, 1080p or 4K a price. The Google account’s X post the same day puts $0.07 a second beside 360p or 720p. That is a different sentence. Fifteen seconds is the new maximum. Ten seconds is the blog’s figure for Omni 1.1. The no-additional-cost line is Google Vids. The Gemini app line says Ultra, and rolling out. METR’s \"about twice\" is a subjective conclusion about well-specified tasks, as of October 2026, against March 2024 to October 2025. The authors say they would not be surprised by 1.3 times or 3 times. The 1.9 times is the AECI estimate, interval 1.5 to 2.8, and robustness checks in the post run from 1.1 times to 2.9 times. The \"perhaps about 80 percent\" is the post’s guess for AI’s share of the October 2026 acceleration, with substantial uncertainty. The 12 times is a Slack poll the post calls very loose evidence, and the post says individual uplift is not an acceleration rate. The post says Anthropic redacted a majority of the evidence METR found most informative, including the detail behind the training-compute finding. Microsoft’s date is \"by the end of 2026,\" not a day. The blog names the EU and EFTA. It does not, in that sentence, name the United Kingdom. The privacy page’s \"currently excluded\" line was read for this edition. It can change without a new blog post. The IPO report’s dateline is 5 November. The CNA page that carries it is timestamped 6 November. $1.5 trillion, $2 trillion and $100 billion are figures Reuters attributes to investors and to \"some,\" not to a term sheet. Four people, and two of them on the blank October line, are unnamed. Anthropic declined to comment. The report does not say the roadshow has been cancelled. This edition did not open the S-1.",
   "stats": {
-    "filtered": 7,
-    "verified": 7,
-    "themes": 5
+    "filtered": 5,
+    "verified": 5,
+    "themes": 4
   },
   "stories": [
     {
-      "id": "images-2-6",
+      "id": "gpt-6-cyber",
       "topic": "tools",
-      "theme": "Images 2.6 is in ChatGPT and Codex. Six seconds is Flare at low quality, and 50 percent does not name the earlier model",
-      "changed": "On Wednesday 4 November 2026 OpenAI published “Introducing Images 2.6.” The post says Images 2.6 is in ChatGPT, Codex and the API. It says people around the world now create 4 billion images per week across those three, and that on average that is more than half a billion images a day. It says Images 2.6 generates images 50 percent faster than before. It does not name the earlier model. In the API the post offers GPT-Image-2.6 Flare and GPT-Image-2.6 Sunburst. When quality is set to low, Flare can generate images in as little as six seconds. For work that needs greater detail, Sunburst is the model the post describes as higher quality, and as more consistent across edits, when quality is set to medium or high. The post also says Flare improves layout quality for posters, product imagery and other professional visuals. GIFs are part of the release. Image markup, which the post says is already in ChatGPT, comes to the API, so a team can mark the place to change. SVG export is in the API. A new complexity setting is separate from quality. The post says lower complexity suits quick edits, and it recommends low complexity for most editing, with medium or high when a scene has many elements or constraints. Images 2.6 is available globally, the post says, today, in ChatGPT and Codex, across all subscription tiers, on desktop, mobile and web. The two API models are available. The post points to a pricing page and does not print a price. It points to a system card for the safety evaluations. This edition did not use that card.",
-      "matters": "Six seconds and 50 percent faster are two different sentences. Six seconds is Flare with quality set to low. Fifty percent does not say faster than which model.",
-      "imply": "Do not put six seconds on a brief as the time for Sunburst, or for Flare at a higher quality. Do not tell finance that 4 billion images a week began on 4 November. The post says people now create that many. It does not say the count started with this launch.",
+      "theme": "GPT-6 Cyber is for approved Daybreak Red customers. The 5 November post does not put it in ChatGPT",
+      "changed": "On Thursday 5 November 2026 OpenAI published \"Introducing GPT-6 Cyber.\" The post says the model is initially available through the API and Codex to a select group of approved Daybreak Red customers. It says access will expand to all Daybreak Red customers soon, and that GPT-5.6 Cyber is being made available to all of them. It also says Daybreak Blue alpha access for GPT-6 Astra is widening. The post does not say GPT-6 Cyber is in ChatGPT. On ExploitGym, which the post says tests whether models can exploit a specified vulnerability, GPT-6 Cyber scores 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber. The post calls that a 51 percent relative improvement, and about 16 percentage points. OpenAI classifies the model as Critical in cybersecurity under its Preparedness Framework, up from High for GPT-5.6 Cyber. On a new web evaluation, where the post says models probe applications without source code, GPT-6 Cyber’s recall is 40.3 percent, against 32.0 percent for GPT-6 Astra. On RemoteExploitBench, which the post says uses known vulnerabilities in applications such as GitLab, PostgreSQL and Jenkins in a controlled environment, GPT-6 Astra running with Daybreak Blue refused 100 percent of tasks, and GPT-6 Cyber completed 95 percent. The post says the only failure was an exploit it could not get to work remotely. On ExploitGym Honeypot, without deployment safety prompts, the post says GPT-6 Cyber avoided out-of-scope services in 99.93 percent of cases, up from 94.49 percent for GPT-5.6 Cyber, and 100 percent with those prompts. The post says OpenAI’s researchers used the model to develop 948 privilege-escalation exploits in Linux, against 166 for GPT-5.6 Sol on the same research harness, and that it reproduced 1,724 vulnerabilities. It says 304 critical findings were disclosed to maintainers with candidate patches. It says the model produced evidence for 81 novel Firefox vulnerabilities that Mozilla classified as high severity, and that an additional 30 known issues were more severe than previously reported. It says Mozilla has released fixes for many of them. A grant line in the post says a $1 billion Daybreak for Frontline Defenders program subsidizes access for resource-constrained teams such as government organizations and essential service providers. The post says API customers using Zero Data Retention generally must use Private Safety Processing, which reviews encrypted records kept in customer storage for 30 days without showing prompts and responses to OpenAI personnel. It says Daybreak Red API access requires IP allowlisting by default. This edition did not use the system card.",
+      "matters": "The number a security lead can act on this week is the access line. The scores are OpenAI’s evaluations of a model that is not in ChatGPT.",
+      "imply": "Do not tell a team that ChatGPT can now develop exploits. The post’s door is Daybreak Red, and it is a select group. Do not treat 48.5 percent as an outside lab’s rerun, or 95 percent as a rate of successful patches in production.",
       "uses": [
-        "Write the speed line as two facts. Images 2.6 is 50 percent faster than before, and the 4 November post does not name before. Flare, with quality set to low, can take as little as six seconds.",
-        "If a workflow needs the same character or product across edits, the post points to Sunburst at medium or high quality. It does not give Sunburst a time.",
-        "Markup, SVG and GIFs are in the post. A price is not. The post says to see the pricing page. Do not invent one from the 50 percent."
+        "Write the status as one sentence. GPT-6 Cyber, 5 November 2026, API and Codex, select approved Daybreak Red customers. Not described as a ChatGPT model. Critical is OpenAI’s own Preparedness label, up from High for GPT-5.6 Cyber.",
+        "If a slide needs the ExploitGym line, use both figures the post prints: 48.5 percent, from 32.1 percent, which the post calls a 51 percent relative improvement and about 16 percentage points. The earlier model in that sentence is GPT-5.6 Cyber.",
+        "Keep the Linux count and the Firefox count in separate sentences. 948 exploits, and 166 for GPT-5.6 Sol on the same harness, are the Linux sentence. 81 novel high-severity Firefox issues are the post’s account of Mozilla’s classification. The $1 billion figure is a grant program, not a price for the API."
       ],
-      "example": "A brand team asked whether the new image model makes a finished frame in six seconds writes the sentence the post supports. That time is Flare, with quality set to low. Sunburst is the model OpenAI describes for detail and for consistency across edits. The 50 percent is “faster than before,” and the post does not name before.",
-      "audience": "Anyone who generates or edits images in ChatGPT, Codex or the API, and anyone who has to say what “50 percent faster” was measured against.",
-      "watch": "Whether a later note names the model in the 50 percent line, or prints a time for Sunburst. Whether the pricing page changes which of the two a team can afford to loop. The chat models named on the frontier strip did not change in this post.",
+      "example": "A security lead asked whether the new model is something every ChatGPT seat can point at a codebase writes a narrower sentence. OpenAI’s 5 November post puts GPT-6 Cyber in the API and Codex for a select group of approved Daybreak Red customers. The 48.5 percent is ExploitGym, against GPT-5.6 Cyber’s 32.1 percent. The post does not say the model is in ChatGPT.",
+      "audience": "Anyone who has to say whether a coding seat can now run offensive security work, and anyone comparing a vendor score with an outside one.",
+      "watch": "Whether \"select\" becomes every Daybreak Red customer, which the post says is soon. Whether a later note prices the API or prints what the $1 billion grant actually pays. Whether an outside evaluation reruns ExploitGym. The chat models named beside it did not change in this post.",
       "source": {
-        "title": "OpenAI: Introducing Images 2.6, 4 November 2026",
-        "url": "https://openai.com/index/introducing-images-2-6/",
-        "quote": "When quality is set to low, Flare can generate images in as little as six seconds."
+        "title": "OpenAI: GPT-6 Cyber, 5 November 2026",
+        "url": "https://openai.com/index/introducing-gpt-6-cyber",
+        "quote": "GPT-6 Cyber is initially available through the API and Codex to a select group of approved Daybreak Red customers."
       }
     },
     {
-      "id": "meta-conductor",
-      "topic": "work",
-      "theme": "Meta is buying Conductor. Cloud goes read-only on 13 November and starts deleting data on 20 November",
-      "changed": "On Wednesday 4 November 2026 Charlie Holtz published “Conductor is joining Meta.” The page says Conductor will keep working as normal until early next year, except Conductor Cloud, which shuts down over the next few weeks. The timeline on the page says that on Wednesday 4 November, new users can no longer sign up for Conductor or download the app. Existing free users cannot upgrade to a pro plan. Pro users can keep using pro features for free. On Friday 13 November, Conductor Cloud workspaces go read-only. Old chats can still be read, and data can still be exported. New messages cannot be sent. Active subscribers get a refund. On Friday 20 November, Conductor Cloud shuts down, and Conductor begins deleting Conductor Cloud user data. The page says to export before that date. A cloud workspace and its chats move to a Mac by a right-click and Transfer to local. A full archive is Settings, then Account, then Export data. Local Conductor continues to receive new models and critical bug fixes until early 2027. The page says Conductor has never sold or trained on user data, and still will not, and that all Conductor user data is deleted when the app shuts down in early 2027. It does not print a price, and it does not say what Meta will ship. TechCrunch, the same day, said Meta confirmed the acquisition and would not comment further or provide additional details. TechCrunch said the agents Conductor deploys are not built in-house. They come from labs including Anthropic and OpenAI. Axios, the same day, said financial terms were not disclosed.",
-      "matters": "The date that still lets someone act is 13 November for a last cloud message, and 20 November for cloud data. The Mac app is on a later clock.",
-      "imply": "Do not tell a team the desktop app ends on 20 November. That date is Conductor Cloud. Local Conductor keeps updates until early 2027, and the page does not name the day it stops. Do not tell them Meta published a price. TechCrunch says Meta confirmed the deal and did not add details.",
-      "uses": [
-        "If a workspace is in Conductor Cloud, the page’s own path is Transfer to local, or Settings, Account, Export data, before 20 November. On 13 November the cloud stops taking new messages.",
-        "Keep “Meta confirmed” in a separate sentence from the timeline. The timeline is Holtz’s page. The confirmation, and the refusal to add details, are what TechCrunch says Meta told TechCrunch.",
-        "The agents are not a new Muse model. TechCrunch says Conductor runs agents from other labs, including Anthropic and OpenAI. The announcement does not name a model."
-      ],
-      "example": "A lead who runs two coding agents in Conductor Cloud reads the timeline before the next sprint. On 13 November that workspace can still be read and exported, and it cannot take a new message. On 20 November Conductor begins deleting cloud user data. The Mac app is the one that continues, with model updates and critical fixes until early 2027.",
-      "audience": "Anyone with a Conductor Cloud workspace, and anyone who has to say whether a coding-agent tool they pay for still exists next month.",
-      "watch": "Whether Meta names a product, a price, or a day in early 2027. Whether the export still works on 19 November. The announcement does not say the Muse model line changed.",
-      "source": {
-        "title": "Conductor: Conductor is joining Meta, 4 November 2026",
-        "url": "https://www.conductor.build/announcement",
-        "quote": "I have big news: Conductor is joining Meta."
-      }
-    },
-    {
-      "id": "openai-pierre",
-      "topic": "work",
-      "theme": "OpenAI will acquire Pierre. The deal is not closed, and neither post prints a price",
-      "changed": "On Wednesday 4 November 2026 OpenAI said it will acquire Pierre Computer Company, Inc., the company behind Code Storage and a family of open-source developer tools. The post says that if you have browsed files or reviewed a change in the Codex app, you have already used Pierre’s Trees and Diffs libraries. Trees navigates a project’s files. Diffs shows what changed, and its Edit mode lets a reviewer fix a line where they see the problem. The post also names Highlights, a syntax highlighter Pierre recently released. Code Storage, the post says, lets apps store code and track its history using Git. After closing, customers can keep using Code Storage while OpenAI brings its features into Codex. Pierre’s open-source projects will remain open-source, and OpenAI says it will continue to contribute to them. Closing is subject to customary conditions, including regulatory approvals. Until closing, OpenAI and Pierre remain separate and independent companies. The post does not print a price. Axios, the same day, said OpenAI told Axios it will acquire Pierre, that financial terms were not disclosed, and that the open-source projects will remain open-source. Axios also writes that OpenAI says Pando, an in-house Git backend disclosed earlier in the week, reduced the time to push code changes by nearly 80 percent. The Pierre post names Pando. It does not print 80 percent.",
-      "matters": "Codex already uses Trees and Diffs. What is new is an agreement to buy the company, and that agreement has not closed.",
-      "imply": "Do not tell a developer that Code Storage now lives inside Codex. The post says that work comes after closing. Do not tell them the open-source libraries became proprietary on 4 November. The post says they stay open-source. Do not put a price on a slide. Neither the post nor Axios prints one.",
-      "uses": [
-        "Say “will acquire,” not “has acquired and folded in.” The post’s own last lines are regulatory approvals, and two companies that remain separate until closing.",
-        "If someone cites nearly 80 percent, label it as Axios saying that OpenAI says Pando did that. The Pierre announcement does not contain the figure, and this edition did not re-fetch the Pando post.",
-        "Trees and Diffs are already in the Codex app, on OpenAI’s account. That is not the same fact as Code Storage being inside Codex."
-      ],
-      "example": "A platform lead asked whether Codex replaced GitHub on Wednesday writes a narrower sentence. OpenAI agreed to buy Pierre. Trees and Diffs are already what the Codex app uses to browse files and review a change. Code Storage is still Pierre’s, until closing, and the price was not disclosed.",
-      "audience": "Anyone who stores code that an agent writes, or who has to say whether Codex and GitHub are the same system this week.",
-      "watch": "Whether regulators clear the deal, and whether Code Storage’s features then show up in Codex under a name a customer can point to. Whether the open-source repositories keep taking contributions. The model line did not change with the announcement.",
-      "source": {
-        "title": "OpenAI: OpenAI to acquire Pierre Computer Company, Inc., 4 November 2026",
-        "url": "https://openai.com/index/openai-to-acquire-pierre/",
-        "quote": "Until closing, OpenAI and Pierre will remain separate and independent companies."
-      }
-    },
-    {
-      "id": "terawulf-backstop",
-      "topic": "money",
-      "theme": "Google will backstop parts of Anthropic’s Kentucky leases. The 8-K does not print $19 billion",
-      "changed": "On Wednesday 4 November 2026 TeraWulf filed a current report. Item 1.01 says that on that day the company entered into three credit support agreements, for buildings CB-1, CB-2 and CB-3, with Raylan Data LLC, Justified DataPower LLC, Anthropic and Google LLC. Google agreed to backstop certain obligations of Anthropic under those leases. Each backstop becomes effective on the commencement date for the final data hall of that building. It ends on conditions in the agreements, including Anthropic, or an affiliate that has guaranteed the lease, achieving and maintaining certain investment-grade ratings for at least three months. If Anthropic misses a payment, or is in an insolvency event, then after notice from Raylan, Google can pay all rent currently due and assume the lease as tenant, or, under certain circumstances, pay a termination fee. If Google pays that fee, it is entitled to an equity interest in Raylan. Google may defer the choice for a specified period. During the deferral it pays unpaid rent and further rent that comes due. The filing says the termination fee amortizes over a defined term. It does not print the fee, or the length of the deferral. The leases themselves, the filing says, were signed in July 2026, for 20 years, for approximately 401 megawatts of critical IT load at Hawesville, Kentucky. Delivery is expected in phases beginning in late 2027 and concluding in the second quarter of 2028. Rent starts when each data hall is delivered. Item 1.01 does not print a dollar total. The press release furnished as Exhibit 99.1 says the agreements support debt financing of approximately $19 billion of contracted lease commitments with Anthropic. The same release says TeraWulf signed a definitive engineering and construction agreement with Fluor on a guaranteed-maximum-price basis, and that the price is being established as engineering and procurement progress. It does not print that price. Item 8.01 says the leases were amended on 4 November, in connection with the backstop, and does not print the amendments.",
-      "matters": "About $19 billion is the press release’s figure for the lease commitments. It is not a cheque from Google on 4 November, and the 8-K does not print a cap on what Google may have to pay.",
-      "imply": "Do not tell a board the Kentucky campus is online, or that Google has taken Anthropic’s place as tenant. Delivery is expected from late 2027. Assuming the lease is an option after a missed payment or an insolvency event. The backstop for each building starts when that building’s final data hall commences, not on 4 November.",
-      "uses": [
-        "Quote the megawatts from Item 1.01: approximately 401 megawatts, 20 years, three buildings, delivery expected from late 2027 through the second quarter of 2028. Quote the dollars from the press release: approximately $19 billion of contracted lease commitments. Say which document each number is in.",
-        "The backstop is an option to pay rent and assume the lease, or in some cases to pay a termination fee and take equity in Raylan. The fee is not a number in the filing.",
-        "Fluor’s price is not set in the release. The July lease is the filing’s background. It is not a lease signed on 4 November."
-      ],
-      "example": "A treasurer asked what Google paid Anthropic on Wednesday opens the 8-K first. Google agreed to backstop certain rent obligations, later, building by building, once the final data hall of that building starts. The approximately $19 billion is TeraWulf’s press release, for the lease commitments the financing is meant to support. It is not a wire on 4 November.",
-      "audience": "Anyone who has to say what “Google is behind Anthropic’s data center” means in cash, and when.",
-      "watch": "Whether a later filing prints the termination fee, the deferral, or the lease amendments. Whether a building’s final data hall is actually commenced, which is when that backstop starts. Whether Anthropic, or a guarantor, holds the investment-grade ratings for three months, which is one way the filing says the backstop can end. No model name changed with the agreements.",
-      "source": {
-        "title": "TeraWulf Form 8-K, 4 November 2026",
-        "url": "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001628280-26-069810/0001628280-26-069810.pdf",
-        "quote": "Google agreed to backstop certain obligations of Anthropic under the Justified Leases."
-      }
-    },
-    {
-      "id": "siri-ai-preview",
-      "topic": "rules",
-      "theme": "Siri AI is open to every developer in the 27.3 betas. The App Store comes in the spring",
-      "changed": "On Tuesday 3 November 2026 Apple’s developer news said a Developer Preview lets any developer integrate an app with Siri AI, starting that day in the iOS 27.3, iPadOS 27.3, macOS 27.3 and visionOS 27.3 betas. An app brings its content and actions in through App Intents. The post’s examples are checking a delivery, booking a reservation and placing an order. Skills let a developer teach Siri AI to combine several actions into one experience. Siri AI can surface any entity in the Spotlight semantic index, not only entities that already fit a schema. Apple says it has started rolling the same kind of actions out across its own apps, including Mail, Maps, Photos, Safari, Files and Finder, and gives as examples finding a coffee shop visited last week and archiving files that have not been opened in over a year. The post says the preview is early access before the feature first ships to customers in a few months, and that submission to the App Store opens in the spring. It says terms and usage policies will follow. A note on the same page says Siri AI is in beta on those systems and on watchOS 27.3, on an Apple Intelligence device set to a supported language. The languages listed are English, French, Japanese, Korean, Portuguese and Spanish. The note says Siri AI is currently unavailable in the EU in iOS, iPadOS and watchOS. It says Siri AI is not available for users under 13. It says features that rely on server-side models, including Siri AI, are subject to daily usage limits, and that expanded access will be available for a fee in the future. It does not print the limit or the fee.",
-      "matters": "A developer can try this in a beta. A customer on the App Store does not get a third-party Siri AI action from this preview yet.",
-      "imply": "Do not tell a product manager that Siri can place an order in the live app today. The post’s clock for customers is a few months, and the App Store opens in the spring. Do not tell a team shipping to the EU that the iPhone build includes it. The page says it does not, on iOS, iPadOS and watchOS. Do not invent the daily limit. The page does not print one.",
-      "uses": [
-        "Write the status as “developer preview, 3 November 2026, in the 27.3 betas named on the page. Customers in a few months. App Store submission in the spring. Terms still to come.”",
-        "The actions only exist if the app exposes them through App Intents. The post does not say Siri AI reads an app that has not done that work.",
-        "Under 13 is excluded. The EU exclusion, as written, is iOS, iPadOS and watchOS. Daily limits apply, and a future fee is mentioned, with no number on either."
-      ],
-      "example": "An app lead who wants Siri to book a table from the live iPhone app reads the date on the page before promising it. The preview is in the betas. The post says customers come in a few months, and the App Store in the spring. An iPhone in the EU is outside the note’s availability line.",
-      "audience": "Anyone who ships an iPhone, iPad or Mac app, and anyone who has to say whether a customer can already ask Siri to use it.",
-      "watch": "Whether Apple prints the daily limit, the fee, and the terms it said would follow. Whether the EU line moves. Whether “a few months” becomes a version number. This preview is not the China release that calls Qwen from Apple Intelligence.",
-      "source": {
-        "title": "Apple Developer: Siri AI is now open to all developers, 3 November 2026",
-        "url": "https://developer.apple.com/news/?id=gdk2umrf",
-        "quote": "This preview provides early access before first shipping to customers in a few months."
-      }
-    },
-    {
-      "id": "kimi-k31-weights",
+      "id": "gemini-omni-1-2",
       "topic": "tools",
-      "theme": "Kimi K3.1 Pro’s weights are public. A hosted service over $20 million in twelve months needs a separate deal",
-      "changed": "On Wednesday 4 November 2026 the Kimi.ai account posted “Releasing the model weights of Kimi K3.1 Pro,” and linked the Hugging Face repository moonshotai/Kimi-K3.1-Pro. The model card calls it an open-weight, natively multimodal model, the first in the K3.1 series, post-trained from Kimi K3. The card’s table says 2.8 trillion total parameters, 104 billion activated, 896 experts of which 16 are selected per token, plus 2 shared experts, and a context length of 1,048,576. Quantization is MXFP4 weights and MXFP8 activations, from quantization-aware training. Modality on the card is text and image. The card says the API name on platform.kimi.ai is kimi-k3.1-pro, and it names vLLM, SGLang and TokenSpeed. The licence file in the repository is the Kimi K3.1-Pro License. It grants use, copying, modification and sale, including running and fine-tuning, subject to conditions. If the licensee or its affiliates operate a model as a service, defined as giving a third party language-model inference or fine-tuning with meaningful control over the inputs, parameters or training data, and if their aggregate revenue exceeds 20 million US dollars in any consecutive 12 months, they must enter a separate agreement with Moonshot AI before using the software, or a derivative, for any commercial purpose. If a commercial product has more than 100 million monthly active users, or more than 20 million US dollars of monthly revenue, the name Kimi K3.1-Pro must be displayed prominently. The licence says those two sections do not apply to internal use that does not make the software, its outputs or its capabilities available to third parties, or to use through Moonshot’s official products or certified inference partners. The card’s Terminal-Bench 4.0 cell is 65.7. The footnote says that Kimi figure was run with the Claude Code harness.",
-      "matters": "The weights are a file. The licence is not a blank cheque for a hosted API once revenue crosses 20 million dollars in a twelve-month stretch.",
-      "imply": "Do not tell a platform team that selling access to these weights is covered by the grant after that revenue line. The licence says a model-as-a-service business over 20 million dollars in any consecutive 12 months needs a separate agreement before commercial use. Do not quote 65.7 as a score from Kimi’s own harness. The footnote says Claude Code.",
+      "theme": "Gemini Omni 1.2 Flash makes 15-second video. The blog prices 720p at $0.07 a second",
+      "changed": "On Thursday 5 November 2026 Google published \"Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips,\" by Anish Nangia. The post says the model is rolling out and is generally available across the Gemini API and Gemini for business. It says clips can run up to 15 seconds, up from 10 seconds with Omni 1.1, and that duration can be set in one-second steps from 3 to 15 seconds. It says the price is down 30 percent from Gemini Omni 1.1, at $0.07 per second for 720p video. It says a team can draft at 360p or 720p, fix a detail in a follow-up edit instead of regenerating the clip, and upscale to 1080p or 4K. It does not print a price for 360p, 1080p or 4K. The same day’s post from the Google account on X puts \"$0.07/s\" beside drafting at 360p or 720p. That parenthetical is the X post’s, not a second price in the blog. The blog says references can combine character, product or style images, motion clips of up to three seconds, and audio. It says multi-turn editing works across a full 15-second clip. It says outputs carry an imperceptible SynthID watermark, and that Provisioned Throughput is available. It says 15-second clips in Google Vids are at no additional cost with a Google account or a Google Workspace subscription. It says 15-second video in the Gemini app is rolling out to Google AI Ultra subscribers. It also names Flow and Google Ads. It says work is still going on for fast sports action, rapid script changes and complex physics.",
+      "matters": "Fifteen seconds and $0.07 are the two figures a producer can put on a brief. The $0.07 in the blog is 720p. The X post is the one that sets that rate next to 360p as well.",
+      "imply": "Do not tell finance that 4K is $0.07 a second. The blog does not print that price. Do not tell them 15 seconds is free in every Google product. The no-additional-cost line is Google Vids, with an account or Workspace. The Gemini app line is Ultra, and it says rolling out.",
       "uses": [
-        "For a download, use the card’s own table: 2.8 trillion total, 104 billion active, context 1,048,576, text and image, MXFP4 weights and MXFP8 activations. The API name on the card is kimi-k3.1-pro.",
-        "For a hosted product, read section 2 of the licence before the grant. Model as a service, over 20 million US dollars of aggregate revenue in any consecutive 12 months, needs a separate agreement. Internal use is carved out. So is use through Moonshot’s own products or a certified partner.",
-        "The 100 million monthly users, or 20 million dollars of monthly revenue, is a display rule for the name. It is not the same test as the hosted-service agreement."
+        "Quote the blog for the length and the 720p price. Up to 15 seconds, from 10. Duration in one-second steps from 3 to 15. $0.07 per second for 720p, 30 percent below Omni 1.1.",
+        "If someone cites $0.07 for 360p, label it as the Google account’s X post on 5 November. The blog lists 360p as a draft size and prices 720p.",
+        "A follow-up edit is the blog’s cost control. It says you fix a detail instead of regenerating the clip. It does not say every edit is free of the per-second rate."
       ],
-      "example": "A team that wants to host Kimi K3.1 Pro for customers opens the licence file in the repository before the model card’s benchmark table. Under 20 million dollars of aggregate revenue in a twelve-month stretch, the grant’s hosted-service condition is not the one that forces a separate agreement. Over that line, the licence says the agreement comes first. The 65.7 on Terminal-Bench 4.0 is the card’s number, run, the footnote says, with Claude Code.",
-      "audience": "Anyone who was waiting on the weights Moonshot said would follow the October API release, and anyone who has to say whether hosting them for other people is already licensed.",
-      "watch": "Whether Moonshot names the certified inference partners the licence mentions. Whether a later card revises the harness on the 65.7. The weights post does not say the API price changed.",
+      "example": "A producer asked what a 15-second 720p spot costs under the new model multiplies the blog’s rate by the seconds they asked for, and stops there. Fifteen times $0.07 is the 720p line in the 5 November blog. The blog does not print the 4K rate, and it does not say the Gemini app includes the clip for every subscriber.",
+      "audience": "Anyone buying or generating short video from Gemini, and anyone who has to say which resolution the seven cents apply to.",
+      "watch": "Whether the pricing page later prints 360p, 1080p and 4K. Whether Ultra is the only Gemini app tier that gets 15 seconds. Whether fast sports and complex physics, which the blog says are still being worked on, get a later note. This is a video model. The chat line did not change with it.",
       "source": {
-        "title": "Kimi K3.1-Pro License, Hugging Face repository moonshotai/Kimi-K3.1-Pro",
-        "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/LICENSE",
-        "quote": "If the Licensee or any of its affiliates operates a Model as a Service business, and the aggregate revenue of the Licensee and its affiliates exceeds 20 million US dollars (or the equivalent in other currencies) in total over any consecutive 12 months, the Licensee must enter into a separate agreement with Moonshot AI before using the Software or its derivative works for any commercial purpose."
+        "title": "Google: Gemini Omni 1.2 Flash, 5 November 2026",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+        "quote": "We have dropped the price 30% from Gemini Omni 1.1 making it available at $0.07 per second for 720p video."
       }
     },
     {
-      "id": "flashprove",
+      "id": "metr-rd-pace",
       "topic": "trust",
-      "theme": "FlashProve can prove one token of an integer model. The 2 November post does not put it on Claude",
-      "changed": "On Monday 2 November 2026 Anthropic’s Frontier Red Team published “Progress on provable inference for large language models” and released FlashProve, a prototype, under the Apache 2.0 licence, with code, a technical report and Lean proofs. The post says a provider can publish a short commitment to one set of weights, then a proof that those weights produced stated output tokens on a stated prompt. The weights stay hidden. The architecture is not hidden. The system that was measured is Llama 4 Maverick, a 400 billion parameter mixture of experts, about 17 billion parameters used per token, on the public 4-bit weights. The evaluation says the prover runs on one H100 and 24 CPU cores. The offline step takes about 39 minutes, and the resulting commitment is good for about 16 million requests. A batch of 24 requests takes about 223 seconds, which the post calls 110 tokens per second, and each proof is 18.78 megabytes. The client downloads a commitment of about 6.5 megabytes. Checking a proof takes 17 seconds on 24 threads and 21 seconds on a single thread. Each proof checks one token. The post says the system currently proves contexts of up to 1,024 tokens. It says the proof is of an integer model under greedy decoding. A floating-point reply, or a sampled reply, can leave the computation that was proved. It says there is no formal guarantee that the fast C++ verifier matches the Lean verifier. It says the C++ verifier agreed with the Lean verifier on every proof in their tests. The post calls the release intermediate progress, not a completed research agenda. It does not say Claude responses carry these proofs.",
-      "matters": "A receipt that a named model wrote a reply is what the prototype is for. The receipt that was measured is not a Claude receipt. It is one open model, one token at a time, on a greedy integer run, and the proof is 18.78 megabytes.",
-      "imply": "Do not tell a security review that FlashProve is on the Claude API, or that it covers a normal sampled chat. The post’s limit is greedy decoding of an integer model, and a context of up to 1,024 tokens. Do not treat the fast verifier as the one Lean proved. The post says the formal guarantee is on the slow Lean verifier.",
+      "theme": "METR says Anthropic’s well-specified pace is about twice the old rate. Most of the evidence is redacted",
+      "changed": "On Thursday 5 November 2026 METR published \"Independent Assessment of AI R&D Acceleration at Anthropic in October 2026.\" The post says staff worked at Anthropic from 12 August to 29 October 2026. It says that as of October 2026, Anthropic is likely improving model capabilities on well-specified tasks at around twice the rate of March 2024 to October 2025. It says the authors would not be surprised if the true acceleration were closer to 1.3 times or 3 times that historical rate. On benchmarks, it says scores measured by AECI, Anthropic’s version of the Epoch Capabilities Index, have grown at an estimated 1.9 times the pre-October 2025 rate, with a 95 percent confidence interval of 1.5 to 2.8 times. It says that implies roughly two years of historical progress in the last year. Robustness checks in the post find acceleration between 1.1 times and 2.9 times. The post says this 1.9 times is higher than the 1.7 times in the Haiku 5.5 system card, mainly because newer unreleased models were included. It says the authors are confident the acceleration was not from an acceleration in the scaling of training compute, and that further detail on that evidence was redacted. It says their overall subjective estimate is that a majority, perhaps about 80 percent, of the October 2026 acceleration is due to AI, with substantial uncertainty, and that late 2025 was likely influenced by non-AI factors whose details were redacted. It says individual uplift is not the same thing as an acceleration rate. Slack polls, which the post calls very loose evidence, reached 12 times in October 2026. It says AI is not yet able to make highly significant, fully autonomous contributions to the most important parts of training. It says Anthropic redacted a majority of the evidence METR found most informative. Anthropic’s description, as the post quotes it, is that the redactions were aimed at removing confidential information that could accelerate other AI developers. The post says the public therefore has to rely on METR’s judgment more than would be ideal. It says the team was 2.5 full-time equivalents over eleven weeks, that METR did not take payment, that Anthropic provided free tokens, and that METR did not sample non-public models. It says this is not the employee-like access described in Anthropic’s 15 October update.",
+      "matters": "Twice is a judgment about well-specified tasks, with a band the authors themselves set from 1.3 times to 3 times. The 1.9 times is the benchmark estimate, and most of the evidence behind the judgment is not in the public post.",
+      "imply": "Do not tell a board that Anthropic is now improving twice as fast at everything, or that the cause is 80 percent AI. The 80 percent is the post’s \"perhaps,\" with substantial uncertainty. Do not quote 12 times as the pace of the models. The post says that figure is a self-reported poll, and that individual uplift is not an acceleration rate.",
       "uses": [
-        "If a slide says a lab can now prove which model answered, name the model that was measured. The evaluation is Llama 4 Maverick, 4-bit, one H100, 110 tokens per second on a batch of 24, and 18.78 megabytes a proof.",
-        "The check time to quote is 17 seconds on 24 threads, or 21 seconds on one thread. That is the evaluation’s verifier, not a phone, and not the time to generate the proof.",
-        "Keep the vLLM comparison in its own sentence. The post says proving a batch of 24 took about 72 times as long per GPU as vLLM on the same 24 requests at once, across a range of 66 to 77, and about 94 times as long at the highest load they tried. That is overhead, not a quality score."
+        "Use two numbers and say which is which. The subjective line is about twice, and the authors would not be surprised by 1.3 times or 3 times. The AECI line is 1.9 times, 95 percent interval 1.5 to 2.8, since October 2025, against March 2024 to October 2025 for the subjective comparison.",
+        "Say what was redacted before you say what was found. The post says a majority of the evidence METR found most informative is not public, and that training-compute growth was ruled out as the cause, with the details redacted.",
+        "The 1.7 times in the Haiku 5.5 system card is a different figure. The post says 1.9 times is higher mainly because of newer unreleased models. Those models are not named as a release."
       ],
-      "example": "A buyer who wants every Claude reply signed opens the 2 November post before writing that into a contract. FlashProve is a prototype on Llama 4 Maverick. A proof in the evaluation is 18.78 megabytes and checks one token of an integer, greedy run. The post does not say Claude attaches these proofs.",
-      "audience": "Anyone who has to say whether a model provider can show that the model named in the contract is the model that answered, and anyone reviewing a claim that this is already on Claude.",
-      "watch": "Whether a later release attaches proofs to a named Claude model, lengthens the 1,024-token context, or covers sampled decoding. Whether the C++ verifier is brought under the Lean proof. Nothing in the post says a production model changed.",
+      "example": "A risk lead asked whether to write \"Anthropic is now twice as fast\" into a memo opens the 5 November post first. The sentence METR will support is well-specified tasks, about twice the March 2024 to October 2025 rate, as of October 2026, and the authors would not be surprised by 1.3 times or 3 times. The public benchmark interval is 1.5 to 2.8. The post says most of the evidence they weighed is redacted.",
+      "audience": "Anyone who has to say how fast a lab is moving, and anyone who might treat a staff poll as a capability score.",
+      "watch": "Whether Anthropic publishes its own account of the same pace. The METR post does not include that account. Whether a later note fills in the redacted training-compute evidence. No model name changed with the assessment.",
       "source": {
-        "title": "Anthropic: Progress on provable inference for large language models, 2 November 2026",
-        "url": "https://www.anthropic.com/research/provable-inference",
-        "quote": "This research post is meant to share intermediate progress, and not a completed research agenda."
+        "title": "METR: Independent assessment of AI R&D acceleration at Anthropic, 5 November 2026",
+        "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+        "quote": "As of October 2026, Anthropic is likely improving the capabilities of their models on well-specified tasks at around twice the rate they did between March 2024 and October 2025."
+      }
+    },
+    {
+      "id": "claude-eu-boundary",
+      "topic": "rules",
+      "theme": "Claude in Copilot joins the EU Data Boundary by the end of 2026. It is not inside it today",
+      "changed": "On Thursday 5 November 2026 Charles Lamanna posted on the Microsoft Copilot Blog that Claude models by Anthropic in Microsoft Copilot are coming into the EU Data Boundary. The post says that by the end of 2026, organizations in the European Union and the European Free Trade Association will be able to use Claude across Copilot experiences, including Copilot Cowork, with processing inside the boundary, where their data is already stored. It says Claude already powers Chat, Copilot in Microsoft 365 apps, Copilot Cowork and Copilot Code. It says organizations already using Claude will not need to do anything: once available, processing moves into the boundary automatically. It says organizations that have not enabled Claude can turn it on at any time, and that processing moves into the boundary once available. It says the setting is disabled by default in the EU and EFTA, and that admins can enable it for everyone or for selected users and groups in the Microsoft 365 admin center. It says customer data is not used to train generative AI foundation models. It says more details will be shared closer to availability. It does not name a day. Microsoft’s Copilot privacy page, as read for this edition, still says models provided by Anthropic as a subprocessor are currently excluded from the EU Data Boundary. The blog’s promise and that present-tense exclusion are different sentences.",
+      "matters": "The date in the announcement is the end of 2026. A tenant that has not turned Claude on does not get it by waiting.",
+      "imply": "Do not tell a European admin that Claude in Copilot is processed inside the boundary now. The blog says by the end of 2026, and the privacy page still says Anthropic models are currently excluded. Do not tell them the United Kingdom is in the blog’s sentence. The post names the EU and EFTA.",
+      "uses": [
+        "Write the status as \"announced 5 November 2026, processing by the end of 2026, EU and EFTA, including Copilot Cowork. Disabled by default. Existing users move automatically once it is available. No day, and no action listed for people who already have it on.\"",
+        "Keep the privacy page in the next sentence. As read for this edition, it says Anthropic models are currently excluded from the EU Data Boundary.",
+        "The training line is the blog’s. Customer data is not used to train generative AI foundation models. That is not a new clause about a model Anthropic trains on its own API."
+      ],
+      "example": "An admin in the EU asked whether a Copilot tenant can turn Claude on this week and stay inside the boundary reads the tense of the post. They can enable the setting. The post says processing moves into the EU Data Boundary once that processing is available, by the end of 2026. The privacy page still says the models are currently excluded.",
+      "audience": "Anyone who administers Copilot for an organization in the EU or EFTA, and anyone who has to say where a Claude request is processed.",
+      "watch": "Whether Microsoft names a month, and whether the privacy page’s \"currently excluded\" line is rewritten when processing actually moves. The blog does not say a Claude model changed.",
+      "source": {
+        "title": "Microsoft Copilot Blog: Claude models and the EU Data Boundary, 5 November 2026",
+        "url": "https://www.microsoft.com/en-us/copilot/blog/bringing-claude-models-in-microsoft-copilot-into-the-eu-data-boundary/",
+        "quote": "By the end of 2026, organizations in the European Union (EU) and the European Free Trade Association (EFTA) will be able to use Claude models across Copilot experiences, including Copilot Cowork, with processing within the EU Data Boundary, where their data is already stored."
+      }
+    },
+    {
+      "id": "anthropic-roadshow",
+      "topic": "money",
+      "theme": "Reuters says some investors doubt Anthropic’s roadshow next week. Anthropic declined to comment",
+      "changed": "Reuters, in a report with a 5 November 2026 dateline, said potential investors are raising doubts about whether Anthropic can proceed with a planned roadshow next week in time for a November listing. The report says four people familiar with investor discussions described those doubts. It says investors are pushing for a more attractive valuation, and that some view a recently discussed $1.5 trillion valuation as the high end of expectations. It says Anthropic declined to comment on investor doubts. It says Reuters had previously reported that the roadshow was expected to start the week of 9 November, with pricing the following week. It says two of the people said investors are waiting on Anthropic’s October revenue figure, which the company left blank in its updated S-1. It says that at one point this year investors expected the listing in October, at a valuation as high as $2 trillion. It says that if the market stays under pressure, the company could decide to delay until an offering that some expect to reach $100 billion can be absorbed. A delay, in that sentence, is something the company could decide. The report does not say Anthropic has decided to delay. This edition used the copy carried by CNA. The CNA page is timestamped 6 November 2026. The dateline on the copy is 5 November.",
+      "matters": "$1.5 trillion is what Reuters says some investors think is high. It is not a price Anthropic printed on 5 November, and the roadshow is not described as cancelled.",
+      "imply": "Do not tell a board the listing has slipped, or that the valuation is $1.5 trillion. Reuters says some potential investors see that discussed figure as the high end, and that Anthropic declined to comment. Do not fill in the October revenue. The report says two people said the updated S-1 left it blank. This edition did not open that filing.",
+      "uses": [
+        "Keep four attributions apart. Four people familiar, via Reuters, on the doubt. Some of them, on $1.5 trillion as the high end. Two of them, on a blank October revenue line. Anthropic, on the record, declined to comment.",
+        "The week of 9 November is Reuters’s earlier expectation, restated in this piece. It is not a date Anthropic confirmed on 5 November.",
+        "The $100 billion is what the report says some people expect the offering to reach. The $2 trillion is what it says investors expected at one point this year. Neither is a term sheet."
+      ],
+      "example": "A treasurer asked whether Anthropic cancelled the roadshow on Thursday reads the verb in the Reuters copy. Potential investors are raising doubts about a roadshow next week, four people told Reuters. Anthropic declined to comment. The copy does not say the company has postponed the listing.",
+      "audience": "Anyone who has to say what Anthropic’s discussed valuation is, and whether a November listing is still the company’s stated plan.",
+      "watch": "Whether Anthropic or a bank names a roadshow date, a range, or the October revenue the two people said was blank. Whether the discussed $1.5 trillion moves. No model changed with the report.",
+      "source": {
+        "title": "Reuters, via CNA: investor doubts on Anthropic’s IPO timing, dateline 5 November 2026",
+        "url": "https://www.channelnewsasia.com/business/exclusive-ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-6529336",
+        "quote": "Anthropic declined to comment on investor doubts."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Six seconds is one setting",
-        "body": "Images 2.6 is in ChatGPT and Codex. Flare, at low quality, can take as little as six seconds."
+        "title": "Not in ChatGPT",
+        "body": "GPT-6 Cyber is in the API and Codex for approved Daybreak Red customers. The post does not put it in ChatGPT."
       },
       {
-        "title": "Cloud data ends on the 20th",
-        "body": "Meta is buying Conductor. Cloud goes read-only on 13 November and deletion starts on 20 November."
+        "title": "Seven cents is 720p",
+        "body": "Omni 1.2 Flash makes video up to 15 seconds. The blog prices 720p at $0.07 a second, 30 percent under 1.1."
       },
       {
-        "title": "Pierre has not closed",
-        "body": "OpenAI will acquire Pierre. The companies stay separate until closing. Neither post prints a price."
+        "title": "Twice, on a wide band",
+        "body": "METR puts the well-specified pace at about twice the old rate. The published interval is 1.5x to 2.8x."
       }
     ],
     "matters": [
       {
-        "title": "The backstop is not cash today",
-        "body": "Google’s backstop starts when a building’s final data hall does. Item 1.01 does not print $19 billion."
+        "title": "The boundary is not today",
+        "body": "Claude in Copilot is promised inside the EU Data Boundary by the end of 2026. The privacy page still says excluded."
       },
       {
-        "title": "The App Store is later",
-        "body": "Siri AI’s developer preview is in the 27.3 betas. Customers are a few months out. The spring is the App Store."
+        "title": "The roadshow is not cancelled",
+        "body": "Reuters says four people doubt next week’s roadshow. Anthropic declined to comment. $1.5 trillion is what some call high."
       },
       {
-        "title": "Hosting has a revenue line",
-        "body": "Kimi’s weights are public. A model-as-a-service over $20 million in twelve months needs another agreement."
+        "title": "Eighty percent is a guess",
+        "body": "METR writes “perhaps ≈80%” for AI’s share of the current pace. It calls that a guess, and the 12 times figure a staff poll."
       }
     ],
     "watch": [
       {
-        "title": "Fifty percent, model unnamed",
-        "body": "OpenAI says Images 2.6 is 50 percent faster than before. The post does not say faster than which model."
+        "title": "Select is the access word",
+        "body": "GPT-6 Cyber starts with a select Daybreak Red group. The post says all Daybreak Red customers come later. It does not say when."
       },
       {
-        "title": "The proof is not on Claude",
-        "body": "FlashProve’s measured proof is 18.78 megabytes, for one integer token. The post does not put it on Claude."
+        "title": "360p is the other sentence",
+        "body": "The blog prices 720p at $0.07 a second. The same day’s X post puts that rate beside 360p or 720p."
       },
       {
-        "title": "The fee is not a number",
-        "body": "If Google pays the termination fee it can take equity in Raylan. The 8-K describes the fee and does not price it."
+        "title": "1.3 times is still inside",
+        "body": "METR would not be surprised if the pace were 1.3 times or 3 times. About twice is the middle of that judgment."
       }
     ]
   },
   "chips": [
     "OpenAI",
-    "Images",
-    "Meta",
-    "Conductor",
-    "Pierre",
+    "Cyber",
     "Google",
-    "TeraWulf",
-    "Apple",
-    "Kimi",
-    "FlashProve"
+    "Omni",
+    "METR",
+    "Microsoft",
+    "Claude",
+    "Anthropic",
+    "IPO"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "OpenAI, 4 Nov: Images 2.6 is in ChatGPT, Codex and the API, all tiers. 4 billion images a week, and on average more than half a billion a day. 50 percent faster than before, earlier model not named. Flare at low quality: as little as six seconds. Sunburst is the detail model at medium or high quality. No price in the post. Not a new chat model.",
+      "raw": "OpenAI, 5 Nov: GPT-6 Cyber in the API and Codex for a select group of approved Daybreak Red customers. Not described as a ChatGPT model. ExploitGym 48.5 percent, from 32.1 percent for GPT-5.6 Cyber. Critical, up from High. Linux: 948 exploits, against 166 for GPT-5.6 Sol on the same harness. Firefox: 81 novel high-severity issues, as the post says Mozilla classified them. $1 billion is a grant program in the post.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Charlie Holtz, 4 Nov: Conductor is joining Meta. No new sign-ups that day. Conductor Cloud read-only 13 Nov. Shutdown and cloud-data deletion begins 20 Nov. Local app gets model updates and critical fixes until early 2027. TechCrunch: Meta confirmed and gave no further details. Price not disclosed. Not a new Muse model.",
-      "topic": "Work"
-    },
-    {
-      "id": "s3",
-      "raw": "OpenAI, 4 Nov: will acquire Pierre Computer. Trees and Diffs already in the Codex app. Code Storage comes in after closing. Open source stays open. Closing needs regulatory approvals. Until then the companies stay separate. Axios: price not disclosed. Axios’s nearly 80 percent is about Pando, and it is not in the Pierre post.",
-      "topic": "Work"
-    },
-    {
-      "id": "s4",
-      "raw": "TeraWulf 8-K, 4 Nov: three Google credit-support agreements, CB-1, CB-2, CB-3. Backstop of certain Anthropic lease obligations, effective at each building’s final data hall. About 401 MW, 20-year leases from July 2026, delivery expected late 2027 through Q2 2028. Press release: about $19 billion of contracted lease commitments. Termination fee not numbered. Not cash on 4 Nov.",
-      "topic": "Money"
-    },
-    {
-      "id": "s5",
-      "raw": "Apple Developer, 3 Nov: Siri AI developer preview in the iOS, iPadOS, macOS and visionOS 27.3 betas, via App Intents. Customers in a few months. App Store submission in the spring. Not in the EU on iOS, iPadOS and watchOS. Not for users under 13. Daily limits, number not printed. Not the China Qwen release.",
-      "topic": "Rules"
-    },
-    {
-      "id": "s6",
-      "raw": "Kimi.ai, 4 Nov: weights of Kimi K3.1 Pro on Hugging Face. Card: 2.8T total, 104B active, context 1,048,576, text and image, MXFP4 weights and MXFP8 activations. Licence: model-as-a-service over $20 million in any consecutive 12 months needs a separate agreement. Terminal-Bench 4.0 on the card is 65.7, and the footnote says Claude Code.",
+      "raw": "Google, 5 Nov: Gemini Omni 1.2 Flash generally available. Up to 15 seconds, from 10. One-second steps from 3 to 15. Blog: $0.07 per second for 720p, 30 percent below Omni 1.1. No 4K price in the blog. The Google account’s X post puts $0.07 a second beside 360p or 720p. SynthID on outputs. Vids: no additional cost. Gemini app: Ultra, rolling out.",
       "topic": "Tools"
     },
     {
-      "id": "s7",
-      "raw": "Anthropic, 2 Nov: FlashProve, Apache 2.0, a prototype. Llama 4 Maverick, 4-bit, one H100. Batch of 24: about 223 seconds, 110 tokens per second, each proof 18.78 MB. Check: 17 seconds on 24 threads. Integer greedy decoding, context up to 1,024 tokens. Fast verifier is not the Lean one. Not described as shipping on Claude.",
+      "id": "s3",
+      "raw": "METR, 5 Nov: as of October 2026, well-specified capabilities likely about twice the March 2024 to October 2025 rate. Authors would not be surprised by 1.3x or 3x. AECI 1.9x since October 2025, 95 percent interval 1.5 to 2.8. Training-compute scaling ruled out as the cause; details redacted. Perhaps about 80 percent of the current acceleration attributed to AI, with substantial uncertainty. Majority of the most informative evidence redacted. Not a new model.",
       "topic": "Trust"
+    },
+    {
+      "id": "s4",
+      "raw": "Microsoft Copilot Blog, 5 Nov: Claude processing for EU and EFTA organizations inside the EU Data Boundary by the end of 2026, including Copilot Cowork. Disabled by default. Existing users move automatically once available. No calendar day. Privacy page, as read for this edition, still says Anthropic models are currently excluded. Not a new model.",
+      "topic": "Rules"
+    },
+    {
+      "id": "s5",
+      "raw": "Reuters, dateline 5 Nov, read via CNA: four people familiar say investors doubt a roadshow next week in time for a November listing. Some see a discussed $1.5 trillion as the high end. Anthropic declined to comment. Earlier Reuters expectation, restated here: roadshow the week of 9 Nov. Two people: October revenue left blank in the updated S-1. Not a cancellation, and not a new model.",
+      "topic": "Money"
     }
   ]
 }

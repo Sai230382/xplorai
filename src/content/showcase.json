@@ -1,5 +1,45 @@
 [
   {
+    "id": "2118342724076392845",
+    "url": "https://x.com/titepommee/status/2118342724076392845",
+    "author_name": "Sourasith",
+    "author_handle": "@titepommee",
+    "created_at": "2026-11-05T14:00:36.000Z",
+    "text": "Ink that turns to watercolour when a dragon walks on it. 🐉\n\nA Chinese poem in brush ink: every step blooms it into colour, and its fire burns holes through the paper. 3D dragon rigged in Blender, running in three.js, built with Claude Code.\n\n🔗 https://t.co/q8ibzpZUXx https://t.co/xqnhnR1AM0",
+    "model_or_tool": "Claude Code (Blender, three.js)",
+    "what_they_built": "A three.js dragon, rigged in Blender with Claude Code, that turns brush ink to watercolour as it walks across a poem.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 6,
+      "impression_count": 775,
+      "like_count": 22,
+      "quote_count": 1,
+      "reply_count": 5,
+      "retweet_count": 3
+    },
+    "preview": "https://pbs.twimg.com/ext_tw_video_thumb/2118342698763694080/pu/img/eH1u-P4dHaKeT8xr.jpg"
+  },
+  {
+    "id": "2118326087927406704",
+    "url": "https://x.com/to__rochan/status/2118326087927406704",
+    "author_name": "thatvibeai",
+    "author_handle": "@to__rochan",
+    "created_at": "2026-11-05T12:54:30.000Z",
+    "text": "Approved. First submission, no rejection.\n\n11 days in App Review for my vibe-coded iOS app, built with Claude Code.\n\nIt's called Rolltaking: a free teleprompter that follows your voice and keeps the script out of your video.\n\nLive on the App Store today. https://t.co/2vsU8T4Twr",
+    "model_or_tool": "Claude Code",
+    "what_they_built": "Rolltaking, a free iPhone teleprompter that follows the voice and stays out of the video, built with Claude Code and approved on the App Store.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 194,
+      "like_count": 3,
+      "quote_count": 1,
+      "reply_count": 10,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2118326075386462208/img/kfMtOyH6ezuW_Py8.jpg"
+  },
+  {
     "id": "2117374984192512391",
     "url": "https://x.com/levelsio/status/2117374984192512391",
     "author_name": "@levelsio",
@@ -178,46 +218,6 @@
       "retweet_count": 32
     },
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2116212919180709888/img/QahdkE-CRq8r1aBI.jpg"
-  },
-  {
-    "id": "2114825374961897939",
-    "url": "https://x.com/aecyydesign/status/2114825374961897939",
-    "author_name": "Szymon",
-    "author_handle": "@aecyydesign",
-    "created_at": "2026-10-26T21:03:55.000Z",
-    "text": "Made another web tool, this time for liquid shapes. Everything you see here came out of it.\n\nBuilt with Claude Code (Opus 5.5) and Toolcraft. It’s a React app that runs entirely in the browser, with a custom WebGL2 path tracer and Intel’s OIDN denoiser on WebGPU, exporting https://t.co/fPZGnFm6je",
-    "model_or_tool": "Claude Code, Opus 5.5",
-    "what_they_built": "A browser tool for liquid shapes, with a WebGL2 path tracer, built with Claude Code and Opus 5.5.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 301,
-      "impression_count": 18225,
-      "like_count": 398,
-      "quote_count": 5,
-      "reply_count": 33,
-      "retweet_count": 13
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2114825124348145665/img/nh-GKy5ntNmhMRht.jpg"
-  },
-  {
-    "id": "2115438489995190285",
-    "url": "https://x.com/M__Houser/status/2115438489995190285",
-    "author_name": "Mike Houser",
-    "author_handle": "@M__Houser",
-    "created_at": "2026-10-28T13:40:13.000Z",
-    "text": "I quit my job, spent my last $1400 and built Aestra, a permadeath online RPG, without knowing how to code\n\nA lot of you keep asking the same thing: is it actually making money?\n\nYes. The first class I put up for sale was the Death Metal Bard, at $1. Over 2,000 of you have bought https://t.co/VvfYgpJF2x",
-    "model_or_tool": "Opus 5.5, TesanaAI",
-    "what_they_built": "Aestra, a permadeath online RPG, built with Opus 5.5 and TesanaAI.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 140,
-      "impression_count": 22211,
-      "like_count": 274,
-      "quote_count": 1,
-      "reply_count": 31,
-      "retweet_count": 16
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2115434115717812224/img/HrUN0TR-TCzASFfu.jpg"
   },
   {
     "id": "2116277697563234432",

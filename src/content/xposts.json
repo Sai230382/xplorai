@@ -1,5 +1,32 @@
 [
   {
+    "name": "Google",
+    "handle": "Google",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_normal.jpg",
+    "text": "Meet Gemini Omni 1.2 Flash, our updated video generation model from @GoogleDeepMind 🎬\n\nGet stronger consistency, more creative control, and faster, more cost-effective video creation at scale:\n\n⚡ Fast & 30% lower cost: Draft at 360p or 720p ($0.07/s) and upscale to 1080p or 4K\n\n⏱️ Longer clips: Generate and edit videos up to 15s, or pick any exact length from 3s to 15s\n\n💬 Edit in conversation: Swap backgrounds, subjects, or lighting turn by turn without starting over from scratch\n\n🗣️ More natural speech: Create fluid, multi-speaker dialogue with clearer lip-sync\n\n🎬 More controllable shots: Direct continuous camera moves with fewer jump cuts\n\nSee these updates in action ↓",
+    "url": "https://x.com/Google/status/2118390406316728555",
+    "postedAt": "2026-11-05T17:10:05.000Z",
+    "take": "The $0.07 a second in this post sits beside 360p or 720p. The blog the same day prices 720p, and does not print a 4K rate."
+  },
+  {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg",
+    "text": "Introducing GPT‑6 Cyber: a major advance in security research that pairs stronger capabilities with better model alignment.\n\nThe model powered the Linux kernel research we announced yesterday, and security teams at companies like Mozilla, Palo Alto Networks, Calif, and Cisco—alongside our own at OpenAI—are already putting it to work.\n\nGPT-6 Cyber is available to select Daybreak Red customers and we are expanding access over time.\n\nhttps://t.co/Nzab3Z1Td6",
+    "url": "https://x.com/OpenAI/status/2118390190246879554",
+    "postedAt": "2026-11-05T17:09:13.000Z",
+    "take": "Select Daybreak Red customers is the access line in the post. It does not say the model is in ChatGPT."
+  },
+  {
+    "name": "Charles Lamanna",
+    "handle": "clamanna",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2076862087184130048/i5kyKqAL_normal.jpg",
+    "text": "Organizations across Europe have told us they want the latest AI without trading off the data processing/residency commitments they rely on.\n\nToday, we’re announcing that Claude models by Anthropic are coming to Microsoft Copilot for customers in the EU and EFTA, with processing within the EU Data Boundary by the end of 2026 – all in one governed experience & part of our 'auto' model router.\n\nRead the blog to learn more: https://t.co/61R9CrmIg0",
+    "url": "https://x.com/clamanna/status/2118382242489840021",
+    "postedAt": "2026-11-05T16:37:38.000Z",
+    "take": "The end of 2026 is the date in the post. The blog says the Claude setting stays off in the EU and EFTA until an admin turns it on."
+  },
+  {
     "name": "OpenAI",
     "handle": "OpenAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg",
