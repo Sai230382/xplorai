@@ -1,55 +1,121 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "images-2-6",
+  "storyId": "gpt-6-cyber",
   "kicker": "Play with today’s story",
-  "title": "Four figures from OpenAI’s Images 2.6 post",
-  "intro": "Move across four lines from OpenAI’s 4 November 2026 post. Each stop is one sentence. The page does not turn the week into a day, and it does not apply the six seconds to every image.",
-  "note": "Every line on the control is from OpenAI’s post “Introducing Images 2.6,” dated 4 November 2026. The week is 4 billion images across ChatGPT, Codex and the API. The day is the post’s own next sentence, “more than half a billion,” which it calls an average. This control does not divide 4 billion by seven. “50 percent faster than before” does not name the earlier model, the prompt, or the quality setting. “As little as six seconds” is a different sentence: Flare, when quality is set to low. It is not a time for Sunburst, and it is not a time for Flare at medium, high, or any setting the post does not name. The post points to a pricing page and a system card. Neither is on this control. No price is printed in the post itself.",
+  "title": "Six figures from OpenAI’s GPT-6 Cyber post",
+  "intro": "Move across six lines from OpenAI’s 5 November 2026 post. Each stop is one evaluation or one count the post prints. The page does not turn a percent into a ranking, and it does not put the model in ChatGPT.",
+  "note": "Every figure on the control is from OpenAI’s post \"GPT-6 Cyber,\" dated 5 November 2026. ExploitGym is the post’s test of whether a model can exploit a specified vulnerability: 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber. The post calls that a 51 percent relative improvement and about 16 percentage points. This control does not subtract the two scores itself. The scope line is ExploitGym Honeypot. 99.93 percent is without deployment safety prompts. 100 percent is with those prompts. 94.49 percent is GPT-5.6 Cyber without those prompts. The web line is a new evaluation in the same post. 40.3 percent recall, against 32.0 percent for GPT-6 Astra. The post says the models did not have source code. RemoteExploitBench, as the post describes it, uses known vulnerabilities in a controlled environment. 95 percent is how many tasks GPT-6 Cyber completed. 100 percent is how many GPT-6 Astra, running with Daybreak Blue, refused. The Linux counts are 948 exploits, 166 for GPT-5.6 Sol on the same research harness, 1,724 vulnerabilities reproduced, and 304 critical findings disclosed with candidate patches. The Firefox counts are 81 novel vulnerabilities the post says Mozilla classified as high severity, and 30 known issues the post says were more severe than previously reported. None of these figures is an outside lab’s rerun. The system card is not on this control. The post does not say GPT-6 Cyber is in ChatGPT.",
   "sources": [
     {
-      "label": "OpenAI: Introducing Images 2.6, 4 November 2026",
-      "url": "https://openai.com/index/introducing-images-2-6/"
+      "label": "OpenAI: GPT-6 Cyber, 5 November 2026",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Which line from the 4 November Images 2.6 post",
+    "label": "Which line from the 5 November GPT-6 Cyber post",
     "items": [
       {
-        "label": "Week",
-        "name": "Images in a week",
-        "caption": "Across ChatGPT, Codex and the API. The post says people now create this many.",
+        "label": "ExploitGym",
+        "name": "Specified vulnerability",
+        "caption": "The post’s comparison is GPT-5.6 Cyber. It calls the gap a 51 percent relative improvement and about 16 percentage points.",
         "stats": [
-          { "label": "Images", "value": "4 billion" },
-          { "label": "Where", "value": "ChatGPT, Codex and the API" }
+          {
+            "label": "GPT-6 Cyber",
+            "value": "48.5 percent"
+          },
+          {
+            "label": "GPT-5.6 Cyber",
+            "value": "32.1 percent"
+          }
         ]
       },
       {
-        "label": "Day",
-        "name": "The post’s daily line",
-        "caption": "OpenAI calls this an average. The control does not divide the week by seven.",
+        "label": "Scope",
+        "name": "Out-of-scope services left alone",
+        "caption": "ExploitGym Honeypot. The 99.93 percent is without deployment safety prompts.",
         "stats": [
-          { "label": "Images", "value": "more than half a billion" },
-          { "label": "How the post puts it", "value": "on average" }
+          {
+            "label": "Without those prompts",
+            "value": "99.93 percent"
+          },
+          {
+            "label": "With those prompts",
+            "value": "100 percent"
+          },
+          {
+            "label": "GPT-5.6 Cyber, without",
+            "value": "94.49 percent"
+          }
         ]
       },
       {
-        "label": "Flare",
-        "name": "Flare, quality set to low",
-        "caption": "The six seconds belong to this setting. The post does not give Sunburst a time.",
+        "label": "Web",
+        "name": "Recall without source code",
+        "caption": "The post’s new web evaluation. Not an outside rerun.",
         "stats": [
-          { "label": "Time", "value": "as little as six seconds" },
-          { "label": "Setting", "value": "quality set to low" }
+          {
+            "label": "GPT-6 Cyber",
+            "value": "40.3 percent"
+          },
+          {
+            "label": "GPT-6 Astra",
+            "value": "32.0 percent"
+          }
         ]
       },
       {
-        "label": "Speed",
-        "name": "Faster than before",
-        "caption": "The post does not name the earlier model.",
+        "label": "Remote",
+        "name": "Known bugs, controlled bench",
+        "caption": "Astra was running with Daybreak Blue. The post says Cyber’s one miss would not work remotely.",
         "stats": [
-          { "label": "Faster", "value": "50 percent" },
-          { "label": "Compared with", "value": "before, unnamed" }
+          {
+            "label": "GPT-6 Cyber completed",
+            "value": "95 percent"
+          },
+          {
+            "label": "Astra refused",
+            "value": "100 percent"
+          }
+        ]
+      },
+      {
+        "label": "Linux",
+        "name": "Exploits the post counts",
+        "caption": "The 166 is GPT-5.6 Sol on the same research harness. The post says 948 is more than five times that.",
+        "stats": [
+          {
+            "label": "Exploits",
+            "value": "948"
+          },
+          {
+            "label": "GPT-5.6 Sol",
+            "value": "166"
+          },
+          {
+            "label": "Reproduced",
+            "value": "1,724"
+          },
+          {
+            "label": "Disclosed",
+            "value": "304"
+          }
+        ]
+      },
+      {
+        "label": "Firefox",
+        "name": "What the post says Mozilla graded",
+        "caption": "High severity is the post’s account of Mozilla’s classification.",
+        "stats": [
+          {
+            "label": "Novel, high severity",
+            "value": "81"
+          },
+          {
+            "label": "Known, more severe",
+            "value": "30"
+          }
         ]
       }
     ]
