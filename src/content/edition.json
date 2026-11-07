@@ -1,205 +1,231 @@
 {
-  "number": 42,
-  "edition": "Briefing 42",
-  "date": "6 November 2026",
-  "dateISO": "2026-11-06",
-  "toolsPulseDate": "6 November 2026",
+  "number": 43,
+  "edition": "Briefing 43",
+  "date": "7 November 2026",
+  "dateISO": "2026-11-07",
+  "toolsPulseDate": "7 November 2026",
   "kicker": "Today in AI",
-  "title": "OpenAI introduced GPT-6 Cyber on 5 November. It is in the API and Codex for a select group of approved Daybreak Red customers, and the post does not put it in ChatGPT. On ExploitGym the post says 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber. OpenAI rates the model Critical, up from High. Google made Gemini Omni 1.2 Flash generally available the same day. Clips run up to 15 seconds, and the blog prices 720p at $0.07 a second, 30 percent below Omni 1.1. METR said Anthropic is likely improving well-specified capabilities at about twice the March 2024 to October 2025 rate. The benchmark estimate is 1.9 times, and Anthropic redacted most of the evidence METR found most informative. Microsoft said Claude in Copilot will be processed inside the EU Data Boundary by the end of 2026. The setting stays off until an admin turns it on. Reuters said some potential investors doubt a roadshow the week of 9 November. Anthropic declined to comment.",
-  "summary": "On Thursday 5 November 2026 OpenAI said GPT-6 Cyber is initially available through the API and Codex to a select group of approved Daybreak Red customers. The post says that group will widen to all Daybreak Red customers soon. It does not say the model is in ChatGPT. On ExploitGym it says the model scores 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, a 51 percent relative improvement and about 16 percentage points. OpenAI classifies it as Critical under the Preparedness Framework, up from High. The post says researchers developed 948 Linux privilege-escalation exploits, against 166 for GPT-5.6 Sol on the same harness, and evidence for 81 novel Firefox vulnerabilities that Mozilla classified as high severity. The same day Google said Gemini Omni 1.2 Flash is generally available on the Gemini API and Gemini for business. The blog says video runs up to 15 seconds, up from 10, in one-second steps from 3 to 15, at $0.07 per second for 720p, 30 percent below Omni 1.1. It does not print a 4K price. METR’s 5 November assessment says that as of October 2026 Anthropic is likely improving well-specified capabilities at about twice the rate of March 2024 to October 2025, and that the authors would not be surprised by 1.3 times or 3 times. AECI growth since October 2025 is estimated at 1.9 times, with a 95 percent interval of 1.5 to 2.8. The post says a majority of the evidence behind the judgment was redacted. Microsoft’s Copilot Blog, the same day, said Claude processing for EU and EFTA organizations will sit inside the EU Data Boundary by the end of 2026, including Copilot Cowork, and that the setting is disabled by default. The Copilot privacy page, as read for this edition, still says Anthropic models are currently excluded. Reuters, dateline 5 November, said four people familiar with investor discussions doubt Anthropic can hold a roadshow next week in time for a November listing. Some view a discussed $1.5 trillion valuation as the high end. Anthropic declined to comment. This edition read that report in the copy carried by CNA.",
-  "uncertainty": "OpenAI’s 5 November post is the source for 48.5 percent, 32.1 percent, the 51 percent relative improvement, about 16 percentage points, 40.3 percent, 32.0 percent, 95 percent, 100 percent refused, 99.93 percent, 94.49 percent, 948, 166, 1,724, 304, 81, 30 and $1 billion. Those figures are OpenAI’s. This edition did not rerun them and did not read the system card. Critical is OpenAI’s Preparedness label. The 948 count is privilege-escalation exploits in Linux. The post says 948 is more than five times the 166 for GPT-5.6 Sol on the same research harness. This edition did not divide 948 by 166. The 81 are vulnerabilities the post says Mozilla classified as high severity. RemoteExploitBench, as the post describes it, is known vulnerabilities in a controlled environment. The $1 billion is a grant program in the post, not an API price. Private Safety Processing and the 30 days are the post’s description of Zero Data Retention customers. Google’s blog prices 720p at $0.07 a second and says the cut is 30 percent from Omni 1.1. It lists 360p as a draft resolution and does not give 360p, 1080p or 4K a price. The Google account’s X post the same day puts $0.07 a second beside 360p or 720p. That is a different sentence. Fifteen seconds is the new maximum. Ten seconds is the blog’s figure for Omni 1.1. The no-additional-cost line is Google Vids. The Gemini app line says Ultra, and rolling out. METR’s \"about twice\" is a subjective conclusion about well-specified tasks, as of October 2026, against March 2024 to October 2025. The authors say they would not be surprised by 1.3 times or 3 times. The 1.9 times is the AECI estimate, interval 1.5 to 2.8, and robustness checks in the post run from 1.1 times to 2.9 times. The \"perhaps about 80 percent\" is the post’s guess for AI’s share of the October 2026 acceleration, with substantial uncertainty. The 12 times is a Slack poll the post calls very loose evidence, and the post says individual uplift is not an acceleration rate. The post says Anthropic redacted a majority of the evidence METR found most informative, including the detail behind the training-compute finding. Microsoft’s date is \"by the end of 2026,\" not a day. The blog names the EU and EFTA. It does not, in that sentence, name the United Kingdom. The privacy page’s \"currently excluded\" line was read for this edition. It can change without a new blog post. The IPO report’s dateline is 5 November. The CNA page that carries it is timestamped 6 November. $1.5 trillion, $2 trillion and $100 billion are figures Reuters attributes to investors and to \"some,\" not to a term sheet. Four people, and two of them on the blank October line, are unnamed. Anthropic declined to comment. The report does not say the roadshow has been cancelled. This edition did not open the S-1.",
+  "title": "OpenAI published BioBasicsBench on 6 November. At the xhigh setting GPT-6 Astra scores 66.7 percent on 100 wet-lab tasks, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Anthropic’s engineering post the same day describes dreaming, an offline pass that checks memory notes against transcripts. On one Pokémon run, Fable 5 kept a small folder and earned four badges. Sonnet 3.7 kept 413 files and earned one. Meta is rolling out unnamed models, trained using Muse Wonder, to Muse and Meta AI. Its memory eval is 90 percent, from 76. A separate sentence says forgetting fell 2.4 times. Pushmeet Kohli wrote that two weaknesses are in legacy 1024-bit RSA, and that they do not affect schemes such as RSA 2048. Bloomberg, carried by FA Mag, says buyers are discussing $1.2 trillion to $1.3 trillion. One person weighed $1.1 trillion. Anthropic declined to comment. The Frontier Model Forum’s jailbreak scale is Version 1.0, posted 5 November. It says it does not estimate harm.",
+  "summary": "On Friday 6 November 2026 OpenAI published BioBasicsBench, 100 routine wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra averages 66.7 percent of the available credit, interval 60.3 to 73.1, against 43.8 percent for GPT-5.6 Sol, interval 37.6 to 50.0. The post says it ran 18,500 results and that a higher score is not yet a reliable judgment in the lab. On one plate it says Astra’s colony count was about 12 percent high. The same day Anthropic’s engineering post, by Lance Martin, described how Claude writes memory and how dreaming can correct it. The Pokémon comparison is one run of each model at about 10,000 steps. A Stainless corpus of about 350,000 files went from 13 percent to 48 percent of graded criteria on 25 questions as dreaming scaled from two sessions to 128. Meta’s research post the same day says specialized versions of existing models, trained using Muse Wonder, are rolling out to Muse and Meta AI. It does not name them. The Personal Superintelligence Index on the page is 47 percent, from 38. The Active Memory eval is 90 percent, from 76. The 2.4 times line, and the 67 percent line, are different sentences. Pushmeet Kohli posted that human-guided agents made two advances against legacy 1024-bit RSA, on older signatures and on factoring keys in bulk, and that the results do not affect modern schemes such as RSA 2048. This edition used that post, not a paper. FA Mag’s 6 November article, provided by Bloomberg News, says people familiar are discussing a $1.2 trillion to $1.3 trillion range ahead of formal marketing next week, that one of them weighed $1.1 trillion, and that Anthropic declined to comment. The Nasdaq 100 line in the article is a 6.4 percent drop on Thursday and $2.3 trillion of market value. The Frontier Model Forum posted Version 1.0 of a cyber jailbreak rating framework on 5 November. The specification says the bands are Negligible, Low, Medium, High or Critical, that the scale is not a harm estimate, and that it is not operational guidance yet. Comments run through 21 December 2026.",
+  "uncertainty": "The 66.7 percent, 43.8 percent, 62.0 percent, 38.3 percent, 35.4 percent, 33.2 percent and 31.2 percent are OpenAI’s xhigh means, with the intervals and token counts printed in the same table. Xhigh is the highest setting the post reports for all seven models. The 18,500 is the post’s total across 37 settings, five attempts and 100 tasks. This edition did not add the rows, and it did not test whether two intervals overlap. The kind-of-data counts overlap, which the post says, so they are not a sum of 100. Approximately 12 percent is the post’s net overcount on one plate. The lanes and the antibiotic label are examples in the post, not a rate. Anthropic’s Pokémon figures are one run of Sonnet 3.7 and one run of Fable 5, at about 10,000 steps. Nine files in two folders, plus global.md, and 413 files across 225 folders, are those runs. Four badges and one badge are those runs. Opus 5.5 beating the game is a separate sentence. The 13 percent and 48 percent are graded criteria on 25 questions about a Stainless corpus of about 350,000 files and roughly 420 million tokens, from two dreaming sessions to 128. The 54 percent, 61 percent and 53 percent are search-plus-wiki against search alone, and 48 percent is the best wiki-only score in that passage. About 20,000 tokens is the post’s saving per question. The 87 percent and 73 percent are the red and orange items in a set of 24 merger questions, not all 24. The 41 of 57, the 72 percent, and the later 57 of 57 are the contract-terms test before and after the instructions changed. Nine out of ten, and less than half, are how often Sonnet 5 and Sonnet 4.6 read memory on that test. Nearly doubled is the post’s description of a prompt on Sonnet 4.6, not a score this edition calculated. The 200 lines and 25 KB are what Claude Code loads from MEMORY.md. The Managed Agents docs, as read for this edition, call dreaming a research preview. Meta’s 47, 38, 90, 76, 2.4 times and 67 percent are Meta’s. The post does not define the index, does not give the 67 percent a baseline, and does not name the models. This edition did not turn 90 and 76 into 2.4. Kohli’s 6 November post is the source for the two RSA advances and for RSA 2048. This edition did not read the essay he linked, and it did not use multipliers that appeared in other people’s posts. The $1.2 trillion to $1.3 trillion range is people familiar, via Bloomberg, as carried by FA Mag on 6 November. $1.1 trillion is one of those people. $1.4 trillion to $1.5 trillion is what the article says Bloomberg had previously reported. The 6.4 percent and $2.3 trillion are the article’s account of the Nasdaq 100 on Thursday. Anthropic declined to comment. No final decision is in the article. The jailbreak framework is dated 5 November. The bands, the October 2026 baseline, and the line that a score of 0 is not a clean bill of health are the specification. Comments to comments@frontiermodelforum.org run through 21 December 2026. Feedback from NIST, the NSA, and two UK bodies does not, the page says, imply endorsement. OpenAI’s account posted about the framework on 6 November. That post is not a second version.",
   "stats": {
-    "filtered": 5,
-    "verified": 5,
-    "themes": 4
+    "filtered": 6,
+    "verified": 6,
+    "themes": 5
   },
   "stories": [
     {
-      "id": "gpt-6-cyber",
-      "topic": "tools",
-      "theme": "GPT-6 Cyber is for approved Daybreak Red customers. The 5 November post does not put it in ChatGPT",
-      "changed": "On Thursday 5 November 2026 OpenAI published \"Introducing GPT-6 Cyber.\" The post says the model is initially available through the API and Codex to a select group of approved Daybreak Red customers. It says access will expand to all Daybreak Red customers soon, and that GPT-5.6 Cyber is being made available to all of them. It also says Daybreak Blue alpha access for GPT-6 Astra is widening. The post does not say GPT-6 Cyber is in ChatGPT. On ExploitGym, which the post says tests whether models can exploit a specified vulnerability, GPT-6 Cyber scores 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber. The post calls that a 51 percent relative improvement, and about 16 percentage points. OpenAI classifies the model as Critical in cybersecurity under its Preparedness Framework, up from High for GPT-5.6 Cyber. On a new web evaluation, where the post says models probe applications without source code, GPT-6 Cyber’s recall is 40.3 percent, against 32.0 percent for GPT-6 Astra. On RemoteExploitBench, which the post says uses known vulnerabilities in applications such as GitLab, PostgreSQL and Jenkins in a controlled environment, GPT-6 Astra running with Daybreak Blue refused 100 percent of tasks, and GPT-6 Cyber completed 95 percent. The post says the only failure was an exploit it could not get to work remotely. On ExploitGym Honeypot, without deployment safety prompts, the post says GPT-6 Cyber avoided out-of-scope services in 99.93 percent of cases, up from 94.49 percent for GPT-5.6 Cyber, and 100 percent with those prompts. The post says OpenAI’s researchers used the model to develop 948 privilege-escalation exploits in Linux, against 166 for GPT-5.6 Sol on the same research harness, and that it reproduced 1,724 vulnerabilities. It says 304 critical findings were disclosed to maintainers with candidate patches. It says the model produced evidence for 81 novel Firefox vulnerabilities that Mozilla classified as high severity, and that an additional 30 known issues were more severe than previously reported. It says Mozilla has released fixes for many of them. A grant line in the post says a $1 billion Daybreak for Frontline Defenders program subsidizes access for resource-constrained teams such as government organizations and essential service providers. The post says API customers using Zero Data Retention generally must use Private Safety Processing, which reviews encrypted records kept in customer storage for 30 days without showing prompts and responses to OpenAI personnel. It says Daybreak Red API access requires IP allowlisting by default. This edition did not use the system card.",
-      "matters": "The number a security lead can act on this week is the access line. The scores are OpenAI’s evaluations of a model that is not in ChatGPT.",
-      "imply": "Do not tell a team that ChatGPT can now develop exploits. The post’s door is Daybreak Red, and it is a select group. Do not treat 48.5 percent as an outside lab’s rerun, or 95 percent as a rate of successful patches in production.",
+      "id": "biobasics",
+      "topic": "work",
+      "theme": "BioBasicsBench puts GPT-6 Astra at 66.7 percent. The post says that is not a lab judgment yet",
+      "changed": "On Friday 6 November 2026 OpenAI published “Measuring how AI agents handle everyday wet-lab science.” The post introduces BioBasicsBench, developed with Ligo, a biotech company focused on enzyme design. It says the benchmark has 100 tasks drawn from scientists’ own experiments, across five areas: protein methods, imaging and cytometry, quantification and assays, nucleic acid methods, and molecular cloning. Tasks run from reading a molecular weight on a gel to a detailed assay. Each task has an expert-written rubric. The post says each one was reviewed by a Ligo scientist who had not written it, then by an external PhD-level scientist working in a wet lab, then again inside Ligo. Agents return a conclusion, a measurement or a recommendation, and get credit criterion by criterion, so a right answer can still lose points on the reasoning. At the xhigh setting, which the post says allows more reasoning per task, GPT-6 Astra earned an average of 66.7 percent of the available credit, compared with 43.8 percent for GPT-5.6 Sol. The same table prints a 95 percent confidence interval of 60.3 to 73.1 percent for Astra and 37.6 to 50.0 percent for GPT-5.6 Sol, and 4,704 output tokens per task against 9,099. The post says it tested seven models over 37 model and reasoning-effort settings, five attempts on each of the 100 tasks, for a total of 18,500 results. On that xhigh table the other rows are GPT-6.1 Sol at 62.0 percent (55.6 to 68.4 percent, 5,238 tokens), GPT-6 Luna at 38.3 percent (32.3 to 44.5, 13,120 tokens), GPT-5.5 at 35.4 percent (29.7 to 41.0, 11,135), GPT-5.4 at 33.2 percent (28.3 to 38.4, 13,717) and GPT-5.2 at 31.2 percent (26.2 to 36.3, 27,620). The post says a task can include several kinds of data, and that those counts overlap. It lists gels and blots on 31 tasks, protocols, notes and specs on 27, tables and instrument exports on 20, bench photos on 18, microscopy on 14, instrument screens on 13, sequencing files on 12, protocol videos on 7, agar plates on 7, and reference sheets, which it calls supporting material, on 21. The post says GPT-6 Astra substantially improves on GPT-5.6 Sol. Its comparison sentence is that pair. It also says higher benchmark scores do not yet mean models can make reliable judgments in the lab. In one example Astra proposes colony lanes 4, 6, 7 and 8 where the reference selects 5, 9 and 10. In another it treats a plate labeled for a different antibiotic as a control. On one counting plate the post says the net result is an overcount of approximately 12 percent relative to the reference, and that with the plated volume and dilution held fixed an overcount inflates the efficiency estimate by the same proportion. This edition did not rerun the tasks.",
+      "matters": "66.7 percent is a mean on 100 routine tasks, at one reasoning setting, from the lab that made the model. The post’s next section is the model still calling the wrong colonies and counting one plate high.",
+      "imply": "Do not tell a lab that an agent can now sign off a gel. The post says a higher score is not a reliable judgment. Do not tell them Astra beat GPT-6.1 Sol. The post’s comparison sentence is with GPT-5.6 Sol. The table also prints 62.0 percent for GPT-6.1 Sol. This edition did not test the intervals.",
       "uses": [
-        "Write the status as one sentence. GPT-6 Cyber, 5 November 2026, API and Codex, select approved Daybreak Red customers. Not described as a ChatGPT model. Critical is OpenAI’s own Preparedness label, up from High for GPT-5.6 Cyber.",
-        "If a slide needs the ExploitGym line, use both figures the post prints: 48.5 percent, from 32.1 percent, which the post calls a 51 percent relative improvement and about 16 percentage points. The earlier model in that sentence is GPT-5.6 Cyber.",
-        "Keep the Linux count and the Firefox count in separate sentences. 948 exploits, and 166 for GPT-5.6 Sol on the same harness, are the Linux sentence. 81 novel high-severity Firefox issues are the post’s account of Mozilla’s classification. The $1 billion figure is a grant program, not a price for the API."
+        "If a slide needs the headline, use the pair the post prints. At xhigh, 66.7 percent of the available credit for GPT-6 Astra, 43.8 percent for GPT-5.6 Sol, on 100 tasks, five attempts each. Put the intervals beside them: 60.3 to 73.1, and 37.6 to 50.0.",
+        "Keep the 12 percent in its own sentence. It is the post’s net overcount on one colony plate, not the benchmark mean. The post says that kind of miss inflates an efficiency estimate when volume and dilution stay fixed.",
+        "The 18,500 is the post’s total across 37 settings. It is not a count of tasks. The data-type counts overlap, which the post says, so they do not add up to 100."
       ],
-      "example": "A security lead asked whether the new model is something every ChatGPT seat can point at a codebase writes a narrower sentence. OpenAI’s 5 November post puts GPT-6 Cyber in the API and Codex for a select group of approved Daybreak Red customers. The 48.5 percent is ExploitGym, against GPT-5.6 Cyber’s 32.1 percent. The post does not say the model is in ChatGPT.",
-      "audience": "Anyone who has to say whether a coding seat can now run offensive security work, and anyone comparing a vendor score with an outside one.",
-      "watch": "Whether \"select\" becomes every Daybreak Red customer, which the post says is soon. Whether a later note prices the API or prints what the $1 billion grant actually pays. Whether an outside evaluation reruns ExploitGym. The chat models named beside it did not change in this post.",
+      "example": "A science lead asked whether an agent can call the colonies on a cloning plate reads the 6 November post past the 66.7. That figure is the xhigh mean. In the post’s own cloning example, Astra picks lanes 4, 6, 7 and 8 and the reference picks 5, 9 and 10. The post says the higher score is not yet a reliable lab judgment.",
+      "audience": "Anyone who would hand a gel, a plate photo or a protocol video to an agent, and anyone who has to say what 66.7 percent is.",
+      "watch": "Whether a lab that did not write the tasks reruns the 100. Whether a later note prices the tokens or says who may see the images. No new chat model shipped with the benchmark. GPT-6 Astra was already the model named in the table.",
       "source": {
-        "title": "OpenAI: GPT-6 Cyber, 5 November 2026",
-        "url": "https://openai.com/index/introducing-gpt-6-cyber",
-        "quote": "GPT-6 Cyber is initially available through the API and Codex to a select group of approved Daybreak Red customers."
+        "title": "OpenAI: BioBasicsBench, 6 November 2026",
+        "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+        "quote": "At the ‘xhigh’ setting, which allows more reasoning per task, GPT-6 Astra earned an average of 66.7% of the available credit, compared with 43.8% for GPT-5.6 Sol."
       }
     },
     {
-      "id": "gemini-omni-1-2",
+      "id": "claude-memory",
       "topic": "tools",
-      "theme": "Gemini Omni 1.2 Flash makes 15-second video. The blog prices 720p at $0.07 a second",
-      "changed": "On Thursday 5 November 2026 Google published \"Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips,\" by Anish Nangia. The post says the model is rolling out and is generally available across the Gemini API and Gemini for business. It says clips can run up to 15 seconds, up from 10 seconds with Omni 1.1, and that duration can be set in one-second steps from 3 to 15 seconds. It says the price is down 30 percent from Gemini Omni 1.1, at $0.07 per second for 720p video. It says a team can draft at 360p or 720p, fix a detail in a follow-up edit instead of regenerating the clip, and upscale to 1080p or 4K. It does not print a price for 360p, 1080p or 4K. The same day’s post from the Google account on X puts \"$0.07/s\" beside drafting at 360p or 720p. That parenthetical is the X post’s, not a second price in the blog. The blog says references can combine character, product or style images, motion clips of up to three seconds, and audio. It says multi-turn editing works across a full 15-second clip. It says outputs carry an imperceptible SynthID watermark, and that Provisioned Throughput is available. It says 15-second clips in Google Vids are at no additional cost with a Google account or a Google Workspace subscription. It says 15-second video in the Gemini app is rolling out to Google AI Ultra subscribers. It also names Flow and Google Ads. It says work is still going on for fast sports action, rapid script changes and complex physics.",
-      "matters": "Fifteen seconds and $0.07 are the two figures a producer can put on a brief. The $0.07 in the blog is 720p. The X post is the one that sets that rate next to 360p as well.",
-      "imply": "Do not tell finance that 4K is $0.07 a second. The blog does not print that price. Do not tell them 15 seconds is free in every Google product. The no-additional-cost line is Google Vids, with an account or Workspace. The Gemini app line is Ultra, and it says rolling out.",
+      "theme": "Dreaming checks Claude’s notes against the transcript. One small folder is not a score",
+      "changed": "On Friday 6 November 2026 Anthropic published “The components of agent memory,” by Lance Martin, from the engineering team. The post says agent memory is knowledge Claude keeps between sessions, as notes it can read later. It says that excludes a change to the weights, learning inside one conversation, and compaction. Dreaming, as the post describes it, is an offline pass over logs. It can correct a note, write new notes, build a wiki, or choose what gets loaded at the start of the next session. The post compares one Pokémon run of Claude Sonnet 3.7 with one run of Claude Fable 5, each at about 10,000 steps, with a folder the model could read and write. Sonnet 3.7 wrote 413 memory files across 225 folders and earned one badge. Fable 5 wrote nine files in two folders, plus a top-level file called global.md, and earned four badges. Around step 10,000, Sonnet 3.7 spent the next 17 steps creating six files and deleting nine, and took no actions in the game. The post says Fable 5 progressed further with the smaller folder, and that Opus 5.5 kept a small folder of the current goal and beat the game. On a separate test, the post says Sonnet 5 read its memory before answering 9 out of 10 times, and Sonnet 4.6 did so less than half the time. Prompting Sonnet 4.6 to read the files and test its theories nearly doubled its score on that task. The post does not print the two scores. Dreaming’s correction example is one wrong note: Claude had written that a PokéCenter was on the east side of Mt. Moon. Checked against the transcript, the note was rewritten. With the corrected note, that run went back into the cave and reached Cerulean City. With the uncorrected note, Claude dropped back onto the earlier route three times and the run ended without reaching Cerulean City. The post also built wikis over an internal Stainless corpus of about 350,000 files, roughly 420 million tokens. On 25 questions, scores grew from 13 percent to 48 percent of graded criteria as dreaming scaled from two sessions to 128. With search and the wiki, the aggregate score rose from 54 percent to 61 percent, against 53 percent for search alone. The best wiki-only score in that passage is 48 percent. The post says search plus the wiki also saved about 20,000 tokens per question. On 24 questions about a merger, more than half of which needed several documents, the post says Claude scored 87 percent on the items that needed several documents or a judgment when it used the wiki, against 73 percent with search alone. On one contract test, a shared table kept 41 of 57 facts, which the post calls 72 percent. After the instructions gave each contract its own page, 57 of 57 facts survived, and the post says 100 percent of the criteria could be met, up from 72 percent. Claude Code, the post says, loads only the first 200 lines or 25 KB of MEMORY.md. The Managed Agents docs, as read for this edition, call dreaming a research preview and say to request access. The engineering post does not say every Claude seat runs that job.",
+      "matters": "A note written in the session can be wrong, and the next session can trust it. Dreaming is the post’s way of checking the note against the transcript. The badge counts are one run each.",
+      "imply": "Do not tell a team that fewer memory files produce more progress. The post shows one run of two models. Do not quote 48 percent as a general memory score. It is 25 questions on one corpus, after 128 dreaming sessions. Do not say dreaming is on for every customer. The docs call the Managed Agents feature a research preview.",
       "uses": [
-        "Quote the blog for the length and the 720p price. Up to 15 seconds, from 10. Duration in one-second steps from 3 to 15. $0.07 per second for 720p, 30 percent below Omni 1.1.",
-        "If someone cites $0.07 for 360p, label it as the Google account’s X post on 5 November. The blog lists 360p as a draft size and prices 720p.",
-        "A follow-up edit is the blog’s cost control. It says you fix a detail instead of regenerating the clip. It does not say every edit is free of the per-second rate."
+        "If someone cites the Pokémon result, keep the design in the sentence. One run each, about 10,000 steps. Sonnet 3.7: 413 files, 225 folders, one badge. Fable 5: nine files in two folders, plus global.md, four badges. The post says the smaller folder went further. It does not print a second run.",
+        "Keep the Stainless numbers together. About 350,000 files. 25 questions. 13 percent to 48 percent of graded criteria, from two sessions to 128. Search plus the wiki, 54 percent to 61 percent, against 53 percent for search alone. About 20,000 tokens saved per question.",
+        "The line a coding team can check today is Claude Code’s. The post says auto memory loads the first 200 lines or 25 KB of MEMORY.md, and that a longer instruction file is a weaker one."
       ],
-      "example": "A producer asked what a 15-second 720p spot costs under the new model multiplies the blog’s rate by the seconds they asked for, and stops there. Fifteen times $0.07 is the 720p line in the 5 November blog. The blog does not print the 4K rate, and it does not say the Gemini app includes the clip for every subscriber.",
-      "audience": "Anyone buying or generating short video from Gemini, and anyone who has to say which resolution the seven cents apply to.",
-      "watch": "Whether the pricing page later prints 360p, 1080p and 4K. Whether Ultra is the only Gemini app tier that gets 15 seconds. Whether fast sports and complex physics, which the blog says are still being worked on, get a later note. This is a video model. The chat line did not change with it.",
+      "example": "A team asked whether to let an agent keep a file for every decision opens the 6 November post at the Pokémon runs. The model that wrote 413 files spent 17 steps on the folder and took no action in the game. The post’s other point is the wrong PokéCenter note: until dreaming checked it against the transcript, a later session treated the east side as true.",
+      "audience": "Anyone whose coding agent writes notes for the next session, and anyone about to treat a memory score as a product benchmark.",
+      "watch": "Whether the research preview becomes a control a customer can turn on, and what it costs. Whether a second Pokémon run is published. The post does not name a new Claude model.",
       "source": {
-        "title": "Google: Gemini Omni 1.2 Flash, 5 November 2026",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-        "quote": "We have dropped the price 30% from Gemini Omni 1.1 making it available at $0.07 per second for 720p video."
+        "title": "Anthropic: The components of agent memory, 6 November 2026",
+        "url": "https://www.anthropic.com/research/components-of-agent-memory",
+        "quote": "As we scaled dreaming from two sessions to 128, performance on the 25 questions grew from 13% to 48% of graded criteria."
       }
     },
     {
-      "id": "metr-rd-pace",
+      "id": "muse-specialized",
+      "topic": "tools",
+      "theme": "Meta’s Muse update is an unnamed model. 90 percent and 2.4 times are different sentences",
+      "changed": "On Friday 6 November 2026 Meta AI published “Bringing Specialized Models to Muse and Meta AI.” The post says specialized versions of existing models, trained using Muse Wonder, are rolling out to people who use Muse and Meta AI. It does not name the models. It says Muse Wonder remains the frontier series introduced a few weeks earlier, and that these are specialized versions of the models already behind Muse and Meta AI. The page prints a Personal Superintelligence Index of 47 percent for the current Muse model and 38 percent for the previous one. It does not say what the index is made of. It says Active Memory and Active Focus, which it introduced with Muse Wonder, are coming to these specialized models. Active Memory, it says, is meant to tell temporary information from permanent information, and current information from stale information. The example in that section is a 2.4 times reduction, in Muse, in forgetting critical information necessary for a goal. A chart on the same page is a different pair. It says the current Muse model uses critical context correctly on 90 percent of Active Memory eval tasks, and the previous model on 76 percent. Active Focus, the post says, is training on bottlenecks so the model can try again, recover, or find another way. In Muse, it says, the models show a 67 percent improvement in completing everyday tasks where unexpected issues arise. It does not print the baseline that 67 percent improves on. It says the models were also trained to switch between pushing a goal alone and working live with the person, and to take a correction in the middle of a task. In Meta AI, it says the same changes help with steps, follow-up questions, and a change of direction. The post does not say Wonder itself is now the model in the free apps.",
+      "matters": "The number a product manager can repeat is 90 percent against 76 percent, on Meta’s Active Memory eval. The 2.4 times line is about forgetting. The post does not show the arithmetic that would make them the same figure.",
+      "imply": "Do not write that Muse is now 2.4 times better, or that the index moved from 76 to 90. Those are three sentences. Do not name a model the post does not name. Do not tell a team that every seat now runs Muse Wonder. The post says specialized versions of existing models are rolling out to Muse and Meta AI.",
+      "uses": [
+        "Keep three figures in three sentences. Index: 47 percent, from 38, and the post does not define the index. Active Memory eval: 90 percent of tasks using critical context, from 76. Forgetting: a 2.4 times reduction, in Muse, of critical information for a goal.",
+        "The 67 percent needs the missing baseline in the same sentence. The post says a 67 percent improvement on everyday tasks where something unexpected happens. It does not say 67 percent of what.",
+        "The access line is the first paragraph. Specialized versions, trained using Muse Wonder, rolling out to Muse and Meta AI. Not a new public model name."
+      ],
+      "example": "A workplace admin asked whether Friday’s Muse update is Muse Wonder for every seat reads the noun in the post. It says specialized versions of existing models, trained using Muse Wonder. The 90 percent is Meta’s eval of using critical context. The 2.4 times is a different sentence, about forgetting.",
+      "audience": "Anyone who administers Muse or Meta AI, and anyone who might put 2.4 times and 90 percent on the same slide as one result.",
+      "watch": "Whether Meta names the models or publishes the index. Whether the 67 percent gets a baseline. The post does not say a Wonder price changed.",
+      "source": {
+        "title": "Meta AI: Specialized models for Muse and Meta AI, 6 November 2026",
+        "url": "https://research.meta.ai/blog/specialized-models-for-muse-and-metaai",
+        "quote": "For example, our improved models in Muse show a 2.4x reduction in forgetting critical information necessary for helping you achieve your goals."
+      }
+    },
+    {
+      "id": "rsa-1024",
       "topic": "trust",
-      "theme": "METR says Anthropic’s well-specified pace is about twice the old rate. Most of the evidence is redacted",
-      "changed": "On Thursday 5 November 2026 METR published \"Independent Assessment of AI R&D Acceleration at Anthropic in October 2026.\" The post says staff worked at Anthropic from 12 August to 29 October 2026. It says that as of October 2026, Anthropic is likely improving model capabilities on well-specified tasks at around twice the rate of March 2024 to October 2025. It says the authors would not be surprised if the true acceleration were closer to 1.3 times or 3 times that historical rate. On benchmarks, it says scores measured by AECI, Anthropic’s version of the Epoch Capabilities Index, have grown at an estimated 1.9 times the pre-October 2025 rate, with a 95 percent confidence interval of 1.5 to 2.8 times. It says that implies roughly two years of historical progress in the last year. Robustness checks in the post find acceleration between 1.1 times and 2.9 times. The post says this 1.9 times is higher than the 1.7 times in the Haiku 5.5 system card, mainly because newer unreleased models were included. It says the authors are confident the acceleration was not from an acceleration in the scaling of training compute, and that further detail on that evidence was redacted. It says their overall subjective estimate is that a majority, perhaps about 80 percent, of the October 2026 acceleration is due to AI, with substantial uncertainty, and that late 2025 was likely influenced by non-AI factors whose details were redacted. It says individual uplift is not the same thing as an acceleration rate. Slack polls, which the post calls very loose evidence, reached 12 times in October 2026. It says AI is not yet able to make highly significant, fully autonomous contributions to the most important parts of training. It says Anthropic redacted a majority of the evidence METR found most informative. Anthropic’s description, as the post quotes it, is that the redactions were aimed at removing confidential information that could accelerate other AI developers. The post says the public therefore has to rely on METR’s judgment more than would be ideal. It says the team was 2.5 full-time equivalents over eleven weeks, that METR did not take payment, that Anthropic provided free tokens, and that METR did not sample non-public models. It says this is not the employee-like access described in Anthropic’s 15 October update.",
-      "matters": "Twice is a judgment about well-specified tasks, with a band the authors themselves set from 1.3 times to 3 times. The 1.9 times is the benchmark estimate, and most of the evidence behind the judgment is not in the public post.",
-      "imply": "Do not tell a board that Anthropic is now improving twice as fast at everything, or that the cause is 80 percent AI. The 80 percent is the post’s \"perhaps,\" with substantial uncertainty. Do not quote 12 times as the pace of the models. The post says that figure is a self-reported poll, and that individual uplift is not an acceleration rate.",
+      "theme": "Kohli says two weaknesses are in legacy 1024-bit RSA. He says RSA 2048 is not those results",
+      "changed": "On Friday 6 November 2026 Pushmeet Kohli, vice president of science at Google DeepMind, posted that the DeepMind science team was sharing two cryptographic advances against legacy 1024-bit RSA. The post says the team worked with cryptanalysis experts and that AI agents made the two advances in just weeks. It says the results can bypass older digital signature protections and can factor legacy 1024-bit RSA keys in bulk. It says these results do not affect the security of modern encryption schemes such as RSA 2048. It says the results are a reason not to assume the mathematical hardness of schemes relied on in the past, and that AI can help defenders improve standards ahead of future threats. The same post points to a longer essay on X, titled “Advancing the frontier of cryptanalysis.” Google DeepMind’s account, a few minutes later, said that guided by humans, the models uncovered two major weaknesses in legacy 1024-bit RSA cryptosystems. This edition used Kohli’s post. It did not read a paper, and it did not use speed-ups that other accounts attached to the news.",
+      "matters": "The sentence a security lead can use is the bound. Legacy 1024-bit RSA, not a break of RSA 2048. The post does not name a live system.",
+      "imply": "Do not tell a board that DeepMind broke modern RSA. Kohli’s sentence names RSA 2048 as a scheme these results do not affect. Do not quote a multiplier for the speed-up. This edition did not find that number in his post. Do not call the agents unsupervised. Both posts say people guided the work.",
       "uses": [
-        "Use two numbers and say which is which. The subjective line is about twice, and the authors would not be surprised by 1.3 times or 3 times. The AECI line is 1.9 times, 95 percent interval 1.5 to 2.8, since October 2025, against March 2024 to October 2025 for the subjective comparison.",
-        "Say what was redacted before you say what was found. The post says a majority of the evidence METR found most informative is not public, and that training-compute growth was ruled out as the cause, with the details redacted.",
-        "The 1.7 times in the Haiku 5.5 system card is a different figure. The post says 1.9 times is higher mainly because of newer unreleased models. Those models are not named as a release."
+        "Write the status as one sentence. On 6 November 2026 Kohli said two advances, made with cryptanalysis experts in just weeks, apply to legacy 1024-bit RSA: older signature protections, and factoring keys in bulk. He said they do not affect schemes such as RSA 2048.",
+        "The workplace check is an inventory, not a new control. Anything still offering a 1024-bit RSA key is the generation his post is about. A 2048-bit key is outside the sentence he wrote.",
+        "If a slide adds a factor of 30 or 1,600, take it off. Those figures were not in the post this edition used."
       ],
-      "example": "A risk lead asked whether to write \"Anthropic is now twice as fast\" into a memo opens the 5 November post first. The sentence METR will support is well-specified tasks, about twice the March 2024 to October 2025 rate, as of October 2026, and the authors would not be surprised by 1.3 times or 3 times. The public benchmark interval is 1.5 to 2.8. The post says most of the evidence they weighed is redacted.",
-      "audience": "Anyone who has to say how fast a lab is moving, and anyone who might treat a staff poll as a capability score.",
-      "watch": "Whether Anthropic publishes its own account of the same pace. The METR post does not include that account. Whether a later note fills in the redacted training-compute evidence. No model name changed with the assessment.",
+      "example": "A security lead asked whether Friday’s DeepMind post means their TLS certificates are exposed reads the key size in Kohli’s sentence. The weaknesses he describes are in legacy 1024-bit RSA. He writes that the results do not affect modern schemes such as RSA 2048. The post does not name a vendor or a live incident.",
+      "audience": "Anyone who still has a 1024-bit RSA key in a certificate, a device or a partner API, and anyone who might brief the result as a break of current encryption.",
+      "watch": "Whether the essay he linked is followed by a paper that prints the method and the cost. Whether a standards body names a migration date. No new Gemini model shipped with the post.",
       "source": {
-        "title": "METR: Independent assessment of AI R&D acceleration at Anthropic, 5 November 2026",
-        "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
-        "quote": "As of October 2026, Anthropic is likely improving the capabilities of their models on well-specified tasks at around twice the rate they did between March 2024 and October 2025."
+        "title": "Pushmeet Kohli, Google DeepMind, 6 November 2026",
+        "url": "https://x.com/pushmeet/status/2118753824194408683",
+        "quote": "While these results do not affect the security of modern encryption schemes  such as RSA 2048, these results show why we must not assume the mathematical \"hardness\" of cryptographic schemes which we have relied upon in the past."
       }
     },
     {
-      "id": "claude-eu-boundary",
-      "topic": "rules",
-      "theme": "Claude in Copilot joins the EU Data Boundary by the end of 2026. It is not inside it today",
-      "changed": "On Thursday 5 November 2026 Charles Lamanna posted on the Microsoft Copilot Blog that Claude models by Anthropic in Microsoft Copilot are coming into the EU Data Boundary. The post says that by the end of 2026, organizations in the European Union and the European Free Trade Association will be able to use Claude across Copilot experiences, including Copilot Cowork, with processing inside the boundary, where their data is already stored. It says Claude already powers Chat, Copilot in Microsoft 365 apps, Copilot Cowork and Copilot Code. It says organizations already using Claude will not need to do anything: once available, processing moves into the boundary automatically. It says organizations that have not enabled Claude can turn it on at any time, and that processing moves into the boundary once available. It says the setting is disabled by default in the EU and EFTA, and that admins can enable it for everyone or for selected users and groups in the Microsoft 365 admin center. It says customer data is not used to train generative AI foundation models. It says more details will be shared closer to availability. It does not name a day. Microsoft’s Copilot privacy page, as read for this edition, still says models provided by Anthropic as a subprocessor are currently excluded from the EU Data Boundary. The blog’s promise and that present-tense exclusion are different sentences.",
-      "matters": "The date in the announcement is the end of 2026. A tenant that has not turned Claude on does not get it by waiting.",
-      "imply": "Do not tell a European admin that Claude in Copilot is processed inside the boundary now. The blog says by the end of 2026, and the privacy page still says Anthropic models are currently excluded. Do not tell them the United Kingdom is in the blog’s sentence. The post names the EU and EFTA.",
-      "uses": [
-        "Write the status as \"announced 5 November 2026, processing by the end of 2026, EU and EFTA, including Copilot Cowork. Disabled by default. Existing users move automatically once it is available. No day, and no action listed for people who already have it on.\"",
-        "Keep the privacy page in the next sentence. As read for this edition, it says Anthropic models are currently excluded from the EU Data Boundary.",
-        "The training line is the blog’s. Customer data is not used to train generative AI foundation models. That is not a new clause about a model Anthropic trains on its own API."
-      ],
-      "example": "An admin in the EU asked whether a Copilot tenant can turn Claude on this week and stay inside the boundary reads the tense of the post. They can enable the setting. The post says processing moves into the EU Data Boundary once that processing is available, by the end of 2026. The privacy page still says the models are currently excluded.",
-      "audience": "Anyone who administers Copilot for an organization in the EU or EFTA, and anyone who has to say where a Claude request is processed.",
-      "watch": "Whether Microsoft names a month, and whether the privacy page’s \"currently excluded\" line is rewritten when processing actually moves. The blog does not say a Claude model changed.",
-      "source": {
-        "title": "Microsoft Copilot Blog: Claude models and the EU Data Boundary, 5 November 2026",
-        "url": "https://www.microsoft.com/en-us/copilot/blog/bringing-claude-models-in-microsoft-copilot-into-the-eu-data-boundary/",
-        "quote": "By the end of 2026, organizations in the European Union (EU) and the European Free Trade Association (EFTA) will be able to use Claude models across Copilot experiences, including Copilot Cowork, with processing within the EU Data Boundary, where their data is already stored."
-      }
-    },
-    {
-      "id": "anthropic-roadshow",
+      "id": "anthropic-range",
       "topic": "money",
-      "theme": "Reuters says some investors doubt Anthropic’s roadshow next week. Anthropic declined to comment",
-      "changed": "Reuters, in a report with a 5 November 2026 dateline, said potential investors are raising doubts about whether Anthropic can proceed with a planned roadshow next week in time for a November listing. The report says four people familiar with investor discussions described those doubts. It says investors are pushing for a more attractive valuation, and that some view a recently discussed $1.5 trillion valuation as the high end of expectations. It says Anthropic declined to comment on investor doubts. It says Reuters had previously reported that the roadshow was expected to start the week of 9 November, with pricing the following week. It says two of the people said investors are waiting on Anthropic’s October revenue figure, which the company left blank in its updated S-1. It says that at one point this year investors expected the listing in October, at a valuation as high as $2 trillion. It says that if the market stays under pressure, the company could decide to delay until an offering that some expect to reach $100 billion can be absorbed. A delay, in that sentence, is something the company could decide. The report does not say Anthropic has decided to delay. This edition used the copy carried by CNA. The CNA page is timestamped 6 November 2026. The dateline on the copy is 5 November.",
-      "matters": "$1.5 trillion is what Reuters says some investors think is high. It is not a price Anthropic printed on 5 November, and the roadshow is not described as cancelled.",
-      "imply": "Do not tell a board the listing has slipped, or that the valuation is $1.5 trillion. Reuters says some potential investors see that discussed figure as the high end, and that Anthropic declined to comment. Do not fill in the October revenue. The report says two people said the updated S-1 left it blank. This edition did not open that filing.",
+      "theme": "Bloomberg says buyers are discussing $1.2 trillion to $1.3 trillion. One person said $1.1 trillion",
+      "changed": "FA Mag, in an article dated 6 November 2026 and provided by Bloomberg News, said Anthropic’s IPO plans ran into a post-election selloff and that prospective investors are rethinking the valuation. The article says that ahead of formal IPO marketing next week, potential buyers are discussing a $1.2 trillion to $1.3 trillion range, according to people familiar with the matter. It says some are weighing a value as low as $1.1 trillion, and that this $1.1 trillion is one of those people. It says investors had previously told bankers their estimate of a fair valuation had moved to about $1.4 trillion to $1.5 trillion, which Bloomberg had reported, and that the estimate shifted again after the Nasdaq 100 plunged 6.4 percent on Thursday, wiping out $2.3 trillion of market value, a record for a single day. It says deliberations are ongoing and no final decisions have been made. It says a spokesperson for Anthropic declined to comment. It says investors had estimated a fair value as high as $2 trillion in early October, and that the retreat to $1.4 trillion to $1.5 trillion followed an October briefing on the latest financials. It says a delay is another, less palatable option, not a decision the company has announced. Max Kettner of HSBC, quoted from Bloomberg Radio, said around $1 trillion could be a more comfortable level. That is his view. It is not a bid in the $1.2 trillion to $1.3 trillion sentence. Reuters, the day before, had reported that some potential investors saw a discussed $1.5 trillion as the high end. This article is a later, lower band, from different unnamed people. It does not say the roadshow has been cancelled.",
+      "matters": "$1.2 trillion to $1.3 trillion is a discussion Bloomberg attributes to people familiar. $1.1 trillion is one person. Anthropic did not confirm either number on 6 November.",
+      "imply": "Do not put $1.1 trillion on a slide as the valuation. It is one unnamed person’s weighing, inside a reported range, and the company declined to comment. Do not say the listing has slipped. The article still frames formal marketing as next week, and it says no final decision has been made. Do not mix this range with Reuters’s $1.5 trillion sentence from 5 November. That was a different report.",
       "uses": [
-        "Keep four attributions apart. Four people familiar, via Reuters, on the doubt. Some of them, on $1.5 trillion as the high end. Two of them, on a blank October revenue line. Anthropic, on the record, declined to comment.",
-        "The week of 9 November is Reuters’s earlier expectation, restated in this piece. It is not a date Anthropic confirmed on 5 November.",
-        "The $100 billion is what the report says some people expect the offering to reach. The $2 trillion is what it says investors expected at one point this year. Neither is a term sheet."
+        "Keep the attributions in separate sentences. People familiar, via Bloomberg: a $1.2 trillion to $1.3 trillion discussion. One of them: as low as $1.1 trillion. Anthropic: declined to comment. Kettner: around $1 trillion would be more comfortable, which is a strategist’s comment, not the range.",
+        "The 6.4 percent and the $2.3 trillion are the article’s account of the Nasdaq 100 on Thursday. They are not a figure Anthropic printed.",
+        "The $1.4 trillion to $1.5 trillion is what the article says buyers had told bankers before Thursday, and what it says Bloomberg had already reported. It is not this article’s new range."
       ],
-      "example": "A treasurer asked whether Anthropic cancelled the roadshow on Thursday reads the verb in the Reuters copy. Potential investors are raising doubts about a roadshow next week, four people told Reuters. Anthropic declined to comment. The copy does not say the company has postponed the listing.",
-      "audience": "Anyone who has to say what Anthropic’s discussed valuation is, and whether a November listing is still the company’s stated plan.",
-      "watch": "Whether Anthropic or a bank names a roadshow date, a range, or the October revenue the two people said was blank. Whether the discussed $1.5 trillion moves. No model changed with the report.",
+      "example": "A treasurer asked whether Anthropic is now a $1.1 trillion IPO reads the verb in the FA Mag copy. Potential buyers are discussing $1.2 trillion to $1.3 trillion, people familiar told Bloomberg. One of them is weighing $1.1 trillion. Anthropic declined to comment. The copy does not say a range has been set.",
+      "audience": "Anyone who has to say what Anthropic’s discussed valuation is after Thursday’s market drop, and whether that replaced the $1.5 trillion line from 5 November.",
+      "watch": "Whether a bank or Anthropic names a range. Whether the $1.2 trillion to $1.3 trillion discussion moves again before marketing. The article does not say a model changed.",
       "source": {
-        "title": "Reuters, via CNA: investor doubts on Anthropic’s IPO timing, dateline 5 November 2026",
-        "url": "https://www.channelnewsasia.com/business/exclusive-ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-6529336",
-        "quote": "Anthropic declined to comment on investor doubts."
+        "title": "Bloomberg, via FA Mag: Anthropic IPO valuation talk, 6 November 2026",
+        "url": "https://www.fa-mag.com/news/anthropic-ipo-buyers-see-valuation-as-low-as--1-1-trillion-89128.html",
+        "quote": "A spokesperson for Anthropic declined to comment."
+      }
+    },
+    {
+      "id": "fmf-jailbreak",
+      "topic": "rules",
+      "theme": "The Forum’s jailbreak scale is Version 1.0. It says it is not a harm estimate, and not for operations yet",
+      "changed": "On Thursday 5 November 2026 the Frontier Model Forum posted Version 1.0 of a Jailbreak Rating Framework for Frontier Cyber Threats. The specification says it rates one successful jailbreak against one frontier model, and that a successful jailbreak is a reproducible method, such as a prompt, a template, a multi-turn procedure or a harness, that bypasses that version’s safeguards. It scores four categories: capability gain, capability scope, ease of deployment, and ease of discovery. It says those resolve into a severity and a likelihood, then into one band: Negligible, Low, Medium, High or Critical. It says the band does not prescribe a response. It says the framework measures relative risk, supports comparisons, and is not intended to estimate the actual harm a jailbreak could cause. It says the dimensions, tiers and thresholds are a starting point for discussion rather than guidance to apply operationally. It says a score of 0 on a frontier-risk dimension does not mean the behavior is acceptable. It means the case is below the frontier bar and belongs to ordinary risk management. If capability gain is 0, it says, stop and call the case Negligible. The baseline it names is the most cyber-capable widely available models as of the assessment date, currently October 2026. It says ExploitBench and ExploitGym are reasonable initial screens and will likely need replacing when they saturate. It says the same jailbreak, unchanged, scores differently when the baseline moves. Comments go to comments@frontiermodelforum.org through 21 December 2026. The page thanks experts from NIST CAISSI, NSA SISC, UK AISI and UK NCSC, and says feedback does not imply endorsement. The introductory post the same day quotes Sasha Baker, OpenAI’s head of national security policy, calling the framework a step toward a common methodology. OpenAI’s account on X posted about that partnership on 6 November. That post is not a second version of the document.",
+      "matters": "A security team can use the four categories as a shared vocabulary. The specification says not to treat the band as the harm, and not to run the scale operationally until it has been tested on more jailbreaks.",
+      "imply": "Do not file a Critical band as a measurement of damage. The page says the band is not a harm estimate and does not tell a company what to patch first. Do not tell an auditor the UK or US bodies endorsed it. The page says their feedback is not an endorsement. Do not date the document 6 November. The specification is 5 November. OpenAI’s post the next day points at it.",
+      "uses": [
+        "Write the status as Version 1.0, posted 5 November 2026, open for comment through 21 December. Four categories. Five bands. Not operational guidance, which is the specification’s line.",
+        "If a finding is scored, keep the model version in the sentence. The unit is one reproducible jailbreak against one specified model. A score of 0 is not, the page says, a statement that the behavior is fine.",
+        "The October 2026 baseline is the page’s. It names ExploitGym as a screen that will go stale. It does not reprint a model’s ExploitGym score."
+      ],
+      "example": "A security lead asked whether a jailbreak labeled Critical is a severity they can put in an incident ticket reads the specification’s limit. The band compares one reproducible bypass with others. The page says it does not estimate the harm, and that companies still decide the response. Comments on the scale itself are open through 21 December.",
+      "audience": "Anyone who triages jailbreaks across more than one lab, and anyone who might treat a forum band as a regulatory score.",
+      "watch": "Whether a later version says different assessors reach the same band. The page says that test is still to be done. Whether the 21 December comments change a threshold. No model shipped with the framework.",
+      "source": {
+        "title": "Frontier Model Forum: Jailbreak Rating Framework, Version 1.0, 5 November 2026",
+        "url": "https://www.frontiermodelforum.org/specifications/jailbreak-rating-framework-for-frontier-cyber-threats/",
+        "quote": "It supports comparisons between findings, but is not intended to estimate the actual harm a given jailbreak could cause, which depends on additional factors outside the scope of this framework."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Not in ChatGPT",
-        "body": "GPT-6 Cyber is in the API and Codex for approved Daybreak Red customers. The post does not put it in ChatGPT."
+        "title": "66.7 percent, at xhigh",
+        "body": "BioBasicsBench has 100 wet-lab tasks. GPT-6 Astra scores 66.7 percent. GPT-5.6 Sol scores 43.8."
       },
       {
-        "title": "Seven cents is 720p",
-        "body": "Omni 1.2 Flash makes video up to 15 seconds. The blog prices 720p at $0.07 a second, 30 percent under 1.1."
+        "title": "Nine files, four badges",
+        "body": "On one Pokémon run, Fable 5 kept nine files in two folders, plus global.md, and earned four badges."
       },
       {
-        "title": "Twice, on a wide band",
-        "body": "METR puts the well-specified pace at about twice the old rate. The published interval is 1.5x to 2.8x."
+        "title": "90 percent, then 2.4 times",
+        "body": "Meta’s memory eval is 90 percent, from 76. The 2.4 times line is a different sentence, about forgetting."
       }
     ],
     "matters": [
       {
-        "title": "The boundary is not today",
-        "body": "Claude in Copilot is promised inside the EU Data Boundary by the end of 2026. The privacy page still says excluded."
+        "title": "Not the valuation",
+        "body": "Bloomberg: buyers discuss $1.2 trillion to $1.3 trillion. One person said $1.1 trillion. Anthropic declined."
       },
       {
-        "title": "The roadshow is not cancelled",
-        "body": "Reuters says four people doubt next week’s roadshow. Anthropic declined to comment. $1.5 trillion is what some call high."
+        "title": "2048-bit is the bound",
+        "body": "Kohli says two weaknesses sit in legacy 1024-bit RSA. He says they do not affect schemes such as RSA 2048."
       },
       {
-        "title": "Eighty percent is a guess",
-        "body": "METR writes “perhaps ≈80%” for AI’s share of the current pace. It calls that a guess, and the 12 times figure a staff poll."
+        "title": "Not a harm estimate",
+        "body": "The Forum’s jailbreak scale compares one bypass with another. The specification says it does not estimate the harm."
       }
     ],
     "watch": [
       {
-        "title": "Select is the access word",
-        "body": "GPT-6 Cyber starts with a select Daybreak Red group. The post says all Daybreak Red customers come later. It does not say when."
+        "title": "About 12 percent high",
+        "body": "On one plate, Astra’s colony count was about 12 percent over the reference. A higher score is not a lab sign-off."
       },
       {
-        "title": "360p is the other sentence",
-        "body": "The blog prices 720p at $0.07 a second. The same day’s X post puts that rate beside 360p or 720p."
+        "title": "13 percent became 48",
+        "body": "On 25 questions, the score moved from 13 percent to 48 percent of the criteria, from two dreaming sessions to 128."
       },
       {
-        "title": "1.3 times is still inside",
-        "body": "METR would not be surprised if the pace were 1.3 times or 3 times. About twice is the middle of that judgment."
+        "title": "Comments close 21 December",
+        "body": "Version 1.0 is dated 5 November. Comments run through 21 December. Not for operational use yet."
       }
     ]
   },
   "chips": [
     "OpenAI",
-    "Cyber",
-    "Google",
-    "Omni",
-    "METR",
-    "Microsoft",
-    "Claude",
+    "Ligo",
     "Anthropic",
-    "IPO"
+    "Memory",
+    "Meta",
+    "Muse",
+    "RSA",
+    "IPO",
+    "Forum"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "OpenAI, 5 Nov: GPT-6 Cyber in the API and Codex for a select group of approved Daybreak Red customers. Not described as a ChatGPT model. ExploitGym 48.5 percent, from 32.1 percent for GPT-5.6 Cyber. Critical, up from High. Linux: 948 exploits, against 166 for GPT-5.6 Sol on the same harness. Firefox: 81 novel high-severity issues, as the post says Mozilla classified them. $1 billion is a grant program in the post.",
-      "topic": "Tools"
+      "raw": "OpenAI, 6 Nov: BioBasicsBench, 100 wet-lab tasks with Ligo. At xhigh, GPT-6 Astra 66.7 percent of available credit, interval 60.3 to 73.1, against 43.8 percent for GPT-5.6 Sol, interval 37.6 to 50.0. GPT-6.1 Sol on the same table is 62.0 percent. 18,500 results across 37 settings. One plate overcounted by about 12 percent. The post says a higher score is not yet a reliable lab judgment. Not a new chat model.",
+      "topic": "Work"
     },
     {
       "id": "s2",
-      "raw": "Google, 5 Nov: Gemini Omni 1.2 Flash generally available. Up to 15 seconds, from 10. One-second steps from 3 to 15. Blog: $0.07 per second for 720p, 30 percent below Omni 1.1. No 4K price in the blog. The Google account’s X post puts $0.07 a second beside 360p or 720p. SynthID on outputs. Vids: no additional cost. Gemini app: Ultra, rolling out.",
+      "raw": "Anthropic engineering, 6 Nov: dreaming checks memory notes against transcripts. One Pokémon run each at about 10,000 steps. Sonnet 3.7: 413 files, 225 folders, one badge. Fable 5: nine files in two folders plus global.md, four badges. Stainless: about 350,000 files, 25 questions, 13 percent to 48 percent of criteria from two sessions to 128. Claude Code loads the first 200 lines or 25 KB of MEMORY.md. Managed Agents docs call dreaming a research preview. Not a new model.",
       "topic": "Tools"
     },
     {
       "id": "s3",
-      "raw": "METR, 5 Nov: as of October 2026, well-specified capabilities likely about twice the March 2024 to October 2025 rate. Authors would not be surprised by 1.3x or 3x. AECI 1.9x since October 2025, 95 percent interval 1.5 to 2.8. Training-compute scaling ruled out as the cause; details redacted. Perhaps about 80 percent of the current acceleration attributed to AI, with substantial uncertainty. Majority of the most informative evidence redacted. Not a new model.",
-      "topic": "Trust"
+      "raw": "Meta, 6 Nov: specialized versions of existing models, trained using Muse Wonder, rolling out to Muse and Meta AI. Unnamed. Index 47 percent from 38, index undefined in the post. Active Memory eval 90 percent from 76. A separate sentence: 2.4 times less forgetting of critical information. 67 percent improvement with no baseline printed. Not Muse Wonder for every seat.",
+      "topic": "Tools"
     },
     {
       "id": "s4",
-      "raw": "Microsoft Copilot Blog, 5 Nov: Claude processing for EU and EFTA organizations inside the EU Data Boundary by the end of 2026, including Copilot Cowork. Disabled by default. Existing users move automatically once available. No calendar day. Privacy page, as read for this edition, still says Anthropic models are currently excluded. Not a new model.",
-      "topic": "Rules"
+      "raw": "Pushmeet Kohli, 6 Nov: two advances against legacy 1024-bit RSA, with cryptanalysis experts, in just weeks. Older signature protections, and factoring keys in bulk. He says the results do not affect modern schemes such as RSA 2048. Guided by humans. This edition did not read the essay and did not use other accounts’ multipliers. Not a new model.",
+      "topic": "Trust"
     },
     {
       "id": "s5",
-      "raw": "Reuters, dateline 5 Nov, read via CNA: four people familiar say investors doubt a roadshow next week in time for a November listing. Some see a discussed $1.5 trillion as the high end. Anthropic declined to comment. Earlier Reuters expectation, restated here: roadshow the week of 9 Nov. Two people: October revenue left blank in the updated S-1. Not a cancellation, and not a new model.",
+      "raw": "Bloomberg via FA Mag, 6 Nov: people familiar discuss a $1.2 trillion to $1.3 trillion range ahead of marketing next week. One person weighed $1.1 trillion. Anthropic declined to comment. Nasdaq 100 down 6.4 percent on Thursday, $2.3 trillion of value, as the article states it. No final decision. Not a cancellation of the roadshow, and not a new model.",
       "topic": "Money"
+    },
+    {
+      "id": "s6",
+      "raw": "Frontier Model Forum, 5 Nov: Jailbreak Rating Framework Version 1.0. Four categories, bands from Negligible to Critical. Not a harm estimate. Not operational guidance. A score of 0 is not a clean bill of health. Baseline is October 2026. Comments through 21 December. OpenAI’s account pointed at it on 6 Nov. Not a new model.",
+      "topic": "Rules"
     }
   ]
 }

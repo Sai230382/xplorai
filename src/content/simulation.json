@@ -1,120 +1,132 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "gpt-6-cyber",
+  "storyId": "biobasics",
   "kicker": "Play with today’s story",
-  "title": "Six figures from OpenAI’s GPT-6 Cyber post",
-  "intro": "Move across six lines from OpenAI’s 5 November 2026 post. Each stop is one evaluation or one count the post prints. The page does not turn a percent into a ranking, and it does not put the model in ChatGPT.",
-  "note": "Every figure on the control is from OpenAI’s post \"GPT-6 Cyber,\" dated 5 November 2026. ExploitGym is the post’s test of whether a model can exploit a specified vulnerability: 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber. The post calls that a 51 percent relative improvement and about 16 percentage points. This control does not subtract the two scores itself. The scope line is ExploitGym Honeypot. 99.93 percent is without deployment safety prompts. 100 percent is with those prompts. 94.49 percent is GPT-5.6 Cyber without those prompts. The web line is a new evaluation in the same post. 40.3 percent recall, against 32.0 percent for GPT-6 Astra. The post says the models did not have source code. RemoteExploitBench, as the post describes it, uses known vulnerabilities in a controlled environment. 95 percent is how many tasks GPT-6 Cyber completed. 100 percent is how many GPT-6 Astra, running with Daybreak Blue, refused. The Linux counts are 948 exploits, 166 for GPT-5.6 Sol on the same research harness, 1,724 vulnerabilities reproduced, and 304 critical findings disclosed with candidate patches. The Firefox counts are 81 novel vulnerabilities the post says Mozilla classified as high severity, and 30 known issues the post says were more severe than previously reported. None of these figures is an outside lab’s rerun. The system card is not on this control. The post does not say GPT-6 Cyber is in ChatGPT.",
+  "title": "Six rows from OpenAI’s xhigh table",
+  "intro": "Move across six models from the xhigh table in OpenAI’s 6 November 2026 BioBasicsBench post. Each stop is that model’s mean, the interval the post prints beside it, and the output tokens per task. The page does not subtract the scores, and it does not turn a percent into a lab sign-off.",
+  "note": "Every figure on the control is from the xhigh table in OpenAI’s post “Measuring how AI agents handle everyday wet-lab science,” dated 6 November 2026. Xhigh is the highest reasoning setting the post reports for all seven models. Each row is all 100 tasks and five attempts. Mean reward is the average task score as a percentage of the available credit. The intervals are the post’s 95 percent confidence intervals. The token counts are output tokens per task. The post’s seventh xhigh row is not on this control: GPT-5.2 at 31.2 percent, interval 26.2 to 36.3 percent, 27,620 output tokens. The post says the whole evaluation is 37 settings and 18,500 results. This control does not show the other effort settings. The post’s comparison sentence is GPT-6 Astra at 66.7 percent against GPT-5.6 Sol at 43.8 percent. It also prints GPT-6.1 Sol at 62.0 percent. This control does not test whether two intervals overlap. The approximately 12 percent colony overcount is a different passage, about one plate, and it is not a row here. The post says a higher score is not yet a reliable judgment in the lab.",
   "sources": [
     {
-      "label": "OpenAI: GPT-6 Cyber, 5 November 2026",
-      "url": "https://openai.com/index/introducing-gpt-6-cyber"
+      "label": "OpenAI: BioBasicsBench, 6 November 2026",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Which line from the 5 November GPT-6 Cyber post",
+    "label": "Which model on the xhigh BioBasicsBench table",
     "items": [
       {
-        "label": "ExploitGym",
-        "name": "Specified vulnerability",
-        "caption": "The post’s comparison is GPT-5.6 Cyber. It calls the gap a 51 percent relative improvement and about 16 percentage points.",
+        "label": "Astra",
+        "name": "GPT-6 Astra",
+        "caption": "The post’s comparison sentence pairs this row with GPT-5.6 Sol.",
         "stats": [
           {
-            "label": "GPT-6 Cyber",
-            "value": "48.5 percent"
+            "label": "Mean reward",
+            "value": "66.7 percent"
           },
           {
-            "label": "GPT-5.6 Cyber",
-            "value": "32.1 percent"
+            "label": "95 percent interval",
+            "value": "60.3 to 73.1 percent"
+          },
+          {
+            "label": "Output tokens",
+            "value": "4,704"
           }
         ]
       },
       {
-        "label": "Scope",
-        "name": "Out-of-scope services left alone",
-        "caption": "ExploitGym Honeypot. The 99.93 percent is without deployment safety prompts.",
+        "label": "6.1 Sol",
+        "name": "GPT-6.1 Sol",
+        "caption": "Printed in the same table. The post’s comparison sentence does not use this row.",
         "stats": [
           {
-            "label": "Without those prompts",
-            "value": "99.93 percent"
+            "label": "Mean reward",
+            "value": "62.0 percent"
           },
           {
-            "label": "With those prompts",
-            "value": "100 percent"
+            "label": "95 percent interval",
+            "value": "55.6 to 68.4 percent"
           },
           {
-            "label": "GPT-5.6 Cyber, without",
-            "value": "94.49 percent"
+            "label": "Output tokens",
+            "value": "5,238"
           }
         ]
       },
       {
-        "label": "Web",
-        "name": "Recall without source code",
-        "caption": "The post’s new web evaluation. Not an outside rerun.",
+        "label": "5.6 Sol",
+        "name": "GPT-5.6 Sol",
+        "caption": "The earlier model in the post’s 66.7 percent sentence.",
         "stats": [
           {
-            "label": "GPT-6 Cyber",
-            "value": "40.3 percent"
+            "label": "Mean reward",
+            "value": "43.8 percent"
           },
           {
-            "label": "GPT-6 Astra",
-            "value": "32.0 percent"
+            "label": "95 percent interval",
+            "value": "37.6 to 50.0 percent"
+          },
+          {
+            "label": "Output tokens",
+            "value": "9,099"
           }
         ]
       },
       {
-        "label": "Remote",
-        "name": "Known bugs, controlled bench",
-        "caption": "Astra was running with Daybreak Blue. The post says Cyber’s one miss would not work remotely.",
+        "label": "Luna",
+        "name": "GPT-6 Luna",
+        "caption": "Same xhigh table. Not the model in the comparison sentence.",
         "stats": [
           {
-            "label": "GPT-6 Cyber completed",
-            "value": "95 percent"
+            "label": "Mean reward",
+            "value": "38.3 percent"
           },
           {
-            "label": "Astra refused",
-            "value": "100 percent"
+            "label": "95 percent interval",
+            "value": "32.3 to 44.5 percent"
+          },
+          {
+            "label": "Output tokens",
+            "value": "13,120"
           }
         ]
       },
       {
-        "label": "Linux",
-        "name": "Exploits the post counts",
-        "caption": "The 166 is GPT-5.6 Sol on the same research harness. The post says 948 is more than five times that.",
+        "label": "5.5",
+        "name": "GPT-5.5",
+        "caption": "Same table, five attempts on all 100 tasks.",
         "stats": [
           {
-            "label": "Exploits",
-            "value": "948"
+            "label": "Mean reward",
+            "value": "35.4 percent"
           },
           {
-            "label": "GPT-5.6 Sol",
-            "value": "166"
+            "label": "95 percent interval",
+            "value": "29.7 to 41.0 percent"
           },
           {
-            "label": "Reproduced",
-            "value": "1,724"
-          },
-          {
-            "label": "Disclosed",
-            "value": "304"
+            "label": "Output tokens",
+            "value": "11,135"
           }
         ]
       },
       {
-        "label": "Firefox",
-        "name": "What the post says Mozilla graded",
-        "caption": "High severity is the post’s account of Mozilla’s classification.",
+        "label": "5.4",
+        "name": "GPT-5.4",
+        "caption": "The post’s next row, GPT-5.2, is in the note rather than on this slider.",
         "stats": [
           {
-            "label": "Novel, high severity",
-            "value": "81"
+            "label": "Mean reward",
+            "value": "33.2 percent"
           },
           {
-            "label": "Known, more severe",
-            "value": "30"
+            "label": "95 percent interval",
+            "value": "28.3 to 38.4 percent"
+          },
+          {
+            "label": "Output tokens",
+            "value": "13,717"
           }
         ]
       }
