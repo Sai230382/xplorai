@@ -1,5 +1,32 @@
 [
   {
+    "name": "Reuters",
+    "handle": "Reuters",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
+    "text": "OpenAI gets $11 billion funding at $1.25 trillion valuation, source says https://t.co/JBvKFAeyUi",
+    "url": "https://x.com/Reuters/status/2118903782641746252",
+    "postedAt": "2026-11-07T03:10:03.000Z",
+    "take": "$11 billion is what has come in so far, per a source. TechCrunch, citing Bloomberg, says the round has not closed and could reach about $20 billion."
+  },
+  {
+    "name": "Business Insider",
+    "handle": "BusinessInsider",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1724403357094141952/g5KVAmVz_normal.jpg",
+    "text": "\"Quantum computing still has plenty of mysteries, but now there is one fewer.\" https://t.co/XbqFcLCdvc",
+    "url": "https://x.com/BusinessInsider/status/2118869103364440351",
+    "postedAt": "2026-11-07T00:52:15.000Z",
+    "take": "The quote is PSI’s. Its system ran a non-public Anthropic model, and Lean accepted the proof. The model is unnamed, and Anthropic did not respond to Business Insider."
+  },
+  {
+    "name": "Ars Technica",
+    "handle": "arstechnica",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2215576731/ars-logo_normal.png",
+    "text": "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update. https://t.co/c0kfLsjnv6",
+    "url": "https://x.com/arstechnica/status/2118762332428100060",
+    "postedAt": "2026-11-06T17:47:59.000Z",
+    "take": "Meta told Reuters it is pausing the changes and the existing terms remain in effect. Paused is not withdrawn. Meta has not given a new date."
+  },
+  {
     "name": "Anthropic",
     "handle": "AnthropicAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg",

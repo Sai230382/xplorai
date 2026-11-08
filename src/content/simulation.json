@@ -1,132 +1,63 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "biobasics",
+  "storyId": "ramp-spend",
   "kicker": "Play with today’s story",
-  "title": "Six rows from OpenAI’s xhigh table",
-  "intro": "Move across six models from the xhigh table in OpenAI’s 6 November 2026 BioBasicsBench post. Each stop is that model’s mean, the interval the post prints beside it, and the output tokens per task. The page does not subtract the scores, and it does not turn a percent into a lab sign-off.",
-  "note": "Every figure on the control is from the xhigh table in OpenAI’s post “Measuring how AI agents handle everyday wet-lab science,” dated 6 November 2026. Xhigh is the highest reasoning setting the post reports for all seven models. Each row is all 100 tasks and five attempts. Mean reward is the average task score as a percentage of the available credit. The intervals are the post’s 95 percent confidence intervals. The token counts are output tokens per task. The post’s seventh xhigh row is not on this control: GPT-5.2 at 31.2 percent, interval 26.2 to 36.3 percent, 27,620 output tokens. The post says the whole evaluation is 37 settings and 18,500 results. This control does not show the other effort settings. The post’s comparison sentence is GPT-6 Astra at 66.7 percent against GPT-5.6 Sol at 43.8 percent. It also prints GPT-6.1 Sol at 62.0 percent. This control does not test whether two intervals overlap. The approximately 12 percent colony overcount is a different passage, about one plate, and it is not a row here. The post says a higher score is not yet a reliable judgment in the lab.",
+  "title": "Three bands of AI spend per employee, from Ramp’s data",
+  "intro": "Move across the three groups of companies in TechCrunch’s 6 November 2026 report on Ramp’s card data. Each stop is what that group spends on AI per employee per month, as the article prints it, with the line the article gives about how that group moved this summer. The page does not compute a gap between the bands.",
+  "note": "Every figure here is from TechCrunch’s article “Ramp data shows AI spending stalling just as Anthropic nears its IPO,” dated 6 November 2026, quoting Ramp’s lead economist Ara Kharazian. The figures are Ramp’s card data from its own customers, not the whole market, and not OpenAI’s or Anthropic’s revenue. The article gives ranges for the median and top 10 percent, and gives the top 1 percent as just below the $10,000 per employee they were hitting at their summer peaks. It does not print an exact August or September figure for that group. The overall growth figures are separate lines in the article: token spend grew 1.5 percent across August and September, 42 percent in July from the month before, and 8.9 percent from 23 September to 23 October. This control does not show those as a band.",
   "sources": [
     {
-      "label": "OpenAI: BioBasicsBench, 6 November 2026",
-      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science"
+      "label": "TechCrunch: Ramp data shows AI spending stalling, 6 November 2026",
+      "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Which model on the xhigh BioBasicsBench table",
+    "label": "Which group of Ramp customers",
     "items": [
       {
-        "label": "Astra",
-        "name": "GPT-6 Astra",
-        "caption": "The post’s comparison sentence pairs this row with GPT-5.6 Sol.",
+        "label": "Median",
+        "name": "Median firm",
+        "caption": "The typical Ramp customer in the article.",
         "stats": [
           {
-            "label": "Mean reward",
-            "value": "66.7 percent"
+            "label": "AI spend per employee per month",
+            "value": "$12 to $15"
           },
           {
-            "label": "95 percent interval",
-            "value": "60.3 to 73.1 percent"
-          },
-          {
-            "label": "Output tokens",
-            "value": "4,704"
+            "label": "Summer trend, per the article",
+            "value": "Growing"
           }
         ]
       },
       {
-        "label": "6.1 Sol",
-        "name": "GPT-6.1 Sol",
-        "caption": "Printed in the same table. The post’s comparison sentence does not use this row.",
+        "label": "Top 10%",
+        "name": "Top 10 percent of firms",
+        "caption": "The article says growth here was not enough to make up for the top 1 percent.",
         "stats": [
           {
-            "label": "Mean reward",
-            "value": "62.0 percent"
+            "label": "AI spend per employee per month",
+            "value": "$600 to $1,000"
           },
           {
-            "label": "95 percent interval",
-            "value": "55.6 to 68.4 percent"
-          },
-          {
-            "label": "Output tokens",
-            "value": "5,238"
+            "label": "Summer trend, per the article",
+            "value": "Growing"
           }
         ]
       },
       {
-        "label": "5.6 Sol",
-        "name": "GPT-5.6 Sol",
-        "caption": "The earlier model in the post’s 66.7 percent sentence.",
+        "label": "Top 1%",
+        "name": "Top 1 percent of firms",
+        "caption": "Kharazian calls them the most “AI-pilled.”",
         "stats": [
           {
-            "label": "Mean reward",
-            "value": "43.8 percent"
+            "label": "Summer peak per employee",
+            "value": "$10,000"
           },
           {
-            "label": "95 percent interval",
-            "value": "37.6 to 50.0 percent"
-          },
-          {
-            "label": "Output tokens",
-            "value": "9,099"
-          }
-        ]
-      },
-      {
-        "label": "Luna",
-        "name": "GPT-6 Luna",
-        "caption": "Same xhigh table. Not the model in the comparison sentence.",
-        "stats": [
-          {
-            "label": "Mean reward",
-            "value": "38.3 percent"
-          },
-          {
-            "label": "95 percent interval",
-            "value": "32.3 to 44.5 percent"
-          },
-          {
-            "label": "Output tokens",
-            "value": "13,120"
-          }
-        ]
-      },
-      {
-        "label": "5.5",
-        "name": "GPT-5.5",
-        "caption": "Same table, five attempts on all 100 tasks.",
-        "stats": [
-          {
-            "label": "Mean reward",
-            "value": "35.4 percent"
-          },
-          {
-            "label": "95 percent interval",
-            "value": "29.7 to 41.0 percent"
-          },
-          {
-            "label": "Output tokens",
-            "value": "11,135"
-          }
-        ]
-      },
-      {
-        "label": "5.4",
-        "name": "GPT-5.4",
-        "caption": "The post’s next row, GPT-5.2, is in the note rather than on this slider.",
-        "stats": [
-          {
-            "label": "Mean reward",
-            "value": "33.2 percent"
-          },
-          {
-            "label": "95 percent interval",
-            "value": "28.3 to 38.4 percent"
-          },
-          {
-            "label": "Output tokens",
-            "value": "13,717"
+            "label": "August and September",
+            "value": "Just below that peak"
           }
         ]
       }
