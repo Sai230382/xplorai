@@ -1,5 +1,125 @@
 [
   {
+    "id": "2119208984443781489",
+    "url": "https://x.com/murrtlen/status/2119208984443781489",
+    "author_name": "Murr",
+    "author_handle": "@murrtlen",
+    "created_at": "2026-11-07T23:22:49.000Z",
+    "text": "My phone is now a trackpad for my laptop. Claude wrote the code, and the cursor follows my finger.\n\nWatch the screen on the right. I drag a finger on the phone, the cursor moves. I hit Right click and the context menu opens.\n\nWhat I built:\n\nan app on the phone and a small app on the laptop\nthey talk over Bluetooth\ntap to click, hold to drag\nleft click, right click, center and pause buttons\na speed slider to tune the feel\nI made it with Claude Code in a few hours.\nClicks and gestures were the hardest part to get right.\nRight now there’s no scrolling and no two-finger gestures. Cursor and clicks only.\n\nWhat should I add first, scrolling or two-finger gestures?",
+    "model_or_tool": "Claude Code",
+    "what_they_built": "A phone app and a small laptop app, talking over Bluetooth, that turn the phone into a trackpad with tap, drag, left and right click, written with Claude Code in a few hours.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 8,
+      "impression_count": 425,
+      "like_count": 18,
+      "quote_count": 0,
+      "reply_count": 5,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119208927967469568/img/zcTWLID6cciq4ta5.jpg"
+  },
+  {
+    "id": "2119169485206700532",
+    "url": "https://x.com/agentsky_dev/status/2119169485206700532",
+    "author_name": "AgentSky",
+    "author_handle": "@agentsky_dev",
+    "created_at": "2026-11-07T20:45:52.000Z",
+    "text": "One prompt: a clockwork toy city. Three agents, three cities.\n\n⚡ Codex (GPT-6.1 Terra): 2 min 23 s · 4,239 tokens\nHermes (Gemini 4 Argon): 8 min 39 s · 43,857 tokens\nClaude Code (Opus 5.5): 21 min 7 s · 72,899 tokens\n\nWhich would you keep on your desk? https://t.co/vRioyhoWSX",
+    "model_or_tool": "Codex (GPT-6.1 Terra), Hermes (Gemini 4 Argon), Claude Code (Opus 5.5)",
+    "what_they_built": "Three clockwork toy cities from one prompt, one per coding agent, with the time and tokens each agent took printed beside it.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 1,
+      "impression_count": 626,
+      "like_count": 3,
+      "quote_count": 0,
+      "reply_count": 7,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/ext_tw_video_thumb/2119169275545980929/pu/img/yynfxwmt302rZTvz.jpg"
+  },
+  {
+    "id": "2119096507064324483",
+    "url": "https://x.com/JGB369/status/2119096507064324483",
+    "author_name": "JGB",
+    "author_handle": "@JGB369",
+    "created_at": "2026-11-07T15:55:52.000Z",
+    "text": "I built a anime/cartoon motion Studio with claude code and this is just the beginning.. \n\nHuman design and physics are quite  right.\n\nEverything here built with opus5.5 and fable 5.1\n+some help from chatgpt astra for design questions \n\nbtw I have 0 coding skill, just passion https://t.co/rp9xGQzfvu",
+    "model_or_tool": "Claude Code, Opus 5.5, Fable 5.1",
+    "what_they_built": "An anime and cartoon motion studio built with Claude Code by someone who says they have no coding skill, using Opus 5.5 and Fable 5.1.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 234,
+      "like_count": 3,
+      "quote_count": 0,
+      "reply_count": 4,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119095647445876736/img/kBw4MA1YerCpdA1e.jpg"
+  },
+  {
+    "id": "2118778224352403686",
+    "url": "https://x.com/0xNextia/status/2118778224352403686",
+    "author_name": "Anthony",
+    "author_handle": "@0xNextia",
+    "created_at": "2026-11-06T18:51:08.000Z",
+    "text": "the cursor moves. the jaguar looks back.\n\neyes, head and light follow the pointer.\na live three.js page, built with Claude Code. @threejs https://t.co/daTnvaAY47",
+    "model_or_tool": "Claude Code (three.js)",
+    "what_they_built": "A live three.js page, built with Claude Code, where a jaguar’s eyes, head and light follow the pointer.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 107,
+      "like_count": 5,
+      "quote_count": 0,
+      "reply_count": 2,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2118777936350478336/img/7ixFhBDcD7vcCy1W.jpg"
+  },
+  {
+    "id": "2118709488400454083",
+    "url": "https://x.com/_Garg_Sarthak/status/2118709488400454083",
+    "author_name": "Sarthak Garg",
+    "author_handle": "@_Garg_Sarthak",
+    "created_at": "2026-11-06T14:18:00.000Z",
+    "text": "Quick update on the browser tool I built with Claude Code:\n\nAdded a paint bucket, pen tool, and a few more core options to match Photoshop.\n\nRuns entirely in the browser now with zero lag.\n\nUgly UI, but it actually works. https://t.co/hCAAQOdc1q",
+    "model_or_tool": "Claude Code",
+    "what_they_built": "A browser image editor, built with Claude Code, that now has a paint bucket, a pen tool and other core Photoshop-style tools.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 344,
+      "like_count": 14,
+      "quote_count": 0,
+      "reply_count": 11,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/media/HWcgz5ZbMAA6Z7j.jpg"
+  },
+  {
+    "id": "2118591807814811897",
+    "url": "https://x.com/BahaMustaf69236/status/2118591807814811897",
+    "author_name": "Baha Mustafa",
+    "author_handle": "@BahaMustaf69236",
+    "created_at": "2026-11-06T06:30:23.000Z",
+    "text": "In 2022 NASA crashed a spacecraft into an asteroid on purpose.\n\nThis week, ESA's Hera arrived to look at the damage. 🚀\n\nI built an interactive 3D replay of the impact. You can rotate it, replay it, and watch the moon's orbit change.\n\n🛠 Built with:\n• Three.js + WebGL for the 3D scene\n• Canvas 2D for the orbit model\n• Plain HTML/CSS/JS, no framework\n• Puppeteer + FFmpeg to render the video\n• Claude Code as my pair programmer\n\n@threejs @claudeai @ESA_Hera @NASA\n\n#threejs #webgl #buildinpublic #indiedev",
+    "model_or_tool": "Claude Code (Three.js, WebGL)",
+    "what_they_built": "An interactive 3D replay of NASA’s DART impact, which you can rotate and replay to watch the moon’s orbit change, built with Claude Code as pair programmer.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 1,
+      "impression_count": 370,
+      "like_count": 5,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 2
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2118591287301697536/img/tg6RN-lrkfHxXOvg.jpg"
+  },
+  {
     "id": "2118342724076392845",
     "url": "https://x.com/titepommee/status/2118342724076392845",
     "author_name": "Sourasith",
@@ -100,66 +220,6 @@
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2117297637032607744/img/6X6Dr-901WGSly8F.jpg"
   },
   {
-    "id": "2116404959277433240",
-    "url": "https://x.com/MengTo/status/2116404959277433240",
-    "author_name": "Meng To",
-    "author_handle": "@MengTo",
-    "created_at": "2026-10-31T05:40:37.000Z",
-    "text": "This kinda went viral. \n\nSome thought it wasn't a real game so here's another gameplay trailer made with Opus 5.5. All three.js. https://t.co/EXMXvw8mPv https://t.co/MAXsOm5ZR1",
-    "model_or_tool": "Opus 5.5 (three.js)",
-    "what_they_built": "A three.js gameplay trailer made with Opus 5.5, posted after people questioned whether an earlier clip was a real game.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 377,
-      "impression_count": 39180,
-      "like_count": 657,
-      "quote_count": 8,
-      "reply_count": 48,
-      "retweet_count": 33
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2116404429067079680/img/tm6GwUkmg18RbAeu.jpg"
-  },
-  {
-    "id": "2117062532439671028",
-    "url": "https://x.com/sara_kumodeck/status/2117062532439671028",
-    "author_name": "Sara Chen",
-    "author_handle": "@sara_kumodeck",
-    "created_at": "2026-11-02T01:13:35.000Z",
-    "text": "1,967,478,960 triangles at 60 fps in a desktop browser 🤯\nthree.js r187's MeshletDrawingPipeline splits meshes into 64-triangle clusters. the gpu culls the hidden ones and far stuff drops to coarser LODs.\nBILLION, made with opus 5.5 #threejs #gamedev https://t.co/F8y3gjlrJb https://t.co/RcVED8MB5O",
-    "model_or_tool": "Opus 5.5 (three.js)",
-    "what_they_built": "A browser scene that draws 1,967,478,960 triangles at 60 frames per second with three.js meshlets, made with Opus 5.5.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 278,
-      "impression_count": 22238,
-      "like_count": 390,
-      "quote_count": 4,
-      "reply_count": 25,
-      "retweet_count": 24
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2117061912148267008/img/3X-A1a-5F4MvHEtM.jpg"
-  },
-  {
-    "id": "2117042700872802448",
-    "url": "https://x.com/BenjaminDEKR/status/2117042700872802448",
-    "author_name": "Benjamin De Kraker",
-    "author_handle": "@BenjaminDEKR",
-    "created_at": "2026-11-01T23:54:47.000Z",
-    "text": "I built a cozy, addictive simulation game called HarbourLine.\n\nYou start with one crane and a fishing wharf, and before you know it you're running a lights-out automated megaport.\n\nEverything (including this trailer) crafted with Claude Code / Opus 5.5 :) https://t.co/Gl2Mhbld39",
-    "model_or_tool": "Claude Code, Opus 5.5",
-    "what_they_built": "HarbourLine, a port simulation that starts with one crane and a fishing wharf, including the trailer, made with Claude Code and Opus 5.5.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 32,
-      "impression_count": 17303,
-      "like_count": 112,
-      "quote_count": 5,
-      "reply_count": 38,
-      "retweet_count": 4
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2117041929737093120/img/vJVKhPR3PhurUmai.jpg"
-  },
-  {
     "id": "2117389523801743770",
     "url": "https://x.com/RafaCrackYT/status/2117389523801743770",
     "author_name": "Rafa",
@@ -178,65 +238,5 @@
       "retweet_count": 2
     },
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2117389260076560384/img/7OrhjT4QQTD6ehbm.jpg"
-  },
-  {
-    "id": "2117279394540519635",
-    "url": "https://x.com/sorenxet/status/2117279394540519635",
-    "author_name": "sorenxet",
-    "author_handle": "@sorenxet",
-    "created_at": "2026-11-02T15:35:19.000Z",
-    "text": "I built an open-world game with Claude Opus 5.5 and Godot, and the whole thing comes down to one rule.\n\nNever ask for \"An open world\".\nAsk for one feature, play it, then ask for the next.\n\nWhat came out: a mountain map, a glider that actually flies, a ruined tower, enemies that https://t.co/DT1pGwGEMB https://t.co/xwLtIFwEMk",
-    "model_or_tool": "Claude Opus 5.5 (Godot, Tripo, Blender)",
-    "what_they_built": "An open-world game in Godot, with a mountain map, a glider, a ruined tower and enemies, built one feature at a time with Claude Opus 5.5.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 69,
-      "impression_count": 5427,
-      "like_count": 92,
-      "quote_count": 1,
-      "reply_count": 24,
-      "retweet_count": 3
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2117205146354524161/img/pUulTKK9OEv-s7lH.jpg"
-  },
-  {
-    "id": "2116213592068632863",
-    "url": "https://x.com/techartist_/status/2116213592068632863",
-    "author_name": "Techartist",
-    "author_handle": "@techartist_",
-    "created_at": "2026-10-30T17:00:12.000Z",
-    "text": "An airliner is many hidden systems working as one machine. I made a web app that x-rays one from gate to landing to show its fuel, hydraulics, electrics, engines and cabin air.\n\nBuilt with Opus 5.5 using Blender + Three.js. Explore it live ↓ https://t.co/suPdUFa3P2",
-    "model_or_tool": "Opus 5.5 (Blender, Three.js)",
-    "what_they_built": "A web app that shows an airliner’s fuel, hydraulics, electrics, engines and cabin air from gate to landing, built with Opus 5.5, Blender and Three.js.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 164,
-      "impression_count": 12767,
-      "like_count": 277,
-      "quote_count": 3,
-      "reply_count": 18,
-      "retweet_count": 32
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2116212919180709888/img/QahdkE-CRq8r1aBI.jpg"
-  },
-  {
-    "id": "2116277697563234432",
-    "url": "https://x.com/0xCodez/status/2116277697563234432",
-    "author_name": "Codez",
-    "author_handle": "@0xCodez",
-    "created_at": "2026-10-30T21:14:56.000Z",
-    "text": "i reverse engineered my Wi-Fi router with Claude Opus 5.5 and found a f*cking scary privacy problem...\n\nevery site I opened, my provider saw it. no encryption. just a readable list.\n\nso I built a free open-source app that puts AI agents on watch over my network: Claude, ChatGPT https://t.co/WcYGFkxH3c https://t.co/3cF0vXQHBr",
-    "model_or_tool": "Claude Opus 5.5",
-    "what_they_built": "A free desktop app that scans a home network and lets Claude, ChatGPT or Grok answer questions about it, built with Claude Opus 5.5.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 105,
-      "impression_count": 8165,
-      "like_count": 99,
-      "quote_count": 1,
-      "reply_count": 25,
-      "retweet_count": 10
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2116276405390417920/img/D5wMlSOj0ATuRP7b.jpg"
   }
 ]
