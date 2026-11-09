@@ -1,63 +1,67 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "ramp-spend",
+  "storyId": "co-design-bench",
   "kicker": "Play with today’s story",
-  "title": "Three bands of AI spend per employee, from Ramp’s data",
-  "intro": "Move across the three groups of companies in TechCrunch’s 6 November 2026 report on Ramp’s card data. Each stop is what that group spends on AI per employee per month, as the article prints it, with the line the article gives about how that group moved this summer. The page does not compute a gap between the bands.",
-  "note": "Every figure here is from TechCrunch’s article “Ramp data shows AI spending stalling just as Anthropic nears its IPO,” dated 6 November 2026, quoting Ramp’s lead economist Ara Kharazian. The figures are Ramp’s card data from its own customers, not the whole market, and not OpenAI’s or Anthropic’s revenue. The article gives ranges for the median and top 10 percent, and gives the top 1 percent as just below the $10,000 per employee they were hitting at their summer peaks. It does not print an exact August or September figure for that group. The overall growth figures are separate lines in the article: token spend grew 1.5 percent across August and September, 42 percent in July from the month before, and 8.9 percent from 23 September to 23 October. This control does not show those as a band.",
+  "title": "Most of the request, or all of it: the best coding agent on Co-Design Bench",
+  "intro": "Move across the three views of GPT-6 Astra’s result in the Co-Design Bench preprint, the top score among ten models. Each stop shows the average share of acceptance criteria it passed per task, and the share of tasks where it passed every criterion, as the paper prints them. The gap between the two numbers is the work someone still has to finish.",
+  "note": "Every figure is from the Co-Design Bench preprint by researchers at Alibaba and several universities, covered by The Decoder on 8 November 2026. All ten models ran in the same Claude Code harness, capped at three hours and 120 turns. Criteria passed is the paper’s strict completion, the average per task of criteria graded Pass. Fully finished is its full-pass rate, the share of tasks with every criterion passed. Grading is by an AI judge in a browser, with a second AI verifier challenging every pass. Each task is one fixed request with no follow-up from the user. The paper also shows that the same model can score very differently in another harness, so these numbers belong to this setup.",
   "sources": [
     {
-      "label": "TechCrunch: Ramp data shows AI spending stalling, 6 November 2026",
-      "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
+      "label": "arXiv: Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
+      "url": "https://arxiv.org/html/2610.35138"
+    },
+    {
+      "label": "The Decoder: AI coding agents still need human cleanup on nearly three out of four tasks, 8 November 2026",
+      "url": "https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Which group of Ramp customers",
+    "label": "Which set of Co-Design Bench tasks",
     "items": [
       {
-        "label": "Median",
-        "name": "Median firm",
-        "caption": "The typical Ramp customer in the article.",
+        "label": "All 273",
+        "name": "All tasks",
+        "caption": "Both tracks together, each task weighted equally.",
         "stats": [
           {
-            "label": "AI spend per employee per month",
-            "value": "$12 to $15"
+            "label": "Criteria passed per task",
+            "value": "69.9%"
           },
           {
-            "label": "Summer trend, per the article",
-            "value": "Growing"
+            "label": "Tasks fully finished",
+            "value": "26.4%"
           }
         ]
       },
       {
-        "label": "Top 10%",
-        "name": "Top 10 percent of firms",
-        "caption": "The article says growth here was not enough to make up for the top 1 percent.",
+        "label": "Multimodal",
+        "name": "Multimodal editing, 100 tasks",
+        "caption": "Local edits to a page, often with an image, audio, video or document attached.",
         "stats": [
           {
-            "label": "AI spend per employee per month",
-            "value": "$600 to $1,000"
+            "label": "Criteria passed per task",
+            "value": "75.4%"
           },
           {
-            "label": "Summer trend, per the article",
-            "value": "Growing"
+            "label": "Tasks fully finished",
+            "value": "41.0%"
           }
         ]
       },
       {
-        "label": "Top 1%",
-        "name": "Top 1 percent of firms",
-        "caption": "Kharazian calls them the most “AI-pilled.”",
+        "label": "Repository",
+        "name": "Repository editing, 173 tasks",
+        "caption": "Coordinated changes across components, routes, state and data.",
         "stats": [
           {
-            "label": "Summer peak per employee",
-            "value": "$10,000"
+            "label": "Criteria passed per task",
+            "value": "66.7%"
           },
           {
-            "label": "August and September",
-            "value": "Just below that peak"
+            "label": "Tasks fully finished",
+            "value": "17.9%"
           }
         ]
       }

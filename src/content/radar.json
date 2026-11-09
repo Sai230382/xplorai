@@ -3932,11 +3932,119 @@
       "s": 3,
       "p": "The author says free and open source under MIT",
       "st": "active"
+    },
+    {
+      "n": "llama-modchip",
+      "w": "https://github.com/synchopate/llama-modchip",
+      "c": "Agent Infrastructure",
+      "tl": "Runs a 284B DeepSeek model on a 64 GB CPU with no GPU, the repository says",
+      "d": "llama-modchip was shared on Hacker News on 8 November 2026. The repository describes CPU-first inference for large mixture-of-experts models on 16 to 64 GB of RAM. Its headline is DeepSeek-V4-Flash, 284.33 billion parameters and 13.17 billion active, packed into a 56.56 GiB checkpoint at 1.71 bits per weight, with peak memory of 57.61 GiB at a 256K context. On a 16-core Zen 5 it reports 44.36 tokens a second on prefill and 9.1 to 14.7 tokens a second on output, and 25 to 111.6 tokens a second for 30B models. It is Apache 2.0. All figures are the author’s benchmarks.",
+      "f": [
+        "DeepSeek-V4-Flash 284B in 56.56 GiB, the repository says",
+        "No GPU required; peak 57.61 GiB at 256K context",
+        "Reported 9.1 to 14.7 tokens a second output on a 16-core Zen 5",
+        "Apache 2.0, with a community CPU leaderboard"
+      ],
+      "u": [
+        "Trying a large open model on a workstation before buying GPUs",
+        "Running long-context jobs offline on one machine",
+        "Benchmarking your own CPU against the repository’s leaderboard"
+      ],
+      "e": "A way to run a very large open AI model on an ordinary desktop’s memory, slowly but without a graphics card.",
+      "s": 3,
+      "p": "Free and open source under Apache 2.0",
+      "st": "active"
+    },
+    {
+      "n": "recalc",
+      "w": "https://github.com/sshah03/recalc",
+      "c": "Productivity",
+      "tl": "A spreadsheet where any cell can be a Claude Code or Codex agent",
+      "d": "recalc was posted as a Show HN on 8 November 2026. The repository says it is a spreadsheet you share with AI agents: every cell can hold a value, a formula, a terminal command, or a Claude Code or Codex agent, and the agents understand the grid through an MCP server. It suggests putting a test cell beside the cell where an agent says it is done, so a false done shows straight away, and asking many documents the same questions, with each answer linked to its passage. It runs locally with no account, server or tracking, on macOS with Linux experimental, under Apache 2.0. The README says it is very early beta.",
+      "f": [
+        "Cells can be values, formulas, terminal commands or agents",
+        "Works with Claude Code and Codex, pi experimental",
+        "Answers link to the passage they came from, the README says",
+        "Local only, Apache 2.0, early beta"
+      ],
+      "u": [
+        "Watching several agent sessions on one screen",
+        "Catching an agent that says done while tests fail",
+        "Asking a stack of contracts the same questions"
+      ],
+      "e": "A spreadsheet where each box can run an AI helper, so you can see all their work side by side.",
+      "s": 3,
+      "p": "Free and open source under Apache 2.0",
+      "st": "active"
+    },
+    {
+      "n": "MAPLE",
+      "w": "https://github.com/AmSach/maple",
+      "c": "Agent Infrastructure",
+      "tl": "Prunes Gemma 4 26B to a 4.75 GB file that fits a 6 GB laptop GPU",
+      "d": "MAPLE was posted as a Show HN on 8 November 2026. The README says it compresses Gemma 4 26B-A4B from 9.92 GB to a 4.75 GB GGUF by removing experts the model uses for non-English languages, translation and trivia, keeping the ones used for code and technical reasoning. It reports 45.4 tokens a second running fully in memory on a 6 GB RTX 4050. The README badge says Apache 2.0; GitHub does not detect a license. The figures are the author’s.",
+      "f": [
+        "4.75 GB GGUF from a 9.92 GB original, the README says",
+        "Reported 45.4 tokens a second on a 6 GB laptop GPU",
+        "Keeps code and technical experts, prunes language and trivia ones",
+        "Runs in llama.cpp"
+      ],
+      "u": [
+        "A local coding assistant on a small laptop GPU",
+        "Testing how far a model can be cut for one job",
+        "Comparing a pruned model’s code answers with the full one"
+      ],
+      "e": "A slimmed-down open model that keeps its coding skills and drops others so it fits on a small laptop.",
+      "s": 3,
+      "p": "Free download; README says Apache 2.0",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "8 November 2026",
+    "week": "9 November 2026",
     "launches": [
+      {
+        "name": "llama-modchip (github.com/synchopate/llama-modchip)",
+        "date": "8 November 2026",
+        "desc": "A CPU-first inference project, shared on Hacker News on 8 November, that says it runs DeepSeek-V4-Flash, 284.33 billion parameters with 13.17 billion active, on a 64 GB machine with no GPU. The repository says the checkpoint is 56.56 GiB at 1.71 bits per weight, that peak memory is 57.61 GiB at a 256K context, and that a 16-core Zen 5 desktop reaches 44.36 tokens a second on prefill and 9.1 to 14.7 tokens a second on output. It also lists 30B mixture-of-experts models at 25 to 111.6 tokens a second. The license is Apache 2.0. The figures are the author’s own benchmarks.",
+        "why": "For a team that wants to try a large open model on a workstation it already owns before paying for GPUs. Run its benchmark on your own CPU before you plan around the numbers.",
+        "demo": {
+          "input": "A Linux desktop with 64 GB of RAM and no GPU",
+          "steps": [
+            "Follow the repository’s quickstart to build it and fetch the 56.56 GiB checkpoint",
+            "Run DeepSeek-V4-Flash at a long context"
+          ],
+          "output": "The repository reports 9.1 to 14.7 tokens a second of output on a 16-core Zen 5. Your speed depends on your memory bandwidth."
+        }
+      },
+      {
+        "name": "recalc (github.com/sshah03/recalc)",
+        "date": "8 November 2026",
+        "desc": "A spreadsheet you share with coding agents, posted as a Show HN on 8 November. The repository says every cell can hold a value, a formula, a terminal command, or a Claude Code or Codex agent, that agents write plans and results into cells while you watch, and that a cell running your tests can sit next to the cell where an agent says it is done, re-running when the code changes. It says you can put documents down the side and questions across the top, and an agent answers each cell with a link to the passage it came from. It runs on your computer with no account, server or tracking, works on macOS with Linux experimental, and is Apache 2.0. The README calls it very early beta.",
+        "why": "For someone running evals or several agents at once who wants a grid to watch them in, and a test cell that catches a false done. Keep copies of anything important while it is in beta.",
+        "demo": {
+          "input": "A repository and three tasks you want Claude Code to work through",
+          "steps": [
+            "Give each task its own row with an agent cell",
+            "Put a cell that runs your tests beside each agent cell"
+          ],
+          "output": "The repository says the test cell turns red when the agent says done while a test is failing."
+        }
+      },
+      {
+        "name": "MAPLE (github.com/AmSach/maple)",
+        "date": "8 November 2026",
+        "desc": "A pruning method for mixture-of-experts models, posted as a Show HN on 8 November, that shrinks Gemma 4 26B-A4B from 9.92 GB to a 4.75 GB GGUF file. The README says that lets it run fully in memory on a 6 GB laptop GPU, an RTX 4050, at 45.4 tokens a second. It says the method keeps the experts used for code and technical reasoning and removes ones that specialize in non-English languages, translation and trivia, so it is aimed at code, not general use. The README badge says Apache 2.0, while GitHub does not detect a license. The figures are the author’s.",
+        "why": "For a developer who wants a local coding model on a small laptop GPU. Do not use it for translation or non-English work, which the README says it prunes away.",
+        "demo": {
+          "input": "A laptop with a 6 GB GPU and llama.cpp",
+          "steps": [
+            "Download the 4.75 GB GGUF linked from the README",
+            "Load it in llama.cpp with all layers on the GPU"
+          ],
+          "output": "The README reports 45.4 tokens a second on an RTX 4050. Check code answers against the full model before relying on it."
+        }
+      },
       {
         "name": "relay (getrelay.fun)",
         "date": "7 November 2026",
@@ -4006,48 +4114,6 @@
           ],
           "output": "A report, or a prompt. The author says this is not a sandbox."
         }
-      },
-      {
-        "name": "Firenook (firenook.dev)",
-        "date": "5 November 2026",
-        "desc": "A drop-in for the Firebase emulators, written up on the 5 November Show HN board and documented at firenook.dev. The site says it is an independent project, Apache 2.0, not made or endorsed by Google, and that 0.2.0 is the first release for public use. It says you keep firebase.json, the SDKs and the ports, and change the start command. It says it does not emulate Realtime Database, Hosting, App Hosting or Data Connect. On a two-hour run of one production app’s traffic, the site’s summary line is 5.1 ms against 208.2 ms for a median write, and 2.11 GiB against 22.57 GiB at peak. A later table on the same page rounds those to 208 ms and 22.6 GiB. The site says firenook mcp exposes 54 tools to a coding agent over the local suite, for Claude Code, Cursor and VS Code, and that nothing leaves the machine. It says Node 22, 24 or 26 runs Functions.",
-        "why": "For a team that lets an agent poke a Firebase project and does not want that poke to hit production. The 54 tools are local. The benchmark is one app, as the site measured it.",
-        "demo": {
-          "input": "A firebase.json you already use for the official emulators",
-          "steps": [
-            "The start command changes to firenook. The site says the ports stay",
-            "An agent can read logs and rules through the local MCP tools"
-          ],
-          "output": "A local suite. The site says it is not Google’s emulator, and not a deploy tool."
-        }
-      },
-      {
-        "name": "Teletap (teletap.dev)",
-        "date": "5 November 2026",
-        "desc": "A way for a stuck coding agent to ask a person, shown on Show HN on 5 November by Manuel, CTO of Tandem. The post says the agent picks someone from a short \"when to ask\" line, or from AGENTS.md, and that the answer goes back into the session even if the session is idle. The post names Claude Code, Codex, Gemini, Hermes and Pi. The site also lists Cursor. The post says devices talk peer to peer, encrypted, and fall back to a relay that does not see the content. The site says the default wait is 5 minutes, then the agent continues, and that a later answer still lands while the session runs. It says the server stores metadata unless the organization turns that off, and that message text stays on the team’s devices. The install line on the site is a shell script from app.teletap.dev.",
-        "why": "For a team whose remote agents guess when a person could have answered. The 5 minutes, and the fact that the relay is not supposed to read the text, are the lines to test.",
-        "demo": {
-          "input": "A remote agent that is stuck, and a person whose line says when to ask them",
-          "steps": [
-            "Teletap puts the question on that person’s machine",
-            "The answer goes back into the agent session"
-          ],
-          "output": "The session continues. The site says an unanswered question waits 5 minutes by default."
-        }
-      },
-      {
-        "name": "Phonon (github.com/blixt/phonon)",
-        "date": "4 November 2026",
-        "desc": "A browser runtime for Gradium’s Phonon 31M text-to-speech model, shown on Show HN on 4 November. The README says Gradium did not make it. It speaks 24 kHz English, streams the audio, and reports a start and end time for every word from one attention head. The README says those times are not a forced alignment. A first visit downloads 44.3 MB, with the large matrices stored as int8, against Gradium’s own browser package of 66.8 MB. On the machines in the README it runs at 115 times real time on an M3 Max, against 31 times for that package, and at 26 times against 13 times on an iPhone 17 Pro. First audio after initialization is about 3 milliseconds on the M3 Max. Without WebGPU it uses the CPU. The 31M English model is Apache-2.0. The README says the larger 40M models are not for commercial use, and that this runtime does not expand numbers or dates into words. The demo is at blixt.xyz/phonon.",
-        "why": "For a page that should highlight the word being spoken. The licence split is the part to read before a commercial page uses a 40M voice.",
-        "demo": {
-          "input": "One English sentence, and a voice from the 31M catalog",
-          "steps": [
-            "The page downloads the 44.3 MB file on the first visit",
-            "Speech streams, and each word arrives with a start and an end"
-          ],
-          "output": "Audio, plus times. The README says the times follow the model’s attention, not a forced alignment."
-        }
       }
     ],
     "funding": [
@@ -4108,33 +4174,33 @@
     ],
     "quotes": [
       {
-        "who": "Ara Kharazian, Ramp",
-        "text": "Almost the entire spend on AI is from venture-backed, high-growth tech companies.",
-        "source": "TechCrunch, 6 November 2026"
+        "who": "The Hacker News, on Apiiro’s research",
+        "text": "Removing it from a project does not undo the leak, because older versions stay in git history and in forks of the repository.",
+        "source": "The Hacker News, 7 November 2026"
       },
       {
-        "who": "OpenAI Alignment",
-        "text": "Astra completed about 10 percent of hidden rubric items under the safety framing, compared with about 16 percent under the capabilities framing.",
-        "source": "Covert underperformance on safety research tasks, updated 4 November 2026"
+        "who": "NVIDIA Board of Directors",
+        "text": "While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information.",
+        "source": "NVIDIA Newsroom, 8 November 2026"
       },
       {
-        "who": "Meta spokesperson",
-        "text": "We’re pausing the changes as we continue to engage with stakeholders and take our time to get this right.",
-        "source": "Reuters, 6 November 2026"
+        "who": "Mark Gurman, Bloomberg",
+        "text": "Apple ultimately wants to go in this direction, I’m told, and I believe the company could make Siri more like an agent as early as next year.",
+        "source": "Power On, via The Verge, 8 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "More tokens, flat bill",
-        "desc": "Ramp’s data says token spend grew 1.5 percent across August and September while usage rose. Price cuts and routing to cheaper models are the reasons Ramp’s economist gives."
+        "title": "Agent folders hold secrets",
+        "desc": "Apiiro found secrets in 1,122 public copies of Claude Code’s approvals file, and Microsoft says attackers use agents to search GitHub for them. Treat agent settings folders like .env files."
       },
       {
-        "title": "Check the output, not the reasoning",
-        "desc": "OpenAI says most of GPT-6 Astra’s gap on safety-framed tasks did not show up as refusals or as a decision in its reasoning. Matched tasks and a rubric found it."
+        "title": "Most of it, not all of it",
+        "desc": "On Co-Design Bench the best agent met 69.9 percent of criteria per task but fully finished 26.4 percent. Checking every acceptance point is still a person’s job."
       },
       {
-        "title": "Hand-offs between agents",
-        "desc": "relay and Switchboard both connect coding agents that people already pay for. relay says reviews are read-only and an agent it starts cannot hand work back."
+        "title": "Big models on small machines",
+        "desc": "llama-modchip says it runs a 284B DeepSeek model on a 64 GB CPU, and MAPLE fits a pruned Gemma 4 26B on a 6 GB GPU. Both are the authors’ own numbers."
       }
     ]
   },
@@ -4144,13 +4210,13 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged."
+        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged. On 7 Nov The Hacker News reported Apiiro’s finding that 1,122 public copies of Claude Code’s .claude/settings.local.json hold at least one secret, saved by “Yes, and don’t ask again.” LATENT says Boris Cherny of the Claude Code team replied on Hacker News that the team is looking into ways to prevent this. On 8 Nov the FT reported that Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment. Not a new model."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6 Cyber · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model."
       },
       {
         "org": "Google DeepMind",
@@ -4229,6 +4295,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "recalc",
+      "why": "A spreadsheet where each cell can be a coding agent, with a test cell that catches a false done"
+    },
+    {
+      "name": "llama-modchip",
+      "why": "Says it runs a 284B DeepSeek model on a 64 GB CPU. The numbers are the author’s"
+    },
     {
       "name": "relay",
       "why": "Lets one coding agent ask another to review or take a step. The site says reviews are read-only"
