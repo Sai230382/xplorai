@@ -1,5 +1,32 @@
 [
   {
+    "name": "Mark Gurman",
+    "handle": "markgurman",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1831342499719479296/biKqSezf_normal.jpg",
+    "text": "NEW in Power On: Apple eyes autonomous, agentic Siri as early as next year to rival ChatGPT Dots, Meta Muse, Grok. The goal is to move beyond responding to commands to an assistant that can proactively manage tasks and get things done on your behalf. https://t.co/luW64FHzKu",
+    "url": "https://x.com/markgurman/status/2119451386111005129",
+    "postedAt": "2026-11-08T15:26:02.000Z",
+    "take": "As early as next year is Gurman’s belief from what he was told. Apple has announced none of it. Third-party app actions, likely in the spring, come first."
+  },
+  {
+    "name": "Financial Times",
+    "handle": "FT",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/931156393108885504/EqEMtLhM_normal.jpg",
+    "text": "Anthropic strikes $3.4bn deal to generate gas-fired power for data centres https://t.co/OC7LUD8I8z",
+    "url": "https://x.com/FT/status/2119389005724684372",
+    "postedAt": "2026-11-08T11:18:09.000Z",
+    "take": "The deal covers commitments for 1.7 gigawatts of generators, struck in late September. Anthropic did not buy the supplier and did not comment."
+  },
+  {
+    "name": "The Hacker News",
+    "handle": "TheHackersNews",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1597647879811657728/FLgHrLHy_normal.jpg",
+    "text": "‼️ Claude Code's \"Don't Ask Again\" option can save passwords and API keys in plaintext.\n\nApiiro found 2,539 exposed secrets across 1,994 public GitHub repos, including database credentials, SSH logins, and cloud keys.\n\nDeleting files doesn't erase Git history.\n\nRead: https://t.co/LyPZ5RaqOZ",
+    "url": "https://x.com/TheHackersNews/status/2118960196987080801",
+    "postedAt": "2026-11-07T06:54:13.000Z",
+    "take": "2,539 includes git history, shared settings and chat logs. The current files hold 1,379 secrets in 1,122 copies. Apiiro did not test them. Rotate first."
+  },
+  {
     "name": "Reuters",
     "handle": "Reuters",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
