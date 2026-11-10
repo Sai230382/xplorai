@@ -1,67 +1,114 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "co-design-bench",
+  "storyId": "fable-5-2",
   "kicker": "Play with today’s story",
-  "title": "Most of the request, or all of it: the best coding agent on Co-Design Bench",
-  "intro": "Move across the three views of GPT-6 Astra’s result in the Co-Design Bench preprint, the top score among ten models. Each stop shows the average share of acceptance criteria it passed per task, and the share of tasks where it passed every criterion, as the paper prints them. The gap between the two numbers is the work someone still has to finish.",
-  "note": "Every figure is from the Co-Design Bench preprint by researchers at Alibaba and several universities, covered by The Decoder on 8 November 2026. All ten models ran in the same Claude Code harness, capped at three hours and 120 turns. Criteria passed is the paper’s strict completion, the average per task of criteria graded Pass. Fully finished is its full-pass rate, the share of tasks with every criterion passed. Grading is by an AI judge in a browser, with a second AI verifier challenging every pass. Each task is one fixed request with no follow-up from the user. The paper also shows that the same model can score very differently in another harness, so these numbers belong to this setup.",
+  "title": "What Claude Fable 5.2 scores and costs next to the models it replaces",
+  "intro": "Move across four models in Anthropic’s 9 November benchmark table. Each stop shows the same three scores, and the list price per million tokens where our sources give one. The point to notice is that Opus 5.5, the model Anthropic tells most people to start with, costs half as much as Fable 5.2.",
+  "note": "All scores are Anthropic’s own, from its Fable 5.2 announcement, at each model’s highest available effort with safeguards on, except the Remote Labor Index score for Fable 5.2, which Anthropic reports at High effort. They are not independent results. Fable 5.2’s and Opus 5.5’s prices are from Anthropic. Fable 5.1’s $10 and $50 are from VentureBeat. GPT-6 Astra’s price is not given in these sources, so it is left out. Prices are standard rates per million input and output tokens and leave out fast mode, caching and batch discounts.",
   "sources": [
     {
-      "label": "arXiv: Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
-      "url": "https://arxiv.org/html/2610.35138"
+      "label": "Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2, 9 November 2026",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
     },
     {
-      "label": "The Decoder: AI coding agents still need human cleanup on nearly three out of four tasks, 8 November 2026",
-      "url": "https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/"
+      "label": "Claude Platform docs: Claude Mythos 5.2 model overview and comparison table",
+      "url": "https://platform.claude.com/docs/en/models/mythos-5-2/overview"
+    },
+    {
+      "label": "VentureBeat: Anthropic releases Claude Fable 5.2 and Mythos 5.2 with 20% API cost reduction",
+      "url": "https://venturebeat.com/technology/anthropic-releases-claude-fable-5-2-and-mythos-5-2-pairing-new-record-high-benchmarks-with-20-api-cost-reduction"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Which set of Co-Design Bench tasks",
+    "label": "Which model in Anthropic’s table",
     "items": [
       {
-        "label": "All 273",
-        "name": "All tasks",
-        "caption": "Both tracks together, each task weighted equally.",
+        "label": "Fable 5.2",
+        "name": "Claude Fable 5.2",
+        "caption": "Released 9 November. Anthropic says up to 30 percent faster than 5.1.",
         "stats": [
           {
-            "label": "Criteria passed per task",
+            "label": "FrontierSWE v2",
             "value": "69.9%"
           },
           {
-            "label": "Tasks fully finished",
-            "value": "26.4%"
+            "label": "Remote Labor Index",
+            "value": "41.3%"
+          },
+          {
+            "label": "OSWorld 2.1",
+            "value": "89.3%"
+          },
+          {
+            "label": "Price per million tokens, in / out",
+            "value": "$8 / $40"
           }
         ]
       },
       {
-        "label": "Multimodal",
-        "name": "Multimodal editing, 100 tasks",
-        "caption": "Local edits to a page, often with an image, audio, video or document attached.",
+        "label": "Fable 5.1",
+        "name": "Claude Fable 5.1",
+        "caption": "The model Fable 5.2 replaces, released in September.",
         "stats": [
           {
-            "label": "Criteria passed per task",
-            "value": "75.4%"
+            "label": "FrontierSWE v2",
+            "value": "56.3%"
           },
           {
-            "label": "Tasks fully finished",
-            "value": "41.0%"
-          }
-        ]
-      },
-      {
-        "label": "Repository",
-        "name": "Repository editing, 173 tasks",
-        "caption": "Coordinated changes across components, routes, state and data.",
-        "stats": [
-          {
-            "label": "Criteria passed per task",
-            "value": "66.7%"
-          },
-          {
-            "label": "Tasks fully finished",
+            "label": "Remote Labor Index",
             "value": "17.9%"
+          },
+          {
+            "label": "OSWorld 2.1",
+            "value": "83.5%"
+          },
+          {
+            "label": "Price per million tokens, in / out",
+            "value": "$10 / $50"
+          }
+        ]
+      },
+      {
+        "label": "Opus 5.5",
+        "name": "Claude Opus 5.5",
+        "caption": "What Anthropic recommends most users start with.",
+        "stats": [
+          {
+            "label": "FrontierSWE v2",
+            "value": "62.3%"
+          },
+          {
+            "label": "Remote Labor Index",
+            "value": "21.3%"
+          },
+          {
+            "label": "OSWorld 2.1",
+            "value": "87.2%"
+          },
+          {
+            "label": "Price per million tokens, in / out",
+            "value": "$4 / $20"
+          }
+        ]
+      },
+      {
+        "label": "GPT-6 Astra",
+        "name": "OpenAI GPT-6 Astra",
+        "caption": "OpenAI’s model, as Anthropic scored it. Price not given in these sources.",
+        "stats": [
+          {
+            "label": "FrontierSWE v2",
+            "value": "65.5%"
+          },
+          {
+            "label": "Remote Labor Index",
+            "value": "20.8%"
+          },
+          {
+            "label": "OSWorld 2.1",
+            "value": "79.5%"
           }
         ]
       }

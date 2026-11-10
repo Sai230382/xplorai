@@ -1,5 +1,32 @@
 [
   {
+    "name": "Anthropic",
+    "handle": "AnthropicAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg",
+    "text": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.\n\nThey’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb",
+    "url": "https://x.com/AnthropicAI/status/2119867114450268322",
+    "postedAt": "2026-11-09T18:57:59.000Z",
+    "take": "Cheaper than 5.1 at $8 and $40 per million tokens. Anthropic still says most work should start on Opus 5.5, at half the price."
+  },
+  {
+    "name": "Sundar Pichai",
+    "handle": "sundarpichai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2051799620062429184/AL8CoAUG_normal.jpg",
+    "text": "Four distinct TPU systems in a single generation in one year! Instead of waiting years for a traditional semiconductor cycle, hardware engineers co-designing systems alongside Google Deepmind means we can keep innovating quickly for customers. https://t.co/GACoImLk9r",
+    "url": "https://x.com/sundarpichai/status/2119857335871164769",
+    "postedAt": "2026-11-09T18:19:08.000Z",
+    "take": "The useful one for regulated firms is TPU 8tx, which keeps data protected while it is processed. Google gave no date or price."
+  },
+  {
+    "name": "AI at Meta",
+    "handle": "AIatMeta",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2102933421458665472/o_KTIjw3_normal.png",
+    "text": "Today we're introducing Muse Ember, our smallest and most efficient model, built for complex reasoning execution and everyday agent work.\n\nMuse Ember can carry workflows across apps, call tools in sequence, run tests and make targeted code fixes. With a 1M-token context window and native understanding of text, images, audio and video, it can also work across large document sets and varied inputs.",
+    "url": "https://x.com/AIatMeta/status/2119853591703998787",
+    "postedAt": "2026-11-09T18:04:15.000Z",
+    "take": "$0.10 in and $0.50 out per million tokens. Meta’s own table shows Claude Haiku 5.5 still ahead on code that has to merge."
+  },
+  {
     "name": "Mark Gurman",
     "handle": "markgurman",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1831342499719479296/biKqSezf_normal.jpg",
