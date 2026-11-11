@@ -1,70 +1,64 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "co-design-bench",
+  "storyId": "anthropic-ipo-range",
   "kicker": "Play with today’s story",
-  "title": "Most of the request, or all of it: the best coding agent on Co-Design Bench",
-  "intro": "Move across the three views of GPT-6 Astra’s result in the Co-Design Bench preprint, the top score among ten models. Each stop shows the average share of acceptance criteria it passed per task, and the share of tasks where it passed every criterion, as the paper prints them. The gap between the two numbers is the work someone still has to finish.",
-  "note": "Every figure is from the Co-Design Bench preprint by researchers at Alibaba and several universities, covered by The Decoder on 8 November 2026. All ten models ran in the same Claude Code harness, capped at three hours and 120 turns. Criteria passed is the paper’s strict completion, the average per task of criteria graded Pass. Fully finished is its full-pass rate, the share of tasks with every criterion passed. Grading is by an AI judge in a browser, with a second AI verifier challenging every pass. Each task is one fixed request with no follow-up from the user. The paper also shows that the same model can score very differently in another harness, so these numbers belong to this setup.",
+  "title": "What Anthropic’s IPO shares add up to across its $70 to $78 range",
+  "intro": "Slide the share price across the range Anthropic set on 10 November. The number shows the price times the shares, in millions of dollars. Switch between all 825 million shares on offer and the 801,351,354 that Anthropic itself sells, which is the part whose money goes to the company.",
+  "note": "Share counts and the $70 to $78 range are from Anthropic’s 10 November announcement. At $70 and $78, all 825 million shares come to $57,750 million and $64,350 million, matching TechCrunch’s $57.75 billion to $64.35 billion. These are gross amounts before underwriting fees and costs, and they leave out the underwriters’ option to buy up to 123,750,000 more shares. The final price is set at pricing, which CNBC’s sources put on 18 November, and may fall outside the range. This is not the company’s valuation, which counts all shares, not only those sold.",
   "sources": [
     {
-      "label": "arXiv: Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
-      "url": "https://arxiv.org/html/2610.35138"
+      "label": "Anthropic: Anthropic launches roadshow for proposed initial public offering, 10 November 2026",
+      "url": "https://www.anthropic.com/news/roadshow-launch"
     },
     {
-      "label": "The Decoder: AI coding agents still need human cleanup on nearly three out of four tasks, 8 November 2026",
-      "url": "https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/"
+      "label": "TechCrunch: Anthropic sets IPO price range of $70 to $78 per share, 10 November 2026",
+      "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/"
+    },
+    {
+      "label": "CNBC: Anthropic sets IPO price range of $70 to $78, looks to start trading Nov. 19, sources say",
+      "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "Which set of Co-Design Bench tasks",
-    "items": [
+    "type": "calculator",
+    "inputs": [
       {
-        "label": "All 273",
-        "name": "All tasks",
-        "caption": "Both tracks together, each task weighted equally.",
-        "stats": [
-          {
-            "label": "Criteria passed per task",
-            "value": "69.9%"
-          },
-          {
-            "label": "Tasks fully finished",
-            "value": "26.4%"
-          }
-        ]
-      },
-      {
-        "label": "Multimodal",
-        "name": "Multimodal editing, 100 tasks",
-        "caption": "Local edits to a page, often with an image, audio, video or document attached.",
-        "stats": [
-          {
-            "label": "Criteria passed per task",
-            "value": "75.4%"
-          },
-          {
-            "label": "Tasks fully finished",
-            "value": "41.0%"
-          }
-        ]
-      },
-      {
-        "label": "Repository",
-        "name": "Repository editing, 173 tasks",
-        "caption": "Coordinated changes across components, routes, state and data.",
-        "stats": [
-          {
-            "label": "Criteria passed per task",
-            "value": "66.7%"
-          },
-          {
-            "label": "Tasks fully finished",
-            "value": "17.9%"
-          }
-        ]
+        "id": "price",
+        "label": "IPO price per share",
+        "min": 70,
+        "max": 78,
+        "step": 1,
+        "value": 70,
+        "unit": "USD",
+        "control": "slider"
       }
-    ]
+    ],
+    "formula": {
+      "op": "multiply",
+      "factors": [
+        "price"
+      ]
+    },
+    "result": {
+      "label": "Price times shares, in millions of dollars, before fees",
+      "unit": "million USD",
+      "decimals": 0
+    },
+    "toggle": {
+      "label": "Which shares",
+      "options": [
+        {
+          "id": "all",
+          "label": "All 825,000,000 shares offered",
+          "multiplier": 825
+        },
+        {
+          "id": "anthropic",
+          "label": "801,351,354 sold by Anthropic",
+          "multiplier": 801.351354
+        }
+      ]
+    }
   }
 }

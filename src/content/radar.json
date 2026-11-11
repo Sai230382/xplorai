@@ -3998,11 +3998,179 @@
       "s": 3,
       "p": "Free download; README says Apache 2.0",
       "st": "active"
+    },
+    {
+      "n": "STE80 Humanizer",
+      "w": "https://github.com/Dodaios/ste80-humanizer",
+      "c": "Productivity",
+      "tl": "Rewrites AI-written text into plain, careful English without changing what it says",
+      "d": "STE80 Humanizer was posted as a Show HN on 9 November 2026. The README says it is an agent skill that works in two passes. First it removes the 26 tells on Wikipedia’s Signs of AI writing page, using the catalog of blader/humanizer. Then it rebuilds sentences 80 percent of the way to ASD-STE100, the controlled English of aircraft maintenance manuals, a method it credits to Andrej Karpathy. It says the goal is text people read easily, not getting past AI detectors. The README says MIT.",
+      "f": [
+        "Two passes: remove AI tells, then simplify sentences",
+        "Based on Wikipedia’s Signs of AI writing list",
+        "Follows ASD-STE100 controlled English about 80 percent of the way",
+        "Installs as an agent skill"
+      ],
+      "u": [
+        "Cleaning AI drafts of documentation and release notes",
+        "Plain answers for support teams",
+        "Editing reports into short, direct sentences"
+      ],
+      "e": "A skill that strips the giveaways from AI writing and rewrites it in short, plain sentences.",
+      "s": 3,
+      "p": "Free; README says MIT",
+      "st": "active"
+    },
+    {
+      "n": "airgap-check",
+      "w": "https://github.com/humanethq/airgap-check",
+      "c": "Agent Infrastructure",
+      "tl": "Finds what your AI app silently downloads before you ship it to an offline network",
+      "d": "airgap-check was posted as a Show HN on 9 November 2026. The README says that pointing an app at a local model is not enough for an air-gapped network, because libraries fetch tokenizer files, embedding weights, corpora, price maps or telemetry on first use. It scans manifests such as requirements.txt and package.json and code patterns such as from_pretrained(), runs the app in Docker with no network and a DNS sinkhole to log every lookup, and prints Dockerfile lines to pre-download what is needed. It reads .env key names only, never values. It is Go with the standard library only, under MIT.",
+      "f": [
+        "Static scan of manifests and code patterns",
+        "--run logs every lookup in a no-network container",
+        "--fix prints Dockerfile lines to pre-warm downloads",
+        "Reads .env key names, never values"
+      ],
+      "u": [
+        "Preparing an AI app for a hospital or defense network",
+        "Finding hidden telemetry before a security review",
+        "Fixing slow first starts in locked-down containers"
+      ],
+      "e": "A checker that shows what an AI app tries to download when there is no internet.",
+      "s": 3,
+      "p": "Free; MIT",
+      "st": "active"
+    },
+    {
+      "n": "Thrum",
+      "w": "https://thrum.team/",
+      "c": "Vibe Coding",
+      "tl": "Runs Claude Code, Codex and Cursor agents as one team that checks its own work",
+      "d": "Thrum was posted as a Show HN on 9 November 2026. Its site says your coding agents message each other even on different tools, such as Claude Code, Codex and Cursor. You talk to one coordinator, which hands work out, has a reviewer on a different model check it, and builds and tests the merged result before it reaches you. You choose whether it asks before each merge. The author says it runs locally and connects over git, LAN or Tailscale. Free needs no account; Pro is $15 a month or $120 a year, with a 14-day trial.",
+      "f": [
+        "One coordinator directs several coding agents",
+        "Reviewer on a different model checks the work",
+        "Builds and tests the merged result before you see it",
+        "Free tier with no account; Pro $15 a month"
+      ],
+      "u": [
+        "Running Claude Code and Codex on one project",
+        "Having a second model review agent pull requests",
+        "Getting a decision report instead of raw diffs"
+      ],
+      "e": "A coordinator that runs your coding agents as a team and has them check each other.",
+      "s": 3,
+      "p": "Free; Pro $15/month or $120/year",
+      "st": "active"
+    },
+    {
+      "n": "Modern Web Guidance",
+      "w": "https://github.com/GoogleChrome/modern-web-guidance",
+      "c": "Vibe Coding",
+      "tl": "Keeps coding agents on current web-platform practice instead of old JavaScript patterns",
+      "d": "Modern Web Guidance was posted as a Show HN on 10 November 2026. The README says it is a set of skills that put web-platform expertise, best practices and browser compatibility data into coding agents, stewarded by the Google Chrome, Microsoft Edge, Mozilla Firefox and MDN teams. The CLI can search guides, retrieve one by ID, and scan a codebase for legacy patterns to modernize. It says the guides are trimmed with evals to save tokens. Apache 2.0.",
+      "f": [
+        "One-command install for coding agents",
+        "Search and retrieve targeted web-platform guides",
+        "legacy-scan finds older patterns in a codebase",
+        "Browser compatibility data included"
+      ],
+      "u": [
+        "Steering agents away from heavy polyfills",
+        "Modernizing an older front end",
+        "Checking agent-written UI code for accessibility"
+      ],
+      "e": "Skills from the browser makers that teach coding agents today’s web, not 2019’s.",
+      "s": 4,
+      "p": "Free; Apache 2.0",
+      "st": "active"
+    },
+    {
+      "n": "aisync",
+      "w": "https://github.com/MaxonT/aisync",
+      "c": "Agent Infrastructure",
+      "tl": "Lets Claude Code, Codex and Cursor claim files and share one journal so they don’t collide",
+      "d": "aisync was posted as a Show HN on 10 November 2026. The README says every tool works from one local hub, a git repo at ~/.ai-sync/. An agent claims files before editing, and an overlapping claim exits with code 3 and names who holds them. Decisions, blockers and commits go into one hash-chained journal, and hooks tell a running Claude Code, Codex or Cursor session what the others just did. It needs Python 3.11+ and git, uses only the standard library, and is MIT.",
+      "f": [
+        "File claims that refuse overlapping edits",
+        "Hash-chained shared journal",
+        "Hooks that brief running sessions",
+        "No dependencies beyond Python and git"
+      ],
+      "u": [
+        "Running Claude Code and Codex on one repo",
+        "Keeping a record of what each agent decided",
+        "Avoiding two agents editing one file"
+      ],
+      "e": "A local hub where your coding agents claim files and leave notes for each other.",
+      "s": 3,
+      "p": "Free; MIT",
+      "st": "active"
+    },
+    {
+      "n": "agent-email-guard",
+      "w": "https://github.com/agentisend/agent-email-guard",
+      "c": "Agent Infrastructure",
+      "tl": "Caps, checks and can stop the email an AI agent sends",
+      "d": "agent-email-guard was posted as a Show HN on 9 November 2026. The README says it wraps an agent’s send function with hourly, daily and monthly budgets, a per-minute ceiling, loop detection, approval holds for important or new recipients, a suppression list and a kill switch. Each decision is allow, hold for approval or refuse, with a reason and the numbers behind it. It works with nodemailer, Amazon SES, Resend, Postmark and SMTP, in Node, Python, PHP and Go. It runs in the agent’s own process, so it is advisory unless enforced elsewhere. MIT.",
+      "f": [
+        "Send budgets and a per-minute ceiling",
+        "Refuses repeated near-identical emails",
+        "Holds mail to new or key recipients for a person",
+        "Kill switch that never resumes on a timer"
+      ],
+      "u": [
+        "Support agents that email customers",
+        "Preventing retry loops from spamming one inbox",
+        "Requiring sign-off before mailing big accounts"
+      ],
+      "e": "A safety wrapper that stops an email-sending agent from running away.",
+      "s": 3,
+      "p": "Free; MIT",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "9 November 2026",
+    "week": "11 November 2026",
     "launches": [
+      {
+        "name": "Modern Web Guidance (github.com/GoogleChrome/modern-web-guidance)",
+        "date": "10 November 2026",
+        "desc": "A set of agent skills from the Google Chrome team, posted as a Show HN on 10 November, that feeds coding agents current web-platform practice and browser support data, so they stop writing older JavaScript patterns. The README says it is stewarded by the Chrome, Microsoft Edge, Mozilla Firefox and MDN teams. One command installs it, and you can search guides, retrieve one by ID, or scan a codebase for legacy patterns. It is under Apache 2.0.",
+        "why": "For front-end teams whose coding agents keep reaching for heavy libraries or polyfills. Run the legacy scan on one project first and compare the suggestions with what your team would write."
+      },
+      {
+        "name": "aisync (github.com/MaxonT/aisync)",
+        "date": "10 November 2026",
+        "desc": "A command-line tool, posted as a Show HN on 10 November, that lets Claude Code, Codex and Cursor share rules, a hash-chained journal and file claims in one local git repo. Before editing, an agent claims files, and an overlapping claim exits with code 3 so the agent stops before two tools edit the same file. Hooks tell a running session what the other tools just did. The README says it needs Python 3.11 and git, uses only the standard library, and is MIT.",
+        "why": "For developers running two or more coding agents on one repo. Try the built-in demo before you wire it into real sessions."
+      },
+      {
+        "name": "agent-email-guard (github.com/agentisend/agent-email-guard)",
+        "date": "9 November 2026",
+        "desc": "A library, posted as a Show HN on 9 November, that sits in front of an agent’s email sending and limits the damage. The README lists hourly, daily and monthly budgets, a per-minute ceiling, loop detection that refuses the fourth near-identical message within an hour, holds for a person before mailing important or new recipients, a suppression list and a kill switch. It works with nodemailer, Amazon SES, Resend, Postmark and SMTP, in Node, Python, PHP and Go, under MIT. The README says it runs inside the agent’s process, so code the agent controls could remove it.",
+        "why": "For anyone letting an agent send email to customers. Turn on new-recipient approval first, and remember it is advisory unless enforced outside the agent."
+      },
+      {
+        "name": "STE80 Humanizer (github.com/Dodaios/ste80-humanizer)",
+        "date": "9 November 2026",
+        "desc": "An agent skill, posted as a Show HN on 9 November, that rewrites AI-written text so it reads like a careful person wrote it, without changing what it says. The README says it works in two passes: first it removes the 26 tells listed on Wikipedia’s Signs of AI writing page, then it rebuilds sentences “80% of the way to ASD-STE100”, the controlled English of aircraft maintenance manuals, a method it credits to Andrej Karpathy. It says getting past AI detectors is not a goal. The README says MIT.",
+        "why": "For anyone who edits AI drafts into plain documentation, release notes or support answers. Compare its before-and-after example with your own drafts before you adopt it."
+      },
+      {
+        "name": "airgap-check (github.com/humanethq/airgap-check)",
+        "date": "9 November 2026",
+        "desc": "A command-line tool, posted as a Show HN on 9 November, that finds what an AI app downloads or tries to reach when there is no network. The README says many libraries fetch tokenizer files, embedding weights or telemetry on first use, which fails or hangs on an air-gapped network. It scans manifests and code patterns, can run the app in a Docker container with no network and log every lookup, and prints Dockerfile lines to pre-download what is needed. It reads .env key names only, not values. It is written in Go, under MIT.",
+        "why": "For teams shipping AI apps into hospitals, defense networks or locked-down cloud accounts. Run it before the first offline deployment, not after it hangs."
+      },
+      {
+        "name": "Thrum (thrum.team)",
+        "date": "9 November 2026",
+        "desc": "A tool, posted as a Show HN on 9 November, that runs the coding agents you already use, such as Claude Code, Codex and Cursor, as one team that messages each other. The site says you talk to one coordinator, which hands work to other agents, has a reviewer on a different model check it, and builds and tests the merged result before it reaches you. It runs locally and connects over git, LAN or Tailscale, the author says. Free needs no account; Pro is $15 a month or $120 a year, with a 14-day trial.",
+        "why": "For developers who already copy answers between agent windows. Start with the free tier and set it to ask before each merge."
+      },
       {
         "name": "llama-modchip (github.com/synchopate/llama-modchip)",
         "date": "8 November 2026",
@@ -4030,93 +4198,27 @@
           ],
           "output": "The repository says the test cell turns red when the agent says done while a test is failing."
         }
-      },
-      {
-        "name": "MAPLE (github.com/AmSach/maple)",
-        "date": "8 November 2026",
-        "desc": "A pruning method for mixture-of-experts models, posted as a Show HN on 8 November, that shrinks Gemma 4 26B-A4B from 9.92 GB to a 4.75 GB GGUF file. The README says that lets it run fully in memory on a 6 GB laptop GPU, an RTX 4050, at 45.4 tokens a second. It says the method keeps the experts used for code and technical reasoning and removes ones that specialize in non-English languages, translation and trivia, so it is aimed at code, not general use. The README badge says Apache 2.0, while GitHub does not detect a license. The figures are the author’s.",
-        "why": "For a developer who wants a local coding model on a small laptop GPU. Do not use it for translation or non-English work, which the README says it prunes away.",
-        "demo": {
-          "input": "A laptop with a 6 GB GPU and llama.cpp",
-          "steps": [
-            "Download the 4.75 GB GGUF linked from the README",
-            "Load it in llama.cpp with all layers on the GPU"
-          ],
-          "output": "The README reports 45.4 tokens a second on an RTX 4050. Check code answers against the full model before relying on it."
-        }
-      },
-      {
-        "name": "relay (getrelay.fun)",
-        "date": "7 November 2026",
-        "desc": "A local MCP server that lets coding agents hand work to each other, posted on X on 7 November by its author, who called it free and open source. The site says the install line is npm i -g relay-agents && relay init, and that init plugs it into Claude Code, Codex, Gemini CLI and Cursor, backing up their config files first. From inside one agent you ask, for example, for Codex to review the change. The site says the receiving agent gets the recent conversation, the branch, the changed files and the full diff, and that reviews and questions are read-only while handoffs may edit files. It says an agent started by relay cannot hand work back, so agents do not ping-pong, that there is no server and no telemetry, and that shared history is a local file in ~/.relay. It runs the agent CLIs you already pay for, with your existing logins.",
-        "why": "For a developer who copies a diff out of one agent to get a second opinion from another. Read the read-only and edit rules on the site before you let a handoff touch files.",
-        "demo": {
-          "input": "An uncommitted change in Claude Code that you want Codex to check",
-          "steps": [
-            "Install with npm i -g relay-agents, then run relay init",
-            "In Claude Code, ask for Codex to review this"
-          ],
-          "output": "Codex reviews the same repo with the conversation and diff attached, and the site says its reply lands back in the Claude session."
-        }
-      },
-      {
-        "name": "Taki (github.com/abiodunosagie/taki)",
-        "date": "6 November 2026",
-        "desc": "A native Mac app for people running several coding agents at once, posted on X on 6 November by its author, who said it is open source under MIT. The post says it finds every Claude Code, Codex and Cursor session on the Mac and puts each one next to its project’s dev servers, logs and Docker containers. The repository describes it as every coding agent and dev server on your Mac in one place, with sessions, dev servers, Docker, chat and terminals. The repository page read for this edition is a short description, not a manual.",
-        "why": "For someone with three agent sessions and four dev servers open who has lost track of which belongs to which project. The repository is new, so check what it reads on the machine before you rely on it.",
-        "demo": {
-          "input": "Several Claude Code, Codex and Cursor sessions open across projects on one Mac",
-          "steps": [
-            "Open Taki",
-            "The post says it groups each session with that project’s dev servers, logs and containers"
-          ],
-          "output": "One window per project. This edition did not find documentation on what Taki stores."
-        }
-      },
-      {
-        "name": "Switchboard (github.com/boss6825/switchboard)",
-        "date": "6 November 2026",
-        "desc": "A CLI for letting coding agents call each other, listed on Product Hunt’s board for 6 November. The listing says it is open source, and that the install line is npx -y switchboard-pro install. It says the tool connects Claude Code, Codex, Cursor and other coding agents, so one can delegate a task or hand off a chat when a usage limit hits. The repository’s own description names Claude Code, Codex, Cursor and OpenCode, and says they can read each other’s chats, use each other as sub-agents, and send small work to cheaper models. The page read for this edition did not include a longer manual.",
-        "why": "For someone already paying for two coding agents and copying the chat between them by hand. The repository page is one sentence, so the handoff is the thing to try before you trust it.",
-        "demo": {
-          "input": "A coding chat that has hit the usage limit of the agent you started in",
-          "steps": [
-            "The listing’s install line is npx -y switchboard-pro install",
-            "The repository says a second agent can take the chat or a smaller step"
-          ],
-          "output": "The work continues in the other agent. This edition did not find a manual that says what the second agent is allowed to see."
-        }
-      },
-      {
-        "name": "Make0 Brain OSS (make0.ai/open-source)",
-        "date": "6 November 2026",
-        "desc": "A local memory shared by coding agents, listed on Product Hunt’s board for 6 November. That listing says it is free, open source and MIT-licensed. The open-source page says it runs offline with no API key, that the first run downloads about 50 MB of models, and that memories an agent reads still go to that agent’s model provider. It says a query takes 80 ms on an Apple M2 Pro. It prints local top-10 recall of 92.9 percent, and 93.9 percent for the cloud product, on SWE-ContextBench Lite. It says a hit counts anywhere in each system’s own list, and that the comparison systems come from Table 5 of the paper. It says 41 agents can be imported, and that agents start it with npx.",
-        "why": "For a person who explains the same project to Claude Code and then again to Cursor. The 92.9 percent is the page’s recall, under the hit rule it prints. The text still leaves the machine when the agent sends a prompt.",
-        "demo": {
-          "input": "A fact one coding agent should not have to be told again",
-          "steps": [
-            "Make0 stores it locally. The page says the first run is about 50 MB",
-            "Another agent on the same machine can read it"
-          ],
-          "output": "The note, if the recall holds. The page says the read still goes to that agent’s model provider."
-        }
-      },
-      {
-        "name": "Stroq (stroq.dev)",
-        "date": "5 November 2026",
-        "desc": "A local audit for coding-agent sessions, shown on Show HN on 5 November by the author, with the repository AGGIB/Stroq. The docs say stroq sent reads local Claude Code, Codex and Cursor session records and matches tool arguments against credentials found on the machine, without printing the values. The site says hooks run with no model in the loop and no network on the hot path. The docs say a match at or above the default threshold of 0.6 marks a session suspect. On the Show HN thread the author wrote that the scan command generates a report and does not by itself prevent anything, and that stroq init sets hooks that ask before a dangerous command. The author called that a filter, not a sandbox. The install line on the thread is npx @stroq/cli.",
-        "why": "For anyone who wants a record of what a coding agent ran, before they call the machine locked down. The author’s own line is that the hooks are a filter.",
-        "demo": {
-          "input": "A coding-agent session that already ran on the machine",
-          "steps": [
-            "stroq sent reads the local record and looks for known secrets",
-            "stroq init, if you add it, asks before a command the policy flags"
-          ],
-          "output": "A report, or a prompt. The author says this is not a sandbox."
-        }
       }
     ],
     "funding": [
+      {
+        "company": "Bay",
+        "amount": "$50M ($37M Series A + $13M seed)",
+        "valuation": "Not disclosed",
+        "context": "SiliconANGLE, 10 November: Israeli startup Bay AI launched with $50 million to vet each action an AI agent tries to take before it runs, on laptops, cloud workloads and SaaS apps. Battery Ventures led the $37 million Series A, with Micron Ventures; Wiz CEO Assaf Rappaport invested personally. A previously undisclosed $13 million seed was co-led by YL Ventures and Striker Venture Partners. Bay names Micron, Wix, ClickUp and Peloton as customers and says false positives run under 1 percent."
+      },
+      {
+        "company": "Graphon Labs",
+        "amount": "$35M Series A",
+        "valuation": "Not disclosed",
+        "context": "The Next Web, 10 November: Graphon Labs, a 20-person San Francisco startup building graph-based memory for AI agents, raised $35 million led by RRE Ventures, with HP, Energy Impact Partners, Hitachi Ventures and Gaia VC. Total funding is $43.3 million. Graphon says it scored 93.9 percent on the LoCoMo long-conversation memory test using 58 percent fewer tokens than loading the whole conversation."
+      },
+      {
+        "company": "Nominal",
+        "amount": "$240M Series C",
+        "valuation": "$3B (TechCrunch)",
+        "context": "TechCrunch, 9 November: Nominal, a four-year-old Austin startup with an AI platform for engineering and testing complex hardware such as aircraft, nuclear reactors and smart factories, announced a $240 million Series C at a $3 billion valuation, led by Lightspeed Venture Partners and co-led by Insight Partners. That triples the $1 billion valuation of its March Series B extension. Nominal says it has 80 commercial and government customers, including Anduril, and in October the Air Force selected it for a $71.2 million STRATFI investment."
+      },
       {
         "company": "OpenAI",
         "amount": "$11B raised so far (round open)",
@@ -4124,10 +4226,10 @@
         "context": "TechCrunch, 6 November, citing Bloomberg and sources familiar: OpenAI has raised $11 billion so far in a round valuing it at $1.25 trillion. The round has not closed, is expected to close in the coming weeks, and could total about $20 billion, a source told Bloomberg. Bloomberg had reported a $30 billion goal in late September. TechCrunch had reached out to OpenAI and had not heard back. Reuters posted the same figures that night, attributed to a source. On 31 October CNBC had confirmed OpenAI was seeking up to $20 billion, citing the Financial Times for the $1.25 trillion post-money figure. Not a closed round, and not a new model."
       },
       {
-        "company": "Anthropic (IPO timing)",
-        "amount": "Not a new round",
-        "valuation": "Discussed figure, not a term sheet",
-        "context": "FA Mag, 6 November, carrying Bloomberg. People familiar said potential buyers are discussing a $1.2 trillion to $1.3 trillion range ahead of formal marketing next week. One of them weighed a value as low as $1.1 trillion. Anthropic declined to comment. The article says no final decision has been made, and that the Nasdaq 100 fell 6.4 percent on Thursday, wiping out $2.3 trillion of market value. It says buyers had previously put a fair value around $1.4 trillion to $1.5 trillion. Reuters, dateline 5 November, had said some investors saw a discussed $1.5 trillion as the high end and doubted the roadshow. That was a different report. Neither piece says the offering has been cancelled."
+        "company": "Anthropic (IPO range)",
+        "amount": "IPO: 825M shares at $70–$78",
+        "valuation": "Up to ~$1.4T fully diluted (CNBC, TechCrunch); Reuters first said up to $1.02T",
+        "context": "Anthropic, 10 November: launched the roadshow for its IPO, offering 825,000,000 Class A shares, 801,351,354 by Anthropic and 23,648,646 by existing holders, at $70 to $78, with a 30-day option for underwriters to buy up to 123,750,000 more. It applied to list on Nasdaq as ANT. TechCrunch puts the raise at $57.75 billion to $64.35 billion. CNBC’s sources say pricing on 18 November, trading on 19 November and about 20 percent for retail investors. The registration statement is not yet effective. Earlier: TechCrunch, 9 November, citing the WSJ, had reported the timing."
       },
       {
         "company": "TeraWulf (Google backstop for Anthropic)",
@@ -4152,55 +4254,37 @@
         "amount": "$45M Series A",
         "valuation": "$300M",
         "context": "Announced 2 November. TechCrunch said the 18-person company raised $45 million at a $300 million valuation, led by Sequoia, with Nvidia, Bessemer Venture Partners and Bain Capital Ventures. It sells a continual-learning platform that retrains an open model from feedback, and said the platform is now publicly available. TechCrunch named Harvey, Rogo, Decagon, Mercor and Nvidia as customers. Those customer names and the “publicly available” line are the company’s, as TechCrunch reports them."
-      },
-      {
-        "company": "42AI",
-        "amount": "$62.5M over three years",
-        "valuation": "Not a priced outside round",
-        "context": "TechCrunch, 2 November: 42AI came out of stealth saying it has a behavioral world model already used at financial brokerages. The $62.5 million came from the founders and Infinity Group over three years, not as one outside round. Infinity was founded by Amir Gal-Or, who is 42AI’s chairman and a co-founder. CEO Amit Gal-Or said the company works with 10 large brokerages and plans to raise more. A claim of 98% accuracy, Gal-Or told TechCrunch, measures whether trading flows fall in a predicted range, not whether each trade was predicted. He also said one brokerage generated about $30 million of additional value. That figure is the company’s."
-      },
-      {
-        "company": "Cohere",
-        "amount": "Series E targeting up to CAD $7B",
-        "valuation": "CAD $35.7B (if the target is reached)",
-        "context": "Announced 29 October. Cohere said the initial close of its Series E is targeting up to CAD $7 billion, which would represent a CAD $35.7 billion valuation, led by Schwarz Group, with the Government of Canada, Bell Ventures and Bullhound Capital as new investors and Inovia, NVIDIA and Prosperity7 returning (Cohere). The Prime Minister’s office said Canada will invest up to $1.6 billion in stages. Cohere committed to at least 1,000 Canadian technical jobs and at least $1.7 billion of computing infrastructure in Canada by 2030. Cohere also said third-quarter annual recurring revenue grew 165% year over year and that its customer count rose 20-fold to 300 over the past year."
-      },
-      {
-        "company": "Upwind",
-        "amount": "$400M Series C",
-        "valuation": "$3.8B",
-        "context": "Announced 28 October and led by Bessemer Venture Partners, with Canapi Ventures as a new investor and existing investors including Greylock, Cyberstarts, Craft, Salesforce Ventures and TCV (Upwind; GlobeNewswire). Upwind says the round follows its $250 million Series B at a $1.5 billion valuation in January, that revenue has quadrupled in 2026, and that total funding is now over $800 million. It sells runtime security for cloud and AI workloads."
       }
     ],
     "quotes": [
       {
-        "who": "The Hacker News, on Apiiro’s research",
-        "text": "Removing it from a project does not undo the leak, because older versions stay in git history and in forks of the repository.",
-        "source": "The Hacker News, 7 November 2026"
+        "who": "Google, on Gemini 4 Carbon pricing",
+        "text": "After the introductory period expires on November 30, 2026, the price of $4 per 1M input tokens and $20 per 1M output tokens will apply.",
+        "source": "Google blog, 10 November 2026"
       },
       {
-        "who": "NVIDIA Board of Directors",
-        "text": "While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information.",
-        "source": "NVIDIA Newsroom, 8 November 2026"
+        "who": "OpenAI, on Control Room",
+        "text": "We do not rely on the workload code to correctly perform a check of whether or not the job is still running.",
+        "source": "OpenAI, Control Room post"
       },
       {
-        "who": "Mark Gurman, Bloomberg",
-        "text": "Apple ultimately wants to go in this direction, I’m told, and I believe the company could make Siri more like an agent as early as next year.",
-        "source": "Power On, via The Verge, 8 November 2026"
+        "who": "Tony Burke, Australia’s Minister for Cyber Security",
+        "text": "But it’s not a free-for-all, there needs to be clear guardrails to protect Australians.",
+        "source": "Prime Minister of Australia media release, 10 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Agent folders hold secrets",
-        "desc": "Apiiro found secrets in 1,122 public copies of Claude Code’s approvals file, and Microsoft says attackers use agents to search GitHub for them. Treat agent settings folders like .env files."
+        "title": "Rules converge on incident reports",
+        "desc": "On the same day, New York opened RAISE Act registration with a 72-hour incident rule and Australia said it will require incident notification and published safety frameworks from frontier labs."
       },
       {
-        "title": "Most of it, not all of it",
-        "desc": "On Co-Design Bench the best agent met 69.9 percent of criteria per task but fully finished 26.4 percent. Checking every acceptance point is still a person’s job."
+        "title": "Guardrails for agents become products",
+        "desc": "Bay raised $50 million to vet agent actions before they run, agent-email-guard caps what an agent can send, and OpenAI described its own stop switch for research jobs."
       },
       {
-        "title": "Big models on small machines",
-        "desc": "llama-modchip says it runs a 284B DeepSeek model on a 64 GB CPU, and MAPLE fits a pruned Gemma 4 26B on a 6 GB GPU. Both are the authors’ own numbers."
+        "title": "AI moves into the meeting and the storefront",
+        "desc": "Claude now sits in Google Meet calls and builds shared sheets, while ChatGPT lets businesses claim profiles and run their own agents."
       }
     ]
   },
@@ -4209,26 +4293,26 @@
       {
         "org": "Anthropic",
         "name": "Claude",
-        "model": "Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.1 / Mythos 5.1 (gated)",
-        "note": "Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged. On 7 Nov The Hacker News reported Apiiro’s finding that 1,122 public copies of Claude Code’s .claude/settings.local.json hold at least one secret, saved by “Yes, and don’t ask again.” LATENT says Boris Cherny of the Claude Code team replied on Hacker News that the team is looking into ways to prevent this. On 8 Nov the FT reported that Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment. Not a new model."
+        "model": "Fable 5.2 / Mythos 5.2 (Mythos gated) · Opus 5.5 · Sonnet 5.5 · Haiku 5.5",
+        "note": "Fable 5.2 and Mythos 5.2 (9 Nov) are the same model, Mythos without some cyber and biology safeguards and only for verified organizations. $8/$40 per million tokens, down from $10/$50 for 5.1 (VentureBeat), up to 30 percent faster, fast mode $16/$80. Anthropic’s table has Fable 5.2 at 69.9 percent on FrontierSWE v2 and 41.3 percent on the Remote Labor Index, but it recommends starting most work on Opus 5.5. Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged. On 7 Nov The Hacker News reported Apiiro’s finding that 1,122 public copies of Claude Code’s .claude/settings.local.json hold at least one secret, saved by “Yes, and don’t ask again.” LATENT says Boris Cherny of the Claude Code team replied on Hacker News that the team is looking into ways to prevent this. On 8 Nov the FT reported that Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment. Not a new model. On 10 Nov Anthropic added Claude Meetings (Google Meet, beta), Whiteboards and Sheets, made Claude Data generally available, and launched its IPO roadshow at $70–$78 a share. Not a new model."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6 Cyber · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Carbon · 4 Argon · 3.8 Flash · Genie 4 · Omni 1.2 Flash",
-        "note": "Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model. On 5 Nov Google made Gemini Omni 1.2 Flash generally available. The blog says clips run up to 15 seconds, up from 10, and prices 720p at $0.07 a second, 30 percent below Omni 1.1. Not a new chat model. On 6 Nov Pushmeet Kohli wrote that human-guided agents found two weaknesses in legacy 1024-bit RSA, on older signatures and on factoring keys in bulk, and that the results do not affect modern schemes such as RSA 2048. Not a new chat model."
+        "note": "Gemini 4 Carbon became generally available on 10 Nov to all paying Gemini API developers and Google AI Ultra subscribers, at $2/$10 per million tokens until 30 Nov, then $4/$20. Google says Argon remains the choice for most work, and ranks Carbon first on CursorBench 4.0, WANDR and AutomationBench at more than 2x lower cost per task; Cursor reports 60.4 percent on CursorBench at high effort. /swarm is in preview in Antigravity. Earlier: Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model. On 5 Nov Google made Gemini Omni 1.2 Flash generally available. The blog says clips run up to 15 seconds, up from 10, and prices 720p at $0.07 a second, 30 percent below Omni 1.1. Not a new chat model. On 6 Nov Pushmeet Kohli wrote that human-guided agents found two weaknesses in legacy 1024-bit RSA, on older signatures and on factoring keys in bulk, and that the results do not affect modern schemes such as RSA 2048. Not a new chat model. On 9 Nov Google announced TPU 8tx, for confidential inference, and TPU 8i Max, with double the compute, SRAM and HBM bandwidth of 8i, with no dates or prices given. Not a new model."
       },
       {
         "org": "Meta",
         "name": "Muse",
-        "model": "Muse Wonder · Wonder Full · Muse Code",
-        "note": "Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work. On 3 Nov Meta’s pricing term sheet listed five dollar notes, and Reuters called the sale $15 billion. Settlement on the sheet is 5 Nov. This edition has not seen a notice that delivery happened. On 4 Nov Charlie Holtz said Conductor is joining Meta. TechCrunch said Meta confirmed and gave no further details. Conductor Cloud shuts down on 20 Nov. Not a new model. On 6 Nov Meta said specialized versions of existing models, trained using Muse Wonder, are rolling out to Muse and Meta AI. It did not name them. Its Active Memory eval is 90 percent, from 76 percent. A separate sentence says forgetting of critical information fell 2.4 times. Not a new public model name. On 6 Nov Reuters said Meta paused updates to its Commercial, Product Catalog, Self-Serve Ad and Ad Creative Generative AI terms, so they will not take effect on 20 Nov. A spokesperson said the existing terms remain in effect. Not a new model."
+        "model": "Muse Wonder · Wonder Full · Muse Spark 1.3 · Muse Ember · Muse Code",
+        "note": "Muse Ember (9 Nov) is Meta’s smallest, most efficient model, for agents’ tool calls, coding subtasks, routing and extraction, at $0.10/$0.50 per million tokens with a 1M context. Meta’s post puts it at 36 on the Artificial Analysis index, level with Claude Haiku 5.5. It is on the Meta Model API, Muse Code, Google Cloud and Oracle Cloud. Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work. On 3 Nov Meta’s pricing term sheet listed five dollar notes, and Reuters called the sale $15 billion. Settlement on the sheet is 5 Nov. This edition has not seen a notice that delivery happened. On 4 Nov Charlie Holtz said Conductor is joining Meta. TechCrunch said Meta confirmed and gave no further details. Conductor Cloud shuts down on 20 Nov. Not a new model. On 6 Nov Meta said specialized versions of existing models, trained using Muse Wonder, are rolling out to Muse and Meta AI. It did not name them. Its Active Memory eval is 90 percent, from 76 percent. A separate sentence says forgetting of critical information fell 2.4 times. Not a new public model name. On 6 Nov Reuters said Meta paused updates to its Commercial, Product Catalog, Self-Serve Ad and Ad Creative Generative AI terms, so they will not take effect on 20 Nov. A spokesperson said the existing terms remain in effect. Not a new model."
       },
       {
         "org": "SpaceXAI",
@@ -4295,6 +4379,14 @@
     ]
   },
   "gems": [
+    {
+      "name": "agent-email-guard",
+      "why": "Puts budgets, loop detection and a kill switch in front of any agent that sends email"
+    },
+    {
+      "name": "airgap-check",
+      "why": "Shows what an AI app tries to download when the network is gone, before an offline deployment hangs"
+    },
     {
       "name": "recalc",
       "why": "A spreadsheet where each cell can be a coding agent, with a test cell that catches a false done"

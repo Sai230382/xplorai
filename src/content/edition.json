@@ -1,205 +1,284 @@
 {
-  "number": 45,
-  "edition": "Briefing 45",
-  "date": "9 November 2026",
-  "dateISO": "2026-11-09",
-  "toolsPulseDate": "9 November 2026",
+  "number": 47,
+  "edition": "Briefing 47",
+  "date": "11 November 2026",
+  "dateISO": "2026-11-11",
+  "toolsPulseDate": "11 November 2026",
   "kicker": "Today in AI",
-  "title": "Apiiro found passwords and keys in 1,122 public copies of the file where Claude Code saves “don’t ask again” approvals, and old copies stay in git history. On 273 real change requests, the best coding agent met 69.9 percent of criteria per task but fully finished 26.4 percent. The FT says Anthropic paid about $3.4 billion for 1.7 gigawatts of gas generators. Gurman says Apple could make Siri more like an agent as early as next year. Nvidia’s board opened an independent investigation after reports that Jensen Huang was targeted by a foreign intelligence effort.",
-  "summary": "Apiiro’s research, published 5 November and written up by The Hacker News on 7 November, found 1,122 of 104,185 public copies of Claude Code’s .claude/settings.local.json holding at least one secret, 1,379 in all, because “Yes, and don’t ask again” can save the exact command, password included. Gitleaks and TruffleHog together missed 215 of those files, and Microsoft says attackers now use an agentic framework, ARTEX, to search GitHub for secrets. Co-Design Bench, covered by The Decoder on 8 November, built 273 tasks from real user coding sessions. GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of tasks, 41.0 percent of multimodal edits and 17.9 percent of repository edits. The Financial Times reported on 8 November that Anthropic bought commitments for 1.7 gigawatts of gas generators from OnePWR Solutions for about $3.4 billion in late September. Anthropic did not comment. Bloomberg’s Mark Gurman wrote on 8 November that John Ternus is pushing Craig Federighi to move faster, that third-party app actions for Siri are likely in the spring, and that Apple could make Siri more like an agent as early as next year. Nvidia’s board said on 8 November that independent directors, with outside counsel, will investigate reports that Huang was the target of a foreign intelligence effort, and that it has no reason to believe secrets were compromised.",
-  "uncertainty": "Apiiro’s counts are its own, from public GitHub searched 1 to 3 November, as reported by The Hacker News and checked by LATENT. Apiiro did not test whether the secrets work. The 734 secrets in older versions and 211 forks are the report’s. Boris Cherny’s reply is as LATENT quoted it from Hacker News. Microsoft’s five minutes is one observed case in its 5 November post. Co-Design Bench is a preprint. The 69.9, 26.4, 75.4, 41.0, 66.7 and 17.9 percent figures and the harness scores are the paper’s, graded by AI judges with a second AI verifier. The task set uses one fixed request per task. The $3.4 billion, 1.7 gigawatts and late September date are the FT’s, as carried by CNBC, citing a person familiar. Reuters could not verify them and Anthropic did not comment. The $500 billion is a September Reuters report as CNBC cited it. The Siri plans are Gurman’s reporting, as The Verge and his own posts give it. Apple has announced none of it. Nvidia’s statement is first-hand. The spy claim is from a US intelligence memo as TechCrunch reported it, and was not checked here. The share drop is Bloomberg’s post.",
+  "title": "Anthropic set its IPO range at $70 to $78 a share, and CNBC says trading starts 19 November. Gemini 4 Carbon is open to all paying developers at $2 and $10 until 30 November. Claude joins Google Meet calls and builds spreadsheets. Businesses can claim ChatGPT profiles. New York and Australia move on AI safety rules. OpenAI can stop research models in 35 seconds. Fireworks AI’s breach widened.",
+  "summary": "Anthropic launched its IPO roadshow on 10 November, offering 825 million shares at $70 to $78 under the Nasdaq symbol ANT. CNBC says it prices on 18 November and trades on 19 November, at up to about $1.4 trillion fully diluted. Google opened Gemini 4 Carbon to every paying developer at $2 and $10 per million tokens until 30 November, then $4 and $20, while saying Argon still suits most work. Anthropic added Claude Meetings for Google Meet, plus Whiteboards and Sheets, and made Claude Data generally available. OpenAI let businesses claim ChatGPT profiles, see mention counts and, in the US, launch their own agents. New York opened registration for the RAISE Act, which from January requires big labs to report critical incidents within 72 hours. Australia said it will legislate mandatory frontier AI safety rules with a new regulator. OpenAI described Control Room, which stops research model output within 35 seconds of a stop order. Fireworks AI said its breach reached customer datasets and unfinished model weights, and Notion said some AI chat transcripts were exposed.",
+  "uncertainty": "The IPO share counts and price range are Anthropic’s. The 18 and 19 November dates and the 20 percent retail target are from CNBC’s sources, not Anthropic. The $1.4 trillion valuation is CNBC’s and TechCrunch’s fully diluted figure; Reuters’ first report said up to $1.02 trillion. The $57.75 billion to $64.35 billion raise is TechCrunch’s. Carbon’s rankings and honesty score are Google’s, and the 60.4 percent CursorBench figure is Cursor’s post. Claude Meetings details are TechCrunch’s; Whiteboards, Sheets and Data details are Anthropic’s. The 1.2 billion weekly users figure is OpenAI’s. RAISE Act details are TechCrunch’s. Australia has published no bill, penalties or dates. Control Room’s 35 seconds is OpenAI’s own figure and has not been tested by outsiders. Fireworks and Notion details are as The Hacker News reported their notices.",
   "stats": {
-    "filtered": 5,
-    "verified": 5,
-    "themes": 4
+    "filtered": 8,
+    "verified": 8,
+    "themes": 5
   },
   "stories": [
     {
-      "id": "claude-code-secrets",
-      "topic": "trust",
-      "theme": "Apiiro found passwords and keys in 1,122 public copies of Claude Code’s “don’t ask again” file",
-      "changed": "On Thursday 5 November 2026 the security company Apiiro published research on .claude/settings.local.json, the file where Claude Code saves a command when a user picks “Yes, and don’t ask again.” The Hacker News, writing on 7 November, says the rule can be the exact command, so a password or token typed into it is saved too, in plain text. Apiiro searched public GitHub from 1 to 3 November and found 104,185 copies of the file in 103,617 repositories. About 1.1 percent of them, 1,122 copies, hold at least one secret, 1,379 distinct secrets in all. More than a third open a database directly, including 379 database passwords. Others include 43 SSH logins for public servers, 42 GitHub, GitLab and npm tokens, and 23 AWS keys. Apiiro did not test whether the secrets still work. The Hacker News says one company it notified confirmed its key had been live. Claude Code adds the file to the user’s global git excludes the first time it writes it, but not to the project’s own .gitignore, so that protection stays on one computer. In 539 of 1,105 repositories traced, a commit listing Claude as a co-author changed the file. Older versions of the file hold 734 more secrets, and 211 forks carry the same secrets as the originals. Gitleaks flagged 564 of the 1,122 files, TruffleHog 643, and neither flagged 215. Of 16 coding agents whose documentation Apiiro compared, Claude Code is the only one confirmed to save the full approved command in a project file by default. LATENT, a site that checked the report, says Boris Cherny of the Claude Code team replied on Hacker News on 7 November that Claude Code has not historically scrubbed secrets and that the team is looking into ways to prevent this. Separately, Microsoft Threat Intelligence wrote on 5 November that attackers are using an agentic framework, ARTEX, to search public GitHub for secrets, and that in one case an agent went from that search to taking data out of Azure Key Vault in five minutes.",
-      "matters": "A click meant to save time can turn a project folder into a password file. Once that file reaches a public repository, deleting it does not help. Old copies stay in history and forks, and attackers now search with agents.",
-      "imply": "Do not tell a team the fix is to delete the file. The report says rotate first, then clean up. Do not say 1,379 keys were stolen. Apiiro did not test them. Do not assume a scanner will catch them. Two common scanners together missed 215 of the 1,122 files.",
-      "uses": [
-        "Search your GitHub organization for .claude/settings.local.json and .claude/settings.json, including git history where the files were deleted. That is the report’s first step.",
-        "Rotate every password, token and key those files ever held before you untrack them with git rm --cached and add the file to the repository’s own .gitignore.",
-        "Pass secrets as variables, such as $DB_URL, and approve patterns like Bash(npm run:*) instead of single commands, so a saved rule never holds the secret itself."
-      ],
-      "example": "A platform lead whose team clicks “don’t ask again” daily reads the 7 November write-up. Apiiro found 1,122 public copies of that file holding secrets, and old copies stay in git history. The team rotates first, then adds the file to every repository’s .gitignore.",
-      "audience": "Anyone who uses Claude Code on real systems, and the security teams who run secret scanning for them.",
-      "watch": "Whether Anthropic ships a change that scrubs secrets before saving a rule, as Cherny said the team is looking into. Whether other agents’ settings folders turn up in the same searches.",
-      "source": {
-        "title": "The Hacker News: Claude Code’s “Don’t Ask Again” file exposes passwords and keys in 1,122 public copies on GitHub, 7 November 2026",
-        "url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html",
-        "quote": "Removing it from a project does not undo the leak, because older versions stay in git history and in forks of the repository."
-      }
-    },
-    {
-      "id": "co-design-bench",
-      "topic": "work",
-      "theme": "On real users’ change requests, the best coding agent fully finished 26.4 percent of tasks",
-      "changed": "Researchers from Alibaba and several universities posted Co-Design Bench, a benchmark built from real coding sessions, and The Decoder wrote it up on 8 November 2026. The paper says its 273 tasks were picked from 37,463 deduplicated requests across 26,314 real user sessions, favoring requests users had to rephrase or roll back. Each task starts from a working web app and a change request, sometimes with an image, audio, video or document attached, and is graded against 2,331 hidden acceptance criteria written by experts. One AI judge checks the finished app in a browser, and a second challenges every pass, looking for stubs and hardcoded results. Ten model endpoints ran in the same Claude Code harness, with a three hour and 120 turn cap. The strongest, GPT-6 Astra, passed an average of 69.9 percent of criteria per task but fully satisfied only 26.4 percent of tasks, so 73.6 percent kept at least one unmet requirement. On the 100 multimodal editing tasks it passed 75.4 percent of criteria and fully finished 41.0 percent. On the 173 repository editing tasks it passed 66.7 percent and fully finished 17.9 percent. Combined full-pass rates for the next models were 18.3 percent for Opus 5, 16.5 for Qwen3.8-Max, 15.0 for Qwen3.8-27B and 15.8 for Kimi K3. Every model scored lower on repository tasks that mixed three or four kinds of change than on tasks with one or two. In a separate test the same model scored 0.749 or 0.560 on repository tasks depending on the harness. The paper says the task set evaluates one fixed request, with no follow-up from the user, and that its AI judges can make mistakes.",
-      "matters": "An agent that meets most of a request can still leave something undone on most tasks. Someone has to find the missing piece. The harness, not only the model, changes how often that happens.",
-      "imply": "Do not read 69.9 percent as the share of jobs done. It is the average share of criteria met per task. The share fully done is 26.4 percent. Do not compare a model across tools without naming the harness. The paper shows it can move the score by 19 points.",
-      "uses": [
-        "When an agent says done, check every acceptance point in the request, not the overall look. The paper’s gap is exactly that: most points met, at least one missed.",
-        "Split change requests that mix layout, design, interaction and content into smaller ones. Every model in the paper did worse when a task combined three or four kinds.",
-        "If you are choosing a coding agent, test the model and the harness together on your own tasks. The paper says rankings changed when the harness changed."
-      ],
-      "example": "A product manager asked why agent pull requests still need rework reads the 8 November write-up. On 273 real change requests the best model met 69.9 percent of criteria per task but fully finished 26.4 percent. The team adds a checklist review for each request.",
-      "audience": "Engineering managers who review agent work, and anyone picking a coding agent from a leaderboard.",
-      "watch": "Whether other labs report on Co-Design Bench. Whether a version with follow-up turns from the user appears. The paper is a preprint.",
-      "source": {
-        "title": "arXiv: Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models, covered by The Decoder on 8 November 2026",
-        "url": "https://arxiv.org/html/2610.35138",
-        "quote": "Under a shared agentic harness, the strongest of ten model endpoints passes an average of 69.9% of criteria per task but fully satisfies only 26.4% of tasks."
-      }
-    },
-    {
-      "id": "anthropic-generators",
+      "id": "anthropic-ipo-range",
       "topic": "money",
-      "theme": "Anthropic paid about $3.4 billion for 1.7 gigawatts of gas generators, the FT reports",
-      "changed": "On Sunday 8 November 2026 the Financial Times reported that Anthropic has struck a deal worth about $3.4 billion to secure gas-fired power generators for data centers. CNBC, carrying the report, says Anthropic bought commitments for 1.7 gigawatts of heavy-duty generators in late September from OnePWR Solutions, an equipment supplier in San Antonio, Texas. It says Anthropic did not buy OnePWR itself and none of its employees moved to Anthropic, but the deal included the engineering and construction capabilities needed to install the generators, citing a person familiar with the matter. Bloomberg posted that the FT described it as the largest known single purchase of power-generation equipment by an AI lab. Reuters could not immediately verify the report, and Anthropic and OnePWR did not respond to requests for comment. CNBC adds that Reuters reported in September that Anthropic expects to spend more than $500 billion over the next 10 years building AI infrastructure. The deal is reported, not announced. The CNBC copy does not say where the generators will run.",
-      "matters": "Power is now something AI labs buy directly, like chips. For Claude customers, this is about capacity years out, not anything that changes this week.",
-      "imply": "Do not say Anthropic built a power plant or bought a company. The report says it took over generator commitments and did not acquire OnePWR. Do not treat the $3.4 billion as confirmed. Anthropic did not comment, and Reuters could not verify it.",
+      "theme": "Anthropic set its IPO range at $70 to $78 a share for 825 million shares, and CNBC says trading starts 19 November",
+      "changed": "On Tuesday 10 November 2026 Anthropic launched the roadshow for its initial public offering. Its announcement says it is offering 825,000,000 Class A shares, 801,351,354 of them sold by Anthropic and 23,648,646 by existing stockholders, and expects a price between $70 and $78 a share. Anthropic gets no money from the shares the existing stockholders sell. The underwriters get a 30-day option to buy up to 123,750,000 more shares. Anthropic has applied to list on the Nasdaq Global Select Market under the symbol ANT. TechCrunch says the sale would raise $57.75 billion to $64.35 billion. CNBC, citing people familiar with the plans, says Anthropic plans to price on 18 November and start trading on 19 November, and is aiming to give about 20 percent of the shares to retail investors, against the usual 5 to 10 percent. CNBC and TechCrunch say the top of the range values Anthropic at up to about $1.4 trillion on a fully diluted basis, up from $965 billion in its May funding round. Reuters’ first report on the filing put the target at up to $1.02 trillion, and noted that investors once expected as much as $2 trillion. The registration statement is not yet effective, so no shares can be sold yet.",
+      "matters": "This is the first time Anthropic itself has put numbers on the IPO, after a week of reports. The range sets the price of the company that sells Claude to many of the businesses reading this.",
+      "imply": "Do not treat the reported trading date as fixed. It comes from CNBC’s sources, not from Anthropic. Do not quote a single valuation without saying how it was counted. Reuters and CNBC give different figures for the same range.",
       "uses": [
-        "In a vendor-risk note on Anthropic, put this next to the September figure: Reuters reported plans to spend more than $500 billion over 10 years on AI infrastructure. Mark both as reported.",
-        "If your company is weighing on-site power for its own computing, the useful fact is the route: buying another firm’s existing generator orders instead of waiting for new ones.",
-        "Keep the date straight. The deal was struck in late September. It became public on 8 November."
+        "If your company runs on Claude, note the 18 and 19 November dates in your vendor file. A listed Anthropic will publish quarterly results you can read before renewing a contract.",
+        "If you plan to buy shares through a retail broker, check now whether your broker is offering an allocation. CNBC says about 20 percent may go to retail.",
+        "Use the official figures from Anthropic’s announcement, 825 million shares at $70 to $78, rather than the numbers that circulated before Tuesday."
       ],
-      "example": "A CIO asked whether Anthropic can keep up with demand reads the CNBC copy. The FT says Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment, and the CNBC copy does not say where they will run.",
-      "audience": "Buyers who depend on Claude capacity, and facilities or energy teams watching how AI labs get power.",
-      "watch": "Whether Anthropic confirms the deal or names the sites. Whether its IPO filing mentions it. Not a new model.",
+      "example": "A finance lead preparing a board note on AI suppliers reads Anthropic’s 10 November announcement. She writes that 825 million shares are offered at $70 to $78, that CNBC reports trading on 19 November, and that the valuation is between $1.02 trillion and $1.4 trillion depending on whose count you use.",
+      "audience": "Finance teams, investors, and companies that depend on Claude.",
+      "watch": "The final price on 18 November and whether it lands inside the range. Whether the underwriters use their extra 123,750,000 shares. The first quarterly report after listing. Not a new model.",
       "source": {
-        "title": "CNBC: Anthropic secures $3.4 billion generator deal for AI data centers, FT reports, 8 November 2026",
-        "url": "https://www.cnbc.com/2026/11/08/anthropic-generator-deal-ai-data-centers.html",
-        "quote": "The AI startup bought commitments for 1.7 gigawatts of heavy-duty generators in late September from OnePWR Solutions, a San Antonio, Texas-based equipment supplier, the report said."
+        "title": "Anthropic: Anthropic launches roadshow for proposed initial public offering, 10 November 2026",
+        "url": "https://www.anthropic.com/news/roadshow-launch",
+        "quote": "The initial public offering price is expected to be between $70.00 and $78.00 per share. Anthropic has applied to list its Class A common stock on the Nasdaq Global Select Market under the symbol “ANT.”"
       }
     },
     {
-      "id": "siri-agent-2027",
+      "id": "gemini-4-carbon-ga",
       "topic": "tools",
-      "theme": "Gurman says Apple could make Siri more like an agent as early as next year. Third-party app actions come first",
-      "changed": "On Sunday 8 November 2026 Bloomberg’s Mark Gurman wrote in his Power On newsletter that Apple chief executive John Ternus held a closed-door meeting with software chief Craig Federighi in the last few weeks, pushing him to accelerate Apple’s AI road map and move beyond Siri improvements. The Verge, summarizing the report the same day, says two changes are expected in the coming months. With iOS 27.3, Siri is expected to get fine-grained control over Apple’s own apps, such as rotating and cropping images in Photos and organizing Safari tabs. Integration with third-party apps is likely to land later, in the spring, according to Gurman, which would let Siri place an order through Grubhub or book a table through OpenTable. Gurman wrote that Dots, Muse and Grok can keep track of goals and keep pursuing them without the user starting every step, that Apple ultimately wants to go in that direction, and that he believes Apple could make Siri more like an agent as early as next year. In a separate post he said Mike Rockwell, who leads Siri, continues to seriously consider leaving that role or Apple next year. Apple has not announced any of this.",
-      "matters": "Siri acting inside other companies’ apps is the step that matters for anyone with an iPhone app. An agent that keeps working on a goal is still a report, not a product.",
-      "imply": "Do not tell anyone Siri will be an agent in 2027. Gurman says as early as next year, based on what he was told. Do not promise third-party actions on a date. The Verge says likely in the spring.",
+      "theme": "Gemini 4 Carbon is open to every paying developer at $2 and $10 per million tokens until 30 November, then $4 and $20",
+      "changed": "On Tuesday 10 November 2026 Google made Gemini 4 Carbon available to developers, businesses and consumers. When Briefing 35 covered its announcement on 28 October, only selected cyber defenders could use it. Carbon is now in the Gemini API for all paying developers in Google AI Studio and in Gemini for business, and it is rolling out to Google AI Ultra subscribers in Google Antigravity, the Gemini app and AI Mode in Search. Its introductory price is the same as Gemini 4 Argon, $2 per million input tokens and $10 per million output tokens. Google’s post says that after the introductory period ends on 30 November 2026, the price becomes $4 and $20. Google says Argon remains the right choice for most software engineering and knowledge work, and that Carbon uses more tokens than Argon to explore problems and check its own work. Google says Carbon ranks first on CursorBench 4.0, Perplexity’s WANDR and Zapier’s AutomationBench at more than 2 times lower cost per task than the next best outside model. Cursor posted that at high effort Carbon is the top model on CursorBench at 60.4 percent. Google also previewed /swarm in Antigravity, which turns one prompt into a team of agents. On Google’s 375-task agentic honesty test, Carbon passed 92 percent of tasks, against 70 percent for Argon.",
+      "matters": "A frontier model that was held back for security teams is now something any paying developer can call, at a launch price that doubles in three weeks.",
+      "imply": "Do not budget at $2 and $10. Plan for $4 and $20 from December. Do not move routine work off Argon just because Carbon tops the charts. Google itself says Argon suits most work, and Carbon spends more tokens per task.",
       "uses": [
-        "If you own an iPhone app, list the two or three actions customers would ask Siri to do, such as order or book. That is the kind of integration the report expects in the spring.",
-        "If you plan device rollouts, treat iOS 27.3’s control of Apple’s own apps as the near-term change. Photos and Safari are the examples given.",
-        "When someone compares Siri with ChatGPT Dots or Meta Muse, quote Gurman’s line: Apple wants to go in that direction, as early as next year."
+        "Run your hardest coding or research tasks through Carbon before 30 November, while it costs the same as Argon, and record the token count for each task.",
+        "Multiply those token counts by $4 and $20 per million to see what the same work costs in December.",
+        "If you use Cursor or Perplexity, try Carbon there first. Both said on X that it is available to their users."
       ],
-      "example": "A mobile lead asked whether to prepare for Siri ordering through their app reads the 8 November Verge piece. Third-party app integration is likely in the spring, says Gurman. A more agentic Siri could come as early as next year. Apple has not confirmed either.",
-      "audience": "Teams that build iPhone apps, and IT staff who plan Apple device updates.",
-      "watch": "What ships in iOS 27.3. Whether third-party app actions arrive in the spring. Whether Rockwell stays. Not a new model.",
+      "example": "A developer at a small agency runs ten tough bug-fix tasks on Carbon in Google AI Studio this week. She logs the tokens each one used, prices them at the December rate of $4 and $20 per million, and keeps Argon as the default for everything else.",
+      "audience": "Developers and teams choosing a model for hard coding, research and security work.",
+      "watch": "Independent scores outside Google’s list. Whether Google extends the introductory price past 30 November. How /swarm behaves when it leaves preview.",
       "source": {
-        "title": "The Verge: Apple is racing to make Siri more agentic, 8 November 2026",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
-        "quote": "The bigger change, integration with third-party apps, is likely to land later, in the Spring, according to Gurman."
+        "title": "Google: Gemini 4 Carbon is now available, 10 November 2026",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+        "quote": "After the introductory period expires on November 30, 2026, the price of $4 per 1M input tokens and $20 per 1M output tokens will apply."
       }
     },
     {
-      "id": "nvidia-board-probe",
-      "topic": "trust",
-      "theme": "Nvidia’s board opened an independent investigation after reports that Jensen Huang was targeted by a foreign intelligence effort",
-      "changed": "On Sunday 8 November 2026 Nvidia’s board said it is initiating an independent investigation in light of recent reporting that founder and chief executive Jensen Huang has been the target of a foreign intelligence effort. A committee of independent directors, assisted by outside independent counsel, will oversee it. The board said it has no reason to believe that either national security or Nvidia secrets were compromised, but that its inquiry will examine all available information. It said Huang fully supports the review and has committed to cooperating, and that the board has confidence in him and his leadership team. CNBC published a staff email from Huang the same day in which he apologized for being unfaithful to his wife, said he supports the investigation and will cooperate fully, and said he is fully committed to Nvidia. CNBC reported that Nvidia told it Huang is committed to continuing to lead the company as chief executive without interruption. TechCrunch has reported that a US intelligence memo claimed a Megaspeed executive was recruited by China’s Ministry of State Security to spy on Huang. On Monday Bloomberg posted that Nvidia shares dropped after the board launched the investigation. The investigation has no stated end date, and the board said it will provide further updates as appropriate.",
-      "matters": "Nvidia supplies most of the chips AI runs on, so its leadership is a supply question for many companies. For now the board says it has no reason to think secrets were compromised.",
-      "imply": "Do not write that Nvidia secrets leaked. The board says it has no reason to believe that. Do not say Huang is stepping down. The company says he will continue to lead without interruption. Keep the spy claims attributed to the reports.",
+      "id": "claude-meetings-sheets",
+      "topic": "work",
+      "theme": "Claude now joins Google Meet calls, builds shared spreadsheets and whiteboards, and Claude Data is generally available",
+      "changed": "On Tuesday 10 November 2026 Anthropic announced Claude Meetings, Claude Whiteboards and Claude Sheets, and made Claude Dashboards generally available under the new name Claude Data. TechCrunch says Claude Meetings adds Claude to a video call as a visible participant. It follows the conversation, drafts the plan being discussed, maps a timeline on a whiteboard, answers questions in the meeting chat and pulls figures from connected work apps. The notes, action items and other material it makes are saved in claude.ai afterwards. It is in beta on Team and Enterprise plans and works only with Google Meet at launch. Anthropic’s post says Whiteboards is a shared board that Claude can turn into a timeline with owners and dates, or into a document or deck, and export to Lucid, Miro or Vani by Zoho. Sheets builds spreadsheets with tabs, formulas, formatting and drop-downs, and outlines each edit it makes. Anthropic says Sheets has simple spreadsheet functions for now and can export to .xlsx or CSV. Claude Data adds certified metric definitions, data stories and live sharing, where viewers see approved results without access to the data connectors. On Team plans all three are on by default. On Enterprise plans Whiteboards and Sheets are off by default, and Claude Data turns on by default on 19 November 2026.",
+      "matters": "Claude is moving from a chat window into the places where teams actually plan: the meeting, the board and the spreadsheet.",
+      "imply": "Do not assume an AI note-taker in a call is harmless. Claude can pull data from connected apps while people talk. Do not plan around Teams or Zoom yet. Only Google Meet works at launch.",
       "uses": [
-        "If you keep a supplier-risk register, add one line: Nvidia board investigation opened 8 November, led by independent directors with outside counsel, no finding yet.",
-        "Quote the board’s statement, not the headlines, in any internal note. It is short and it is the only first-hand account of what is being examined.",
-        "If you have chip orders in progress, nothing in the statement changes them. Watch the board’s next update instead."
+        "Enterprise admins should decide before 19 November whether Claude Data should switch on by default, in Organization settings, Artifacts.",
+        "Try Claude Sheets for a first draft of a tracker or budget, then export to .xlsx if you need full Excel functions.",
+        "Tell people at the start of a call when Claude Meetings is listening, and agree which connected apps it may read."
       ],
-      "example": "A procurement lead asked whether the Nvidia news affects a GPU order reads the board’s 8 November statement. An independent committee will investigate, the board sees no sign secrets were compromised, and Huang continues as chief executive. The order stands while the review runs.",
-      "audience": "Procurement and risk teams that depend on Nvidia hardware, and anyone briefing leadership on AI suppliers.",
-      "watch": "The board’s next update and any findings. Whether US officials comment. Not a new model.",
+      "example": "A project manager on a Team plan runs a Google Meet kickoff with Claude in the call. By the end, Claude has drafted the plan and a whiteboard timeline with owners and dates. She checks the action items in claude.ai and exports the board to Miro for the wider team.",
+      "audience": "Team and Enterprise customers of Claude, IT admins, and anyone who runs planning meetings.",
+      "watch": "Support for Zoom and Microsoft Teams. Whether Sheets gets fuller spreadsheet functions. How admins handle the 19 November default for Claude Data.",
       "source": {
-        "title": "NVIDIA Newsroom: Statement from NVIDIA Board of Directors, 8 November 2026",
-        "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-        "quote": "While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information."
+        "title": "Anthropic: Introducing Claude Whiteboards, Claude Sheets, and Claude Data, 10 November 2026",
+        "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+        "quote": "For now, sheets have simple spreadsheet functionality, but we are working on adding more. When you need the full functionality of Excel, you can export your file to .xlsx or CSV, or use Claude for Excel."
+      }
+    },
+    {
+      "id": "chatgpt-businesses",
+      "topic": "work",
+      "theme": "Businesses can now claim a ChatGPT profile, see how often they are mentioned, and launch their own agent inside ChatGPT",
+      "changed": "On Tuesday 10 November 2026 OpenAI launched Businesses in ChatGPT, in beta. Through a new Business Hub, any eligible business where ChatGPT is available can claim its profile, verify it, update key details and add product feeds with prices and availability. OpenAI says ChatGPT has 1.2 billion weekly users. Shopify merchants can connect their store from Business Hub or the Shopify admin. The hub shows aggregated insights, including how many times the business is mentioned, website clicks, and the common topics of conversations where its website is cited. OpenAI says it does not share users’ conversations or Business Agent chats with businesses, and insights appear only above certain thresholds. Eligible ecommerce and online service businesses in the US can also build a Business Agent that answers customers’ questions about their products. That conversation is labeled and kept separate from ChatGPT’s own answers. Businesses can sponsor their agent and use it as the destination for ChatGPT ads, and those placements are labeled. TechCrunch says OpenAI did not explain the verification process. OpenAI’s VP of Monetization, Benji Shomair, told reporters there are multiple verification methods for different businesses and markets.",
+      "matters": "ChatGPT is building what Google built for search: a profile a business controls, numbers on how it shows up, and a paid way to stand out.",
+      "imply": "Do not wait for customers to tell you what ChatGPT says about you. Claim the profile and check it. Do not expect conversation details. OpenAI says insights are aggregated only.",
+      "uses": [
+        "Claim your business in Business Hub and correct your hours, products and prices, so ChatGPT answers with current details.",
+        "Check the discovery topics each month to see which questions lead people to your website.",
+        "If you are a US online shop, test a Business Agent on your top ten customer questions before sponsoring it."
+      ],
+      "example": "The owner of a US online bike-parts shop on Shopify connects the store from her Shopify admin. A week later Business Hub shows how often ChatGPT mentioned the shop and which topics led to clicks, and she adds the missing product sizes to her feed.",
+      "audience": "Marketing teams, small business owners and online shops.",
+      "watch": "When Business Agents open outside the US. How verification works in practice. How ChatGPT ads are priced against these profiles. Not a new model.",
+      "source": {
+        "title": "OpenAI: Introducing Businesses in ChatGPT, 10 November 2026",
+        "url": "https://openai.com/index/introducing-businesses-chatgpt",
+        "quote": "We’re introducing Businesses in ChatGPT in beta, giving businesses a new way to connect with the 1.2 billion people who use ChatGPT each week."
+      }
+    },
+    {
+      "id": "ny-raise-portal",
+      "topic": "rules",
+      "theme": "New York opened registration for its AI safety law, and big frontier labs must sign up by 1 January 2027",
+      "changed": "On Tuesday 10 November 2026 New York opened a registration portal for the RAISE Act, its AI safety and transparency law. TechCrunch says large frontier AI developers such as Anthropic and OpenAI must register by 1 January 2027, when the law takes effect. The law covers large frontier developers, which it defines as companies with more than $500 million in annual revenue. They must publish safety frameworks on their websites, report critical safety incidents within 72 hours and issue public transparency reports on their models. A new state office, the Office of Digital Innovation, Governance, Integrity, and Trust, or DIGIT, will enforce it. Penalties can reach $1 million for a first violation and $3 million for later ones. Governor Kathy Hochul also launched the New York Center for AI Responsibility and Research at Binghamton University, which will independently evaluate advanced AI systems and work with DIGIT to review companies’ safety frameworks. TechCrunch says Hochul first announced the center in January with $55 million in donations and capital.",
+      "matters": "From January, the biggest model makers will have to tell a US state about serious safety incidents within 72 hours, and publish how they manage risk.",
+      "imply": "Do not expect this to apply to your company unless you build frontier models and earn over $500 million a year. Do expect your AI vendors’ safety frameworks and transparency reports to become public documents you can read.",
+      "uses": [
+        "Add a line to vendor reviews asking for each AI supplier’s published safety framework once the law takes effect.",
+        "Watch for the first transparency reports from OpenAI and Anthropic, and use them in procurement questions.",
+        "If you advise AI companies, check which clients cross the $500 million revenue line."
+      ],
+      "example": "A procurement manager renewing an AI contract in February asks the vendor for its New York safety framework and its latest model transparency report, and files both with the contract.",
+      "audience": "Legal, compliance and procurement teams, and AI companies operating in New York.",
+      "watch": "Which companies register by 1 January. The first incident reports DIGIT receives. Whether other states copy the 72-hour rule. Not a new model.",
+      "source": {
+        "title": "TechCrunch: OpenAI, Anthropic face new oversight as New York’s AI safety law takes effect, 10 November 2026",
+        "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
+        "quote": "It mandates that large frontier developers — companies with more than $500 million in annual revenue — have to publish safety frameworks on their websites, report critical safety incidents within 72 hours, and issue public model transparency reports."
+      }
+    },
+    {
+      "id": "australia-ai-regulator",
+      "topic": "rules",
+      "theme": "Australia will make safety rules mandatory for frontier AI companies, enforced by a new AI safety regulator",
+      "changed": "On Tuesday 10 November 2026 Prime Minister Anthony Albanese and three ministers announced that Australia will legislate mandatory safety and security protections for frontier AI, through its Australian AI Standards legislation. The rules would apply to all frontier AI companies that want to operate in Australia. The government will propose a new regulator for AI safety, working with the Australian AI Safety Institute, which could impose significant penalties. The release says companies will have to keep security controls across development and deployment, identify and manage serious risks from their models, allow independent evaluation of their models, notify the government of incidents rapidly, publish safety and security frameworks, and respond to updated rules as technology changes. It says the measures follow interim recommendations from the Joint Select Committee on Artificial Intelligence and will give earlier warning of risks from rogue AI agents. The release gives no penalty amounts, deadlines or bill text, and says further details will come after consultation.",
+      "matters": "Australia joins New York on the same day in requiring incident reports and published safety frameworks from the biggest AI labs. The direction of AI rules is converging.",
+      "imply": "Do not plan around specific Australian penalties or dates yet. None have been published. Do expect the same few duties, frameworks, independent testing and incident reports, to show up in more countries.",
+      "uses": [
+        "If you operate in Australia, add the AI Standards legislation to your regulatory watch list and look for the consultation.",
+        "Compare the six Australian duties with New York’s RAISE Act and the EU AI Act to see what your vendors will have to publish.",
+        "Ask frontier AI suppliers whether they already allow independent evaluation of their models."
+      ],
+      "example": "A risk officer at an Australian bank reads the 10 November release. She notes the six duties, flags that no dates or penalties exist yet, and asks the bank’s AI vendors for their current safety frameworks.",
+      "audience": "Compliance and policy teams in Australia and companies that sell AI there.",
+      "watch": "The draft bill and its consultation. Which agency becomes the regulator. Penalty amounts. Not a new model.",
+      "source": {
+        "title": "Prime Minister of Australia: New Australian AI safety and security protections, 10 November 2026",
+        "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections",
+        "quote": "We are announcing today that as part of the Albanese Government’s AI in Australia’s Interests agenda, strong mandatory safety and security protections will be legislated through the AI Standards and apply to all frontier AI companies that wish to operate in Australia."
+      }
+    },
+    {
+      "id": "openai-control-room",
+      "topic": "trust",
+      "theme": "OpenAI built Control Room, which can stop any research model’s output within 35 seconds of a decision to halt it",
+      "changed": "OpenAI published a post describing Control Room, a central system that tracks model workloads across its research computers and stops them when safety or security concerns come up. Every research workload that does agentic inference must request a job ID tied to an approved safety case. Before an inference engine answers a request, it asks Control Room whether that job is still allowed to run. Once a job is marked stopped, by a person or by OpenAI’s misalignment monitors, the engine refuses further output for it. OpenAI says it does not trust the research code itself to perform the check. The longest gap between Control Room receiving a stop instruction and output ending is 35 seconds, caused by a caching layer needed for the volume of requests, and OpenAI says it is working to bring that to zero. If Control Room goes down, all inference requests are denied until it recovers. OpenAI says it is already deployed across its research infrastructure, and that its public model-serving stack already had ways to take models down quickly. The 35 seconds does not include the time it takes to notice a problem and decide to act.",
+      "matters": "It is a concrete, checkable answer to a vague question, whether a lab can actually stop a model mid-run, with a number attached.",
+      "imply": "Do not read this as covering ChatGPT or the API. It covers OpenAI’s research workloads. Do not read 35 seconds as the time to catch a problem. It is the time after someone decides to stop it.",
+      "uses": [
+        "If your team runs long agent jobs, copy the pattern: every job gets an ID, and the model checks a central list before each step.",
+        "Make your own kill switch fail closed, so that if the checker is down, nothing runs.",
+        "Ask AI vendors how long it takes them to stop a running agent once they decide to, and how they know."
+      ],
+      "example": "An engineering lead running overnight coding agents reads OpenAI’s post. She adds a job registry that her agents must check before every tool call, and sets it to refuse all calls if the registry is unreachable.",
+      "audience": "Engineering and security teams running AI agents, and anyone assessing AI lab safety claims.",
+      "watch": "Whether OpenAI reaches zero lag. Whether outside reviewers test it. Whether other labs publish stop times. Not a new model.",
+      "source": {
+        "title": "OpenAI: Control Room, a central system to track and stop model workloads across our research infrastructure",
+        "url": "https://openai.com/index/introducing-control-room/",
+        "quote": "The maximum time between the moment when Control Room receives an instruction to stop a job, and the moment when further progress is no longer possible, is 35 seconds."
+      }
+    },
+    {
+      "id": "fireworks-breach",
+      "topic": "trust",
+      "theme": "Fireworks AI’s breach widened to customer datasets, unfinished model weights and some Notion AI chat transcripts",
+      "changed": "On Monday 9 November 2026 Fireworks AI, which runs AI models for other companies, said its investigation into an incident first reported on 10 October had found more malicious activity. The Hacker News reports that the first notice said only environment variables, including API keys and tokens, were taken from some accounts. The new notice says attackers reached Fireworks’ development machines through an unnamed third-party cloud provider on 23 and 24 October and ran a workload that affected more customer data. For a limited set of accounts that included resource names and descriptions, billing and shipping addresses, invoice and payment history, and a subset of incomplete model weights and datasets. Fireworks says it does not store payment card numbers. It links the attack to a financially motivated group that sells stolen access to language models. Notion said fewer than 1 percent of its workspaces were affected, and that the data included Notion AI chat transcripts used for its Insights feature, mostly not labeled with who wrote them. Notion has turned Insights off and stopped serving open-weight models through Fireworks.",
+      "matters": "When you use an AI app, your prompts may pass through a model host you never signed with. This is what happens when that hidden supplier is breached.",
+      "imply": "Do not assume your AI vendor runs its own models. Ask who hosts them. Do not assume a breach notice is final. This one grew a month after the first.",
+      "uses": [
+        "If you are a Fireworks customer, rotate every key and token you stored there and check which datasets and fine-tunes were in affected accounts.",
+        "If your workspace used Notion AI, look for Notion’s notice in your workspace and rotate any password or key pasted into Notion AI chats.",
+        "Add a question to vendor reviews: which model hosts process our data, and how fast will you tell us about their incidents?"
+      ],
+      "example": "An IT manager at a company using Notion AI reads Notion’s update. She checks the workspace for the impact notice, finds staff had pasted API keys into AI chats, and rotates them the same day.",
+      "audience": "Security teams, IT admins, and companies that build on hosted AI models.",
+      "watch": "How many Fireworks customers were affected. Whether other apps that use Fireworks report impact. Whether customers leave. Not a new model.",
+      "source": {
+        "title": "The Hacker News: Fireworks AI Confirms Wider Breach Affecting Customer Datasets, Model Weights and Notion AI Chats, 10 November 2026",
+        "url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
+        "quote": "Upon analysis of the new data, we discovered that it included Notion AI chat transcripts used for the Insights feature, which for the vast majority of impacted workspaces were unattributable."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "1,122 files with secrets",
-        "body": "Apiiro found passwords and keys in 1,122 public copies of Claude Code’s “don’t ask again” file."
+        "title": "$70 to $78 a share",
+        "body": "Anthropic is offering 825 million shares under the symbol ANT. CNBC says trading starts 19 November."
       },
       {
-        "title": "26.4 percent fully done",
-        "body": "On 273 real change requests, the best coding agent met 69.9 percent of criteria but finished 26.4 percent."
+        "title": "Carbon for everyone",
+        "body": "Gemini 4 Carbon is open to all paying developers at $2 and $10 per million tokens until 30 November."
       },
       {
-        "title": "1.7 gigawatts",
-        "body": "The FT says Anthropic paid about $3.4 billion for gas generator commitments. Anthropic did not comment."
+        "title": "Claude joins the call",
+        "body": "Claude Meetings sits in Google Meet calls and drafts plans as people talk. Beta on Team and Enterprise."
       }
     ],
     "matters": [
       {
-        "title": "Rotate first",
-        "body": "Deleting the file does not help. Old copies stay in git history and forks, so change every secret it held."
+        "title": "Claim your profile",
+        "body": "Businesses can now claim a ChatGPT profile, fix their details and see how often ChatGPT mentions them."
       },
       {
-        "title": "Spring, then more",
-        "body": "Gurman says Siri gets third-party app actions likely in the spring, and could act more like an agent next year."
+        "title": "72 hours to report",
+        "body": "From January, New York’s RAISE Act makes big AI labs report critical safety incidents within 72 hours."
       },
       {
-        "title": "No sign of a leak",
-        "body": "Nvidia’s board opened an independent investigation. It says it has no reason to think secrets were compromised."
+        "title": "Stopped in 35 seconds",
+        "body": "OpenAI’s Control Room halts research model output within 35 seconds of a stop order, OpenAI says."
       }
     ],
     "watch": [
       {
-        "title": "215 files missed",
-        "body": "Two common secret scanners together missed 215 of the 1,122 files. Passwords inside commands slip past."
+        "title": "Carbon doubles in December",
+        "body": "After 30 November Carbon costs $4 and $20 per million tokens. Budget at that rate, not the launch price."
       },
       {
-        "title": "Harness matters",
-        "body": "The same model scored 0.749 or 0.560 on repository tasks depending on the harness it ran in."
+        "title": "The breach grew",
+        "body": "Fireworks AI now says customer datasets and unfinished model weights were reached. Notion chats too."
       },
       {
-        "title": "A report, not a launch",
-        "body": "Apple has not announced an agentic Siri. Gurman says as early as next year, based on what he was told."
+        "title": "Australia’s rules, no dates",
+        "body": "Australia will legislate frontier AI safety duties and a regulator. No bill or penalties yet."
       }
     ]
   },
   "chips": [
-    "Claude Code",
-    "Apiiro",
-    "Secrets",
-    "Co-Design Bench",
-    "Coding agents",
-    "Anthropic",
-    "Power",
-    "Apple",
-    "Siri",
-    "Nvidia"
+    "Anthropic IPO",
+    "Gemini 4 Carbon",
+    "Google",
+    "Claude Meetings",
+    "Claude Sheets",
+    "ChatGPT",
+    "Business Hub",
+    "RAISE Act",
+    "Australia",
+    "Control Room",
+    "Fireworks AI"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Apiiro, 5 Nov, via The Hacker News 7 Nov: 1,122 of 104,185 public .claude/settings.local.json copies hold at least one secret, 1,379 in all, 379 database passwords. Old versions hold 734 more; 211 forks. Gitleaks and TruffleHog together missed 215 files. Secrets not tested. Microsoft, 5 Nov: ARTEX agents search GitHub for secrets; one case took five minutes to reach Key Vault.",
-      "topic": "Trust"
-    },
-    {
-      "id": "s2",
-      "raw": "Co-Design Bench preprint, covered by The Decoder 8 Nov: 273 tasks from 26,314 real coding sessions, 2,331 hidden criteria. GPT-6 Astra passed 69.9 percent of criteria per task and fully finished 26.4 percent; 41.0 percent of multimodal and 17.9 percent of repository tasks. Harness changed scores. AI judges.",
-      "topic": "Work"
-    },
-    {
-      "id": "s3",
-      "raw": "FT via CNBC, 8 Nov: Anthropic bought commitments for 1.7 GW of gas generators from OnePWR Solutions for about $3.4 billion in late September. Did not acquire OnePWR. Reuters could not verify; Anthropic did not comment. Not a new model.",
+      "raw": "Anthropic, 10 Nov: IPO roadshow, 825,000,000 Class A shares (801,351,354 by Anthropic, 23,648,646 by holders), $70–$78, Nasdaq ANT, 123,750,000-share option. CNBC: price 18 Nov, trade 19 Nov, ~20% retail, up to $1.405T fully diluted. TechCrunch: $57.75B–$64.35B. Reuters first: up to $1.02T. Not a new model.",
       "topic": "Money"
     },
     {
-      "id": "s4",
-      "raw": "Gurman, Bloomberg Power On, 8 Nov, via The Verge: Ternus pushed Federighi to accelerate AI. iOS 27.3 expected to give Siri fine-grained control of Apple apps; third-party app actions likely in spring; Siri could be more like an agent as early as next year. Rockwell considering leaving. Apple has not announced it.",
+      "id": "s2",
+      "raw": "Google, 10 Nov: Gemini 4 Carbon GA for paying API developers and AI Ultra; $2/$10 intro until 30 Nov, then $4/$20. #1 on CursorBench 4.0, WANDR, AutomationBench at >2x lower cost per task (Google). Cursor: 60.4% CursorBench at high. /swarm preview. Honesty 92% vs Argon 70%.",
       "topic": "Tools"
     },
     {
+      "id": "s3",
+      "raw": "Anthropic, 10 Nov: Claude Meetings (beta, Team/Enterprise, Google Meet only, TechCrunch), Whiteboards and Sheets (beta, paid plans), Claude Data GA. Enterprise: Data on by default 19 Nov. Not a new model.",
+      "topic": "Work"
+    },
+    {
+      "id": "s4",
+      "raw": "OpenAI, 10 Nov: Businesses in ChatGPT beta, Business Hub claims, product feeds, aggregated insights; Business Agents for eligible US ecommerce; sponsorable as ChatGPT ads destination. 1.2B weekly users. Not a new model.",
+      "topic": "Work"
+    },
+    {
       "id": "s5",
-      "raw": "Nvidia board, 8 Nov: independent investigation, led by independent directors with outside counsel, into reports Huang was targeted by a foreign intelligence effort. No reason to believe secrets were compromised. Huang cooperating and continuing as CEO. Bloomberg: shares dropped. Not a new model.",
+      "raw": "TechCrunch, 10 Nov: New York RAISE Act portal open; register by 1 Jan 2027; >$500M revenue developers; safety frameworks, 72-hour incident reports, transparency reports; DIGIT; $1M/$3M penalties. Not a new model.",
+      "topic": "Rules"
+    },
+    {
+      "id": "s6",
+      "raw": "Australian PM, 10 Nov: mandatory frontier AI safety and security protections via AI Standards legislation, new AI safety regulator, six duties. No bill, dates or penalty amounts. Not a new model.",
+      "topic": "Rules"
+    },
+    {
+      "id": "s7",
+      "raw": "OpenAI: Control Room tracks research inference jobs by job ID tied to a safety case; engines check before each request; stop within 35 seconds; fails closed. Research workloads only. Not a new model.",
+      "topic": "Trust"
+    },
+    {
+      "id": "s8",
+      "raw": "Fireworks AI, 9 Nov (The Hacker News, 10 Nov): breach via third-party cloud provider 23–24 Oct reached billing data, some datasets and incomplete model weights. Notion: <1% of workspaces, AI chat transcripts for Insights; Insights disabled. Not a new model.",
       "topic": "Trust"
     }
   ]
