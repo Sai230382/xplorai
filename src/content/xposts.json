@@ -1,5 +1,32 @@
 [
   {
+    "name": "Google DeepMind",
+    "handle": "GoogleDeepMind",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg",
+    "text": "Start building with Gemini 4 Carbon: our strongest model for complex, long-horizon tasks.\n\nIt’s designed to explore problems thoroughly and run extended verification loops across software engineering, cybersecurity, knowledge work, and science. https://t.co/avhcExdUlr",
+    "url": "https://x.com/GoogleDeepMind/status/2120219371473617099",
+    "postedAt": "2026-11-10T18:17:44.000Z",
+    "take": "Open to every paying developer at $2 and $10 per million tokens until 30 November. Then it doubles to $4 and $20."
+  },
+  {
+    "name": "The Hacker News",
+    "handle": "TheHackersNews",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1597647879811657728/FLgHrLHy_normal.jpg",
+    "text": "‼️ UPDATE: Notion confirms it was impacted by the Fireworks AI breach.\n\nNotion AI chat transcripts were among the exposed data, potentially involving customer information.\n\nNotion has disabled its Insights feature and stopped using Fireworks for open-weight models.\n\nFull details: https://t.co/GNKaX7v2Cc",
+    "url": "https://x.com/TheHackersNews/status/2120224129471361452",
+    "postedAt": "2026-11-10T18:36:38.000Z",
+    "take": "Your AI app’s model host may be a company you never signed with. If you pasted keys into Notion AI, rotate them."
+  },
+  {
+    "name": "CNBC",
+    "handle": "CNBC",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1999829242431811587/iTRuu0Me_normal.jpg",
+    "text": "Anthropic said it will offer 825 million shares in its upcoming IPO at a price range between $70 to $78 per share, according to an updated filing on Tuesday, bringing the five-year-old artificial intelligence lab a step closer to a potentially historic Nasdaq debut.\n\nThe company https://t.co/OwTshUDQ5U",
+    "url": "https://x.com/CNBC/status/2120162320194187614",
+    "postedAt": "2026-11-10T14:31:02.000Z",
+    "take": "The first official numbers after a week of leaks. CNBC’s sources say pricing on 18 November and trading on 19 November."
+  },
+  {
     "name": "Anthropic",
     "handle": "AnthropicAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg",

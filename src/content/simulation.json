@@ -1,117 +1,64 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "fable-5-2",
+  "storyId": "anthropic-ipo-range",
   "kicker": "Play with today’s story",
-  "title": "What Claude Fable 5.2 scores and costs next to the models it replaces",
-  "intro": "Move across four models in Anthropic’s 9 November benchmark table. Each stop shows the same three scores, and the list price per million tokens where our sources give one. The point to notice is that Opus 5.5, the model Anthropic tells most people to start with, costs half as much as Fable 5.2.",
-  "note": "All scores are Anthropic’s own, from its Fable 5.2 announcement, at each model’s highest available effort with safeguards on, except the Remote Labor Index score for Fable 5.2, which Anthropic reports at High effort. They are not independent results. Fable 5.2’s and Opus 5.5’s prices are from Anthropic. Fable 5.1’s $10 and $50 are from VentureBeat. GPT-6 Astra’s price is not given in these sources, so it is left out. Prices are standard rates per million input and output tokens and leave out fast mode, caching and batch discounts.",
+  "title": "What Anthropic’s IPO shares add up to across its $70 to $78 range",
+  "intro": "Slide the share price across the range Anthropic set on 10 November. The number shows the price times the shares, in millions of dollars. Switch between all 825 million shares on offer and the 801,351,354 that Anthropic itself sells, which is the part whose money goes to the company.",
+  "note": "Share counts and the $70 to $78 range are from Anthropic’s 10 November announcement. At $70 and $78, all 825 million shares come to $57,750 million and $64,350 million, matching TechCrunch’s $57.75 billion to $64.35 billion. These are gross amounts before underwriting fees and costs, and they leave out the underwriters’ option to buy up to 123,750,000 more shares. The final price is set at pricing, which CNBC’s sources put on 18 November, and may fall outside the range. This is not the company’s valuation, which counts all shares, not only those sold.",
   "sources": [
     {
-      "label": "Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2, 9 November 2026",
-      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      "label": "Anthropic: Anthropic launches roadshow for proposed initial public offering, 10 November 2026",
+      "url": "https://www.anthropic.com/news/roadshow-launch"
     },
     {
-      "label": "Claude Platform docs: Claude Mythos 5.2 model overview and comparison table",
-      "url": "https://platform.claude.com/docs/en/models/mythos-5-2/overview"
+      "label": "TechCrunch: Anthropic sets IPO price range of $70 to $78 per share, 10 November 2026",
+      "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/"
     },
     {
-      "label": "VentureBeat: Anthropic releases Claude Fable 5.2 and Mythos 5.2 with 20% API cost reduction",
-      "url": "https://venturebeat.com/technology/anthropic-releases-claude-fable-5-2-and-mythos-5-2-pairing-new-record-high-benchmarks-with-20-api-cost-reduction"
+      "label": "CNBC: Anthropic sets IPO price range of $70 to $78, looks to start trading Nov. 19, sources say",
+      "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "Which model in Anthropic’s table",
-    "items": [
+    "type": "calculator",
+    "inputs": [
       {
-        "label": "Fable 5.2",
-        "name": "Claude Fable 5.2",
-        "caption": "Released 9 November. Anthropic says up to 30 percent faster than 5.1.",
-        "stats": [
-          {
-            "label": "FrontierSWE v2",
-            "value": "69.9%"
-          },
-          {
-            "label": "Remote Labor Index",
-            "value": "41.3%"
-          },
-          {
-            "label": "OSWorld 2.1",
-            "value": "89.3%"
-          },
-          {
-            "label": "Price per million tokens, in / out",
-            "value": "$8 / $40"
-          }
-        ]
-      },
-      {
-        "label": "Fable 5.1",
-        "name": "Claude Fable 5.1",
-        "caption": "The model Fable 5.2 replaces, released in September.",
-        "stats": [
-          {
-            "label": "FrontierSWE v2",
-            "value": "56.3%"
-          },
-          {
-            "label": "Remote Labor Index",
-            "value": "17.9%"
-          },
-          {
-            "label": "OSWorld 2.1",
-            "value": "83.5%"
-          },
-          {
-            "label": "Price per million tokens, in / out",
-            "value": "$10 / $50"
-          }
-        ]
-      },
-      {
-        "label": "Opus 5.5",
-        "name": "Claude Opus 5.5",
-        "caption": "What Anthropic recommends most users start with.",
-        "stats": [
-          {
-            "label": "FrontierSWE v2",
-            "value": "62.3%"
-          },
-          {
-            "label": "Remote Labor Index",
-            "value": "21.3%"
-          },
-          {
-            "label": "OSWorld 2.1",
-            "value": "87.2%"
-          },
-          {
-            "label": "Price per million tokens, in / out",
-            "value": "$4 / $20"
-          }
-        ]
-      },
-      {
-        "label": "GPT-6 Astra",
-        "name": "OpenAI GPT-6 Astra",
-        "caption": "OpenAI’s model, as Anthropic scored it. Price not given in these sources.",
-        "stats": [
-          {
-            "label": "FrontierSWE v2",
-            "value": "65.5%"
-          },
-          {
-            "label": "Remote Labor Index",
-            "value": "20.8%"
-          },
-          {
-            "label": "OSWorld 2.1",
-            "value": "79.5%"
-          }
-        ]
+        "id": "price",
+        "label": "IPO price per share",
+        "min": 70,
+        "max": 78,
+        "step": 1,
+        "value": 70,
+        "unit": "USD",
+        "control": "slider"
       }
-    ]
+    ],
+    "formula": {
+      "op": "multiply",
+      "factors": [
+        "price"
+      ]
+    },
+    "result": {
+      "label": "Price times shares, in millions of dollars, before fees",
+      "unit": "million USD",
+      "decimals": 0
+    },
+    "toggle": {
+      "label": "Which shares",
+      "options": [
+        {
+          "id": "all",
+          "label": "All 825,000,000 shares offered",
+          "multiplier": 825
+        },
+        {
+          "id": "anthropic",
+          "label": "801,351,354 sold by Anthropic",
+          "multiplier": 801.351354
+        }
+      ]
+    }
   }
 }

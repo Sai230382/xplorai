@@ -1,5 +1,125 @@
 [
   {
+    "id": "2120273077707985018",
+    "url": "https://x.com/alexanderchen/status/2120273077707985018",
+    "author_name": "Alexander Chen",
+    "author_handle": "@alexanderchen",
+    "created_at": "2026-11-10T21:51:09.000Z",
+    "text": "I've been making music using everyday sounds using Gemini 4 Carbon 🎹🐱 🔈 prototype link + how I made it in 🧵 https://t.co/BtA4zISgNa",
+    "model_or_tool": "Gemini 4 Carbon",
+    "what_they_built": "A prototype that turns everyday sounds into playable music instruments, built with Gemini 4 Carbon, with a link and a how-I-made-it thread.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 11,
+      "impression_count": 1632,
+      "like_count": 46,
+      "quote_count": 2,
+      "reply_count": 3,
+      "repost_count": 2
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120272293834248192/img/H9wosv6Vfo8pFWSD.jpg"
+  },
+  {
+    "id": "2120187740310712441",
+    "url": "https://x.com/Adidotdev/status/2120187740310712441",
+    "author_name": "Adit_Yah ☄️",
+    "author_handle": "@Adidotdev",
+    "created_at": "2026-11-10T16:12:03.000Z",
+    "text": "Gemini 4 Carbon just went live so I can finally share what I built on early access\n\npure procedural Threejs mechanical falcon with a live 28,800 VPH watch movement in its chest, 4-bar wing rig and 240 km/h dive\n\nzero 3D assets or external textures",
+    "model_or_tool": "Gemini 4 Carbon (Three.js)",
+    "what_they_built": "A fully procedural Three.js mechanical falcon with a working watch movement in its chest, a wing rig and a dive, made with no 3D assets or textures.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 3,
+      "impression_count": 1207,
+      "like_count": 41,
+      "quote_count": 1,
+      "reply_count": 7,
+      "repost_count": 2
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120186932160552960/img/Llb-fnbRgj41ESXD.jpg"
+  },
+  {
+    "id": "2120186998707163533",
+    "url": "https://x.com/LexnLin/status/2120186998707163533",
+    "author_name": "Leon Lin",
+    "author_handle": "@LexnLin",
+    "created_at": "2026-11-10T16:09:06.000Z",
+    "text": "I had early access to Gemini 4 Carbon and I built this 3d basketball court with it (no pre made 3d assets used)\n\nImproved a lot in areas that involve any form of taste/visuals such as 3d, websites, motion graphics over Argon https://t.co/VdiWsOA9nX",
+    "model_or_tool": "Gemini 4 Carbon",
+    "what_they_built": "A 3D basketball court built with Gemini 4 Carbon during early access, with no pre-made 3D assets.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 40,
+      "impression_count": 7569,
+      "like_count": 288,
+      "quote_count": 1,
+      "reply_count": 26,
+      "repost_count": 6
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120184009300840448/img/bjzZFCtS4hLXykh0.jpg"
+  },
+  {
+    "id": "2119915123070644263",
+    "url": "https://x.com/anstapnever/status/2119915123070644263",
+    "author_name": "anstap",
+    "author_handle": "@anstapnever",
+    "created_at": "2026-11-09T22:08:46.000Z",
+    "text": "Fable 5.2 can create anime better than any studio\n\ni made this 79-second anime with @claudeai Fable 5.2 https://t.co/H4iEvtrjhg https://t.co/hDbTBDC9EW",
+    "model_or_tool": "Claude Fable 5.2",
+    "what_they_built": "A 79-second anime short made with Claude Fable 5.2.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 124,
+      "impression_count": 9436,
+      "like_count": 118,
+      "quote_count": 1,
+      "reply_count": 5,
+      "repost_count": 3
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119914875011096576/img/Sjcwvx1GK95jHc6X.jpg"
+  },
+  {
+    "id": "2119884675967807903",
+    "url": "https://x.com/AnikaCodes/status/2119884675967807903",
+    "author_name": "Anika 🎀❤️",
+    "author_handle": "@AnikaCodes",
+    "created_at": "2026-11-09T20:07:46.000Z",
+    "text": "First thing I built with Claude Fable 5.2: a full history of the GPU.\n\nFelt right, considering the week Nvidia's having 💀 https://t.co/4VgyvNRX8g",
+    "model_or_tool": "Claude Fable 5.2",
+    "what_they_built": "A full history of the GPU, the first thing its maker built with Claude Fable 5.2.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 798,
+      "like_count": 18,
+      "quote_count": 0,
+      "reply_count": 4,
+      "repost_count": 0
+    },
+    "preview": "https://pbs.twimg.com/media/HWtX3tUbsAA3PLT.jpg"
+  },
+  {
+    "id": "2119798691053568096",
+    "url": "https://x.com/AdamMalherbe/status/2119798691053568096",
+    "author_name": "Adam Milan Malherbe",
+    "author_handle": "@AdamMalherbe",
+    "created_at": "2026-11-09T14:26:06.000Z",
+    "text": "Didn't film this myself. Claude Code did.\n\nIt connected to my 11-year-old Sony TV over Wi-Fi, pressed the remote buttons, cast a video to my Chromecast, recorded the screen and cut the clip. All from the terminal, while I made coffee.\n\nWhat you're seeing is Adam TV v2, the home screen I built to replace Sony's: greeting, weather, calendar, my apps, what's playing on the Chromecast, and a sleep timer that actually turns the TV off. Zero ads.\n\nMost of these features came from your replies two days ago. The stutter is real too: this TV can only record itself at about 6 frames a second🤣.\n\nWhat would you make your TV do? #BuildInPublic",
+    "model_or_tool": "Claude Code",
+    "what_they_built": "Adam TV v2, a custom home screen for an 11-year-old Sony TV with weather, calendar, apps and a sleep timer, plus a demo clip that Claude Code filmed and cut itself.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 295,
+      "like_count": 8,
+      "quote_count": 0,
+      "reply_count": 10,
+      "repost_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119798261372329984/img/TqvY8ISXtcpaw25C.jpg"
+  },
+  {
     "id": "2119208984443781489",
     "url": "https://x.com/murrtlen/status/2119208984443781489",
     "author_name": "Murr",
@@ -118,125 +238,5 @@
       "retweet_count": 2
     },
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2118591287301697536/img/tg6RN-lrkfHxXOvg.jpg"
-  },
-  {
-    "id": "2118342724076392845",
-    "url": "https://x.com/titepommee/status/2118342724076392845",
-    "author_name": "Sourasith",
-    "author_handle": "@titepommee",
-    "created_at": "2026-11-05T14:00:36.000Z",
-    "text": "Ink that turns to watercolour when a dragon walks on it. 🐉\n\nA Chinese poem in brush ink: every step blooms it into colour, and its fire burns holes through the paper. 3D dragon rigged in Blender, running in three.js, built with Claude Code.\n\n🔗 https://t.co/q8ibzpZUXx https://t.co/xqnhnR1AM0",
-    "model_or_tool": "Claude Code (Blender, three.js)",
-    "what_they_built": "A three.js dragon, rigged in Blender with Claude Code, that turns brush ink to watercolour as it walks across a poem.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 6,
-      "impression_count": 775,
-      "like_count": 22,
-      "quote_count": 1,
-      "reply_count": 5,
-      "retweet_count": 3
-    },
-    "preview": "https://pbs.twimg.com/ext_tw_video_thumb/2118342698763694080/pu/img/eH1u-P4dHaKeT8xr.jpg"
-  },
-  {
-    "id": "2118326087927406704",
-    "url": "https://x.com/to__rochan/status/2118326087927406704",
-    "author_name": "thatvibeai",
-    "author_handle": "@to__rochan",
-    "created_at": "2026-11-05T12:54:30.000Z",
-    "text": "Approved. First submission, no rejection.\n\n11 days in App Review for my vibe-coded iOS app, built with Claude Code.\n\nIt's called Rolltaking: a free teleprompter that follows your voice and keeps the script out of your video.\n\nLive on the App Store today. https://t.co/2vsU8T4Twr",
-    "model_or_tool": "Claude Code",
-    "what_they_built": "Rolltaking, a free iPhone teleprompter that follows the voice and stays out of the video, built with Claude Code and approved on the App Store.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 194,
-      "like_count": 3,
-      "quote_count": 1,
-      "reply_count": 10,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2118326075386462208/img/kfMtOyH6ezuW_Py8.jpg"
-  },
-  {
-    "id": "2117374984192512391",
-    "url": "https://x.com/levelsio/status/2117374984192512391",
-    "author_name": "@levelsio",
-    "author_handle": "@levelsio",
-    "created_at": "2026-11-02T21:55:09.000Z",
-    "text": "I decompiled probably my favorite game ever: Battlefield 1942 and I put it on the web with multiplayer for you to play here:\n\n👉 https://t.co/Wjh4ZCYLly 👈\n\n(It's the free shareware demo)\n\nIt was way harder than the other ports like Quake and DOOM I did because they already had https://t.co/n6pg4rrOuG https://t.co/jy7y1JbAa7",
-    "model_or_tool": "Claude Code, Opus 5.5",
-    "what_they_built": "A playable browser port of the Battlefield 1942 shareware demo, with multiplayer, made by asking Claude Code with Opus 5.5 to port the demo.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 910,
-      "impression_count": 178608,
-      "like_count": 1582,
-      "quote_count": 50,
-      "reply_count": 109,
-      "retweet_count": 78
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2117374770253565952/img/6WkHxBF81dMfyKCf.jpg"
-  },
-  {
-    "id": "2117654352374702378",
-    "url": "https://x.com/kevin_t_ngo/status/2117654352374702378",
-    "author_name": "Kevin Ngo",
-    "author_handle": "@kevin_t_ngo",
-    "created_at": "2026-11-03T16:25:16.000Z",
-    "text": "I made this video for Pokeya - they make needle felting kits that bring joyful characters to life\n\nAnimated in Python and rendered in Blender by Claude Opus 5.5 https://t.co/J8DSfELTXm",
-    "model_or_tool": "Claude Opus 5.5 (Python, Blender)",
-    "what_they_built": "A product video for Pokeya needle-felting kits, animated in Python and rendered in Blender by Claude Opus 5.5.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 55,
-      "impression_count": 4566,
-      "like_count": 116,
-      "quote_count": 0,
-      "reply_count": 8,
-      "retweet_count": 7
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2117653725225668608/img/AGU_7kh4sonjGzzy.jpg"
-  },
-  {
-    "id": "2117298037261550073",
-    "url": "https://x.com/thebuggeddev/status/2117298037261550073",
-    "author_name": "The Bugged Dev",
-    "author_handle": "@thebuggeddev",
-    "created_at": "2026-11-02T16:49:24.000Z",
-    "text": "Some seriously beautiful 3D world made with Claude Opus 5.5 ❤️‍🔥 https://t.co/h2ITBT2HeK",
-    "model_or_tool": "Claude Opus 5.5",
-    "what_they_built": "A 3D world made with Claude Opus 5.5.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 345,
-      "impression_count": 26817,
-      "like_count": 706,
-      "quote_count": 5,
-      "reply_count": 32,
-      "retweet_count": 31
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2117297637032607744/img/6X6Dr-901WGSly8F.jpg"
-  },
-  {
-    "id": "2117389523801743770",
-    "url": "https://x.com/RafaCrackYT/status/2117389523801743770",
-    "author_name": "Rafa",
-    "author_handle": "@RafaCrackYT",
-    "created_at": "2026-11-02T22:52:56.000Z",
-    "text": "🐉 I dared 4 AIs to ONE-SHOT build a voxel fire vs ice dragon fight. 🐉\n\nOpus 5.5 max: $69.38 · 2h 46m\nGemini 4 Argon high: ~$4.84 · 53m\nDeepSeek V4.1 Flash max: ~$1.04 · 6h 25m\nMuse Wonder max: ~$5.35 · 34m\n\nOpus cost 67x more than DeepSeek..\n\nBut which dragon won the fight? 👇 https://t.co/3ELmXZNXje",
-    "model_or_tool": "Opus 5.5, Gemini 4 Argon, DeepSeek V4.1 Flash, Muse Wonder",
-    "what_they_built": "A one-shot voxel fire-versus-ice dragon fight, built from the same prompt by Opus 5.5, Gemini 4 Argon, DeepSeek V4.1 Flash and Muse Wonder.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 11,
-      "impression_count": 2713,
-      "like_count": 31,
-      "quote_count": 0,
-      "reply_count": 4,
-      "retweet_count": 2
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2117389260076560384/img/7OrhjT4QQTD6ehbm.jpg"
   }
 ]
