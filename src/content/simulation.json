@@ -1,64 +1,73 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "anthropic-ipo-range",
+  "storyId": "openai-q3-10b",
   "kicker": "Play with today’s story",
-  "title": "What Anthropic’s IPO shares add up to across its $70 to $78 range",
-  "intro": "Slide the share price across the range Anthropic set on 10 November. The number shows the price times the shares, in millions of dollars. Switch between all 825 million shares on offer and the 801,351,354 that Anthropic itself sells, which is the part whose money goes to the company.",
-  "note": "Share counts and the $70 to $78 range are from Anthropic’s 10 November announcement. At $70 and $78, all 825 million shares come to $57,750 million and $64,350 million, matching TechCrunch’s $57.75 billion to $64.35 billion. These are gross amounts before underwriting fees and costs, and they leave out the underwriters’ option to buy up to 123,750,000 more shares. The final price is set at pricing, which CNBC’s sources put on 18 November, and may fall outside the range. This is not the company’s valuation, which counts all shares, not only those sold.",
+  "title": "OpenAI’s reported revenue and margin, quarter by quarter in 2026",
+  "intro": "Move the slider from the first quarter to the third. Each step shows the revenue and, where the report gives it, the growth and the adjusted operating margin for that quarter, as TechCrunch reported them from Bloomberg.",
+  "note": "All figures are from TechCrunch’s 11 November report citing Bloomberg’s anonymous sources. OpenAI has not published them, and it is a private company. The third-quarter growth is TechCrunch’s own “almost 50%”. No margin was reported for the first quarter. A negative margin means OpenAI spent more running the business than it took in. The $50 billion run rate is Bloomberg’s, and TechCrunch notes OpenAI and Anthropic count partner sales differently.",
   "sources": [
     {
-      "label": "Anthropic: Anthropic launches roadshow for proposed initial public offering, 10 November 2026",
-      "url": "https://www.anthropic.com/news/roadshow-launch"
-    },
-    {
-      "label": "TechCrunch: Anthropic sets IPO price range of $70 to $78 per share, 10 November 2026",
-      "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/"
-    },
-    {
-      "label": "CNBC: Anthropic sets IPO price range of $70 to $78, looks to start trading Nov. 19, sources say",
-      "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
+      "label": "TechCrunch: OpenAI’s quarterly revenue reportedly crosses $10B for the first time, 11 November 2026",
+      "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/"
     }
   ],
   "widget": {
-    "type": "calculator",
-    "inputs": [
+    "type": "stepper",
+    "label": "OpenAI’s reported 2026 quarters",
+    "items": [
       {
-        "id": "price",
-        "label": "IPO price per share",
-        "min": 70,
-        "max": 78,
-        "step": 1,
-        "value": 70,
-        "unit": "USD",
-        "control": "slider"
+        "label": "Q1",
+        "name": "First quarter 2026",
+        "caption": "Reported earlier",
+        "stats": [
+          {
+            "label": "Revenue",
+            "value": "$5.7 billion"
+          }
+        ]
+      },
+      {
+        "label": "Q2",
+        "name": "Second quarter 2026",
+        "stats": [
+          {
+            "label": "Revenue",
+            "value": "$6.7 billion"
+          },
+          {
+            "label": "Growth from Q1",
+            "value": "About 18%"
+          },
+          {
+            "label": "Adjusted operating margin",
+            "value": "−150%"
+          }
+        ]
+      },
+      {
+        "label": "Q3",
+        "name": "Third quarter 2026",
+        "caption": "First quarter above $10 billion",
+        "stats": [
+          {
+            "label": "Revenue",
+            "value": "More than $10 billion"
+          },
+          {
+            "label": "Growth from Q2",
+            "value": "Almost 50%"
+          },
+          {
+            "label": "Adjusted operating margin",
+            "value": "−109%"
+          },
+          {
+            "label": "Annual revenue run rate",
+            "value": "$50 billion"
+          }
+        ]
       }
-    ],
-    "formula": {
-      "op": "multiply",
-      "factors": [
-        "price"
-      ]
-    },
-    "result": {
-      "label": "Price times shares, in millions of dollars, before fees",
-      "unit": "million USD",
-      "decimals": 0
-    },
-    "toggle": {
-      "label": "Which shares",
-      "options": [
-        {
-          "id": "all",
-          "label": "All 825,000,000 shares offered",
-          "multiplier": 825
-        },
-        {
-          "id": "anthropic",
-          "label": "801,351,354 sold by Anthropic",
-          "multiplier": 801.351354
-        }
-      ]
-    }
+    ]
   }
 }

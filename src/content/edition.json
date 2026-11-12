@@ -1,13 +1,13 @@
 {
-  "number": 47,
-  "edition": "Briefing 47",
-  "date": "11 November 2026",
-  "dateISO": "2026-11-11",
-  "toolsPulseDate": "11 November 2026",
+  "number": 48,
+  "edition": "Briefing 48",
+  "date": "12 November 2026",
+  "dateISO": "2026-11-12",
+  "toolsPulseDate": "12 November 2026",
   "kicker": "Today in AI",
-  "title": "Anthropic set its IPO range at $70 to $78 a share, and CNBC says trading starts 19 November. Gemini 4 Carbon is open to all paying developers at $2 and $10 until 30 November. Claude joins Google Meet calls and builds spreadsheets. Businesses can claim ChatGPT profiles. New York and Australia move on AI safety rules. OpenAI can stop research models in 35 seconds. Fireworks AI’s breach widened.",
-  "summary": "Anthropic launched its IPO roadshow on 10 November, offering 825 million shares at $70 to $78 under the Nasdaq symbol ANT. CNBC says it prices on 18 November and trades on 19 November, at up to about $1.4 trillion fully diluted. Google opened Gemini 4 Carbon to every paying developer at $2 and $10 per million tokens until 30 November, then $4 and $20, while saying Argon still suits most work. Anthropic added Claude Meetings for Google Meet, plus Whiteboards and Sheets, and made Claude Data generally available. OpenAI let businesses claim ChatGPT profiles, see mention counts and, in the US, launch their own agents. New York opened registration for the RAISE Act, which from January requires big labs to report critical incidents within 72 hours. Australia said it will legislate mandatory frontier AI safety rules with a new regulator. OpenAI described Control Room, which stops research model output within 35 seconds of a stop order. Fireworks AI said its breach reached customer datasets and unfinished model weights, and Notion said some AI chat transcripts were exposed.",
-  "uncertainty": "The IPO share counts and price range are Anthropic’s. The 18 and 19 November dates and the 20 percent retail target are from CNBC’s sources, not Anthropic. The $1.4 trillion valuation is CNBC’s and TechCrunch’s fully diluted figure; Reuters’ first report said up to $1.02 trillion. The $57.75 billion to $64.35 billion raise is TechCrunch’s. Carbon’s rankings and honesty score are Google’s, and the 60.4 percent CursorBench figure is Cursor’s post. Claude Meetings details are TechCrunch’s; Whiteboards, Sheets and Data details are Anthropic’s. The 1.2 billion weekly users figure is OpenAI’s. RAISE Act details are TechCrunch’s. Australia has published no bill, penalties or dates. Control Room’s 35 seconds is OpenAI’s own figure and has not been tested by outsiders. Fireworks and Notion details are as The Hacker News reported their notices.",
+  "title": "United bars unauthorized AI agents from booking its flights. OpenAI’s quarterly revenue reportedly tops $10 billion, still at a loss. Google’s Decisions API answers 1,000 questions in one call, and AWS ships a free local emulator. Databricks’ Genie works in the background. DeepMind proves Signal’s code secure. Stolen AI keys cost Railway customers $740,000, and 35,000 Grok Build apps were left open.",
+  "summary": "United Airlines said on 11 November that unauthorized AI agents may not book, change or check in for its flights, even with the customer’s permission, and that travel agencies need its approval to use AI tools. TechCrunch, citing Bloomberg, reported OpenAI’s third-quarter revenue passed $10 billion, up from $6.7 billion, with its operating margin improving from minus 150 to minus 109 percent. Google launched the Gemini Decisions API, which scores up to 1,000 yes/no, choice and rubric questions in one call for $0.10 per million input tokens. AWS released AWS Emulator, a free local stand-in for its APIs built by AI agents, which does not check IAM permissions. Databricks announced an always-on Genie that works in the background and emails people for decisions, coming to preview. Google DeepMind’s AlphaProof Code proved key security properties of Signal’s compiled code in four weeks. Railway said an attacker hunting AI keys could have decrypted secrets in up to 100,000 workspaces, with about $740,000 in unauthorized charges. Claroc found about 35,000 Grok Build apps open to anyone through public DNS records.",
+  "uncertainty": "United’s policy details are from its own help page; how it will enforce the block is not described. OpenAI’s revenue and margin figures come from Bloomberg’s and the WSJ’s anonymous sources as reported by TechCrunch and Reuters, not from OpenAI. The Decisions API speed, price comparison and benchmark claims are Google’s. AWS Emulator’s description and limits are AWS’s. Databricks’ always-on Genie is announced, not yet in preview; Ghodsi’s demo is TechCrunch’s account. AlphaProof Code results are DeepMind’s, with Signal’s CTO quoted; the proofs cover the specified properties only. Railway’s 100,000 workspace figure is its own upper bound and the $740,000 is its estimate. Grok Build figures are Claroc’s as reported by Ars Technica; Cursor disputes the default setting.",
   "stats": {
     "filtered": 8,
     "verified": 8,
@@ -15,270 +15,271 @@
   },
   "stories": [
     {
-      "id": "anthropic-ipo-range",
+      "id": "united-blocks-ai-agents",
+      "topic": "rules",
+      "theme": "United Airlines now bars unauthorized AI agents from booking, changing or checking in for its flights, including through travel agencies",
+      "changed": "On Wednesday 11 November 2026 United Airlines published a policy that restricts unauthorized third-party AI agents and assistants. United says it is taking steps to restrict them directly on its website and app and indirectly through travel agencies and aggregators. Its help page says that if an agent, bot, browser extension or browser feature searches, books, buys, manages or collects information on united.com or the United app without United’s permission, it is unauthorized. Giving an agent your own permission does not change that. United says agents risk exposing personal information or making bookings, account changes or use of MileagePlus miles without the traveller’s approval. It also says automatic check-in by an agent could break FAA and DOT rules, because check-in needs a person to confirm that bags do not contain banned items such as explosives. Bookings made by agents before 11 November will not be cancelled. Travel agencies may use their own AI tools only with United’s permission. You can still use AI to research trips, as long as the tool does not touch United’s site or app, and assistive technology for disabled customers is not affected. United says it does not work with any third-party AI agents yet. CNBC notes that Amazon has blocked Meta’s Muse agent, while Walmart has partnered with it.",
+      "matters": "This is one of the first big consumer brands to write down, in public, that a customer’s own AI agent may not act for them. Agents that book and buy only work if the sites let them in.",
+      "imply": "Do not assume an agent that can book a flight is allowed to. Do not hand an agent your loyalty login to get round the rule. United says that is exactly what puts miles and bookings at risk.",
+      "uses": [
+        "If you book work travel with an AI assistant, use it to compare United flights, then buy on united.com or the United app yourself.",
+        "If you ever gave an agent your MileagePlus login, change the password now, as United advises.",
+        "If you run a travel desk or agency, check whether any of your tools use AI agents on United’s channels. United now requires its permission."
+      ],
+      "example": "An office manager asks her AI assistant to find the cheapest United fare for a Chicago trip. It lists three options. She opens the United app, books the one she picked, and checks in herself, confirming the bag declaration.",
+      "audience": "Business travellers, travel managers, travel agencies, and anyone building shopping or booking agents.",
+      "watch": "Whether United approves any agent integrations, and on what terms. Whether other airlines follow. How OpenAI and Meta respond for their booking agents. Not a new model.",
+      "source": {
+        "title": "United Airlines: Unauthorized third-party AI agents or assistants, 11 November 2026",
+        "url": "https://www.united.com/en/us/fly/help-center/digital-trust-center/artificial-intelligence/third-party-ai-agents.html",
+        "quote": "Just because you’ve given access to AI assistants doesn’t mean United will permit an AI assistant to transact with United."
+      }
+    },
+    {
+      "id": "openai-q3-10b",
       "topic": "money",
-      "theme": "Anthropic set its IPO range at $70 to $78 a share for 825 million shares, and CNBC says trading starts 19 November",
-      "changed": "On Tuesday 10 November 2026 Anthropic launched the roadshow for its initial public offering. Its announcement says it is offering 825,000,000 Class A shares, 801,351,354 of them sold by Anthropic and 23,648,646 by existing stockholders, and expects a price between $70 and $78 a share. Anthropic gets no money from the shares the existing stockholders sell. The underwriters get a 30-day option to buy up to 123,750,000 more shares. Anthropic has applied to list on the Nasdaq Global Select Market under the symbol ANT. TechCrunch says the sale would raise $57.75 billion to $64.35 billion. CNBC, citing people familiar with the plans, says Anthropic plans to price on 18 November and start trading on 19 November, and is aiming to give about 20 percent of the shares to retail investors, against the usual 5 to 10 percent. CNBC and TechCrunch say the top of the range values Anthropic at up to about $1.4 trillion on a fully diluted basis, up from $965 billion in its May funding round. Reuters’ first report on the filing put the target at up to $1.02 trillion, and noted that investors once expected as much as $2 trillion. The registration statement is not yet effective, so no shares can be sold yet.",
-      "matters": "This is the first time Anthropic itself has put numbers on the IPO, after a week of reports. The range sets the price of the company that sells Claude to many of the businesses reading this.",
-      "imply": "Do not treat the reported trading date as fixed. It comes from CNBC’s sources, not from Anthropic. Do not quote a single valuation without saying how it was counted. Reuters and CNBC give different figures for the same range.",
+      "theme": "OpenAI’s quarterly revenue reportedly passed $10 billion for the first time, up from $6.7 billion, while it still loses money on each sale",
+      "changed": "On Wednesday 11 November 2026 TechCrunch reported, citing Bloomberg and its anonymous sources, that OpenAI’s revenue crossed $10 billion in the third quarter of 2026 for the first time. TechCrunch says that would be an almost 50 percent jump from the $6.7 billion OpenAI reportedly made in the second quarter, when growth from the first quarter’s $5.7 billion was about 18 percent. The report says OpenAI’s adjusted operating margin narrowed from minus 150 percent in the second quarter to minus 109 percent in the third, which means it still spent more to run the business than it earned. Bloomberg puts OpenAI’s annual revenue run rate at $50 billion. Reuters, citing the Wall Street Journal, also reported revenue rising to $10 billion alongside steep losses. TechCrunch credits tighter pricing, discounts, better models and more products for businesses and agents. For comparison, TechCrunch notes Anthropic recently reported third-quarter revenue of $17 billion and an $81 billion run rate at the end of October, and that the two companies count partner sales differently. OpenAI has not published these figures itself.",
+      "matters": "It is the clearest sign yet that OpenAI’s business sales are picking up, and that it still pays heavily for every dollar it earns. That affects how long today’s prices and discounts can last.",
+      "imply": "Do not treat these as official results. They come from anonymous sources, and OpenAI is private. Do not compare OpenAI’s and Anthropic’s run rates as if they were measured the same way. TechCrunch says they are not.",
       "uses": [
-        "If your company runs on Claude, note the 18 and 19 November dates in your vendor file. A listed Anthropic will publish quarterly results you can read before renewing a contract.",
-        "If you plan to buy shares through a retail broker, check now whether your broker is offering an allocation. CNBC says about 20 percent may go to retail.",
-        "Use the official figures from Anthropic’s announcement, 825 million shares at $70 to $78, rather than the numbers that circulated before Tuesday."
+        "If you are negotiating an OpenAI contract, ask for prices locked for the full term. A company with a reported operating margin of minus 109 percent may tighten discounts.",
+        "Use the minus 150 to minus 109 percent margin change to explain to finance why AI prices may rise rather than fall.",
+        "When you compare vendors, ask each for its own revenue counting method before quoting run rates side by side."
       ],
-      "example": "A finance lead preparing a board note on AI suppliers reads Anthropic’s 10 November announcement. She writes that 825 million shares are offered at $70 to $78, that CNBC reports trading on 19 November, and that the valuation is between $1.02 trillion and $1.4 trillion depending on whose count you use.",
-      "audience": "Finance teams, investors, and companies that depend on Claude.",
-      "watch": "The final price on 18 November and whether it lands inside the range. Whether the underwriters use their extra 123,750,000 shares. The first quarterly report after listing. Not a new model.",
+      "example": "A procurement lead renewing a ChatGPT Enterprise deal reads the report. She asks OpenAI for a two-year price lock and a cap on yearly increases, noting in her memo that the figures are unconfirmed press reports.",
+      "audience": "Finance and procurement teams, investors, and companies that buy from OpenAI.",
+      "watch": "Whether OpenAI confirms the numbers. Whether its margin keeps narrowing. Whether discounts shrink at renewals. Not a new model.",
       "source": {
-        "title": "Anthropic: Anthropic launches roadshow for proposed initial public offering, 10 November 2026",
-        "url": "https://www.anthropic.com/news/roadshow-launch",
-        "quote": "The initial public offering price is expected to be between $70.00 and $78.00 per share. Anthropic has applied to list its Class A common stock on the Nasdaq Global Select Market under the symbol “ANT.”"
+        "title": "TechCrunch: OpenAI’s quarterly revenue reportedly crosses $10B for the first time, 11 November 2026",
+        "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/",
+        "quote": "OpenAI’s profitability picture also appears to have improved, with its adjusted operating margin narrowing from -150% in the second quarter to -109% in the third quarter, the report said."
       }
     },
     {
-      "id": "gemini-4-carbon-ga",
+      "id": "gemini-decisions-api",
       "topic": "tools",
-      "theme": "Gemini 4 Carbon is open to every paying developer at $2 and $10 per million tokens until 30 November, then $4 and $20",
-      "changed": "On Tuesday 10 November 2026 Google made Gemini 4 Carbon available to developers, businesses and consumers. When Briefing 35 covered its announcement on 28 October, only selected cyber defenders could use it. Carbon is now in the Gemini API for all paying developers in Google AI Studio and in Gemini for business, and it is rolling out to Google AI Ultra subscribers in Google Antigravity, the Gemini app and AI Mode in Search. Its introductory price is the same as Gemini 4 Argon, $2 per million input tokens and $10 per million output tokens. Google’s post says that after the introductory period ends on 30 November 2026, the price becomes $4 and $20. Google says Argon remains the right choice for most software engineering and knowledge work, and that Carbon uses more tokens than Argon to explore problems and check its own work. Google says Carbon ranks first on CursorBench 4.0, Perplexity’s WANDR and Zapier’s AutomationBench at more than 2 times lower cost per task than the next best outside model. Cursor posted that at high effort Carbon is the top model on CursorBench at 60.4 percent. Google also previewed /swarm in Antigravity, which turns one prompt into a team of agents. On Google’s 375-task agentic honesty test, Carbon passed 92 percent of tasks, against 70 percent for Argon.",
-      "matters": "A frontier model that was held back for security teams is now something any paying developer can call, at a launch price that doubles in three weeks.",
-      "imply": "Do not budget at $2 and $10. Plan for $4 and $20 from December. Do not move routine work off Argon just because Carbon tops the charts. Google itself says Argon suits most work, and Carbon spends more tokens per task.",
+      "theme": "Google’s new Gemini Decisions API answers up to 1,000 yes/no, choice and scoring questions in one call, for $0.10 per million input tokens",
+      "changed": "On Wednesday 11 November 2026 Google launched the Gemini Decisions API, run by a new model called Gemini Decision 1, in the Gemini API in Google AI Studio. It does not write text. You send it one input, which can mix text, images, audio, video and PDFs up to 256,000 tokens, plus up to 1,000 separate questions. Each question is a yes/no check, a multiple choice of 2 to 255 options, or a score on a rubric you define. It scores the options in a single pass and returns a probability and a confidence score from 0 to 1 for each answer, so your code can send unclear cases to a person. Google says it takes 150 to 250 milliseconds end to end and costs $0.10 per million input tokens, with no charge for output. The shared input is billed once per request, however many questions you ask. Google says it is nearly 5 times cheaper across its benchmark suite than Gemini 3.5 Flash-Lite, and that it leads its benchmarks with the lowest calibration error. Gemini Notebook uses it to route questions to the right model, which Google says cut latency by up to 40 percent for everyday queries. There is a no-cost tier for prototyping.",
+      "matters": "Many agent and workflow steps are small judgments: which queue, is anything missing, how urgent. This makes those steps fast and cheap, and tells you how sure the model is.",
+      "imply": "Do not use it for tasks that need written answers. It only picks from options you give it. Do not trust the confidence score blindly. Test it on your own cases before letting it route anything without review.",
       "uses": [
-        "Run your hardest coding or research tasks through Carbon before 30 November, while it costs the same as Argon, and record the token count for each task.",
-        "Multiply those token counts by $4 and $20 per million to see what the same work costs in December.",
-        "If you use Cursor or Perplexity, try Carbon there first. Both said on X that it is available to their users."
+        "Triage incoming support emails into queues, with low-confidence ones sent to a person.",
+        "Check an expense claim’s receipt photo and form against your policy questions in one call.",
+        "Pick which model should answer each request, the way Google’s own Gemini Notebook does."
       ],
-      "example": "A developer at a small agency runs ten tough bug-fix tasks on Carbon in Google AI Studio this week. She logs the tokens each one used, prices them at the December rate of $4 and $20 per million, and keeps Argon as the default for everything else.",
-      "audience": "Developers and teams choosing a model for hard coding, research and security work.",
-      "watch": "Independent scores outside Google’s list. Whether Google extends the introductory price past 30 November. How /swarm behaves when it leaves preview.",
+      "example": "A claims team sends one request with a scanned claim form and three damage photos. It asks: is any document missing, which team should handle it, and how urgent is it from 0 to 3. Claims scored below 0.8 confidence go to a reviewer.",
+      "audience": "Developers building agents and workflows, and operations teams that sort, check or route high volumes of items.",
+      "watch": "Independent accuracy tests. Rival products, which VentureBeat says include OpenAI’s own Decisions API. Support in Gemini on Google Cloud, which Google says is coming soon.",
       "source": {
-        "title": "Google: Gemini 4 Carbon is now available, 10 November 2026",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
-        "quote": "After the introductory period expires on November 30, 2026, the price of $4 per 1M input tokens and $20 per 1M output tokens will apply."
+        "title": "Google: Gemini Decisions API, fast, calibrated multimodal decisions, 11 November 2026",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+        "quote": "Your shared input is billed once per request no matter how many questions you evaluate (each question adds only its own instruction and criteria tokens)."
       }
     },
     {
-      "id": "claude-meetings-sheets",
+      "id": "aws-emulator",
+      "topic": "tools",
+      "theme": "AWS released a free local copy of its cloud APIs for testing on your laptop, written and maintained by AI agents",
+      "changed": "On Wednesday 11 November 2026 Amazon Web Services made AWS Emulator generally available. It runs on your own computer and answers the same AWS API calls as the cloud, so the AWS command line, the AWS SDKs and coding agents such as Kiro or Claude Code can create and test resources like DynamoDB tables or S3 buckets without deploying to AWS. It has no service fee and its source is on GitHub. It installs from RPM or Debian packages on Linux and runs in Docker on macOS and Windows. AWS says it supports services that have a published API model and is built from the same models the SDKs use. AWS says the emulator is built and maintained by agents: one group finds gaps against real AWS, another writes tests and fixes, and an independent security agent reviews changes before release. AWS publishes a fidelity score for each service, showing how many of its tests match real AWS. AWS lists clear limits. It does not check IAM permissions the way AWS does, so a request AWS would deny may succeed. Each emulator acts as one account, with no cross-account or cross-Region behaviour. It sends anonymous usage data by default, which you can turn off. Unsupported operations return an error straight away.",
+      "matters": "Testing against the real cloud is slow and costs money every time. A free local stand-in lets developers and their coding agents try changes in seconds.",
+      "imply": "Do not use it to test security. AWS says it does not evaluate IAM policies. Do not assume a test that passes locally will pass on AWS. Check the fidelity score for each service you use.",
+      "uses": [
+        "Point your existing unit tests at the emulator so they run without an AWS account or a deploy.",
+        "Let a coding agent build and retry DynamoDB or S3 code locally before it touches your real account.",
+        "Turn off the anonymous usage data if company policy requires it."
+      ],
+      "example": "A developer asks Claude Code to add a DynamoDB cache to a service. The agent creates the table, writes and reads items against AWS Emulator on her laptop, and only after the tests pass does she deploy to a staging account on AWS.",
+      "audience": "Cloud developers, platform teams, and anyone running coding agents against AWS.",
+      "watch": "Fidelity scores for the services you rely on. Whether IAM checks are added. How it compares with LocalStack. Not a new model.",
+      "source": {
+        "title": "AWS News Blog: Test your applications against AWS locally with AWS Emulator, 11 November 2026",
+        "url": "https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/",
+        "quote": "It doesn’t evaluate AWS Identity and Access Management (IAM) policies and resource-based policies the way AWS does, so a request that AWS denies might succeed in the emulator."
+      }
+    },
+    {
+      "id": "databricks-genie-always-on",
       "topic": "work",
-      "theme": "Claude now joins Google Meet calls, builds shared spreadsheets and whiteboards, and Claude Data is generally available",
-      "changed": "On Tuesday 10 November 2026 Anthropic announced Claude Meetings, Claude Whiteboards and Claude Sheets, and made Claude Dashboards generally available under the new name Claude Data. TechCrunch says Claude Meetings adds Claude to a video call as a visible participant. It follows the conversation, drafts the plan being discussed, maps a timeline on a whiteboard, answers questions in the meeting chat and pulls figures from connected work apps. The notes, action items and other material it makes are saved in claude.ai afterwards. It is in beta on Team and Enterprise plans and works only with Google Meet at launch. Anthropic’s post says Whiteboards is a shared board that Claude can turn into a timeline with owners and dates, or into a document or deck, and export to Lucid, Miro or Vani by Zoho. Sheets builds spreadsheets with tabs, formulas, formatting and drop-downs, and outlines each edit it makes. Anthropic says Sheets has simple spreadsheet functions for now and can export to .xlsx or CSV. Claude Data adds certified metric definitions, data stories and live sharing, where viewers see approved results without access to the data connectors. On Team plans all three are on by default. On Enterprise plans Whiteboards and Sheets are off by default, and Claude Data turns on by default on 19 November 2026.",
-      "matters": "Claude is moving from a chat window into the places where teams actually plan: the meeting, the board and the spreadsheet.",
-      "imply": "Do not assume an AI note-taker in a call is harmless. Claude can pull data from connected apps while people talk. Do not plan around Teams or Zoom yet. Only Google Meet works at launch.",
+      "theme": "Databricks turned Genie into an always-on agent that runs work in the background and emails you when it needs a decision",
+      "changed": "On Wednesday 11 November 2026 Databricks announced the second generation of Genie, its AI assistant for business data. Databricks says you give Genie a goal and clear limits, and it runs in the background on its own compute, hands parts of the job to sub-agents, tracks progress, chases missing inputs, and contacts you when a person needs to decide. A new priority inbox shows what needs attention, and each alert arrives as its own email thread. Every action stays within Unity Catalog permissions and Unity Gateway approval rules and budgets, and is logged. Genie Ontology, which records a company’s metric definitions, people and processes, is now generally available. Genie Search will cover more than 100 data sources, including Google Drive, Jira and Confluence. Genie is priced on usage, not per seat. Databricks says Genie and Genie Ontology are generally available now, while the always-on Genie, Genie Search and Ontology Manager are coming soon to preview and beta. In a TechCrunch demo, chief executive Ali Ghodsi showed Genie analysing weak scores in an employee survey and summarising a sales pitch that went badly.",
+      "matters": "Office AI is moving from answering when asked to working unasked in the background. That shifts the job from writing prompts to setting goals, limits and budgets.",
+      "imply": "Do not plan on the always-on version yet. It is not generally available. Do not let a background agent run without spending caps and approval rules in place first.",
       "uses": [
-        "Enterprise admins should decide before 19 November whether Claude Data should switch on by default, in Organization settings, Artifacts.",
-        "Try Claude Sheets for a first draft of a tracker or budget, then export to .xlsx if you need full Excel functions.",
-        "Tell people at the start of a call when Claude Meetings is listening, and agree which connected apps it may read."
+        "If you are on Databricks, set up Genie Ontology now with your official definitions of revenue and other key metrics. The always-on agent will rely on them.",
+        "Write down a goal, limits and a budget for one repeat job, such as a weekly revenue brief, ready to test in the beta.",
+        "Ask your admin to set per-team spending limits in Unity Gateway before anyone turns on background work."
       ],
-      "example": "A project manager on a Team plan runs a Google Meet kickoff with Claude in the call. By the end, Claude has drafted the plan and a whiteboard timeline with owners and dates. She checks the action items in claude.ai and exports the board to Miro for the wider team.",
-      "audience": "Team and Enterprise customers of Claude, IT admins, and anyone who runs planning meetings.",
-      "watch": "Support for Zoom and Microsoft Teams. Whether Sheets gets fuller spreadsheet functions. How admins handle the 19 November default for Claude Data.",
+      "example": "A customer success lead plans to ask Genie to watch usage for her top 50 accounts and email the account team when one drops sharply. She first agrees with data engineering how usage is defined in Genie Ontology.",
+      "audience": "Databricks customers, data teams, and managers who want routine reporting done for them.",
+      "watch": "When the always-on Genie reaches preview and then general availability. Real costs per task. How well approval rules hold up. Not a new model.",
       "source": {
-        "title": "Anthropic: Introducing Claude Whiteboards, Claude Sheets, and Claude Data, 10 November 2026",
-        "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
-        "quote": "For now, sheets have simple spreadsheet functionality, but we are working on adding more. When you need the full functionality of Excel, you can export your file to .xlsx or CSV, or use Claude for Excel."
+        "title": "Databricks: Databricks launches new always-on Genie, autonomous AI for complex enterprise work, 11 November 2026",
+        "url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex",
+        "quote": "Genie and Genie Ontology are generally available to all customers. Genie Search, Ontology Manager and the new always-on Genie are coming soon to preview and beta programs."
       }
     },
     {
-      "id": "chatgpt-businesses",
-      "topic": "work",
-      "theme": "Businesses can now claim a ChatGPT profile, see how often they are mentioned, and launch their own agent inside ChatGPT",
-      "changed": "On Tuesday 10 November 2026 OpenAI launched Businesses in ChatGPT, in beta. Through a new Business Hub, any eligible business where ChatGPT is available can claim its profile, verify it, update key details and add product feeds with prices and availability. OpenAI says ChatGPT has 1.2 billion weekly users. Shopify merchants can connect their store from Business Hub or the Shopify admin. The hub shows aggregated insights, including how many times the business is mentioned, website clicks, and the common topics of conversations where its website is cited. OpenAI says it does not share users’ conversations or Business Agent chats with businesses, and insights appear only above certain thresholds. Eligible ecommerce and online service businesses in the US can also build a Business Agent that answers customers’ questions about their products. That conversation is labeled and kept separate from ChatGPT’s own answers. Businesses can sponsor their agent and use it as the destination for ChatGPT ads, and those placements are labeled. TechCrunch says OpenAI did not explain the verification process. OpenAI’s VP of Monetization, Benji Shomair, told reporters there are multiple verification methods for different businesses and markets.",
-      "matters": "ChatGPT is building what Google built for search: a profile a business controls, numbers on how it shows up, and a paid way to stand out.",
-      "imply": "Do not wait for customers to tell you what ChatGPT says about you. Claim the profile and check it. Do not expect conversation details. OpenAI says insights are aggregated only.",
-      "uses": [
-        "Claim your business in Business Hub and correct your hours, products and prices, so ChatGPT answers with current details.",
-        "Check the discovery topics each month to see which questions lead people to your website.",
-        "If you are a US online shop, test a Business Agent on your top ten customer questions before sponsoring it."
-      ],
-      "example": "The owner of a US online bike-parts shop on Shopify connects the store from her Shopify admin. A week later Business Hub shows how often ChatGPT mentioned the shop and which topics led to clicks, and she adds the missing product sizes to her feed.",
-      "audience": "Marketing teams, small business owners and online shops.",
-      "watch": "When Business Agents open outside the US. How verification works in practice. How ChatGPT ads are priced against these profiles. Not a new model.",
-      "source": {
-        "title": "OpenAI: Introducing Businesses in ChatGPT, 10 November 2026",
-        "url": "https://openai.com/index/introducing-businesses-chatgpt",
-        "quote": "We’re introducing Businesses in ChatGPT in beta, giving businesses a new way to connect with the 1.2 billion people who use ChatGPT each week."
-      }
-    },
-    {
-      "id": "ny-raise-portal",
-      "topic": "rules",
-      "theme": "New York opened registration for its AI safety law, and big frontier labs must sign up by 1 January 2027",
-      "changed": "On Tuesday 10 November 2026 New York opened a registration portal for the RAISE Act, its AI safety and transparency law. TechCrunch says large frontier AI developers such as Anthropic and OpenAI must register by 1 January 2027, when the law takes effect. The law covers large frontier developers, which it defines as companies with more than $500 million in annual revenue. They must publish safety frameworks on their websites, report critical safety incidents within 72 hours and issue public transparency reports on their models. A new state office, the Office of Digital Innovation, Governance, Integrity, and Trust, or DIGIT, will enforce it. Penalties can reach $1 million for a first violation and $3 million for later ones. Governor Kathy Hochul also launched the New York Center for AI Responsibility and Research at Binghamton University, which will independently evaluate advanced AI systems and work with DIGIT to review companies’ safety frameworks. TechCrunch says Hochul first announced the center in January with $55 million in donations and capital.",
-      "matters": "From January, the biggest model makers will have to tell a US state about serious safety incidents within 72 hours, and publish how they manage risk.",
-      "imply": "Do not expect this to apply to your company unless you build frontier models and earn over $500 million a year. Do expect your AI vendors’ safety frameworks and transparency reports to become public documents you can read.",
-      "uses": [
-        "Add a line to vendor reviews asking for each AI supplier’s published safety framework once the law takes effect.",
-        "Watch for the first transparency reports from OpenAI and Anthropic, and use them in procurement questions.",
-        "If you advise AI companies, check which clients cross the $500 million revenue line."
-      ],
-      "example": "A procurement manager renewing an AI contract in February asks the vendor for its New York safety framework and its latest model transparency report, and files both with the contract.",
-      "audience": "Legal, compliance and procurement teams, and AI companies operating in New York.",
-      "watch": "Which companies register by 1 January. The first incident reports DIGIT receives. Whether other states copy the 72-hour rule. Not a new model.",
-      "source": {
-        "title": "TechCrunch: OpenAI, Anthropic face new oversight as New York’s AI safety law takes effect, 10 November 2026",
-        "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
-        "quote": "It mandates that large frontier developers — companies with more than $500 million in annual revenue — have to publish safety frameworks on their websites, report critical safety incidents within 72 hours, and issue public model transparency reports."
-      }
-    },
-    {
-      "id": "australia-ai-regulator",
-      "topic": "rules",
-      "theme": "Australia will make safety rules mandatory for frontier AI companies, enforced by a new AI safety regulator",
-      "changed": "On Tuesday 10 November 2026 Prime Minister Anthony Albanese and three ministers announced that Australia will legislate mandatory safety and security protections for frontier AI, through its Australian AI Standards legislation. The rules would apply to all frontier AI companies that want to operate in Australia. The government will propose a new regulator for AI safety, working with the Australian AI Safety Institute, which could impose significant penalties. The release says companies will have to keep security controls across development and deployment, identify and manage serious risks from their models, allow independent evaluation of their models, notify the government of incidents rapidly, publish safety and security frameworks, and respond to updated rules as technology changes. It says the measures follow interim recommendations from the Joint Select Committee on Artificial Intelligence and will give earlier warning of risks from rogue AI agents. The release gives no penalty amounts, deadlines or bill text, and says further details will come after consultation.",
-      "matters": "Australia joins New York on the same day in requiring incident reports and published safety frameworks from the biggest AI labs. The direction of AI rules is converging.",
-      "imply": "Do not plan around specific Australian penalties or dates yet. None have been published. Do expect the same few duties, frameworks, independent testing and incident reports, to show up in more countries.",
-      "uses": [
-        "If you operate in Australia, add the AI Standards legislation to your regulatory watch list and look for the consultation.",
-        "Compare the six Australian duties with New York’s RAISE Act and the EU AI Act to see what your vendors will have to publish.",
-        "Ask frontier AI suppliers whether they already allow independent evaluation of their models."
-      ],
-      "example": "A risk officer at an Australian bank reads the 10 November release. She notes the six duties, flags that no dates or penalties exist yet, and asks the bank’s AI vendors for their current safety frameworks.",
-      "audience": "Compliance and policy teams in Australia and companies that sell AI there.",
-      "watch": "The draft bill and its consultation. Which agency becomes the regulator. Penalty amounts. Not a new model.",
-      "source": {
-        "title": "Prime Minister of Australia: New Australian AI safety and security protections, 10 November 2026",
-        "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections",
-        "quote": "We are announcing today that as part of the Albanese Government’s AI in Australia’s Interests agenda, strong mandatory safety and security protections will be legislated through the AI Standards and apply to all frontier AI companies that wish to operate in Australia."
-      }
-    },
-    {
-      "id": "openai-control-room",
+      "id": "alphaproof-signal",
       "topic": "trust",
-      "theme": "OpenAI built Control Room, which can stop any research model’s output within 35 seconds of a decision to halt it",
-      "changed": "OpenAI published a post describing Control Room, a central system that tracks model workloads across its research computers and stops them when safety or security concerns come up. Every research workload that does agentic inference must request a job ID tied to an approved safety case. Before an inference engine answers a request, it asks Control Room whether that job is still allowed to run. Once a job is marked stopped, by a person or by OpenAI’s misalignment monitors, the engine refuses further output for it. OpenAI says it does not trust the research code itself to perform the check. The longest gap between Control Room receiving a stop instruction and output ending is 35 seconds, caused by a caching layer needed for the volume of requests, and OpenAI says it is working to bring that to zero. If Control Room goes down, all inference requests are denied until it recovers. OpenAI says it is already deployed across its research infrastructure, and that its public model-serving stack already had ways to take models down quickly. The 35 seconds does not include the time it takes to notice a problem and decide to act.",
-      "matters": "It is a concrete, checkable answer to a vague question, whether a lab can actually stop a model mid-run, with a number attached.",
-      "imply": "Do not read this as covering ChatGPT or the API. It covers OpenAI’s research workloads. Do not read 35 seconds as the time to catch a problem. It is the time after someone decides to stop it.",
+      "theme": "Google DeepMind used AI agents to mathematically prove key security properties of Signal’s actual code, in four weeks",
+      "changed": "On Tuesday 10 November 2026 Google DeepMind introduced AlphaProof Code, a system in which human experts and AI agents work together to formally verify software, meaning to prove mathematically that code does what it is meant to. DeepMind says researchers and models first turned Signal’s security goals into formal specifications, with human experts reviewing every one. Agents running on Gemini Carbon then wrote the proofs, more than six million lines in Lean, a language whose checker confirms each proof. The agents flagged about 1 percent of the work for a person to review. DeepMind says the proofs cover the compiled code that runs on devices, not only the design, including properties such as keeping messages protected before and after a device is briefly compromised. The work took four weeks, which DeepMind says historically takes expert teams years. To test it, the team put two real, previously fixed bugs back into an isolated copy of Signal’s code, and in both cases the system proved the buggy version insecure. Signal’s chief technology officer, Ehren Kret, called it a major breakthrough. DeepMind is open-sourcing the verification artifacts. The proofs cover the properties the experts specified, not every part of Signal or every possible attack.",
+      "matters": "Proving code correct has been too slow and costly for most software. If AI makes it weeks instead of years, the strongest level of security checking could reach the software businesses depend on.",
+      "imply": "Do not read this as Signal being impossible to hack. It proves the specified properties of the core code. Do not expect this for your own code tomorrow. DeepMind says scaling it needs more research.",
       "uses": [
-        "If your team runs long agent jobs, copy the pattern: every job gets an ID, and the model checks a central list before each step.",
-        "Make your own kill switch fail closed, so that if the checker is down, nothing runs.",
-        "Ask AI vendors how long it takes them to stop a running agent once they decide to, and how they know."
+        "Security teams can read the open-sourced artifacts to see what a machine-checked specification for real code looks like.",
+        "When you assess a messaging tool for staff, ask whether its protocol code has been formally verified, not just reviewed.",
+        "Use the two reintroduced bugs as an example when asking any AI security vendor how it proves its tool catches real flaws."
       ],
-      "example": "An engineering lead running overnight coding agents reads OpenAI’s post. She adds a job registry that her agents must check before every tool call, and sets it to refuse all calls if the registry is unreachable.",
-      "audience": "Engineering and security teams running AI agents, and anyone assessing AI lab safety claims.",
-      "watch": "Whether OpenAI reaches zero lag. Whether outside reviewers test it. Whether other labs publish stop times. Not a new model.",
+      "example": "A CISO choosing a secure messaging app for executives adds a question to the vendor form: has the protocol implementation been formally verified, by whom, and which properties were proved? She cites Signal’s work with DeepMind as the benchmark.",
+      "audience": "Security teams, software leaders, and anyone choosing tools for sensitive communication.",
+      "watch": "Whether outside experts check the proofs. Whether it is applied to other protocols, firmware or grid software, as DeepMind suggests. Not a new model.",
       "source": {
-        "title": "OpenAI: Control Room, a central system to track and stop model workloads across our research infrastructure",
-        "url": "https://openai.com/index/introducing-control-room/",
-        "quote": "The maximum time between the moment when Control Room receives an instruction to stop a job, and the moment when further progress is no longer possible, is 35 seconds."
+        "title": "Google DeepMind: Introducing AlphaProof Code, a breakthrough in verifying complex software at depth, 10 November 2026",
+        "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+        "quote": "Even at this complexity, our verification process took just four weeks – a task that historically takes expert teams years – proving that Signal's core cryptographic code delivers the security protections our experts specified."
       }
     },
     {
-      "id": "fireworks-breach",
+      "id": "railway-ai-key-theft",
       "topic": "trust",
-      "theme": "Fireworks AI’s breach widened to customer datasets, unfinished model weights and some Notion AI chat transcripts",
-      "changed": "On Monday 9 November 2026 Fireworks AI, which runs AI models for other companies, said its investigation into an incident first reported on 10 October had found more malicious activity. The Hacker News reports that the first notice said only environment variables, including API keys and tokens, were taken from some accounts. The new notice says attackers reached Fireworks’ development machines through an unnamed third-party cloud provider on 23 and 24 October and ran a workload that affected more customer data. For a limited set of accounts that included resource names and descriptions, billing and shipping addresses, invoice and payment history, and a subset of incomplete model weights and datasets. Fireworks says it does not store payment card numbers. It links the attack to a financially motivated group that sells stolen access to language models. Notion said fewer than 1 percent of its workspaces were affected, and that the data included Notion AI chat transcripts used for its Insights feature, mostly not labeled with who wrote them. Notion has turned Insights off and stopped serving open-weight models through Fireworks.",
-      "matters": "When you use an AI app, your prompts may pass through a model host you never signed with. This is what happens when that hidden supplier is breached.",
-      "imply": "Do not assume your AI vendor runs its own models. Ask who hosts them. Do not assume a breach notice is final. This one grew a month after the first.",
+      "theme": "Railway says an attacker hunting for AI keys decrypted secrets from up to 100,000 workspaces and ran up about $740,000 in charges",
+      "changed": "On Tuesday 10 November 2026 Railway, a cloud platform for deploying apps, published its full report on an attack between 20 and 21 October. Railway says the attacker escaped part of its build isolation, stole an internal credential, copied Railway’s own code, then used a misconfigured cloud login setting to reach a credential that could decrypt customer environment variables. Its database logs show the attacker searching specifically for AI provider keys and targeting customers with many variables. Railway says at most 1.85 percent of workspaces, about 100,000, could have had variables decrypted, and calls that an upper bound. Linked-account tokens for 1,852 users were also taken and reset. Railway estimates unauthorized spending on the stolen keys at about $740,000. It believes the keys were sold to services that resell AI access for distillation, and notes that OpenCode, Warp, Fireworks AI and others disclosed similar thefts between 6 and 23 October. AWS Bedrock and Google are refunding fraud, OpenAI and SpaceXSI review cases, and Railway says it will cover costs that providers such as OpenRouter will not refund, and is covering Anthropic costs for now. Each weakness used has been fixed, it says.",
+      "matters": "Stolen AI keys turn straight into money, so attackers now hunt for them on the platforms that store them. Your AI bill can be run up by someone else.",
+      "imply": "Do not keep AI keys with no spending cap. Do not assume a hosting platform’s encryption keeps secrets safe if the platform itself is breached.",
       "uses": [
-        "If you are a Fireworks customer, rotate every key and token you stored there and check which datasets and fine-tunes were in affected accounts.",
-        "If your workspace used Notion AI, look for Notion’s notice in your workspace and rotate any password or key pasted into Notion AI chats.",
-        "Add a question to vendor reviews: which model hosts process our data, and how fast will you tell us about their incidents?"
+        "If you used Railway in October, rotate every AI, cloud, database and payment key stored there, and report unexpected charges through Railway’s form.",
+        "Set monthly spending limits and usage alerts on every AI provider key, wherever it is stored.",
+        "Give each app its own AI key so one theft can be traced and revoked without breaking everything."
       ],
-      "example": "An IT manager at a company using Notion AI reads Notion’s update. She checks the workspace for the impact notice, finds staff had pasted API keys into AI chats, and rotates them the same day.",
-      "audience": "Security teams, IT admins, and companies that build on hosted AI models.",
-      "watch": "How many Fireworks customers were affected. Whether other apps that use Fireworks report impact. Whether customers leave. Not a new model.",
+      "example": "A startup CTO sees a spike on the company’s OpenAI bill from late October. She rotates the key stored in Railway, opens an OpenAI support case, passes the case ID to Railway support, and sets a hard monthly cap on the new key.",
+      "audience": "Developers, startup founders, and IT teams who store AI keys on hosting platforms.",
+      "watch": "Whether Anthropic agrees refunds. The outside forensic firm’s findings. More platforms reporting the same kind of key theft. Not a new model.",
       "source": {
-        "title": "The Hacker News: Fireworks AI Confirms Wider Breach Affecting Customer Datasets, Model Weights and Notion AI Chats, 10 November 2026",
-        "url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
-        "quote": "Upon analysis of the new data, we discovered that it included Notion AI chat transcripts used for the Insights feature, which for the vast majority of impacted workspaces were unattributable."
+        "title": "Railway: Incident report, October 21st security attack, 10 November 2026",
+        "url": "https://blog.railway.com/p/incident-report-october-security-incident",
+        "quote": "Database logs show that the attacker was specifically prioritizing AI provider keys in their queries by selecting rows where the variable name matched attacker-provided regular expressions."
+      }
+    },
+    {
+      "id": "grok-build-open-links",
+      "topic": "trust",
+      "theme": "About 35,000 apps made with Grok Build were open to anyone, because their share links could be found through public DNS records",
+      "changed": "On Tuesday 10 November 2026 Ars Technica reported research by the security firm Claroc into Grok Build, the app-building agent from SpaceXSI, the merged SpaceX and xAI. Grok Build gives each shared app its own web address made of random words, such as cinder-crane-sand-frost.grok.me. Because the random part sits in the domain name, the addresses show up in passive DNS databases that anyone can search. Claroc found 43,601 grok.me addresses, and more than 35,000 of them, nearly 95 percent, opened the app and its data with no sign-in. Claroc said its tests showed links were set to Anyone with the link by default. A representative for Cursor, which SpaceXSI acquired, said apps are private by default. Exposed data included 3,784 worker medical exams at a construction company, a hospital roster of about 3,565 staff, a Navy contractor roster, and 24 of SpaceXSI’s own apps, including a confidential sales onboarding plan and a map of 594 sales accounts. SpaceXSI removed its own apps after Ars asked about them, while most other data was still reachable when the story ran. Claroc says Lovable, Bolt and Replit also give each app its own address, so the same records expose them.",
+      "matters": "Staff are building internal tools with AI in minutes, and putting real company data in them. A share link is not a password if anyone can list it.",
+      "imply": "Do not treat an unguessable-looking link as private. Do not let staff put personal or confidential data into AI-built apps without sign-in protection.",
+      "uses": [
+        "If anyone at your company uses Grok Build, switch every shared app to invited users or only you today.",
+        "Ask teams to list any internal apps made with Grok Build, Lovable, Bolt or Replit, and check which hold personal data.",
+        "Add AI app builders to your data policy: real customer or staff data only behind company sign-in."
+      ],
+      "example": "An HR lead learns a colleague built a staff training tracker with Grok Build and shared it by link. She changes the sharing to invited users, moves the employee IDs out of the app, and asks IT to check for others.",
+      "audience": "IT and security teams, HR and operations staff who build their own tools, and anyone using AI app builders.",
+      "watch": "Whether SpaceXSI changes the link design and default setting, and tells affected users. Whether other app builders move the random part out of the domain. Not a new model.",
+      "source": {
+        "title": "Ars Technica: Grok Build coding agent leaks oodles of confidential info, some belonging to SpaceXSI, 10 November 2026",
+        "url": "https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/",
+        "quote": "Aprozper said a passive DNS search returned 43,601 links ending in grok.me. Of them, more than 35,000, or nearly 95 percent, were public, meaning that clicking on the link opened the corresponding app and all data it stored."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "$70 to $78 a share",
-        "body": "Anthropic is offering 825 million shares under the symbol ANT. CNBC says trading starts 19 November."
+        "title": "No agents at checkout",
+        "body": "United now bars unauthorized AI agents from booking, changing or checking in for its flights."
       },
       {
-        "title": "Carbon for everyone",
-        "body": "Gemini 4 Carbon is open to all paying developers at $2 and $10 per million tokens until 30 November."
+        "title": "$10 billion a quarter",
+        "body": "OpenAI’s Q3 revenue reportedly passed $10 billion, up from $6.7 billion, still at a loss."
       },
       {
-        "title": "Claude joins the call",
-        "body": "Claude Meetings sits in Google Meet calls and drafts plans as people talk. Beta on Team and Enterprise."
+        "title": "1,000 questions, one call",
+        "body": "Google’s Decisions API scores yes/no, choice and rubric questions for $0.10 per million input tokens."
       }
     ],
     "matters": [
       {
-        "title": "Claim your profile",
-        "body": "Businesses can now claim a ChatGPT profile, fix their details and see how often ChatGPT mentions them."
+        "title": "AWS on your laptop",
+        "body": "AWS Emulator is a free local copy of AWS APIs, built by agents. It does not check IAM permissions."
       },
       {
-        "title": "72 hours to report",
-        "body": "From January, New York’s RAISE Act makes big AI labs report critical safety incidents within 72 hours."
+        "title": "Signal, proved in weeks",
+        "body": "DeepMind’s AI agents proved key security properties of Signal’s actual code in four weeks."
       },
       {
-        "title": "Stopped in 35 seconds",
-        "body": "OpenAI’s Control Room halts research model output within 35 seconds of a stop order, OpenAI says."
+        "title": "Genie works unasked",
+        "body": "Databricks’ new Genie runs jobs in the background and emails you when it needs a decision."
       }
     ],
     "watch": [
       {
-        "title": "Carbon doubles in December",
-        "body": "After 30 November Carbon costs $4 and $20 per million tokens. Budget at that rate, not the launch price."
+        "title": "Your keys, their bill",
+        "body": "Railway says stolen AI keys ran up about $740,000. Set spending caps on every AI key."
       },
       {
-        "title": "The breach grew",
-        "body": "Fireworks AI now says customer datasets and unfinished model weights were reached. Notion chats too."
+        "title": "Open by link",
+        "body": "About 35,000 Grok Build apps were open to anyone. Switch shared apps to invited users only."
       },
       {
-        "title": "Australia’s rules, no dates",
-        "body": "Australia will legislate frontier AI safety duties and a regulator. No bill or penalties yet."
+        "title": "Margins still negative",
+        "body": "OpenAI’s operating margin is reportedly minus 109 percent. Lock prices at renewal while you can."
       }
     ]
   },
   "chips": [
-    "Anthropic IPO",
-    "Gemini 4 Carbon",
+    "United Airlines",
+    "AI agents",
+    "OpenAI",
+    "Gemini Decisions API",
     "Google",
-    "Claude Meetings",
-    "Claude Sheets",
-    "ChatGPT",
-    "Business Hub",
-    "RAISE Act",
-    "Australia",
-    "Control Room",
-    "Fireworks AI"
+    "AWS Emulator",
+    "Databricks Genie",
+    "AlphaProof Code",
+    "Signal",
+    "Railway",
+    "Grok Build",
+    "SpaceXSI"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Anthropic, 10 Nov: IPO roadshow, 825,000,000 Class A shares (801,351,354 by Anthropic, 23,648,646 by holders), $70–$78, Nasdaq ANT, 123,750,000-share option. CNBC: price 18 Nov, trade 19 Nov, ~20% retail, up to $1.405T fully diluted. TechCrunch: $57.75B–$64.35B. Reuters first: up to $1.02T. Not a new model.",
-      "topic": "Money"
+      "raw": "United, 11 Nov: restricts unauthorized third-party AI agents directly and via agencies/aggregators; customer permission does not make an agent authorized; agent check-in may breach FAA/DOT rules; bookings before 11 Nov not cancelled; no agent partners yet. CNBC: Amazon blocked Meta’s Muse. Not a new model.",
+      "topic": "Rules"
     },
     {
       "id": "s2",
-      "raw": "Google, 10 Nov: Gemini 4 Carbon GA for paying API developers and AI Ultra; $2/$10 intro until 30 Nov, then $4/$20. #1 on CursorBench 4.0, WANDR, AutomationBench at >2x lower cost per task (Google). Cursor: 60.4% CursorBench at high. /swarm preview. Honesty 92% vs Argon 70%.",
-      "topic": "Tools"
+      "raw": "TechCrunch, 11 Nov, citing Bloomberg: OpenAI Q3 revenue >$10B (Q2 $6.7B, Q1 $5.7B); adjusted operating margin -150% to -109%; $50B run rate. Reuters/WSJ: revenue to $10B with steep losses. Unconfirmed by OpenAI. Not a new model.",
+      "topic": "Money"
     },
     {
       "id": "s3",
-      "raw": "Anthropic, 10 Nov: Claude Meetings (beta, Team/Enterprise, Google Meet only, TechCrunch), Whiteboards and Sheets (beta, paid plans), Claude Data GA. Enterprise: Data on by default 19 Nov. Not a new model.",
-      "topic": "Work"
+      "raw": "Google, 11 Nov: Gemini Decisions API with Gemini Decision 1; up to 1,000 questions per request; yes/no, 2–255 choice, rubric; 256K input; 150–250 ms; $0.10/M input, $0 output; ~5x cheaper than 3.5 Flash-Lite on Google’s suite.",
+      "topic": "Tools"
     },
     {
       "id": "s4",
-      "raw": "OpenAI, 10 Nov: Businesses in ChatGPT beta, Business Hub claims, product feeds, aggregated insights; Business Agents for eligible US ecommerce; sponsorable as ChatGPT ads destination. 1.2B weekly users. Not a new model.",
-      "topic": "Work"
+      "raw": "AWS, 11 Nov: AWS Emulator GA; free; local HTTPS endpoint for CLI/SDKs/agents; built and maintained by agents; per-service fidelity scores; no IAM evaluation; single account; telemetry on by default. Not a new model.",
+      "topic": "Tools"
     },
     {
       "id": "s5",
-      "raw": "TechCrunch, 10 Nov: New York RAISE Act portal open; register by 1 Jan 2027; >$500M revenue developers; safety frameworks, 72-hour incident reports, transparency reports; DIGIT; $1M/$3M penalties. Not a new model.",
-      "topic": "Rules"
+      "raw": "Databricks, 11 Nov: second-generation always-on Genie (sub-agents, priority inbox, email alerts, Unity Gateway budgets); Genie and Genie Ontology GA; always-on Genie, Genie Search, Ontology Manager coming to preview/beta. Not a new model.",
+      "topic": "Work"
     },
     {
       "id": "s6",
-      "raw": "Australian PM, 10 Nov: mandatory frontier AI safety and security protections via AI Standards legislation, new AI safety regulator, six duties. No bill, dates or penalty amounts. Not a new model.",
-      "topic": "Rules"
+      "raw": "Google DeepMind, 10 Nov: AlphaProof Code verified key security properties of Signal’s compiled code; 6M+ lines of Lean by Gemini Carbon agents; ~1% flagged for human review; four weeks; two reintroduced bugs caught. Not a new model.",
+      "topic": "Trust"
     },
     {
       "id": "s7",
-      "raw": "OpenAI: Control Room tracks research inference jobs by job ID tied to a safety case; engines check before each request; stop within 35 seconds; fails closed. Research workloads only. Not a new model.",
+      "raw": "Railway, 10 Nov: 20–21 Oct attack targeted AI keys; up to 1.85% (~100,000) workspaces could have had variables decrypted; 1,852 users’ linked tokens reset; ~$740,000 unauthorized spend; Railway covers unrefunded charges. Not a new model.",
       "topic": "Trust"
     },
     {
       "id": "s8",
-      "raw": "Fireworks AI, 9 Nov (The Hacker News, 10 Nov): breach via third-party cloud provider 23–24 Oct reached billing data, some datasets and incomplete model weights. Notion: <1% of workspaces, AI chat transcripts for Insights; Insights disabled. Not a new model.",
+      "raw": "Ars Technica, 10 Nov: Claroc found 43,601 grok.me app links via passive DNS, 35,000+ open without sign-in, incl. 24 SpaceXSI apps; Cursor says private by default. Not a new model.",
       "topic": "Trust"
     }
   ]

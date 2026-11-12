@@ -1,5 +1,32 @@
 [
   {
+    "name": "Bloomberg",
+    "handle": "business",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1631723279676317709/-fjgaR2p_normal.jpg",
+    "text": "United Airlines is moving to block third-party AI agents from booking flights and accessing customer accounts ahead of the holiday travel season https://t.co/0gSxlL0LLw",
+    "url": "https://x.com/business/status/2120600008512704776",
+    "postedAt": "2026-11-11T19:30:15.000Z",
+    "take": "Your AI assistant can still find the flight. United wants you to buy it and check in yourself."
+  },
+  {
+    "name": "Sundar Pichai",
+    "handle": "sundarpichai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2051799620062429184/AL8CoAUG_normal.jpg",
+    "text": "Today we’re launching the Gemini Decisions API, powered by our new Gemini Decision 1 model in @GoogleAIStudio.\n\nInstead of generating text token by token, it’s built for closed-set choices scoring up to 1,000 questions across text, images, audio, video + PDFs in a single pass. A https://t.co/7itBuv7Eu2",
+    "url": "https://x.com/sundarpichai/status/2120581155078729728",
+    "postedAt": "2026-11-11T18:15:20.000Z",
+    "take": "Cheap, fast yes/no and multiple-choice answers with a confidence score. Good for sorting and routing, not writing."
+  },
+  {
+    "name": "Google DeepMind",
+    "handle": "GoogleDeepMind",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg",
+    "text": "For the first time, AI has mathematically proven @signalapp’s protocol is secure down to the code level.\n\nUsing our breakthrough AlphaProof Code framework, we verified the messaging app’s cryptographic system – which protects billions of private messages every day. https://t.co/iWNJ8UiTSQ",
+    "url": "https://x.com/GoogleDeepMind/status/2120484246401777737",
+    "postedAt": "2026-11-11T11:50:15.000Z",
+    "take": "Proofs of the actual code, in four weeks. It covers the properties experts specified, not every possible attack."
+  },
+  {
     "name": "Google DeepMind",
     "handle": "GoogleDeepMind",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg",
