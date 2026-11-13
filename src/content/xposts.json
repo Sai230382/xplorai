@@ -1,5 +1,32 @@
 [
   {
+    "name": "CNBC",
+    "handle": "CNBC",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1999829242431811587/iTRuu0Me_normal.jpg",
+    "text": "Nvidia Chief Financial Officer Colette Kress, a 13-year company veteran, is taking the helm of the world’s most valuable chipmaker on an interim basis after Jensen Huang’s sudden resignation.\n\nNvidia hasn’t announced a succession plan and said the board is considering internal https://t.co/3VVuGhpy89",
+    "url": "https://x.com/CNBC/status/2121044521521729844",
+    "postedAt": "2026-11-13T00:56:35.000Z",
+    "take": "The finance chief now runs the company that makes most AI chips. Results are still due on 17 November."
+  },
+  {
+    "name": "Reuters",
+    "handle": "Reuters",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
+    "text": "OpenAI, Google, Anthropic hit with lawsuit seeking halt to frontier AI development https://t.co/vGk5pRbLnn",
+    "url": "https://x.com/Reuters/status/2120992675105038519",
+    "postedAt": "2026-11-12T21:30:34.000Z",
+    "take": "A filing, not a ruling. Nothing is blocked, but it is worth tracking if you depend on these vendors."
+  },
+  {
+    "name": "Google",
+    "handle": "Google",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_normal.jpg",
+    "text": "Meet Gemini 4 Hydrogen.\n\nIt brings cutting-edge intelligence to everyone, with speed and efficiency for everyday coding and agentic work.\n\nAcross 4 thinking levels, it stands on its own or teams up with Carbon and Argon — 2.5X faster than 3.8 Flash, outpacing competing models in https://t.co/QTRwACdxU2",
+    "url": "https://x.com/Google/status/2120941982004523367",
+    "postedAt": "2026-11-12T18:09:08.000Z",
+    "take": "The new default fast model in Search and the Gemini app. Try it on your routine tasks before switching API work."
+  },
+  {
     "name": "Bloomberg",
     "handle": "business",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1631723279676317709/-fjgaR2p_normal.jpg",

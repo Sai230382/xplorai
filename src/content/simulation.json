@@ -1,70 +1,64 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "openai-q3-10b",
+  "storyId": "gemini-4-hydrogen",
   "kicker": "Play with today’s story",
-  "title": "OpenAI’s reported revenue and margin, quarter by quarter in 2026",
-  "intro": "Move the slider from the first quarter to the third. Each step shows the revenue and, where the report gives it, the growth and the adjusted operating margin for that quarter, as TechCrunch reported them from Bloomberg.",
-  "note": "All figures are from TechCrunch’s 11 November report citing Bloomberg’s anonymous sources. OpenAI has not published them, and it is a private company. The third-quarter growth is TechCrunch’s own “almost 50%”. No margin was reported for the first quarter. A negative margin means OpenAI spent more running the business than it took in. The $50 billion run rate is Bloomberg’s, and TechCrunch notes OpenAI and Anthropic count partner sales differently.",
+  "title": "Gemini 3.8 Flash or Gemini 4 Hydrogen: what Google says changes",
+  "intro": "Switch between Google’s previous fast model and the new one. Each side shows only the figures Google published on 12 November when it compared them.",
+  "note": "Every figure is Google’s own, from its launch post, and none has been checked independently. Speed is relative: Google says Hydrogen finishes tasks 2.5 times faster at its default high setting, and partners saw 2x to 2.8x faster runs with 12% to 23% fewer tokens in early tests. Google did not give 3.8 Flash’s price or Intelligence Index score in the post, so those are left out rather than filled in. Test on your own tasks before switching.",
   "sources": [
     {
-      "label": "TechCrunch: OpenAI’s quarterly revenue reportedly crosses $10B for the first time, 11 November 2026",
-      "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/"
+      "label": "Google: Introducing Gemini 4 Hydrogen, 12 November 2026",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "OpenAI’s reported 2026 quarters",
-    "items": [
+    "type": "compare",
+    "label": "Google’s fast Gemini models",
+    "options": [
       {
-        "label": "Q1",
-        "name": "First quarter 2026",
-        "caption": "Reported earlier",
+        "id": "flash",
+        "label": "Gemini 3.8 Flash",
+        "caption": "Previous fast model",
         "stats": [
           {
-            "label": "Revenue",
-            "value": "$5.7 billion"
+            "label": "Terminal-Bench 4.1",
+            "value": "18.2%"
+          },
+          {
+            "label": "Task speed",
+            "value": "Google’s baseline for the comparison"
           }
         ]
       },
       {
-        "label": "Q2",
-        "name": "Second quarter 2026",
+        "id": "hydrogen",
+        "label": "Gemini 4 Hydrogen",
+        "caption": "Released 12 November",
         "stats": [
           {
-            "label": "Revenue",
-            "value": "$6.7 billion"
+            "label": "Terminal-Bench 4.1",
+            "value": "57%"
           },
           {
-            "label": "Growth from Q1",
-            "value": "About 18%"
+            "label": "Task speed",
+            "value": "2.5 times faster than 3.8 Flash (default high setting)"
           },
           {
-            "label": "Adjusted operating margin",
-            "value": "−150%"
-          }
-        ]
-      },
-      {
-        "label": "Q3",
-        "name": "Third quarter 2026",
-        "caption": "First quarter above $10 billion",
-        "stats": [
-          {
-            "label": "Revenue",
-            "value": "More than $10 billion"
+            "label": "Fabricated claims",
+            "value": "Cut by more than 5x versus 3.8 Flash"
           },
           {
-            "label": "Growth from Q2",
-            "value": "Almost 50%"
+            "label": "Artificial Analysis Intelligence Index",
+            "value": "51 at high, 54 at xhigh (Argon: 50)"
           },
           {
-            "label": "Adjusted operating margin",
-            "value": "−109%"
+            "label": "API price per million tokens",
+            "value": "$1.50 input, $7.50 output"
           },
           {
-            "label": "Annual revenue run rate",
-            "value": "$50 billion"
+            "label": "Context window",
+            "value": "1 million tokens, same price throughout"
           }
         ]
       }
