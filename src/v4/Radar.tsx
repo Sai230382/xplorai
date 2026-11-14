@@ -1,4 +1,5 @@
 import { currentEdition } from "../data/edition"
+import { NEW_TOOLS_PATH, newToolsWeek } from "../data/newtools"
 import { radarPulse } from "../data/radar"
 import { shortDate, splitLaunchName } from "./format"
 
@@ -49,9 +50,14 @@ export function Radar() {
           })}
         </ul>
 
-        <a className="v4-text-link v4-text-link-light" href="/tools">
-          See every tool on the radar <span aria-hidden="true">→</span>
-        </a>
+        <p className="v4-radar-links">
+          <a className="v4-text-link v4-text-link-light" href={NEW_TOOLS_PATH}>
+            New AI tools this week ({newToolsWeek.tools.length}) <span aria-hidden="true">→</span>
+          </a>
+          <a className="v4-text-link v4-text-link-light" href="/tools">
+            See every tool on the radar <span aria-hidden="true">→</span>
+          </a>
+        </p>
       </div>
     </section>
   )

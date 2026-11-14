@@ -28,3 +28,8 @@ export function splitLaunchName(raw: string) {
   }
   return { name: match[1].trim(), where, href }
 }
+
+/** On pages other than the front page, section anchors ("#brief") point back to "/#brief". */
+export function navHref(href: string, home: boolean) {
+  return home || !href.startsWith("#") ? href : `/${href}`
+}

@@ -4306,6 +4306,204 @@
       "s": 3,
       "p": "Free and open source (MIT)",
       "st": "active"
+    },
+    {
+      "n": "OpenAI Images 2.6",
+      "w": "https://openai.com/index/introducing-images-2-6/",
+      "c": "Image Generation",
+      "tl": "Faster image generation with looping GIFs and precise edits",
+      "d": "OpenAI released Images 2.6 on 4 November 2026 in ChatGPT, Codex and the API. Faster image generation in ChatGPT and the API, with looping GIFs and tighter character-consistent edits. For: Solo creators, marketers, designers and motion artists who need stills, reaction loops or storyboard tests without jumping into a full video model.",
+      "f": [
+        "Generate images 50% faster than before",
+        "Animate images into looping GIFs from a prompt or a sketch",
+        "Image markup in the API to mark exact edit areas",
+        "SVG export for websites, apps and print"
+      ],
+      "u": [
+        "Turn a brand mascot or product still into a looping social GIF",
+        "Animate a pencil sketch into a short character test before a film shot",
+        "Edit a poster while keeping the same character and product details"
+      ],
+      "e": "You can now ask ChatGPT for a picture and then ask it to make that picture move, like a short looping GIF. It is also quicker, so you can try more versions in the same sitting.",
+      "s": 4,
+      "p": "In ChatGPT and Codex on every subscription tier. In the API, GPT-Image-2.6 Flare and Sunburst use OpenAI's per-token image pricing (see the pricing page).",
+      "st": "active"
+    },
+    {
+      "n": "Adobe Firefly AI Creative Studio",
+      "w": "https://www.adobe.com/products/firefly.html",
+      "c": "Super Apps",
+      "tl": "One studio for video, audio, image and design, with a Creative Agent",
+      "d": "Adobe announced the Firefly AI creative studio at Adobe MAX on 10 November 2026. Firefly becomes one studio for video, audio, image and design, with a Creative Agent and a choice of partner models. For: Solo filmmakers, freelancers and designers who are tired of hopping between clip tools, and who want one place to go from idea to a finished short.",
+      "f": [
+        "Adobe Creative Agent with Plan Mode and Model Selector, powering Firefly AI Assistant (beta)",
+        "Firefly Video: a single workflow to assemble clips, images and sound into a polished video",
+        "Firefly Design (beta): illustration, image editing, animation, 3D and print on one canvas",
+        "Choice of models from Adobe, Topaz Labs and partners including ByteDance, Google, Kling, OpenAI and ElevenLabs"
+      ],
+      "u": [
+        "Assemble existing clips, stills and sound effects into a short or social film",
+        "Ask the Creative Agent to plan a campaign, then finish the look yourself",
+        "Build a brand or social layout in Firefly Design without leaving the same canvas"
+      ],
+      "e": "Adobe is turning Firefly into a one-stop creative desk. You can bring pictures, clips and sound together, pick from several AI models, and ask an assistant to help with the busywork while you keep control of the style.",
+      "s": 4,
+      "p": "Firefly has a free plan with daily generations; paid Firefly plans add monthly credits and full access to partner models. Prices for the new 10 Nov features were not stated in the launch release.",
+      "st": "active"
+    },
+    {
+      "n": "Figma Motion updates",
+      "w": "https://www.figma.com/release-notes/",
+      "c": "Animation & Motion",
+      "tl": "Physics-based springs, style previews and Lottie export previews",
+      "d": "Figma shipped Figma Motion updates on 10 November 2026. Figma Motion adds physics-based springs, on-canvas style previews and Lottie export previews. For: Motion designers, product designers and freelancers who already animate in Figma and need more realistic easing plus a safer Lottie export.",
+      "f": [
+        "Style previews play in the animations list and on the canvas before you apply them",
+        "Physics-based springs with mass, stiffness and damping for iOS and Android",
+        "Duration updates to match the spring for more realistic motion",
+        "Lottie export previews so you can watch the file before you export"
+      ],
+      "u": [
+        "Tune a button or card spring so it feels like iOS or Android, then save it in a design system",
+        "Preview a Lottie loop before handing it to a developer or posting it",
+        "Compare animation styles on the canvas instead of applying them blindly"
+      ],
+      "e": "Figma’s motion tools now let you preview an animation, including a Lottie file, before you commit to it. You can also set how heavy or bouncy a movement feels, the way a real spring would.",
+      "s": 3,
+      "p": "Not restated in the 10 November release notes. Uses existing Figma plans.",
+      "st": "active"
+    },
+    {
+      "n": "Figma 3D Transform",
+      "w": "https://help.figma.com/hc/en-us/articles/44568893374999",
+      "c": "Design",
+      "tl": "Rotate layers on X, Y and Z and build 3D scenes in Figma",
+      "d": "Figma released 3D transform in Figma Design on 12 November 2026. Rotate objects on X, Y and Z inside Figma, build 3D scenes, and send them to code or Figma Motion. For: Designers and solo builders who want 3D layouts or perspective motion without leaving Figma.",
+      "f": [
+        "On-canvas handles and live previews for X, Y and Z rotation",
+        "The Figma agent can compose 3D designs for you",
+        "Pair with Figma Motion to animate flips, turns and perspective shifts",
+        "Copy CSS from Dev Mode or send designs to a coding agent with the Figma MCP"
+      ],
+      "u": [
+        "Build a 3D product or title card and animate a perspective turn",
+        "Ask the Figma agent to compose a 3D scene, then refine the camera and depth",
+        "Hand the result to a coding agent via Figma MCP instead of rebuilding it"
+      ],
+      "e": "You can now spin and tilt things in 3D right on a Figma canvas, then animate those turns or send the design to a coding tool.",
+      "s": 3,
+      "p": "Not restated in the 12 November release notes. Uses existing Figma plans.",
+      "st": "active"
+    },
+    {
+      "n": "Claude Meetings",
+      "w": "https://claude.com/blog/claude-meetings",
+      "c": "Productivity",
+      "tl": "Claude joins your Google Meet call and drafts plans and tasks",
+      "d": "Anthropic announced Claude Meetings in beta on 10 November 2026. Claude joins a video call as a visible participant, drafting plans, whiteboards and action items while people talk. For: Founders and small teams already on a Claude Team plan who want a meeting to leave behind a plan, a timeline and tasks instead of a pile of notes.",
+      "f": [
+        "Claude joins as a visible meeting participant and can work in real time",
+        "Drafts plans, maps a timeline on a whiteboard, and answers questions in chat",
+        "Can use connected work apps to pull information during the call",
+        "After the call, notes, action items and materials are available in claude.ai"
+      ],
+      "u": [
+        "Add Claude to a Google Meet and let it draft the project plan as you discuss it",
+        "Turn a brainstorm into a shared Whiteboard, then export a doc or slide deck",
+        "Ask Claude Sheets to build a campaign tracker or hiring budget after the call"
+      ],
+      "e": "You can invite Claude into a video meeting. It listens, starts the to-do list and timeline while you talk, and leaves the notes ready when the call ends.",
+      "s": 3,
+      "p": "Beta on Claude Team and Enterprise plans; works with Google Meet at launch. During the beta, notes and transcripts are free on those plans.",
+      "st": "active"
+    },
+    {
+      "n": "Gemini 4 Carbon and Antigravity /swarm",
+      "w": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "c": "Gen AI",
+      "tl": "Google’s strongest Gemini 4 model, with /swarm agent teams in Antigravity",
+      "d": "Google made Gemini 4 Carbon available on 10 November 2026. Google’s strongest Gemini 4 model for long, hard agent jobs, with a /swarm preview that turns one prompt into a tracked team of agents. For: Developers, researchers and solo builders running long coding, 3D or research jobs. Google AI Ultra subscribers can try it in the Gemini app, AI Mode in Search and Antigravity.",
+      "f": [
+        "Built for long-horizon agent work in coding, knowledge work and scientific reasoning",
+        "/swarm in Google Antigravity turns a single prompt into a coordinated team of agents",
+        "Official demos include 3D games, Blender pipelines and interactive exhibitions",
+        "Ranks first on CursorBench 4.0, Perplexity WANDR and Zapier AutomationBench in Google’s cited tests"
+      ],
+      "u": [
+        "Give Antigravity a long overnight coding or 3D task and review the swarm’s work in the morning",
+        "Use Carbon for hard planning or debugging, and a lighter model for faster side tasks",
+        "Try Carbon in the Gemini app if you already have a Google AI Ultra plan"
+      ],
+      "e": "This is Google’s heavier thinking model for jobs that take many steps. In Antigravity you can even ask a whole team of agents to work on one idea and watch them as they go.",
+      "s": 3,
+      "p": "API: $2 per million input tokens and $10 per million output tokens until 30 Nov 2026, then $4 / $20. Not on the AI Studio free tier. Also rolling out to Google AI Ultra subscribers in Antigravity, the Gemini app and AI Mode in Search.",
+      "st": "active"
+    },
+    {
+      "n": "Gemini 4 Hydrogen in Google Search",
+      "w": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+      "c": "Gen AI",
+      "tl": "Gemini 4 Hydrogen now powers Google Search worldwide",
+      "d": "Google brought Gemini 4 Hydrogen to Google Search on 12 November 2026. Google’s everyday Gemini 4 model is now in Search worldwide, with more visual answers, tables and multi-part questions. For: Anyone who researches in Google Search; also useful for creators checking references, comparisons and visual summaries.",
+      "f": [
+        "Handles nuanced and multi-part questions, including typos and specific requests",
+        "Improved query fan-out that runs simultaneous subtopic searches and returns more links",
+        "More visual, structured answers, including comparison tables and custom tools",
+        "Richer responses across all supported AI Mode languages"
+      ],
+      "u": [
+        "Ask a multi-part research question in Search and get a table plus links",
+        "Compare tools, travel options or product specs in natural language",
+        "Use Hydrogen in Gemini or Antigravity for quicker everyday builds if you have access"
+      ],
+      "e": "Google Search now uses a newer, everyday Gemini model. You can ask a messy, multi-part question and get a clearer, more visual answer with useful links.",
+      "s": 3,
+      "p": "Free in Google Search for all users, worldwide. Developers can also build with Hydrogen (see Google's developer post).",
+      "st": "active"
+    },
+    {
+      "n": "Claude Fable 5.2",
+      "w": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "c": "Gen AI",
+      "tl": "Anthropic’s heavier model for hard, open-ended technical work",
+      "d": "Anthropic released Claude Fable 5.2 on 9 November 2026. Anthropic’s upgraded Fable model for ambitious technical work, priced below the previous Fable and faster in generation. For: Builders and technical founders with hard, open-ended jobs. Anthropic still recommends Opus 5.5 as the daily driver for most coding and knowledge work.",
+      "f": [
+        "Improvements in coding, reasoning and vision versus prior Fable and Mythos models",
+        "Can act as Advisor or Orchestrator for other Claude models",
+        "Optional fast mode for quicker token generation",
+        "Fable is available to all users; Mythos requires verification"
+      ],
+      "u": [
+        "Hand Fable a large, ambiguous technical project after Opus 5.5 has done the routine work",
+        "Use it as an Advisor that smaller Claude models can consult on a hard bug",
+        "Compare cost and quality on your own tasks rather than treating any one leaderboard as final"
+      ],
+      "e": "This is Anthropic’s heavier model for unusually hard technical jobs. For everyday work the company still points people to a different Claude model, then suggests switching up only when the task is big and messy.",
+      "s": 3,
+      "p": "API: $8 per million input tokens and $40 per million output tokens; optional fast mode is $16 / $80. Fable is available to all users; Mythos 5.2 (the same model) is limited to Anthropic's verification programs.",
+      "st": "active"
+    },
+    {
+      "n": "Core Studio by imCore",
+      "w": "https://imcore.ai/core-studio.html",
+      "c": "Video Generation",
+      "tl": "Script-first AI filmmaking platform with 24+ specialist agents",
+      "d": "imCore unveiled Core Studio at the Taiwan Creative Content Fest on 7 November 2026; its site announces the public launch for 30 November 2026 (Taiwan time). A script-first AI filmmaking platform with 24+ specialist agents. Unveiled 7 Nov; public launch announced for 30 Nov (Taiwan time). For: AI filmmakers and small crews who want a screenplay, not a prompt box, to drive storyboards, shots, effects and grade. Not generally available yet.",
+      "f": [
+        "More than 24 specialized agents, from screenwriter and cinematographer to colorist",
+        "Story Atlas breaks an imported script into episodes, scenes and shots tied to characters, sets, props and voices",
+        "Provenance on generations: models, prompts, parameters, cost and human review (as reported by Variety)",
+        "Lists 16-bit EXR and Apple ProRes 4444 delivery, plus in-house Real Engine tools"
+      ],
+      "u": [
+        "Request early access and import a real short script to see whether Story Atlas keeps characters consistent",
+        "Check whether approved shots leave a reusable prompt and model log",
+        "Wait for the 30 November public launch before planning a full production around it"
+      ],
+      "e": "A Taiwanese company showed a film studio in software: you bring a script, and many specialist AI helpers try to carry the same characters through storyboard, video, effects and colour. It is not fully public until 30 November, and pricing is not out yet.",
+      "s": 3,
+      "p": "Not announced yet. Early access is offered before the public launch.",
+      "st": "watching"
     }
   ],
   "pulse": {
