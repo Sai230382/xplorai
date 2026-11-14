@@ -1,5 +1,125 @@
 [
   {
+    "id": "2121347623659655333",
+    "url": "https://x.com/h0russs/status/2121347623659655333",
+    "author_name": "Horus",
+    "author_handle": "@h0russs",
+    "created_at": "2026-11-13T21:01:00.000Z",
+    "text": "3D modelers are f*cking cooked...\n\nI was a Blender artist for years. this is brutal.\nClaude Fable 5.2 built this whole vending machine from one script. I didn't touch a single vertex.\n\n255 objects. 153,833 verts. it builds itself part by part, 9 capsules drop out with real https://t.co/vSt2ihbzkq https://t.co/L1Rt3asvFo",
+    "model_or_tool": "Claude Fable 5.2",
+    "what_they_built": "A 3D capsule vending machine of 255 objects that a script written by Claude Fable 5.2 builds part by part, with no hand modelling.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 12,
+      "impression_count": 404,
+      "like_count": 13,
+      "quote_count": 0,
+      "reply_count": 7,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2121346086342217729/img/pSSmcH73qFiGm0yd.jpg"
+  },
+  {
+    "id": "2121324721489010840",
+    "url": "https://x.com/wikiwayne/status/2121324721489010840",
+    "author_name": "Wayne Lowry",
+    "author_handle": "@wikiwayne",
+    "created_at": "2026-11-13T19:30:00.000Z",
+    "text": "Smash Shack v2 is live\n\nI built it in Claude Code with Fable 5.2 Max, with some help from Opus 5.5 Max when I ran out of credit\n\nGrab a bat, crowbar or giant hammer and wreck the room. All 62 objects, then post your clear time to the leaderboard\n\nPlay it: https://t.co/i75TsSl3ZC https://t.co/z4ih3T2R1P",
+    "model_or_tool": "Claude Code (Fable 5.2, Opus 5.5)",
+    "what_they_built": "Smash Shack v2, a playable browser game where you wreck a room of 62 objects and post your time to a leaderboard.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 223,
+      "like_count": 2,
+      "quote_count": 0,
+      "reply_count": 3,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2121244170882801664/img/Tk2htsb1PynEA78E.jpg"
+  },
+  {
+    "id": "2121291623346962495",
+    "url": "https://x.com/shreyanzjain/status/2121291623346962495",
+    "author_name": "Shreyans Jain",
+    "author_handle": "@shreyanzjain",
+    "created_at": "2026-11-13T17:18:29.000Z",
+    "text": "Gemini 4 Hydrogen just released. Here's what I did with it.\n\nI built this browser based MOBA game that you can play on the go, solo or wifi multiplayer. Supports mobile as well as PC.\n\n@GeminiApp @antigravity\n\nhttps://t.co/S5owxAFE26\n\nCrazy time to be alive 👀 https://t.co/G945RvJlUc",
+    "model_or_tool": "Gemini 4 Hydrogen (Antigravity)",
+    "what_they_built": "A browser MOBA game, playable solo or over Wi-Fi multiplayer on phone or PC, built with Gemini 4 Hydrogen.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 575,
+      "like_count": 3,
+      "quote_count": 1,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2121291225194270720/img/K-wiZNnAwwbrHJkA.jpg"
+  },
+  {
+    "id": "2121071396201914775",
+    "url": "https://x.com/qingzhu_ai/status/2121071396201914775",
+    "author_name": "Qingzhu · rmji.wiki",
+    "author_handle": "@qingzhu_ai",
+    "created_at": "2026-11-13T02:43:23.000Z",
+    "text": "I made this with one sentence and about 4 hours of Claude Code (Fable 5.2, Ultracode mode).\n\n96 seconds of 4K: 60,000 starlings dance at dusk, then become the Milky Way. All code, no assets.\n\nFable 5.2 Ultracode, one sentence:\n\"Make me the video you find most beautiful.\" https://t.co/ItdT67RkPM",
+    "model_or_tool": "Claude Code (Fable 5.2)",
+    "what_they_built": "A 96-second 4K film of 60,000 starlings that turn into the Milky Way, all code and no assets, from a one-sentence prompt.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 2,
+      "impression_count": 465,
+      "like_count": 13,
+      "quote_count": 3,
+      "reply_count": 7,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2121070963043495936/img/S7W1AAY4pTldxAax.jpg"
+  },
+  {
+    "id": "2120958666480513310",
+    "url": "https://x.com/thtbee_/status/2120958666480513310",
+    "author_name": "Bee",
+    "author_handle": "@thtbee_",
+    "created_at": "2026-11-12T19:15:26.000Z",
+    "text": "Gemini 4 Hydrogen - A Crimson Moth!\n\nThis looks so incredible.. so I made this with /swarm in Antigravity where Carbon was the orchestrator and every swarm workers were Hydrogen on extra..\n\nIt took only 45 minutes for the whole thing and then hydrogen recorded the demo!!\n\nThat https://t.co/TlgT8cU9CN",
+    "model_or_tool": "Gemini 4 Hydrogen + Carbon (Antigravity /swarm)",
+    "what_they_built": "A crimson moth animation made in 45 minutes with Antigravity’s swarm, Carbon directing and Hydrogen workers doing the build.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 67,
+      "impression_count": 20566,
+      "like_count": 372,
+      "quote_count": 6,
+      "reply_count": 36,
+      "retweet_count": 11
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120957827384745984/img/pdeGHVsAfreyzDzO.jpg"
+  },
+  {
+    "id": "2120674411468542355",
+    "url": "https://x.com/jeff_barker_rei/status/2120674411468542355",
+    "author_name": "Jeff Barker",
+    "author_handle": "@jeff_barker_rei",
+    "created_at": "2026-11-12T00:25:54.000Z",
+    "text": "I built this Family Calendar with Claude Code. \n\nI had an old iPad Air that I was trying to find a good use for. \n\nPreviously I had landed on the free version of DAKboard, but it didn’t quite work the way I wanted it to. It was limited and a bit buggy. \n\nSo I went to Claude Code https://t.co/sUFQ8bPnSN",
+    "model_or_tool": "Claude Code",
+    "what_they_built": "A family calendar display for an old iPad Air, built with Claude Code to replace a free DAKboard setup.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 116,
+      "like_count": 2,
+      "quote_count": 0,
+      "reply_count": 4,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/media/HW4mItSWMAAjRYZ.jpg"
+  },
+  {
     "id": "2120273077707985018",
     "url": "https://x.com/alexanderchen/status/2120273077707985018",
     "author_name": "Alexander Chen",
@@ -118,125 +238,5 @@
       "repost_count": 0
     },
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2119798261372329984/img/TqvY8ISXtcpaw25C.jpg"
-  },
-  {
-    "id": "2119208984443781489",
-    "url": "https://x.com/murrtlen/status/2119208984443781489",
-    "author_name": "Murr",
-    "author_handle": "@murrtlen",
-    "created_at": "2026-11-07T23:22:49.000Z",
-    "text": "My phone is now a trackpad for my laptop. Claude wrote the code, and the cursor follows my finger.\n\nWatch the screen on the right. I drag a finger on the phone, the cursor moves. I hit Right click and the context menu opens.\n\nWhat I built:\n\nan app on the phone and a small app on the laptop\nthey talk over Bluetooth\ntap to click, hold to drag\nleft click, right click, center and pause buttons\na speed slider to tune the feel\nI made it with Claude Code in a few hours.\nClicks and gestures were the hardest part to get right.\nRight now there’s no scrolling and no two-finger gestures. Cursor and clicks only.\n\nWhat should I add first, scrolling or two-finger gestures?",
-    "model_or_tool": "Claude Code",
-    "what_they_built": "A phone app and a small laptop app, talking over Bluetooth, that turn the phone into a trackpad with tap, drag, left and right click, written with Claude Code in a few hours.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 8,
-      "impression_count": 425,
-      "like_count": 18,
-      "quote_count": 0,
-      "reply_count": 5,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119208927967469568/img/zcTWLID6cciq4ta5.jpg"
-  },
-  {
-    "id": "2119169485206700532",
-    "url": "https://x.com/agentsky_dev/status/2119169485206700532",
-    "author_name": "AgentSky",
-    "author_handle": "@agentsky_dev",
-    "created_at": "2026-11-07T20:45:52.000Z",
-    "text": "One prompt: a clockwork toy city. Three agents, three cities.\n\n⚡ Codex (GPT-6.1 Terra): 2 min 23 s · 4,239 tokens\nHermes (Gemini 4 Argon): 8 min 39 s · 43,857 tokens\nClaude Code (Opus 5.5): 21 min 7 s · 72,899 tokens\n\nWhich would you keep on your desk? https://t.co/vRioyhoWSX",
-    "model_or_tool": "Codex (GPT-6.1 Terra), Hermes (Gemini 4 Argon), Claude Code (Opus 5.5)",
-    "what_they_built": "Three clockwork toy cities from one prompt, one per coding agent, with the time and tokens each agent took printed beside it.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 1,
-      "impression_count": 626,
-      "like_count": 3,
-      "quote_count": 0,
-      "reply_count": 7,
-      "retweet_count": 1
-    },
-    "preview": "https://pbs.twimg.com/ext_tw_video_thumb/2119169275545980929/pu/img/yynfxwmt302rZTvz.jpg"
-  },
-  {
-    "id": "2119096507064324483",
-    "url": "https://x.com/JGB369/status/2119096507064324483",
-    "author_name": "JGB",
-    "author_handle": "@JGB369",
-    "created_at": "2026-11-07T15:55:52.000Z",
-    "text": "I built a anime/cartoon motion Studio with claude code and this is just the beginning.. \n\nHuman design and physics are quite  right.\n\nEverything here built with opus5.5 and fable 5.1\n+some help from chatgpt astra for design questions \n\nbtw I have 0 coding skill, just passion https://t.co/rp9xGQzfvu",
-    "model_or_tool": "Claude Code, Opus 5.5, Fable 5.1",
-    "what_they_built": "An anime and cartoon motion studio built with Claude Code by someone who says they have no coding skill, using Opus 5.5 and Fable 5.1.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 234,
-      "like_count": 3,
-      "quote_count": 0,
-      "reply_count": 4,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119095647445876736/img/kBw4MA1YerCpdA1e.jpg"
-  },
-  {
-    "id": "2118778224352403686",
-    "url": "https://x.com/0xNextia/status/2118778224352403686",
-    "author_name": "Anthony",
-    "author_handle": "@0xNextia",
-    "created_at": "2026-11-06T18:51:08.000Z",
-    "text": "the cursor moves. the jaguar looks back.\n\neyes, head and light follow the pointer.\na live three.js page, built with Claude Code. @threejs https://t.co/daTnvaAY47",
-    "model_or_tool": "Claude Code (three.js)",
-    "what_they_built": "A live three.js page, built with Claude Code, where a jaguar’s eyes, head and light follow the pointer.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 107,
-      "like_count": 5,
-      "quote_count": 0,
-      "reply_count": 2,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2118777936350478336/img/7ixFhBDcD7vcCy1W.jpg"
-  },
-  {
-    "id": "2118709488400454083",
-    "url": "https://x.com/_Garg_Sarthak/status/2118709488400454083",
-    "author_name": "Sarthak Garg",
-    "author_handle": "@_Garg_Sarthak",
-    "created_at": "2026-11-06T14:18:00.000Z",
-    "text": "Quick update on the browser tool I built with Claude Code:\n\nAdded a paint bucket, pen tool, and a few more core options to match Photoshop.\n\nRuns entirely in the browser now with zero lag.\n\nUgly UI, but it actually works. https://t.co/hCAAQOdc1q",
-    "model_or_tool": "Claude Code",
-    "what_they_built": "A browser image editor, built with Claude Code, that now has a paint bucket, a pen tool and other core Photoshop-style tools.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 344,
-      "like_count": 14,
-      "quote_count": 0,
-      "reply_count": 11,
-      "retweet_count": 1
-    },
-    "preview": "https://pbs.twimg.com/media/HWcgz5ZbMAA6Z7j.jpg"
-  },
-  {
-    "id": "2118591807814811897",
-    "url": "https://x.com/BahaMustaf69236/status/2118591807814811897",
-    "author_name": "Baha Mustafa",
-    "author_handle": "@BahaMustaf69236",
-    "created_at": "2026-11-06T06:30:23.000Z",
-    "text": "In 2022 NASA crashed a spacecraft into an asteroid on purpose.\n\nThis week, ESA's Hera arrived to look at the damage. 🚀\n\nI built an interactive 3D replay of the impact. You can rotate it, replay it, and watch the moon's orbit change.\n\n🛠 Built with:\n• Three.js + WebGL for the 3D scene\n• Canvas 2D for the orbit model\n• Plain HTML/CSS/JS, no framework\n• Puppeteer + FFmpeg to render the video\n• Claude Code as my pair programmer\n\n@threejs @claudeai @ESA_Hera @NASA\n\n#threejs #webgl #buildinpublic #indiedev",
-    "model_or_tool": "Claude Code (Three.js, WebGL)",
-    "what_they_built": "An interactive 3D replay of NASA’s DART impact, which you can rotate and replay to watch the moon’s orbit change, built with Claude Code as pair programmer.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 1,
-      "impression_count": 370,
-      "like_count": 5,
-      "quote_count": 0,
-      "reply_count": 1,
-      "retweet_count": 2
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2118591287301697536/img/tg6RN-lrkfHxXOvg.jpg"
   }
 ]
