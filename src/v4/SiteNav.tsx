@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react"
+import { NEW_TOOLS_PATH } from "../data/newtools"
+import { navHref } from "./format"
 import { Logo } from "./Logo"
 
 const LINKS = [
   { href: "#brief", label: "The Brief" },
   { href: "#on-x", label: "On X" },
   { href: "#tools", label: "Tools" },
+  { href: NEW_TOOLS_PATH, label: "New this week" },
   { href: "#shipped", label: "Shipped" },
 ] as const
 
-export function SiteNav() {
+export function SiteNav({ home = true }: { home?: boolean }) {
   const [solid, setSolid] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -22,7 +25,7 @@ export function SiteNav() {
   return (
     <header className={`v4-nav${solid ? " is-solid" : ""}${open ? " is-open" : ""}`}>
       <div className="v4-brand-lockup">
-        <a className="v4-brand" href="#top" aria-label="XplorAI, back to top">
+        <a className="v4-brand" href={home ? "#top" : "/"} aria-label={home ? "XplorAI, back to top" : "XplorAI home"}>
           <Logo />
         </a>
         <span className="v4-byline">by S.AI</span>
@@ -38,7 +41,12 @@ export function SiteNav() {
       </button>
       <nav id="v4-nav-links" className="v4-nav-links" aria-label="Primary">
         {LINKS.map((link) => (
-          <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+          <a
+            key={link.href}
+            href={navHref(link.href, home)}
+            aria-current={!home && link.href === NEW_TOOLS_PATH ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
             {link.label}
           </a>
         ))}
