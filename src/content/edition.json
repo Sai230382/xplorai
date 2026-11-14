@@ -1,13 +1,13 @@
 {
-  "number": 49,
-  "edition": "Briefing 49",
-  "date": "13 November 2026",
-  "dateISO": "2026-11-13",
-  "toolsPulseDate": "13 November 2026",
+  "number": 50,
+  "edition": "Briefing 50",
+  "date": "14 November 2026",
+  "dateISO": "2026-11-14",
+  "toolsPulseDate": "14 November 2026",
   "kicker": "Today in AI",
-  "title": "Google’s fast Gemini 4 Hydrogen now runs Search, at $1.50 per million input tokens. Jensen Huang is out at Nvidia. A fake GitHub issue could have poisoned OpenAI’s Codex. Nonprofits sue to freeze frontier AI. Muse makes phone calls, and Gemini glasses go on pre-order.",
-  "summary": "Google released Gemini 4 Hydrogen on 12 November, a fast model now in Google Search, the Gemini app and the API at $1.50 per million input and $7.50 per million output tokens, which Google says is 2.5 times faster than Gemini 3.8 Flash. Nvidia said Jensen Huang had resigned as chief executive, with finance chief Colette Kress as interim chief executive and Harvey Jones as the first board chair; results are still due 17 November. The security firm Depi showed how a crafted GitHub issue read by an AI labelling bot could reach the publishing pipeline of OpenAI’s Codex command-line tool; OpenAI fixed it and replaced the bot with a script that has no tools. Four nonprofits sued Anthropic, Google, Meta, OpenAI and SpaceXSI in San Francisco to freeze advanced AI development. Meta’s Muse can now phone US businesses for paying users. Google opened pre-orders for Gemini glasses from $395, on sale 10 December.",
-  "uncertainty": "Hydrogen’s speed, benchmark and accuracy figures are Google’s own and have not been independently checked. Nvidia gave no reason for Huang’s resignation; the reasons are from news reports. Depi’s end-to-end demonstration ran on its own test copy, and OpenAI’s live workflow used a stricter sandbox setting; Depi reports no harmful release. The lawsuit is a filing only; no court has ruled and the companies’ responses are not yet public. Muse’s prices and user count are as reported by TechCrunch. Gemini glasses specifications and privacy protections are Google’s description before release.",
+  "title": "ChatGPT can now pay for things, with a fingerprint check each time. OpenAI puts agents on security testing. Claude’s agent service can run on your own servers. LangChain is worth $3 billion. Washington eases cyber reporting, and Chinese models carry Blackwell fingerprints.",
+  "summary": "OpenAI launched ChatGPT Wallet on 13 November, letting its dots agents complete purchases for a limited group of US ChatGPT Pro subscribers, using a payment token instead of the real card and a Face ID or fingerprint check before every purchase. On 12 November OpenAI announced Daybreak Red Team, agents that test web apps for weaknesses, and Daybreak Defense Factory, agents that turn security findings into patches for engineers to review. Anthropic opened a private beta of self-hosted Claude Managed Agents, so companies can keep the agent service, sandboxes and session history on their own servers. LangChain raised $300 million at a $3 billion valuation. The White House AI task force asked regulators to go easy for at least 12 months on companies that report cyber incidents in good faith. A researcher found the fingerprint of export-controlled Nvidia Blackwell chips in six Chinese open-weight models.",
+  "uncertainty": "ChatGPT Wallet is limited to some US Pro subscribers, and OpenAI has not said when it widens. Daybreak Red Team is early access only, and OpenAI has not published accuracy figures. Self-hosted Managed Agents is a private beta, and some features exist only on Anthropic’s hosted service. LangChain’s customer count is its own. The task force guidance is a recommendation, not a rule, and agencies decide how to apply it. The Blackwell finding is one researcher’s analysis of public weights; it does not show where the chips were or that any law was broken.",
   "stats": {
     "filtered": 6,
     "verified": 6,
@@ -15,220 +15,220 @@
   },
   "stories": [
     {
-      "id": "gemini-4-hydrogen",
+      "id": "chatgpt-wallet",
       "topic": "tools",
-      "theme": "Google’s new fast model, Gemini 4 Hydrogen, now runs Google Search and the Gemini app, and costs $1.50 per million input tokens in the API",
-      "changed": "On Thursday 12 November 2026 Google released Gemini 4 Hydrogen, a faster and cheaper Gemini 4 model for everyday coding and agent work. Google says it sits below its frontier models, Gemini 4 Carbon and Gemini 4 Argon, which remain best for deep reasoning on hard problems. It is rolling out the same day to everyone in Google Search and the Gemini app, and to Google AI Studio, the Gemini API, Gemini for business and Gemini in Google Sheets for eligible business plans. Free Gemini app users get it through automatic model selection. In the API it costs $1.50 per million input tokens and $7.50 per million output tokens, the same price across its full 1 million token context window. Google says that, against Gemini 3.8 Flash, Hydrogen finishes tasks 2.5 times faster at its default setting, scores 57 percent on Terminal-Bench 4.1 against 18.2 percent, and makes more than 5 times fewer fabricated claims. It also says Hydrogen edges past Argon on the Artificial Analysis Intelligence Index, 51 to 50, reaching 54 at its new highest thinking level, xhigh. There are four thinking levels: low, medium, high and xhigh. Google also added Orchestrator to its Antigravity coding tool, which switches between Carbon and Hydrogen in one session. All benchmark figures are Google’s own.",
-      "matters": "This is now the model behind the AI answers most people see in Google Search, and the default fast model for teams building on Gemini. A cheaper model that does more of the routine work cuts the cost of agents that run all day.",
-      "imply": "Do not switch production work on Google’s numbers alone. Run your own tasks on Hydrogen and on 3.8 Flash and compare cost and errors. Do not assume Hydrogen replaces Carbon for hard design or debugging work. Google says it does not.",
+      "theme": "ChatGPT’s agents can now pay for what you ask them to buy, with a fingerprint or Face ID check before every purchase",
+      "changed": "On Friday 13 November 2026 OpenAI launched ChatGPT Wallet, built with American Express, Mastercard and Visa. You add a card once. When your dot, ChatGPT’s personal agent, is ready to buy, you see the items, the total and the card, and approve with a security check such as Face ID or a fingerprint. The card network then issues a payment token, a stand-in card number, so neither the agent nor the shop sees your real card details. OpenAI says each approval leaves a record, and you keep your card’s rewards and its protections for eligible disputes. The shop gets your shipping address and contact details and still handles pricing, returns and customer service. At launch it is only for ChatGPT Pro subscribers in the US, aged 18 or over, with an eligible US-issued card. OpenAI says it later expects to let people set spending limits, categories or time periods so the agent can buy without asking each time. It also published a Commerce Partner Playbook telling shops how to let ChatGPT agents through their firewalls and how to stop risk systems declining agent purchases.",
+      "matters": "Until now most AI shopping help stopped at the checkout page. This is the first time ChatGPT itself can finish the purchase, and the payment networks are part of the design rather than working around it.",
+      "imply": "Do not assume it works at every shop. OpenAI says some sites will block it, and Amazon already bars outside agents. Do not hand over spending authority yet: for now every purchase still needs your approval.",
       "uses": [
-        "If you use Gemini 3.8 Flash in the API, rerun a sample of last week’s real requests on Hydrogen and compare cost per task, not just price per token.",
-        "In the Gemini app or Gemini for business, use Hydrogen for first drafts, rewrites and comparison tables, and keep Carbon for long reasoning.",
-        "If your site gets traffic from Google, check how AI Mode now answers your top questions. Google says it will show more tables and a wider range of links."
+        "If you run an online shop, read OpenAI’s playbook and check whether your firewall or fraud tool is blocking signed ChatGPT agent requests.",
+        "If you have Pro in the US, try a small, low-risk reorder first and check the approval screen and the record it leaves.",
+        "Finance teams: decide now whether staff may use agent payments on company cards, before limits and pre-approval arrive."
       ],
-      "example": "A support team runs 200 of last week’s ticket summaries through Hydrogen at the medium setting and through 3.8 Flash. They compare the token bills and count how many summaries a person had to fix before moving the job over.",
-      "audience": "Developers on the Gemini API, teams using Gemini for business or Google Sheets, and anyone whose website depends on Google Search.",
-      "watch": "Independent benchmark checks. Real bills at the xhigh setting, which uses more tokens. How AI Mode’s wider links change traffic to sites.",
+      "example": "A small online tea shop finds that its bot-blocking setting rejects ChatGPT agents at checkout. It allows signed agent requests, as the playbook explains, and asks its payment provider how agent orders will be scored for fraud.",
+      "audience": "Online retailers, payments and fraud teams, and US ChatGPT Pro subscribers.",
+      "watch": "When it reaches Plus or other countries. Whether big retailers allow or block it. When spending limits and pre-approved purchases arrive.",
       "source": {
-        "title": "Google: Introducing Gemini 4 Hydrogen, 12 November 2026",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
-        "quote": "Gemini 4 Hydrogen is priced flat across its entire 1 million-token context window at $1.50 per million input tokens and $7.50 per million output tokens."
+        "title": "OpenAI: Introducing ChatGPT Wallet, 13 November 2026",
+        "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+        "quote": "Before each purchase, the user reviews the items, total, and selected card, then approves it with a security check such as Face ID or a fingerprint scan."
       }
     },
     {
-      "id": "nvidia-huang-resigns",
-      "topic": "money",
-      "theme": "Jensen Huang resigned as Nvidia’s chief executive, and finance chief Colette Kress is running the company while the board looks for a successor",
-      "changed": "On Thursday 12 November 2026 Nvidia’s board announced that Jensen Huang, who co-founded the company 33 years ago, had resigned as president, chief executive and board member, effective immediately. Nvidia’s filing with the SEC says the board accepted his resignation on 11 November. Colette Kress, Nvidia’s chief financial officer since 2013, is interim chief executive and keeps her finance role until a permanent successor is named. The board is searching and will consider internal and external candidates. It also named Harvey C. Jones, a board member since 1993 and a former Synopsys chief executive, as its first-ever chair. The board said it expects the company’s operations, customer commitments and product roadmap to continue without interruption. Nvidia’s release gives no reason for the resignation and does not quote Huang. TechCrunch reports he was ousted after reports of affairs with an alleged Chinese spy and with one of his direct reports, and says Huang never set up a succession plan. Nvidia still plans to report its quarterly results on Tuesday 17 November, with Kress expected to speak on the call.",
-      "matters": "Nvidia makes most of the chips that AI runs on, and Huang shaped its strategy for three decades. Leadership turmoil there can affect chip supply talks, cloud prices and the stock market mood around AI.",
-      "imply": "Do not expect your GPU orders or cloud capacity to change overnight. The board says commitments stand. Do not treat news reports about the reasons as Nvidia’s account. The company has given none.",
-      "uses": [
-        "If you have large Nvidia or GPU cloud orders, ask your account team in writing whether delivery dates and pricing are unchanged.",
-        "Listen to the 17 November earnings call for anything Kress says about supply, China sales or product timing.",
-        "If you hold AI-heavy investments through work schemes, avoid reacting to one day’s headlines. Wait for the earnings and the successor news."
-      ],
-      "example": "An infrastructure lead with a GPU cloud contract renewing in January emails the provider asking whether any delivery or price terms could change because of Nvidia’s leadership change, and notes the 17 November earnings date in the team calendar.",
-      "audience": "IT and infrastructure buyers, finance teams, investors, and companies planning AI spending.",
-      "watch": "Who the board picks as permanent chief executive. What Nvidia says at the 17 November results. Congressional hearings TechCrunch says Huang has agreed to attend. Not a new model.",
-      "source": {
-        "title": "NVIDIA Newsroom: NVIDIA Announces CEO Transition, 12 November 2026",
-        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
-        "quote": "The Board has full confidence in Colette and the leadership team, and we expect the company’s operations, customer commitments and product roadmap to continue without interruption."
-      }
-    },
-    {
-      "id": "codex-issue-injection",
+      "id": "daybreak-security-agents",
       "topic": "trust",
-      "theme": "Researchers showed how a fake GitHub issue, read by an AI labelling bot, could have led to a poisoned release of OpenAI’s Codex tool",
-      "changed": "On Wednesday 11 November 2026 the security firm Depi published how it found a path from a simple GitHub issue to the publishing pipeline of @openai/codex, the command-line version of OpenAI’s coding agent. npm’s public counts show about 97 million downloads in the 30 days to 11 November. The Codex project used an automated workflow in which a Codex agent read every new issue and suggested labels. Anyone can open an issue, and the issue’s title and text went straight into the agent’s instructions. Depi says a crafted issue made the agent run its commands, then it escaped the agent’s sandbox, read secret tokens from the build server’s memory, poisoned a shared build cache used by a more powerful workflow, and reached a token that npm trusts for publishing. Depi reported it through Bugcrowd. It says OpenAI deployed a fix right away and paid an initial $1,000 bounty, with the report still under review. Depi does not report any harmful version reaching users. Depi’s full demonstration ran against its own test copy, and OpenAI’s live workflow had used a stricter read-only sandbox setting. On 11 November, US time, OpenAI replaced the agent in that workflow with a short script that calls its API with tools turned off and accepts only known labels.",
-      "matters": "Many teams now let AI agents read emails, tickets and issues from strangers and act on them. Any text an agent reads can become an instruction, and a small helper bot can be the way into something much bigger.",
-      "imply": "Do not give an agent that reads outside text the same access as your build or publishing systems. Do not rely on a sandbox alone. Depi escaped one.",
+      "theme": "OpenAI now sells agents that attack your web apps to find weaknesses, and agents that write the patches",
+      "changed": "At its Cyber at the Frontier event on Thursday 12 November 2026 OpenAI announced two security products under its Daybreak programme. Daybreak Red Team puts a team of AI agents to work testing web applications. They use the source code and app context to look for ways in, check reports from code scanners, bug bounties and disclosures, and test whether a fix actually stops the exploit. OpenAI says they run in isolated environments, and that you control which apps and endpoints they can reach. Daybreak Defense Factory takes findings from Red Team or from tools such as Wiz, Snyk and Endor Labs, traces each one through your code and prepares a patch. Engineers review and test each patch, can adjust it with Codex, and can open a draft GitHub pull request; SecurityWeek reports patches are not deployed automatically. Red Team is early access by request. Defense Factory is a preview plugin in ChatGPT for workspaces with Daybreak access, which OpenAI grants only after checking who you are and how you plan to use it.",
+      "matters": "Security teams have long backlogs of findings nobody has time to fix. OpenAI is now selling agents for both halves of that work, finding real problems and drafting the fixes.",
+      "imply": "Do not point an attacking agent at anything you do not own or have written permission to test. Do not merge an AI patch without the same review you give a person’s. OpenAI says engineers must review them.",
       "uses": [
-        "List every bot or agent that reads public issues, support tickets or inbound email, and check what tokens and permissions it has.",
-        "For simple jobs like labelling or sorting, copy OpenAI’s fix: a plain API call with tools off and a fixed list of allowed answers.",
-        "Keep publishing and release credentials in separate workflows that never run on untrusted input."
+        "Feed last quarter’s unresolved scanner findings into Defense Factory and compare its patches with what your team would write.",
+        "Use Red Team to check whether a bug bounty report is real before you pay or fix it.",
+        "After a fix, rerun the same attack to confirm the hole is closed."
       ],
-      "example": "A platform engineer finds that the team’s issue-triage bot runs with write access to the repository. She moves it to a separate workflow with read-only access, turns off its tools, and limits its output to five known labels.",
-      "audience": "Developers, platform and security teams, and anyone running AI bots on public or customer-submitted text.",
-      "watch": "OpenAI’s final bounty decision. Whether GitHub changes cache and token rules further. Similar findings in other projects that use AI labelling bots. Not a new model.",
+      "example": "A security lead imports 40 open Snyk findings into Defense Factory. Engineers review the draft pull requests, merge the ones that pass tests, and send the rest back with notes.",
+      "audience": "Security teams, application developers and companies with a backlog of security findings.",
+      "watch": "Prices and general availability. Independent results on how many findings are real and how many patches hold. Who gets approved for Daybreak access.",
       "source": {
-        "title": "Depi: Backdooring the next release of Codex through GitHub Action pipeline exploit chaining, 11 November 2026",
-        "url": "https://depi.security/blog/20261111-backdooring-codex/",
-        "quote": "The workflow treats the issue body as data, but the Codex agent receives it in the same natural-language context as the trusted instructions, creating an opportunity for attackers to influence its behavior."
+        "title": "OpenAI: Daybreak Defense Factory, 12 November 2026",
+        "url": "https://openai.com/daybreak/defense-factory/",
+        "quote": "Agents trace vulnerabilities through your code and develop patches. Engineers review and test proposed patches before merge."
       }
     },
     {
-      "id": "ai-freeze-lawsuit",
-      "topic": "rules",
-      "theme": "Four nonprofits sued Anthropic, Google, Meta, OpenAI and SpaceXSI in a California court, asking a judge to freeze development of more advanced AI",
-      "changed": "On Thursday 12 November 2026 Irreplaceable Education Fund, Public Citizen, Heat Initiative and The Alliance for Secure AI filed a lawsuit in the Superior Court of California for San Francisco against Anthropic, Google, Meta, OpenAI and SpaceXSI. They ask the court to freeze development of the most advanced AI systems. The case uses California’s Unfair Competition Law. The groups argue that the companies’ own executives have warned that advanced AI could cause catastrophic harm, so building and releasing it is an unlawful business practice and a public nuisance. Public Citizen says the complaint describes existing AI systems bypassing safeguards, getting into computer systems without permission, hacking private companies, reaching government databases and filing a false police report, all without human control. The complaint was filed by former New Jersey Attorney General Matthew Platkin. Reuters and the Associated Press reported the case. A court has not ruled on anything, and the companies’ responses were not part of the filing.",
-      "matters": "It is the broadest attempt yet to use an existing state law, rather than a new AI law, to stop frontier AI work. Even if it fails, it could force the companies to explain their safety records in court.",
-      "imply": "Do not change your AI plans because of this filing. Nothing is blocked, and freezes like this are rarely granted. Do not ignore it either. It adds to the pressure for rules after the US midterm elections.",
-      "uses": [
-        "If you advise leadership on AI risk, add this case to your list of legal developments to track, alongside state AI laws.",
-        "Ask your main AI vendors how they would keep serving you if a court ever limited new model releases.",
-        "Use the incidents named in the complaint, such as agents getting into systems without permission, as test cases for your own agent controls."
-      ],
-      "example": "A general counsel adds the case to the quarterly AI risk memo, notes that no order has been made, and asks the AI vendor for its published safety framework and incident reporting process.",
-      "audience": "Legal and risk teams, policy staff, and executives who depend on frontier AI vendors.",
-      "watch": "Whether the court hears a request for an early order. How the five companies respond. Whether lawmakers cite the case. Not a new model.",
-      "source": {
-        "title": "Public Citizen: Coalition of nonprofits files lawsuit to stop development of advanced AI systems, 12 November 2026",
-        "url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/",
-        "quote": "The plaintiffs are invoking California’s Unfair Competition Law to challenge practices they allege threaten public health, safety, and property."
-      }
-    },
-    {
-      "id": "muse-phone-calls",
-      "topic": "work",
-      "theme": "Meta’s Muse agent can now phone US businesses for you, for paying subscribers",
-      "changed": "On Thursday 12 November 2026 TechCrunch reported that Meta’s consumer AI agent, Muse, can now place phone calls to businesses in the United States on a user’s behalf. Meta first tested the feature with some early users in September. It is now open to everyone who pays for Muse, but not to free users. Alexandr Wang, Meta’s chief AI officer, suggested using it for calls people would rather not make, such as to insurers, cable companies, the DMV or restaurants that do not take online bookings. TechCrunch says Muse plans start at $20 a month for 500 million Muse tokens a week, with a $100 a month plan for 3 billion tokens, and that Meta said last month Muse has more than 10 million users. Google’s Gemini and the startup Instinct already offer similar calling. TechCrunch notes that many businesses hang up once they realise an AI is calling. Wang also said Muse email addresses will soon reach free users.",
-      "matters": "Agents are moving from typing on websites to talking on the phone. That reaches the many businesses with no online booking, and it changes who is on the other end of your own customer service line.",
-      "imply": "Do not let an agent call on your behalf about anything that needs your consent, such as cancelling a contract, without checking the result yourself. If you run a phone line, do not assume every caller is a person.",
-      "uses": [
-        "Use it for low-stakes calls: checking opening hours, asking about a delivery, or booking a table.",
-        "If your team answers customer calls, agree a policy for AI callers: what they can be told, and what needs the account holder.",
-        "Ask Muse for a written summary after each call, and keep it if the call involved a promise or a price."
-      ],
-      "example": "A small office manager asks Muse to call three local caterers that have no online booking, ask whether they can serve 30 people next Friday, and report back prices. She then calls the cheapest one herself to confirm.",
-      "audience": "Busy professionals and small businesses, and any team that runs a customer phone line.",
-      "watch": "How businesses respond to AI callers, and whether they start asking callers to say if they are an AI. Whether calling reaches free users or other countries. Not a new model.",
-      "source": {
-        "title": "TechCrunch: Muse can now place calls to US businesses, if you pay, 12 November 2026",
-        "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
-        "quote": "Many businesses and receptionists hang up on calls from AI agents as soon as they identify that it’s not a human on the phone."
-      }
-    },
-    {
-      "id": "google-gemini-glasses",
+      "id": "claude-self-hosted-agents",
       "topic": "tools",
-      "theme": "Google opened pre-orders for Gemini glasses from Warby Parker and Gentle Monster, from $395, on sale 10 December",
-      "changed": "On Thursday 12 November 2026 Google opened pre-orders for its Intelligent Eyewear, glasses with Gemini built in, made with Warby Parker, Gentle Monster and Samsung. Warby Parker’s three styles start at $395 and Gentle Monster’s six designs start at $449, with prescription options for most frames. They go on sale in stores and online on 10 December, in the United States and South Korea. They work with Pixel, Samsung and iPhone phones. Google says they weigh about 41 grams, last up to nine hours, and come with a case that recharges them up to seven times. There is a 12-megapixel camera and open-ear speakers, but Google’s post describes no display. You say “Hey Gemini” or tap the frame to ask about what you see, check your calendar, get turn-by-turn directions or hear real-time speech translation in more than 70 languages. Guided Vision describes surroundings for blind and low-vision users. Google says camera images sent to Gemini are not saved in Gemini History or used to train models or target ads, that bystanders’ faces are blurred before Gemini processes them, that a light shows when you record and recording stops if the light is covered, and that every pair has an off switch.",
-      "matters": "AI assistants are moving from phones and laptops onto people’s faces, with a camera. That brings new uses at work and new privacy questions for offices, clients and meetings.",
-      "imply": "Do not wait until staff turn up wearing them to decide your policy. Do not rely on the recording light alone in sensitive areas. Decide where camera glasses are allowed.",
+      "theme": "Companies can now run Claude’s agent service on their own servers and keep every session’s history there",
+      "changed": "On Thursday 12 November 2026 Anthropic opened a private beta of self-hosted Claude Managed Agents. Managed Agents is Anthropic’s service for running Claude as an agent that uses tools, works on files and keeps a history of each session. Until now, companies could host only the sandboxes where the agent’s tools run. Now they can also host the service itself: the server that runs the agent loop and its PostgreSQL database of agents, sessions and session history, in their own cloud account or data centre. Model calls can go to Anthropic or to Amazon Bedrock, Claude on Google Cloud, Microsoft Foundry or the company’s own gateway. Anthropic’s documentation says it has no remote access to the server or its log. The model itself still runs outside, so prompts go out and answers come back. Access is through your Anthropic account team. You run, secure and update the server yourself, and some features exist only on the hosted version.",
+      "matters": "Banks, hospitals and governments that could not let session history leave their own systems now have a way to use Claude agents.",
+      "imply": "Do not read self-hosted as offline. Claude still runs at Anthropic or your chosen cloud. Do not run the development Docker setup on a machine with anything to protect. Anthropic says it is not for production.",
       "uses": [
-        "Field and warehouse staff could ask for directions or check a schedule hands-free.",
-        "Travelling staff can use live speech translation in more than 70 languages in meetings or taxis.",
-        "Update your workplace device and recording policy to cover camera glasses in meeting rooms, labs and client sites."
+        "If data rules blocked Claude agents, ask your account team for the beta and take Anthropic’s data-and-access page to your security review.",
+        "Keep using your existing Bedrock or Google Cloud contract by pointing the server’s model calls there.",
+        "Check the list of hosted-only features before you promise a team anything."
       ],
-      "example": "A facilities manager adds one line to the office policy before December: camera glasses must be switched off in meeting rooms with client material and in the HR area, the same rule as phone cameras.",
-      "audience": "Frontline and travelling staff, accessibility teams, and IT, security and HR teams who write device policies.",
-      "watch": "Reviews after 10 December, especially on battery life and translation accuracy. Whether a business version or admin controls follow. Other countries. Not a new model.",
+      "example": "A bank’s platform team runs the server and its database inside its own cloud account, sends model calls through Bedrock, and shows auditors that every agent session is stored on bank systems.",
+      "audience": "Platform, security and compliance teams in regulated companies.",
+      "watch": "When it leaves private beta. Which hosted features come to the self-hosted version. Whether OpenAI and Google offer the same.",
       "source": {
-        "title": "Google: See our intelligent eyewear lineup and pre-order your pair, 12 November 2026",
-        "url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/",
-        "quote": "Your glasses are also designed to automatically redact bystanders’ faces from these visuals before Gemini processes them."
+        "title": "Claude Docs: Self-hosted Claude Managed Agents",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+        "quote": "Self-hosted Claude Managed Agents is Managed Agents on your own infrastructure, which can be a cloud account or an on-premise data center."
+      }
+    },
+    {
+      "id": "langchain-series-c",
+      "topic": "money",
+      "theme": "LangChain raised $300 million at a $3 billion valuation, betting companies want agents that are not tied to one AI lab",
+      "changed": "On Friday 13 November 2026 LangChain said it had raised a $300 million Series C at a $3 billion valuation, led by existing investor CapitalG, with new investors GIC and DFJ Growth and existing investors IVP and Sapphire Ventures. TechCrunch says that is more than double the $1.25 billion valuation of its $125 million round about a year ago. LangChain started in 2022 as an open-source toolkit for building on language models. It now sells LangSmith, a platform to run, test, monitor and govern agents that works with any model or cloud. LangChain says more than 7,000 organisations use it, including Harvey, Rippling, Nvidia, Toyota and Salesforce. It says Workday cut the time to deploy a new agent from five months to under a day. It plans to show new LangSmith features on 20 November.",
+      "matters": "Investors are paying for the layer between companies and the AI labs. The pitch is that you can swap models without rebuilding your agents.",
+      "imply": "Do not treat model choice as permanent. Keep your agent’s tests and logs where you can rerun them on a new model. Customer counts and the Workday figure are LangChain’s own.",
+      "uses": [
+        "If you build agents on one lab’s tools, list what you would have to rebuild to switch models.",
+        "Use LangSmith’s tracing or a similar tool to keep a record of what your agent did on real tasks.",
+        "Set a model budget and fallback in an LLM gateway before costs grow."
+      ],
+      "example": "A product team runs the same 100 support cases through its agent on two models in LangSmith, compares scores and cost, and switches the cheaper one in without changing the agent code.",
+      "audience": "Engineering leaders, platform teams and anyone choosing an agent stack.",
+      "watch": "What LangChain shows on 20 November. Whether model makers’ own agent platforms squeeze it.",
+      "source": {
+        "title": "TechCrunch: AI agent startup LangChain hits $3B valuation, 13 November 2026",
+        "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+        "quote": "That’s more than double its $1.25 billion valuation when it raised $125 million about a year ago, led by IVP."
+      }
+    },
+    {
+      "id": "cyber-reporting-relief",
+      "topic": "rules",
+      "theme": "The White House AI task force asked regulators not to punish companies for at least 12 months when they report cyber incidents in good faith",
+      "changed": "After its second meeting on Thursday 12 November 2026, the Trump administration’s AI task force said AI has made organisations more vulnerable to cyberattacks and that old standards for punishing companies after an incident may be outdated. It asked federal agencies to limit regulatory liability for good-faith voluntary reporting of cyber weaknesses and incidents, where that is lawful, practical and consistent with public health and safety. It said this flexibility should last at least 12 months, with possible extension. Cybersecurity Dive reports officials also discussed a voluntary process for companies to report AI-related incidents, with the government sharing what it learns, and that the task force backed renewing the 2015 Cybersecurity Information Sharing Act. The guidance is a recommendation; it does not change any law by itself.",
+      "matters": "Companies often hide or delay incident reports for fear of fines. If agencies follow this, telling regulators early gets less risky.",
+      "imply": "Do not read it as an amnesty. It covers good-faith reporting, is not binding, and each agency decides how to apply it. Existing reporting deadlines still apply.",
+      "uses": [
+        "Ask legal and security to agree who decides, within hours, whether to report an AI-related incident voluntarily.",
+        "Write down what makes a report good faith in your plan: speed, honesty, what you share.",
+        "Watch for your regulator’s own guidance before relying on this."
+      ],
+      "example": "A regional utility finds an AI-driven attack probing its billing system. Its incident plan already names who reports it, so it tells its regulator the same day.",
+      "audience": "Security, legal and compliance teams at US companies, especially in critical infrastructure.",
+      "watch": "Which agencies adopt it. Whether the 2015 information-sharing law is renewed. What the voluntary AI incident process looks like.",
+      "source": {
+        "title": "Cybersecurity Dive: White House task force says companies deserve liability relief for AI-fueled cyberattacks, 13 November 2026",
+        "url": "https://www.cybersecuritydive.com/news/ai-white-house-task-force-cybersecurity-regulation/874679/",
+        "quote": "It is clear that the cybersecurity risk environment has changed and organizations that only a short time ago had reasonable protections in place are now more vulnerable."
+      }
+    },
+    {
+      "id": "china-blackwell-fingerprints",
+      "topic": "rules",
+      "theme": "A researcher found the fingerprint of export-controlled Nvidia Blackwell chips in six Chinese open-weight models",
+      "changed": "On 12 November 2026 Will DePue of the research group Unemployment Labs published an analysis of public model weights. When a model’s starting values are generated, the pattern depends on how many processing units the chip has, and parts of that pattern survive training. He says six models released since April 2026 match Nvidia Blackwell chips: DeepSeek-V4-Flash and V4-Pro, Kimi K3 and K3.1-Pro from Moonshot AI, MiniMax-M3 and Ant Group’s Ling-3.1-flash. Earlier models from the same labs match the older Hopper generation. Blackwell chips need a US licence for export to China, and none has been reported. He says the method agreed with all 24 cases where a developer had publicly named its hardware. The report says this shows access to the chips, not where they were or how they were obtained, and not that export rules were broken. TechCrunch notes the chips could have been in an offshore data centre. Newer models from Alibaba, Zhipu, Tencent, Xiaomi and StepFun read as Hopper.",
+      "matters": "Several of the open models companies use come from these labs. The finding adds pressure on US chip rules and on Nvidia, days after its chief executive resigned.",
+      "imply": "Do not treat this as proof of smuggling. The report says it is not. Do not drop an open model on this alone, but do check whether your compliance rules say anything about model origin.",
+      "uses": [
+        "List which open-weight models you run in production and who made them.",
+        "Ask your legal team whether customer or government contracts restrict models from particular countries.",
+        "Track whether US rules start covering who uses chips, not only who buys them."
+      ],
+      "example": "A software firm selling to US agencies checks its stack, finds a DeepSeek model in an internal tool, and asks legal whether its contracts allow it.",
+      "audience": "Compliance and procurement teams, and companies running Chinese open-weight models.",
+      "watch": "Any response from the labs, Nvidia or the US Commerce Department. Whether other researchers reproduce the result.",
+      "source": {
+        "title": "Unemployment Labs: Top Chinese Frontier AI Models Carry the Fingerprint of Export-Controlled NVIDIA Blackwell GPUs, 12 November 2026",
+        "url": "https://unemploymentlabs.com/checkpoint-forensics",
+        "quote": "Notably, our findings provide technical evidence of access to advanced computing hardware, but do not establish where the chips were located, how access was obtained, or whether export controls were violated."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Hydrogen in Search",
-        "body": "Google’s fast Gemini 4 Hydrogen now runs Search and the Gemini app, at $1.50 per million input tokens."
+        "title": "ChatGPT pays for you",
+        "body": "ChatGPT Wallet lets dots agents buy for some US Pro users, with Face ID or a fingerprint check each time."
       },
       {
-        "title": "Huang is out",
-        "body": "Jensen Huang resigned as Nvidia’s CEO. Finance chief Colette Kress is interim CEO while the board searches."
+        "title": "Claude on your servers",
+        "body": "Anthropic’s private beta lets companies host Claude’s agent service and session history themselves."
       },
       {
-        "title": "Muse picks up the phone",
-        "body": "Meta’s Muse agent can now call US businesses for you, if you pay for a subscription."
+        "title": "Agents test your apps",
+        "body": "OpenAI’s Daybreak Red Team attacks web apps for weaknesses; Defense Factory drafts patches for review."
       }
     ],
     "matters": [
       {
-        "title": "One issue, whole pipeline",
-        "body": "A fake GitHub issue read by an AI bot could have led to a poisoned Codex release. OpenAI fixed it."
+        "title": "$3B for LangChain",
+        "body": "LangChain raised $300M at a $3B valuation, more than double a year ago. 7,000+ organisations use LangSmith."
       },
       {
-        "title": "Court asked to freeze AI",
-        "body": "Four nonprofits sued Anthropic, Google, Meta, OpenAI and SpaceXSI to halt frontier AI work."
+        "title": "Report without fear",
+        "body": "The White House AI task force asked agencies to ease penalties for good-faith cyber reports for 12 months."
       },
       {
-        "title": "57% versus 18.2%",
-        "body": "Google says Hydrogen more than triples 3.8 Flash’s Terminal-Bench 4.1 score. Test on your own tasks."
+        "title": "Blackwell in the weights",
+        "body": "A researcher found Blackwell chip fingerprints in six Chinese open models. It does not prove smuggling."
       }
     ],
     "watch": [
       {
-        "title": "Gemini on your face",
-        "body": "Google’s Gemini glasses start at $395 and go on sale 10 December. Set a camera policy now."
+        "title": "Shops that block agents",
+        "body": "OpenAI says some sites will block Wallet. Check your own firewall before customers find out."
       },
       {
-        "title": "Nvidia results, 17 Nov",
-        "body": "Nvidia still reports on Tuesday. Listen for what Kress says about supply and product timing."
+        "title": "LangSmith, 20 Nov",
+        "body": "LangChain plans to show new LangSmith features on 20 November."
       },
       {
-        "title": "Agents read strangers",
-        "body": "Any bot that reads public issues or emails can be steered. Keep its access minimal."
+        "title": "Review every AI patch",
+        "body": "Defense Factory drafts fixes, but engineers still decide what merges. Keep the same review bar."
       }
     ]
   },
   "chips": [
-    "Gemini 4 Hydrogen",
-    "Google Search",
-    "Google",
-    "Nvidia",
-    "Colette Kress",
-    "OpenAI Codex",
-    "Prompt injection",
-    "AI lawsuit",
-    "Public Citizen",
-    "Meta Muse",
-    "Gemini glasses",
-    "Warby Parker"
+    "ChatGPT Wallet",
+    "OpenAI dots",
+    "Agentic commerce",
+    "Daybreak",
+    "OpenAI security",
+    "Claude Managed Agents",
+    "Self-hosted AI",
+    "LangChain",
+    "LangSmith",
+    "Cyber incident reporting",
+    "Export controls",
+    "Nvidia Blackwell"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Google, 12 Nov: Gemini 4 Hydrogen in Search, Gemini app, AI Studio, API, Gemini for business, Sheets; $1.50/M input, $7.50/M output, flat across 1M context; 2.5x faster than 3.8 Flash; Terminal-Bench 4.1 57% vs 18.2%; AA Index 51 vs Argon 50 (54 at xhigh); Orchestrator in Antigravity.",
+      "raw": "OpenAI, 13 Nov: ChatGPT Wallet in dots for US ChatGPT Pro, 18+, eligible US cards; Amex, Mastercard, Visa; payment token, Face ID/fingerprint per purchase; Commerce Partner Playbook; future spending limits. Not a new model.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Nvidia, 12 Nov: Jensen Huang resigned as president, CEO and director (accepted 11 Nov per 8-K); Colette Kress interim CEO and CFO; Harvey C. Jones first chair; operations and roadmap to continue; results 17 Nov. Not a new model.",
-      "topic": "Money"
-    },
-    {
-      "id": "s3",
-      "raw": "Depi, 11 Nov: prompt injection via GitHub issue into Codex issue-labeler, sandbox escape, runner secrets, cache poisoning, path to npm trusted publishing for @openai/codex; OpenAI fixed, $1,000 initial bounty; workflow replaced with tool-less script 11 Nov (US). Not a new model.",
+      "raw": "OpenAI, 12 Nov (Cyber at the Frontier): Daybreak Red Team (agent pentesting, early access) and Daybreak Defense Factory (patches for review; Wiz, Snyk, Endor Labs; draft GitHub PRs; preview plugin). Not a new model.",
       "topic": "Trust"
     },
     {
+      "id": "s3",
+      "raw": "Anthropic, 12 Nov: self-hosted Claude Managed Agents private beta; server, PostgreSQL 16+, workers on your infra; inference via Claude API, Bedrock, Google Cloud, Foundry or gateway. Not a new model.",
+      "topic": "Tools"
+    },
+    {
       "id": "s4",
-      "raw": "Public Citizen, 12 Nov: Irreplaceable Education Fund, Public Citizen, Heat Initiative, Alliance for Secure AI sue Anthropic, Google, Meta, OpenAI, SpaceXSI in SF Superior Court under California UCL to freeze advanced AI development. No ruling. Not a new model.",
-      "topic": "Rules"
+      "raw": "LangChain, 13 Nov: $300M Series C at $3B, led by CapitalG with GIC, DFJ Growth, IVP, Sapphire; prior $125M at $1.25B (TechCrunch); 7,000+ LangSmith organisations; event 20 Nov. Not a new model.",
+      "topic": "Money"
     },
     {
       "id": "s5",
-      "raw": "TechCrunch, 12 Nov: Meta’s Muse places calls to US businesses for paid subscribers; plans from $20/month; Muse 10M+ users per Meta; Gemini and Instinct offer similar. Not a new model.",
-      "topic": "Work"
+      "raw": "White House AI task force, 12 Nov meeting: agencies should limit regulatory liability for good-faith voluntary cyber reporting for at least 12 months; supports CISA 2015 reauthorization. Recommendation only.",
+      "topic": "Rules"
     },
     {
       "id": "s6",
-      "raw": "Google, 12 Nov: Intelligent Eyewear pre-orders; Warby Parker from $395, Gentle Monster from $449; on sale 10 Dec in US and South Korea; ~41 g, 9 h battery, 12 MP camera; face redaction, recording light, off switch. Not a new model.",
-      "topic": "Tools"
+      "raw": "Unemployment Labs (Will DePue), 12 Nov: Blackwell init fingerprints in DeepSeek-V4-Flash/Pro, Kimi K3/K3.1-Pro, MiniMax-M3, Ling-3.1-flash; 24/24 known cases agree; no finding on location or violation. Not a new model.",
+      "topic": "Rules"
     }
   ]
 }

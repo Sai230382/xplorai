@@ -1,5 +1,32 @@
 [
   {
+    "name": "The Verge",
+    "handle": "verge",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1569656103528448000/d0BzVIPL_normal.jpg",
+    "text": "OpenAI says ChatGPT Wallet won’t share your actual credit card info with its AI agents. https://t.co/vzavBcG8kh",
+    "url": "https://x.com/verge/status/2121344084795388219",
+    "postedAt": "2026-11-13T20:46:57.000Z",
+    "take": "The agent gets a stand-in card number, and you approve every purchase. Shops may still block it."
+  },
+  {
+    "name": "LangChain",
+    "handle": "LangChain",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2028336270431453184/jRRpLAdG_normal.jpg",
+    "text": "LangChain has raised $300M at a $3B valuation to advance our mission to enable every company to own its intelligence. https://t.co/0071ADIcU5\n\nMore than 7,000 companies already rely on LangSmith for agent runtime, improvement, and governance. We're excited to make it easier for https://t.co/QLy19lr3kd",
+    "url": "https://x.com/LangChain/status/2121273623658819687",
+    "postedAt": "2026-11-13T16:06:57.000Z",
+    "take": "Money is flowing to tools that let you swap AI models without rebuilding your agents."
+  },
+  {
+    "name": "Greg Brockman",
+    "handle": "gdb",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1347621377503711233/bHg3ipfD_normal.jpg",
+    "text": "Announcing two new cyber products:\n\n- Daybreak Defense Factory (https://t.co/OdlGbgPWp8)\n- Daybreak Red Team (https://t.co/VQTAjDfduz)\n\nBoth make it much easier to put frontier cyber capabilities to work, helping defend companies in new ways. https://t.co/r4M5s1Nilw",
+    "url": "https://x.com/gdb/status/2121004237413142656",
+    "postedAt": "2026-11-12T22:16:31.000Z",
+    "take": "Agents that find holes in your apps and draft the fixes. A person still has to approve each patch."
+  },
+  {
     "name": "CNBC",
     "handle": "CNBC",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1999829242431811587/iTRuu0Me_normal.jpg",
