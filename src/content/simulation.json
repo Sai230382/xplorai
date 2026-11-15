@@ -1,68 +1,83 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "langchain-series-c",
+  "storyId": "anthropic-compute-dilemma",
   "kicker": "Play with today’s story",
-  "title": "LangChain a year ago and today: what the new round changed",
-  "intro": "Switch between LangChain’s previous funding round, about a year ago, and the round it announced on 13 November. Each side shows only the figures TechCrunch and LangChain published.",
-  "note": "The round sizes and valuations are from TechCrunch, which describes the earlier round only as about a year ago. The customer count and Workday figure are LangChain’s own and have not been checked independently. TechCrunch did not give a customer count for the earlier round, so that side is left blank rather than filled in.",
+  "title": "Anthropic’s money in three numbers: what it is raising, what it has promised to spend, and what it brings in",
+  "intro": "Slide through the three sides of Anthropic’s compute bet as its IPO approaches. Each step shows only figures reported by Reuters, Bloomberg and The Decoder.",
+  "note": "IPO figures are from Anthropic’s filing as reported by Reuters and can change before pricing. The oversubscription, the private placement and the commitments are Bloomberg’s reporting. The revenue run rate is Anthropic’s figure from its filings, as reported by The Decoder. These numbers cover different time spans, so they should not be subtracted from one another.",
   "sources": [
     {
-      "label": "TechCrunch: AI agent startup LangChain hits $3B valuation, 13 November 2026",
-      "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/"
+      "label": "The Decoder: Anthropic CEO Amodei admits “there’s a huge uncertainty in what’s going to happen next year” days before a record IPO, 14 November 2026",
+      "url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/"
     },
     {
-      "label": "LangChain: LangChain Raises $300M to Enable Every Company to Own Its Intelligence, 13 November 2026",
-      "url": "https://www.langchain.com/blog/series-c"
+      "label": "Reuters via Investing.com: Anthropic’s IPO is about six times oversubscribed, Bloomberg News reports, 12 November 2026",
+      "url": "https://www.investing.com/news/stock-market-news/anthropics-ipo-is-about-six-times-oversubscribed-bloomberg-news-reports-5023345"
     }
   ],
   "widget": {
-    "type": "compare",
-    "label": "LangChain’s last two funding rounds",
-    "options": [
+    "type": "stepper",
+    "label": "Anthropic’s raise, commitments and revenue",
+    "items": [
       {
-        "id": "prior",
-        "label": "Previous round",
-        "caption": "About a year ago, led by IVP",
+        "label": "Raising",
+        "name": "What the IPO aims to raise",
+        "caption": "Pricing expected 18 November",
         "stats": [
           {
-            "label": "Amount raised",
-            "value": "$125 million"
+            "label": "Shares offered",
+            "value": "825 million"
           },
           {
-            "label": "Valuation",
-            "value": "$1.25 billion"
+            "label": "Price range",
+            "value": "$70 to $78 a share"
           },
           {
-            "label": "Lead investor",
-            "value": "IVP"
+            "label": "Raise, by Anthropic and some existing shareholders",
+            "value": "Up to $64.4 billion"
+          },
+          {
+            "label": "Private placement alongside (Bloomberg)",
+            "value": "Another $26 billion"
+          },
+          {
+            "label": "Demand (Bloomberg)",
+            "value": "About six times the shares available"
+          },
+          {
+            "label": "Trading",
+            "value": "Expected 19 November on Nasdaq as ANT"
           }
         ]
       },
       {
-        "id": "seriesc",
-        "label": "Series C",
-        "caption": "Announced 13 November 2026",
+        "label": "Promised",
+        "name": "What it has committed to spend",
+        "caption": "Mostly compute and chips, per Bloomberg",
         "stats": [
           {
-            "label": "Amount raised",
-            "value": "$300 million"
+            "label": "Total commitments",
+            "value": "Nearly $901 billion"
           },
           {
-            "label": "Valuation",
-            "value": "$3 billion, more than double the previous round"
+            "label": "Due by September 2027",
+            "value": "About $71 billion"
+          }
+        ]
+      },
+      {
+        "label": "Earning",
+        "name": "What it brings in",
+        "caption": "From Anthropic’s filings",
+        "stats": [
+          {
+            "label": "Annualised revenue run rate, end of October",
+            "value": "$81 billion"
           },
           {
-            "label": "Lead investor",
-            "value": "CapitalG (existing investor)"
-          },
-          {
-            "label": "Organisations using LangSmith",
-            "value": "More than 7,000 (LangChain’s figure)"
-          },
-          {
-            "label": "Workday’s time to deploy a new agent",
-            "value": "From five months to under a day (LangChain’s figure)"
+            "label": "Change from late September",
+            "value": "Up $10 billion"
           }
         ]
       }

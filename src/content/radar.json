@@ -4504,11 +4504,95 @@
       "s": 3,
       "p": "Not announced yet. Early access is offered before the public launch.",
       "st": "watching"
+    },
+    {
+      "n": "Agweb",
+      "w": "https://github.com/paul-nameless/agweb",
+      "c": "Agent Infrastructure",
+      "tl": "A macOS browser for coding agents that never steals focus",
+      "d": "Agweb was posted as a Show HN on 14 November 2026. It is a WebKit browser that agents drive from the shell with a playwright-cli-style command, in one window that never comes to the front. A dashboard shows every agent’s tabs live, each agent gets its own workspace, named profiles share logins, and an ask command hands a tab to you for a login or CAPTCHA. Replies say what each action changed, so agents need fewer snapshots. Idle tabs are suspended, ads are blocked, and secrets can be typed without appearing in the transcript. macOS 26 or later. MIT.",
+      "f": [
+        "Never takes focus",
+        "Live dashboard of every agent’s tabs",
+        "Shared login profiles",
+        "Secrets typed outside the transcript"
+      ],
+      "u": [
+        "Running several browser agents at once",
+        "Agent testing of web apps",
+        "Logged-in research by agents"
+      ],
+      "e": "A quiet browser in the corner that your agents use, while you keep typing elsewhere.",
+      "s": 3,
+      "p": "Free and open source (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "Ryph",
+      "w": "https://github.com/ryph-hq/ryph",
+      "c": "Agent Infrastructure",
+      "tl": "Self-hosted agents that respond to alerts and open hotfix pull requests",
+      "d": "Ryph was posted as a Show HN on 14 November 2026. Alerts from PagerDuty, Sentry, Datadog, Grafana, incident.io, Opsgenie and others start a coding agent in a sandbox on your own infrastructure. The agent reads telemetry through a tool proxy, remembers past incidents, posts findings in your incident chat where people can steer it, and opens a hotfix pull request for review, with safeguards against bad pushes or bypassing code review. It also serves as a team helper bot in Slack, Discord, Telegram or Zulip. Single binary, Docker Compose or Helm chart. Pre-1.0. MIT.",
+      "f": [
+        "Alert-triggered agents",
+        "Runs in sandboxes on your infrastructure",
+        "Reports in incident chat",
+        "Hotfix pull requests with review safeguards"
+      ],
+      "u": [
+        "First-pass incident diagnosis",
+        "A code-aware helper bot in team chat",
+        "Data questions from non-technical staff"
+      ],
+      "e": "An on-call teammate that starts digging the moment the alert fires and hands you a fix to review.",
+      "s": 3,
+      "p": "Free and open source (MIT); you pay your own model costs",
+      "st": "active"
+    },
+    {
+      "n": "SunsetLint",
+      "w": "https://www.sunsetlint.com",
+      "c": "Productivity",
+      "tl": "Finds retiring AI model IDs in your repositories, with file, line and shutdown date",
+      "d": "SunsetLint was posted as a Show HN on 14 November 2026. It is a GitHub App with read-only access that scans repositories against rules for AI model retirements, each with the provider’s shutdown date, recommended replacement and a link to the notice, and checked by a person before it ships. It keeps one rolling issue per repository listing every match by file and line. It does not edit code or open pull requests, and matching is plain rules, so code is never sent to an AI model. Pro adds a scan on every push and pull request checks.",
+      "f": [
+        "File-and-line findings",
+        "Shutdown date and replacement for each match",
+        "One rolling issue per repository",
+        "No code sent to an AI model"
+      ],
+      "u": [
+        "Preparing for a model retirement",
+        "Auditing old scripts and notebooks",
+        "Stopping retired IDs creeping back in"
+      ],
+      "e": "A reminder that points at the exact line still calling a model that is about to switch off.",
+      "s": 3,
+      "p": "Free for public repos and 3 private; Pro $29/month or $290/year per GitHub account",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "14 November 2026",
+    "week": "15 November 2026",
     "launches": [
+      {
+        "name": "Agweb (github.com/paul-nameless/agweb)",
+        "date": "14 November 2026",
+        "desc": "A macOS browser for coding agents, built on WebKit and posted as a Show HN on 14 November. It runs as one window that never takes focus, so agents driving it from the shell with a playwright-cli-style command do not steal your keyboard, and a dashboard shows every agent’s tabs live. Named profiles keep logins shared across agents, a secret-fill command types passwords the agent never sees, idle tabs are suspended, and replies report what each action changed. Needs macOS 26 or later. MIT.",
+        "why": "For people running several coding agents at once on a Mac who are tired of Chrome windows popping up. WebKit only, so Playwright and Chrome extensions cannot attach."
+      },
+      {
+        "name": "Ryph (github.com/ryph-hq/ryph)",
+        "date": "14 November 2026",
+        "desc": "A self-hosted agent orchestrator for teams, posted as a Show HN on 14 November, built around incident response. An alert from tools such as PagerDuty, Sentry, Datadog or Grafana starts a sandboxed agent on your own infrastructure; it reads telemetry through a tool proxy, reports in your incident chat, and opens a hotfix pull request for an engineer to review, with safeguards against bad pushes or skipping code review. It also works as a team helper bot in Slack, Discord, Telegram or Zulip. Single binary, Docker Compose or Helm. MIT.",
+        "why": "For on-call and platform teams that want an agent doing first-pass incident diagnosis inside their own network. The README says it is pre-1.0 and breaking changes are possible."
+      },
+      {
+        "name": "SunsetLint (sunsetlint.com)",
+        "date": "14 November 2026",
+        "desc": "A GitHub App, posted as a Show HN on 14 November, that finds retiring AI model IDs in your code. It scans repositories with read-only access against rules for each provider’s shutdown dates, checked by a person, and keeps one rolling issue per repository listing the file, line, identifier, shutdown date and recommended replacement. Matching is plain rules, and your code is never sent to an AI model. Free covers public repositories and three private ones; Pro is $29 a month per GitHub account and adds pull request checks.",
+        "why": "For teams with model names scattered across services and scripts. Its site’s current example is Claude Sonnet 4.5, which it says Anthropic retires on 30 November 2026."
+      },
       {
         "name": "Harness Tuner (github.com/Kiln-AI/harness-tuner)",
         "date": "13 November 2026",
@@ -4538,27 +4622,15 @@
         "date": "12 November 2026",
         "desc": "An open-source platform for running AI agents, announced by Parcha Labs on 10 November and posted as a Show HN on 12 November. It sits on top of an agent harness such as Claude Code, Codex, OpenCode or pi, and adds learning between runs, where an agent keeps notes, skills or workflows for next time, plus runs that survive a server restart, approvals, spending caps and one console. Agents can get a sandbox, Linux desktop, Android phone or browser. Self-host with one command or use the hosted console. Apache-2.0.",
         "why": "For teams running the same agent jobs repeatedly who want them to get cheaper over time. The README’s own case studies are the maker’s figures; test on your own jobs."
-      },
-      {
-        "name": "Yogurt (github.com/FrigadeHQ/yogurt)",
-        "date": "11 November 2026",
-        "desc": "A free desktop app for AI meeting notes, posted as a Show HN on 11 November, from Frigade. It records your microphone and call audio without adding a bot to the meeting, transcribes it, and writes a summary next to your own notes. Its help page says audio, transcripts, notes and questions are processed on your computer, nothing is uploaded and there is no telemetry. It uses whisper.cpp, or Apple’s on-device speech on a Mac, and a local open-weight model through llama.cpp. A local MCP server, off by default, lets an AI app read your notes. It runs on Mac, Windows and Linux with at least 8 GB of memory, and is MIT.",
-        "why": "For teams that want Granola-style notes but cannot send meeting audio to a cloud service. Note the large model downloads, about 14 GB on a Mac with 64 GB of memory and more on bigger machines, and that calendar and speaker names are Mac-only."
-      },
-      {
-        "name": "klad (github.com/klad-app/klad)",
-        "date": "11 November 2026",
-        "desc": "A 2D painting and animation app you share with a coding agent, posted as a Show HN on 11 November. You paint with a pen in the editor, and the agent paints through the klad command line with the same brushes on the same drawing. There is no image model inside: every stroke and fill stays editable data, so you can fix one leaf instead of rerolling the picture. The README says it runs on macOS with pen pressure, is early, and must be built from source. It is source-available, not open source: free for yourself and for companies under 500,000 euros a year in revenue.",
-        "why": "For game and illustration work where you want an agent to draft art you can then edit stroke by stroke. Check the licence before using it at a larger company."
-      },
-      {
-        "name": "aq (github.com/nodo-labs-uk/attention-queue)",
-        "date": "11 November 2026",
-        "desc": "A terminal tool, posted as a Show HN on 11 November, that watches every Claude Code session running in tmux and puts whatever needs you, a diff to review, an edit to allow, a permission prompt or a question, in one queue shown one card at a time. Each project can have its own mode: vibe with nothing checked, review, step where every edit waits for a yes, or quiz. It connects through Claude Code hooks, and if aq is not running the hooks do nothing. Linux, tmux, Rust, MIT.",
-        "why": "For developers juggling several Claude Code sessions who keep missing the one waiting on them. Use step mode on sensitive code such as payments."
       }
     ],
     "funding": [
+      {
+        "company": "Mirendil",
+        "amount": "$1B Series A",
+        "valuation": "Not disclosed",
+        "context": "Mirendil, 12 November: led by Kleiner Perkins and Clearlake Capital, with Battery Ventures, Doerr Capital, Gil & Co, Google, M13, Pear VC and S32. It builds agents for AI research and says one researcher working with agents pretrained its coding model Mirendil-Base from scratch in 3.5 months with less than $10M in compute. Its Lor platform, which runs hundreds of agents for days at a time, is in private beta."
+      },
       {
         "company": "LangChain",
         "amount": "$300M Series C",
@@ -4606,43 +4678,37 @@
         "amount": "$11B raised so far (round open)",
         "valuation": "$1.25T (Bloomberg, via TechCrunch)",
         "context": "TechCrunch, 6 November, citing Bloomberg and sources familiar: OpenAI has raised $11 billion so far in a round valuing it at $1.25 trillion. The round has not closed, is expected to close in the coming weeks, and could total about $20 billion, a source told Bloomberg. Bloomberg had reported a $30 billion goal in late September. TechCrunch had reached out to OpenAI and had not heard back. Reuters posted the same figures that night, attributed to a source. On 31 October CNBC had confirmed OpenAI was seeking up to $20 billion, citing the Financial Times for the $1.25 trillion post-money figure. Not a closed round, and not a new model."
-      },
-      {
-        "company": "Anthropic (IPO range)",
-        "amount": "IPO: 825M shares at $70–$78",
-        "valuation": "Up to ~$1.4T fully diluted (CNBC, TechCrunch); Reuters first said up to $1.02T",
-        "context": "Anthropic, 10 November: launched the roadshow for its IPO, offering 825,000,000 Class A shares, 801,351,354 by Anthropic and 23,648,646 by existing holders, at $70 to $78, with a 30-day option for underwriters to buy up to 123,750,000 more. It applied to list on Nasdaq as ANT. TechCrunch puts the raise at $57.75 billion to $64.35 billion. CNBC’s sources say pricing on 18 November, trading on 19 November and about 20 percent for retail investors. The registration statement is not yet effective. Earlier: TechCrunch, 9 November, citing the WSJ, had reported the timing."
       }
     ],
     "quotes": [
       {
-        "who": "OpenAI, on ChatGPT Wallet",
-        "text": "Before each purchase, the user reviews the items, total, and selected card, then approves it with a security check such as Face ID or a fingerprint scan.",
-        "source": "OpenAI, 13 November 2026"
+        "who": "Dario Amodei, Anthropic, at a JPMorgan event",
+        "text": "Compute is the deepest business dilemma that the company faces.",
+        "source": "The Decoder, citing Bloomberg, 14 November 2026"
       },
       {
-        "who": "White House AI task force, on cyber incident reporting",
-        "text": "It is clear that the cybersecurity risk environment has changed and organizations that only a short time ago had reasonable protections in place are now more vulnerable.",
-        "source": "Cybersecurity Dive, 13 November 2026"
+        "who": "Ken Sajo, JPCERT/CC, on AI-driven attacks",
+        "text": "…more sophisticated attacks will increase in the future.",
+        "source": "Kyodo News via The Straits Times, 15 November 2026"
       },
       {
-        "who": "Will DePue, Unemployment Labs, on Blackwell fingerprints",
-        "text": "Notably, our findings provide technical evidence of access to advanced computing hardware, but do not establish where the chips were located, how access was obtained, or whether export controls were violated.",
-        "source": "Unemployment Labs, 12 November 2026"
+        "who": "IBM Granite team, on LLMON’s injection resistance",
+        "text": "This is a learned behavior, not an enforced guarantee.",
+        "source": "Hugging Face blog, 12 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Agents get a wallet",
-        "desc": "ChatGPT Wallet lets agents pay with a stand-in card number and a fingerprint check, a day after United moved to block booking agents."
+        "title": "Compute is the constraint",
+        "desc": "Anthropic’s chief executive calls compute his deepest dilemma and buys on the low side, days before an IPO about six times oversubscribed."
       },
       {
-        "title": "Bring the agent in-house",
-        "desc": "Anthropic lets companies host Claude’s agent service themselves, and LangChain raised $300 million on the pitch that companies should own their agents."
+        "title": "Attackers automate too",
+        "desc": "JPCERT/CC counts about 1,000 servers likely running AI-driven attacks, while IBM trains small models to ignore commands hidden in data."
       },
       {
-        "title": "Agents on both sides of security",
-        "desc": "OpenAI’s Daybreak agents attack apps and draft fixes, while Washington asks regulators to go easy on companies that report AI-driven attacks."
+        "title": "Local AI grows up",
+        "desc": "llama.cpp reached 1.0 with a stable interface, making models on your own hardware cheaper to maintain."
       }
     ]
   },
@@ -4652,13 +4718,13 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Fable 5.2 / Mythos 5.2 (Mythos gated) · Opus 5.5 · Sonnet 5.5 · Haiku 5.5",
-        "note": "Fable 5.2 and Mythos 5.2 (9 Nov) are the same model, Mythos without some cyber and biology safeguards and only for verified organizations. $8/$40 per million tokens, down from $10/$50 for 5.1 (VentureBeat), up to 30 percent faster, fast mode $16/$80. Anthropic’s table has Fable 5.2 at 69.9 percent on FrontierSWE v2 and 41.3 percent on the Remote Labor Index, but it recommends starting most work on Opus 5.5. Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged. On 7 Nov The Hacker News reported Apiiro’s finding that 1,122 public copies of Claude Code’s .claude/settings.local.json hold at least one secret, saved by “Yes, and don’t ask again.” LATENT says Boris Cherny of the Claude Code team replied on Hacker News that the team is looking into ways to prevent this. On 8 Nov the FT reported that Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment. Not a new model. On 10 Nov Anthropic added Claude Meetings (Google Meet, beta), Whiteboards and Sheets, made Claude Data generally available, and launched its IPO roadshow at $70–$78 a share. Not a new model. On 12 Nov Anthropic opened a private beta of self-hosted Claude Managed Agents, so companies can run the agent service, its database and sandboxes on their own infrastructure and send model calls to Anthropic, Bedrock, Google Cloud, Foundry or their own gateway. Not a new model."
+        "note": "Fable 5.2 and Mythos 5.2 (9 Nov) are the same model, Mythos without some cyber and biology safeguards and only for verified organizations. $8/$40 per million tokens, down from $10/$50 for 5.1 (VentureBeat), up to 30 percent faster, fast mode $16/$80. Anthropic’s table has Fable 5.2 at 69.9 percent on FrontierSWE v2 and 41.3 percent on the Remote Labor Index, but it recommends starting most work on Opus 5.5. Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged. On 7 Nov The Hacker News reported Apiiro’s finding that 1,122 public copies of Claude Code’s .claude/settings.local.json hold at least one secret, saved by “Yes, and don’t ask again.” LATENT says Boris Cherny of the Claude Code team replied on Hacker News that the team is looking into ways to prevent this. On 8 Nov the FT reported that Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment. Not a new model. On 10 Nov Anthropic added Claude Meetings (Google Meet, beta), Whiteboards and Sheets, made Claude Data generally available, and launched its IPO roadshow at $70–$78 a share. Not a new model. On 12 Nov Anthropic opened a private beta of self-hosted Claude Managed Agents, so companies can run the agent service, its database and sandboxes on their own infrastructure and send model calls to Anthropic, Bedrock, Google Cloud, Foundry or their own gateway. Not a new model. On 13 Nov Dario Amodei told JPMorgan’s Jamie Dimon that compute is the company’s deepest business dilemma and that it buys on the low side, topping up on the spot market. Bloomberg puts commitments near $901 billion, about $71 billion due by September 2027, and reported banks turning away IPO orders from mainland China and Hong Kong. Pricing is expected 18 Nov. Not a new model."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6 Astra · GPT-6 Cyber · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model. On 13 Nov OpenAI confirmed to Fortune it disbanded its stand-alone robotics team, moving researchers under Mark Chen and applied robotics and hardware under Greg Brockman, saying general models including GPT-6 Astra can be applied to robots directly. Fortune cites an Nvidia study with an Astra-powered agent at 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised models. Not a new model."
       },
       {
         "org": "Google DeepMind",
@@ -4737,6 +4803,10 @@
     ]
   },
   "gems": [
+    {
+      "name": "SunsetLint",
+      "why": "Points to the exact file and line still calling an AI model that is about to be retired"
+    },
     {
       "name": "Harness Tuner",
       "why": "Tunes an agent’s tools, prompts and model against your own evals, with a test set it never peeks at"

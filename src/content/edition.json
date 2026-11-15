@@ -1,234 +1,208 @@
 {
-  "number": 50,
-  "edition": "Briefing 50",
-  "date": "14 November 2026",
-  "dateISO": "2026-11-14",
-  "toolsPulseDate": "14 November 2026",
+  "number": 51,
+  "edition": "Briefing 51",
+  "date": "15 November 2026",
+  "dateISO": "2026-11-15",
+  "toolsPulseDate": "15 November 2026",
   "kicker": "Today in AI",
-  "title": "ChatGPT can now pay for things, with a fingerprint check each time. OpenAI puts agents on security testing. Claude’s agent service can run on your own servers. LangChain is worth $3 billion. Washington eases cyber reporting, and Chinese models carry Blackwell fingerprints.",
-  "summary": "OpenAI launched ChatGPT Wallet on 13 November, letting its dots agents complete purchases for a limited group of US ChatGPT Pro subscribers, using a payment token instead of the real card and a Face ID or fingerprint check before every purchase. On 12 November OpenAI announced Daybreak Red Team, agents that test web apps for weaknesses, and Daybreak Defense Factory, agents that turn security findings into patches for engineers to review. Anthropic opened a private beta of self-hosted Claude Managed Agents, so companies can keep the agent service, sandboxes and session history on their own servers. LangChain raised $300 million at a $3 billion valuation. The White House AI task force asked regulators to go easy for at least 12 months on companies that report cyber incidents in good faith. A researcher found the fingerprint of export-controlled Nvidia Blackwell chips in six Chinese open-weight models.",
-  "uncertainty": "ChatGPT Wallet is limited to some US Pro subscribers, and OpenAI has not said when it widens. Daybreak Red Team is early access only, and OpenAI has not published accuracy figures. Self-hosted Managed Agents is a private beta, and some features exist only on Anthropic’s hosted service. LangChain’s customer count is its own. The task force guidance is a recommendation, not a rule, and agencies decide how to apply it. The Blackwell finding is one researcher’s analysis of public weights; it does not show where the chips were or that any law was broken.",
+  "title": "Anthropic’s boss says buying compute is his hardest call, days before the IPO. Japan finds about 1,000 servers behind AI-driven attacks. IBM trains small models to ignore orders hidden in documents. llama.cpp reaches 1.0, and OpenAI folds its robotics team into its main labs.",
+  "summary": "Speaking with JPMorgan’s Jamie Dimon on 13 November, Anthropic chief executive Dario Amodei called compute “the deepest business dilemma” his company faces: it has to be bought a year or two ahead, and Anthropic deliberately buys on the low side and tops up on the spot market. Bloomberg puts its commitments at nearly $901 billion, about $71 billion of it due by September 2027, and says banks have turned away orders for the IPO from mainland China and Hong Kong. On 14 November Kyodo reported that a JPCERT/CC-led investigation found around 1,000 servers likely used as bases for AI-driven cyberattacks since October. IBM released two experimental Granite 4.1 models that mark instructions and data with reserved tokens, and says they resist hidden prompt injections far better than the models it tested. llama.cpp, the open-source engine for running models on your own hardware, reached version 1.0 with a promise not to break its API outside major versions. OpenAI confirmed to Fortune that it has moved its robotics researchers into its main research and applied teams.",
+  "uncertainty": "Amodei’s comments come from a JPMorgan event as reported by Bloomberg and others; the commitment and IPO figures are from Anthropic’s filings as reported, and IPO details can change before pricing. The China and Hong Kong order restrictions come from unnamed people quoted by Bloomberg. The JPCERT/CC findings are from a Kyodo report; the server count is approximate and the report does not say how much of each attack AI carried out. IBM’s injection results are its own, on static benchmarks, and IBM says the models are not for production. OpenAI’s robotics change is from Fortune, confirmed by OpenAI; the 74.8% figure is from a simulation, not real robots.",
   "stats": {
-    "filtered": 6,
-    "verified": 6,
-    "themes": 5
+    "filtered": 5,
+    "verified": 5,
+    "themes": 4
   },
   "stories": [
     {
-      "id": "chatgpt-wallet",
-      "topic": "tools",
-      "theme": "ChatGPT’s agents can now pay for what you ask them to buy, with a fingerprint or Face ID check before every purchase",
-      "changed": "On Friday 13 November 2026 OpenAI launched ChatGPT Wallet, built with American Express, Mastercard and Visa. You add a card once. When your dot, ChatGPT’s personal agent, is ready to buy, you see the items, the total and the card, and approve with a security check such as Face ID or a fingerprint. The card network then issues a payment token, a stand-in card number, so neither the agent nor the shop sees your real card details. OpenAI says each approval leaves a record, and you keep your card’s rewards and its protections for eligible disputes. The shop gets your shipping address and contact details and still handles pricing, returns and customer service. At launch it is only for ChatGPT Pro subscribers in the US, aged 18 or over, with an eligible US-issued card. OpenAI says it later expects to let people set spending limits, categories or time periods so the agent can buy without asking each time. It also published a Commerce Partner Playbook telling shops how to let ChatGPT agents through their firewalls and how to stop risk systems declining agent purchases.",
-      "matters": "Until now most AI shopping help stopped at the checkout page. This is the first time ChatGPT itself can finish the purchase, and the payment networks are part of the design rather than working around it.",
-      "imply": "Do not assume it works at every shop. OpenAI says some sites will block it, and Amazon already bars outside agents. Do not hand over spending authority yet: for now every purchase still needs your approval.",
-      "uses": [
-        "If you run an online shop, read OpenAI’s playbook and check whether your firewall or fraud tool is blocking signed ChatGPT agent requests.",
-        "If you have Pro in the US, try a small, low-risk reorder first and check the approval screen and the record it leaves.",
-        "Finance teams: decide now whether staff may use agent payments on company cards, before limits and pre-approval arrive."
-      ],
-      "example": "A small online tea shop finds that its bot-blocking setting rejects ChatGPT agents at checkout. It allows signed agent requests, as the playbook explains, and asks its payment provider how agent orders will be scored for fraud.",
-      "audience": "Online retailers, payments and fraud teams, and US ChatGPT Pro subscribers.",
-      "watch": "When it reaches Plus or other countries. Whether big retailers allow or block it. When spending limits and pre-approved purchases arrive.",
-      "source": {
-        "title": "OpenAI: Introducing ChatGPT Wallet, 13 November 2026",
-        "url": "https://openai.com/index/introducing-chatgpt-wallet/",
-        "quote": "Before each purchase, the user reviews the items, total, and selected card, then approves it with a security check such as Face ID or a fingerprint scan."
-      }
-    },
-    {
-      "id": "daybreak-security-agents",
-      "topic": "trust",
-      "theme": "OpenAI now sells agents that attack your web apps to find weaknesses, and agents that write the patches",
-      "changed": "At its Cyber at the Frontier event on Thursday 12 November 2026 OpenAI announced two security products under its Daybreak programme. Daybreak Red Team puts a team of AI agents to work testing web applications. They use the source code and app context to look for ways in, check reports from code scanners, bug bounties and disclosures, and test whether a fix actually stops the exploit. OpenAI says they run in isolated environments, and that you control which apps and endpoints they can reach. Daybreak Defense Factory takes findings from Red Team or from tools such as Wiz, Snyk and Endor Labs, traces each one through your code and prepares a patch. Engineers review and test each patch, can adjust it with Codex, and can open a draft GitHub pull request; SecurityWeek reports patches are not deployed automatically. Red Team is early access by request. Defense Factory is a preview plugin in ChatGPT for workspaces with Daybreak access, which OpenAI grants only after checking who you are and how you plan to use it.",
-      "matters": "Security teams have long backlogs of findings nobody has time to fix. OpenAI is now selling agents for both halves of that work, finding real problems and drafting the fixes.",
-      "imply": "Do not point an attacking agent at anything you do not own or have written permission to test. Do not merge an AI patch without the same review you give a person’s. OpenAI says engineers must review them.",
-      "uses": [
-        "Feed last quarter’s unresolved scanner findings into Defense Factory and compare its patches with what your team would write.",
-        "Use Red Team to check whether a bug bounty report is real before you pay or fix it.",
-        "After a fix, rerun the same attack to confirm the hole is closed."
-      ],
-      "example": "A security lead imports 40 open Snyk findings into Defense Factory. Engineers review the draft pull requests, merge the ones that pass tests, and send the rest back with notes.",
-      "audience": "Security teams, application developers and companies with a backlog of security findings.",
-      "watch": "Prices and general availability. Independent results on how many findings are real and how many patches hold. Who gets approved for Daybreak access.",
-      "source": {
-        "title": "OpenAI: Daybreak Defense Factory, 12 November 2026",
-        "url": "https://openai.com/daybreak/defense-factory/",
-        "quote": "Agents trace vulnerabilities through your code and develop patches. Engineers review and test proposed patches before merge."
-      }
-    },
-    {
-      "id": "claude-self-hosted-agents",
-      "topic": "tools",
-      "theme": "Companies can now run Claude’s agent service on their own servers and keep every session’s history there",
-      "changed": "On Thursday 12 November 2026 Anthropic opened a private beta of self-hosted Claude Managed Agents. Managed Agents is Anthropic’s service for running Claude as an agent that uses tools, works on files and keeps a history of each session. Until now, companies could host only the sandboxes where the agent’s tools run. Now they can also host the service itself: the server that runs the agent loop and its PostgreSQL database of agents, sessions and session history, in their own cloud account or data centre. Model calls can go to Anthropic or to Amazon Bedrock, Claude on Google Cloud, Microsoft Foundry or the company’s own gateway. Anthropic’s documentation says it has no remote access to the server or its log. The model itself still runs outside, so prompts go out and answers come back. Access is through your Anthropic account team. You run, secure and update the server yourself, and some features exist only on the hosted version.",
-      "matters": "Banks, hospitals and governments that could not let session history leave their own systems now have a way to use Claude agents.",
-      "imply": "Do not read self-hosted as offline. Claude still runs at Anthropic or your chosen cloud. Do not run the development Docker setup on a machine with anything to protect. Anthropic says it is not for production.",
-      "uses": [
-        "If data rules blocked Claude agents, ask your account team for the beta and take Anthropic’s data-and-access page to your security review.",
-        "Keep using your existing Bedrock or Google Cloud contract by pointing the server’s model calls there.",
-        "Check the list of hosted-only features before you promise a team anything."
-      ],
-      "example": "A bank’s platform team runs the server and its database inside its own cloud account, sends model calls through Bedrock, and shows auditors that every agent session is stored on bank systems.",
-      "audience": "Platform, security and compliance teams in regulated companies.",
-      "watch": "When it leaves private beta. Which hosted features come to the self-hosted version. Whether OpenAI and Google offer the same.",
-      "source": {
-        "title": "Claude Docs: Self-hosted Claude Managed Agents",
-        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
-        "quote": "Self-hosted Claude Managed Agents is Managed Agents on your own infrastructure, which can be a cloud account or an on-premise data center."
-      }
-    },
-    {
-      "id": "langchain-series-c",
+      "id": "anthropic-compute-dilemma",
       "topic": "money",
-      "theme": "LangChain raised $300 million at a $3 billion valuation, betting companies want agents that are not tied to one AI lab",
-      "changed": "On Friday 13 November 2026 LangChain said it had raised a $300 million Series C at a $3 billion valuation, led by existing investor CapitalG, with new investors GIC and DFJ Growth and existing investors IVP and Sapphire Ventures. TechCrunch says that is more than double the $1.25 billion valuation of its $125 million round about a year ago. LangChain started in 2022 as an open-source toolkit for building on language models. It now sells LangSmith, a platform to run, test, monitor and govern agents that works with any model or cloud. LangChain says more than 7,000 organisations use it, including Harvey, Rippling, Nvidia, Toyota and Salesforce. It says Workday cut the time to deploy a new agent from five months to under a day. It plans to show new LangSmith features on 20 November.",
-      "matters": "Investors are paying for the layer between companies and the AI labs. The pitch is that you can swap models without rebuilding your agents.",
-      "imply": "Do not treat model choice as permanent. Keep your agent’s tests and logs where you can rerun them on a new model. Customer counts and the Workday figure are LangChain’s own.",
+      "theme": "Anthropic’s chief executive says buying compute is the company’s hardest call, and that it deliberately buys on the low side",
+      "changed": "On Friday 13 November 2026, at a JPMorgan Chase investor event in New York, Anthropic chief executive Dario Amodei told JPMorgan’s Jamie Dimon that “compute is the deepest business dilemma that the company faces.” Compute has to be bought one to two years ahead, before anyone knows whether revenue will justify it. Buy too little and Anthropic cannot serve customers or build new technology; buy too much and “you can financially overextend yourself.” He said Anthropic buys relatively little up front and turns to the spot market for more if business goes better than expected, and compared that to buying insurance. Bloomberg puts Anthropic’s commitments at nearly $901 billion, mostly compute and chips, with about $71 billion due by September 2027. The IPO aims to raise up to $64.4 billion by selling 825 million shares at $70 to $78, with trading expected on Nasdaq on 19 November under the symbol ANT. Bloomberg also reported the offering was about six times oversubscribed, and that several banks have refused or discouraged orders from institutional investors in mainland China and Hong Kong, partly citing US arms-export rules (ITAR).",
+      "matters": "The maker of Claude is telling investors, in plain words, that its capacity is planned on the cautious side. If demand runs ahead of that plan, customers feel it first as limits and slowdowns.",
+      "imply": "Do not assume any single AI provider can always give you more capacity on demand. Do not read strong IPO demand as a verdict on whether the compute bet pays off. Amodei himself says nobody knows yet.",
       "uses": [
-        "If you build agents on one lab’s tools, list what you would have to rebuild to switch models.",
-        "Use LangSmith’s tracing or a similar tool to keep a record of what your agent did on real tasks.",
-        "Set a model budget and fallback in an LLM gateway before costs grow."
+        "List which of your workflows depend on one model provider, and test a fallback model for the most important one.",
+        "Ask your Anthropic account team what capacity and rate limits your contract guarantees, in writing.",
+        "If you budget for AI, plan for prices and limits to move as providers balance compute against revenue."
       ],
-      "example": "A product team runs the same 100 support cases through its agent on two models in LangSmith, compares scores and cost, and switches the cheaper one in without changing the agent code.",
-      "audience": "Engineering leaders, platform teams and anyone choosing an agent stack.",
-      "watch": "What LangChain shows on 20 November. Whether model makers’ own agent platforms squeeze it.",
+      "example": "A support team that runs every ticket through Claude sets up a second provider for overflow, so a rate limit on a busy Monday slows replies instead of stopping them.",
+      "audience": "Teams that depend on Claude or any single AI provider, finance and procurement leads, and investors watching the IPO.",
+      "watch": "The final IPO price, expected 18 November, and first trading on 19 November. Any change to Claude rate limits or plans after the listing.",
       "source": {
-        "title": "TechCrunch: AI agent startup LangChain hits $3B valuation, 13 November 2026",
-        "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
-        "quote": "That’s more than double its $1.25 billion valuation when it raised $125 million about a year ago, led by IVP."
+        "title": "The Decoder: Anthropic CEO Amodei admits “there’s a huge uncertainty in what’s going to happen next year” days before a record IPO, 14 November 2026",
+        "url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/",
+        "quote": "Speaking with JPMorgan CEO Jamie Dimon, he said, \"Compute is the deepest business dilemma that the company faces.\""
       }
     },
     {
-      "id": "cyber-reporting-relief",
-      "topic": "rules",
-      "theme": "The White House AI task force asked regulators not to punish companies for at least 12 months when they report cyber incidents in good faith",
-      "changed": "After its second meeting on Thursday 12 November 2026, the Trump administration’s AI task force said AI has made organisations more vulnerable to cyberattacks and that old standards for punishing companies after an incident may be outdated. It asked federal agencies to limit regulatory liability for good-faith voluntary reporting of cyber weaknesses and incidents, where that is lawful, practical and consistent with public health and safety. It said this flexibility should last at least 12 months, with possible extension. Cybersecurity Dive reports officials also discussed a voluntary process for companies to report AI-related incidents, with the government sharing what it learns, and that the task force backed renewing the 2015 Cybersecurity Information Sharing Act. The guidance is a recommendation; it does not change any law by itself.",
-      "matters": "Companies often hide or delay incident reports for fear of fines. If agencies follow this, telling regulators early gets less risky.",
-      "imply": "Do not read it as an amnesty. It covers good-faith reporting, is not binding, and each agency decides how to apply it. Existing reporting deadlines still apply.",
+      "id": "jpcert-ai-attack-servers",
+      "topic": "trust",
+      "theme": "A Japanese-led investigation found about 1,000 servers that appear to be bases for AI-driven cyberattacks on websites worldwide",
+      "changed": "On Saturday 14 November 2026 Kyodo News reported the results of an international investigation led by JPCERT/CC, Japan’s computer emergency response centre, working with overseas security firms. It found around 1,000 servers suspected of serving as bases for AI-driven cyberattacks, online since October. JPCERT/CC began investigating in early October and is tracking 600 to 700 of them. Most hosted AI-powered platforms such as the penetration-testing tool Artex, and appeared to be searching for weaknesses and trying to steal configuration files. One server held traces of an AI programming tool from Anthropic. Some held tools for taking apart smartphone apps and testing for weaknesses, and investigators believe attackers studied apps and then tried to break in through the interfaces those apps use to talk to outside systems. In October the Asahi Shimbun had reported that JPCERT/CC found files generated by Claude Code on attacker servers used against Japanese companies. JPCERT/CC analyst Ken Sajo warned that AI use in attacks is still early and that “more sophisticated attacks will increase in the future.”",
+      "matters": "Finding weak spots used to take skill and time. Automated, AI-driven scanning across hundreds of servers means small companies get probed as thoroughly as large ones.",
+      "imply": "Do not treat this as a Japan-only problem. The report says the servers targeted websites worldwide. Do not over-read the Anthropic trace either. The report does not say how much of the work AI did.",
       "uses": [
-        "Ask legal and security to agree who decides, within hours, whether to report an AI-related incident voluntarily.",
-        "Write down what makes a report good faith in your plan: speed, honesty, what you share.",
-        "Watch for your regulator’s own guidance before relying on this."
+        "List the APIs your mobile app talks to and check each one requires proper login and rate limits.",
+        "Search your web servers for configuration files, such as .env files, that anyone can download.",
+        "Ask your hosting or security provider whether it blocks automated vulnerability scanning."
       ],
-      "example": "A regional utility finds an AI-driven attack probing its billing system. Its incident plan already names who reports it, so it tells its regulator the same day.",
-      "audience": "Security, legal and compliance teams at US companies, especially in critical infrastructure.",
-      "watch": "Which agencies adopt it. Whether the 2015 information-sharing law is renewed. What the voluntary AI incident process looks like.",
+      "example": "A retailer’s developer pulls apart its own Android app, finds an old API address still answering without a login, and switches it off the same afternoon.",
+      "audience": "Security and IT teams, developers of web and mobile apps, and small businesses with public websites.",
+      "watch": "Whether JPCERT/CC publishes a technical report with indicators to block. Whether AI tool makers respond to their tools showing up on attack servers.",
       "source": {
-        "title": "Cybersecurity Dive: White House task force says companies deserve liability relief for AI-fueled cyberattacks, 13 November 2026",
-        "url": "https://www.cybersecuritydive.com/news/ai-white-house-task-force-cybersecurity-regulation/874679/",
-        "quote": "It is clear that the cybersecurity risk environment has changed and organizations that only a short time ago had reasonable protections in place are now more vulnerable."
+        "title": "The Straits Times (Kyodo News): Japan-led probe finds 1,000 servers likely used for AI-driven cyberattacks, 15 November 2026",
+        "url": "https://www.straitstimes.com/asia/east-asia/japan-led-probe-finds-1000-servers-likely-used-for-ai-driven-cyberattacks",
+        "quote": "The probe by the Japan Computer Emergency Response Team Coordination Centre (JPCERT/CC), conducted in cooperation with overseas cybersecurity firms, found that the servers may have used AI to search for vulnerabilities and target websites worldwide."
       }
     },
     {
-      "id": "china-blackwell-fingerprints",
-      "topic": "rules",
-      "theme": "A researcher found the fingerprint of export-controlled Nvidia Blackwell chips in six Chinese open-weight models",
-      "changed": "On 12 November 2026 Will DePue of the research group Unemployment Labs published an analysis of public model weights. When a model’s starting values are generated, the pattern depends on how many processing units the chip has, and parts of that pattern survive training. He says six models released since April 2026 match Nvidia Blackwell chips: DeepSeek-V4-Flash and V4-Pro, Kimi K3 and K3.1-Pro from Moonshot AI, MiniMax-M3 and Ant Group’s Ling-3.1-flash. Earlier models from the same labs match the older Hopper generation. Blackwell chips need a US licence for export to China, and none has been reported. He says the method agreed with all 24 cases where a developer had publicly named its hardware. The report says this shows access to the chips, not where they were or how they were obtained, and not that export rules were broken. TechCrunch notes the chips could have been in an offshore data centre. Newer models from Alibaba, Zhipu, Tencent, Xiaomi and StepFun read as Hopper.",
-      "matters": "Several of the open models companies use come from these labs. The finding adds pressure on US chip rules and on Nvidia, days after its chief executive resigned.",
-      "imply": "Do not treat this as proof of smuggling. The report says it is not. Do not drop an open model on this alone, but do check whether your compliance rules say anything about model origin.",
+      "id": "ibm-granite-llmon",
+      "topic": "trust",
+      "theme": "IBM released small Granite models trained to obey only marked instructions and to ignore commands hidden in documents",
+      "changed": "On 12 November 2026 IBM released two experimental preview models, Granite 4.1 3B and 8B LLMON, with a toolkit on GitHub. LLMON, short for LLM Object Notation and pronounced “lemon”, is a markup in which each part of a prompt (an instruction, a piece of data, a requirement) sits in its own tagged block. The block edges are special tokens reserved in the model’s vocabulary, so text inside a document cannot pretend to be an instruction. A final block states which instruction to run, on which data. This targets indirect prompt injection, where an attacker hides a command in an email, web page or tool result. On the OPI benchmark IBM says the LLMON models avoided 47% more attacks than the best frontier model it tested and 95% more than the best open model, with similar results on two other benchmarks, and general ability on par with Granite 4.1 Instruct. You name the parts of a message and the bundled chat template does the rest; converters turn JSON into LLMON and back. IBM calls it a preview for exploration, not production, says the benchmarks test static attacks, and is still working on attacks that unfold over many turns.",
+      "matters": "Prompt injection is the main reason companies hesitate to let AI read outside email or web pages and then act. A model that tells instructions from data by design, rather than by a warning in its prompt, is a different kind of defence.",
+      "imply": "Do not drop your other safeguards. IBM says the resistance is learned, not guaranteed, and multi-turn attacks are untested. Do not put the preview into production.",
       "uses": [
-        "List which open-weight models you run in production and who made them.",
-        "Ask your legal team whether customer or government contracts restrict models from particular countries.",
-        "Track whether US rules start covering who uses chips, not only who buys them."
+        "Run your own collection of injection attacks against the 8B preview and your current model, and compare.",
+        "Try it on a narrow job such as summarising inbound emails, where hidden instructions are a real risk.",
+        "Mark which parts of your existing prompts are instructions and which are data. It helps with any model."
       ],
-      "example": "A software firm selling to US agencies checks its stack, finds a DeepSeek model in an internal tool, and asks legal whether its contracts allow it.",
-      "audience": "Compliance and procurement teams, and companies running Chinese open-weight models.",
-      "watch": "Any response from the labs, Nvidia or the US Commerce Department. Whether other researchers reproduce the result.",
+      "example": "An IT team feeds 200 phishing emails containing hidden instructions to the 8B preview and to its current summariser, and counts how often each one follows the planted command.",
+      "audience": "Security teams, developers building agents that read untrusted content, and companies that want small models on their own servers.",
+      "watch": "Results against adaptive, multi-turn attacks. Whether IBM or others bring the approach to larger, production models.",
       "source": {
-        "title": "Unemployment Labs: Top Chinese Frontier AI Models Carry the Fingerprint of Export-Controlled NVIDIA Blackwell GPUs, 12 November 2026",
-        "url": "https://unemploymentlabs.com/checkpoint-forensics",
-        "quote": "Notably, our findings provide technical evidence of access to advanced computing hardware, but do not establish where the chips were located, how access was obtained, or whether export controls were violated."
+        "title": "Hugging Face (IBM Granite): LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B, 12 November 2026",
+        "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+        "quote": "This is a learned behavior, not an enforced guarantee."
+      }
+    },
+    {
+      "id": "llama-cpp-v1",
+      "topic": "tools",
+      "theme": "llama.cpp, the engine for running AI models on your own hardware, reached version 1.0 with a promise not to break apps without warning",
+      "changed": "On Friday 13 November 2026 the ggml-org team at Hugging Face released llama.cpp v1.0.0 and ggml v1.0.0, three and a half years after the project began. llama.cpp lets people run language models, including ones that read images, on everything from laptops to servers. From now on the version number carries a promise: a major version (2.0) signals a breaking change to the public programming interface, a minor version adds backward-compatible features, hardware backends or model support, and a patch only fixes bugs. The team says it supports more than 150 model architecture variants and all mainstream speculative decoding methods. It is distributed through Docker, Debian, Homebrew, conda-forge, MacPorts, Winget and an Apple XCFramework, with builds for Linux, macOS, Windows, Android and iOS. Nvidia, AMD, Qualcomm, Arm, IBM and Intel provide hardware for its test machines.",
+      "matters": "Many local AI apps are built on llama.cpp. A stable interface makes running models on your own hardware cheaper to maintain, which matters for teams that cannot send data to the cloud.",
+      "imply": "Do not expect 1.0 to make a model smarter or faster on its own. It is a stability promise. If your app uses older functions, check the release notes before upgrading.",
+      "uses": [
+        "If your product embeds llama.cpp, pin it to the 1.x line and plan upgrades around major versions only.",
+        "Install it through your usual package manager (Homebrew, Winget, Docker) instead of building from source.",
+        "Re-test a private, on-device AI use case you had shelved because the tooling kept changing."
+      ],
+      "example": "A law firm’s IT team installs llama.cpp through Winget on a few staff laptops to summarise documents offline, knowing a routine update will not break their setup.",
+      "audience": "Developers of local and on-device AI apps, IT teams with data that must stay in-house, and hobbyists.",
+      "watch": "How quickly downstream apps move to 1.x. What the first 1.x minor releases add.",
+      "source": {
+        "title": "Hugging Face (ggml-org): llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem, 13 November 2026",
+        "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+        "quote": "Moving forward, both llama.cpp and ggml will reflect API and ABI incompatibilities with major-version bumps."
+      }
+    },
+    {
+      "id": "openai-robotics-reorg",
+      "topic": "work",
+      "theme": "OpenAI broke up its stand-alone robotics team, betting its general models can run robots directly",
+      "changed": "On Friday 13 November 2026 OpenAI confirmed to Fortune that it has disbanded its stand-alone robotics team. Robotics researchers now sit in the main research organisation under chief research officer Mark Chen, and the applied robotics and hardware teams moved to the Applied organisation under president Greg Brockman. The change was recent enough that OpenAI’s booth at the CoRL robotics conference in Austin sat empty. A spokesperson said robotics remains a core part of OpenAI’s long-term vision and that this is the fastest way to general-purpose robots. OpenAI said that at the start of the year it expected progress to come from video models like Sora, but that general models including GPT-6 Astra have shown they can be applied to robots directly. Fortune cites an Nvidia study where an Astra-powered agent scored 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised robot models. Fortune also notes OpenAI is under pressure to cut costs, with a reported $10.9 billion operating loss last quarter. Sam Altman still targets a first public humanoid demonstration in 2027.",
+      "matters": "If general models can drive robots, the same AI that writes your emails could run machines in a warehouse. That challenges robotics startups that raised money on the idea that robots need their own specialised brains.",
+      "imply": "Do not read a simulation score as factory readiness. Experts quoted by Fortune say small on-robot models are still needed, and that real deployment data stays valuable.",
+      "uses": [
+        "If you are piloting robots, ask the vendor whether its edge is its own model or the data from real sites.",
+        "Keep data from your own robots and machines. Better general models make site-specific data more useful.",
+        "Treat 2027 humanoid timelines as a target, not a delivery date, in any planning."
+      ],
+      "example": "A logistics manager weighing two picking-robot vendors asks each how its robots learn from her warehouse, and who owns that data if she switches.",
+      "audience": "Operations and manufacturing leaders, robotics investors, and teams piloting robots.",
+      "watch": "OpenAI’s planned 2027 humanoid demonstration. Whether other labs fold robotics into general model teams.",
+      "source": {
+        "title": "Fortune: OpenAI disbands stand-alone robotics team as general AI models start running robots, 13 November 2026",
+        "url": "https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/",
+        "quote": "A company spokesperson said that robotics remains a core part of OpenAI’s long-term vision and portrayed the reorganization as a sign of the company’s commitment to robotics, rather than a retreat from it."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "ChatGPT pays for you",
-        "body": "ChatGPT Wallet lets dots agents buy for some US Pro users, with Face ID or a fingerprint check each time."
+        "title": "Compute is the hard call",
+        "body": "Amodei told Jamie Dimon buying compute is Anthropic’s deepest dilemma. It buys low and tops up on the spot market."
       },
       {
-        "title": "Claude on your servers",
-        "body": "Anthropic’s private beta lets companies host Claude’s agent service and session history themselves."
+        "title": "1,000 attack servers",
+        "body": "A JPCERT/CC-led probe found about 1,000 servers likely used for AI-driven attacks since October."
       },
       {
-        "title": "Agents test your apps",
-        "body": "OpenAI’s Daybreak Red Team attacks web apps for weaknesses; Defense Factory drafts patches for review."
+        "title": "Robots join the main lab",
+        "body": "OpenAI moved its robotics researchers into its main research and applied teams, betting on general models."
       }
     ],
     "matters": [
       {
-        "title": "$3B for LangChain",
-        "body": "LangChain raised $300M at a $3B valuation, more than double a year ago. 7,000+ organisations use LangSmith."
+        "title": "Instructions vs data",
+        "body": "IBM’s LLMON previews mark instructions with reserved tokens to resist hidden prompt injections. Not for production."
       },
       {
-        "title": "Report without fear",
-        "body": "The White House AI task force asked agencies to ease penalties for good-faith cyber reports for 12 months."
+        "title": "llama.cpp hits 1.0",
+        "body": "The local AI engine now promises breaking changes only in major versions, so on-device apps get cheaper to maintain."
       },
       {
-        "title": "Blackwell in the weights",
-        "body": "A researcher found Blackwell chip fingerprints in six Chinese open models. It does not prove smuggling."
+        "title": "$901B in commitments",
+        "body": "Bloomberg puts Anthropic’s commitments near $901B, about $71B due by September 2027. The IPO seeks up to $64.4B."
       }
     ],
     "watch": [
       {
-        "title": "Shops that block agents",
-        "body": "OpenAI says some sites will block Wallet. Check your own firewall before customers find out."
+        "title": "Anthropic prices, 18 Nov",
+        "body": "Pricing is expected 18 November at $70–$78 a share, with Nasdaq trading as ANT on 19 November."
       },
       {
-        "title": "LangSmith, 20 Nov",
-        "body": "LangChain plans to show new LangSmith features on 20 November."
+        "title": "Check your public APIs",
+        "body": "Attackers studied mobile apps, then probed the APIs behind them. List yours and make sure each needs a login."
       },
       {
-        "title": "Review every AI patch",
-        "body": "Defense Factory drafts fixes, but engineers still decide what merges. Keep the same review bar."
+        "title": "Multi-turn injection",
+        "body": "IBM has not yet tested LLMON against attacks spread over many turns. Keep your other safeguards on."
       }
     ]
   },
   "chips": [
-    "ChatGPT Wallet",
-    "OpenAI dots",
-    "Agentic commerce",
-    "Daybreak",
-    "OpenAI security",
-    "Claude Managed Agents",
-    "Self-hosted AI",
-    "LangChain",
-    "LangSmith",
-    "Cyber incident reporting",
-    "Export controls",
-    "Nvidia Blackwell"
+    "Anthropic IPO",
+    "Compute",
+    "Claude",
+    "JPCERT/CC",
+    "AI cyberattacks",
+    "Prompt injection",
+    "IBM Granite",
+    "LLMON",
+    "llama.cpp",
+    "Local AI",
+    "OpenAI robotics",
+    "GPT-6 Astra"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "OpenAI, 13 Nov: ChatGPT Wallet in dots for US ChatGPT Pro, 18+, eligible US cards; Amex, Mastercard, Visa; payment token, Face ID/fingerprint per purchase; Commerce Partner Playbook; future spending limits. Not a new model.",
-      "topic": "Tools"
+      "raw": "JPMorgan event, 13 Nov: Amodei to Dimon, compute is 'the deepest business dilemma'; buys low, spot market as insurance. Bloomberg: ~$901B commitments, ~$71B due by Sept 2027; IPO up to $64.4B, 825M shares at $70–$78, ~6x oversubscribed; China/HK orders rebuffed citing ITAR. Not a new model.",
+      "topic": "Money"
     },
     {
       "id": "s2",
-      "raw": "OpenAI, 12 Nov (Cyber at the Frontier): Daybreak Red Team (agent pentesting, early access) and Daybreak Defense Factory (patches for review; Wiz, Snyk, Endor Labs; draft GitHub PRs; preview plugin). Not a new model.",
+      "raw": "Kyodo, 14 Nov: JPCERT/CC-led probe finds ~1,000 servers likely used for AI-driven attacks since October, 600–700 tracked; Artex; trace of an Anthropic programming tool on one server.",
       "topic": "Trust"
     },
     {
       "id": "s3",
-      "raw": "Anthropic, 12 Nov: self-hosted Claude Managed Agents private beta; server, PostgreSQL 16+, workers on your infra; inference via Claude API, Bedrock, Google Cloud, Foundry or gateway. Not a new model.",
-      "topic": "Tools"
+      "raw": "IBM, 12 Nov: granite-4.1-3b/8b-LLMON-preview; reserved-token instruction/data markup; OPI: 47% more attacks avoided than best frontier model tested, 95% more than best open model; preview, not production.",
+      "topic": "Trust"
     },
     {
       "id": "s4",
-      "raw": "LangChain, 13 Nov: $300M Series C at $3B, led by CapitalG with GIC, DFJ Growth, IVP, Sapphire; prior $125M at $1.25B (TechCrunch); 7,000+ LangSmith organisations; event 20 Nov. Not a new model.",
-      "topic": "Money"
+      "raw": "ggml-org, 13 Nov: llama.cpp v1.0.0 and ggml v1.0.0; semantic versioning on the public C API; 150+ architecture variants; packages for Docker, Debian, Homebrew, conda-forge, MacPorts, Winget, XCFramework.",
+      "topic": "Tools"
     },
     {
       "id": "s5",
-      "raw": "White House AI task force, 12 Nov meeting: agencies should limit regulatory liability for good-faith voluntary cyber reporting for at least 12 months; supports CISA 2015 reauthorization. Recommendation only.",
-      "topic": "Rules"
-    },
-    {
-      "id": "s6",
-      "raw": "Unemployment Labs (Will DePue), 12 Nov: Blackwell init fingerprints in DeepSeek-V4-Flash/Pro, Kimi K3/K3.1-Pro, MiniMax-M3, Ling-3.1-flash; 24/24 known cases agree; no finding on location or violation. Not a new model.",
-      "topic": "Rules"
+      "raw": "Fortune, 13 Nov: OpenAI disbands stand-alone robotics team; research to Mark Chen, applied robotics and hardware to Greg Brockman; Astra 74.8% vs 51.0% on a simulated manipulation benchmark (Nvidia study). Not a new model.",
+      "topic": "Work"
     }
   ]
 }

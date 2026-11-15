@@ -1,5 +1,32 @@
 [
   {
+    "name": "FORTUNE",
+    "handle": "FortuneMagazine",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1754630276116811776/N3_onOyu_normal.jpg",
+    "text": "OpenAI has reorganized its stand-alone robotics team, moving its researchers onto other teams.\n\nThe company confirmed the reorganization when asked about it by Fortune. A company spokesperson said that robotics remains a core part of OpenAI’s long-term vision and portrayed the reorganization as a sign of the company’s commitment to robotics, rather than a retreat from it. https://t.co/NiLUIoue4m",
+    "url": "https://x.com/FortuneMagazine/status/2121377279846539332",
+    "postedAt": "2026-11-13T22:58:51.000Z",
+    "take": "OpenAI is betting its general models can run robots. A simulation score is not a factory floor."
+  },
+  {
+    "name": "Business Insider",
+    "handle": "BusinessInsider",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1724403357094141952/g5KVAmVz_normal.jpg",
+    "text": "Anthropic CEO Dario Amodei outlines AI compute as the startup's \"deepest business dilemma\" as it races toward a $1.4 trillion IPO with billions locked into chips. https://t.co/Ht53ZUC1zV",
+    "url": "https://x.com/BusinessInsider/status/2121318832278995012",
+    "postedAt": "2026-11-13T19:06:36.000Z",
+    "take": "Anthropic plans its capacity on the cautious side. If you rely on Claude, have a fallback ready."
+  },
+  {
+    "name": "Georgi Gerganov",
+    "handle": "ggerganov",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "text": "llama.cpp v1.0.0 is now available\n\nhttps://t.co/twQwJkH8kE",
+    "url": "https://x.com/ggerganov/status/2121246103312212124",
+    "postedAt": "2026-11-13T14:17:36.000Z",
+    "take": "The engine behind many local AI apps now promises not to break them outside major versions."
+  },
+  {
     "name": "The Verge",
     "handle": "verge",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1569656103528448000/d0BzVIPL_normal.jpg",
