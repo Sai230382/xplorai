@@ -1,68 +1,80 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "langchain-series-c",
+  "storyId": "qwen4-max",
   "kicker": "Play with today’s story",
-  "title": "LangChain a year ago and today: what the new round changed",
-  "intro": "Switch between LangChain’s previous funding round, about a year ago, and the round it announced on 13 November. Each side shows only the figures TechCrunch and LangChain published.",
-  "note": "The round sizes and valuations are from TechCrunch, which describes the earlier round only as about a year ago. The customer count and Workday figure are LangChain’s own and have not been checked independently. TechCrunch did not give a customer count for the earlier round, so that side is left blank rather than filled in.",
+  "title": "Qwen4-Max against the model it replaces: list prices, and what Alibaba says one task now costs",
+  "intro": "Switch between Qwen3.8-Max and Qwen4-Max. Each side shows Alibaba’s list prices from its own model pages and the figures from its own Work360 test.",
+  "note": "Prices are Alibaba’s standard pay-as-you-go list prices on QwenCloud, read on 16 November 2026, before batch discounts. The Work360 score and cost per task are from Alibaba’s own benchmark, published in its launch post, and have not been checked independently. Your real cost depends on how many tokens your tasks use.",
   "sources": [
     {
-      "label": "TechCrunch: AI agent startup LangChain hits $3B valuation, 13 November 2026",
-      "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/"
+      "label": "Qwen team: Qwen4-Max: Your New Teammate Has Arrived",
+      "url": "https://qwen.ai/blog?id=qwen4-max"
     },
     {
-      "label": "LangChain: LangChain Raises $300M to Enable Every Company to Own Its Intelligence, 13 November 2026",
-      "url": "https://www.langchain.com/blog/series-c"
+      "label": "QwenCloud: Qwen4-Max model page (pricing)",
+      "url": "https://www.qwencloud.com/models/qwen4-max"
+    },
+    {
+      "label": "QwenCloud: Qwen3.8-Max model page (pricing)",
+      "url": "https://www.qwencloud.com/models/qwen3.8-max"
     }
   ],
   "widget": {
     "type": "compare",
-    "label": "LangChain’s last two funding rounds",
+    "label": "Qwen3.8-Max or Qwen4-Max",
     "options": [
       {
-        "id": "prior",
-        "label": "Previous round",
-        "caption": "About a year ago, led by IVP",
+        "id": "qwen38",
+        "label": "Qwen3.8-Max",
+        "caption": "The previous flagship",
         "stats": [
           {
-            "label": "Amount raised",
-            "value": "$125 million"
+            "label": "Input, per million tokens",
+            "value": "$2"
           },
           {
-            "label": "Valuation",
-            "value": "$1.25 billion"
+            "label": "Output, per million tokens",
+            "value": "$6"
           },
           {
-            "label": "Lead investor",
-            "value": "IVP"
+            "label": "Cached input, per million tokens",
+            "value": "$0.25"
+          },
+          {
+            "label": "Work360 score (Alibaba’s test)",
+            "value": "47.74"
+          },
+          {
+            "label": "Average cost per Work360 task",
+            "value": "$4.43"
           }
         ]
       },
       {
-        "id": "seriesc",
-        "label": "Series C",
-        "caption": "Announced 13 November 2026",
+        "id": "qwen4",
+        "label": "Qwen4-Max",
+        "caption": "Launched 16 November",
         "stats": [
           {
-            "label": "Amount raised",
-            "value": "$300 million"
+            "label": "Input, per million tokens",
+            "value": "$1.50"
           },
           {
-            "label": "Valuation",
-            "value": "$3 billion, more than double the previous round"
+            "label": "Output, per million tokens",
+            "value": "$4.50"
           },
           {
-            "label": "Lead investor",
-            "value": "CapitalG (existing investor)"
+            "label": "Cached input, per million tokens",
+            "value": "$0.075"
           },
           {
-            "label": "Organisations using LangSmith",
-            "value": "More than 7,000 (LangChain’s figure)"
+            "label": "Work360 score (Alibaba’s test)",
+            "value": "52.69"
           },
           {
-            "label": "Workday’s time to deploy a new agent",
-            "value": "From five months to under a day (LangChain’s figure)"
+            "label": "Average cost per Work360 task",
+            "value": "$1.67"
           }
         ]
       }

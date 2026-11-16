@@ -1,234 +1,235 @@
 {
-  "number": 50,
-  "edition": "Briefing 50",
-  "date": "14 November 2026",
-  "dateISO": "2026-11-14",
-  "toolsPulseDate": "14 November 2026",
+  "number": 52,
+  "edition": "Briefing 52",
+  "date": "16 November 2026",
+  "dateISO": "2026-11-16",
+  "toolsPulseDate": "16 November 2026",
   "kicker": "Today in AI",
-  "title": "ChatGPT can now pay for things, with a fingerprint check each time. OpenAI puts agents on security testing. Claude’s agent service can run on your own servers. LangChain is worth $3 billion. Washington eases cyber reporting, and Chinese models carry Blackwell fingerprints.",
-  "summary": "OpenAI launched ChatGPT Wallet on 13 November, letting its dots agents complete purchases for a limited group of US ChatGPT Pro subscribers, using a payment token instead of the real card and a Face ID or fingerprint check before every purchase. On 12 November OpenAI announced Daybreak Red Team, agents that test web apps for weaknesses, and Daybreak Defense Factory, agents that turn security findings into patches for engineers to review. Anthropic opened a private beta of self-hosted Claude Managed Agents, so companies can keep the agent service, sandboxes and session history on their own servers. LangChain raised $300 million at a $3 billion valuation. The White House AI task force asked regulators to go easy for at least 12 months on companies that report cyber incidents in good faith. A researcher found the fingerprint of export-controlled Nvidia Blackwell chips in six Chinese open-weight models.",
-  "uncertainty": "ChatGPT Wallet is limited to some US Pro subscribers, and OpenAI has not said when it widens. Daybreak Red Team is early access only, and OpenAI has not published accuracy figures. Self-hosted Managed Agents is a private beta, and some features exist only on Anthropic’s hosted service. LangChain’s customer count is its own. The task force guidance is a recommendation, not a rule, and agencies decide how to apply it. The Blackwell finding is one researcher’s analysis of public weights; it does not show where the chips were or that any law was broken.",
+  "title": "Alibaba launches Qwen4-Max at a lower price than the model it replaces. The Fed names AI the top risk to the financial system. Gemini can now read your bank accounts, Amazon plans a catalogue of nearly everything sold online, Apple starts a health AI study, and Meituan publishes a 1.6-trillion-parameter model trained without Nvidia chips.",
+  "summary": "Alibaba released Qwen4-Max on 16 November, its new flagship, at $1.50 per million input tokens and $4.50 per million output tokens, below the $2 and $6 it charges for Qwen3.8-Max. The weights are not public. The Federal Reserve’s Financial Stability Report, published on 13 November, says debt issued to fund advanced computing passed $680 billion by October, and Reuters reports that 87% of the market contacts surveyed named AI as a risk. Google now lets US Gemini app users connect Google Wallet and, through Plaid, their bank and card accounts, with read-only access. Reuters saw an internal Amazon document describing a World Product Graph, a catalogue of nearly every product for sale anywhere, built partly to deal with AI shopping agents. Apple opened a study app with OpenEvidence that answers everyday health questions for up to 200,000 people. Meituan published the weights of LongCat-2.5, a 1.6-trillion-parameter agent model it says was trained entirely on Chinese chips.",
+  "uncertainty": "Qwen4-Max’s benchmark scores and its cost-per-task figures come from Alibaba’s own tests; prices are from Alibaba’s model pages as read on 16 November. The Fed figures come from its report, which mostly reflects data as of 28 October; the 87% figure and the $3 trillion estimate are as reported by Reuters. Amazon’s World Product Graph comes from an internal document seen by Reuters; Amazon calls it a brainstorming document that may not reflect its current plans. LongCat-2.5’s benchmark scores are Meituan’s own, and its comparison table does not include the newest US models. Apple’s study terms are as described by TechCrunch and Apple.",
   "stats": {
     "filtered": 6,
     "verified": 6,
-    "themes": 5
+    "themes": 4
   },
   "stories": [
     {
-      "id": "chatgpt-wallet",
+      "id": "qwen4-max",
       "topic": "tools",
-      "theme": "ChatGPT’s agents can now pay for what you ask them to buy, with a fingerprint or Face ID check before every purchase",
-      "changed": "On Friday 13 November 2026 OpenAI launched ChatGPT Wallet, built with American Express, Mastercard and Visa. You add a card once. When your dot, ChatGPT’s personal agent, is ready to buy, you see the items, the total and the card, and approve with a security check such as Face ID or a fingerprint. The card network then issues a payment token, a stand-in card number, so neither the agent nor the shop sees your real card details. OpenAI says each approval leaves a record, and you keep your card’s rewards and its protections for eligible disputes. The shop gets your shipping address and contact details and still handles pricing, returns and customer service. At launch it is only for ChatGPT Pro subscribers in the US, aged 18 or over, with an eligible US-issued card. OpenAI says it later expects to let people set spending limits, categories or time periods so the agent can buy without asking each time. It also published a Commerce Partner Playbook telling shops how to let ChatGPT agents through their firewalls and how to stop risk systems declining agent purchases.",
-      "matters": "Until now most AI shopping help stopped at the checkout page. This is the first time ChatGPT itself can finish the purchase, and the payment networks are part of the design rather than working around it.",
-      "imply": "Do not assume it works at every shop. OpenAI says some sites will block it, and Amazon already bars outside agents. Do not hand over spending authority yet: for now every purchase still needs your approval.",
+      "theme": "Alibaba launched Qwen4-Max, a closed flagship model priced below the one it replaces",
+      "changed": "On Monday 16 November 2026 Alibaba’s Qwen team launched Qwen4-Max, its new flagship model, built on a new mixture-of-experts design with native vision and a context window of one million tokens. It reads text, images and video and writes text, and its API works with code written for OpenAI or Anthropic. Alibaba’s model page lists $1.50 per million input tokens and $4.50 per million output tokens, against $2 and $6 for Qwen3.8-Max, with cached input at $0.075 instead of $0.25. Alibaba says Qwen4-Max beats Qwen3.8-Max while using up to about half as many tokens, and that on its own Work360 test the average cost of a task fell by more than 60%. Bloomberg reports Alibaba claims it outperformed Anthropic’s Claude Fable 5.1 and Moonshot’s Kimi K3.1 Pro on coding tests. Unlike many Qwen models, this one is not open weight: you can only use it through Alibaba’s cloud, Qwen Studio, QwenWork or the Qoder coding tool. Alibaba says smaller Qwen4 models will be released with open weights.",
+      "matters": "A flagship model at $4.50 per million output tokens puts more pressure on the prices US labs charge, especially for long agent runs where output tokens add up.",
+      "imply": "Do not treat Alibaba’s benchmark wins as settled. They are its own tests, and on some of them Qwen4-Max trails US models. Do not assume you can self-host it. Check where your data is processed before sending anything sensitive.",
       "uses": [
-        "If you run an online shop, read OpenAI’s playbook and check whether your firewall or fraud tool is blocking signed ChatGPT agent requests.",
-        "If you have Pro in the US, try a small, low-risk reorder first and check the approval screen and the record it leaves.",
-        "Finance teams: decide now whether staff may use agent payments on company cards, before limits and pre-approval arrive."
+        "Run one of your real, repeatable tasks on Qwen4-Max and on your current model, and compare the total cost of the whole task, not the price per token.",
+        "If your code already calls OpenAI or Anthropic, point a test copy at Qwen4-Max’s compatible API to try it without a rewrite.",
+        "Ask your legal or security team which regions and data rules apply before any customer data goes to a new provider."
       ],
-      "example": "A small online tea shop finds that its bot-blocking setting rejects ChatGPT agents at checkout. It allows signed agent requests, as the playbook explains, and asks its payment provider how agent orders will be scored for fraud.",
-      "audience": "Online retailers, payments and fraud teams, and US ChatGPT Pro subscribers.",
-      "watch": "When it reaches Plus or other countries. Whether big retailers allow or block it. When spending limits and pre-approved purchases arrive.",
+      "example": "A marketing agency that drafts hundreds of product descriptions a week runs the same 50 briefs through Qwen4-Max and its current model, then compares quality and the bill.",
+      "audience": "Developers and teams comparing model costs, companies running long agent tasks, and anyone watching Chinese AI labs.",
+      "watch": "Independent benchmark results. When the smaller open-weight Qwen4 models arrive, and under which licence.",
       "source": {
-        "title": "OpenAI: Introducing ChatGPT Wallet, 13 November 2026",
-        "url": "https://openai.com/index/introducing-chatgpt-wallet/",
-        "quote": "Before each purchase, the user reviews the items, total, and selected card, then approves it with a security check such as Face ID or a fingerprint scan."
+        "title": "The Straits Times (Bloomberg): Alibaba unveils new flagship AI model in riposte to US rivals, 16 November 2026",
+        "url": "https://www.straitstimes.com/business/alibaba-unveils-new-flagship-ai-model-in-riposte-to-us-rivals",
+        "quote": "Alibaba did not make the model open weight, which would allow users to download and customise it, but said it would make smaller versions of the series available soon."
       }
     },
     {
-      "id": "daybreak-security-agents",
-      "topic": "trust",
-      "theme": "OpenAI now sells agents that attack your web apps to find weaknesses, and agents that write the patches",
-      "changed": "At its Cyber at the Frontier event on Thursday 12 November 2026 OpenAI announced two security products under its Daybreak programme. Daybreak Red Team puts a team of AI agents to work testing web applications. They use the source code and app context to look for ways in, check reports from code scanners, bug bounties and disclosures, and test whether a fix actually stops the exploit. OpenAI says they run in isolated environments, and that you control which apps and endpoints they can reach. Daybreak Defense Factory takes findings from Red Team or from tools such as Wiz, Snyk and Endor Labs, traces each one through your code and prepares a patch. Engineers review and test each patch, can adjust it with Codex, and can open a draft GitHub pull request; SecurityWeek reports patches are not deployed automatically. Red Team is early access by request. Defense Factory is a preview plugin in ChatGPT for workspaces with Daybreak access, which OpenAI grants only after checking who you are and how you plan to use it.",
-      "matters": "Security teams have long backlogs of findings nobody has time to fix. OpenAI is now selling agents for both halves of that work, finding real problems and drafting the fixes.",
-      "imply": "Do not point an attacking agent at anything you do not own or have written permission to test. Do not merge an AI patch without the same review you give a person’s. OpenAI says engineers must review them.",
-      "uses": [
-        "Feed last quarter’s unresolved scanner findings into Defense Factory and compare its patches with what your team would write.",
-        "Use Red Team to check whether a bug bounty report is real before you pay or fix it.",
-        "After a fix, rerun the same attack to confirm the hole is closed."
-      ],
-      "example": "A security lead imports 40 open Snyk findings into Defense Factory. Engineers review the draft pull requests, merge the ones that pass tests, and send the rest back with notes.",
-      "audience": "Security teams, application developers and companies with a backlog of security findings.",
-      "watch": "Prices and general availability. Independent results on how many findings are real and how many patches hold. Who gets approved for Daybreak access.",
-      "source": {
-        "title": "OpenAI: Daybreak Defense Factory, 12 November 2026",
-        "url": "https://openai.com/daybreak/defense-factory/",
-        "quote": "Agents trace vulnerabilities through your code and develop patches. Engineers review and test proposed patches before merge."
-      }
-    },
-    {
-      "id": "claude-self-hosted-agents",
-      "topic": "tools",
-      "theme": "Companies can now run Claude’s agent service on their own servers and keep every session’s history there",
-      "changed": "On Thursday 12 November 2026 Anthropic opened a private beta of self-hosted Claude Managed Agents. Managed Agents is Anthropic’s service for running Claude as an agent that uses tools, works on files and keeps a history of each session. Until now, companies could host only the sandboxes where the agent’s tools run. Now they can also host the service itself: the server that runs the agent loop and its PostgreSQL database of agents, sessions and session history, in their own cloud account or data centre. Model calls can go to Anthropic or to Amazon Bedrock, Claude on Google Cloud, Microsoft Foundry or the company’s own gateway. Anthropic’s documentation says it has no remote access to the server or its log. The model itself still runs outside, so prompts go out and answers come back. Access is through your Anthropic account team. You run, secure and update the server yourself, and some features exist only on the hosted version.",
-      "matters": "Banks, hospitals and governments that could not let session history leave their own systems now have a way to use Claude agents.",
-      "imply": "Do not read self-hosted as offline. Claude still runs at Anthropic or your chosen cloud. Do not run the development Docker setup on a machine with anything to protect. Anthropic says it is not for production.",
-      "uses": [
-        "If data rules blocked Claude agents, ask your account team for the beta and take Anthropic’s data-and-access page to your security review.",
-        "Keep using your existing Bedrock or Google Cloud contract by pointing the server’s model calls there.",
-        "Check the list of hosted-only features before you promise a team anything."
-      ],
-      "example": "A bank’s platform team runs the server and its database inside its own cloud account, sends model calls through Bedrock, and shows auditors that every agent session is stored on bank systems.",
-      "audience": "Platform, security and compliance teams in regulated companies.",
-      "watch": "When it leaves private beta. Which hosted features come to the self-hosted version. Whether OpenAI and Google offer the same.",
-      "source": {
-        "title": "Claude Docs: Self-hosted Claude Managed Agents",
-        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
-        "quote": "Self-hosted Claude Managed Agents is Managed Agents on your own infrastructure, which can be a cloud account or an on-premise data center."
-      }
-    },
-    {
-      "id": "langchain-series-c",
+      "id": "fed-ai-debt-risk",
       "topic": "money",
-      "theme": "LangChain raised $300 million at a $3 billion valuation, betting companies want agents that are not tied to one AI lab",
-      "changed": "On Friday 13 November 2026 LangChain said it had raised a $300 million Series C at a $3 billion valuation, led by existing investor CapitalG, with new investors GIC and DFJ Growth and existing investors IVP and Sapphire Ventures. TechCrunch says that is more than double the $1.25 billion valuation of its $125 million round about a year ago. LangChain started in 2022 as an open-source toolkit for building on language models. It now sells LangSmith, a platform to run, test, monitor and govern agents that works with any model or cloud. LangChain says more than 7,000 organisations use it, including Harvey, Rippling, Nvidia, Toyota and Salesforce. It says Workday cut the time to deploy a new agent from five months to under a day. It plans to show new LangSmith features on 20 November.",
-      "matters": "Investors are paying for the layer between companies and the AI labs. The pitch is that you can swap models without rebuilding your agents.",
-      "imply": "Do not treat model choice as permanent. Keep your agent’s tests and logs where you can rerun them on a new model. Customer counts and the Workday figure are LangChain’s own.",
+      "theme": "The Federal Reserve named AI the most-cited risk to US financial stability and flagged fast-growing debt behind data centres",
+      "changed": "On Friday 13 November 2026 the US Federal Reserve published its twice-yearly Financial Stability Report. In a survey of 23 market contacts taken in September and October, AI was the most-cited risk, with worries about high share prices, AI-enabled cyberattacks and complex AI-related financing. Reuters reports that 87% of contacts named AI, up from 50% in May. The report says debt issued to fund advanced computing rose to more than $680 billion by October 2026, about five times the $130 billion issued in all of 2023, and that this borrowing grew from less than 6% of investment-grade corporate debt issued by non-financial companies in 2023 to about 31% in 2026. It estimates outstanding public debt tied to advanced computing at more than $1.1 trillion. Large tech firms are also adding leases and guarantees that do not show up as debt on their balance sheets, and Reuters says the Fed found debt, guarantees and leases not yet started could exceed $3 trillion. The largest US banks have close to $1 trillion of exposure to big tech firms, data centre developers and related vehicles.",
+      "matters": "The cheap AI you build on is increasingly paid for with borrowed money. If the build-out slows, prices, capacity and vendor stability could all shift at once.",
+      "imply": "Do not read this as a forecast of a crash. The Fed says the large firms may be able to absorb losses. Do not ignore it either: it says their exposure may be much larger than their balance sheets show.",
       "uses": [
-        "If you build agents on one lab’s tools, list what you would have to rebuild to switch models.",
-        "Use LangSmith’s tracing or a similar tool to keep a record of what your agent did on real tasks.",
-        "Set a model budget and fallback in an LLM gateway before costs grow."
+        "List the AI vendors your business depends on, and note which are large, profitable companies and which rely on outside funding.",
+        "Write down what you would do if one AI provider raised prices sharply or cut capacity, and test the cheapest fallback.",
+        "If you invest or lend, ask how much of a data centre deal rests on leases or guarantees from one big tech firm."
       ],
-      "example": "A product team runs the same 100 support cases through its agent on two models in LangSmith, compares scores and cost, and switches the cheaper one in without changing the agent code.",
-      "audience": "Engineering leaders, platform teams and anyone choosing an agent stack.",
-      "watch": "What LangChain shows on 20 November. Whether model makers’ own agent platforms squeeze it.",
+      "example": "A finance lead at a software company adds a line to the quarterly risk review: which AI providers we use, how each is funded, and our switch-over plan.",
+      "audience": "Finance and risk teams, procurement leads, investors, and companies that depend on one AI provider.",
+      "watch": "Whether bank supervisors ask for more detail on data centre lending. How the Anthropic IPO and Nvidia’s results this week land with investors.",
       "source": {
-        "title": "TechCrunch: AI agent startup LangChain hits $3B valuation, 13 November 2026",
-        "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
-        "quote": "That’s more than double its $1.25 billion valuation when it raised $125 million about a year ago, led by IVP."
+        "title": "Federal Reserve Board: Financial Stability Report, November 2026, published 13 November 2026",
+        "url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf",
+        "quote": "The complex interlinkages among firms engaged in the data center buildout, public credit markets, private lenders, and special purpose financing vehicles create vulnerabilities that necessitate close monitoring."
       }
     },
     {
-      "id": "cyber-reporting-relief",
-      "topic": "rules",
-      "theme": "The White House AI task force asked regulators not to punish companies for at least 12 months when they report cyber incidents in good faith",
-      "changed": "After its second meeting on Thursday 12 November 2026, the Trump administration’s AI task force said AI has made organisations more vulnerable to cyberattacks and that old standards for punishing companies after an incident may be outdated. It asked federal agencies to limit regulatory liability for good-faith voluntary reporting of cyber weaknesses and incidents, where that is lawful, practical and consistent with public health and safety. It said this flexibility should last at least 12 months, with possible extension. Cybersecurity Dive reports officials also discussed a voluntary process for companies to report AI-related incidents, with the government sharing what it learns, and that the task force backed renewing the 2015 Cybersecurity Information Sharing Act. The guidance is a recommendation; it does not change any law by itself.",
-      "matters": "Companies often hide or delay incident reports for fear of fines. If agencies follow this, telling regulators early gets less risky.",
-      "imply": "Do not read it as an amnesty. It covers good-faith reporting, is not binding, and each agency decides how to apply it. Existing reporting deadlines still apply.",
+      "id": "gemini-google-wallet",
+      "topic": "trust",
+      "theme": "Gemini can now read your spending through Google Wallet and linked bank accounts, without being able to move money",
+      "changed": "On 13 November 2026 Google began rolling out Google Wallet as a connected app in Gemini for all US Gemini app users, as part of Personal Intelligence. You can also link bank, credit card, loan and investment accounts to Wallet through Plaid. Gemini then answers questions about your own money: it can chart last quarter’s spending, find subscriptions you still pay for and flag price rises, or suggest a holiday budget from last year’s gifts and travel. Google says Gemini can only read the information; it cannot move, manage or invest money, and you can switch the connection off at any time. Google’s help page says you must be 18 or over and in the US, signed in with a personal Google Account (not a work or school one), with Keep Activity turned on. For now it works in English only, and not in Gems or Gemini Live. Google also added Memory Summary, a page where you can see and edit what Gemini remembers about you.",
+      "matters": "Banking data is among the most sensitive data people have. Read-only access lowers the risk of an AI mistake costing money, but your transactions still flow to Google and Plaid.",
+      "imply": "Do not confuse read-only with private. Google’s help page says Plaid and Google both store account and transaction data while an account is linked. Check Gemini’s budget numbers against your bank before acting on them.",
       "uses": [
-        "Ask legal and security to agree who decides, within hours, whether to report an AI-related incident voluntarily.",
-        "Write down what makes a report good faith in your plan: speed, honesty, what you share.",
-        "Watch for your regulator’s own guidance before relying on this."
+        "Ask Gemini to list every recurring charge from the past year and flag the ones that went up.",
+        "Before linking, read what Plaid and Google store, and decide which accounts you actually need connected.",
+        "After trying it, open Memory Summary and remove anything you do not want Gemini to keep."
       ],
-      "example": "A regional utility finds an AI-driven attack probing its billing system. Its incident plan already names who reports it, so it tells its regulator the same day.",
-      "audience": "Security, legal and compliance teams at US companies, especially in critical infrastructure.",
-      "watch": "Which agencies adopt it. Whether the 2015 information-sharing law is renewed. What the voluntary AI incident process looks like.",
+      "example": "A freelancer links one business card, asks Gemini which software subscriptions rose in price this year, and cancels two she no longer uses.",
+      "audience": "US consumers and freelancers, personal finance teams at banks and fintechs, and privacy officers.",
+      "watch": "Whether Google extends this to work accounts or other countries. Whether any assistant moves from reading accounts to making payments.",
       "source": {
-        "title": "Cybersecurity Dive: White House task force says companies deserve liability relief for AI-fueled cyberattacks, 13 November 2026",
-        "url": "https://www.cybersecuritydive.com/news/ai-white-house-task-force-cybersecurity-regulation/874679/",
-        "quote": "It is clear that the cybersecurity risk environment has changed and organizations that only a short time ago had reasonable protections in place are now more vulnerable."
+        "title": "Google: Connect Google Wallet to Gemini for personal finance insights, 13 November 2026",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app/",
+        "quote": "Gemini can only read information from your accounts; it can’t move, manage, or invest your money."
       }
     },
     {
-      "id": "china-blackwell-fingerprints",
-      "topic": "rules",
-      "theme": "A researcher found the fingerprint of export-controlled Nvidia Blackwell chips in six Chinese open-weight models",
-      "changed": "On 12 November 2026 Will DePue of the research group Unemployment Labs published an analysis of public model weights. When a model’s starting values are generated, the pattern depends on how many processing units the chip has, and parts of that pattern survive training. He says six models released since April 2026 match Nvidia Blackwell chips: DeepSeek-V4-Flash and V4-Pro, Kimi K3 and K3.1-Pro from Moonshot AI, MiniMax-M3 and Ant Group’s Ling-3.1-flash. Earlier models from the same labs match the older Hopper generation. Blackwell chips need a US licence for export to China, and none has been reported. He says the method agreed with all 24 cases where a developer had publicly named its hardware. The report says this shows access to the chips, not where they were or how they were obtained, and not that export rules were broken. TechCrunch notes the chips could have been in an offshore data centre. Newer models from Alibaba, Zhipu, Tencent, Xiaomi and StepFun read as Hopper.",
-      "matters": "Several of the open models companies use come from these labs. The finding adds pressure on US chip rules and on Nvidia, days after its chief executive resigned.",
-      "imply": "Do not treat this as proof of smuggling. The report says it is not. Do not drop an open model on this alone, but do check whether your compliance rules say anything about model origin.",
+      "id": "amazon-world-product-graph",
+      "topic": "work",
+      "theme": "An internal Amazon document describes a catalogue of nearly every product for sale anywhere, partly to deal with AI shopping agents",
+      "changed": "On 13 November 2026 Reuters reported on an internal Amazon document for a project called World Product Graph, which aims to gather data on virtually every item for sale on Earth, whether Amazon stocks it or not. Some brands and retailers would send product data to Amazon; Amazon would also crawl other retailers’ websites. The document says Coca-Cola and Bayer have signed up to contribute data, and that Amazon held a trial summit with Procter & Gamble. It also says many answers from Amazon’s AI shopping assistant, Rufus (now called Alexa for Shopping), are factually wrong or incomplete, and that its roughly 83 million weekly searches are expensive to run; better data would let Amazon use cheaper models. People familiar with the plan told Reuters it is also meant to make AI shopping agents rely on Amazon’s data. The document lists an aspirational release date of 1 October 2027. Amazon told Reuters the document is an outdated brainstorm that may not reflect current plans, that its usage figures are outdated, and that Alexa for Shopping is roughly 97% accurate globally.",
+      "matters": "As AI agents start doing the shopping, whoever holds the best product data decides what gets recommended. For brands, accurate product data becomes as important as the shop window.",
+      "imply": "Do not treat this as a launched product. It is an internal plan that Amazon says may change. Do not assume an AI shopping answer is correct either; Amazon’s own document says many were not.",
       "uses": [
-        "List which open-weight models you run in production and who made them.",
-        "Ask your legal team whether customer or government contracts restrict models from particular countries.",
-        "Track whether US rules start covering who uses chips, not only who buys them."
+        "Check that your product names, sizes, versions and compatibility details are complete and consistent on your own site and every marketplace.",
+        "Ask two or three AI assistants about your own products and note what they get wrong.",
+        "If you sell through Amazon, ask your account manager what product data it will want from brands."
       ],
-      "example": "A software firm selling to US agencies checks its stack, finds a DeepSeek model in an internal tool, and asks legal whether its contracts allow it.",
-      "audience": "Compliance and procurement teams, and companies running Chinese open-weight models.",
-      "watch": "Any response from the labs, Nvidia or the US Commerce Department. Whether other researchers reproduce the result.",
+      "example": "A small appliance maker asks three AI assistants which of its vacuum models is newest, finds two give an old model, and fixes the dates on its product pages.",
+      "audience": "Brands and retailers, e-commerce and marketing teams, and builders of AI shopping agents.",
+      "watch": "Whether Amazon confirms the project. How it gets permission to crawl rival sites, and how it treats agents such as Meta’s Muse, which it blocked in September.",
       "source": {
-        "title": "Unemployment Labs: Top Chinese Frontier AI Models Carry the Fingerprint of Export-Controlled NVIDIA Blackwell GPUs, 12 November 2026",
-        "url": "https://unemploymentlabs.com/checkpoint-forensics",
-        "quote": "Notably, our findings provide technical evidence of access to advanced computing hardware, but do not establish where the chips were located, how access was obtained, or whether export controls were violated."
+        "title": "CNA (Reuters): Exclusive: Amazon’s plan to own the world’s product data and fight AI shopping agents, 13 November 2026",
+        "url": "https://www.channelnewsasia.com/business/exclusive-amazons-plan-own-worlds-product-data-and-fight-ai-shopping-agents-6549286",
+        "quote": "“Many Rufus answers are factually wrong or incomplete, but customers lack expertise to detect these errors,” the document states."
+      }
+    },
+    {
+      "id": "apple-health-ai-study",
+      "topic": "trust",
+      "theme": "Apple opened a research app that answers everyday health questions from medical journals and asks people to rate the answers",
+      "changed": "On Sunday 15 November 2026 Apple launched a study app with OpenEvidence, a medical AI company, to learn how people use AI for health. It is open to US users aged 21 or over with an iPhone 15 or later, iOS 26 or later and Apple Intelligence turned on, and Apple aims to enrol up to 200,000 people for more than 12 months. Participants ask health questions and get simplified answers grounded in clinical sources including The New England Journal of Medicine, the Journal of the American Medical Association and Nature. They rate the answers and take monthly surveys. They can share HealthKit data such as resting heart rate, activity, sleep or lab results for more personal answers, and the app can help them prepare for a doctor’s visit or point them to a provider for worrying symptoms. Apple says the data is anonymised before it goes to a third-party cloud provider and will not be used to train AI models, and that OpenEvidence deletes questions and answers after 24 hours. It is not clear whether the feature will reach the Health app or Siri.",
+      "matters": "People already ask chatbots about their health at huge scale. Apple is testing, with consent and rules on data, whether answers tied to medical journals help more than general chatbots.",
+      "imply": "Do not treat the app as a doctor. It is a research study, and Apple says it will guide people to providers for concerning issues. Do not assume the feature will ship in iPhones; Apple has not said so.",
+      "uses": [
+        "If you build health tools, compare how your answers cite their sources against an app that names the journals it draws on.",
+        "If you are eligible and curious, read the consent terms, including the 24-hour deletion, before you join.",
+        "Write down your questions with the app’s help before a doctor’s appointment, then check them with the doctor."
+      ],
+      "example": "A participant with a new blood test result asks what the values mean, gets a short answer with sources, and takes a list of three questions to her doctor.",
+      "audience": "Health and wellness product teams, clinicians, privacy officers, and iPhone users in the US.",
+      "watch": "Whether Apple publishes results from the study. Whether grounded health answers come to the Health app or Siri.",
+      "source": {
+        "title": "TechCrunch: Apple launches new app to study how people use AI for health, 15 November 2026",
+        "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+        "quote": "Apple specified that the data will be anonymized before sending it to a secure third-party cloud provider, and it won’t be used to train any kind of AI models."
+      }
+    },
+    {
+      "id": "meituan-longcat-25",
+      "topic": "tools",
+      "theme": "Meituan published the weights of LongCat-2.5, a 1.6-trillion-parameter agent model it says was trained entirely on Chinese chips",
+      "changed": "On Sunday 15 November 2026 the LongCat team at Meituan, the Chinese food delivery company, published the weights of LongCat-2.5 on Hugging Face under the MIT licence, a week after unveiling it. It is a mixture-of-experts model with 1.6 trillion parameters, about 48 billion of them active for each token, built for agents that work through long, multi-step tasks, especially coding. It reads text, images and video and writes text; through the API it handles up to one million tokens and writes up to 128,000. Meituan reports 88.4 on Terminal Bench v2.1, against 89.1 for Claude Opus 5 in its table, and 38.5 on the harder Terminal Bench v4.0, against 53.9 for Opus 5. The table does not include the newest US models. Meituan also offers a 4-bit version, and its self-hosting guide describes a cluster of 194 Huawei Ascend chips, with no guidance for Nvidia GPUs. The API accepts OpenAI and Anthropic formats and works with agent tools such as Claude Code and Codex.",
+      "matters": "A near-frontier open model trained and served on Chinese hardware shows US chip export limits have not stopped Chinese labs. For buyers, it is another MIT-licensed option that can be run on your own servers.",
+      "imply": "Do not plan to run it on a laptop. The full checkpoint is huge and the documented setup needs a large Ascend cluster. Do not compare it with Opus 5.5 or GPT-6.1 Sol from this table; they are not in it.",
+      "uses": [
+        "Try LongCat-2.5 through its API or chat site on a coding task you already have a good answer for.",
+        "If you need an open model you control, add it to your shortlist alongside Kimi K3.1 Pro and GLM-5.3, and compare licences.",
+        "Ask your hosting provider whether it plans to offer it, since self-hosting needs specialised hardware."
+      ],
+      "example": "A platform team tests LongCat-2.5 on ten bug-fix tickets their current agent already solved, through its Anthropic-compatible API, before deciding whether to look at hosting.",
+      "audience": "AI platform teams, companies that need open-weight models, and people tracking China’s chip independence.",
+      "watch": "Independent benchmark runs. Whether cloud providers outside China start serving it, and on which chips.",
+      "source": {
+        "title": "Hugging Face (Meituan LongCat): LongCat-2.5 model card, 15 November 2026",
+        "url": "https://huggingface.co/meituan-longcat/LongCat-2.5",
+        "quote": "Long-sequence training, large-scale RL, multi-teacher learning, and infrastructure optimizations on domestic AI accelerators underpin these capabilities."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "ChatGPT pays for you",
-        "body": "ChatGPT Wallet lets dots agents buy for some US Pro users, with Face ID or a fingerprint check each time."
+        "title": "Qwen4-Max is here",
+        "body": "Alibaba’s new flagship costs $1.50/$4.50 per million tokens, below Qwen3.8-Max. The weights are not public."
       },
       {
-        "title": "Claude on your servers",
-        "body": "Anthropic’s private beta lets companies host Claude’s agent service and session history themselves."
+        "title": "The Fed’s top risk: AI",
+        "body": "Debt to fund AI computing passed $680B by October, about five times all of 2023, the Fed says."
       },
       {
-        "title": "Agents test your apps",
-        "body": "OpenAI’s Daybreak Red Team attacks web apps for weaknesses; Defense Factory drafts patches for review."
+        "title": "Gemini reads your bank",
+        "body": "US Gemini users can link Google Wallet and bank accounts via Plaid. Gemini can read, not move, money."
       }
     ],
     "matters": [
       {
-        "title": "$3B for LangChain",
-        "body": "LangChain raised $300M at a $3B valuation, more than double a year ago. 7,000+ organisations use LangSmith."
+        "title": "A catalogue of everything",
+        "body": "An internal Amazon plan seen by Reuters would gather data on nearly every product sold, partly to face AI agents."
       },
       {
-        "title": "Report without fear",
-        "body": "The White House AI task force asked agencies to ease penalties for good-faith cyber reports for 12 months."
+        "title": "Health answers, with sources",
+        "body": "Apple’s study app answers health questions from medical journals for up to 200,000 people, and asks for ratings."
       },
       {
-        "title": "Blackwell in the weights",
-        "body": "A researcher found Blackwell chip fingerprints in six Chinese open models. It does not prove smuggling."
+        "title": "1.6T, no Nvidia",
+        "body": "Meituan’s MIT-licensed LongCat-2.5 was trained on Chinese chips. Its self-hosting guide uses 194 Huawei chips."
       }
     ],
     "watch": [
       {
-        "title": "Shops that block agents",
-        "body": "OpenAI says some sites will block Wallet. Check your own firewall before customers find out."
+        "title": "Test the whole task",
+        "body": "Compare Qwen4-Max on the full cost of a real task, not the price per token. Its benchmarks are Alibaba’s own."
       },
       {
-        "title": "LangSmith, 20 Nov",
-        "body": "LangChain plans to show new LangSmith features on 20 November."
+        "title": "Know your AI vendors",
+        "body": "List who you depend on and how each is funded. Keep a cheaper fallback tested."
       },
       {
-        "title": "Review every AI patch",
-        "body": "Defense Factory drafts fixes, but engineers still decide what merges. Keep the same review bar."
+        "title": "Fix your product data",
+        "body": "Ask AI assistants about your products and correct what they get wrong on your own pages."
       }
     ]
   },
   "chips": [
-    "ChatGPT Wallet",
-    "OpenAI dots",
-    "Agentic commerce",
-    "Daybreak",
-    "OpenAI security",
-    "Claude Managed Agents",
-    "Self-hosted AI",
-    "LangChain",
-    "LangSmith",
-    "Cyber incident reporting",
-    "Export controls",
-    "Nvidia Blackwell"
+    "Qwen4-Max",
+    "Alibaba",
+    "Federal Reserve",
+    "AI debt",
+    "Gemini",
+    "Google Wallet",
+    "Plaid",
+    "Amazon",
+    "AI shopping agents",
+    "Apple",
+    "Health AI",
+    "LongCat-2.5",
+    "Open weights"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "OpenAI, 13 Nov: ChatGPT Wallet in dots for US ChatGPT Pro, 18+, eligible US cards; Amex, Mastercard, Visa; payment token, Face ID/fingerprint per purchase; Commerce Partner Playbook; future spending limits. Not a new model.",
+      "raw": "Alibaba, 16 Nov: Qwen4-Max, new MoE, native vision, 1M ctx; $1.5/$4.5 per M tokens vs $2/$6 for Qwen3.8-Max; cache $0.075 vs $0.25; up to ~50% fewer tokens, cost per task down 60%+ (own Work360 test); not open weight, smaller Qwen4 models to be open. New model.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "OpenAI, 12 Nov (Cyber at the Frontier): Daybreak Red Team (agent pentesting, early access) and Daybreak Defense Factory (patches for review; Wiz, Snyk, Endor Labs; draft GitHub PRs; preview plugin). Not a new model.",
-      "topic": "Trust"
-    },
-    {
-      "id": "s3",
-      "raw": "Anthropic, 12 Nov: self-hosted Claude Managed Agents private beta; server, PostgreSQL 16+, workers on your infra; inference via Claude API, Bedrock, Google Cloud, Foundry or gateway. Not a new model.",
-      "topic": "Tools"
-    },
-    {
-      "id": "s4",
-      "raw": "LangChain, 13 Nov: $300M Series C at $3B, led by CapitalG with GIC, DFJ Growth, IVP, Sapphire; prior $125M at $1.25B (TechCrunch); 7,000+ LangSmith organisations; event 20 Nov. Not a new model.",
+      "raw": "Fed FSR, 13 Nov: AI top-cited risk in survey of 23 contacts (Reuters: 87%, from 50% in May); advanced-computing debt issuance >$680B by Oct 2026 vs $130B in 2023; <6% to ~31% of IG non-financial issuance; >$1.1T public debt outstanding; Reuters: >$3T incl. guarantees and leases.",
       "topic": "Money"
     },
     {
+      "id": "s3",
+      "raw": "Google, 13 Nov: Google Wallet connected app in Gemini for all US users; Plaid account linking; read-only, cannot move, manage or invest money; personal accounts only, 18+; Memory Summary. Not a new model.",
+      "topic": "Trust"
+    },
+    {
+      "id": "s4",
+      "raw": "Reuters, 13 Nov: Amazon internal PR/FAQ for World Product Graph; brand data plus crawling rival sites; Coca-Cola, Bayer signed; Rufus answers often wrong, ~83M weekly searches; aspirational 1 Oct 2027; Amazon says outdated, ~97% accurate.",
+      "topic": "Work"
+    },
+    {
       "id": "s5",
-      "raw": "White House AI task force, 12 Nov meeting: agencies should limit regulatory liability for good-faith voluntary cyber reporting for at least 12 months; supports CISA 2015 reauthorization. Recommendation only.",
-      "topic": "Rules"
+      "raw": "TechCrunch, 15 Nov: Apple study app with OpenEvidence; US 21+, iPhone 15+, iOS 26+; up to 200,000 participants, 12+ months; answers grounded in NEJM, JAMA, Nature; data anonymised, not used for training, deleted after 24 hours.",
+      "topic": "Trust"
     },
     {
       "id": "s6",
-      "raw": "Unemployment Labs (Will DePue), 12 Nov: Blackwell init fingerprints in DeepSeek-V4-Flash/Pro, Kimi K3/K3.1-Pro, MiniMax-M3, Ling-3.1-flash; 24/24 known cases agree; no finding on location or violation. Not a new model.",
-      "topic": "Rules"
+      "raw": "Meituan, 15 Nov: LongCat-2.5 weights on Hugging Face, MIT; 1.6T total, ~48B active; Terminal Bench v2.1 88.4 (own); trained on Chinese chips; sample deployment 194 Huawei Ascend. New open model.",
+      "topic": "Tools"
     }
   ]
 }
