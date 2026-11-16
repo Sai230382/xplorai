@@ -4570,11 +4570,123 @@
       "s": 3,
       "p": "Free for public repos and 3 private; Pro $29/month or $290/year per GitHub account",
       "st": "active"
+    },
+    {
+      "n": "Turbo-Browser-MCP",
+      "w": "https://github.com/Tthanh2k6/turbo-browser-mcp",
+      "c": "Agent Infrastructure",
+      "tl": "Batched browser tools for AI agents, with changed-only page snapshots and a submit guard",
+      "d": "Turbo-Browser-MCP was posted as a Show HN on 15 November 2026. It is a Playwright-based MCP server that bundles browser actions into ten batched tools. It can return only the lines of a page that changed after a click, fill a whole form in one turn, including React, Shadow DOM and iframe fields, upload files from disk without Base64 in the chat, run several tabs at once and block heavy media. A submit guard asks a person before a form is sent. Version 0.5.0. MIT.",
+      "f": [
+        "Changed-only page snapshots",
+        "One-turn form filling",
+        "File uploads from disk",
+        "Human check before submit"
+      ],
+      "u": [
+        "Browser agents filling long forms",
+        "Cutting token use on dense web apps",
+        "Scraping clean article text"
+      ],
+      "e": "An agent fills a ten-field form in one step and waits for you before pressing Submit.",
+      "s": 3,
+      "p": "Free and open source (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "db-branch",
+      "w": "https://github.com/db-branch/db-branch",
+      "c": "Agent Infrastructure",
+      "tl": "Database branches in seconds for AI agents and CI, on your own servers",
+      "d": "db-branch was posted as a Show HN on 15 November 2026. It makes copy-on-write branches of MySQL and PostgreSQL databases with ZFS clones, so a branch of a large database is ready in seconds with nothing copied at creation. A built-in MCP server lets an AI agent create a branch, run a risky query or migration on it and delete it. Branches can expire on a timer, and a pull request can get its own copy. It needs Linux and ZFS, is in beta, and is Apache-2.0 with some paid modules.",
+      "f": [
+        "Branches in seconds",
+        "Built-in MCP server for agents",
+        "Expiring branches per pull request",
+        "Self-hosted on Linux and ZFS"
+      ],
+      "u": [
+        "Letting an agent test a migration safely",
+        "A database copy for every pull request",
+        "Checking a major version upgrade"
+      ],
+      "e": "A throwaway copy of production for your agent to break, gone an hour later.",
+      "s": 3,
+      "p": "Open source (Apache-2.0); some modules paid",
+      "st": "active"
+    },
+    {
+      "n": "Nano-Edge-TTS",
+      "w": "https://huggingface.co/drmhse/nano-edge-tts",
+      "c": "Audio & Voice",
+      "tl": "A tiny, fast decoder for Kokoro text-to-speech on a single CPU thread",
+      "d": "Nano-Edge-TTS was posted as a Show HN on 15 November 2026. It keeps Kokoro-82M’s pronunciation, timing and voices and replaces its 53.3-million-parameter waveform decoder with a 1.75-million-parameter one that shapes a pulse train and noise instead of running a neural network at audio rate. The maker reports the decoder is 33 times faster on one CPU thread, peak memory is about 0.75 GB instead of 1.4 to 1.7 GB, and speech recognition errors and quality scores stay close to Kokoro’s. Apache-2.0, with a paper and samples.",
+      "f": [
+        "1.75M-parameter decoder",
+        "Same Kokoro voices",
+        "Runs on one CPU thread",
+        "7 MB decoder weights"
+      ],
+      "u": [
+        "Offline voice on cheap hardware",
+        "Reading text aloud in apps",
+        "Voice for edge devices"
+      ],
+      "e": "Kokoro’s voices on a modest CPU, with a decoder small enough to ship inside an app.",
+      "s": 3,
+      "p": "Free and open source (Apache-2.0)",
+      "st": "active"
+    },
+    {
+      "n": "Minute",
+      "w": "https://minutenotes.app",
+      "c": "Productivity",
+      "tl": "Free, offline meeting notes on your Mac, with no bot in the call",
+      "d": "Minute was posted as a Show HN on 15 November 2026. It records your microphone and the call’s system audio on macOS, transcribes with Whisper on your Mac, labels speakers, and has a local language model write the summary, decisions and action items. You can ask questions about a meeting and jump to the cited moment. Audio and notes never leave the Mac; notes export as Markdown or straight into Obsidian. Built in Rust with whisper.cpp and llama.cpp. MIT.",
+      "f": [
+        "No bot joins the call",
+        "Transcription and summary on your Mac",
+        "Answers cite the moment",
+        "Obsidian and Markdown export"
+      ],
+      "u": [
+        "Private meeting notes",
+        "Action items after client calls",
+        "Searching past meetings"
+      ],
+      "e": "Meeting notes written on your own Mac, with nothing uploaded.",
+      "s": 3,
+      "p": "Free and open source (MIT)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "15 November 2026",
+    "week": "16 November 2026",
     "launches": [
+      {
+        "name": "Turbo-Browser-MCP (github.com/Tthanh2k6/turbo-browser-mcp)",
+        "date": "15 November 2026",
+        "desc": "A Playwright-based MCP server, posted as a Show HN on 15 November, that gives AI agents ten batched browser tools instead of dozens of small ones. After a click it can return only the parts of the page that changed, fill a whole form (including React, Shadow DOM and iframe fields) in one turn, upload files from disk without pasting them into the chat, and open several tabs at once. A submit guard asks a person before a form is sent. Version 0.5.0, Node 20 or later. MIT.",
+        "why": "For people whose browser agents burn tokens and turns on big pages and forms. The README’s token savings come from the maker’s own benchmark script."
+      },
+      {
+        "name": "db-branch (github.com/db-branch/db-branch)",
+        "date": "15 November 2026",
+        "desc": "Self-hosted database branches for MySQL and PostgreSQL, posted as a Show HN on 15 November. It uses ZFS copy-on-write clones, so a branch of a large database is ready in seconds with nothing copied at creation; the README reports about 0.5 seconds for PostgreSQL and 3 seconds for MySQL on its own test cluster. A built-in MCP server lets an AI agent create a branch, run a risky query or migration on it, and delete it, so production data is never touched. Needs Linux and ZFS. Beta, Apache-2.0, with some paid modules.",
+        "why": "For teams that want to let an agent or a pull request test changes against a real copy of a large database. The README warns commands may change before 1.0."
+      },
+      {
+        "name": "Nano-Edge-TTS (huggingface.co/drmhse/nano-edge-tts)",
+        "date": "15 November 2026",
+        "desc": "A small replacement for the waveform decoder in the Kokoro-82M text-to-speech model, posted as a Show HN on 15 November. Kokoro’s pronunciation, timing and voices stay the same, but its 53.3-million-parameter decoder is swapped for a 1.75-million-parameter one that runs no neural network at audio rate. The maker reports the decoder is 33 times faster on one CPU thread, the whole pipeline uses about 0.75 GB of memory instead of 1.4 to 1.7 GB, and word error rates and quality scores stay close to Kokoro’s. Apache-2.0, with a paper.",
+        "why": "For builders of voice features on phones, cheap servers or offline devices. The figures are the maker’s, measured on an Apple M4."
+      },
+      {
+        "name": "Minute (minutenotes.app)",
+        "date": "15 November 2026",
+        "desc": "A free, offline meeting note taker for the Mac, posted as a Show HN on 15 November. It records your microphone and, on macOS 13 or later, the call’s system audio, so no bot joins Zoom, Teams, Meet or other calls. Whisper transcribes on your Mac with speaker labels, a local language model writes the summary, decisions and action items, and you can ask questions with answers that cite the moment in the call. Notes can be saved to Obsidian as Markdown. Rust app with whisper.cpp and llama.cpp. MIT.",
+        "why": "For people who want meeting notes without sending audio to the cloud. The site says Apple silicon is the tested target and larger models need 16 GB of memory."
+      },
       {
         "name": "Agweb (github.com/paul-nameless/agweb)",
         "date": "14 November 2026",
@@ -4598,33 +4710,21 @@
         "date": "13 November 2026",
         "desc": "A tool from Kiln, posted as a Show HN on 13 November, that tunes everything around an agent’s model rather than just the prompt: its tools, prompts and skills, model settings, and any retrieval, fine-tunes or sub-agents. You set the goal (quality, cost or speed) and it runs experiments against your evals, keeping a held-out test set it never optimises against, then offers several winners such as best quality or cheapest at good quality. It runs on Claude Code, Codex or OpenCode on your existing subscription and works with Kiln’s free app. MIT.",
         "why": "For teams with an agent and real evals who want it cheaper or more reliable. The README’s headline result, 2.5x fewer failures and 6x cheaper on one production agent, is the maker’s own; the demo run costs about $2."
-      },
-      {
-        "name": "Langfuse AI Gateway (github.com/langfuse/langfuse)",
-        "date": "13 November 2026",
-        "desc": "A standalone gateway written in Rust, posted as a Show HN on 13 November, that sits between your apps and OpenAI or Anthropic and records every model call in Langfuse. It passes the providers’ native requests through without rewriting them, covering OpenAI’s Responses, Chat Completions and Embeddings and Anthropic’s Messages, and uploads each call as a Langfuse trace. It lives in the open-source Langfuse repository, which you can self-host or use as Langfuse Cloud.",
-        "why": "For teams that want a record of every AI call, including coding agents like Claude Code, without adding tracing code to each app. Check the repository’s licence terms for your setup."
-      },
-      {
-        "name": "RealtimeVAD (github.com/KoljaB/RealtimeVAD)",
-        "date": "12 November 2026",
-        "desc": "An add-on to the Silero voice activity detector, posted as a Show HN on 12 November, that gives voice assistants an earlier signal that the speaker has stopped. Every 10 ms it compares the audio level with the room’s noise and the speaker’s own level, and fires a pause event before Silero does, so you can start the reply early and cancel it if the speaker goes on. The maker reports a median 92 ms lead on 3,153 real turns from one speaker, and none on a distant microphone. One CPU thread, numpy and onnxruntime, a LiveKit plugin. MIT.",
-        "why": "For builders of voice agents that can start a reply early and cancel it cheaply. If your pipeline waits for the end of the turn, the README says to use Silero alone."
-      },
-      {
-        "name": "ZigZag (github.com/simpsoka/zigzag)",
-        "date": "12 November 2026",
-        "desc": "A free embroidery design app for Mac and Windows, posted as a Show HN on 12 November by a maker whose $300 machine needed a subscription app. It turns SVG artwork into stitches, lets you edit them visually, and exports PES, DST, EXP, JEF or VP3 files, or sends designs to a Brother Skitch over Bluetooth. It has built-in MCP support, so an AI agent can create and edit designs alongside you. Written in Rust, Apache-2.0.",
-        "why": "For small craft and merchandise businesses that want to avoid subscription embroidery software, or try letting an agent draft a design they then fine-tune."
-      },
-      {
-        "name": "AgentRun (github.com/Parcha-ai/agentrun)",
-        "date": "12 November 2026",
-        "desc": "An open-source platform for running AI agents, announced by Parcha Labs on 10 November and posted as a Show HN on 12 November. It sits on top of an agent harness such as Claude Code, Codex, OpenCode or pi, and adds learning between runs, where an agent keeps notes, skills or workflows for next time, plus runs that survive a server restart, approvals, spending caps and one console. Agents can get a sandbox, Linux desktop, Android phone or browser. Self-host with one command or use the hosted console. Apache-2.0.",
-        "why": "For teams running the same agent jobs repeatedly who want them to get cheaper over time. The README’s own case studies are the maker’s figures; test on your own jobs."
       }
     ],
     "funding": [
+      {
+        "company": "Nebuly",
+        "amount": "$21M Series A",
+        "valuation": "Not disclosed",
+        "context": "Nebuly, 12 November: led by Planven, with Exor Ventures, Tenacity Capital, TGVG Capital and Fastweb+Vodafone (via Founders Factory), and support from CDP Venture Capital. The Turin and New York company measures what enterprise AI agents are worth, in hours saved, new work taken on and revenue influenced, across tools built on Claude, ChatGPT and Microsoft Copilot. Customers include Oura, Iveco Group, CNH and Zeiss."
+      },
+      {
+        "company": "Nidus",
+        "amount": "$30M",
+        "valuation": "Not disclosed",
+        "context": "Nidus, 10 November: backed by Kleiner Perkins and Costanoa, with Ludlow Ventures, SF1, Absolute Partners and Tau. It builds AI models that let existing industrial robots do precision assembly in US defence factories, starting with wire harnesses, and says it passed seven figures in revenue in its first four months."
+      },
       {
         "company": "Mirendil",
         "amount": "$1B Series A",
@@ -4682,33 +4782,33 @@
     ],
     "quotes": [
       {
-        "who": "Dario Amodei, Anthropic, at a JPMorgan event",
-        "text": "Compute is the deepest business dilemma that the company faces.",
-        "source": "The Decoder, citing Bloomberg, 14 November 2026"
+        "who": "Federal Reserve Board, Financial Stability Report",
+        "text": "The complex interlinkages among firms engaged in the data center buildout, public credit markets, private lenders, and special purpose financing vehicles create vulnerabilities that necessitate close monitoring.",
+        "source": "Federal Reserve, 13 November 2026"
       },
       {
-        "who": "Ken Sajo, JPCERT/CC, on AI-driven attacks",
-        "text": "…more sophisticated attacks will increase in the future.",
-        "source": "Kyodo News via The Straits Times, 15 November 2026"
+        "who": "Amazon internal document, as quoted by Reuters",
+        "text": "Many Rufus answers are factually wrong or incomplete, but customers lack expertise to detect these errors.",
+        "source": "Reuters via CNA, 13 November 2026"
       },
       {
-        "who": "IBM Granite team, on LLMON’s injection resistance",
-        "text": "This is a learned behavior, not an enforced guarantee.",
-        "source": "Hugging Face blog, 12 November 2026"
+        "who": "Sumbul Desai, M.D., Apple’s vice president of Health and Fitness",
+        "text": "Health is deeply personal, and conducting a dedicated research study is the most thoughtful way to understand how people engage with, comprehend, and evaluate health AI in everyday life.",
+        "source": "TechCrunch, 15 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Compute is the constraint",
-        "desc": "Anthropic’s chief executive calls compute his deepest dilemma and buys on the low side, days before an IPO about six times oversubscribed."
+        "title": "Chinese models press on price",
+        "desc": "Alibaba’s Qwen4-Max lists $4.50 per million output tokens, and Meituan’s MIT-licensed LongCat-2.5 was trained on Chinese chips."
       },
       {
-        "title": "Attackers automate too",
-        "desc": "JPCERT/CC counts about 1,000 servers likely running AI-driven attacks, while IBM trains small models to ignore commands hidden in data."
+        "title": "AI runs on borrowed money",
+        "desc": "The Fed says debt to fund advanced computing passed $680 billion by October, about five times all of 2023."
       },
       {
-        "title": "Local AI grows up",
-        "desc": "llama.cpp reached 1.0 with a stable interface, making models on your own hardware cheaper to maintain."
+        "title": "Assistants reach your personal data",
+        "desc": "Gemini reads linked bank accounts, read-only, and Apple tests health answers drawn from medical journals."
       }
     ]
   },
@@ -4730,7 +4830,7 @@
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Carbon · 4 Argon · 4 Hydrogen · 3.8 Flash · Genie 4 · Omni 1.2 Flash · Decision 1",
-        "note": "Gemini 4 Hydrogen (12 Nov) is Google’s new fast Gemini 4 model, rolling out in Search, the Gemini app, AI Studio, the Gemini API, Gemini for business and Sheets, at $1.50 per million input and $7.50 per million output tokens, flat across a 1M context. Google says it is 2.5x faster than 3.8 Flash, scores 57% on Terminal-Bench 4.1 (3.8 Flash 18.2%) and 51 on the Artificial Analysis Intelligence Index (Argon 50; 54 at xhigh). Four thinking levels: low, medium, high, xhigh. Orchestrator in Antigravity switches between Carbon and Hydrogen. Earlier: Gemini Decision 1 (11 Nov) powers the new Gemini Decisions API. It does not write text; it scores up to 1,000 yes/no, choice and rubric questions against one input of up to 256K tokens in 150–250 ms, at $0.10 per million input tokens with no output charge. Google says it is nearly 5x cheaper than 3.5 Flash-Lite across its benchmark suite. On 10 Nov DeepMind’s AlphaProof Code used Gemini Carbon agents to prove key security properties of Signal’s compiled code. Earlier: Gemini 4 Carbon became generally available on 10 Nov to all paying Gemini API developers and Google AI Ultra subscribers, at $2/$10 per million tokens until 30 Nov, then $4/$20. Google says Argon remains the choice for most work, and ranks Carbon first on CursorBench 4.0, WANDR and AutomationBench at more than 2x lower cost per task; Cursor reports 60.4 percent on CursorBench at high effort. /swarm is in preview in Antigravity. Earlier: Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model. On 5 Nov Google made Gemini Omni 1.2 Flash generally available. The blog says clips run up to 15 seconds, up from 10, and prices 720p at $0.07 a second, 30 percent below Omni 1.1. Not a new chat model. On 6 Nov Pushmeet Kohli wrote that human-guided agents found two weaknesses in legacy 1024-bit RSA, on older signatures and on factoring keys in bulk, and that the results do not affect modern schemes such as RSA 2048. Not a new chat model. On 9 Nov Google announced TPU 8tx, for confidential inference, and TPU 8i Max, with double the compute, SRAM and HBM bandwidth of 8i, with no dates or prices given. Not a new model."
+        "note": "Gemini 4 Hydrogen (12 Nov) is Google’s new fast Gemini 4 model, rolling out in Search, the Gemini app, AI Studio, the Gemini API, Gemini for business and Sheets, at $1.50 per million input and $7.50 per million output tokens, flat across a 1M context. Google says it is 2.5x faster than 3.8 Flash, scores 57% on Terminal-Bench 4.1 (3.8 Flash 18.2%) and 51 on the Artificial Analysis Intelligence Index (Argon 50; 54 at xhigh). Four thinking levels: low, medium, high, xhigh. Orchestrator in Antigravity switches between Carbon and Hydrogen. Earlier: Gemini Decision 1 (11 Nov) powers the new Gemini Decisions API. It does not write text; it scores up to 1,000 yes/no, choice and rubric questions against one input of up to 256K tokens in 150–250 ms, at $0.10 per million input tokens with no output charge. Google says it is nearly 5x cheaper than 3.5 Flash-Lite across its benchmark suite. On 10 Nov DeepMind’s AlphaProof Code used Gemini Carbon agents to prove key security properties of Signal’s compiled code. Earlier: Gemini 4 Carbon became generally available on 10 Nov to all paying Gemini API developers and Google AI Ultra subscribers, at $2/$10 per million tokens until 30 Nov, then $4/$20. Google says Argon remains the choice for most work, and ranks Carbon first on CursorBench 4.0, WANDR and AutomationBench at more than 2x lower cost per task; Cursor reports 60.4 percent on CursorBench at high effort. /swarm is in preview in Antigravity. Earlier: Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model. On 5 Nov Google made Gemini Omni 1.2 Flash generally available. The blog says clips run up to 15 seconds, up from 10, and prices 720p at $0.07 a second, 30 percent below Omni 1.1. Not a new chat model. On 6 Nov Pushmeet Kohli wrote that human-guided agents found two weaknesses in legacy 1024-bit RSA, on older signatures and on factoring keys in bulk, and that the results do not affect modern schemes such as RSA 2048. Not a new chat model. On 9 Nov Google announced TPU 8tx, for confidential inference, and TPU 8i Max, with double the compute, SRAM and HBM bandwidth of 8i, with no dates or prices given. Not a new model. On 13 Nov Google added Google Wallet as a connected app in Gemini for US users, with bank and card accounts linked through Plaid. Gemini can read the data but not move, manage or invest money. Not a new model."
       },
       {
         "org": "Meta",
@@ -4743,9 +4843,21 @@
         "name": "Grok / Cursor",
         "model": "Grok 4.7 · Cursor + Origin",
         "note": "Grok 4.7 has a new, larger base model and costs the same as 4.6 ($2/$6 per million tokens). It is in Cursor, Grok Build and the API. On 26 Oct SpaceX disclosed about $40B of Apollo-backed lease financing for Nvidia Vera Rubin GPUs, with leases from the first half of 2027. On 30 Oct Judge Debra M. Brown denied a motion to dismiss the NAACP’s Clean Air Act case against X.AI Corp. and MZX Tech. CNBC reported it on 31 Oct. The order says the turbines are not mobile sources and the claims proceed. It does not find a violation. CNBC says the suit alleges 27 turbines. TechCrunch quotes the SELC saying at least 35. Not a new model. On 1 Nov Elon Musk wrote that the cost of serving Grok Bot was unsustainably high relative to revenue. TechCrunch, on 2 Nov, said he has not said how the weekly limits change. Not a new model. On 10 Nov Ars Technica reported Claroc’s finding that about 35,000 Grok Build apps were open to anyone because share-link domains appear in passive DNS; Cursor says apps are private by default. Not a new model."
+      },
+      {
+        "org": "Alibaba",
+        "name": "Qwen",
+        "model": "Qwen4-Max · closed weights · 1M ctx",
+        "note": "Launched 16 Nov on QwenCloud, Qwen Studio, QwenWork and Qoder, on a new MoE architecture with native vision. Alibaba’s model page lists $1.50 input and $4.50 output per million tokens, with implicit cache at $0.075, against $2, $6 and $0.25 for Qwen3.8-Max. Alibaba says it uses up to about 50% fewer tokens than Qwen3.8-Max and cuts average cost per task by more than 60% on its own Work360 test. Bloomberg says Alibaba claims it beats Claude Fable 5.1 and Kimi K3.1 Pro on coding tests. The weights are not public; Alibaba says smaller Qwen4 models will be open."
       }
     ],
     "open": [
+      {
+        "org": "Meituan",
+        "name": "LongCat-2.5",
+        "model": "1.6T (~48B active) · 1M ctx (API) · MIT",
+        "note": "Weights published on Hugging Face on 15 Nov, a week after launch. Text, image and video in, text out. Meituan says it was trained on Chinese accelerators; its self-hosting guide uses 194 Huawei Ascend chips with a 4-bit version and gives no Nvidia guidance. Meituan reports 88.4 on Terminal Bench v2.1 (Claude Opus 5 at 89.1 in its table) and 38.5 on Terminal Bench v4.0 (Opus 5 at 53.9); the table leaves out Opus 5.5 and GPT-6.1 Sol."
+      },
       {
         "org": "Thinking Machines Lab",
         "name": "Inkling 2 Small",
@@ -4792,7 +4904,7 @@
         "org": "Alibaba",
         "name": "Qwen3.8-Max",
         "model": "2.4T (95B active) · 1M ctx",
-        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter. On 26 Oct Cohere reported that Qwen3.8-Flash-Next, self-hosted in a sandbox, tried to upload a file to an Alibaba Cloud bucket in Beijing in under 1 in 100,000 calls; it has released the traces. On 31 Oct Apple’s China newsroom said Qwen will be callable from Siri, Writing Tools and Visual Intelligence, in a developer beta from 4 Nov and in iOS 27.3 in December. Xinhua says Alibaba will not train on those requests or replies. The page does not name a Qwen version, and it says this release does not include Siri AI. On 3 Nov Simon Willison reported that Qwen 3.8 27B, on his laptop, named three of four tiny game networks from raw weights and missed Freeway. That is his no-tools run, not a new model, and not the paper’s claim that GPT-6 Astra edited another model’s weights."
+        "note": "First Max-class Qwen with published weights (Aug 12); Chinese open models hold 30-46% of weekly US token usage on OpenRouter. On 26 Oct Cohere reported that Qwen3.8-Flash-Next, self-hosted in a sandbox, tried to upload a file to an Alibaba Cloud bucket in Beijing in under 1 in 100,000 calls; it has released the traces. On 31 Oct Apple’s China newsroom said Qwen will be callable from Siri, Writing Tools and Visual Intelligence, in a developer beta from 4 Nov and in iOS 27.3 in December. Xinhua says Alibaba will not train on those requests or replies. The page does not name a Qwen version, and it says this release does not include Siri AI. On 3 Nov Simon Willison reported that Qwen 3.8 27B, on his laptop, named three of four tiny game networks from raw weights and missed Freeway. That is his no-tools run, not a new model, and not the paper’s claim that GPT-6 Astra edited another model’s weights. On 16 Nov Alibaba launched Qwen4-Max as its new flagship, without open weights, and said smaller Qwen4 models will be released openly."
       },
       {
         "org": "MBZUAI / Nvidia",
@@ -4803,6 +4915,18 @@
     ]
   },
   "gems": [
+    {
+      "name": "db-branch",
+      "why": "Gives an AI agent a throwaway copy of a real database in seconds, so production is never touched"
+    },
+    {
+      "name": "Minute",
+      "why": "Meeting notes written entirely on your Mac, with no bot in the call, free and MIT"
+    },
+    {
+      "name": "Turbo-Browser-MCP",
+      "why": "Lets a browser agent fill a whole form in one turn and asks you before it presses Submit"
+    },
     {
       "name": "SunsetLint",
       "why": "Points to the exact file and line still calling an AI model that is about to be retired"

@@ -1,5 +1,32 @@
 [
   {
+    "name": "Qwen",
+    "handle": "Alibaba_Qwen",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg",
+    "text": "📢 Meet Qwen4-Max, your new AI teammate for work, creativity, and discovery!\n\nQwen4-Max is built on a new MoE architecture with native vision and a 1M-token context window.\n\nHighlights:\n- Outperforms Qwen3.8-Max with up to ~50% fewer tokens, while average cost per task drops over 60% in our internal evaluation.\n- Advances real-world productivity through greater proficiency with professional tools, stronger long-horizon execution, and higher-quality deliverables.\n- Handles real tasks, including 3D modeling, game development, manufacturing, finance, law, healthcare, and frontier scientific discovery.\n- $1.5/M tokens for input, $4.5/M tokens for output, and $0.075/M tokens for implicit caching — all lower than Qwen3.8-Max, with implicit caching down by 70%.\n\nThe API is live on QwenCloud. You can also try Qwen4-Max on Qwen Studio, QwenWork and Qoder. \n\nStart building today! 🚀\n- Blog: https://t.co/AuiWxugjE6\n- API: https://t.co/aS1QEkS8nu\n- Token Plan: https://t.co/YRvcGdB9Bv\n\nMore to come! The open weights of smaller Qwen4 models will be released. Stay tuned. 👀",
+    "url": "https://x.com/Alibaba_Qwen/status/2122148127520289151",
+    "postedAt": "2026-11-16T02:01:55.000Z",
+    "take": "A cheaper flagship from Alibaba, with no public weights. Test it on a real task before trusting its benchmarks."
+  },
+  {
+    "name": "TechCrunch",
+    "handle": "TechCrunch",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_normal.png",
+    "text": "Apple's new app for a study will answer everyday medical questions\nhttps://t.co/CFqfKx5z4f",
+    "url": "https://x.com/TechCrunch/status/2122140869411135563",
+    "postedAt": "2026-11-16T01:33:05.000Z",
+    "take": "Apple is testing health answers drawn from medical journals, with consent and a 24-hour deletion rule."
+  },
+  {
+    "name": "Reuters",
+    "handle": "Reuters",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
+    "text": "Top scorer on South Korean tax exam confesses to cheating with AI https://t.co/0SC5M3W4BG",
+    "url": "https://x.com/Reuters/status/2121825540092895530",
+    "postedAt": "2026-11-15T04:40:05.000Z",
+    "take": "A top score on a professional exam turned out to be AI. Anyone who runs tests or hiring checks should take note."
+  },
+  {
     "name": "FORTUNE",
     "handle": "FortuneMagazine",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1754630276116811776/N3_onOyu_normal.jpg",

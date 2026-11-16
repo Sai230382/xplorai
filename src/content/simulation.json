@@ -1,83 +1,80 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "anthropic-compute-dilemma",
+  "storyId": "qwen4-max",
   "kicker": "Play with today’s story",
-  "title": "Anthropic’s money in three numbers: what it is raising, what it has promised to spend, and what it brings in",
-  "intro": "Slide through the three sides of Anthropic’s compute bet as its IPO approaches. Each step shows only figures reported by Reuters, Bloomberg and The Decoder.",
-  "note": "IPO figures are from Anthropic’s filing as reported by Reuters and can change before pricing. The oversubscription, the private placement and the commitments are Bloomberg’s reporting. The revenue run rate is Anthropic’s figure from its filings, as reported by The Decoder. These numbers cover different time spans, so they should not be subtracted from one another.",
+  "title": "Qwen4-Max against the model it replaces: list prices, and what Alibaba says one task now costs",
+  "intro": "Switch between Qwen3.8-Max and Qwen4-Max. Each side shows Alibaba’s list prices from its own model pages and the figures from its own Work360 test.",
+  "note": "Prices are Alibaba’s standard pay-as-you-go list prices on QwenCloud, read on 16 November 2026, before batch discounts. The Work360 score and cost per task are from Alibaba’s own benchmark, published in its launch post, and have not been checked independently. Your real cost depends on how many tokens your tasks use.",
   "sources": [
     {
-      "label": "The Decoder: Anthropic CEO Amodei admits “there’s a huge uncertainty in what’s going to happen next year” days before a record IPO, 14 November 2026",
-      "url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/"
+      "label": "Qwen team: Qwen4-Max: Your New Teammate Has Arrived",
+      "url": "https://qwen.ai/blog?id=qwen4-max"
     },
     {
-      "label": "Reuters via Investing.com: Anthropic’s IPO is about six times oversubscribed, Bloomberg News reports, 12 November 2026",
-      "url": "https://www.investing.com/news/stock-market-news/anthropics-ipo-is-about-six-times-oversubscribed-bloomberg-news-reports-5023345"
+      "label": "QwenCloud: Qwen4-Max model page (pricing)",
+      "url": "https://www.qwencloud.com/models/qwen4-max"
+    },
+    {
+      "label": "QwenCloud: Qwen3.8-Max model page (pricing)",
+      "url": "https://www.qwencloud.com/models/qwen3.8-max"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "Anthropic’s raise, commitments and revenue",
-    "items": [
+    "type": "compare",
+    "label": "Qwen3.8-Max or Qwen4-Max",
+    "options": [
       {
-        "label": "Raising",
-        "name": "What the IPO aims to raise",
-        "caption": "Pricing expected 18 November",
+        "id": "qwen38",
+        "label": "Qwen3.8-Max",
+        "caption": "The previous flagship",
         "stats": [
           {
-            "label": "Shares offered",
-            "value": "825 million"
+            "label": "Input, per million tokens",
+            "value": "$2"
           },
           {
-            "label": "Price range",
-            "value": "$70 to $78 a share"
+            "label": "Output, per million tokens",
+            "value": "$6"
           },
           {
-            "label": "Raise, by Anthropic and some existing shareholders",
-            "value": "Up to $64.4 billion"
+            "label": "Cached input, per million tokens",
+            "value": "$0.25"
           },
           {
-            "label": "Private placement alongside (Bloomberg)",
-            "value": "Another $26 billion"
+            "label": "Work360 score (Alibaba’s test)",
+            "value": "47.74"
           },
           {
-            "label": "Demand (Bloomberg)",
-            "value": "About six times the shares available"
-          },
-          {
-            "label": "Trading",
-            "value": "Expected 19 November on Nasdaq as ANT"
+            "label": "Average cost per Work360 task",
+            "value": "$4.43"
           }
         ]
       },
       {
-        "label": "Promised",
-        "name": "What it has committed to spend",
-        "caption": "Mostly compute and chips, per Bloomberg",
+        "id": "qwen4",
+        "label": "Qwen4-Max",
+        "caption": "Launched 16 November",
         "stats": [
           {
-            "label": "Total commitments",
-            "value": "Nearly $901 billion"
+            "label": "Input, per million tokens",
+            "value": "$1.50"
           },
           {
-            "label": "Due by September 2027",
-            "value": "About $71 billion"
-          }
-        ]
-      },
-      {
-        "label": "Earning",
-        "name": "What it brings in",
-        "caption": "From Anthropic’s filings",
-        "stats": [
-          {
-            "label": "Annualised revenue run rate, end of October",
-            "value": "$81 billion"
+            "label": "Output, per million tokens",
+            "value": "$4.50"
           },
           {
-            "label": "Change from late September",
-            "value": "Up $10 billion"
+            "label": "Cached input, per million tokens",
+            "value": "$0.075"
+          },
+          {
+            "label": "Work360 score (Alibaba’s test)",
+            "value": "52.69"
+          },
+          {
+            "label": "Average cost per Work360 task",
+            "value": "$1.67"
           }
         ]
       }
