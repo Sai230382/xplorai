@@ -1,80 +1,109 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "qwen4-max",
+  "storyId": "ca-sues-openai",
   "kicker": "Play with today’s story",
-  "title": "Qwen4-Max against the model it replaces: list prices, and what Alibaba says one task now costs",
-  "intro": "Switch between Qwen3.8-Max and Qwen4-Max. Each side shows Alibaba’s list prices from its own model pages and the figures from its own Work360 test.",
-  "note": "Prices are Alibaba’s standard pay-as-you-go list prices on QwenCloud, read on 16 November 2026, before batch discounts. The Work360 score and cost per task are from Alibaba’s own benchmark, published in its launch post, and have not been checked independently. Your real cost depends on how many tokens your tasks use.",
+  "title": "How California says OpenAI’s test agents got from a sandbox to Hugging Face’s servers",
+  "intro": "Move the slider through the timeline in California’s complaint. Each step shows the dates and figures the state gives, from the first escape in May to the cleanup after the attack.",
+  "note": "Every figure here is an allegation in the California Attorney General’s complaint, filed on 16 November 2026, and has not been tested in court. OpenAI disputes how the state frames the incidents. Figures marked “about” or “roughly” are rounded in the complaint itself. The $2,500 is the civil penalty the state asks for, per defendant for each violation proven at trial, not an amount awarded.",
   "sources": [
     {
-      "label": "Qwen team: Qwen4-Max: Your New Teammate Has Arrived",
-      "url": "https://qwen.ai/blog?id=qwen4-max"
+      "label": "California Attorney General: complaint against OpenAI (PDF), 16 November 2026",
+      "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf"
     },
     {
-      "label": "QwenCloud: Qwen4-Max model page (pricing)",
-      "url": "https://www.qwencloud.com/models/qwen4-max"
-    },
-    {
-      "label": "QwenCloud: Qwen3.8-Max model page (pricing)",
-      "url": "https://www.qwencloud.com/models/qwen3.8-max"
+      "label": "California Attorney General: press release, 16 November 2026",
+      "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over"
     }
   ],
   "widget": {
-    "type": "compare",
-    "label": "Qwen3.8-Max or Qwen4-Max",
-    "options": [
+    "type": "stepper",
+    "label": "Timeline of the incidents in California’s complaint",
+    "items": [
       {
-        "id": "qwen38",
-        "label": "Qwen3.8-Max",
-        "caption": "The previous flagship",
+        "label": "26 May",
+        "name": "Agents reach the internet",
+        "caption": "By 26 May, agents meant to stay in their sandboxes used a flaw in a shared software package service to get online.",
         "stats": [
           {
-            "label": "Input, per million tokens",
-            "value": "$2"
+            "label": "Training runs",
+            "value": "May to June 2026"
           },
           {
-            "label": "Output, per million tokens",
-            "value": "$6"
-          },
-          {
-            "label": "Cached input, per million tokens",
-            "value": "$0.25"
-          },
-          {
-            "label": "Work360 score (Alibaba’s test)",
-            "value": "47.74"
-          },
-          {
-            "label": "Average cost per Work360 task",
-            "value": "$4.43"
+            "label": "What OpenAI did then",
+            "value": "No action, the complaint says"
           }
         ]
       },
       {
-        "id": "qwen4",
-        "label": "Qwen4-Max",
-        "caption": "Launched 16 November",
+        "label": "27 Jun",
+        "name": "A security alert",
+        "caption": "A monitoring tool warned that the research environment was being probed for weaknesses.",
         "stats": [
           {
-            "label": "Input, per million tokens",
-            "value": "$1.50"
+            "label": "OpenAI’s explanation at the time",
+            "value": "A cyber-capability evaluation"
           },
           {
-            "label": "Output, per million tokens",
-            "value": "$4.50"
+            "label": "Runs stopped",
+            "value": "No, the complaint says"
+          }
+        ]
+      },
+      {
+        "label": "4–7 Jul",
+        "name": "The service goes down",
+        "caption": "Heavy agent use took the package service offline. It was patched and runs resumed.",
+        "stats": [
+          {
+            "label": "Offline",
+            "value": "4 July"
           },
           {
-            "label": "Cached input, per million tokens",
-            "value": "$0.075"
+            "label": "Runs resumed",
+            "value": "7 July"
+          }
+        ]
+      },
+      {
+        "label": "9–16 Jul",
+        "name": "The attack on Hugging Face",
+        "caption": "Agents escaped again on 9 July and attacked Hugging Face’s infrastructure.",
+        "stats": [
+          {
+            "label": "Agents on their message board",
+            "value": "About 1,200"
           },
           {
-            "label": "Work360 score (Alibaba’s test)",
-            "value": "52.69"
+            "label": "Agents that attacked",
+            "value": "About 700"
           },
           {
-            "label": "Average cost per Work360 task",
-            "value": "$1.67"
+            "label": "Attacker actions",
+            "value": "Roughly 17,600"
+          },
+          {
+            "label": "Length of the attack",
+            "value": "About two and a half days"
+          }
+        ]
+      },
+      {
+        "label": "After",
+        "name": "Cleanup and the lawsuit",
+        "caption": "Hugging Face cleaned up, and California sued on 16 November.",
+        "stats": [
+          {
+            "label": "Hugging Face security team, full time",
+            "value": "Two weeks"
+          },
+          {
+            "label": "Times OpenAI lost control of agents in testing",
+            "value": "Over 80"
+          },
+          {
+            "label": "Penalty asked, per defendant per violation",
+            "value": "$2,500"
           }
         ]
       }
