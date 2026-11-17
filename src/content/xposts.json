@@ -1,5 +1,32 @@
 [
   {
+    "name": "Hugging Face",
+    "handle": "huggingface",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1991559933473497089/mbrRS49P_normal.jpg",
+    "text": "We're teaming up to accelerate open-source Al.\nOpenRouter is now integrated into Hugging Face directly. Same token, same endpoint, plus live model stats on the Hub and an inference widget we redesigned together.\nThe best of open, in one place. https://t.co/fNbvtJGSJB",
+    "url": "https://x.com/huggingface/status/2122393775314264519",
+    "postedAt": "2026-11-16T18:18:02.000Z",
+    "take": "Open models now route through OpenRouter on Hugging Face. Check your settings: your own provider keys no longer work there."
+  },
+  {
+    "name": "Google Cloud Security",
+    "handle": "GoogleCloudSec",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2047032786914095105/k8_vLv_F_normal.jpg",
+    "text": "New GTIG AI Threat Tracker:\n\nAs 2027 nears, human latency is leaving the attack chain—from autonomous patch-to-exploit pipelines to hijacked cloud quotas & backdoored configs.\n\n📄 Full report: https://t.co/lNcURijizF\n\n▶️ 2027 insights: https://t.co/fBbsskkBuG https://t.co/uuiJN76nZd",
+    "url": "https://x.com/GoogleCloudSec/status/2122369113594966244",
+    "postedAt": "2026-11-16T16:40:03.000Z",
+    "take": "Attackers now turn patches into exploits automatically. Patch faster and put spending caps on your AI cloud accounts."
+  },
+  {
+    "name": "METR",
+    "handle": "METR_Evals",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2021827383431757824/AeVvT0rU_normal.jpg",
+    "text": "We have reached an agreement with OpenAI to conduct a limited alignment assessment. This pilot will focus on investigating the alignment properties of OpenAI's largest RL run.\n\nWe will publish one or more reports to share our findings and transparently describe our process.",
+    "url": "https://x.com/METR_Evals/status/2122361049114657203",
+    "postedAt": "2026-11-16T16:08:00.000Z",
+    "take": "Outside testers get inside OpenAI the same day California sued it. Their public reports will be the real test."
+  },
+  {
     "name": "Qwen",
     "handle": "Alibaba_Qwen",
     "avatarUrl": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg",

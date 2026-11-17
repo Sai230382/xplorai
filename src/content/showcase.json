@@ -1,5 +1,25 @@
 [
   {
+    "id": "2122231132041416797",
+    "url": "https://x.com/Shoonyalab/status/2122231132041416797",
+    "author_name": "Sai Kiran",
+    "author_handle": "@Shoonyalab",
+    "created_at": "2026-11-16T07:31:45.000Z",
+    "text": "A painter drops their brush… and the painting comes alive \n\nMade by AI tools working together in one @t3dotcodes  thread: Claude directed, @ChatGPT  painted, @higgsfield_ai  Kling 3.0 animated, AI scored the music. https://t.co/CVRKwZbV8q",
+    "model_or_tool": "Claude, ChatGPT, Kling 3.0 (Higgsfield) in T3 Chat",
+    "what_they_built": "A 24-second film in which a painter drops a brush and the painting comes alive, made by Claude directing, ChatGPT painting, Kling 3.0 animating and AI-scored music in one T3 Chat thread.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 16,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2122230879594639360/img/Qc8H91O5v_IhfvV0.jpg"
+  },
+  {
     "id": "2121347623659655333",
     "url": "https://x.com/h0russs/status/2121347623659655333",
     "author_name": "Horus",
@@ -218,25 +238,5 @@
       "repost_count": 0
     },
     "preview": "https://pbs.twimg.com/media/HWtX3tUbsAA3PLT.jpg"
-  },
-  {
-    "id": "2119798691053568096",
-    "url": "https://x.com/AdamMalherbe/status/2119798691053568096",
-    "author_name": "Adam Milan Malherbe",
-    "author_handle": "@AdamMalherbe",
-    "created_at": "2026-11-09T14:26:06.000Z",
-    "text": "Didn't film this myself. Claude Code did.\n\nIt connected to my 11-year-old Sony TV over Wi-Fi, pressed the remote buttons, cast a video to my Chromecast, recorded the screen and cut the clip. All from the terminal, while I made coffee.\n\nWhat you're seeing is Adam TV v2, the home screen I built to replace Sony's: greeting, weather, calendar, my apps, what's playing on the Chromecast, and a sleep timer that actually turns the TV off. Zero ads.\n\nMost of these features came from your replies two days ago. The stutter is real too: this TV can only record itself at about 6 frames a second🤣.\n\nWhat would you make your TV do? #BuildInPublic",
-    "model_or_tool": "Claude Code",
-    "what_they_built": "Adam TV v2, a custom home screen for an 11-year-old Sony TV with weather, calendar, apps and a sleep timer, plus a demo clip that Claude Code filmed and cut itself.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 295,
-      "like_count": 8,
-      "quote_count": 0,
-      "reply_count": 10,
-      "repost_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119798261372329984/img/TqvY8ISXtcpaw25C.jpg"
   }
 ]
