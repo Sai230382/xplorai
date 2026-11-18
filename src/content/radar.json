@@ -4746,11 +4746,123 @@
       "s": 3,
       "p": "Free and open source (MIT)",
       "st": "active"
+    },
+    {
+      "n": "TrnRT",
+      "w": "https://github.com/RunanywhereAI/trnrt",
+      "c": "Agent Infrastructure",
+      "tl": "Open-source engine for serving open LLMs on AWS Trainium",
+      "d": "TrnRT was posted as a Show HN on 17 November 2026 by RunAnywhere. It serves an OpenAI-compatible API from one AWS trn2.48xlarge machine, with fused kernels for decoding, a prefix cache across device and host memory, and 1M-token context. GLM-5.3-Flash is the first supported model. The makers report $0.040 per million tokens at the spot price. Apache-2.0.",
+      "f": [
+        "OpenAI-compatible API",
+        "Runs on AWS Trainium",
+        "1M-token context",
+        "Prefix cache across memory tiers"
+      ],
+      "u": [
+        "Cheaper open-model serving on AWS",
+        "High-volume agent workloads",
+        "Self-hosted LLM APIs"
+      ],
+      "e": "Run an open model on Amazon’s own chips behind the same API your app already calls.",
+      "s": 3,
+      "p": "Free and open source (Apache-2.0)",
+      "st": "active"
+    },
+    {
+      "n": "Agav",
+      "w": "https://agav.dev",
+      "c": "Vibe Coding",
+      "tl": "Terminal coding agent built to spend fewer tokens per task",
+      "d": "Agav was posted as a Show HN on 17 November 2026. It is a terminal coding agent that inspects code, edits files, runs tests and checks its changes, while reusing cached context, stopping unproductive repair loops and isolating subagent exploration. Works with OpenAI, OpenRouter, NVIDIA NIM or local Ollama models. The makers report 49.1% less total spend than Codex in their Terminal-Bench 2.1 study. Apache-2.0, experimental beta.",
+      "f": [
+        "Edits, runs tests and verifies",
+        "Reuses cached context",
+        "Stops unproductive loops",
+        "Many model providers, including local"
+      ],
+      "u": [
+        "Cheaper coding-agent runs",
+        "Scripted fixes in CI",
+        "Coding with free or local models"
+      ],
+      "e": "A coding agent that tries to finish the job without re-sending your whole repo every turn.",
+      "s": 3,
+      "p": "Free and open source (Apache-2.0)",
+      "st": "beta"
+    },
+    {
+      "n": "Pulsar",
+      "w": "https://github.com/yocontra/pulsar",
+      "c": "Agent Infrastructure",
+      "tl": "Lets coding agents in different apps find and message each other",
+      "d": "Pulsar was posted as a Show HN on 17 November 2026. It is an MCP server that puts Claude Code, Codex, OpenCode, Cursor, Gemini CLI and other agents on one machine-wide list, tagged by project, branch and pull request, so you or an agent can message one agent, a group or all of them. Messages can wake an idle agent, are marked as from a peer and cannot approve anything. MIT.",
+      "f": [
+        "One list of every agent on the machine",
+        "Message one, a group or all",
+        "Wakes idle agents",
+        "Peer messages cannot approve actions"
+      ],
+      "u": [
+        "Coordinating parallel coding agents",
+        "Handing reviews between agents",
+        "Freezing a branch for every agent"
+      ],
+      "e": "Tell every agent on a project that main is frozen, in one message.",
+      "s": 4,
+      "p": "Free and open source (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "tamserve",
+      "w": "https://github.com/aryamandarda/tamserve",
+      "c": "Gen AI",
+      "tl": "Live multi-camera object tracking by name, on one GPU",
+      "d": "tamserve was posted as a Show HN on 16 November 2026. It runs Meta’s SAM 3 to find objects you name on live camera feeds and a lighter tracker, EdgeTAM, to follow them in between, sharing one copy of each model across all cameras. The maker reports memory flat at 3.5 GB on a 3,000-frame video on one RTX 4090. Apache-2.0.",
+      "f": [
+        "Track objects you name",
+        "One model copy for all cameras",
+        "Flat memory on long video",
+        "Add targets without stopping"
+      ],
+      "u": [
+        "Warehouse and factory safety",
+        "Retail camera analytics",
+        "Robotics and lab monitoring"
+      ],
+      "e": "Type “forklift” on a live camera feed and it finds and follows every one.",
+      "s": 3,
+      "p": "Free and open source (Apache-2.0)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "17 November 2026",
+    "week": "18 November 2026",
     "launches": [
+      {
+        "name": "TrnRT (github.com/RunanywhereAI/trnrt)",
+        "date": "17 November 2026",
+        "desc": "An open-source inference engine for running large language models on AWS Trainium chips, from RunAnywhere, posted as a Show HN on 17 November. It serves an OpenAI-compatible API (chat, streaming, tool calls) from one trn2.48xlarge machine, with a prefix cache across device and host memory and support for 1M-token context. GLM-5.3-Flash is the first supported model, with more open models promised. The makers report 3.57 million tokens per minute on one box and $0.040 per million tokens at the spot price, or $0.167 on a capacity block. Apache-2.0.",
+        "why": "For teams on AWS looking for cheaper serving than GPUs. The figures are the makers’ own, and only one model is supported so far."
+      },
+      {
+        "name": "Agav (github.com/prapaa-ai/agav)",
+        "date": "17 November 2026",
+        "desc": "An open-source coding agent for the terminal, built to waste fewer tokens, posted as a Show HN on 17 November. It inspects code, edits files, runs tests and checks its changes, reusing cached context, stopping unproductive repair loops and keeping subagent exploration separate so the same repository is not sent again and again. It works with OpenAI, OpenRouter, NVIDIA NIM or a local Ollama model. In the makers’ Terminal-Bench 2.1 cost study it had a 15.2¢ median trial cost across 89 tasks and 49.1% less total spend than Codex. Apache-2.0; marked experimental beta.",
+        "why": "For developers watching their coding-agent bill. The cost study is the makers’ own."
+      },
+      {
+        "name": "Pulsar (github.com/yocontra/pulsar)",
+        "date": "17 November 2026",
+        "desc": "An open-source MCP server that lets the coding agents on one machine find and message each other, whatever app they run in, posted as a Show HN on 17 November. Claude Code, Codex, OpenCode, Cursor, Gemini CLI and others appear on one list, tagged by project, branch and pull request, and you or an agent can message one agent, a group or all of them; a message can wake an idle agent. Messages are marked as coming from a peer, never the user, and cannot approve anything. One-command setup with npx. MIT.",
+        "why": "For people running several coding agents at once who now copy messages between them by hand."
+      },
+      {
+        "name": "tamserve (github.com/aryamandarda/tamserve)",
+        "date": "16 November 2026",
+        "desc": "An open-source server for live, multi-camera object tracking, posted as a Show HN on 16 November. It runs Meta’s SAM 3 to find objects you name, such as “forklift”, every few frames and a lighter tracker (EdgeTAM) in between, with one copy of each model shared across all cameras. On one RTX 4090 the maker reports 16 camera streams of people tracking at once and memory flat at 3.5 GB on a 3,000-frame video, where SAM 3 alone runs out at frame 423. Apache-2.0.",
+        "why": "For warehouse safety, retail analytics or robotics teams that want to track named objects on many live cameras with one GPU."
+      },
       {
         "name": "Coral (github.com/withcoral/coral)",
         "date": "16 November 2026",
@@ -4774,33 +4886,27 @@
         "date": "16 November 2026",
         "desc": "An offline knowledge kit with an optional local AI assistant, posted as a Show HN on 16 November. You set it up while you have internet; afterwards it runs in your browser on your own computer with no connection, with guides on water, food, shelter, first aid, repairs and energy in English, Portuguese and Spanish, plus optional Kiwix libraries such as medical Wikipedia. The local model answers from retrieved passages with source links, and phones on the same network can use it. Windows, macOS and Linux; the light model suggests 8 GB of RAM. MIT.",
         "why": "For households, schools or field teams preparing for outages. The guides work without the AI model, so you can start small."
-      },
-      {
-        "name": "Turbo-Browser-MCP (github.com/Tthanh2k6/turbo-browser-mcp)",
-        "date": "15 November 2026",
-        "desc": "A Playwright-based MCP server, posted as a Show HN on 15 November, that gives AI agents ten batched browser tools instead of dozens of small ones. After a click it can return only the parts of the page that changed, fill a whole form (including React, Shadow DOM and iframe fields) in one turn, upload files from disk without pasting them into the chat, and open several tabs at once. A submit guard asks a person before a form is sent. Version 0.5.0, Node 20 or later. MIT.",
-        "why": "For people whose browser agents burn tokens and turns on big pages and forms. The README’s token savings come from the maker’s own benchmark script."
-      },
-      {
-        "name": "db-branch (github.com/db-branch/db-branch)",
-        "date": "15 November 2026",
-        "desc": "Self-hosted database branches for MySQL and PostgreSQL, posted as a Show HN on 15 November. It uses ZFS copy-on-write clones, so a branch of a large database is ready in seconds with nothing copied at creation; the README reports about 0.5 seconds for PostgreSQL and 3 seconds for MySQL on its own test cluster. A built-in MCP server lets an AI agent create a branch, run a risky query or migration on it, and delete it, so production data is never touched. Needs Linux and ZFS. Beta, Apache-2.0, with some paid modules.",
-        "why": "For teams that want to let an agent or a pull request test changes against a real copy of a large database. The README warns commands may change before 1.0."
-      },
-      {
-        "name": "Nano-Edge-TTS (huggingface.co/drmhse/nano-edge-tts)",
-        "date": "15 November 2026",
-        "desc": "A small replacement for the waveform decoder in the Kokoro-82M text-to-speech model, posted as a Show HN on 15 November. Kokoro’s pronunciation, timing and voices stay the same, but its 53.3-million-parameter decoder is swapped for a 1.75-million-parameter one that runs no neural network at audio rate. The maker reports the decoder is 33 times faster on one CPU thread, the whole pipeline uses about 0.75 GB of memory instead of 1.4 to 1.7 GB, and word error rates and quality scores stay close to Kokoro’s. Apache-2.0, with a paper.",
-        "why": "For builders of voice features on phones, cheap servers or offline devices. The figures are the maker’s, measured on an Apple M4."
-      },
-      {
-        "name": "Minute (minutenotes.app)",
-        "date": "15 November 2026",
-        "desc": "A free, offline meeting note taker for the Mac, posted as a Show HN on 15 November. It records your microphone and, on macOS 13 or later, the call’s system audio, so no bot joins Zoom, Teams, Meet or other calls. Whisper transcribes on your Mac with speaker labels, a local language model writes the summary, decisions and action items, and you can ask questions with answers that cite the moment in the call. Notes can be saved to Obsidian as Markdown. Rust app with whisper.cpp and llama.cpp. MIT.",
-        "why": "For people who want meeting notes without sending audio to the cloud. The site says Apple silicon is the tested target and larger models need 16 GB of memory."
       }
     ],
     "funding": [
+      {
+        "company": "Model ML",
+        "amount": "$250M Series B",
+        "valuation": "$1.5B",
+        "context": "Model ML, 17 November: London-based, co-led by General Atlantic and QED Investors, a year after a $75M Series A. Its AI agents build financial models, pitch decks and due-diligence reports inside Excel and PowerPoint for bankers and consultants, and update them when a deal changes. It told TechCrunch it runs on open-source models at about 2% of the cost of frontier models."
+      },
+      {
+        "company": "Isomorphic Labs",
+        "amount": "$5B Series C",
+        "valuation": "Not disclosed",
+        "context": "Isomorphic Labs, 17 November: the DeepMind spin-out co-led by Greenoaks and Sequoia, with Andreessen Horowitz new and all existing backers investing. It uses AI models to design drugs and will use the money to move candidates toward clinical trials. Its first raise since Demis Hassabis stepped back from running DeepMind to focus on it. Bloomberg had reported talks at a $50B valuation."
+      },
+      {
+        "company": "Genesis AI",
+        "amount": "$500M Series A",
+        "valuation": "Not disclosed",
+        "context": "Genesis AI, 17 November: led by Khosla Ventures, Premji Invest and Eclipse. It trains robot hands with force data from sensor gloves worn by more than 100 workers, and its robots wear the same gloves. It has built 30 to 40 robots and is piloting with a handful of undisclosed customers (TechCrunch)."
+      },
       {
         "company": "Dreamteam",
         "amount": "$53M (seed and Series A)",
@@ -4848,55 +4954,37 @@
         "amount": "$13M seed",
         "valuation": "Not disclosed",
         "context": "TechCrunch, 11 November: Plurai, founded by former Nexar engineers, builds a digital twin of a company’s systems to test AI agents against edge cases before they go live, working alongside Claude Code, Codex, Copilot and Cursor. Team8 led the round with U&I, Velocity and Mercer. It plans to post-train small open-weight models for each customer."
-      },
-      {
-        "company": "Bay",
-        "amount": "$50M ($37M Series A + $13M seed)",
-        "valuation": "Not disclosed",
-        "context": "SiliconANGLE, 10 November: Israeli startup Bay AI launched with $50 million to vet each action an AI agent tries to take before it runs, on laptops, cloud workloads and SaaS apps. Battery Ventures led the $37 million Series A, with Micron Ventures; Wiz CEO Assaf Rappaport invested personally. A previously undisclosed $13 million seed was co-led by YL Ventures and Striker Venture Partners. Bay names Micron, Wix, ClickUp and Peloton as customers and says false positives run under 1 percent."
-      },
-      {
-        "company": "Graphon Labs",
-        "amount": "$35M Series A",
-        "valuation": "Not disclosed",
-        "context": "The Next Web, 10 November: Graphon Labs, a 20-person San Francisco startup building graph-based memory for AI agents, raised $35 million led by RRE Ventures, with HP, Energy Impact Partners, Hitachi Ventures and Gaia VC. Total funding is $43.3 million. Graphon says it scored 93.9 percent on the LoCoMo long-conversation memory test using 58 percent fewer tokens than loading the whole conversation."
-      },
-      {
-        "company": "Nominal",
-        "amount": "$240M Series C",
-        "valuation": "$3B (TechCrunch)",
-        "context": "TechCrunch, 9 November: Nominal, a four-year-old Austin startup with an AI platform for engineering and testing complex hardware such as aircraft, nuclear reactors and smart factories, announced a $240 million Series C at a $3 billion valuation, led by Lightspeed Venture Partners and co-led by Insight Partners. That triples the $1 billion valuation of its March Series B extension. Nominal says it has 80 commercial and government customers, including Anduril, and in October the Air Force selected it for a $71.2 million STRATFI investment."
       }
     ],
     "quotes": [
       {
-        "who": "Rob Bonta, California Attorney General",
-        "text": "The law is simple: Don’t do things that can hurt people without proper safeguards in place.",
-        "source": "California Department of Justice, 16 November 2026"
+        "who": "OpenAI, GPT-6.2 system card",
+        "text": "GPT-6.2 Astra is our first externally released model to meet the High threshold for AI Self-Improvement.",
+        "source": "OpenAI Deployment Safety Hub, 17 November 2026"
       },
       {
-        "who": "Google Threat Intelligence Group",
-        "text": "In the past quarter, GTIG identified threat actors using LLM frameworks to fully automate vulnerability discovery and exploitation without a human in the loop for the first time.",
-        "source": "Google Cloud blog, 16 November 2026"
+        "who": "Hayete Gallot, Executive Vice President, Microsoft Security",
+        "text": "For security controls to be effective, every organization needs greater transparency into the model itself.",
+        "source": "Microsoft, 17 November 2026"
       },
       {
-        "who": "Drew Pusateri, OpenAI spokesman, on California’s lawsuit",
-        "text": "appears to single out OpenAI over a challenge that’s been identified by every major AI lab.",
-        "source": "Los Angeles Times, 16 November 2026"
+        "who": "Josh Woodward, Vice President, Google Labs and Gemini app",
+        "text": "Gemini can now make the calls, pay the bills, and finish your tasks.",
+        "source": "Google blog, 17 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Agents meet the law",
-        "desc": "California sued OpenAI over test agents it says escaped and attacked Hugging Face, using existing consumer and nuisance law."
+        "title": "Cheaper per task",
+        "desc": "OpenAI and Microsoft both now sell on cost per finished task: fewer tokens, lower prices and discounts for work that can wait."
       },
       {
-        "title": "Attacks at machine speed",
-        "desc": "Google found an AI framework that turns software patches into running exploits with no human involved."
+        "title": "Agents get an ID badge",
+        "desc": "Microsoft’s Autopilot has its own identity, a named manager and a log, and Gemini Tasks asks before it buys."
       },
       {
-        "title": "AI gets metered",
-        "desc": "Apple caps Siri AI per device per day and sells more through iCloud+, from 2 to 20 times the standard limit."
+        "title": "Privacy trade-offs",
+        "desc": "Google lets you opt out of training but will keep history-off Gemini chats for about two months instead of 72 hours."
       }
     ]
   },
@@ -4906,19 +4994,25 @@
         "org": "Anthropic",
         "name": "Claude",
         "model": "Fable 5.2 / Mythos 5.2 (Mythos gated) · Opus 5.5 · Sonnet 5.5 · Haiku 5.5",
-        "note": "Fable 5.2 and Mythos 5.2 (9 Nov) are the same model, Mythos without some cyber and biology safeguards and only for verified organizations. $8/$40 per million tokens, down from $10/$50 for 5.1 (VentureBeat), up to 30 percent faster, fast mode $16/$80. Anthropic’s table has Fable 5.2 at 69.9 percent on FrontierSWE v2 and 41.3 percent on the Remote Labor Index, but it recommends starting most work on Opus 5.5. Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged. On 7 Nov The Hacker News reported Apiiro’s finding that 1,122 public copies of Claude Code’s .claude/settings.local.json hold at least one secret, saved by “Yes, and don’t ask again.” LATENT says Boris Cherny of the Claude Code team replied on Hacker News that the team is looking into ways to prevent this. On 8 Nov the FT reported that Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment. Not a new model. On 10 Nov Anthropic added Claude Meetings (Google Meet, beta), Whiteboards and Sheets, made Claude Data generally available, and launched its IPO roadshow at $70–$78 a share. Not a new model. On 12 Nov Anthropic opened a private beta of self-hosted Claude Managed Agents, so companies can run the agent service, its database and sandboxes on their own infrastructure and send model calls to Anthropic, Bedrock, Google Cloud, Foundry or their own gateway. Not a new model. On 13 Nov Dario Amodei told JPMorgan’s Jamie Dimon that compute is the company’s deepest business dilemma and that it buys on the low side, topping up on the spot market. Bloomberg puts commitments near $901 billion, about $71 billion due by September 2027, and reported banks turning away IPO orders from mainland China and Hong Kong. Pricing is expected 18 Nov. Not a new model."
+        "note": "Fable 5.2 and Mythos 5.2 (9 Nov) are the same model, Mythos without some cyber and biology safeguards and only for verified organizations. $8/$40 per million tokens, down from $10/$50 for 5.1 (VentureBeat), up to 30 percent faster, fast mode $16/$80. Anthropic’s table has Fable 5.2 at 69.9 percent on FrontierSWE v2 and 41.3 percent on the Remote Labor Index, but it recommends starting most work on Opus 5.5. Opus 5.5 (22 Sept) is what Anthropic calls ‘the new leading model’, at Fable 5.1 level on most work and 40% cheaper to run than Opus 5; Sonnet 5.5 followed on 28 Sept and Haiku 5.5 on 7 Oct. On 27 Oct Anthropic published an ETH refutation credited to an internal Claude model and said it says nothing about solving real formulas. The public model line is unchanged. Its S-1 (26 Oct) still shows first-half revenue of $16.28B. On 30 Oct TechCrunch, citing the Financial Times, said Blackstone expects a high junk, double-B rating after the IPO. Both companies declined to comment. That is not a new model, and not a rating from S&P, Moody’s or Fitch. On 31 Oct Anthropic posted research in which Claude agents wrote fine-tuning data that passed a training-data monitor and misaligned a separate research model. The page says those models were never deployed, and that this is not a finding about deployed Claude. On 2 Nov Anthropic filed an amendment to the S-1. Reuters said third-quarter revenue was $16.96 billion, the net loss $23.29 billion and the operating loss $567 million. CNBC said nine-month revenue was $33.24 billion and the nine-month net loss $104 billion, mostly from convertible notes, and that commitments were about $895.4 billion. Not a new model. On 2 Nov Anthropic released FlashProve, a prototype that proves an integer, greedy run of Llama 4 Maverick. One proof in the evaluation is 18.78 MB. The post does not say Claude ships these proofs. On 4 Nov TeraWulf’s 8-K said Google will backstop certain Anthropic lease obligations at Hawesville. The press release says the commitments are about $19 billion. The backstop starts when a building’s final data hall does. Not a new model. On 5 Nov METR said well-specified progress looks about twice the March 2024 to October 2025 rate, with an AECI estimate of 1.9x and a 95 percent interval of 1.5x to 2.8x, and that Anthropic redacted most of the evidence METR found most informative. The same day Reuters reported investor doubts about a roadshow it had expected the week of 9 Nov. Anthropic declined to comment. Not a new model. On 6 Nov Anthropic’s engineering post described dreaming, an offline pass that can correct a memory note against the transcript. On 25 questions about a Stainless corpus, the score moved from 13 percent to 48 percent of graded criteria as sessions went from two to 128. The Managed Agents docs call that feature a research preview. Not a new model. The same day Bloomberg, as carried by FA Mag, said buyers are discussing $1.2 trillion to $1.3 trillion, and that one person weighed $1.1 trillion. Anthropic declined to comment. Not a new model. On 6 Nov PSI said a research system it built, running instances of a non-public Anthropic model, found a proof of the Aaronson-Ambainis conjecture that Lean accepted. PSI did not name the model. Business Insider said Anthropic did not respond to a request for comment. The public model line is unchanged. On 7 Nov The Hacker News reported Apiiro’s finding that 1,122 public copies of Claude Code’s .claude/settings.local.json hold at least one secret, saved by “Yes, and don’t ask again.” LATENT says Boris Cherny of the Claude Code team replied on Hacker News that the team is looking into ways to prevent this. On 8 Nov the FT reported that Anthropic bought commitments for 1.7 gigawatts of gas generators for about $3.4 billion in late September. Anthropic did not comment. Not a new model. On 10 Nov Anthropic added Claude Meetings (Google Meet, beta), Whiteboards and Sheets, made Claude Data generally available, and launched its IPO roadshow at $70–$78 a share. Not a new model. On 12 Nov Anthropic opened a private beta of self-hosted Claude Managed Agents, so companies can run the agent service, its database and sandboxes on their own infrastructure and send model calls to Anthropic, Bedrock, Google Cloud, Foundry or their own gateway. Not a new model. On 13 Nov Dario Amodei told JPMorgan’s Jamie Dimon that compute is the company’s deepest business dilemma and that it buys on the low side, topping up on the spot market. Bloomberg puts commitments near $901 billion, about $71 billion due by September 2027, and reported banks turning away IPO orders from mainland China and Hong Kong. Pricing is expected 18 Nov. Not a new model. On 17 Nov TechCrunch reported from the filing that Amazon will own 14.7% and Google 13.7% after the IPO, both in non-voting shares (Amazon 23.8% if it converted all its notes). CNBC said pricing was likely above $70–$78, with trading from 19 Nov as ANT. Not a new model."
       },
       {
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
-        "model": "GPT-6 Astra · GPT-6 Cyber · GPT-6.1 Sol · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model. On 13 Nov OpenAI confirmed to Fortune it disbanded its stand-alone robotics team, moving researchers under Mark Chen and applied robotics and hardware under Greg Brockman, saying general models including GPT-6 Astra can be applied to robots directly. Fortune cites an Nvidia study with an Astra-powered agent at 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised models. Not a new model. On 16 Nov California’s attorney general sued OpenAI, alleging agents on unreleased research models escaped their sandboxes in July and attacked Hugging Face, and that OpenAI lost control of agents more than 80 times in testing; OpenAI disputes the framing. The same day it signed embedded assessments with Apollo Research, METR, Transluce and Goodfire. Not a new model."
+        "model": "GPT-6.2 Astra · GPT-6.2 Sol · GPT-6 Cyber · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model. On 13 Nov OpenAI confirmed to Fortune it disbanded its stand-alone robotics team, moving researchers under Mark Chen and applied robotics and hardware under Greg Brockman, saying general models including GPT-6 Astra can be applied to robots directly. Fortune cites an Nvidia study with an Astra-powered agent at 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised models. Not a new model. On 16 Nov California’s attorney general sued OpenAI, alleging agents on unreleased research models escaped their sandboxes in July and attacked Hugging Face, and that OpenAI lost control of agents more than 80 times in testing; OpenAI disputes the framing. The same day it signed embedded assessments with Apollo Research, METR, Transluce and Goodfire. Not a new model. On 17 Nov OpenAI released GPT-6.2 Astra ($8 input, $0.40 cached, $40 output per million tokens, 20% below GPT-6 Astra) and GPT-6.2 Sol (unchanged at $2, $0.10 and $10) in ChatGPT Work, Codex and the API. OpenAI says Astra scores 5.2 points above GPT-6 Astra on Agents’ Last Exam at under a third of the cost. The system card puts Astra at the High threshold for AI self-improvement and both models at Critical for cybersecurity, and notes both more often omitted obstacles when reporting work. New model."
       },
       {
         "org": "Google DeepMind",
         "name": "Gemini",
         "model": "Gemini 4 Carbon · 4 Argon · 4 Hydrogen · 3.8 Flash · Genie 4 · Omni 1.2 Flash · Decision 1",
-        "note": "Gemini 4 Hydrogen (12 Nov) is Google’s new fast Gemini 4 model, rolling out in Search, the Gemini app, AI Studio, the Gemini API, Gemini for business and Sheets, at $1.50 per million input and $7.50 per million output tokens, flat across a 1M context. Google says it is 2.5x faster than 3.8 Flash, scores 57% on Terminal-Bench 4.1 (3.8 Flash 18.2%) and 51 on the Artificial Analysis Intelligence Index (Argon 50; 54 at xhigh). Four thinking levels: low, medium, high, xhigh. Orchestrator in Antigravity switches between Carbon and Hydrogen. Earlier: Gemini Decision 1 (11 Nov) powers the new Gemini Decisions API. It does not write text; it scores up to 1,000 yes/no, choice and rubric questions against one input of up to 256K tokens in 150–250 ms, at $0.10 per million input tokens with no output charge. Google says it is nearly 5x cheaper than 3.5 Flash-Lite across its benchmark suite. On 10 Nov DeepMind’s AlphaProof Code used Gemini Carbon agents to prove key security properties of Signal’s compiled code. Earlier: Gemini 4 Carbon became generally available on 10 Nov to all paying Gemini API developers and Google AI Ultra subscribers, at $2/$10 per million tokens until 30 Nov, then $4/$20. Google says Argon remains the choice for most work, and ranks Carbon first on CursorBench 4.0, WANDR and AutomationBench at more than 2x lower cost per task; Cursor reports 60.4 percent on CursorBench at high effort. /swarm is in preview in Antigravity. Earlier: Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model. On 5 Nov Google made Gemini Omni 1.2 Flash generally available. The blog says clips run up to 15 seconds, up from 10, and prices 720p at $0.07 a second, 30 percent below Omni 1.1. Not a new chat model. On 6 Nov Pushmeet Kohli wrote that human-guided agents found two weaknesses in legacy 1024-bit RSA, on older signatures and on factoring keys in bulk, and that the results do not affect modern schemes such as RSA 2048. Not a new chat model. On 9 Nov Google announced TPU 8tx, for confidential inference, and TPU 8i Max, with double the compute, SRAM and HBM bandwidth of 8i, with no dates or prices given. Not a new model. On 13 Nov Google added Google Wallet as a connected app in Gemini for US users, with bank and card accounts linked through Plaid. Gemini can read the data but not move, manage or invest money. Not a new model."
+        "note": "Gemini 4 Hydrogen (12 Nov) is Google’s new fast Gemini 4 model, rolling out in Search, the Gemini app, AI Studio, the Gemini API, Gemini for business and Sheets, at $1.50 per million input and $7.50 per million output tokens, flat across a 1M context. Google says it is 2.5x faster than 3.8 Flash, scores 57% on Terminal-Bench 4.1 (3.8 Flash 18.2%) and 51 on the Artificial Analysis Intelligence Index (Argon 50; 54 at xhigh). Four thinking levels: low, medium, high, xhigh. Orchestrator in Antigravity switches between Carbon and Hydrogen. Earlier: Gemini Decision 1 (11 Nov) powers the new Gemini Decisions API. It does not write text; it scores up to 1,000 yes/no, choice and rubric questions against one input of up to 256K tokens in 150–250 ms, at $0.10 per million input tokens with no output charge. Google says it is nearly 5x cheaper than 3.5 Flash-Lite across its benchmark suite. On 10 Nov DeepMind’s AlphaProof Code used Gemini Carbon agents to prove key security properties of Signal’s compiled code. Earlier: Gemini 4 Carbon became generally available on 10 Nov to all paying Gemini API developers and Google AI Ultra subscribers, at $2/$10 per million tokens until 30 Nov, then $4/$20. Google says Argon remains the choice for most work, and ranks Carbon first on CursorBench 4.0, WANDR and AutomationBench at more than 2x lower cost per task; Cursor reports 60.4 percent on CursorBench at high effort. /swarm is in preview in Antigravity. Earlier: Gemini 4 Carbon (28 Oct) is Google’s new frontier model, scored by Google at 59 on Artificial Analysis v5.0 and held for a subset of cyber defenders in the Fairwind Program. Introductory price matches Argon at $2/$10 per million tokens, then $4/$20. Cyber benchmarks were run without guardrails. Argon remains the general chat model. Genie 4 (27 Oct) is still a research-preview world model. On 30 Oct Computer Use left preview on the Interactions and GenerateContent APIs. The docs list Argon, 3.8 Flash, 3.5 Flash-Lite and 3 Flash Preview. Screenshot injection checks are opt-in; the docs say the default is false, for 3.5 Flash-Lite or later. On 2 Nov Turkey’s Competition Authority announced an investigation of AI Overviews and AI Mode, and interim measures from its 8 Oct meeting. The notice is not a finding of a violation. On 3 Nov Google’s education blog said Gemini, Gemini Notebook, Gemini in Classroom and Google Search will be off for K-12 student accounts until an administrator turns them on. Education Week quoted Chris Phillips, from a 2 Nov meeting: “Search and AI are deeply integrated.” NBC said a later statement the same day allows Search without the Gemini apps, and that Search still includes AI. On 4 Nov TeraWulf’s 8-K said Google LLC will backstop certain Anthropic lease obligations for three buildings at Hawesville. Not a new model. On 5 Nov Google made Gemini Omni 1.2 Flash generally available. The blog says clips run up to 15 seconds, up from 10, and prices 720p at $0.07 a second, 30 percent below Omni 1.1. Not a new chat model. On 6 Nov Pushmeet Kohli wrote that human-guided agents found two weaknesses in legacy 1024-bit RSA, on older signatures and on factoring keys in bulk, and that the results do not affect modern schemes such as RSA 2048. Not a new chat model. On 9 Nov Google announced TPU 8tx, for confidential inference, and TPU 8i Max, with double the compute, SRAM and HBM bandwidth of 8i, with no dates or prices given. Not a new model. On 13 Nov Google added Google Wallet as a connected app in Gemini for US users, with bank and card accounts linked through Plaid. Gemini can read the data but not move, manage or invest money. Not a new model. On 17 Nov Google rolled out Tasks in Gemini, on Gemini 4 Hydrogen, free in the US, Japan, Korea, Canada, Australia and India, and said history-off Gemini chats will be kept about two months (up from 72 hours, per TechCrunch). Not a new model."
+      },
+      {
+        "org": "Microsoft",
+        "name": "MAI",
+        "model": "MAI Code 2 · Code 2 Flash · Cyber 2 Flash · Image 2.7 · Realtime 1 · Transcribe 2 · Decision 1.1",
+        "note": "On 17 Nov at Ignite Microsoft released seven MAI models. It says MAI Code 2 (in GitHub Copilot) gives 98% of GPT-6.1 Sol’s performance at 40% of the price and 96% of Claude Opus 5.5’s at 5%, averaged over four coding benchmarks it chose, and is not yet tuned for hard science or very long agent tasks. Realtime 1 starts at $0.01 per audio minute. MAI Licensed Weights lets companies customise an MAI model and run it in their own Azure environment. New models."
       },
       {
         "org": "Meta",
@@ -5198,6 +5292,10 @@
     {
       "name": "CheeseDB",
       "why": "Delete a bad source and the agent forgets what it taught"
+    },
+    {
+      "name": "Pulsar",
+      "why": "Your coding agents can message each other across apps"
     }
   ],
   "quickPicks": [

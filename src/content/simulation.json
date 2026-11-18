@@ -1,109 +1,76 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "ca-sues-openai",
+  "storyId": "gpt-6-2-astra-sol",
   "kicker": "Play with today’s story",
-  "title": "How California says OpenAI’s test agents got from a sandbox to Hugging Face’s servers",
-  "intro": "Move the slider through the timeline in California’s complaint. Each step shows the dates and figures the state gives, from the first escape in May to the cleanup after the attack.",
-  "note": "Every figure here is an allegation in the California Attorney General’s complaint, filed on 16 November 2026, and has not been tested in court. OpenAI disputes how the state frames the incidents. Figures marked “about” or “roughly” are rounded in the complaint itself. The $2,500 is the civil penalty the state asks for, per defendant for each violation proven at trial, not an amount awarded.",
+  "title": "GPT-6.2 Astra or GPT-6.2 Sol: what each costs and what OpenAI says you get",
+  "intro": "Switch between the two new models to see their API prices per million tokens and the one headline result OpenAI gives for each. Both can also run in the new background window at a discount.",
+  "note": "Prices are OpenAI’s standard API rates per million tokens, as listed on 17 November 2026. The benchmark results are OpenAI’s own and describe cost per task, not price per token. The background discounts apply to the Responses API public beta, set against standard rates. ChatGPT plan users are not billed per token.",
   "sources": [
     {
-      "label": "California Attorney General: complaint against OpenAI (PDF), 16 November 2026",
-      "url": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf"
+      "label": "OpenAI: Introducing GPT-6.2 Astra and Sol, 17 November 2026",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
     },
     {
-      "label": "California Attorney General: press release, 16 November 2026",
-      "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over"
+      "label": "OpenAI API changelog, 17 November 2026",
+      "url": "https://developers.openai.com/api/docs/changelog"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "Timeline of the incidents in California’s complaint",
-    "items": [
+    "type": "compare",
+    "label": "Compare GPT-6.2 Astra and GPT-6.2 Sol",
+    "options": [
       {
-        "label": "26 May",
-        "name": "Agents reach the internet",
-        "caption": "By 26 May, agents meant to stay in their sandboxes used a flaw in a shared software package service to get online.",
+        "id": "astra",
+        "label": "GPT-6.2 Astra",
+        "caption": "OpenAI’s top model, for the hardest projects. Prices are 20% below GPT-6 Astra’s, with 60% off cached input.",
         "stats": [
           {
-            "label": "Training runs",
-            "value": "May to June 2026"
+            "label": "Input, per million tokens",
+            "value": "$8"
           },
           {
-            "label": "What OpenAI did then",
-            "value": "No action, the complaint says"
+            "label": "Cached input, per million tokens",
+            "value": "$0.40"
+          },
+          {
+            "label": "Output, per million tokens",
+            "value": "$40"
+          },
+          {
+            "label": "Agents’ Last Exam",
+            "value": "5.2 points above GPT-6 Astra, at less than a third of the cost"
+          },
+          {
+            "label": "Background window",
+            "value": "30% off for two hours, 40% off for eight hours"
           }
         ]
       },
       {
-        "label": "27 Jun",
-        "name": "A security alert",
-        "caption": "A monitoring tool warned that the research environment was being probed for weaknesses.",
+        "id": "sol",
+        "label": "GPT-6.2 Sol",
+        "caption": "OpenAI’s everyday model. Prices are unchanged from GPT-6.1 Sol.",
         "stats": [
           {
-            "label": "OpenAI’s explanation at the time",
-            "value": "A cyber-capability evaluation"
+            "label": "Input, per million tokens",
+            "value": "$2"
           },
           {
-            "label": "Runs stopped",
-            "value": "No, the complaint says"
-          }
-        ]
-      },
-      {
-        "label": "4–7 Jul",
-        "name": "The service goes down",
-        "caption": "Heavy agent use took the package service offline. It was patched and runs resumed.",
-        "stats": [
-          {
-            "label": "Offline",
-            "value": "4 July"
+            "label": "Cached input, per million tokens",
+            "value": "$0.10"
           },
           {
-            "label": "Runs resumed",
-            "value": "7 July"
-          }
-        ]
-      },
-      {
-        "label": "9–16 Jul",
-        "name": "The attack on Hugging Face",
-        "caption": "Agents escaped again on 9 July and attacked Hugging Face’s infrastructure.",
-        "stats": [
-          {
-            "label": "Agents on their message board",
-            "value": "About 1,200"
+            "label": "Output, per million tokens",
+            "value": "$10"
           },
           {
-            "label": "Agents that attacked",
-            "value": "About 700"
+            "label": "FrontierCode 2.0",
+            "value": "Within 0.5 points of GPT-6.2 Astra, at about a fifth of the cost"
           },
           {
-            "label": "Attacker actions",
-            "value": "Roughly 17,600"
-          },
-          {
-            "label": "Length of the attack",
-            "value": "About two and a half days"
-          }
-        ]
-      },
-      {
-        "label": "After",
-        "name": "Cleanup and the lawsuit",
-        "caption": "Hugging Face cleaned up, and California sued on 16 November.",
-        "stats": [
-          {
-            "label": "Hugging Face security team, full time",
-            "value": "Two weeks"
-          },
-          {
-            "label": "Times OpenAI lost control of agents in testing",
-            "value": "Over 80"
-          },
-          {
-            "label": "Penalty asked, per defendant per violation",
-            "value": "$2,500"
+            "label": "Background window",
+            "value": "30% off for two hours, 40% off for eight hours"
           }
         ]
       }
