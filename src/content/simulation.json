@@ -1,76 +1,68 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "gpt-6-2-astra-sol",
+  "storyId": "gemini-4-neon",
   "kicker": "Play with today’s story",
-  "title": "GPT-6.2 Astra or GPT-6.2 Sol: what each costs and what OpenAI says you get",
-  "intro": "Switch between the two new models to see their API prices per million tokens and the one headline result OpenAI gives for each. Both can also run in the new background window at a discount.",
-  "note": "Prices are OpenAI’s standard API rates per million tokens, as listed on 17 November 2026. The benchmark results are OpenAI’s own and describe cost per task, not price per token. The background discounts apply to the Responses API public beta, set against standard rates. ChatGPT plan users are not billed per token.",
+  "title": "Gemini 4 Neon or Gemini 4 Carbon: what each costs, before and after Carbon’s 1 December price rise",
+  "intro": "Switch between Google’s new Neon model and Carbon, its top model, to see their API prices per million tokens on the Gemini API, and what Google says about cost per task.",
+  "note": "Prices are Google’s standard paid-tier Gemini API rates per million tokens, from its pricing page on 19 November 2026; output includes thinking tokens. Neither model is on the free tier. The 32% figure is Google’s own, measured per task at Neon’s default high thinking level, and is not a price per token. Gemini app subscribers are not billed per token.",
   "sources": [
     {
-      "label": "OpenAI: Introducing GPT-6.2 Astra and Sol, 17 November 2026",
-      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+      "label": "Google: Introducing Gemini 4 Neon, 18 November 2026",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
     },
     {
-      "label": "OpenAI API changelog, 17 November 2026",
-      "url": "https://developers.openai.com/api/docs/changelog"
+      "label": "Google: Gemini API pricing",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing"
     }
   ],
   "widget": {
     "type": "compare",
-    "label": "Compare GPT-6.2 Astra and GPT-6.2 Sol",
+    "label": "Compare Gemini 4 Neon and Gemini 4 Carbon",
     "options": [
       {
-        "id": "astra",
-        "label": "GPT-6.2 Astra",
-        "caption": "OpenAI’s top model, for the hardest projects. Prices are 20% below GPT-6 Astra’s, with 60% off cached input.",
+        "id": "neon",
+        "label": "Gemini 4 Neon",
+        "caption": "New on 18 November. Sits between Carbon and Hydrogen, with a 1 million-token context window.",
         "stats": [
           {
             "label": "Input, per million tokens",
-            "value": "$8"
+            "value": "$3"
           },
           {
             "label": "Cached input, per million tokens",
-            "value": "$0.40"
+            "value": "$0.15"
           },
           {
             "label": "Output, per million tokens",
-            "value": "$40"
+            "value": "$15"
           },
           {
-            "label": "Agents’ Last Exam",
-            "value": "5.2 points above GPT-6 Astra, at less than a third of the cost"
+            "label": "Batch or Flex, input and output",
+            "value": "$1.50 and $7.50"
           },
           {
-            "label": "Background window",
-            "value": "30% off for two hours, 40% off for eight hours"
+            "label": "Cost per task, Google’s figure",
+            "value": "32% lower than Carbon at the default high thinking level"
           }
         ]
       },
       {
-        "id": "sol",
-        "label": "GPT-6.2 Sol",
-        "caption": "OpenAI’s everyday model. Prices are unchanged from GPT-6.1 Sol.",
+        "id": "carbon",
+        "label": "Gemini 4 Carbon",
+        "caption": "Google’s most capable model. Its promotional price ends on 30 November.",
         "stats": [
           {
             "label": "Input, per million tokens",
-            "value": "$2"
+            "value": "$2 through 30 November, $4 from 1 December"
           },
           {
             "label": "Cached input, per million tokens",
-            "value": "$0.10"
+            "value": "$0.10 through 30 November, $0.20 from 1 December"
           },
           {
             "label": "Output, per million tokens",
-            "value": "$10"
-          },
-          {
-            "label": "FrontierCode 2.0",
-            "value": "Within 0.5 points of GPT-6.2 Astra, at about a fifth of the cost"
-          },
-          {
-            "label": "Background window",
-            "value": "30% off for two hours, 40% off for eight hours"
+            "value": "$10 through 30 November, $20 from 1 December"
           }
         ]
       }
