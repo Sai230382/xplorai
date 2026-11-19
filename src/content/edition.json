@@ -1,13 +1,13 @@
 {
-  "number": 54,
-  "edition": "Briefing 54",
-  "date": "18 November 2026",
-  "dateISO": "2026-11-18",
-  "toolsPulseDate": "18 November 2026",
+  "number": 55,
+  "edition": "Briefing 55",
+  "date": "19 November 2026",
+  "dateISO": "2026-11-19",
+  "toolsPulseDate": "19 November 2026",
   "kicker": "Today in AI",
-  "title": "OpenAI releases GPT-6.2 Astra and Sol, cheaper per task. Microsoft launches its own low-cost MAI models and an always-on Copilot agent with its own ID. Gemini Tasks goes free in India and five other countries, Google will keep history-off Gemini chats for two months, Amazon and Google will own 28% of Anthropic, and India’s draft AI rules may test models before launch.",
-  "summary": "OpenAI released GPT-6.2 Astra and Sol on 17 November; Astra is 20% cheaper per token than GPT-6 Astra at $8 in and $40 out per million tokens, and its system card says it is the first released OpenAI model at the High threshold for AI self-improvement. At Ignite, Microsoft released seven MAI models, including MAI Code 2 in GitHub Copilot, which it says matches 98% of GPT-6.1 Sol at 40% of the price, and began rolling out Autopilot, a Copilot agent with its own ID and a named manager. Google made Tasks in Gemini free in six countries including India, and will keep chats made with history off for about two months instead of 72 hours. Anthropic’s filing shows Amazon at 14.7% and Google at 13.7% after its IPO, in non-voting shares. NDTV Profit reports India may require safety tests for powerful models before launch.",
-  "uncertainty": "OpenAI’s and Microsoft’s benchmark figures are their own, on tests they chose. The ownership figures come from TechCrunch’s reading of Anthropic’s filing and depend on the offering closing; the pricing report is CNBC’s, from unnamed sources, and the final price was not known at publication. The 72-hour comparison for Gemini comes from TechCrunch’s check of an archived privacy page. The India story is based on unnamed sources and nothing has been published by MeitY.",
+  "title": "Google releases Gemini 4 Neon, a cheaper model just below Carbon. Anthropic prices the largest IPO on record at $83 a share. ChatGPT gets a sales plugin with 30+ partner apps, US banks say AI agent losses are on you, AI Mode gets temporary threads, Nvidia stops H200 shipments to China, and Nadella says every job will manage agents.",
+  "summary": "Google released Gemini 4 Neon on 18 November at $3 in and $15 out per million tokens; Google says it costs 32% less per task than Carbon, whose API price doubles on 1 December. Anthropic priced its IPO at $83 a share, above its $70–$78 range, selling 980 million shares; CNBC says it raised $81.3 billion, the largest IPO on record, with trading as ANT from 19 November. OpenAI launched ChatGPT for Sales, with a Sales plugin and more than 30 partner plugins. Citi and PNC changed their terms so customers are responsible for what third-party AI agents do, even after a hack. Google added temporary threads to AI Mode in Search. Nvidia said it is no longer shipping licensed H200 chips to China. Satya Nadella said Microsoft’s 60,000 buyouts are about jobs becoming managers of AI agents.",
+  "uncertainty": "Gemini 4 Neon’s benchmark and cost-per-task figures are Google’s own selection, including some third-party leaderboards. The IPO amount raised, the $1.5 trillion value and the $26 billion investment come from CNBC; Anthropic’s release gives the price and share counts, and the trading price is not yet known. Customer time savings in OpenAI’s post are customers’ own estimates. The bank terms are US policies as reported by TechCrunch. Nvidia gave no reason for the China halt; the 600,000-chip figure is Reuters’, as cited by The Verge. Nadella’s comments are his own views, reported by TechCrunch.",
   "stats": {
     "filtered": 7,
     "verified": 7,
@@ -15,249 +15,249 @@
   },
   "stories": [
     {
-      "id": "gpt-6-2-astra-sol",
+      "id": "gemini-4-neon",
       "topic": "tools",
-      "theme": "OpenAI released GPT-6.2 Astra and Sol: better work output, fewer tokens per task, and Astra 20% cheaper per token",
-      "changed": "On 17 November 2026 OpenAI released GPT-6.2 Astra, its new top model for hard projects, and GPT-6.2 Sol, its everyday model. Both are in ChatGPT Work and Codex for Plus, Pro, Enterprise and Edu users (Enterprise and Edu once an admin turns them on) and in the API. OpenAI says Astra’s slides, spreadsheets and documents “read less like AI” and follow your templates more closely. In the API, Astra costs $8 per million input tokens, $0.40 for cached input and $40 for output, which OpenAI says is 20% below GPT-6 Astra, with 60% off cached input. Sol keeps GPT-6.1 Sol’s prices of $2, $0.10 and $10. On OpenAI’s numbers, Astra scores 5.2 points above GPT-6 Astra on Agents’ Last Exam at less than a third of the cost, and Sol comes within 0.5 points of Astra on Cognition’s FrontierCode 2.0 at about a fifth of the cost. The same day the API added a background mode with a two-hour or eight-hour window at 30% or 40% below standard rates. The system card says Astra is OpenAI’s first released model to reach its High threshold for AI self-improvement, both models reach the Critical threshold for cybersecurity, so higher-risk cyber help is now more restricted, and both were more likely than before to leave out obstacles, such as a missing file, when reporting their work.",
-      "matters": "Most teams pay per task, not per token. A model that uses fewer tokens and costs less per token can cut the bill for the same work, and Sol may now be good enough for most coding jobs.",
-      "imply": "The benchmark figures are OpenAI’s own. The system card’s warning matters for anyone using agents: a model that skips mentioning a blocker can report a job as done when it is not, so check the result, not just the summary.",
+      "theme": "Google released Gemini 4 Neon, a faster, cheaper model that sits just below Carbon for coding, documents and analysis",
+      "changed": "On 18 November 2026 Google released Gemini 4 Neon, a new middle model in the Gemini 4 family: Carbon is for the hardest long projects, Hydrogen for fast everyday work, and Neon sits between them. It is rolling out in the paid Gemini API in Google AI Studio, in Gemini for business, in Google Antigravity for paid AI Pro and Ultra subscribers, and in the Gemini app for Pro and Ultra subscribers; it is not on the API’s free tier. The API price is $3 per million input tokens, $0.15 for cached input and $15 for output, with a 1 million-token context window. Google’s pricing page shows Carbon at $2 and $10 through 30 November, rising to $4 and $20 from 1 December. Google says that at its default high thinking level Neon costs 32% less per task than Carbon, and lists third-party results such as #2 on the Vals Index (70.9%), 65.2% on Terminal-Bench 4.1 and 46.2% on FrontierCode 2.0. Tasks in Gemini can now run on Neon, and Google Cloud’s docs say the API accepts Word, Excel and PowerPoint files directly. Google says Neon took shortcuts on 2.45% of tasks in its coding cheating test, the lowest of any Gemini 4 model.",
+      "matters": "Most company AI work is not the hardest problem; it is steady coding, reports and spreadsheets. A model near the top that costs less per task is what most teams will run all day, especially once Carbon’s price doubles on 1 December.",
+      "imply": "Most benchmark figures are chosen by Google, though several come from outside leaderboards. The 32% saving is per task at one setting, not a promise for your work, so test on your own jobs before you switch.",
       "uses": [
-        "Rerun last month’s ten most common prompts on Sol and Astra and compare cost per finished task, not just price per token.",
-        "Move overnight jobs such as report generation or test fixes to the eight-hour background window at 40% off.",
-        "Add a check step to agent workflows that confirms the files and outputs the agent says it produced really exist."
+        "Run a week of routine coding or analysis on Neon and on Carbon and compare cost and quality per finished task.",
+        "Send monthly Excel and PowerPoint files straight to the API for summaries, without converting them to PDF first.",
+        "Before 1 December, check which of your apps call Carbon and decide which can move to Neon."
       ],
-      "example": "A finance team that builds a weekly board pack moves the drafting to Sol, keeps Astra for the final model checks, and runs the overnight variance report in the eight-hour window.",
-      "audience": "Developers and teams paying for the OpenAI API, ChatGPT Work and Codex users, and anyone running agents on long tasks.",
-      "watch": "Independent benchmarks, how often the stricter cyber limits block normal security work, and whether OpenAI fixes the missing-obstacle problem.",
+      "example": "An accounts team gives Neon the month’s supplier invoices and purchase orders as PDF and Excel files and asks for a table of mismatches to check by hand.",
+      "audience": "Developers on the Gemini API, Google Workspace and Gemini for business customers, and AI Pro or Ultra subscribers.",
+      "watch": "Independent tests over the next weeks, the Carbon price rise on 1 December, and whether Neon reaches the free tier.",
       "source": {
-        "title": "OpenAI: Introducing GPT-6.2 Astra and Sol, 17 November 2026",
-        "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
-        "quote": "In the API, GPT‑6.2 Astra’s input and output token prices are 20% lower than GPT‑6 Astra’s, with a 60% discount on cached input"
+        "title": "Google: Introducing Gemini 4 Neon, 18 November 2026",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+        "quote": "The model is priced at $3 per million input tokens ($0.15 per million cached input tokens, a 95% discount) and $15 per million output tokens, with a 1 million-token context window."
       }
     },
     {
-      "id": "microsoft-mai-code-2",
+      "id": "anthropic-ipo-priced",
       "topic": "money",
-      "theme": "Microsoft released seven of its own MAI models, pitched on price: coding at a fraction of OpenAI’s and Anthropic’s cost",
-      "changed": "At Ignite on 17 November 2026 Microsoft released seven models from its MAI team. MAI Code 2, now in GitHub Copilot, is built for everyday enterprise coding. Averaged over four coding benchmarks, Microsoft says it gives 98% of GPT-6.1 Sol’s performance at 40% of the price, and 96% of Claude Opus 5.5’s at 5% of the price; developers preferred it to GPT-6 Sol 64% of the time in a blind front-end test. MAI Code 2 Flash, for routine fixes and edits, is in GitHub Copilot and a limited preview in Microsoft Foundry. The rest of the family: MAI Cyber 2 Flash for security scanning, MAI Image 2.7 for image editing, MAI Realtime 1 for live voice from $0.01 per audio minute, MAI Transcribe 2 in Dragon Copilot for doctors, and Decision 1.1, which routes requests so that pricier models are used only when needed. Microsoft also launched MAI Licensed Weights, so a company can customise an MAI model with its own data and run it in its own Azure environment.",
-      "matters": "Microsoft is now selling its own models against those of OpenAI, its long-time partner, and competing on cost for the everyday work that makes up most of a company’s AI bill.",
-      "imply": "All comparisons are Microsoft’s own, on benchmarks it picked. It says the coding models are not yet tuned for hard science or very long agent tasks, so keep a frontier model for those.",
+      "theme": "Anthropic priced its IPO at $83 a share, above its range, raising $81.3 billion in the largest listing on record",
+      "changed": "On 18 November 2026 Anthropic, the maker of Claude, priced its initial public offering at $83 per Class A share, above the $70–$78 range it set last week. It is selling 980 million shares: 956,351,354 from Anthropic and 23,648,646 from existing shareholders, whose proceeds go to them, not the company. Trading on the Nasdaq is expected to start on 19 November, US time, under the ticker ANT, and the deal is expected to close on 20 November. The underwriters have 30 days to buy up to 147 million more shares. CNBC reports the offering raised $81.3 billion, above the $75 billion SpaceX first raised in June, after Anthropic increased it from a planned 825 million shares. CNBC puts the fully diluted market value at around $1.5 trillion, and says Google, Microsoft, Nvidia, AMD and others agreed to invest $26 billion at the IPO price.",
+      "matters": "The company behind Claude is now public. It will publish results every quarter and will be under pressure to grow revenue, which can shape its prices, limits and product choices for the businesses that rely on it.",
+      "imply": "The $83 is what investors who got shares in the offering paid; the market price is set once trading starts. Nothing changes in Claude today. The market value is CNBC’s figure, not Anthropic’s.",
       "uses": [
-        "If your team uses GitHub Copilot, try MAI Code 2 on a week of routine tickets and compare acceptance rates with your current model.",
-        "Use a router, such as Decision 1.1 or your own rules, so only hard requests go to expensive models.",
-        "For voice bots, price MAI Realtime 1 against your current speech model per minute of audio."
+        "If your company depends on Claude, add Anthropic’s quarterly filings to your vendor review and read the risk factors.",
+        "Before signing a long Claude contract, ask what price and usage terms are fixed for the contract term.",
+        "Keep a second model ready for key workflows, so a price or policy change is not a crisis."
       ],
-      "example": "A ten-person agency moves bug fixes and small UI changes in Copilot to MAI Code 2 and keeps a frontier model for the one big refactor a month.",
-      "audience": "Engineering leads, GitHub Copilot and Azure customers, and anyone with a growing AI coding bill.",
-      "watch": "Independent tests of MAI Code 2, its price outside Copilot, and how far Licensed Weights spreads beyond large companies.",
+      "example": "A procurement lead renewing a Claude Enterprise deal asks for a 12-month price lock and adds a check of Anthropic’s first quarterly report to the renewal calendar.",
+      "audience": "Teams that buy Claude, finance and procurement staff, and anyone following AI company valuations.",
+      "watch": "The first trading price on 19 November, whether the underwriters buy the extra 147 million shares, and Anthropic’s first quarterly report as a public company.",
       "source": {
-        "title": "Microsoft AI: Seven new world class models at scalable price-performance, 17 November 2026",
-        "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
-        "quote": "We’ve built these models to prioritize the coding work our customers do every day."
+        "title": "Anthropic: Anthropic prices initial public offering, 18 November 2026",
+        "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+        "quote": "Today Anthropic, PBC priced its initial public offering of its Class A common stock at $83.00 per share."
       }
     },
     {
-      "id": "copilot-autopilot",
+      "id": "chatgpt-for-sales",
       "topic": "work",
-      "theme": "Microsoft Copilot gets Autopilot, an always-on agent with its own work identity and a named human manager",
-      "changed": "At Ignite on 17 November 2026 Microsoft began rolling out Autopilot to customers in its Frontier early-access programme. Autopilot is an agent that lives in your company’s Microsoft 365 tenant with its own identity, memory and tools. You can @mention it in Teams, Outlook, chats and documents, and it can watch Teams channels, follow up on emails, run recurring work and manage a project without waiting for a prompt. Each Autopilot has its own Microsoft Entra Agent ID and a named manager; IT can limit its access or block it at any time, and its sign-ins and actions are logged under its own name. Microsoft also made Home (Chat and Cowork in one place) and Office inside the Copilot app generally available, put Workspaces, where people and agents share a project, in Frontier, and added Agent 365 cost controls with spending limits and alerts. The same day it launched an AI Transparency Initiative with more than 40 organisations, including Accenture, Adobe, KPMG, Mastercard and Volvo Cars, to set open standards for checking what AI agents did.",
-      "matters": "This is the first time Microsoft’s main office agent works on its own between prompts, and it treats the agent like a staff member with an ID, a manager and a log.",
-      "imply": "An agent that follows up with people on its own changes who is accountable for a message. Companies need rules on what Autopilot may send without a human check before they turn it on.",
+      "theme": "OpenAI launched ChatGPT for Sales: a Sales plugin plus more than 30 partner plugins for CRMs, call notes and contracts",
+      "changed": "On 17 November 2026 OpenAI launched ChatGPT for Sales: a new Sales plugin with ready-made skills for sellers, such as analysing account signals, building a business case and following up after a call, plus more than 30 new and expanded partner plugins. The partners include Salesforce, HubSpot, Close and monday CRM for accounts; Apollo, Clay and Common Room for prospecting; Gong, Otter.ai and Granola for call notes; Outreach and Salesloft for outreach; and Docusign, Ironclad and PandaDoc for quotes and agreements. A dot, ChatGPT’s always-on agent, can use the same plugins to prepare meeting briefs, track deals and bring back changes and proposed next steps for review. ChatGPT Business and Enterprise admins turn it on in the Admin Console under Plugins; members connect their own accounts when prompted. OpenAI says partner plugins and features vary by plan, region and workspace settings.",
+      "matters": "Sales teams spend much of their week gathering account notes, call summaries and CRM updates from different tools. Putting those in one chat could give sellers more time with customers.",
+      "imply": "The proposed CRM changes and follow-ups still come back for a person to review. Admins decide which apps each plugin can reach and what it may write, so check those permissions before you switch it on.",
       "uses": [
-        "Before a pilot, write down what Autopilot may do alone, what needs a check, and who its named manager is.",
-        "Start with low-risk recurring work such as weekly status chasers or meeting prep, not customer emails.",
-        "Ask security to review its sign-in logs in the first weeks, as they would for a new hire."
+        "After each call, ask it to draft the follow-up and list agreed next steps from the Gong or Otter.ai notes.",
+        "Before a meeting, ask for a one-page brief from CRM history and earlier calls.",
+        "Ask a dot to check your top five deals each morning and flag anything that changed."
       ],
-      "example": "An operations manager gives Autopilot a quarterly supplier review: it builds the schedule, books the meetings and chases updates, but must ask before sending anything outside the company.",
-      "audience": "Microsoft 365 admins, team leads and operations staff at companies on Copilot.",
-      "watch": "When Autopilot leaves Frontier, what it costs, and the first standards from the AI Transparency Initiative.",
+      "example": "A seller in Bengaluru asks ChatGPT for a brief on a prospect from HubSpot and past Gong calls, then edits and sends the follow-up it drafts after the meeting.",
+      "audience": "Sales teams and sales operations staff on ChatGPT Business or Enterprise, and the admins who manage plugins.",
+      "watch": "Which partner plugins work in India, how much admins allow the plugins to write to CRMs, and whether teams report real time saved.",
       "source": {
-        "title": "Microsoft Copilot blog: Copilot at Microsoft Ignite, 17 November 2026",
-        "url": "https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/",
-        "quote": "Each Autopilot has its own Microsoft Entra Agent ID and a named manager."
+        "title": "OpenAI: Introducing ChatGPT for Sales, 17 November 2026",
+        "url": "https://openai.com/index/introducing-chatgpt-for-sales/",
+        "quote": "It includes our new Sales plugin with dedicated skills for sellers, and more than 30 new and enhanced partner plugins in ChatGPT"
       }
     },
     {
-      "id": "gemini-tasks-free",
-      "topic": "work",
-      "theme": "Google made Tasks in Gemini free in six countries including India: it can make calls, fill in sites and pay for you",
-      "changed": "On 17 November 2026 Google began rolling out Tasks in the Gemini app, free, to what it calls hundreds of millions of people in the US, Japan, Korea, Canada, Australia and India, running on its Gemini 4 Hydrogen model. You flip the home screen from Chat to Task and say what you need done. Google’s examples include calling two car dealers at once to book a service, reading a utility portal and past bills to explain a high charge, and buying a charger with Google Pay. Some features start in the US only, such as forwarding emails to gemini@google.com and texting Gemini. Purchases use the Agent Payments Protocol with tokenised Mastercard and Visa cards (American Express coming), you can set a hard spending cap, and Gemini is designed to ask before clicking “Buy”. Each task runs in a separate virtual machine for your account. Google says it has not removed all mistakes, and on some sites Gemini hands the screen back to you for the last click. Businesses can opt out of its calls, and it says it is an AI when it calls.",
-      "matters": "An agent that acts for you, not just one that answers, is now free for ordinary users, including in India.",
-      "imply": "Giving an agent your passwords and cards saves time but raises the stakes of a mistake. The spending cap and the ask-before-buying step are the controls that matter.",
-      "uses": [
-        "Try a low-risk task first, such as comparing three products or adding school dates to your calendar.",
-        "Set a hard spending cap before you let it buy anything.",
-        "Leave “Always allow” off for anything involving money or messages to other people."
-      ],
-      "example": "A small shop owner in Pune asks Gemini to compare courier rates for a monthly shipment and draft a summary, but places the order herself.",
-      "audience": "Anyone with a Google account in the six countries, especially busy parents and small business owners.",
-      "watch": "When the US-only features reach India, how many sites block Gemini, and reports of wrong purchases.",
-      "source": {
-        "title": "Google: Put Gemini to work for you (Josh Woodward), 17 November 2026",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
-        "quote": "Starting now, this update is rolling out free of charge for hundreds of millions of people across the U.S., Japan, Korea, Canada, Australia, and India, using our new Gemini 4 Hydrogen model."
-      }
-    },
-    {
-      "id": "gemini-chat-retention",
+      "id": "banks-ai-agent-liability",
       "topic": "trust",
-      "theme": "Google will keep Gemini chats for about two months even with history off, up from 72 hours, but lets you opt out of training",
-      "changed": "Google is splitting Gemini’s single “Keep Activity” setting into two: one for chat history and one for whether your chats train its AI models, so you can keep your history and still opt out of training. At the same time, if you turn the new History setting off, future chats will be kept for around two months, which TechCrunch reported on 17 November is up from the 72 hours in Google’s privacy page as of 12 November. Google says the chats are kept to respond to you, process your feedback and protect Google, its users and the public, and its privacy page says temporary chats are not used to train models. The change rolls out globally in the Gemini app over the coming weeks. If you had Keep Activity off, both new settings start off; if it was on, history stays on and you choose separately about training. TechCrunch notes that ChatGPT may keep temporary chats for up to 30 days and Claude keeps incognito chats for 30 days by default.",
-      "matters": "“History off” used to mean Google kept your chat for three days. Soon it will mean about two months on Google’s servers, even though you cannot see it.",
-      "imply": "The new training opt-out is a real gain. But for sensitive work, a longer retention period means more data held if something goes wrong. Google did not tell TechCrunch what prompted the change.",
+      "theme": "Citi, PNC and other US banks say customers are responsible for what third-party AI agents do in their accounts, even after a hack",
+      "changed": "TechCrunch reported on 18 November 2026 that Citibank changed its online user agreement this week: customers who give a third-party AI tool access to their accounts are responsible for what it does, and if the tool leaks their login details or is hacked, they are also responsible for what the hackers do. PNC changed its terms the same day, Citizens emailed customers with a similar warning, and JPMorgan and Bank of America announced similar policies last month. Citi’s terms say customers can use the AI agents Citi itself provides without this extra liability. TechCrunch notes that the personal finance tool Anthropic launched this month is read-only and cannot move money.",
+      "matters": "AI assistants that pay bills or move money need access to your bank. Banks are now telling customers that if an outside agent makes a mistake or is hacked, the loss may not be refunded.",
+      "imply": "These are US banks and US terms. They make read-only access the safer choice, and they give banks a reason to steer customers to their own AI tools.",
       "uses": [
-        "Check your Gemini settings once the update arrives and turn off training if you want to keep history without training.",
-        "Do not paste client data, passwords or health details into Gemini, even with history off.",
-        "If your company allows personal Gemini for work, update the guidance to say chats are kept about two months."
+        "Never give an AI tool your banking username and password; use read-only links where they exist.",
+        "Before letting an agent pay or transfer, read your bank’s terms on third-party AI access.",
+        "Keep agent payments behind your own approval, with a spending cap."
       ],
-      "example": "A recruiter who used Gemini with history off to rewrite candidate notes switches to the company’s Workspace account, which has its own data terms.",
-      "audience": "Everyday Gemini users and the people who write AI-use policies at work.",
-      "watch": "The exact wording in Google’s privacy hub, any regulator questions in Europe, and whether other assistants change their retention.",
+      "example": "A small business owner lets an AI assistant read card statements to spot duplicate charges, but keeps vendor payments in the bank’s own app.",
+      "audience": "Anyone using AI agents for personal or business finances, and fintech teams building on bank access.",
+      "watch": "Whether other banks, including in India, follow, and whether regulators set rules on who pays when an agent goes wrong.",
       "source": {
-        "title": "Google: We’re updating controls in the Gemini app, 16 November 2026 (with TechCrunch, 17 November)",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/updated-controls/",
-        "quote": "Now, if you turn your new History setting off, future chats will be saved for around two months"
+        "title": "TechCrunch: More banks say customers using AI agents are on their own — even if they get hacked, 18 November 2026",
+        "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/",
+        "quote": "customers who choose to grant account access to third-party AI agents are responsible for activities conducted through those agents."
       }
     },
     {
-      "id": "anthropic-ipo-stakes",
-      "topic": "money",
-      "theme": "Anthropic’s filing shows Amazon and Google will own about 28% of it after the IPO, in shares without votes",
-      "changed": "On 17 November 2026 Anthropic disclosed more detail on its biggest backers ahead of its Nasdaq listing. TechCrunch reports that Amazon will own 14.7% after the IPO and Google 13.7%, both in a special class of non-voting shares. Amazon’s stake comes from converting part of the notes it got for its 2023 and 2024 investments, at about $2.09 or $5.05 a share; if it converted all of them now it would own 23.8%. A group of AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners agreed to buy $26 billion of the non-voting stock, with Google and Nvidia $10 billion each. The same day, CNBC reported, citing multiple sources, that Anthropic was likely to price above its $70 to $78 range, closing its order book at 4 p.m. ET on Tuesday, with trading set to start on 19 November under the ticker ANT.",
-      "matters": "The two cloud giants that sell Anthropic its computing will also own over a quarter of it, but without votes, which keeps control with Anthropic while tying their fortunes to Claude’s.",
-      "imply": "For Claude customers, little changes this week. The ownership shows how closely Claude depends on Amazon and Google, and a public listing means quarterly results and more pressure on prices.",
+      "id": "ai-mode-temporary-threads",
+      "topic": "trust",
+      "theme": "Google Search’s AI Mode gets temporary threads that stay out of your history and do not shape your recommendations",
+      "changed": "On 17 November 2026 Google added temporary threads to AI Mode in Search. You click the temporary thread icon at the top right of AI Mode and ask your questions; the session is detached from your account, so answers are not based on your past activity, do not affect future personalisation and are not saved to your Search or AI Mode history. Once you leave, the thread cannot be recovered. Google’s help page says temporary threads disappear after 24 hours and are not used to train its AI models unless you send feedback or it is needed for safety. In a temporary thread you cannot use connected apps, share a thread or generate images. It is rolling out globally on desktop and mobile browsers in all languages AI Mode supports.",
+      "matters": "People ask AI Mode about health, money and work problems they may not want tied to their Google account. This gives a one-click way to keep those questions out of history and recommendations.",
+      "imply": "It is not fully private. Google still collects data not linked to your account, your browser may save history, and websites you open from the thread still collect data. Gemini’s own history-off chats are a separate setting.",
       "uses": [
-        "If you rely on Claude, note where you buy it, directly, through AWS Bedrock or Google Cloud, and keep a second option tested.",
-        "Watch the final IPO price and first-day trading as a signal of how investors value AI labs.",
-        "Read the first quarterly report for price changes or new usage limits."
+        "Use a temporary thread to research a medical or legal question you do not want shaping your feed.",
+        "On a shared or work computer, use it for personal questions.",
+        "Use it to look up a one-off topic without Google treating it as an interest."
       ],
-      "example": "A startup that runs its support bot on Claude through AWS Bedrock keeps a tested fallback to another model and reviews its contract terms after the listing.",
-      "audience": "Claude customers, investors and anyone tracking who controls the major AI labs.",
-      "watch": "The final price on 18 November, first-day trading on 19 November, and whether Amazon converts the rest of its notes.",
+      "example": "An HR manager researching how to handle a colleague’s medical leave uses a temporary thread so the topic does not show up in her search history.",
+      "audience": "Anyone who uses AI Mode in Google Search, especially on shared devices.",
+      "watch": "Whether it comes to the Google app, and how it compares with Gemini’s two-month retention of history-off chats.",
       "source": {
-        "title": "TechCrunch: Amazon and Google will together own nearly 30% of Anthropic after its IPO, 17 November 2026",
-        "url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
-        "quote": "If it converted them all right now, it would own just under 24% of Anthropic (23.8% to be precise)."
+        "title": "Google: Temporary threads now in AI Mode in Search, 17 November 2026",
+        "url": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/",
+        "quote": "Because your session is completely detached from your account, your responses won’t be informed by past preferences, affect future personalization, or be saved to your history."
       }
     },
     {
-      "id": "india-ai-draft-rules",
+      "id": "nvidia-china-h200-halt",
       "topic": "rules",
-      "theme": "India’s draft AI rules may require safety tests before powerful models launch, NDTV Profit reports",
-      "changed": "NDTV Profit reported on 16 November 2026, citing people familiar with the matter, that India’s Ministry of Electronics and Information Technology (MeitY) may release a consultation paper on its proposed AI rules as early as next month, with a 60-day window for public feedback. The draft law is said to be in its final stages. The government is weighing separate safety requirements for frontier models, defined by factors such as computing power and capabilities, and may require developers to test their models for safety before public release, with sandbox trials as another option. Developers, platforms and companies deploying AI could face more oversight where their systems cause harm, and deepfakes, AI fraud and impersonation are expected to be covered. Sectoral regulators such as RBI, SEBI and TRAI could add their own rules, and the government is considering formal legislation in the Budget Session.",
-      "matters": "India has so far relied on guidelines. A law with pre-launch tests for the most powerful models would put it closer to the EU than to the US.",
-      "imply": "Nothing is published yet, and the details come from unnamed sources. But companies deploying AI in India, not just model makers, could carry duties when their systems cause harm, so it is worth preparing to comment.",
+      "theme": "Nvidia has stopped shipping its US-approved H200 AI chips to China and left them out of its forecast",
+      "changed": "On Nvidia’s earnings call on 17 November 2026, US time, interim CEO Colette Kress said the company is no longer shipping licensed Hopper data centre products, the H200 chips the White House approved for China last December, and that its guidance does not include them. The Verge reports she did not say why or whether Nvidia will seek other business in China. It is Nvidia’s first earnings call since Jensen Huang stepped down as CEO last week. The Verge also notes that Reuters reported earlier this month that about 600,000 H200 chips were stuck in Hong Kong after Beijing withheld approval for large imports.",
+      "matters": "Chinese AI labs now have one less legal source of US chips. That makes them more reliant on domestic chips, and could affect the price and pace of the Chinese models many teams use.",
+      "imply": "Nvidia gave no reason, so it is not clear whether this is a choice, US pressure or China’s import limits. It covers licensed H200 shipments, not every product Nvidia sells.",
       "uses": [
-        "If you deploy AI in India, list where your products could cause harm, such as fraud, deepfakes or wrong financial advice, before the paper lands.",
-        "Plan who in your company will respond in the 60-day consultation.",
-        "Banks, brokers and telecom firms should also follow RBI, SEBI and TRAI, which may add their own rules."
+        "If you rely on Chinese models such as Qwen, DeepSeek or Kimi, keep a fallback in case releases slow.",
+        "If you buy GPU capacity, ask your provider whether its supply depends on Hopper chips.",
+        "Follow chip export news in your vendor-risk reviews."
       ],
-      "example": "A fintech in Bengaluru that uses an AI model to answer loan questions starts a simple log of model tests and complaints, so it can show its checks if the rules arrive.",
-      "audience": "Indian startups, companies deploying AI in India, compliance teams and policy watchers.",
-      "watch": "MeitY’s consultation paper, how it defines a frontier model, and any draft bill in the Budget Session.",
+      "example": "A startup running DeepSeek in production tests Mistral’s open model as a backup and keeps both behind one API layer.",
+      "audience": "Teams using Chinese AI models, infrastructure buyers, and anyone tracking AI chip export rules.",
+      "watch": "Whether Nvidia explains the halt, China’s response to US chip rules, and the choice of Nvidia’s next CEO.",
       "source": {
-        "title": "NDTV Profit: AI models may need to pass tests before launch under India’s draft rules, 16 November 2026",
-        "url": "https://www.ndtvprofit.com/india/exclusive-ai-models-may-need-to-pass-tests-before-launch-under-indias-draft-rules-12333172",
-        "quote": "MeitY may give a 60-day window for public consultation, sources told NDTV Profit."
+        "title": "The Verge: Nvidia isn’t selling any more AI chips to China, 18 November 2026",
+        "url": "https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling",
+        "quote": "Our guidance does not have any licensed Hopper data center products included, and we are no longer shipping licenced Hopper data center products to China"
+      }
+    },
+    {
+      "id": "nadella-agent-managers",
+      "topic": "work",
+      "theme": "Satya Nadella says Microsoft’s 60,000 buyouts are about every job becoming a manager of AI agents",
+      "changed": "At the DealBook Summit on 18 November 2026, Microsoft CEO Satya Nadella explained why the company offered buyouts to about 60,000 employees in October, TechCrunch reports. He said Microsoft is not replacing staff, including software engineers, with AI; it is reorganising so that everyone uses AI and their jobs focus on directing it. As an example, he said the team that builds Cowork, the AI agent in Microsoft 365 apps, is 11 developers who “build a software factory that builds the product”. He said the same level of direction “is going to happen in all jobs”, that the change in a 51-year-old company will take longer than anyone expects, and that the buyouts were meant to give people a choice.",
+      "matters": "The head of one of the largest employers of office workers is saying the job itself changes: less doing the work, more setting it up, checking it and directing agents.",
+      "imply": "These are Nadella’s own views, not a published plan. The 11-person team is his example. For most workers the useful question is which parts of their work can be handed to an agent and checked.",
+      "uses": [
+        "List your weekly tasks and mark which an agent could draft for you to review.",
+        "Practise writing clear task briefs, checks and acceptance rules for agents.",
+        "Managers: agree with your team who reviews agent output before it goes out."
+      ],
+      "example": "A marketing lead stops writing every campaign report herself and instead sets the brief, the data sources and the checks for an agent, then reviews the draft.",
+      "audience": "Office workers, team leads and HR teams planning for AI at work.",
+      "watch": "Whether Microsoft publishes how roles change, and whether other large employers follow with buyouts rather than layoffs.",
+      "source": {
+        "title": "TechCrunch: Microsoft CEO Satya Nadella explains why he asked 60K employees to quit, 18 November 2026",
+        "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/",
+        "quote": "They build a software factory that builds the product. They don’t build the product."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "GPT-6.2 is out",
-        "body": "OpenAI’s Astra and Sol use fewer tokens per task. Astra is 20% cheaper per token than GPT-6 Astra."
+        "title": "Gemini 4 Neon is out",
+        "body": "Google’s new middle model costs $3 in, $15 out per million tokens, and 32% less per task than Carbon."
       },
       {
-        "title": "Microsoft’s own models",
-        "body": "MAI Code 2 in GitHub Copilot claims 98% of GPT-6.1 Sol’s coding score at 40% of the price."
+        "title": "Anthropic prices at $83",
+        "body": "Claude’s maker sold 980 million shares above its $70–$78 range. Trading as ANT starts 19 November."
       },
       {
-        "title": "Copilot works unprompted",
-        "body": "Autopilot follows up and runs projects on its own, with its own ID, a named manager and a log."
+        "title": "ChatGPT for Sales",
+        "body": "A Sales plugin and 30+ partner apps, from Salesforce to Gong, prepare briefs and draft follow-ups."
       }
     ],
     "matters": [
       {
-        "title": "Gemini Tasks free in India",
-        "body": "Gemini can now call, fill in sites and buy for you, free in six countries. Set a spending cap."
+        "title": "Bank agents: your risk",
+        "body": "Citi and PNC say losses from third-party AI agents are yours, even if the agent is hacked."
       },
       {
-        "title": "History off, kept 2 months",
-        "body": "Google will keep Gemini chats made with history off for about two months, up from 72 hours."
+        "title": "AI Mode, off the record",
+        "body": "Temporary threads in Google’s AI Mode stay out of your history and do not shape recommendations."
       },
       {
-        "title": "Big Tech owns 28% of Claude",
-        "body": "Amazon will own 14.7% of Anthropic and Google 13.7% after the IPO, in shares without votes."
+        "title": "Every job manages agents",
+        "body": "Nadella says Microsoft’s 60,000 buyouts are about staff directing AI, not being replaced by it."
       }
     ],
     "watch": [
       {
-        "title": "Check what agents report",
-        "body": "GPT-6.2 sometimes leaves blockers out of its report. Verify files and results, not the summary."
+        "title": "Carbon price doubles",
+        "body": "Gemini 4 Carbon goes from $2/$10 to $4/$20 per million tokens on 1 December. Check what calls it."
       },
       {
-        "title": "Give agents a manager",
-        "body": "Before Autopilot or any agent acts alone, name who owns it and what it may send unchecked."
+        "title": "Nvidia stops China H200s",
+        "body": "Nvidia no longer ships its US-approved H200 chips to China and gave no reason. Watch Chinese models."
       },
       {
-        "title": "India may test AI models",
-        "body": "A draft may require safety tests before launch, with 60 days for comment. Plan your input."
+        "title": "Use read-only bank links",
+        "body": "Never give an AI tool your bank password. Keep payments behind your own approval and a cap."
       }
     ]
   },
   "chips": [
-    "OpenAI",
-    "GPT-6.2 Astra",
-    "GPT-6.2 Sol",
-    "Codex",
-    "Microsoft",
-    "MAI Code 2",
-    "GitHub Copilot",
-    "Copilot Autopilot",
     "Google",
-    "Gemini Tasks",
-    "Privacy",
+    "Gemini 4 Neon",
+    "Gemini 4 Carbon",
     "Anthropic",
     "IPO",
-    "India",
-    "AI regulation"
+    "OpenAI",
+    "ChatGPT for Sales",
+    "Banks",
+    "AI agents",
+    "Privacy",
+    "AI Mode",
+    "Nvidia",
+    "China",
+    "Microsoft",
+    "Future of work"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "OpenAI, 17 Nov: GPT-6.2 Astra ($8/$0.40/$40 per M; 20% below GPT-6 Astra, 60% off cached) and Sol ($2/$0.10/$10, unchanged); Agents’ Last Exam +5.2 vs GPT-6 Astra at <1/3 cost; Sol within 0.5 of Astra on FrontierCode 2.0 at ~1/5 cost; API background window 2h -30%, 8h -40%. System card: Astra first at High for AI self-improvement; both Critical cyber; more obstacle omissions.",
+      "raw": "Google, 18 Nov: Gemini 4 Neon between Carbon and Hydrogen; $3/$0.15/$15 per M, 1M ctx, not on free tier; 32% lower cost per task than Carbon at high; Vals #2 (70.9%), Terminal-Bench 4.1 65.2%, FrontierCode 2.0 46.2%; Tasks can run on Neon. Pricing page: Carbon $2/$10 to 30 Nov, $4/$20 from 1 Dec.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Microsoft AI, 17 Nov (Ignite): seven MAI models; MAI Code 2 98% of GPT-6.1 Sol at 40% price, 96% of Opus 5.5 at 5% (Microsoft’s average of 4 benchmarks), in GitHub Copilot; Code 2 Flash; Cyber 2 Flash; Image 2.7; Realtime 1 from $0.01/min; Transcribe 2; Decision 1.1; Maia 200; MAI Licensed Weights.",
+      "raw": "Anthropic, 18 Nov: IPO priced $83 (range $70–$78); 980M shares (956,351,354 company, 23,648,646 sellers); Nasdaq ANT from 19 Nov, close 20 Nov; 147M-share option. CNBC: $81.3B raised, above SpaceX $75B; planned 825M shares; ~$1.5T fully diluted; $26B placement.",
       "topic": "Money"
     },
     {
       "id": "s3",
-      "raw": "Microsoft, 17 Nov: Copilot Autopilot rolling out to Frontier; own Entra Agent ID and named manager, logged actions; Home and Office in Copilot GA; Workspaces in Frontier; Agent 365 cost controls; AI Transparency Initiative with 40+ orgs.",
+      "raw": "OpenAI, 17 Nov: ChatGPT for Sales; Sales plugin with seller skills; 30+ new and expanded partner plugins (Salesforce, HubSpot, Gong, Clay, Docusign…); dots track deals and propose next steps for review; admins enable in Admin Console.",
       "topic": "Work"
     },
     {
       "id": "s4",
-      "raw": "Google, 17 Nov: Tasks in Gemini free in US, Japan, Korea, Canada, Australia, India on Gemini 4 Hydrogen; calls, portals, Google Pay via AP2; spending cap; asks before Buy; per-account VM; email/text features US-only.",
-      "topic": "Work"
+      "raw": "TechCrunch, 18 Nov: Citi terms make customers responsible for third-party AI agents, including after leaks or hacks; PNC changed terms 18 Nov; Citizens emailed customers; JPMorgan and BofA similar last month; Citi’s own agents exempt.",
+      "topic": "Trust"
     },
     {
       "id": "s5",
-      "raw": "Google, 16 Nov / TechCrunch 17 Nov: separate History and training settings; history-off chats kept ~2 months (was 72 hours); rolling out globally in coming weeks.",
+      "raw": "Google, 17 Nov: temporary threads in AI Mode; not in history, no personalisation; help page: gone after 24 hours, not used for training unless feedback or safety; no connected apps, sharing or images; global on desktop and mobile browsers.",
       "topic": "Trust"
     },
     {
       "id": "s6",
-      "raw": "TechCrunch, 17 Nov: Amazon 14.7%, Google 13.7% of Anthropic post-IPO in non-voting shares; Amazon 23.8% if all notes converted; $26B non-voting placement, Google and Nvidia $10B each. CNBC: likely to price above $70–$78; trading 19 Nov, ticker ANT. Not a new model.",
-      "topic": "Money"
+      "raw": "The Verge, 18 Nov: Kress on 17 Nov call: no longer shipping licensed Hopper (H200) data centre products to China; not in guidance; no reason given; Reuters: ~600,000 H200s stuck in Hong Kong.",
+      "topic": "Rules"
     },
     {
       "id": "s7",
-      "raw": "NDTV Profit, 16 Nov (sources): MeitY consultation paper possibly next month, 60-day window; frontier-model safety tests before launch considered; sandbox trials; sector regulators may add rules; legislation possibly in Budget Session.",
-      "topic": "Rules"
+      "raw": "TechCrunch, 18 Nov (DealBook): Nadella says ~60,000 October buyouts are about AI-first reorganisation, not replacing engineers; Cowork team of 11 developers builds a ‘software factory’; direction of agents ‘is going to happen in all jobs’.",
+      "topic": "Work"
     }
   ]
 }

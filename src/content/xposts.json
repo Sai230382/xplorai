@@ -1,5 +1,32 @@
 [
   {
+    "name": "Bloomberg",
+    "handle": "business",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1631723279676317709/-fjgaR2p_normal.jpg",
+    "text": "Anthropic and its seven co-founders raised $107.3 billion through an $81.3 billion IPO and a $26 billion private placement. The IPO is the biggest of all time, topping the $75 billion raised by SpaceX. https://t.co/plklfgy6jY\n\n📷: Jason Henry/Bloomberg https://t.co/igs2asmGB8",
+    "url": "https://x.com/business/status/2123245612757840382",
+    "postedAt": "2026-11-19T02:42:56.000Z",
+    "take": "Claude’s maker is now a public company. If you rely on Claude, its quarterly results now matter to your plans."
+  },
+  {
+    "name": "Google DeepMind",
+    "handle": "GoogleDeepMind",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg",
+    "text": "Gemini 4 Neon is rolling out now.\n\nSitting between Carbon and Hydrogen, it brings frontier intelligence and fast task completion for complex software engineering, knowledge work, and science. https://t.co/qfOLW06FOm",
+    "url": "https://x.com/GoogleDeepMind/status/2123167884411077030",
+    "postedAt": "2026-11-18T21:34:04.000Z",
+    "take": "Carbon’s API price doubles on 1 December. Test Neon on your everyday jobs first and compare cost per task."
+  },
+  {
+    "name": "TechCrunch",
+    "handle": "TechCrunch",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_normal.png",
+    "text": "Google's new temporary threads let users have conversations in AI Mode without adding them to their search history or influencing future recommendations.\nhttps://t.co/o7PFgkYdxQ",
+    "url": "https://x.com/TechCrunch/status/2123115290879824277",
+    "postedAt": "2026-11-18T18:05:05.000Z",
+    "take": "Handy for health or money questions. It is not fully private: websites you open still collect data."
+  },
+  {
     "name": "Google Gemini",
     "handle": "GeminiApp",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1940093473564073984/jiafRcO0_normal.png",
