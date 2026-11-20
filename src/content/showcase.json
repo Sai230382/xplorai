@@ -20,6 +20,166 @@
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2122230879594639360/img/Qc8H91O5v_IhfvV0.jpg"
   },
   {
+    "id": "2123558776011939887",
+    "url": "https://x.com/cloveric/status/2123558776011939887",
+    "author_name": "Awesome 奥森木",
+    "author_handle": "@cloveric",
+    "created_at": "2026-11-19T23:27:20.000Z",
+    "text": "Gemini 4 Neon is great. But Antigravity's app doesn't fit how I work, and after living in the Codex and Claude apps, I'm not moving everything into a terminal.\n\nI want Neon on my phone too. And Claude. And Codex. All of them.\n\nIf that's you, this is what I built TaroBird for. https://t.co/t9lI79DUzW",
+    "model_or_tool": "Gemini 4 Neon, Claude and Codex",
+    "what_they_built": "TaroBird, an app for using Gemini 4 Neon, Claude and Codex from a phone, built because the maker did not want to move everything into a terminal.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 1,
+      "impression_count": 40934,
+      "like_count": 3,
+      "quote_count": 0,
+      "reply_count": 1,
+      "repost_count": 1
+    },
+    "preview": "https://pbs.twimg.com/media/HXhlZvYbsAACsMd.jpg"
+  },
+  {
+    "id": "2123527249064321465",
+    "url": "https://x.com/Rencrypta/status/2123527249064321465",
+    "author_name": "Rencrypta.eth",
+    "author_handle": "@Rencrypta",
+    "created_at": "2026-11-19T21:22:04.000Z",
+    "text": "GTA 6 dropped yesterday. I’m playing  a space game I built myself based on Claude Fable 5.2.\n\nDRIFT: A Harma Story. \nIt’s a first-person 3D space game with puzzles and secrets. \nI made it with Claude Fable 5.2, Opus 5.5 and my old Half-Life 2 mapping experience. \nIt runs in a https://t.co/fxpLHlkIjS",
+    "model_or_tool": "Claude Fable 5.2 and Opus 5.5",
+    "what_they_built": "DRIFT: A Harma Story, a first-person 3D space game with puzzles and secrets, made with Claude and the maker’s old Half-Life 2 mapping experience.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 2,
+      "impression_count": 561,
+      "like_count": 21,
+      "quote_count": 2,
+      "reply_count": 8,
+      "repost_count": 4
+    },
+    "preview": "https://pbs.twimg.com/media/HXg-anFXMAE6R1b.jpg"
+  },
+  {
+    "id": "2123506432591212700",
+    "url": "https://x.com/lloydhightower/status/2123506432591212700",
+    "author_name": "Bryant Hightower",
+    "author_handle": "@lloydhightower",
+    "created_at": "2026-11-19T19:59:21.000Z",
+    "text": "Gemini 4 Neon builds the spatial 3D UI, structured briefings, and event controls, while the new Genie 4 model powers the live 24fps simulation underneath (now with native audio). I built this to show a new way to wrap world models for real applications. Walk the classroom, pick a https://t.co/wrdnxyYVdB https://t.co/kNXhRrdnk0",
+    "model_or_tool": "Gemini 4 Neon and Genie 4",
+    "what_they_built": "A classroom you can walk through, with Gemini 4 Neon building the 3D interface, briefings and event controls on top of a live Genie 4 world model at 24fps with audio.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 2,
+      "impression_count": 389,
+      "like_count": 7,
+      "quote_count": 0,
+      "reply_count": 2,
+      "repost_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123506380699295744/img/wf0CPHcZKLwhrGBK.jpg"
+  },
+  {
+    "id": "2123453245548794030",
+    "url": "https://x.com/EnvolDev/status/2123453245548794030",
+    "author_name": "Tony",
+    "author_handle": "@EnvolDev",
+    "created_at": "2026-11-19T16:28:00.000Z",
+    "text": "GPT-6.2 Astra vs GPT-6.2 Sol vs Opus 5.5 vs Fable 5.2 🚀\n\nI'm so impressed. 🤯\nGPT-6.2 Sol made this for $3.01, and it's insanely good.\n\nBut it wasn't the fastest. Astra beat it by over 7 minutes. 👀\n\nSame Ruby Ascent prompt:\nGPT-6.2 Astra: $8.87 · 41m 09s\nGPT-6.2 Sol: $3.01 · https://t.co/k78dWZPewU https://t.co/1mrbqqmmb7",
+    "model_or_tool": "GPT-6.2 Astra, GPT-6.2 Sol, Opus 5.5 and Fable 5.2",
+    "what_they_built": "The same ‘Ruby Ascent’ prompt built by four models, with cost and build time for each; GPT-6.2 Sol’s version cost $3.01 and Astra’s $8.87.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 29,
+      "impression_count": 7138,
+      "like_count": 65,
+      "quote_count": 0,
+      "reply_count": 10,
+      "repost_count": 2
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123312658019667970/img/Em2I8frbm32wF62P.jpg"
+  },
+  {
+    "id": "2123239282626478306",
+    "url": "https://x.com/ai_for_success/status/2123239282626478306",
+    "author_name": "AshutoshShrivastava",
+    "author_handle": "@ai_for_success",
+    "created_at": "2026-11-19T02:17:47.000Z",
+    "text": "Built this small 3D game using Gemini 4 Neon and the Swarm feature in Antigravity.\n\nYou can play it on both mobile and desktop. full details on how I built it below. 👇 https://t.co/Ym79qteAvi",
+    "model_or_tool": "Gemini 4 Neon with Antigravity’s Swarm feature",
+    "what_they_built": "A small 3D game that plays on mobile and desktop, built with Gemini 4 Neon and the Swarm feature in Google Antigravity.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 147,
+      "impression_count": 17396,
+      "like_count": 436,
+      "quote_count": 4,
+      "reply_count": 34,
+      "repost_count": 17
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123236965755826177/img/6ZlAd_q8vQIU7O27.jpg"
+  },
+  {
+    "id": "2123202081259495833",
+    "url": "https://x.com/Layton_Gott/status/2123202081259495833",
+    "author_name": "Layton Gott",
+    "author_handle": "@Layton_Gott",
+    "created_at": "2026-11-18T23:49:58.000Z",
+    "text": "I made GPT-6.2 Astra and Fable 5.2 go to war...\n\nsame prompt, a full WWII naval battle at sunset built entirely in code\n\nGPT-6.2 Astra used 109M tokens, about $68 in API cost and 3h 49m\n\nFable 5.2 used 168M tokens, about $111 in API cost and 6h 19m\n\nthen I had them team up on the https://t.co/e66zOdl7hu",
+    "model_or_tool": "GPT-6.2 Astra and Claude Fable 5.2",
+    "what_they_built": "A WWII naval battle at sunset built entirely in code by each model from the same prompt; Astra used 109M tokens (about $68, 3h 49m) and Fable 168M (about $111, 6h 19m).",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 61,
+      "impression_count": 32801,
+      "like_count": 158,
+      "quote_count": 5,
+      "reply_count": 41,
+      "repost_count": 7
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123200971064868864/img/RA9K7iFtv84GUqmp.jpg"
+  },
+  {
+    "id": "2123076065757220998",
+    "url": "https://x.com/Nyxera0x/status/2123076065757220998",
+    "author_name": "Nyxera",
+    "author_handle": "@Nyxera0x",
+    "created_at": "2026-11-18T15:29:13.000Z",
+    "text": "I'm cancelling AutoCAD and Revit tonight: I built a free Claude skill that turns any industry into a live simulator and Fable 5.2 used it to build this construction project from bare dirt to finished walls.\n\ni asked my own skill to turn construction into a live simulator and what https://t.co/oB4LTWY7J5 https://t.co/LYlERJ8deh",
+    "model_or_tool": "Claude Fable 5.2 with a custom Claude skill",
+    "what_they_built": "A free Claude skill that turns an industry into a live simulator, used to build a construction project from bare dirt to finished walls.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 946,
+      "impression_count": 48239,
+      "like_count": 731,
+      "quote_count": 6,
+      "reply_count": 25,
+      "repost_count": 66
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123074192404840448/img/apc6-DvBUJnf7WDC.jpg"
+  },
+  {
+    "id": "2123067201708298391",
+    "url": "https://x.com/echulshin/status/2123067201708298391",
+    "author_name": "echul",
+    "author_handle": "@echulshin",
+    "created_at": "2026-11-18T14:54:00.000Z",
+    "text": "Instinct hasn't replaced my main agent because it doesn't let me run sota models and connect to third party tools\n\nso i made an app @heysealai \n\n&gt; gpt 6.2 astra or claude fable 5.2\n&gt; ios app, imessage, telegram\n&gt; bring your chatgpt or claude sub\n&gt; set heartbeats, subagents, crons https://t.co/ougyjdFrN9",
+    "model_or_tool": "GPT-6.2 Astra or Claude Fable 5.2",
+    "what_they_built": "Seal AI, an iOS, iMessage and Telegram agent app that runs GPT-6.2 Astra or Claude Fable 5.2 on your own ChatGPT or Claude subscription, with heartbeats, subagents and scheduled jobs.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 19,
+      "impression_count": 3082,
+      "like_count": 36,
+      "quote_count": 0,
+      "reply_count": 5,
+      "repost_count": 3
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2122937528638636032/img/Gm_MBFMYRHAIfnPI.jpg"
+  },
+  {
     "id": "2121347623659655333",
     "url": "https://x.com/h0russs/status/2121347623659655333",
     "author_name": "Horus",
@@ -78,165 +238,5 @@
       "retweet_count": 0
     },
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2121291225194270720/img/K-wiZNnAwwbrHJkA.jpg"
-  },
-  {
-    "id": "2121071396201914775",
-    "url": "https://x.com/qingzhu_ai/status/2121071396201914775",
-    "author_name": "Qingzhu · rmji.wiki",
-    "author_handle": "@qingzhu_ai",
-    "created_at": "2026-11-13T02:43:23.000Z",
-    "text": "I made this with one sentence and about 4 hours of Claude Code (Fable 5.2, Ultracode mode).\n\n96 seconds of 4K: 60,000 starlings dance at dusk, then become the Milky Way. All code, no assets.\n\nFable 5.2 Ultracode, one sentence:\n\"Make me the video you find most beautiful.\" https://t.co/ItdT67RkPM",
-    "model_or_tool": "Claude Code (Fable 5.2)",
-    "what_they_built": "A 96-second 4K film of 60,000 starlings that turn into the Milky Way, all code and no assets, from a one-sentence prompt.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 2,
-      "impression_count": 465,
-      "like_count": 13,
-      "quote_count": 3,
-      "reply_count": 7,
-      "retweet_count": 1
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2121070963043495936/img/S7W1AAY4pTldxAax.jpg"
-  },
-  {
-    "id": "2120958666480513310",
-    "url": "https://x.com/thtbee_/status/2120958666480513310",
-    "author_name": "Bee",
-    "author_handle": "@thtbee_",
-    "created_at": "2026-11-12T19:15:26.000Z",
-    "text": "Gemini 4 Hydrogen - A Crimson Moth!\n\nThis looks so incredible.. so I made this with /swarm in Antigravity where Carbon was the orchestrator and every swarm workers were Hydrogen on extra..\n\nIt took only 45 minutes for the whole thing and then hydrogen recorded the demo!!\n\nThat https://t.co/TlgT8cU9CN",
-    "model_or_tool": "Gemini 4 Hydrogen + Carbon (Antigravity /swarm)",
-    "what_they_built": "A crimson moth animation made in 45 minutes with Antigravity’s swarm, Carbon directing and Hydrogen workers doing the build.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 67,
-      "impression_count": 20566,
-      "like_count": 372,
-      "quote_count": 6,
-      "reply_count": 36,
-      "retweet_count": 11
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120957827384745984/img/pdeGHVsAfreyzDzO.jpg"
-  },
-  {
-    "id": "2120674411468542355",
-    "url": "https://x.com/jeff_barker_rei/status/2120674411468542355",
-    "author_name": "Jeff Barker",
-    "author_handle": "@jeff_barker_rei",
-    "created_at": "2026-11-12T00:25:54.000Z",
-    "text": "I built this Family Calendar with Claude Code. \n\nI had an old iPad Air that I was trying to find a good use for. \n\nPreviously I had landed on the free version of DAKboard, but it didn’t quite work the way I wanted it to. It was limited and a bit buggy. \n\nSo I went to Claude Code https://t.co/sUFQ8bPnSN",
-    "model_or_tool": "Claude Code",
-    "what_they_built": "A family calendar display for an old iPad Air, built with Claude Code to replace a free DAKboard setup.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 116,
-      "like_count": 2,
-      "quote_count": 0,
-      "reply_count": 4,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/media/HW4mItSWMAAjRYZ.jpg"
-  },
-  {
-    "id": "2120273077707985018",
-    "url": "https://x.com/alexanderchen/status/2120273077707985018",
-    "author_name": "Alexander Chen",
-    "author_handle": "@alexanderchen",
-    "created_at": "2026-11-10T21:51:09.000Z",
-    "text": "I've been making music using everyday sounds using Gemini 4 Carbon 🎹🐱 🔈 prototype link + how I made it in 🧵 https://t.co/BtA4zISgNa",
-    "model_or_tool": "Gemini 4 Carbon",
-    "what_they_built": "A prototype that turns everyday sounds into playable music instruments, built with Gemini 4 Carbon, with a link and a how-I-made-it thread.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 11,
-      "impression_count": 1632,
-      "like_count": 46,
-      "quote_count": 2,
-      "reply_count": 3,
-      "repost_count": 2
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120272293834248192/img/H9wosv6Vfo8pFWSD.jpg"
-  },
-  {
-    "id": "2120187740310712441",
-    "url": "https://x.com/Adidotdev/status/2120187740310712441",
-    "author_name": "Adit_Yah ☄️",
-    "author_handle": "@Adidotdev",
-    "created_at": "2026-11-10T16:12:03.000Z",
-    "text": "Gemini 4 Carbon just went live so I can finally share what I built on early access\n\npure procedural Threejs mechanical falcon with a live 28,800 VPH watch movement in its chest, 4-bar wing rig and 240 km/h dive\n\nzero 3D assets or external textures",
-    "model_or_tool": "Gemini 4 Carbon (Three.js)",
-    "what_they_built": "A fully procedural Three.js mechanical falcon with a working watch movement in its chest, a wing rig and a dive, made with no 3D assets or textures.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 3,
-      "impression_count": 1207,
-      "like_count": 41,
-      "quote_count": 1,
-      "reply_count": 7,
-      "repost_count": 2
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120186932160552960/img/Llb-fnbRgj41ESXD.jpg"
-  },
-  {
-    "id": "2120186998707163533",
-    "url": "https://x.com/LexnLin/status/2120186998707163533",
-    "author_name": "Leon Lin",
-    "author_handle": "@LexnLin",
-    "created_at": "2026-11-10T16:09:06.000Z",
-    "text": "I had early access to Gemini 4 Carbon and I built this 3d basketball court with it (no pre made 3d assets used)\n\nImproved a lot in areas that involve any form of taste/visuals such as 3d, websites, motion graphics over Argon https://t.co/VdiWsOA9nX",
-    "model_or_tool": "Gemini 4 Carbon",
-    "what_they_built": "A 3D basketball court built with Gemini 4 Carbon during early access, with no pre-made 3D assets.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 40,
-      "impression_count": 7569,
-      "like_count": 288,
-      "quote_count": 1,
-      "reply_count": 26,
-      "repost_count": 6
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2120184009300840448/img/bjzZFCtS4hLXykh0.jpg"
-  },
-  {
-    "id": "2119915123070644263",
-    "url": "https://x.com/anstapnever/status/2119915123070644263",
-    "author_name": "anstap",
-    "author_handle": "@anstapnever",
-    "created_at": "2026-11-09T22:08:46.000Z",
-    "text": "Fable 5.2 can create anime better than any studio\n\ni made this 79-second anime with @claudeai Fable 5.2 https://t.co/H4iEvtrjhg https://t.co/hDbTBDC9EW",
-    "model_or_tool": "Claude Fable 5.2",
-    "what_they_built": "A 79-second anime short made with Claude Fable 5.2.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 124,
-      "impression_count": 9436,
-      "like_count": 118,
-      "quote_count": 1,
-      "reply_count": 5,
-      "repost_count": 3
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2119914875011096576/img/Sjcwvx1GK95jHc6X.jpg"
-  },
-  {
-    "id": "2119884675967807903",
-    "url": "https://x.com/AnikaCodes/status/2119884675967807903",
-    "author_name": "Anika 🎀❤️",
-    "author_handle": "@AnikaCodes",
-    "created_at": "2026-11-09T20:07:46.000Z",
-    "text": "First thing I built with Claude Fable 5.2: a full history of the GPU.\n\nFelt right, considering the week Nvidia's having 💀 https://t.co/4VgyvNRX8g",
-    "model_or_tool": "Claude Fable 5.2",
-    "what_they_built": "A full history of the GPU, the first thing its maker built with Claude Fable 5.2.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 798,
-      "like_count": 18,
-      "quote_count": 0,
-      "reply_count": 4,
-      "repost_count": 0
-    },
-    "preview": "https://pbs.twimg.com/media/HWtX3tUbsAA3PLT.jpg"
   }
 ]

@@ -1,68 +1,75 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "gemini-4-neon",
+  "storyId": "anthropic-first-day-trading",
   "kicker": "Play with today’s story",
-  "title": "Gemini 4 Neon or Gemini 4 Carbon: what each costs, before and after Carbon’s 1 December price rise",
-  "intro": "Switch between Google’s new Neon model and Carbon, its top model, to see their API prices per million tokens on the Gemini API, and what Google says about cost per task.",
-  "note": "Prices are Google’s standard paid-tier Gemini API rates per million tokens, from its pricing page on 19 November 2026; output includes thinking tokens. Neither model is on the free tier. The 32% figure is Google’s own, measured per task at Neon’s default high thinking level, and is not a price per token. Gemini app subscribers are not billed per token.",
+  "title": "Anthropic’s first day on Nasdaq: from the $83 IPO price to the $97.17 close",
+  "intro": "Slide through Anthropic’s first trading day to see the share price at each step, using CNBC’s figures.",
+  "note": "All figures are from CNBC’s live coverage on 19 November 2026. The 17% and 34% moves are measured from the $83 IPO price. Market value is CNBC’s fully diluted estimate at the close, not the value at the IPO price. One day’s trading says little about the company’s long-term value.",
   "sources": [
     {
-      "label": "Google: Introducing Gemini 4 Neon, 18 November 2026",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
-    },
-    {
-      "label": "Google: Gemini API pricing",
-      "url": "https://ai.google.dev/gemini-api/docs/pricing"
+      "label": "CNBC: Anthropic IPO live updates, 19 November 2026",
+      "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html"
     }
   ],
   "widget": {
-    "type": "compare",
-    "label": "Compare Gemini 4 Neon and Gemini 4 Carbon",
-    "options": [
+    "type": "stepper",
+    "label": "Anthropic’s first trading day, step by step",
+    "items": [
       {
-        "id": "neon",
-        "label": "Gemini 4 Neon",
-        "caption": "New on 18 November. Sits between Carbon and Hydrogen, with a 1 million-token context window.",
+        "label": "IPO price",
+        "name": "Priced on Wednesday 18 November",
+        "caption": "Anthropic sold its shares to investors before trading began.",
         "stats": [
           {
-            "label": "Input, per million tokens",
-            "value": "$3"
+            "label": "Price per share",
+            "value": "$83"
           },
           {
-            "label": "Cached input, per million tokens",
-            "value": "$0.15"
+            "label": "Shares sold",
+            "value": "980 million"
           },
           {
-            "label": "Output, per million tokens",
-            "value": "$15"
-          },
-          {
-            "label": "Batch or Flex, input and output",
-            "value": "$1.50 and $7.50"
-          },
-          {
-            "label": "Cost per task, Google’s figure",
-            "value": "32% lower than Carbon at the default high thinking level"
+            "label": "Money raised",
+            "value": "$81.3 billion, the largest IPO on record"
           }
         ]
       },
       {
-        "id": "carbon",
-        "label": "Gemini 4 Carbon",
-        "caption": "Google’s most capable model. Its promotional price ends on 30 November.",
+        "label": "Open",
+        "name": "First trade on Thursday 19 November",
+        "caption": "Trading as ANT on Nasdaq.",
         "stats": [
           {
-            "label": "Input, per million tokens",
-            "value": "$2 through 30 November, $4 from 1 December"
+            "label": "Opening price",
+            "value": "$111.50"
           },
           {
-            "label": "Cached input, per million tokens",
-            "value": "$0.10 through 30 November, $0.20 from 1 December"
+            "label": "Move from IPO price",
+            "value": "Up 34%"
+          }
+        ]
+      },
+      {
+        "label": "Close",
+        "name": "End of the first day",
+        "caption": "The price eased back from the open.",
+        "stats": [
+          {
+            "label": "Closing price",
+            "value": "$97.17"
           },
           {
-            "label": "Output, per million tokens",
-            "value": "$10 through 30 November, $20 from 1 December"
+            "label": "Move from IPO price",
+            "value": "Up 17%"
+          },
+          {
+            "label": "Shares traded",
+            "value": "More than 846 million (SpaceX’s first day: 522 million)"
+          },
+          {
+            "label": "Market value, fully diluted",
+            "value": "Roughly $1.8 trillion"
           }
         ]
       }
