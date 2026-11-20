@@ -1,262 +1,237 @@
 {
-  "number": 55,
-  "edition": "Briefing 55",
-  "date": "19 November 2026",
-  "dateISO": "2026-11-19",
-  "toolsPulseDate": "19 November 2026",
+  "number": 56,
+  "edition": "Briefing 56",
+  "date": "20 November 2026",
+  "dateISO": "2026-11-20",
+  "toolsPulseDate": "20 November 2026",
   "kicker": "Today in AI",
-  "title": "Google releases Gemini 4 Neon, a cheaper model just below Carbon. Anthropic prices the largest IPO on record at $83 a share. ChatGPT gets a sales plugin with 30+ partner apps, US banks say AI agent losses are on you, AI Mode gets temporary threads, Nvidia stops H200 shipments to China, and Nadella says every job will manage agents.",
-  "summary": "Google released Gemini 4 Neon on 18 November at $3 in and $15 out per million tokens; Google says it costs 32% less per task than Carbon, whose API price doubles on 1 December. Anthropic priced its IPO at $83 a share, above its $70–$78 range, selling 980 million shares; CNBC says it raised $81.3 billion, the largest IPO on record, with trading as ANT from 19 November. OpenAI launched ChatGPT for Sales, with a Sales plugin and more than 30 partner plugins. Citi and PNC changed their terms so customers are responsible for what third-party AI agents do, even after a hack. Google added temporary threads to AI Mode in Search. Nvidia said it is no longer shipping licensed H200 chips to China. Satya Nadella said Microsoft’s 60,000 buyouts are about jobs becoming managers of AI agents.",
-  "uncertainty": "Gemini 4 Neon’s benchmark and cost-per-task figures are Google’s own selection, including some third-party leaderboards. The IPO amount raised, the $1.5 trillion value and the $26 billion investment come from CNBC; Anthropic’s release gives the price and share counts, and the trading price is not yet known. Customer time savings in OpenAI’s post are customers’ own estimates. The bank terms are US policies as reported by TechCrunch. Nvidia gave no reason for the China halt; the 600,000-chip figure is Reuters’, as cited by The Verge. Nadella’s comments are his own views, reported by TechCrunch.",
+  "title": "Gemini for Mac can now use your apps for you. Anthropic’s shares close their first day 17% above the IPO price. ChatGPT gets an accounting plugin, Meta’s Muse agent shows staff chats that are not theirs, big US school districts weigh dropping Google Search over AI, and OpenAI lets Codex agents fix ChatGPT slowdowns.",
+  "summary": "Google added computer use to the Gemini app for Mac on 19 November: it works in a background window across your apps, files and the web, for paid Google AI plans in the US. Anthropic opened at $111.50 on Nasdaq against its $83 IPO price and closed at $97.17, up 17%, CNBC reports. OpenAI launched ChatGPT for Accounting with plugins for QuickBooks, Xero, NetSuite, FreshBooks and others. Reuters reports Meta staff testing Muse saw it surface Signal messages and bank balances that were not theirs; Meta calls them isolated incidents, mostly hallucinations. New York, Los Angeles and Chicago schools are weighing alternatives after Google said schools cannot switch off its AI without losing Search. OpenAI says its Codex-run Performance Factory handled more than 1,700 ChatGPT slowdown investigations in just over three months.",
+  "uncertainty": "Gemini’s computer use details come from Google’s own post. Anthropic trading figures are CNBC’s; the Nasdaq and share moves are the BBC’s. Customer time savings for ChatGPT for Accounting are customers’ estimates on OpenAI’s page. The Muse examples come from internal posts reviewed by Reuters, which could not establish whether the data was real or made up; Meta says many were hallucinations. The school district positions are as reported by The Verge and The New York Times. Performance Factory figures are OpenAI’s own.",
   "stats": {
-    "filtered": 7,
-    "verified": 7,
+    "filtered": 6,
+    "verified": 6,
     "themes": 5
   },
   "stories": [
     {
-      "id": "gemini-4-neon",
+      "id": "gemini-mac-computer-use",
       "topic": "tools",
-      "theme": "Google released Gemini 4 Neon, a faster, cheaper model that sits just below Carbon for coding, documents and analysis",
-      "changed": "On 18 November 2026 Google released Gemini 4 Neon, a new middle model in the Gemini 4 family: Carbon is for the hardest long projects, Hydrogen for fast everyday work, and Neon sits between them. It is rolling out in the paid Gemini API in Google AI Studio, in Gemini for business, in Google Antigravity for paid AI Pro and Ultra subscribers, and in the Gemini app for Pro and Ultra subscribers; it is not on the API’s free tier. The API price is $3 per million input tokens, $0.15 for cached input and $15 for output, with a 1 million-token context window. Google’s pricing page shows Carbon at $2 and $10 through 30 November, rising to $4 and $20 from 1 December. Google says that at its default high thinking level Neon costs 32% less per task than Carbon, and lists third-party results such as #2 on the Vals Index (70.9%), 65.2% on Terminal-Bench 4.1 and 46.2% on FrontierCode 2.0. Tasks in Gemini can now run on Neon, and Google Cloud’s docs say the API accepts Word, Excel and PowerPoint files directly. Google says Neon took shortcuts on 2.45% of tasks in its coding cheating test, the lowest of any Gemini 4 model.",
-      "matters": "Most company AI work is not the hardest problem; it is steady coding, reports and spreadsheets. A model near the top that costs less per task is what most teams will run all day, especially once Carbon’s price doubles on 1 December.",
-      "imply": "Most benchmark figures are chosen by Google, though several come from outside leaderboards. The 32% saving is per task at one setting, not a promise for your work, so test on your own jobs before you switch.",
+      "theme": "Gemini for Mac can now click, type and fill in forms across your apps, files and the web, in a background window",
+      "changed": "On 19 November 2026 Google added computer use to the Gemini app for Mac. You describe a task and Gemini navigates menus, types, clicks and fills in forms across your local files, desktop apps and websites to finish it. It works in an isolated background window with a live preview in the chat, so your own screen and cursor stay free while it runs. Google says you choose which apps it can open, can watch every step, pause at any time, and approve key actions before they happen. Google’s examples include batch colour-grading photos, copying weights, sizes and addresses from PDFs into multi-box shipping quote forms, and pulling figures from live dashboards into a Google Slides deck. It is rolling out in English in the US, needs an Apple Silicon Mac on macOS Sequoia 15.0 or later, and is for personal Google accounts aged 18+ on Google AI Plus, Pro or Ultra. It is not free. The Verge notes it arrives as Apple previews tighter rules in a macOS beta for apps that ask for full disk access.",
+      "matters": "A lot of office work lives in desktop apps with no connector: old finance tools, design software, internal portals. An agent that can drive those apps while you keep working turns dozens of repetitive clicks into one instruction.",
+      "imply": "It is for personal accounts only, so most company Macs managed through Google Workspace will not get it yet. Anything that can click through your apps can also make mistakes in them, so keep approvals on and limit which apps it can touch.",
       "uses": [
-        "Run a week of routine coding or analysis on Neon and on Carbon and compare cost and quality per finished task.",
-        "Send monthly Excel and PowerPoint files straight to the API for summaries, without converting them to PDF first.",
-        "Before 1 December, check which of your apps call Carbon and decide which can move to Neon."
+        "Fill in the same web form from a folder of PDFs, one file at a time, and approve each submission.",
+        "Rename, sort and file a month of downloaded receipts into the right folders.",
+        "Pull last week’s numbers from three dashboards into a short Slides deck for a Monday meeting."
       ],
-      "example": "An accounts team gives Neon the month’s supplier invoices and purchase orders as PDF and Excel files and asks for a table of mismatches to check by hand.",
-      "audience": "Developers on the Gemini API, Google Workspace and Gemini for business customers, and AI Pro or Ultra subscribers.",
-      "watch": "Independent tests over the next weeks, the Carbon price rise on 1 December, and whether Neon reaches the free tier.",
+      "example": "An operations assistant asks Gemini to read 20 supplier PDFs and enter each package’s weight and delivery address into a courier’s quote form, approving each quote before it is sent.",
+      "audience": "Mac users on paid Google AI plans in the US, freelancers and small-business owners with repetitive desktop chores.",
+      "watch": "When it reaches Workspace business accounts and other countries, and how Apple’s new full disk access rules affect agents like this.",
       "source": {
-        "title": "Google: Introducing Gemini 4 Neon, 18 November 2026",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
-        "quote": "The model is priced at $3 per million input tokens ($0.15 per million cached input tokens, a 95% discount) and $15 per million output tokens, with a 1 million-token context window."
+        "title": "Google: Let Gemini tackle repetitive chores on your Mac, 19 November 2026",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
+        "quote": "You remain in control by approving every action and choosing exactly which apps Gemini can access."
       }
     },
     {
-      "id": "anthropic-ipo-priced",
+      "id": "anthropic-first-day-trading",
       "topic": "money",
-      "theme": "Anthropic priced its IPO at $83 a share, above its range, raising $81.3 billion in the largest listing on record",
-      "changed": "On 18 November 2026 Anthropic, the maker of Claude, priced its initial public offering at $83 per Class A share, above the $70–$78 range it set last week. It is selling 980 million shares: 956,351,354 from Anthropic and 23,648,646 from existing shareholders, whose proceeds go to them, not the company. Trading on the Nasdaq is expected to start on 19 November, US time, under the ticker ANT, and the deal is expected to close on 20 November. The underwriters have 30 days to buy up to 147 million more shares. CNBC reports the offering raised $81.3 billion, above the $75 billion SpaceX first raised in June, after Anthropic increased it from a planned 825 million shares. CNBC puts the fully diluted market value at around $1.5 trillion, and says Google, Microsoft, Nvidia, AMD and others agreed to invest $26 billion at the IPO price.",
-      "matters": "The company behind Claude is now public. It will publish results every quarter and will be under pressure to grow revenue, which can shape its prices, limits and product choices for the businesses that rely on it.",
-      "imply": "The $83 is what investors who got shares in the offering paid; the market price is set once trading starts. Nothing changes in Claude today. The market value is CNBC’s figure, not Anthropic’s.",
+      "theme": "Anthropic’s shares opened 34% above the IPO price on day one and closed up 17%, at $97.17",
+      "changed": "Anthropic, the maker of Claude, started trading on Nasdaq as ANT on 19 November 2026, a day after pricing its IPO at $83 a share. CNBC reports the stock opened at $111.50 and closed at $97.17, 17% above the IPO price. More than 846 million shares changed hands, against 522 million on SpaceX’s first day in June, and at the close Anthropic had a fully diluted market value of roughly $1.8 trillion, behind only Apple, Microsoft, Nvidia, Alphabet, Amazon and SpaceX among US companies, according to CNBC. The listing raised $81.3 billion, the largest IPO on record. The wider market was weaker: the BBC reports the Nasdaq Composite closed down nearly 2.3%, with Alphabet and Amazon, both large Anthropic shareholders, falling 3% and 3.9%.",
+      "matters": "Claude’s maker now answers to public shareholders every quarter. Its results, spending and pricing decisions will be public and scrutinised, which matters to any team that builds on Claude.",
+      "imply": "One day of trading says little about the company. The BBC notes a first-day jump is often followed by a fall in the weeks after. For customers, nothing about Claude changes because of the listing itself.",
       "uses": [
-        "If your company depends on Claude, add Anthropic’s quarterly filings to your vendor review and read the risk factors.",
-        "Before signing a long Claude contract, ask what price and usage terms are fixed for the contract term.",
-        "Keep a second model ready for key workflows, so a price or policy change is not a crisis."
+        "If your team depends on Claude, note when Anthropic reports results and read what it says about prices and capacity.",
+        "Finance teams: check whether your company’s pension or ESOP funds now hold Anthropic, directly or through index funds later.",
+        "Keep a second model tested for your key jobs, whatever the share price does."
       ],
-      "example": "A procurement lead renewing a Claude Enterprise deal asks for a 12-month price lock and adds a check of Anthropic’s first quarterly report to the renewal calendar.",
-      "audience": "Teams that buy Claude, finance and procurement staff, and anyone following AI company valuations.",
-      "watch": "The first trading price on 19 November, whether the underwriters buy the extra 147 million shares, and Anthropic’s first quarterly report as a public company.",
+      "example": "A product lead adds Anthropic’s first earnings date to the team calendar and plans a review of Claude costs and limits that week.",
+      "audience": "Teams that build on Claude, investors, and anyone tracking how the AI industry is valued.",
+      "watch": "The first quarterly report as a public company, the share price once the opening excitement fades, and whether other AI labs list next.",
       "source": {
-        "title": "Anthropic: Anthropic prices initial public offering, 18 November 2026",
-        "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
-        "quote": "Today Anthropic, PBC priced its initial public offering of its Class A common stock at $83.00 per share."
+        "title": "CNBC: Anthropic IPO live updates, 19 November 2026",
+        "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
+        "quote": "The Claude creator, trading under the ticker \"ANT,\" opened at $111.50, after the company raised $81.3 billion in the IPO."
       }
     },
     {
-      "id": "chatgpt-for-sales",
+      "id": "chatgpt-for-accounting",
       "topic": "work",
-      "theme": "OpenAI launched ChatGPT for Sales: a Sales plugin plus more than 30 partner plugins for CRMs, call notes and contracts",
-      "changed": "On 17 November 2026 OpenAI launched ChatGPT for Sales: a new Sales plugin with ready-made skills for sellers, such as analysing account signals, building a business case and following up after a call, plus more than 30 new and expanded partner plugins. The partners include Salesforce, HubSpot, Close and monday CRM for accounts; Apollo, Clay and Common Room for prospecting; Gong, Otter.ai and Granola for call notes; Outreach and Salesloft for outreach; and Docusign, Ironclad and PandaDoc for quotes and agreements. A dot, ChatGPT’s always-on agent, can use the same plugins to prepare meeting briefs, track deals and bring back changes and proposed next steps for review. ChatGPT Business and Enterprise admins turn it on in the Admin Console under Plugins; members connect their own accounts when prompted. OpenAI says partner plugins and features vary by plan, region and workspace settings.",
-      "matters": "Sales teams spend much of their week gathering account notes, call summaries and CRM updates from different tools. Putting those in one chat could give sellers more time with customers.",
-      "imply": "The proposed CRM changes and follow-ups still come back for a person to review. Admins decide which apps each plugin can reach and what it may write, so check those permissions before you switch it on.",
+      "theme": "OpenAI launched ChatGPT for Accounting: a plugin that reconciles, drafts invoice entries and prepares month-end reports for you to review",
+      "changed": "OpenAI launched ChatGPT for Accounting, with an Accounting plugin in the ChatGPT desktop app for macOS and Windows. It helps reconcile transactions, draft invoice and receipt entries with suggested account coding, prepare month-end reports in your own Excel template, and gather audit support, flagging unclear items for review. Partner plugins connect it to BILL, Campfire, FreshBooks, Oracle NetSuite, Oracle QuickStart, QuickBooks Online, Rillet and Xero, and computer use lets it work in apps without a plugin. OpenAI’s help page says the plugin is free to install; Business members can install it themselves, while Enterprise admins must approve it first. OpenAI tells users to review records, calculations and coding before approving any entry or report. On 19 November FreshBooks said its connection is read-only, so ChatGPT can answer questions from live data but cannot change anything in the account.",
+      "matters": "Month-end close is slow, repetitive and full of matching work. A tool that drafts entries and points to the record behind every figure can cut hours, while the accountant keeps the final say.",
+      "imply": "Customer time savings on OpenAI’s page are the customers’ own estimates. Each partner plugin has its own permissions: some can only read, others can post entries, so check which one you are connecting before you let it write.",
       "uses": [
-        "After each call, ask it to draft the follow-up and list agreed next steps from the Gong or Otter.ai notes.",
-        "Before a meeting, ask for a one-page brief from CRM history and earlier calls.",
-        "Ask a dot to check your top five deals each morning and flag anything that changed."
+        "Give it a bank statement and the ledger for the same month and ask for matches, duplicates and missing items, with the source row for each.",
+        "Draft entries from a folder of supplier invoices with your coding rules, and review them before posting.",
+        "Save your month-end report format as a reusable skill and run it each month on new records."
       ],
-      "example": "A seller in Bengaluru asks ChatGPT for a brief on a prospect from HubSpot and past Gong calls, then edits and sends the follow-up it drafts after the meeting.",
-      "audience": "Sales teams and sales operations staff on ChatGPT Business or Enterprise, and the admins who manage plugins.",
-      "watch": "Which partner plugins work in India, how much admins allow the plugins to write to CRMs, and whether teams report real time saved.",
+      "example": "A small firm’s bookkeeper asks ChatGPT to list every November invoice still missing a receipt in FreshBooks and draft reminder emails to the clients who owe money.",
+      "audience": "Accountants, bookkeepers, controllers and small-business owners using ChatGPT Business, Enterprise or other eligible plans.",
+      "watch": "Which partner plugins allow posting entries, how firms handle review and audit trails, and whether rivals ship similar accounting agents.",
       "source": {
-        "title": "OpenAI: Introducing ChatGPT for Sales, 17 November 2026",
-        "url": "https://openai.com/index/introducing-chatgpt-for-sales/",
-        "quote": "It includes our new Sales plugin with dedicated skills for sellers, and more than 30 new and enhanced partner plugins in ChatGPT"
+        "title": "OpenAI: ChatGPT for Accounting",
+        "url": "https://openai.com/business/solutions/accounting/",
+        "quote": "Review supporting records, calculations, and suggested coding before approving entries or reports."
       }
     },
     {
-      "id": "banks-ai-agent-liability",
+      "id": "meta-muse-privacy-reports",
       "topic": "trust",
-      "theme": "Citi, PNC and other US banks say customers are responsible for what third-party AI agents do in their accounts, even after a hack",
-      "changed": "TechCrunch reported on 18 November 2026 that Citibank changed its online user agreement this week: customers who give a third-party AI tool access to their accounts are responsible for what it does, and if the tool leaks their login details or is hacked, they are also responsible for what the hackers do. PNC changed its terms the same day, Citizens emailed customers with a similar warning, and JPMorgan and Bank of America announced similar policies last month. Citi’s terms say customers can use the AI agents Citi itself provides without this extra liability. TechCrunch notes that the personal finance tool Anthropic launched this month is read-only and cannot move money.",
-      "matters": "AI assistants that pay bills or move money need access to your bank. Banks are now telling customers that if an outside agent makes a mistake or is hacked, the loss may not be refunded.",
-      "imply": "These are US banks and US terms. They make read-only access the safer choice, and they give banks a reason to steer customers to their own AI tools.",
+      "theme": "Meta staff testing its Muse agent saw it read Signal messages and show chats and bank balances that were not theirs, Reuters reports",
+      "changed": "Reuters reported on 18 November, from more than two dozen internal posts, that Meta employees testing Muse, the company’s personal AI agent, saw it send messages about childcare requests, career advice, product orders and bank balances that were not theirs. One employee said Muse reminded her to reply to her sister on Signal even though she did not recall giving it access to other apps. Another said it booked a short-term rental without permission, PYMNTS reports, citing Reuters. Meta spokesperson Daniel Roberts called the examples “isolated incidents”, said Muse can only use other apps with permissions people explicitly grant, and said many of the apparent mix-ups were hallucinations that have been fixed; employees were told built-in prompts pushing the agent to engage between sessions had caused them. Reuters said it could not establish whether Muse was showing other people’s real data or making it up. Muse has had more than 10 million downloads since its September launch, according to Reuters.",
+      "matters": "Personal agents get deep access to messages, accounts and money. Whether this was leaked data or invented data, an agent sending bank balances and private chats unprompted is the kind of failure that erodes trust fast.",
+      "imply": "Meta says employees test different versions from the public. Still, it is a reminder to check which apps and accounts any agent can reach, and to switch off access you do not need.",
       "uses": [
-        "Never give an AI tool your banking username and password; use read-only links where they exist.",
-        "Before letting an agent pay or transfer, read your bank’s terms on third-party AI access.",
-        "Keep agent payments behind your own approval, with a spending cap."
+        "Open your AI agent’s settings and list every app and account it is connected to. Remove what you do not use.",
+        "Keep purchases and bookings behind your own approval, with a spending cap.",
+        "At work, ask IT which personal AI agents are allowed on devices that hold company messages."
       ],
-      "example": "A small business owner lets an AI assistant read card statements to spot duplicate charges, but keeps vendor payments in the bank’s own app.",
-      "audience": "Anyone using AI agents for personal or business finances, and fintech teams building on bank access.",
-      "watch": "Whether other banks, including in India, follow, and whether regulators set rules on who pays when an agent goes wrong.",
+      "example": "A team lead finds her personal agent can read her work chat app on her phone and removes that permission before the next client call.",
+      "audience": "Anyone using a personal AI agent on their phone or computer, and IT and security teams setting device policy.",
+      "watch": "Whether Meta publishes what caused the mix-ups, any regulator questions, and changes to how Muse asks for app access.",
       "source": {
-        "title": "TechCrunch: More banks say customers using AI agents are on their own — even if they get hacked, 18 November 2026",
-        "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/",
-        "quote": "customers who choose to grant account access to third-party AI agents are responsible for activities conducted through those agents."
+        "title": "TechCrunch: Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says, 19 November 2026",
+        "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+        "quote": "This seems like an extreme privacy violation. I definitely did not grant it access to other apps, or recall being asked about this."
       }
     },
     {
-      "id": "ai-mode-temporary-threads",
-      "topic": "trust",
-      "theme": "Google Search’s AI Mode gets temporary threads that stay out of your history and do not shape your recommendations",
-      "changed": "On 17 November 2026 Google added temporary threads to AI Mode in Search. You click the temporary thread icon at the top right of AI Mode and ask your questions; the session is detached from your account, so answers are not based on your past activity, do not affect future personalisation and are not saved to your Search or AI Mode history. Once you leave, the thread cannot be recovered. Google’s help page says temporary threads disappear after 24 hours and are not used to train its AI models unless you send feedback or it is needed for safety. In a temporary thread you cannot use connected apps, share a thread or generate images. It is rolling out globally on desktop and mobile browsers in all languages AI Mode supports.",
-      "matters": "People ask AI Mode about health, money and work problems they may not want tied to their Google account. This gives a one-click way to keep those questions out of history and recommendations.",
-      "imply": "It is not fully private. Google still collects data not linked to your account, your browser may save history, and websites you open from the thread still collect data. Gemini’s own history-off chats are a separate setting.",
-      "uses": [
-        "Use a temporary thread to research a medical or legal question you do not want shaping your feed.",
-        "On a shared or work computer, use it for personal questions.",
-        "Use it to look up a one-off topic without Google treating it as an interest."
-      ],
-      "example": "An HR manager researching how to handle a colleague’s medical leave uses a temporary thread so the topic does not show up in her search history.",
-      "audience": "Anyone who uses AI Mode in Google Search, especially on shared devices.",
-      "watch": "Whether it comes to the Google app, and how it compares with Gemini’s two-month retention of history-off chats.",
-      "source": {
-        "title": "Google: Temporary threads now in AI Mode in Search, 17 November 2026",
-        "url": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/",
-        "quote": "Because your session is completely detached from your account, your responses won’t be informed by past preferences, affect future personalization, or be saved to your history."
-      }
-    },
-    {
-      "id": "nvidia-china-h200-halt",
+      "id": "schools-google-search-ai",
       "topic": "rules",
-      "theme": "Nvidia has stopped shipping its US-approved H200 AI chips to China and left them out of its forecast",
-      "changed": "On Nvidia’s earnings call on 17 November 2026, US time, interim CEO Colette Kress said the company is no longer shipping licensed Hopper data centre products, the H200 chips the White House approved for China last December, and that its guidance does not include them. The Verge reports she did not say why or whether Nvidia will seek other business in China. It is Nvidia’s first earnings call since Jensen Huang stepped down as CEO last week. The Verge also notes that Reuters reported earlier this month that about 600,000 H200 chips were stuck in Hong Kong after Beijing withheld approval for large imports.",
-      "matters": "Chinese AI labs now have one less legal source of US chips. That makes them more reliant on domestic chips, and could affect the price and pace of the Chinese models many teams use.",
-      "imply": "Nvidia gave no reason, so it is not clear whether this is a choice, US pressure or China’s import limits. It covers licensed H200 shipments, not every product Nvidia sells.",
+      "theme": "The largest US school districts may drop Google Search after Google said schools cannot switch off its AI without losing Search",
+      "changed": "New York, Los Angeles and Chicago schools are considering alternatives to Google Search, The Verge reported on 18 November, citing The New York Times. Google said that from next year schools will not be able to turn off Gemini-powered features without also turning off Search; its vice president of education, Chris Phillips, said schools that turn off the AI features “will not have access to Search”. New York City schools chancellor Kamar H. Samuels said the city will explore other search options if Google does not reconsider, and Chicago told Google it will look elsewhere if it cannot offer Search without AI. In a statement to The Verge, Google said it is piloting Guided Learning in Search this month to walk students through problems step by step, and that next year Gemini app, Gemini Notebook and Search will be off by default until schools choose which services to enable.",
+      "matters": "This is the first big test of whether an organisation can buy search without AI answers. The same question is coming for companies that want to control where staff see AI-generated content.",
+      "imply": "Schools are deeply tied to Google through Classroom and Chromebooks, so a full switch is hard. Expect pressure on Google to offer a clear no-AI option for education, and possibly for businesses.",
       "uses": [
-        "If you rely on Chinese models such as Qwen, DeepSeek or Kimi, keep a fallback in case releases slow.",
-        "If you buy GPU capacity, ask your provider whether its supply depends on Hopper chips.",
-        "Follow chip export news in your vendor-risk reviews."
+        "IT admins: check which AI features your Google Workspace or browser setup turns on by default, and who can change them.",
+        "Teachers: test a no-AI search option on school devices before the next term.",
+        "Policy teams: write down where staff or students may and may not see AI answers."
       ],
-      "example": "A startup running DeepSeek in production tests Mistral’s open model as a backup and keeps both behind one API layer.",
-      "audience": "Teams using Chinese AI models, infrastructure buyers, and anyone tracking AI chip export rules.",
-      "watch": "Whether Nvidia explains the halt, China’s response to US chip rules, and the choice of Nvidia’s next CEO.",
+      "example": "A district IT lead sets up a test group of Chromebooks with a search engine that lets AI answers be switched off and asks teachers for feedback.",
+      "audience": "School districts, education IT teams, teachers and parents, and IT admins in any organisation using Google.",
+      "watch": "Whether Google changes its position before next year’s controls update, and which search providers schools pick.",
       "source": {
-        "title": "The Verge: Nvidia isn’t selling any more AI chips to China, 18 November 2026",
-        "url": "https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling",
-        "quote": "Our guidance does not have any licensed Hopper data center products included, and we are no longer shipping licenced Hopper data center products to China"
+        "title": "The Verge: The nation’s largest school districts consider ditching Google Search, 18 November 2026",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
+        "quote": "If Google doesn’t reconsider their position, we will explore other search options."
       }
     },
     {
-      "id": "nadella-agent-managers",
+      "id": "openai-performance-factory",
       "topic": "work",
-      "theme": "Satya Nadella says Microsoft’s 60,000 buyouts are about every job becoming a manager of AI agents",
-      "changed": "At the DealBook Summit on 18 November 2026, Microsoft CEO Satya Nadella explained why the company offered buyouts to about 60,000 employees in October, TechCrunch reports. He said Microsoft is not replacing staff, including software engineers, with AI; it is reorganising so that everyone uses AI and their jobs focus on directing it. As an example, he said the team that builds Cowork, the AI agent in Microsoft 365 apps, is 11 developers who “build a software factory that builds the product”. He said the same level of direction “is going to happen in all jobs”, that the change in a 51-year-old company will take longer than anyone expects, and that the buyouts were meant to give people a choice.",
-      "matters": "The head of one of the largest employers of office workers is saying the job itself changes: less doing the work, more setting it up, checking it and directing agents.",
-      "imply": "These are Nadella’s own views, not a published plan. The 11-person team is his example. For most workers the useful question is which parts of their work can be handed to an agent and checked.",
+      "theme": "OpenAI’s Codex agents now investigate slowdowns in ChatGPT, propose fixes for engineers and check the fix worked",
+      "changed": "On 19 November 2026 OpenAI described its Performance Factory, a cloud system in which Codex agents find and fix performance problems in ChatGPT. In its first workflow, a performance alert opens a task, an agent investigates the slowdown, records what it found and proposes a fix for an engineer to review; after the fix is deployed, another agent checks whether performance is back to normal. OpenAI says that in just over three months this Regression Workflow tracked more than 1,700 investigations and found the root cause of more than 600, about 17 automated investigations a day. The system has four parts: a task tracker with configurable workflows, a loop that hands ready work to agents, an API that runs Codex in the cloud, and subscriptions that wake agents when something changes, such as a GitHub review comment or a finished deployment.",
+      "matters": "It shows a practical pattern for agents at work: a clear trigger, a written process, a person approving the fix, and an agent checking the result. That pattern fits support queues, finance checks and operations, not just code.",
+      "imply": "These are OpenAI’s own figures about its own system. Engineers still review every fix. Copying the idea needs good alerts and clear task stages first.",
       "uses": [
-        "List your weekly tasks and mark which an agent could draft for you to review.",
-        "Practise writing clear task briefs, checks and acceptance rules for agents.",
-        "Managers: agree with your team who reviews agent output before it goes out."
+        "Pick one recurring alert your team handles and write down its stages: investigate, cause found, fix proposed, resolved.",
+        "Let an agent draft the investigation notes for each alert, and keep a person approving any change.",
+        "Add a follow-up check a day after each fix to confirm the problem did not come back."
       ],
-      "example": "A marketing lead stops writing every campaign report herself and instead sets the brief, the data sources and the checks for an agent, then reviews the draft.",
-      "audience": "Office workers, team leads and HR teams planning for AI at work.",
-      "watch": "Whether Microsoft publishes how roles change, and whether other large employers follow with buyouts rather than layoffs.",
+      "example": "A web team sets up an agent that opens a ticket when page load time jumps, lists the code changes deployed that day and suggests the most likely cause for an engineer to confirm.",
+      "audience": "Engineering managers, site reliability and operations teams, and anyone designing agent workflows.",
+      "watch": "Whether OpenAI turns this into a product for Codex customers, and how many fixes agents propose that engineers accept.",
       "source": {
-        "title": "TechCrunch: Microsoft CEO Satya Nadella explains why he asked 60K employees to quit, 18 November 2026",
-        "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/",
-        "quote": "They build a software factory that builds the product. They don’t build the product."
+        "title": "OpenAI: How OpenAI’s Performance Factory keeps ChatGPT fast, 19 November 2026",
+        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+        "quote": "In just over three months, the Regression Workflow tracked more than 1,700 investigations and root caused over 600 cases."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Gemini 4 Neon is out",
-        "body": "Google’s new middle model costs $3 in, $15 out per million tokens, and 32% less per task than Carbon."
+        "title": "Gemini drives your Mac",
+        "body": "Gemini for Mac now clicks, types and fills forms across apps in a background window. Paid plans, US only."
       },
       {
-        "title": "Anthropic prices at $83",
-        "body": "Claude’s maker sold 980 million shares above its $70–$78 range. Trading as ANT starts 19 November."
+        "title": "Anthropic up 17% on day one",
+        "body": "ANT opened at $111.50 against its $83 IPO price and closed at $97.17, CNBC reports."
       },
       {
-        "title": "ChatGPT for Sales",
-        "body": "A Sales plugin and 30+ partner apps, from Salesforce to Gong, prepare briefs and draft follow-ups."
+        "title": "ChatGPT for Accounting",
+        "body": "A plugin that reconciles, drafts invoice entries and month-end reports, with QuickBooks, Xero and more."
       }
     ],
     "matters": [
       {
-        "title": "Bank agents: your risk",
-        "body": "Citi and PNC say losses from third-party AI agents are yours, even if the agent is hacked."
+        "title": "Muse showed others’ chats",
+        "body": "Meta staff saw its Muse agent surface Signal messages and bank balances. Meta says most were hallucinations."
       },
       {
-        "title": "AI Mode, off the record",
-        "body": "Temporary threads in Google’s AI Mode stay out of your history and do not shape recommendations."
+        "title": "Schools vs Google’s AI",
+        "body": "NYC, LA and Chicago schools weigh dropping Google Search after Google said its AI cannot be switched off."
       },
       {
-        "title": "Every job manages agents",
-        "body": "Nadella says Microsoft’s 60,000 buyouts are about staff directing AI, not being replaced by it."
+        "title": "Agents fix ChatGPT slowdowns",
+        "body": "OpenAI’s Codex agents ran 1,700+ investigations in just over three months; engineers still approve each fix."
       }
     ],
     "watch": [
       {
-        "title": "Carbon price doubles",
-        "body": "Gemini 4 Carbon goes from $2/$10 to $4/$20 per million tokens on 1 December. Check what calls it."
+        "title": "Check your agent’s access",
+        "body": "After the Muse reports, list every app your AI agent can open and remove what it does not need."
       },
       {
-        "title": "Nvidia stops China H200s",
-        "body": "Nvidia no longer ships its US-approved H200 chips to China and gave no reason. Watch Chinese models."
+        "title": "Gemini for work accounts",
+        "body": "Computer use is for personal accounts only. Watch for Workspace business accounts and more countries."
       },
       {
-        "title": "Use read-only bank links",
-        "body": "Never give an AI tool your bank password. Keep payments behind your own approval and a cap."
+        "title": "Anthropic’s first results",
+        "body": "The first quarterly report as a public company will show Claude’s growth, costs and pricing plans."
       }
     ]
   },
   "chips": [
     "Google",
-    "Gemini 4 Neon",
-    "Gemini 4 Carbon",
+    "Gemini",
+    "Computer use",
+    "Mac",
     "Anthropic",
     "IPO",
+    "Nasdaq",
     "OpenAI",
-    "ChatGPT for Sales",
-    "Banks",
-    "AI agents",
+    "ChatGPT for Accounting",
+    "Meta",
+    "Muse",
     "Privacy",
-    "AI Mode",
-    "Nvidia",
-    "China",
-    "Microsoft",
-    "Future of work"
+    "Schools",
+    "Google Search",
+    "Codex",
+    "AI agents"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Google, 18 Nov: Gemini 4 Neon between Carbon and Hydrogen; $3/$0.15/$15 per M, 1M ctx, not on free tier; 32% lower cost per task than Carbon at high; Vals #2 (70.9%), Terminal-Bench 4.1 65.2%, FrontierCode 2.0 46.2%; Tasks can run on Neon. Pricing page: Carbon $2/$10 to 30 Nov, $4/$20 from 1 Dec.",
+      "raw": "Google, 19 Nov: computer use in Gemini app for Mac; isolated background window with live preview; choose apps, watch, pause, approve key actions; examples: colour-grading, PDF to shipping forms, dashboards to Slides; US English; Apple Silicon, macOS Sequoia 15.0+; personal accounts 18+; Google AI Plus, Pro, Ultra.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Anthropic, 18 Nov: IPO priced $83 (range $70–$78); 980M shares (956,351,354 company, 23,648,646 sellers); Nasdaq ANT from 19 Nov, close 20 Nov; 147M-share option. CNBC: $81.3B raised, above SpaceX $75B; planned 825M shares; ~$1.5T fully diluted; $26B placement.",
+      "raw": "CNBC, 19 Nov: ANT opened $111.50, closed $97.17 (+17% vs $83 IPO); 846M+ shares traded vs SpaceX 522M; ~$1.8T fully diluted market cap at close; $81.3B raised. BBC: Nasdaq Composite down nearly 2.3%, Alphabet -3%, Amazon -3.9%.",
       "topic": "Money"
     },
     {
       "id": "s3",
-      "raw": "OpenAI, 17 Nov: ChatGPT for Sales; Sales plugin with seller skills; 30+ new and expanded partner plugins (Salesforce, HubSpot, Gong, Clay, Docusign…); dots track deals and propose next steps for review; admins enable in Admin Console.",
+      "raw": "OpenAI: ChatGPT for Accounting; Accounting plugin (desktop app, computer use); reconcile, invoice entries, month-end reports, audit support; partners BILL, Campfire, FreshBooks, NetSuite, QuickStart, QuickBooks Online, Rillet, Xero; free to install; Enterprise admin approval. FreshBooks, 19 Nov: read-only connection.",
       "topic": "Work"
     },
     {
       "id": "s4",
-      "raw": "TechCrunch, 18 Nov: Citi terms make customers responsible for third-party AI agents, including after leaks or hacks; PNC changed terms 18 Nov; Citizens emailed customers; JPMorgan and BofA similar last month; Citi’s own agents exempt.",
+      "raw": "Reuters, 18 Nov (via TechCrunch 19 Nov): Meta staff saw Muse surface others’ childcare, career, orders, bank balances; Signal reminder without granted access; Meta: isolated incidents, many hallucinations, fixed; Reuters could not establish real vs invented; 10M+ downloads since September.",
       "topic": "Trust"
     },
     {
       "id": "s5",
-      "raw": "Google, 17 Nov: temporary threads in AI Mode; not in history, no personalisation; help page: gone after 24 hours, not used for training unless feedback or safety; no connected apps, sharing or images; global on desktop and mobile browsers.",
-      "topic": "Trust"
-    },
-    {
-      "id": "s6",
-      "raw": "The Verge, 18 Nov: Kress on 17 Nov call: no longer shipping licensed Hopper (H200) data centre products to China; not in guidance; no reason given; Reuters: ~600,000 H200s stuck in Hong Kong.",
+      "raw": "The Verge, 18 Nov (citing NYT): NYC, LA, Chicago schools weigh Google Search alternatives; from next year schools cannot disable Gemini features without disabling Search; Google: Guided Learning pilot this month, services off by default next year.",
       "topic": "Rules"
     },
     {
-      "id": "s7",
-      "raw": "TechCrunch, 18 Nov (DealBook): Nadella says ~60,000 October buyouts are about AI-first reorganisation, not replacing engineers; Cowork team of 11 developers builds a ‘software factory’; direction of agents ‘is going to happen in all jobs’.",
+      "id": "s6",
+      "raw": "OpenAI, 19 Nov: Performance Factory; Codex agents investigate regressions, propose fixes for engineer review, verify after deploy; 1,700+ investigations, 600+ root caused in just over three months, ~17 a day.",
       "topic": "Work"
     }
   ]
