@@ -1,25 +1,33 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "anthropic-first-day-trading",
+  "storyId": "anthropic-ipo-close",
   "kicker": "Play with today’s story",
-  "title": "Anthropic’s first day on Nasdaq: from the $83 IPO price to the $97.17 close",
-  "intro": "Slide through Anthropic’s first trading day to see the share price at each step, using CNBC’s figures.",
-  "note": "All figures are from CNBC’s live coverage on 19 November 2026. The 17% and 34% moves are measured from the $83 IPO price. Market value is CNBC’s fully diluted estimate at the close, not the value at the IPO price. One day’s trading says little about the company’s long-term value.",
+  "title": "Anthropic’s IPO week: from pricing to the close of the deal and a second day of trading",
+  "intro": "Slide through Anthropic’s IPO week to see how many shares were sold, how much money came in, and where the share price ended on Friday.",
+  "note": "Share counts and proceeds are from Anthropic’s 20 November release and are gross, before underwriting fees and other costs. Not all IPO money went to Anthropic: existing shareholders who sold kept their part. The Wednesday figures are CNBC’s; the Friday close and market value are Reuters’. Market value is a fully diluted estimate at Friday’s price. Two days of trading say little about the company’s long-term value.",
   "sources": [
     {
-      "label": "CNBC: Anthropic IPO live updates, 19 November 2026",
-      "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html"
+      "label": "Anthropic: Closing of IPO and concurrent private placement, 20 November 2026",
+      "url": "https://www.anthropic.com/news/ipo-close"
+    },
+    {
+      "label": "CNBC: Anthropic raises $93.5 billion total as underwriters scoop up greenshoe, 20 November 2026",
+      "url": "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html"
+    },
+    {
+      "label": "Reuters (via Investing.com): Anthropic’s post-debut stumble delivers reality check for AI trade, 20 November 2026",
+      "url": "https://www.investing.com/news/economy-news/anthropics-postdebut-stumble-delivers-reality-check-for-ai-trade-5041125"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Anthropic’s first trading day, step by step",
+    "label": "Anthropic’s IPO week, step by step",
     "items": [
       {
-        "label": "IPO price",
-        "name": "Priced on Wednesday 18 November",
-        "caption": "Anthropic sold its shares to investors before trading began.",
+        "label": "Wed 18 Nov",
+        "name": "IPO priced",
+        "caption": "The first batch of shares was sold to investors.",
         "stats": [
           {
             "label": "Price per share",
@@ -31,13 +39,13 @@
           },
           {
             "label": "Money raised",
-            "value": "$81.3 billion, the largest IPO on record"
+            "value": "$81.3 billion"
           }
         ]
       },
       {
-        "label": "Open",
-        "name": "First trade on Thursday 19 November",
+        "label": "Thu 19 Nov",
+        "name": "First day of trading",
         "caption": "Trading as ANT on Nasdaq.",
         "stats": [
           {
@@ -45,31 +53,73 @@
             "value": "$111.50"
           },
           {
-            "label": "Move from IPO price",
-            "value": "Up 34%"
+            "label": "Closing price",
+            "value": "$97.17"
           }
         ]
       },
       {
-        "label": "Close",
-        "name": "End of the first day",
-        "caption": "The price eased back from the open.",
+        "label": "Fri 20 Nov",
+        "name": "IPO closes with the extra shares",
+        "caption": "Underwriters bought all the extra shares they had an option on.",
+        "stats": [
+          {
+            "label": "Extra shares",
+            "value": "147 million"
+          },
+          {
+            "label": "Total shares sold",
+            "value": "1,127,000,000"
+          },
+          {
+            "label": "Gross proceeds",
+            "value": "About $93.5 billion"
+          },
+          {
+            "label": "Of which went to Anthropic",
+            "value": "About $91.6 billion"
+          }
+        ]
+      },
+      {
+        "label": "Partners",
+        "name": "Private sale to chip and cloud partners",
+        "caption": "AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners bought Class N shares at the IPO price.",
+        "stats": [
+          {
+            "label": "Class N shares",
+            "value": "313,253,007"
+          },
+          {
+            "label": "Price per share",
+            "value": "$83"
+          },
+          {
+            "label": "Raised",
+            "value": "About $26.0 billion"
+          },
+          {
+            "label": "IPO plus private sale, gross",
+            "value": "About $119.5 billion"
+          }
+        ]
+      },
+      {
+        "label": "Fri close",
+        "name": "Second day of trading",
+        "caption": "A broad tech sell-off pulled the price back towards the IPO price.",
         "stats": [
           {
             "label": "Closing price",
-            "value": "$97.17"
+            "value": "$88.91"
           },
           {
-            "label": "Move from IPO price",
-            "value": "Up 17%"
-          },
-          {
-            "label": "Shares traded",
-            "value": "More than 846 million (SpaceX’s first day: 522 million)"
+            "label": "Move from Thursday’s close",
+            "value": "Down 8.5%"
           },
           {
             "label": "Market value, fully diluted",
-            "value": "Roughly $1.8 trillion"
+            "value": "About $1.6 trillion"
           }
         ]
       }

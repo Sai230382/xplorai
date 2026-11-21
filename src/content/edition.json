@@ -1,13 +1,13 @@
 {
-  "number": 56,
-  "edition": "Briefing 56",
-  "date": "20 November 2026",
-  "dateISO": "2026-11-20",
-  "toolsPulseDate": "20 November 2026",
+  "number": 57,
+  "edition": "Briefing 57",
+  "date": "21 November 2026",
+  "dateISO": "2026-11-21",
+  "toolsPulseDate": "21 November 2026",
   "kicker": "Today in AI",
-  "title": "Gemini for Mac can now use your apps for you. Anthropic’s shares close their first day 17% above the IPO price. ChatGPT gets an accounting plugin, Meta’s Muse agent shows staff chats that are not theirs, big US school districts weigh dropping Google Search over AI, and OpenAI lets Codex agents fix ChatGPT slowdowns.",
-  "summary": "Google added computer use to the Gemini app for Mac on 19 November: it works in a background window across your apps, files and the web, for paid Google AI plans in the US. Anthropic opened at $111.50 on Nasdaq against its $83 IPO price and closed at $97.17, up 17%, CNBC reports. OpenAI launched ChatGPT for Accounting with plugins for QuickBooks, Xero, NetSuite, FreshBooks and others. Reuters reports Meta staff testing Muse saw it surface Signal messages and bank balances that were not theirs; Meta calls them isolated incidents, mostly hallucinations. New York, Los Angeles and Chicago schools are weighing alternatives after Google said schools cannot switch off its AI without losing Search. OpenAI says its Codex-run Performance Factory handled more than 1,700 ChatGPT slowdown investigations in just over three months.",
-  "uncertainty": "Gemini’s computer use details come from Google’s own post. Anthropic trading figures are CNBC’s; the Nasdaq and share moves are the BBC’s. Customer time savings for ChatGPT for Accounting are customers’ estimates on OpenAI’s page. The Muse examples come from internal posts reviewed by Reuters, which could not establish whether the data was real or made up; Meta says many were hallucinations. The school district positions are as reported by The Verge and The New York Times. Performance Factory figures are OpenAI’s own.",
+  "title": "An Anthropic mathematician says he and Claude proved the Riemann hypothesis. Claude can now use desktop apps on Team and Enterprise plans. Anthropic’s IPO closes at $93.5 billion as its shares slip 8.5% on day two, GPT-6.2 reaches Microsoft Copilot, OpenAI tightens defences against model copying, and UK MPs call for an AI law.",
+  "summary": "Levent Alpöge of Anthropic released a Lean proof of the Riemann hypothesis found with Claude; independent mathematicians compiled it, but a full check and a readable write-up are still to come. Anthropic switched on computer use in beta for Claude Team and Enterprise, off by default and controlled by owners. Its IPO closed at about $93.5 billion gross, plus a $26 billion sale to seven chip and cloud partners, while the shares closed Friday at $88.91, down 8.5%. Microsoft is rolling out GPT-6.2 Sol in Copilot, including Word, Excel and PowerPoint, with Astra in Cowork and Studio. OpenAI says attacks that recover GPT-6.2 Astra’s hidden reasoning succeed 0.2% of the time in its tests, down from 54.0%. Two UK parliamentary committees called for an AI bill and a regulator.",
+  "uncertainty": "The Riemann proof has passed independent compilation, not the full comparator check, and there is no human-readable proof yet; Anthropic had not responded to Nature’s request for comment when it reported. Computer use details are from Anthropic’s help pages and are rolling out gradually. IPO proceeds are Anthropic’s figures; the day-two close and valuation are Reuters’. Copilot availability varies by region, organisation and admin settings. Distillation figures are from OpenAI’s own tests. The UK reports are committee recommendations, not government policy.",
   "stats": {
     "filtered": 6,
     "verified": 6,
@@ -15,224 +15,222 @@
   },
   "stories": [
     {
-      "id": "gemini-mac-computer-use",
-      "topic": "tools",
-      "theme": "Gemini for Mac can now click, type and fill in forms across your apps, files and the web, in a background window",
-      "changed": "On 19 November 2026 Google added computer use to the Gemini app for Mac. You describe a task and Gemini navigates menus, types, clicks and fills in forms across your local files, desktop apps and websites to finish it. It works in an isolated background window with a live preview in the chat, so your own screen and cursor stay free while it runs. Google says you choose which apps it can open, can watch every step, pause at any time, and approve key actions before they happen. Google’s examples include batch colour-grading photos, copying weights, sizes and addresses from PDFs into multi-box shipping quote forms, and pulling figures from live dashboards into a Google Slides deck. It is rolling out in English in the US, needs an Apple Silicon Mac on macOS Sequoia 15.0 or later, and is for personal Google accounts aged 18+ on Google AI Plus, Pro or Ultra. It is not free. The Verge notes it arrives as Apple previews tighter rules in a macOS beta for apps that ask for full disk access.",
-      "matters": "A lot of office work lives in desktop apps with no connector: old finance tools, design software, internal portals. An agent that can drive those apps while you keep working turns dozens of repetitive clicks into one instruction.",
-      "imply": "It is for personal accounts only, so most company Macs managed through Google Workspace will not get it yet. Anything that can click through your apps can also make mistakes in them, so keep approvals on and limit which apps it can touch.",
-      "uses": [
-        "Fill in the same web form from a folder of PDFs, one file at a time, and approve each submission.",
-        "Rename, sort and file a month of downloaded receipts into the right folders.",
-        "Pull last week’s numbers from three dashboards into a short Slides deck for a Monday meeting."
-      ],
-      "example": "An operations assistant asks Gemini to read 20 supplier PDFs and enter each package’s weight and delivery address into a courier’s quote form, approving each quote before it is sent.",
-      "audience": "Mac users on paid Google AI plans in the US, freelancers and small-business owners with repetitive desktop chores.",
-      "watch": "When it reaches Workspace business accounts and other countries, and how Apple’s new full disk access rules affect agents like this.",
-      "source": {
-        "title": "Google: Let Gemini tackle repetitive chores on your Mac, 19 November 2026",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
-        "quote": "You remain in control by approving every action and choosing exactly which apps Gemini can access."
-      }
-    },
-    {
-      "id": "anthropic-first-day-trading",
-      "topic": "money",
-      "theme": "Anthropic’s shares opened 34% above the IPO price on day one and closed up 17%, at $97.17",
-      "changed": "Anthropic, the maker of Claude, started trading on Nasdaq as ANT on 19 November 2026, a day after pricing its IPO at $83 a share. CNBC reports the stock opened at $111.50 and closed at $97.17, 17% above the IPO price. More than 846 million shares changed hands, against 522 million on SpaceX’s first day in June, and at the close Anthropic had a fully diluted market value of roughly $1.8 trillion, behind only Apple, Microsoft, Nvidia, Alphabet, Amazon and SpaceX among US companies, according to CNBC. The listing raised $81.3 billion, the largest IPO on record. The wider market was weaker: the BBC reports the Nasdaq Composite closed down nearly 2.3%, with Alphabet and Amazon, both large Anthropic shareholders, falling 3% and 3.9%.",
-      "matters": "Claude’s maker now answers to public shareholders every quarter. Its results, spending and pricing decisions will be public and scrutinised, which matters to any team that builds on Claude.",
-      "imply": "One day of trading says little about the company. The BBC notes a first-day jump is often followed by a fall in the weeks after. For customers, nothing about Claude changes because of the listing itself.",
-      "uses": [
-        "If your team depends on Claude, note when Anthropic reports results and read what it says about prices and capacity.",
-        "Finance teams: check whether your company’s pension or ESOP funds now hold Anthropic, directly or through index funds later.",
-        "Keep a second model tested for your key jobs, whatever the share price does."
-      ],
-      "example": "A product lead adds Anthropic’s first earnings date to the team calendar and plans a review of Claude costs and limits that week.",
-      "audience": "Teams that build on Claude, investors, and anyone tracking how the AI industry is valued.",
-      "watch": "The first quarterly report as a public company, the share price once the opening excitement fades, and whether other AI labs list next.",
-      "source": {
-        "title": "CNBC: Anthropic IPO live updates, 19 November 2026",
-        "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
-        "quote": "The Claude creator, trading under the ticker \"ANT,\" opened at $111.50, after the company raised $81.3 billion in the IPO."
-      }
-    },
-    {
-      "id": "chatgpt-for-accounting",
-      "topic": "work",
-      "theme": "OpenAI launched ChatGPT for Accounting: a plugin that reconciles, drafts invoice entries and prepares month-end reports for you to review",
-      "changed": "OpenAI launched ChatGPT for Accounting, with an Accounting plugin in the ChatGPT desktop app for macOS and Windows. It helps reconcile transactions, draft invoice and receipt entries with suggested account coding, prepare month-end reports in your own Excel template, and gather audit support, flagging unclear items for review. Partner plugins connect it to BILL, Campfire, FreshBooks, Oracle NetSuite, Oracle QuickStart, QuickBooks Online, Rillet and Xero, and computer use lets it work in apps without a plugin. OpenAI’s help page says the plugin is free to install; Business members can install it themselves, while Enterprise admins must approve it first. OpenAI tells users to review records, calculations and coding before approving any entry or report. On 19 November FreshBooks said its connection is read-only, so ChatGPT can answer questions from live data but cannot change anything in the account.",
-      "matters": "Month-end close is slow, repetitive and full of matching work. A tool that drafts entries and points to the record behind every figure can cut hours, while the accountant keeps the final say.",
-      "imply": "Customer time savings on OpenAI’s page are the customers’ own estimates. Each partner plugin has its own permissions: some can only read, others can post entries, so check which one you are connecting before you let it write.",
-      "uses": [
-        "Give it a bank statement and the ledger for the same month and ask for matches, duplicates and missing items, with the source row for each.",
-        "Draft entries from a folder of supplier invoices with your coding rules, and review them before posting.",
-        "Save your month-end report format as a reusable skill and run it each month on new records."
-      ],
-      "example": "A small firm’s bookkeeper asks ChatGPT to list every November invoice still missing a receipt in FreshBooks and draft reminder emails to the clients who owe money.",
-      "audience": "Accountants, bookkeepers, controllers and small-business owners using ChatGPT Business, Enterprise or other eligible plans.",
-      "watch": "Which partner plugins allow posting entries, how firms handle review and audit trails, and whether rivals ship similar accounting agents.",
-      "source": {
-        "title": "OpenAI: ChatGPT for Accounting",
-        "url": "https://openai.com/business/solutions/accounting/",
-        "quote": "Review supporting records, calculations, and suggested coding before approving entries or reports."
-      }
-    },
-    {
-      "id": "meta-muse-privacy-reports",
+      "id": "claude-riemann-proof",
       "topic": "trust",
-      "theme": "Meta staff testing its Muse agent saw it read Signal messages and show chats and bank balances that were not theirs, Reuters reports",
-      "changed": "Reuters reported on 18 November, from more than two dozen internal posts, that Meta employees testing Muse, the company’s personal AI agent, saw it send messages about childcare requests, career advice, product orders and bank balances that were not theirs. One employee said Muse reminded her to reply to her sister on Signal even though she did not recall giving it access to other apps. Another said it booked a short-term rental without permission, PYMNTS reports, citing Reuters. Meta spokesperson Daniel Roberts called the examples “isolated incidents”, said Muse can only use other apps with permissions people explicitly grant, and said many of the apparent mix-ups were hallucinations that have been fixed; employees were told built-in prompts pushing the agent to engage between sessions had caused them. Reuters said it could not establish whether Muse was showing other people’s real data or making it up. Muse has had more than 10 million downloads since its September launch, according to Reuters.",
-      "matters": "Personal agents get deep access to messages, accounts and money. Whether this was leaked data or invented data, an agent sending bank balances and private chats unprompted is the kind of failure that erodes trust fast.",
-      "imply": "Meta says employees test different versions from the public. Still, it is a reminder to check which apps and accounts any agent can reach, and to switch off access you do not need.",
+      "theme": "An Anthropic mathematician says he and Claude proved the Riemann hypothesis; the computer-checked proof passes early checks, but no one can read it yet",
+      "changed": "On 20 November 2026 Levent Alpöge, a mathematician at Anthropic, released a four-page note saying: “I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis.” The hypothesis, posed in 1859, is about how prime numbers are spread out and is one of the seven Millennium Prize Problems. Alpöge did not release a full written proof. He released a version written in Lean, a programming language in which a computer checks every step of a proof. Scientific American reports that independent mathematicians, including MIT’s Andrew Sutherland, compiled the Lean code themselves without problems, while a further “comparator” check, which confirms the code proves the real statement and does not quietly redefine anything, was still pending when it reported. Some experts are critical: Nature quotes number theorist Andrew Granville calling the note “garbled” and questioning its timing, a day after Anthropic’s stock market debut. Alpöge wrote that the cynical view of the timing is false. The same day, Stanford’s Ravi Vakil posted a separate, entirely human proof of the generalised hypothesis by postdoc Alessandro Masullo, which has not been machine-checked, TechCrunch reports.",
+      "matters": "If it holds, an AI model helped settle the most famous open problem in mathematics. It also shows a new kind of result: work a computer has checked line by line that no person yet understands.",
+      "imply": "A program that compiles is not the same as an explanation. The Clay Institute’s prize needs a published, peer-reviewed proof that survives two years of scrutiny, and mathematicians say humans still have to understand the argument. The same gap appears at work when AI output passes tests nobody can explain.",
       "uses": [
-        "Open your AI agent’s settings and list every app and account it is connected to. Remove what you do not use.",
-        "Keep purchases and bookings behind your own approval, with a spending cap.",
-        "At work, ask IT which personal AI agents are allowed on devices that hold company messages."
+        "When AI writes code, formulas or analysis for you, add an automatic check you trust, such as tests or a reconciliation, before you rely on it.",
+        "Ask for a plain-language explanation alongside any AI result that passes a check, and do not ship what nobody on the team can explain.",
+        "Before quoting a big AI claim to clients or managers, wait for independent experts, not just the company that made the claim."
       ],
-      "example": "A team lead finds her personal agent can read her work chat app on her phone and removes that permission before the next client call.",
-      "audience": "Anyone using a personal AI agent on their phone or computer, and IT and security teams setting device policy.",
-      "watch": "Whether Meta publishes what caused the mix-ups, any regulator questions, and changes to how Muse asks for app access.",
+      "example": "A finance analyst lets an AI rebuild a pricing model, runs it against last year’s actual figures as an automatic check, then asks the AI to explain each changed formula before presenting it.",
+      "audience": "Researchers, engineers and analysts who use AI for hard technical work, and anyone judging bold AI claims.",
+      "watch": "The comparator and other independent checks, a human-readable write-up from Alpöge, what Anthropic says officially, and how the human proof by Masullo fares.",
       "source": {
-        "title": "TechCrunch: Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says, 19 November 2026",
-        "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-        "quote": "This seems like an extreme privacy violation. I definitely did not grant it access to other apps, or recall being asked about this."
+        "title": "Scientific American: The AI Riemann hypothesis proof is almost certainly true, independent mathematicians attest, 20 November 2026",
+        "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/",
+        "quote": "The Lean proof has been compiled and independently rechecked by the Lean kernel with only the three standard axioms."
       }
     },
     {
-      "id": "schools-google-search-ai",
-      "topic": "rules",
-      "theme": "The largest US school districts may drop Google Search after Google said schools cannot switch off its AI without losing Search",
-      "changed": "New York, Los Angeles and Chicago schools are considering alternatives to Google Search, The Verge reported on 18 November, citing The New York Times. Google said that from next year schools will not be able to turn off Gemini-powered features without also turning off Search; its vice president of education, Chris Phillips, said schools that turn off the AI features “will not have access to Search”. New York City schools chancellor Kamar H. Samuels said the city will explore other search options if Google does not reconsider, and Chicago told Google it will look elsewhere if it cannot offer Search without AI. In a statement to The Verge, Google said it is piloting Guided Learning in Search this month to walk students through problems step by step, and that next year Gemini app, Gemini Notebook and Search will be off by default until schools choose which services to enable.",
-      "matters": "This is the first big test of whether an organisation can buy search without AI answers. The same question is coming for companies that want to control where staff see AI-generated content.",
-      "imply": "Schools are deeply tied to Google through Classroom and Chromebooks, so a full switch is hard. Expect pressure on Google to offer a clear no-AI option for education, and possibly for businesses.",
+      "id": "claude-computer-use-teams",
+      "topic": "tools",
+      "theme": "Claude can now use desktop apps for Team and Enterprise customers, in beta and off until an owner turns it on",
+      "changed": "On 20 November 2026 Anthropic made computer use available in beta on Claude Team and Enterprise plans, rolling out to organisations gradually. Claude sees the user’s screen and clicks and types in the desktop apps the user allows, from Claude Desktop on macOS 14 or later and Windows, and from Claude on the web or mobile if a computer with Claude Desktop open is reachable. It is off by default: only an Owner or Primary Owner can turn it on, under Organization settings > Capabilities, and the new unified Chat and Cowork experience must be on. Admins can restrict it to specific apps or block it through device management, and on Enterprise limit it to certain roles. It does not work in separate Cowork tasks or Claude Code, and organisations with HIPAA-ready, CMEK, FERPA or K-12 settings, or Zero Data Retention for Claude Code, cannot use it. Anthropic’s setup page warns there is no sandbox between Claude and the user’s apps, that it can open, change or delete files outside connected folders, and that screenshots are saved with the chat. Turning it off can take about an hour to reach each user.",
+      "matters": "Google’s new Gemini computer use on Mac is for personal accounts only. Claude’s version is aimed at company accounts with admin controls, so IT teams now have a real decision to make about letting an AI drive work computers.",
+      "imply": "Admin settings help, but the risks are on Anthropic’s own page: a web page or email on screen could steer Claude, and folder limits and read-only marks do not apply. Start with a small group, a short list of apps and no access to finance or HR systems.",
       "uses": [
-        "IT admins: check which AI features your Google Workspace or browser setup turns on by default, and who can change them.",
-        "Teachers: test a no-AI search option on school devices before the next term.",
-        "Policy teams: write down where staff or students may and may not see AI answers."
+        "Let Claude move data between an old desktop tool with no connector and a spreadsheet.",
+        "Have it work through a repetitive set-up task in a desktop app, such as creating the same project in several tools.",
+        "Pilot it with one team on non-sensitive apps and review the saved screenshots weekly."
       ],
-      "example": "A district IT lead sets up a test group of Chromebooks with a search engine that lets AI answers be switched off and asks teachers for feedback.",
-      "audience": "School districts, education IT teams, teachers and parents, and IT admins in any organisation using Google.",
-      "watch": "Whether Google changes its position before next year’s controls update, and which search providers schools pick.",
+      "example": "An IT admin turns computer use on for a five-person operations role only, allows just Excel and the company’s shipping desktop app, and asks the team to report any action Claude took that they did not expect.",
+      "audience": "IT and security admins on Claude Team and Enterprise, operations teams with desktop-only tools.",
+      "watch": "When the rollout reaches your organisation, whether Anthropic adds a sandbox, and how often prompt-style tricks on screen cause unintended actions.",
       "source": {
-        "title": "The Verge: The nation’s largest school districts consider ditching Google Search, 18 November 2026",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
-        "quote": "If Google doesn’t reconsider their position, we will explore other search options."
+        "title": "Anthropic: Set up computer use for Team and Enterprise plans (Claude Help Center), 20 November 2026",
+        "url": "https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans",
+        "quote": "Computer use has no sandbox between Claude and a user's applications."
       }
     },
     {
-      "id": "openai-performance-factory",
+      "id": "anthropic-ipo-close",
+      "topic": "money",
+      "theme": "Anthropic’s IPO closes at $93.5 billion with the extra shares sold, and its stock falls 8.5% on day two to $88.91",
+      "changed": "On 20 November 2026 Anthropic closed its IPO. It had sold 980 million shares at $83 on Wednesday for $81.3 billion, CNBC reports; then underwriters bought all 147 million extra shares they had an option on, taking the total to 1,127,000,000 shares at $83, for gross proceeds of about $93.5 billion, of which about $91.6 billion went to Anthropic and the rest to existing shareholders who sold. It also closed a separate $26.0 billion sale of 313,253,007 Class N shares at the same $83 price to AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners. Together that is about $119.5 billion before fees, the company says. On the stock market it was a rough second day: Reuters reports the shares closed at $88.91, 8.5% below Thursday’s $97.17 close (they had opened on Thursday at $111.50) and not far from the $83 IPO price, during a broad tech sell-off in which Nvidia fell about 14%. Reuters puts Anthropic’s fully diluted value at about $1.6 trillion, and says Morgan Stanley, which was tasked with stabilising the shares, closed the position meant to do that. Options trading on the stock is due to start next week.",
+      "matters": "The money is now in the bank: about $91.6 billion from the IPO plus $26 billion from chip and cloud partners, which pays for the compute behind Claude. The falling share price shows investors are cautious about AI spending, not that anything changed for Claude users.",
+      "imply": "A large part of the new money comes from the companies Anthropic buys chips and cloud from, which ties them closer together. Expect more share price swings once options trading starts; it says little about the product you use.",
+      "uses": [
+        "If your company plans around Claude, note that Anthropic now has fresh cash for capacity, and ask your account team what that means for limits.",
+        "Finance teams: use Anthropic’s release, not headlines, for the exact proceeds figures.",
+        "Keep tracking how AI vendors are valued; it affects their pricing and the pressure to make money from customers."
+      ],
+      "example": "A CFO preparing a board note quotes the $93.5 billion gross IPO figure from Anthropic’s release and adds that the stock closed day two at $88.91, rather than mixing figures from different reports.",
+      "audience": "Finance teams, investors and companies that rely on Claude.",
+      "watch": "Where the shares settle once options start, Anthropic’s first quarterly results as a public company, and whether OpenAI goes ahead with a listing next year.",
+      "source": {
+        "title": "Anthropic: Closing of initial public offering and concurrent private placement, 20 November 2026",
+        "url": "https://www.anthropic.com/news/ipo-close",
+        "quote": "The aggregate gross proceeds from the offering, before deducting underwriting discounts and commissions and other offering expenses, were approximately $93.5 billion, of which approximately $91.6 billion was received by Anthropic."
+      }
+    },
+    {
+      "id": "gpt-6-2-microsoft-copilot",
       "topic": "work",
-      "theme": "OpenAI’s Codex agents now investigate slowdowns in ChatGPT, propose fixes for engineers and check the fix worked",
-      "changed": "On 19 November 2026 OpenAI described its Performance Factory, a cloud system in which Codex agents find and fix performance problems in ChatGPT. In its first workflow, a performance alert opens a task, an agent investigates the slowdown, records what it found and proposes a fix for an engineer to review; after the fix is deployed, another agent checks whether performance is back to normal. OpenAI says that in just over three months this Regression Workflow tracked more than 1,700 investigations and found the root cause of more than 600, about 17 automated investigations a day. The system has four parts: a task tracker with configurable workflows, a loop that hands ready work to agents, an API that runs Codex in the cloud, and subscriptions that wake agents when something changes, such as a GitHub review comment or a finished deployment.",
-      "matters": "It shows a practical pattern for agents at work: a clear trigger, a written process, a person approving the fix, and an agent checking the result. That pattern fits support queues, finance checks and operations, not just code.",
-      "imply": "These are OpenAI’s own figures about its own system. Engineers still review every fix. Copying the idea needs good alerts and clear task stages first.",
+      "theme": "OpenAI’s GPT-6.2 Sol is rolling out in Microsoft Copilot, including Word, Excel and PowerPoint; GPT-6.2 Astra comes to Copilot Cowork and Studio",
+      "changed": "On 20 November 2026 Microsoft said OpenAI’s GPT-6.2 Sol and GPT-6.2 Astra are joining the models available in Microsoft Copilot. GPT-6.2 Sol is rolling out worldwide to eligible users in Copilot Chat, Copilot Cowork, Copilot Studio and Copilot in Excel, PowerPoint and Word. GPT-6.2 Astra, the heavier model, is rolling out in Copilot Cowork and Copilot Studio; users in Microsoft’s Frontier programme can also use it in Copilot Chat and the Office apps. Microsoft says its Work IQ layer grounds both models in your files, meetings, chats and business data, within the permissions each person already has. Admins control access through the Microsoft 365 admin center, and availability can vary by region and organisation. OpenAI launched the two models on 17 November.",
+      "matters": "Copilot users get OpenAI’s newest models inside the documents and spreadsheets they already use, three days after OpenAI launched them.",
+      "imply": "Which model you get depends on your admin, your region and the app. Copilot only sees what you are allowed to see, so messy file permissions will show up in answers.",
       "uses": [
-        "Pick one recurring alert your team handles and write down its stages: investigate, cause found, fix proposed, resolved.",
-        "Let an agent draft the investigation notes for each alert, and keep a person approving any change.",
-        "Add a follow-up check a day after each fix to confirm the problem did not come back."
+        "Use Sol in Word or PowerPoint for everyday drafting from your own files and meeting notes.",
+        "Hand longer multi-step jobs, such as a research brief across several documents, to Astra in Copilot Cowork.",
+        "Admins: decide which model each group gets and check file permissions before widening access."
       ],
-      "example": "A web team sets up an agent that opens a ticket when page load time jumps, lists the code changes deployed that day and suggests the most likely cause for an engineer to confirm.",
-      "audience": "Engineering managers, site reliability and operations teams, and anyone designing agent workflows.",
-      "watch": "Whether OpenAI turns this into a product for Codex customers, and how many fixes agents propose that engineers accept.",
+      "example": "A consultant asks Copilot Cowork, running GPT-6.2 Astra, to gather last quarter’s client meeting notes and spreadsheets into a ten-slide review deck, then checks every figure before sending.",
+      "audience": "Microsoft 365 Copilot users and admins, consultants and analysts who live in Office apps.",
+      "watch": "When Astra reaches all users in the Office apps, and whether your organisation’s admins switch the new models on.",
       "source": {
-        "title": "OpenAI: How OpenAI’s Performance Factory keeps ChatGPT fast, 19 November 2026",
-        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
-        "quote": "In just over three months, the Regression Workflow tracked more than 1,700 investigations and root caused over 600 cases."
+        "title": "Microsoft: Available today: OpenAI’s GPT-6.2 Sol and GPT-6.2 Astra in Microsoft Copilot, 20 November 2026",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/available-today-openais-gpt-6-2-sol-and-gpt-6-2-astra-in-microsoft-copilot/4574229",
+        "quote": "GPT-6.2 Sol is rolling out worldwide to eligible users in Copilot Chat, Copilot Cowork, Copilot Studio, and Copilot in Excel, PowerPoint, and Word."
+      }
+    },
+    {
+      "id": "openai-adversarial-distillation",
+      "topic": "trust",
+      "theme": "OpenAI tightens defences against rivals copying its models, and GPT-6.2 now drops hidden reasoning when you edit an earlier message",
+      "changed": "On 20 November 2026 OpenAI described how it fights “adversarial distillation”: someone using a model’s answers without permission to train a copy that lacks its safety protections, for example a copy that will help with cyberattacks the original would refuse. OpenAI says it combines red-team testing, training, classifiers, API limits and investigations, and puts special effort into protecting the model’s hidden working, its chain of thought. In its own adaptive test, the share of attacks that recovered that hidden reasoning fell from 54.0% against GPT-6 Astra to 0.2% against GPT-6.2 Astra. For developers there are practical changes: with GPT-6.2 Astra and Sol, a model’s reasoning is tied to the conversation that produced it, so if an earlier message is rewritten, the API drops the reasoning that followed; older model families cannot read GPT-6.2’s reasoning. OpenAI also says it closed a pathway that could have exposed another user’s encrypted reasoning, enforces against networks of accounts, and shares warning signs with other AI companies.",
+      "matters": "Safety rules only work if they cannot be copied away. For businesses building on OpenAI, the change to how reasoning is kept affects cost and results in multi-step agents.",
+      "imply": "The 54.0% and 0.2% figures are from OpenAI’s own tests. Agents that edit or rewrite earlier messages in a conversation will lose reasoning and may cost more; OpenAI advises adding new turns instead.",
+      "uses": [
+        "Developers: change agents to append new messages rather than editing earlier ones when using GPT-6.2.",
+        "Security teams: ask your AI vendors how they detect bulk scraping of their models through your accounts.",
+        "Review API keys shared across teams, since OpenAI says it enforces against whole networks of accounts it links to distillation."
+      ],
+      "example": "A developer finds her support agent rewrites the first message on every turn, switches it to add a new message instead, and keeps the model’s earlier reasoning in play.",
+      "audience": "Developers on the OpenAI API, security and trust teams, AI policy watchers.",
+      "watch": "Whether other labs publish similar figures, and any public case of a distilled model being used for harm.",
+      "source": {
+        "title": "OpenAI: Combatting adversarial distillation, 20 November 2026",
+        "url": "https://openai.com/index/combatting-adversarial-distillation/",
+        "quote": "The average attack success rate fell from 54.0% against GPT-6 Astra with its original safeguards to 0.2% against GPT-6.2 Astra with its updated safeguards."
+      }
+    },
+    {
+      "id": "uk-ai-bill-calls",
+      "topic": "rules",
+      "theme": "Two UK parliamentary committees in one week call for an AI law and a regulator with powers to pause or block risky systems",
+      "changed": "On 18 November 2026 the House of Commons Business, Innovation, Science and Trade Committee published “Guardrails for growth: AI safety and security”. It asks for an AI Safety and Security Bill in the next session of Parliament and a new regulator, separate from the AI Security Institute, with legal powers to require independent checks of safety claims, pause high-risk training and testing, delay or prohibit deployment, and suspend services when risks cannot be controlled. It lists ten gaps, including mandatory incident reporting and protection for whistleblowers. On 20 November the Joint Committee on Human Rights published the government’s response to its own report, which called for a risk-based AI bill, one independent regulator, and a duty to tell people when AI that can significantly affect them is being used. Its chair, Alex Sobel MP, said the committee is not seeing a sense of urgency from the government.",
+      "matters": "These are recommendations, not law. But two cross-party committees landing in the same place gives future UK rules a likely shape: incident reporting, independent testing and disclosure when AI makes significant decisions.",
+      "imply": "Nothing changes for UK businesses today. Companies that deploy AI in hiring, lending or customer decisions should expect disclosure and incident-reporting duties to come up in any bill.",
+      "uses": [
+        "Start a simple log of AI incidents and near misses now; it is the most common demand in these reports.",
+        "List where your company uses AI to make decisions about people, and whether those people are told.",
+        "Check your whistleblowing policy covers concerns about AI systems."
+      ],
+      "example": "An HR director at a UK retailer adds a line to job adverts saying AI helps screen applications, and sets up a form for staff to report AI mistakes.",
+      "audience": "UK compliance, legal and HR teams, and anyone selling AI services into the UK.",
+      "watch": "The government’s reply to the Commons committee and whether an AI bill appears in the next King’s Speech.",
+      "source": {
+        "title": "UK Parliament, Joint Committee on Human Rights: Government response: Human Rights and the Regulation of AI, 20 November 2026",
+        "url": "https://committees.parliament.uk/committee/93/human-rights-joint-committee/news/219105/government-response-human-rights-and-the-regulation-of-ai/",
+        "quote": "We are not seeing a sense of urgency from the Government in addressing the serious risks that AI poses."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Gemini drives your Mac",
-        "body": "Gemini for Mac now clicks, types and fills forms across apps in a background window. Paid plans, US only."
+        "title": "Claude and the Riemann proof",
+        "body": "An Anthropic mathematician says Claude helped prove the Riemann hypothesis. The Lean code compiles; checks go on."
       },
       {
-        "title": "Anthropic up 17% on day one",
-        "body": "ANT opened at $111.50 against its $83 IPO price and closed at $97.17, CNBC reports."
+        "title": "Claude uses work computers",
+        "body": "Computer use is in beta on Claude Team and Enterprise. Off by default; owners pick roles and apps."
       },
       {
-        "title": "ChatGPT for Accounting",
-        "body": "A plugin that reconciles, drafts invoice entries and month-end reports, with QuickBooks, Xero and more."
+        "title": "Anthropic IPO closes",
+        "body": "Proceeds reach $93.5 billion with the extra shares sold. The stock closed day two at $88.91, down 8.5%."
       }
     ],
     "matters": [
       {
-        "title": "Muse showed others’ chats",
-        "body": "Meta staff saw its Muse agent surface Signal messages and bank balances. Meta says most were hallucinations."
+        "title": "GPT-6.2 in Copilot",
+        "body": "GPT-6.2 Sol is rolling out in Copilot Chat, Word, Excel and PowerPoint; Astra in Cowork and Studio."
       },
       {
-        "title": "Schools vs Google’s AI",
-        "body": "NYC, LA and Chicago schools weigh dropping Google Search after Google said its AI cannot be switched off."
+        "title": "Copying AI gets harder",
+        "body": "OpenAI says attacks on GPT-6.2 Astra’s hidden reasoning succeed 0.2% of the time in its tests, from 54.0%."
       },
       {
-        "title": "Agents fix ChatGPT slowdowns",
-        "body": "OpenAI’s Codex agents ran 1,700+ investigations in just over three months; engineers still approve each fix."
+        "title": "UK MPs want an AI law",
+        "body": "Two committees call for an AI bill and a regulator able to pause or block risky systems."
       }
     ],
     "watch": [
       {
-        "title": "Check your agent’s access",
-        "body": "After the Muse reports, list every app your AI agent can open and remove what it does not need."
+        "title": "Read before you trust",
+        "body": "Machine-checked is not understood. Ask for a plain explanation of any AI result before you rely on it."
       },
       {
-        "title": "Gemini for work accounts",
-        "body": "Computer use is for personal accounts only. Watch for Workspace business accounts and more countries."
+        "title": "Set limits for desktop agents",
+        "body": "Claude’s setup page says there is no sandbox. Start with a few users and a short list of apps."
       },
       {
-        "title": "Anthropic’s first results",
-        "body": "The first quarterly report as a public company will show Claude’s growth, costs and pricing plans."
+        "title": "ANT options trading",
+        "body": "Options on Anthropic shares start next week, which could mean bigger price swings."
       }
     ]
   },
   "chips": [
-    "Google",
-    "Gemini",
-    "Computer use",
-    "Mac",
     "Anthropic",
+    "Claude",
+    "Riemann hypothesis",
+    "Lean",
+    "Computer use",
     "IPO",
     "Nasdaq",
+    "Microsoft Copilot",
+    "GPT-6.2",
     "OpenAI",
-    "ChatGPT for Accounting",
-    "Meta",
-    "Muse",
-    "Privacy",
-    "Schools",
-    "Google Search",
-    "Codex",
-    "AI agents"
+    "Distillation",
+    "AI safety",
+    "UK Parliament",
+    "Regulation"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Google, 19 Nov: computer use in Gemini app for Mac; isolated background window with live preview; choose apps, watch, pause, approve key actions; examples: colour-grading, PDF to shipping forms, dashboards to Slides; US English; Apple Silicon, macOS Sequoia 15.0+; personal accounts 18+; Google AI Plus, Pro, Ultra.",
-      "topic": "Tools"
-    },
-    {
-      "id": "s2",
-      "raw": "CNBC, 19 Nov: ANT opened $111.50, closed $97.17 (+17% vs $83 IPO); 846M+ shares traded vs SpaceX 522M; ~$1.8T fully diluted market cap at close; $81.3B raised. BBC: Nasdaq Composite down nearly 2.3%, Alphabet -3%, Amazon -3.9%.",
-      "topic": "Money"
-    },
-    {
-      "id": "s3",
-      "raw": "OpenAI: ChatGPT for Accounting; Accounting plugin (desktop app, computer use); reconcile, invoice entries, month-end reports, audit support; partners BILL, Campfire, FreshBooks, NetSuite, QuickStart, QuickBooks Online, Rillet, Xero; free to install; Enterprise admin approval. FreshBooks, 19 Nov: read-only connection.",
-      "topic": "Work"
-    },
-    {
-      "id": "s4",
-      "raw": "Reuters, 18 Nov (via TechCrunch 19 Nov): Meta staff saw Muse surface others’ childcare, career, orders, bank balances; Signal reminder without granted access; Meta: isolated incidents, many hallucinations, fixed; Reuters could not establish real vs invented; 10M+ downloads since September.",
+      "raw": "Scientific American, 20 Nov: Alpöge (Anthropic) claims Claude-assisted proof of the Riemann hypothesis; Lean code independently compiled (Sutherland, MIT); comparator run pending (Buzzard). Nature: Granville calls the note garbled. TechCrunch: separate human proof by Masullo posted by Vakil, not in Lean.",
       "topic": "Trust"
     },
     {
+      "id": "s2",
+      "raw": "Claude Help Center, 20 Nov: computer use beta for Team and Enterprise; off by default; Owner or Primary Owner enables; needs unified Chat and Cowork; macOS 14+ and Windows; not for HIPAA-ready, CMEK, FERPA/K-12, ZDR for Claude Code; no sandbox; screenshots saved with chat.",
+      "topic": "Tools"
+    },
+    {
+      "id": "s3",
+      "raw": "Anthropic, 20 Nov: IPO closed, 1,127,000,000 shares at $83 incl. 147M greenshoe; ~$93.5B gross, ~$91.6B to Anthropic; 313,253,007 Class N shares to AMD, Broadcom, Google, Micron, Microsoft, Nvidia, TSMC for ~$26.0B; ~$119.5B total. Reuters: closed $88.91 Friday, -8.5%; ~$1.6T fully diluted.",
+      "topic": "Money"
+    },
+    {
+      "id": "s4",
+      "raw": "Microsoft, 20 Nov: GPT-6.2 Sol rolling out in Copilot Chat, Cowork, Studio, Excel, PowerPoint, Word; Astra in Cowork and Studio, Frontier users in Chat and Office apps; Work IQ grounding within existing permissions.",
+      "topic": "Work"
+    },
+    {
       "id": "s5",
-      "raw": "The Verge, 18 Nov (citing NYT): NYC, LA, Chicago schools weigh Google Search alternatives; from next year schools cannot disable Gemini features without disabling Search; Google: Guided Learning pilot this month, services off by default next year.",
-      "topic": "Rules"
+      "raw": "OpenAI, 20 Nov: combatting adversarial distillation; reasoning-extraction attack success 54.0% (GPT-6 Astra) to 0.2% (GPT-6.2 Astra) in internal adaptive test; edited prefix drops later reasoning; older models cannot read 6.2 reasoning; closed pathway to another user’s encrypted reasoning.",
+      "topic": "Trust"
     },
     {
       "id": "s6",
-      "raw": "OpenAI, 19 Nov: Performance Factory; Codex agents investigate regressions, propose fixes for engineer review, verify after deploy; 1,700+ investigations, 600+ root caused in just over three months, ~17 a day.",
-      "topic": "Work"
+      "raw": "UK Commons BIS Committee, 18 Nov: Guardrails for growth report; AI Safety and Security Bill; regulator separate from AISI; ten gaps. JCHR, 20 Nov: government response published; chair Alex Sobel: no sense of urgency.",
+      "topic": "Rules"
     }
   ]
 }
