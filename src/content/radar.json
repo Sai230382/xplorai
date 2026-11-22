@@ -5214,6 +5214,12 @@
     "week": "22 November 2026",
     "launches": [
       {
+        "name": "last30days by mvanhorn (github.com/mvanhorn/last30days-skill)",
+        "date": "22 November 2026",
+        "desc": "An open-source skill for AI agents such as Claude Code, Codex, Cursor and Gemini CLI that is trending on GitHub this week, with about 72,000 stars. Give it a person, company, product or topic and it searches Reddit, X, YouTube, Hacker News, Polymarket, GitHub and the web from the last 30 days, ranks what it finds by real engagement and writes one cited brief. Reddit, Hacker News, Polymarket and GitHub work without keys; X, YouTube and other sources need your own keys or logins.",
+        "why": "For anyone who researches a topic before a meeting, a post or a purchase. Not a new launch: the repo dates to January 2026 and is on the radar because it is trending now."
+      },
+      {
         "name": "ClawVet (clawvet.vercel.app)",
         "date": "21 November 2026",
         "desc": "A scanner for AI agent skills, posted as a Show HN on 21 November. Paste a SKILL.md, Cursor rule, AGENTS.md or helper script into the browser playground and it reports which secrets, network hosts and start-up files the code touches, running locally through WebAssembly so nothing is uploaded. A command-line tool installed with npm audits every skill, rule, hook and MCP server on a machine, can block installs, and flags ‘rug-pull’ updates that quietly add new permissions; a GitHub Action posts a permissions diff on pull requests. The makers report 0.833 accuracy on a held-out set of 556 skills and say an audit of 209 real ClawHub skills found 40.2% read secret environment variables they did not declare.",
