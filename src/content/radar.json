@@ -5186,6 +5186,28 @@
       "s": 3,
       "p": "€29 per user per month (Pro), 14-day trial",
       "st": "active"
+    },
+    {
+      "n": "last30days",
+      "w": "https://github.com/mvanhorn/last30days-skill",
+      "c": "Agent Infrastructure",
+      "tl": "An agent skill that researches the last 30 days on Reddit, X, YouTube, HN and Polymarket",
+      "d": "last30days is an open-source skill for AI agents such as Claude Code, Codex, Cursor and Gemini CLI. Type a person, company, product or topic and it searches Reddit, X, YouTube, Hacker News, Polymarket, GitHub and the web in parallel, ranks what it finds by real engagement (upvotes, likes, views, market odds) and writes one cited brief. Reddit, Hacker News, Polymarket and GitHub work with no keys; X, YouTube and other sources need your own keys or logins.",
+      "f": [
+        "Searches Reddit, X, YouTube, Hacker News, Polymarket, GitHub and the web in parallel",
+        "Ranks results by engagement and merges the same story across sites",
+        "Discovery mode lists topics that are picking up speed",
+        "Runs on your machine; you bring your own API keys"
+      ],
+      "u": [
+        "Catching up on a person or company before a meeting",
+        "Comparing tools by what users are actually saying",
+        "Finding what is rising in a topic before writing about it"
+      ],
+      "e": "It's like asking a friend to read the last month of Reddit threads, X posts, YouTube videos and Hacker News comments on any topic, then tell you in one page what people actually care about, with links to where they said it.",
+      "s": 4,
+      "p": "Free and open source (MIT); some sources need your own paid API keys",
+      "st": "active"
     }
   ],
   "pulse": {
