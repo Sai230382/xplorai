@@ -1,4 +1,5 @@
 import { site } from "../data/site"
+import { TOOLS_PATH } from "../data/radar"
 import { NEW_TOOLS_PATH } from "../data/newtools"
 import { Logo } from "./Logo"
 import { navHref } from "./format"
@@ -30,7 +31,7 @@ export function SiteFooter({ home = true }: { home?: boolean }) {
       <div className="v4-footer-bottom">
         <div className="v4-footer-brand">
           <a className="v4-brand" href={home ? "#top" : "/"} aria-label={home ? "XplorAI, back to top" : "XplorAI home"}>
-            <Logo tone="light" />
+            <Logo />
           </a>
           <p className="v4-credit">
             {"by S.AI ("}
@@ -70,7 +71,7 @@ export function SiteFooter({ home = true }: { home?: boolean }) {
         <nav aria-label="Footer">
           <a href={navHref("#brief", home)}>The Brief</a>
           <a href={navHref("#on-x", home)}>On X</a>
-          <a href="/tools">Tools</a>
+          <a href={TOOLS_PATH}>Tools</a>
           <a href={NEW_TOOLS_PATH}>New this week</a>
           <a href={navHref("#shipped", home)}>Shipped</a>
           <a href={`mailto:${site.email}`}>{site.email}</a>

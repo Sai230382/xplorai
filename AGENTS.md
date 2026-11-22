@@ -8,7 +8,7 @@ Content is data. A new briefing or pulse should only need these files:
 
 - `src/content/edition.json` — the Brief (stories, the "60 seconds" glance = `columns.changed[0..2]`, editor's note)
 - `src/content/xposts.json` — X posts. Add an optional `"take"` (one or two plain sentences) to feature a post with an "Our take" note; posts with a take are shown first, three at most.
-- `src/content/radar.json` — Tools radar (`pulse.launches`)
+- `src/content/radar.json` — Tools radar (`pulse.launches` on the home page; the full directory of `tools` at `/tools`)
 - `src/content/showcase.json` — Shipped builds (the first post with a `preview` image is the large one)
 - `src/content/newtools.json` — the weekly "New AI tools this week" page at `/new-tools` (`{week_of, label, window, curated_by, trends, tools}`; types in `src/data/newtools.ts`). Tools with `pick_of_week` and `try_steps` get a "Try it in 5 minutes" block; `status: "coming_soon"` + `available_from` shows a "Coming <date>" chip instead.
 
@@ -17,6 +17,6 @@ Content is data. A new briefing or pulse should only need these files:
 - `src/App.tsx` + `src/v4/*` + `src/styles.css` — the live V4 page. Edit these for layout or style changes.
 - `src/legacy/` — the previous front page (reel hero, Academy, Playbook). **Archived; not rendered. Do not edit for live changes.**
 - `archive/public/` — static Academy, Playbook and Library pages, kept for later and not deployed.
-- `public/tools/` — the standalone "/tools" radar page.
+- `/tools` — the V4 tools directory (src/v4/Tools.tsx), fed by `src/content/radar.json`. Do not add a static `public/tools/` page; it would override the app.
 
 Design rules: one painting per section, Newsreader + Archivo only, body text at least 14px, no boxes inside boxes.

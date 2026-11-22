@@ -32,7 +32,7 @@ export function Brief({ onOpenStory, onOpenNote }: Props) {
 
         <div className="v4-brief-body">
           <figure className="v4-plate">
-            <img src="/doors/brief.jpg" alt="Oil painting of a stack of paper washed with indigo ink beside a cup" />
+            <img src="/scenes/brief-plate.jpg" alt="Oil painting of a stack of paper washed with indigo ink beside a cup" />
             <figcaption>
               Every story answers two questions: what does this mean for you, and what would someone actually do
               about it?

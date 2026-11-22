@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { TOOLS_PATH } from "../data/radar"
 import { NEW_TOOLS_PATH } from "../data/newtools"
 import { navHref } from "./format"
 import { Logo } from "./Logo"
@@ -6,7 +7,7 @@ import { Logo } from "./Logo"
 const LINKS = [
   { href: "#brief", label: "The Brief" },
   { href: "#on-x", label: "On X" },
-  { href: "#tools", label: "Tools" },
+  { href: TOOLS_PATH, label: "Tools" },
   { href: NEW_TOOLS_PATH, label: "New this week" },
   { href: "#shipped", label: "Shipped" },
 ] as const
@@ -14,6 +15,7 @@ const LINKS = [
 export function SiteNav({ home = true }: { home?: boolean }) {
   const [solid, setSolid] = useState(false)
   const [open, setOpen] = useState(false)
+  const currentPath = window.location.pathname.replace(/\/+$/u, "")
 
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 40)
@@ -44,7 +46,7 @@ export function SiteNav({ home = true }: { home?: boolean }) {
           <a
             key={link.href}
             href={navHref(link.href, home)}
-            aria-current={!home && link.href === NEW_TOOLS_PATH ? "page" : undefined}
+            aria-current={link.href === currentPath ? "page" : undefined}
             onClick={() => setOpen(false)}
           >
             {link.label}

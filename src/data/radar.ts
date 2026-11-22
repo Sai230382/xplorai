@@ -53,6 +53,9 @@ export type RadarFrontier = {
   note: string
 }
 
+/** Full tools directory at /tools. */
+export const TOOLS_PATH = "/tools"
+
 export const radarCategories = radar.categories
 export const radarTools = radar.tools as RadarTool[]
 export const radarPulse = radar.pulse as {

@@ -1,5 +1,6 @@
 import { type ReactNode, useEffect, useRef } from "react"
 import { currentEdition, type EditionStory } from "../data/edition"
+import { shortHost, type RadarTool } from "../data/radar"
 
 type ModalProps = {
   title: string
@@ -99,6 +100,51 @@ export function NoteModal({ onClose }: { onClose: () => void }) {
           </ul>
         </>
       )}
+    </Modal>
+  )
+}
+
+export function ToolModal({ tool, onClose }: { tool: RadarTool; onClose: () => void }) {
+  return (
+    <Modal title={tool.n} kicker={tool.c} onClose={onClose}>
+      <p className="v4-modal-for">{tool.tl}</p>
+      <p>
+        Signal {tool.s}/5
+        {tool.p ? ` · ${tool.p}` : ""}
+        {tool.st && tool.st !== "active" ? ` · ${tool.st}` : ""}
+      </p>
+      <p>{tool.d}</p>
+      {tool.f?.length ? (
+        <>
+          <h3>What it does</h3>
+          <ul>
+            {tool.f.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+      {tool.u?.length ? (
+        <>
+          <h3>If you actually use it</h3>
+          <ul>
+            {tool.u.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+      {tool.e ? (
+        <>
+          <h3>In plain words</h3>
+          <p>{tool.e}</p>
+        </>
+      ) : null}
+      <p className="v4-modal-actions">
+        <a className="v4-pill v4-pill-indigo" href={tool.w} target="_blank" rel="noreferrer">
+          Visit {shortHost(tool.w)} <span aria-hidden="true">↗</span>
+        </a>
+      </p>
     </Modal>
   )
 }

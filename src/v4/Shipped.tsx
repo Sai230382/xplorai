@@ -39,7 +39,7 @@ export function Shipped() {
           <h2 id="v4-shipped-title">What people are making</h2>
         </div>
         {rest.length > 0 && (
-          <button type="button" className="v4-text-link v4-text-link-light" aria-expanded={showAll} onClick={() => setShowAll((v) => !v)}>
+          <button type="button" className="v4-text-link" aria-expanded={showAll} onClick={() => setShowAll((v) => !v)}>
             {showAll ? "Show fewer" : `All ${showcasePosts.length} builds`} <span aria-hidden="true">{showAll ? "↑" : "→"}</span>
           </button>
         )}
