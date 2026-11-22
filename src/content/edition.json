@@ -1,13 +1,13 @@
 {
-  "number": 56,
-  "edition": "Briefing 56",
-  "date": "20 November 2026",
-  "dateISO": "2026-11-20",
-  "toolsPulseDate": "20 November 2026",
+  "number": 58,
+  "edition": "Briefing 58",
+  "date": "22 November 2026",
+  "dateISO": "2026-11-22",
+  "toolsPulseDate": "22 November 2026",
   "kicker": "Today in AI",
-  "title": "Gemini for Mac can now use your apps for you. Anthropic’s shares close their first day 17% above the IPO price. ChatGPT gets an accounting plugin, Meta’s Muse agent shows staff chats that are not theirs, big US school districts weigh dropping Google Search over AI, and OpenAI lets Codex agents fix ChatGPT slowdowns.",
-  "summary": "Google added computer use to the Gemini app for Mac on 19 November: it works in a background window across your apps, files and the web, for paid Google AI plans in the US. Anthropic opened at $111.50 on Nasdaq against its $83 IPO price and closed at $97.17, up 17%, CNBC reports. OpenAI launched ChatGPT for Accounting with plugins for QuickBooks, Xero, NetSuite, FreshBooks and others. Reuters reports Meta staff testing Muse saw it surface Signal messages and bank balances that were not theirs; Meta calls them isolated incidents, mostly hallucinations. New York, Los Angeles and Chicago schools are weighing alternatives after Google said schools cannot switch off its AI without losing Search. OpenAI says its Codex-run Performance Factory handled more than 1,700 ChatGPT slowdown investigations in just over three months.",
-  "uncertainty": "Gemini’s computer use details come from Google’s own post. Anthropic trading figures are CNBC’s; the Nasdaq and share moves are the BBC’s. Customer time savings for ChatGPT for Accounting are customers’ estimates on OpenAI’s page. The Muse examples come from internal posts reviewed by Reuters, which could not establish whether the data was real or made up; Meta says many were hallucinations. The school district positions are as reported by The Verge and The New York Times. Performance Factory figures are OpenAI’s own.",
+  "title": "Thinking Machines puts a strong open model on your laptop. A test with two million booby-trapped prompts finds AI providers leaking data, and Signal blocks phone AI from reading chats. ChatGPT Space reaches Plus, OpenAI’s new usage rules take effect, and Trump threatens a tax on data centres abroad.",
+  "summary": "Inkling 2 Mini from Thinking Machines is an open model with 26.4 billion parameters that runs in about 20GB on a 32GB Mac and leads open models under 100 billion parameters on the DeepSWE coding test, by the lab’s figures. Dragos seeded about two million prompts with trackable secrets and found breached providers, resellers keeping prompts and ignored privacy settings; OpenRouter has dropped three providers and pulled 125 endpoints from its Zero Data Retention list. Signal now blocks screenshots and on-screen AI by default on iOS 27 and when Android assistants try to read it. ChatGPT Space, with shared pages and slides that update from connected tools, is rolling out to Plus. OpenAI’s usage policies now require approval for model resellers and bar using outputs to train rival models. Trump said US firms building data centres abroad would face a “tremendous tax”.",
+  "uncertainty": "Inkling 2 Mini’s benchmark scores are Thinking Machines’ own. The Dragos findings are one firm’s research; not all affected providers have posted, and OpenRouter’s actions are as it describes them. Signal’s blocking depends on app and system versions and does not cover macOS. Space is rolling out to eligible Plus accounts gradually. Trump’s tax remark came with no details, legal text or date.",
   "stats": {
     "filtered": 6,
     "verified": 6,
@@ -15,224 +15,222 @@
   },
   "stories": [
     {
-      "id": "gemini-mac-computer-use",
+      "id": "inkling-2-mini",
       "topic": "tools",
-      "theme": "Gemini for Mac can now click, type and fill in forms across your apps, files and the web, in a background window",
-      "changed": "On 19 November 2026 Google added computer use to the Gemini app for Mac. You describe a task and Gemini navigates menus, types, clicks and fills in forms across your local files, desktop apps and websites to finish it. It works in an isolated background window with a live preview in the chat, so your own screen and cursor stay free while it runs. Google says you choose which apps it can open, can watch every step, pause at any time, and approve key actions before they happen. Google’s examples include batch colour-grading photos, copying weights, sizes and addresses from PDFs into multi-box shipping quote forms, and pulling figures from live dashboards into a Google Slides deck. It is rolling out in English in the US, needs an Apple Silicon Mac on macOS Sequoia 15.0 or later, and is for personal Google accounts aged 18+ on Google AI Plus, Pro or Ultra. It is not free. The Verge notes it arrives as Apple previews tighter rules in a macOS beta for apps that ask for full disk access.",
-      "matters": "A lot of office work lives in desktop apps with no connector: old finance tools, design software, internal portals. An agent that can drive those apps while you keep working turns dozens of repetitive clicks into one instruction.",
-      "imply": "It is for personal accounts only, so most company Macs managed through Google Workspace will not get it yet. Anything that can click through your apps can also make mistakes in them, so keep approvals on and limit which apps it can touch.",
+      "theme": "Thinking Machines releases Inkling 2 Mini, an open model small enough to run on a 32GB laptop and strong at coding",
+      "changed": "On 20 November 2026 Thinking Machines Lab, the company led by Mira Murati, released Inkling 2 Mini with open weights under the Apache 2.0 licence. It has 26.4 billion parameters, of which 3.4 billion are used for each word it writes, and it runs the middle 12 of its 24 layers three times per word, a design called looping that lets it reason more without being bigger. The download is about 20GB, and the model card lists Apple silicon Macs with 32GB or more of memory, Nvidia’s DGX Spark, or graphics cards with 32GB or more as suitable. It reads text and images and handles up to a million tokens of context. The lab says it leads every open-weights model under 100 billion parameters on coding tests such as DeepSWE v1.1, at 48.2%. It is on Hugging Face, runs through Ollama, vLLM, llama.cpp and others, and is on the lab’s Tinker service for fine-tuning. The model card warns that, when using tools, it “may take destructive actions, such as deleting or overwriting files, without confirmation” and tells developers to run agent work in a sandbox.",
+      "matters": "A capable coding and agent model that runs offline on a well-specced laptop means some AI work no longer has to leave your machine. That helps with privacy, cost and working without a connection.",
+      "imply": "Local does not mean safe to leave alone. The lab itself says the model is less reliable than bigger ones at following instructions and may not report its results accurately. It also knows fewer facts than larger models, so pair it with search or your own documents.",
       "uses": [
-        "Fill in the same web form from a folder of PDFs, one file at a time, and approve each submission.",
-        "Rename, sort and file a month of downloaded receipts into the right folders.",
-        "Pull last week’s numbers from three dashboards into a short Slides deck for a Monday meeting."
+        "Run it on a 32GB Mac to summarise or tag files that should not go to a cloud service.",
+        "Try it as an offline coding helper on a flight or a train, inside a sandboxed folder.",
+        "Fine-tune it on Tinker for one narrow, repeated task, such as sorting support tickets."
       ],
-      "example": "An operations assistant asks Gemini to read 20 supplier PDFs and enter each package’s weight and delivery address into a courier’s quote form, approving each quote before it is sent.",
-      "audience": "Mac users on paid Google AI plans in the US, freelancers and small-business owners with repetitive desktop chores.",
-      "watch": "When it reaches Workspace business accounts and other countries, and how Apple’s new full disk access rules affect agents like this.",
+      "example": "A consultant installs it with Ollama on a 48GB MacBook, points it at a folder of client notes copied into a sandbox, and asks for a one-page summary per client without anything leaving the laptop.",
+      "audience": "Developers, privacy-minded teams and anyone with a recent high-memory Mac or AI desktop.",
+      "watch": "Independent benchmark checks, how it behaves on real agent work at home, and whether other labs answer with small looped models.",
       "source": {
-        "title": "Google: Let Gemini tackle repetitive chores on your Mac, 19 November 2026",
-        "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
-        "quote": "You remain in control by approving every action and choosing exactly which apps Gemini can access."
+        "title": "Thinking Machines Lab: Introducing Inkling 2 Mini, 20 November 2026",
+        "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+        "quote": "Today we are releasing Inkling 2 Mini, a fast, powerful model that’s small enough to run on your laptop."
       }
     },
     {
-      "id": "anthropic-first-day-trading",
-      "topic": "money",
-      "theme": "Anthropic’s shares opened 34% above the IPO price on day one and closed up 17%, at $97.17",
-      "changed": "Anthropic, the maker of Claude, started trading on Nasdaq as ANT on 19 November 2026, a day after pricing its IPO at $83 a share. CNBC reports the stock opened at $111.50 and closed at $97.17, 17% above the IPO price. More than 846 million shares changed hands, against 522 million on SpaceX’s first day in June, and at the close Anthropic had a fully diluted market value of roughly $1.8 trillion, behind only Apple, Microsoft, Nvidia, Alphabet, Amazon and SpaceX among US companies, according to CNBC. The listing raised $81.3 billion, the largest IPO on record. The wider market was weaker: the BBC reports the Nasdaq Composite closed down nearly 2.3%, with Alphabet and Amazon, both large Anthropic shareholders, falling 3% and 3.9%.",
-      "matters": "Claude’s maker now answers to public shareholders every quarter. Its results, spending and pricing decisions will be public and scrutinised, which matters to any team that builds on Claude.",
-      "imply": "One day of trading says little about the company. The BBC notes a first-day jump is often followed by a fall in the weeks after. For customers, nothing about Claude changes because of the listing itself.",
-      "uses": [
-        "If your team depends on Claude, note when Anthropic reports results and read what it says about prices and capacity.",
-        "Finance teams: check whether your company’s pension or ESOP funds now hold Anthropic, directly or through index funds later.",
-        "Keep a second model tested for your key jobs, whatever the share price does."
-      ],
-      "example": "A product lead adds Anthropic’s first earnings date to the team calendar and plans a review of Claude costs and limits that week.",
-      "audience": "Teams that build on Claude, investors, and anyone tracking how the AI industry is valued.",
-      "watch": "The first quarterly report as a public company, the share price once the opening excitement fades, and whether other AI labs list next.",
-      "source": {
-        "title": "CNBC: Anthropic IPO live updates, 19 November 2026",
-        "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
-        "quote": "The Claude creator, trading under the ticker \"ANT,\" opened at $111.50, after the company raised $81.3 billion in the IPO."
-      }
-    },
-    {
-      "id": "chatgpt-for-accounting",
-      "topic": "work",
-      "theme": "OpenAI launched ChatGPT for Accounting: a plugin that reconciles, drafts invoice entries and prepares month-end reports for you to review",
-      "changed": "OpenAI launched ChatGPT for Accounting, with an Accounting plugin in the ChatGPT desktop app for macOS and Windows. It helps reconcile transactions, draft invoice and receipt entries with suggested account coding, prepare month-end reports in your own Excel template, and gather audit support, flagging unclear items for review. Partner plugins connect it to BILL, Campfire, FreshBooks, Oracle NetSuite, Oracle QuickStart, QuickBooks Online, Rillet and Xero, and computer use lets it work in apps without a plugin. OpenAI’s help page says the plugin is free to install; Business members can install it themselves, while Enterprise admins must approve it first. OpenAI tells users to review records, calculations and coding before approving any entry or report. On 19 November FreshBooks said its connection is read-only, so ChatGPT can answer questions from live data but cannot change anything in the account.",
-      "matters": "Month-end close is slow, repetitive and full of matching work. A tool that drafts entries and points to the record behind every figure can cut hours, while the accountant keeps the final say.",
-      "imply": "Customer time savings on OpenAI’s page are the customers’ own estimates. Each partner plugin has its own permissions: some can only read, others can post entries, so check which one you are connecting before you let it write.",
-      "uses": [
-        "Give it a bank statement and the ledger for the same month and ask for matches, duplicates and missing items, with the source row for each.",
-        "Draft entries from a folder of supplier invoices with your coding rules, and review them before posting.",
-        "Save your month-end report format as a reusable skill and run it each month on new records."
-      ],
-      "example": "A small firm’s bookkeeper asks ChatGPT to list every November invoice still missing a receipt in FreshBooks and draft reminder emails to the clients who owe money.",
-      "audience": "Accountants, bookkeepers, controllers and small-business owners using ChatGPT Business, Enterprise or other eligible plans.",
-      "watch": "Which partner plugins allow posting entries, how firms handle review and audit trails, and whether rivals ship similar accounting agents.",
-      "source": {
-        "title": "OpenAI: ChatGPT for Accounting",
-        "url": "https://openai.com/business/solutions/accounting/",
-        "quote": "Review supporting records, calculations, and suggested coding before approving entries or reports."
-      }
-    },
-    {
-      "id": "meta-muse-privacy-reports",
+      "id": "ai-router-prompt-leaks",
       "topic": "trust",
-      "theme": "Meta staff testing its Muse agent saw it read Signal messages and show chats and bank balances that were not theirs, Reuters reports",
-      "changed": "Reuters reported on 18 November, from more than two dozen internal posts, that Meta employees testing Muse, the company’s personal AI agent, saw it send messages about childcare requests, career advice, product orders and bank balances that were not theirs. One employee said Muse reminded her to reply to her sister on Signal even though she did not recall giving it access to other apps. Another said it booked a short-term rental without permission, PYMNTS reports, citing Reuters. Meta spokesperson Daniel Roberts called the examples “isolated incidents”, said Muse can only use other apps with permissions people explicitly grant, and said many of the apparent mix-ups were hallucinations that have been fixed; employees were told built-in prompts pushing the agent to engage between sessions had caused them. Reuters said it could not establish whether Muse was showing other people’s real data or making it up. Muse has had more than 10 million downloads since its September launch, according to Reuters.",
-      "matters": "Personal agents get deep access to messages, accounts and money. Whether this was leaked data or invented data, an agent sending bank balances and private chats unprompted is the kind of failure that erodes trust fast.",
-      "imply": "Meta says employees test different versions from the public. Still, it is a reminder to check which apps and accounts any agent can reach, and to switch off access you do not need.",
+      "theme": "A test with two million booby-trapped prompts found AI providers leaking data; OpenRouter dropped three providers",
+      "changed": "On 19 November 2026 HD Moore, chief research officer at the security firm Dragos, published the results of a five-month test. From July to November his team sent about two million prompts containing unique, trackable secrets, such as fake cloud keys and private web links, to widely used AI services, then watched where those secrets turned up. He reports evidence that at least three AI providers were breached by attackers who copied incoming prompts, that some resellers in an inference marketplace logged and kept customer prompts, and that several providers ignored “Zero Data Retention” and “no data collection” settings. In one case, prompts sent to US hosts of a Chinese lab’s models were fetched by that lab’s systems days later. On 22 November OpenRouter, a popular AI router that passes requests on to many model providers, said it had off-boarded three providers, removed 125 endpoints from its Zero Data Retention list and notified potentially affected customers. It said the findings showed no breach of OpenRouter itself.",
+      "matters": "Many AI apps send your text through a router and on to whichever provider is cheapest. Each hop can read it. A privacy setting is only a promise, and this test shows some providers did not keep it.",
+      "imply": "The cheapest model route can be the leakiest. Dragos advises going direct to a first-tier provider where you can, picking upstream providers yourself rather than accepting a router’s default pool, and staying away from reseller marketplaces. Keep passwords and keys out of prompts either way.",
       "uses": [
-        "Open your AI agent’s settings and list every app and account it is connected to. Remove what you do not use.",
-        "Keep purchases and bookings behind your own approval, with a spending cap.",
-        "At work, ask IT which personal AI agents are allowed on devices that hold company messages."
+        "Ask your AI vendors which providers actually handle your prompts, and get it in writing.",
+        "Turn off automatic provider pools in routers and allow only providers you have checked.",
+        "Plant a fake credential, such as a free Canarytoken, in your own agent prompts and treat any use as an incident."
       ],
-      "example": "A team lead finds her personal agent can read her work chat app on her phone and removes that permission before the next client call.",
-      "audience": "Anyone using a personal AI agent on their phone or computer, and IT and security teams setting device policy.",
-      "watch": "Whether Meta publishes what caused the mix-ups, any regulator questions, and changes to how Muse asks for app access.",
+      "example": "A startup that routes customer chats through OpenRouter restricts traffic to two first-tier providers, adds a canary key to its system prompt, and sets an alert if anyone ever tries to use it.",
+      "audience": "Developers and IT or security teams using AI routers, gateways or cheap inference resellers.",
+      "watch": "Write-ups from the affected providers, whether other routers such as Vercel publish their own checks, and whether ZDR labels come with proof.",
       "source": {
-        "title": "TechCrunch: Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says, 19 November 2026",
-        "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-        "quote": "This seems like an extreme privacy violation. I definitely did not grant it access to other apps, or recall being asked about this."
+        "title": "OpenRouter: Data Processing Incidents on Inference Providers, 22 November 2026",
+        "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+        "quote": "Off-boarded three providers from OpenRouter, based on the results of our investigations."
       }
     },
     {
-      "id": "schools-google-search-ai",
-      "topic": "rules",
-      "theme": "The largest US school districts may drop Google Search after Google said schools cannot switch off its AI without losing Search",
-      "changed": "New York, Los Angeles and Chicago schools are considering alternatives to Google Search, The Verge reported on 18 November, citing The New York Times. Google said that from next year schools will not be able to turn off Gemini-powered features without also turning off Search; its vice president of education, Chris Phillips, said schools that turn off the AI features “will not have access to Search”. New York City schools chancellor Kamar H. Samuels said the city will explore other search options if Google does not reconsider, and Chicago told Google it will look elsewhere if it cannot offer Search without AI. In a statement to The Verge, Google said it is piloting Guided Learning in Search this month to walk students through problems step by step, and that next year Gemini app, Gemini Notebook and Search will be off by default until schools choose which services to enable.",
-      "matters": "This is the first big test of whether an organisation can buy search without AI answers. The same question is coming for companies that want to control where staff see AI-generated content.",
-      "imply": "Schools are deeply tied to Google through Classroom and Chromebooks, so a full switch is hard. Expect pressure on Google to offer a clear no-AI option for education, and possibly for businesses.",
+      "id": "signal-blocks-os-ai",
+      "topic": "trust",
+      "theme": "Signal now blocks screenshots by default so phone AI assistants cannot read your chats",
+      "changed": "On 20 November 2026 Signal said it is blocking AI agents built into phone operating systems from capturing what is on screen in its app. Signal president Meredith Whittaker wrote that features such as Gemini on Android and Siri AI’s on-screen awareness on iOS 27 scan the screen, so Signal messages can end up stored wherever the operating system’s AI keeps its data, outside Signal’s control. On iPhone, with Signal 8.37 or later on iOS 27, the new Block Siri AI setting is on by default and stops screenshots, screen recordings and on-device AI from reading Signal. On Android, with Signal 8.35.1 or later, screen security switches on the first time an AI assistant tries to read the screen. Users can turn it off, or on iPhone switch it off for 10 minutes to take a screenshot. Whittaker called the fix incomplete: it does not stop AI agents reaching data in other ways, such as through files on the device, and Signal cannot do the same on macOS yet.",
+      "matters": "Phone makers are building AI that reads everything on your screen. Signal is the first big app to push back by default, and its warning applies to any app where you read sensitive work messages.",
+      "imply": "Encryption protects messages in transit, but not once an on-screen assistant has read them. Companies that allow phone AI assistants on work devices should decide which apps those assistants may see.",
       "uses": [
-        "IT admins: check which AI features your Google Workspace or browser setup turns on by default, and who can change them.",
-        "Teachers: test a no-AI search option on school devices before the next term.",
-        "Policy teams: write down where staff or students may and may not see AI answers."
+        "Update Signal and check the new setting under Settings, Privacy.",
+        "For work phones, review whether Gemini or Siri AI may read the screen in email, chat and banking apps.",
+        "Tell colleagues that screenshots in Signal will now be blocked by default, so they are not surprised."
       ],
-      "example": "A district IT lead sets up a test group of Chromebooks with a search engine that lets AI answers be switched off and asks teachers for feedback.",
-      "audience": "School districts, education IT teams, teachers and parents, and IT admins in any organisation using Google.",
-      "watch": "Whether Google changes its position before next year’s controls update, and which search providers schools pick.",
+      "example": "An HR lead who discusses staff cases on Signal updates the app, leaves Block Siri AI on, and asks IT whether the company’s other messaging apps offer a similar setting.",
+      "audience": "Anyone who handles confidential conversations on a phone, and IT teams managing mobile devices.",
+      "watch": "Whether Apple, Google and Microsoft give apps proper ways to block AI reading, and whether other messaging apps follow Signal.",
       "source": {
-        "title": "The Verge: The nation’s largest school districts consider ditching Google Search, 18 November 2026",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
-        "quote": "If Google doesn’t reconsider their position, we will explore other search options."
+        "title": "Signal: Signal is Serious About Protecting Your Privacy, 20 November 2026",
+        "url": "https://signal.org/blog/protecting-your-privacy/",
+        "quote": "So, we are blocking such capture by preventing screenshots in the app on iOS 27 and when AI assistants attempt to capture screen data on Android."
       }
     },
     {
-      "id": "openai-performance-factory",
+      "id": "chatgpt-space-plus",
       "topic": "work",
-      "theme": "OpenAI’s Codex agents now investigate slowdowns in ChatGPT, propose fixes for engineers and check the fix worked",
-      "changed": "On 19 November 2026 OpenAI described its Performance Factory, a cloud system in which Codex agents find and fix performance problems in ChatGPT. In its first workflow, a performance alert opens a task, an agent investigates the slowdown, records what it found and proposes a fix for an engineer to review; after the fix is deployed, another agent checks whether performance is back to normal. OpenAI says that in just over three months this Regression Workflow tracked more than 1,700 investigations and found the root cause of more than 600, about 17 automated investigations a day. The system has four parts: a task tracker with configurable workflows, a loop that hands ready work to agents, an API that runs Codex in the cloud, and subscriptions that wake agents when something changes, such as a GitHub review comment or a finished deployment.",
-      "matters": "It shows a practical pattern for agents at work: a clear trigger, a written process, a person approving the fix, and an agent checking the result. That pattern fits support queues, finance checks and operations, not just code.",
-      "imply": "These are OpenAI’s own figures about its own system. Engineers still review every fix. Copying the idea needs good alerts and clear task stages first.",
+      "theme": "ChatGPT Space, for shared pages and slides that ChatGPT keeps up to date, is rolling out to Plus",
+      "changed": "On 20 November 2026 OpenAI began rolling out ChatGPT Space to Plus users aged 18 and older worldwide. Until now it was limited to Pro, Business and Enterprise. Space is a home for pages, slides, images and uploaded files, and replaces the old Library. You can ask ChatGPT to create an editable page or presentation, invite others with Space access to edit it with you in real time, and set pages and slides to update themselves from connected apps and tools. OpenAI’s examples include a to-do list that updates itself and a project plan that stays current with decisions from Slack. Pages can now be edited on iOS and Android. People on the free plan cannot open shared pages, and there are no public links. OpenAI’s help page says each collaborator’s own Memory and training settings apply when their ChatGPT reads a shared page, so your contributions may be used for training through a collaborator whose setting is on.",
+      "matters": "The Plus plan now gets shared, self-updating documents inside ChatGPT. That puts it closer to Notion or Google Docs for small teams and freelancers.",
+      "imply": "Sharing has privacy catches. Anything ChatGPT copies onto a page is visible to everyone who can view it, even if they cannot open the original source, and one collaborator’s training setting can expose your edits.",
       "uses": [
-        "Pick one recurring alert your team handles and write down its stages: investigate, cause found, fix proposed, resolved.",
-        "Let an agent draft the investigation notes for each alert, and keep a person approving any change.",
-        "Add a follow-up check a day after each fix to confirm the problem did not come back."
+        "Turn a meeting chat into a shared page with decisions and next steps.",
+        "Keep a client status page that updates from your connected tools.",
+        "Build a short slide deck with a colleague, each using your own ChatGPT."
       ],
-      "example": "A web team sets up an agent that opens a ticket when page load time jumps, lists the code changes deployed that day and suggests the most likely cause for an engineer to confirm.",
-      "audience": "Engineering managers, site reliability and operations teams, and anyone designing agent workflows.",
-      "watch": "Whether OpenAI turns this into a product for Codex customers, and how many fixes agents propose that engineers accept.",
+      "example": "Two freelancers on Plus build a shared project plan page, connect it to their Slack, and check it each Monday instead of writing a status email.",
+      "audience": "Plus subscribers, freelancers and small teams that already plan work in ChatGPT.",
+      "watch": "When Space reaches your account, when Sheets arrive, and how Business admins control sharing.",
       "source": {
-        "title": "OpenAI: How OpenAI’s Performance Factory keeps ChatGPT fast, 19 November 2026",
-        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
-        "quote": "In just over three months, the Regression Workflow tracked more than 1,700 investigations and root caused over 600 cases."
+        "title": "OpenAI Help Center: ChatGPT release notes, 20 November 2026",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "quote": "Starting today, ChatGPT Space is rolling out globally to Plus users ages 18 and older."
+      }
+    },
+    {
+      "id": "openai-usage-policies-live",
+      "topic": "rules",
+      "theme": "OpenAI’s new usage rules are now in force: model resellers need approval, and outputs cannot train rival models",
+      "changed": "OpenAI’s rewritten Usage Policies took effect on 20 November 2026, a month after it announced them on 21 October. The full text is now public. Any company that runs a “model-access intermediary” platform, such as an AI router or gateway that lets other people or companies use OpenAI models directly, now needs OpenAI’s prior review and approval. The policy says this does not apply just because an app uses OpenAI models to power its own features. A new section bars using OpenAI models or their outputs to create or prepare training data, training tasks, rubrics or feedback for models meant as alternatives to or substitutes for OpenAI’s. The rewrite also covers protections for children and teens, requirements for high-stakes uses, and approval for national security and law enforcement uses.",
+      "matters": "If your company resells or routes OpenAI access to others, you now need permission. If you only build features on top of OpenAI, you do not. The full text now draws a line that was unclear in October.",
+      "imply": "Teams that use GPT output to label or score data for other models, including open models they plan to swap in, should check whether that work now breaks the rules.",
+      "uses": [
+        "Ask legal whether any internal gateway lets outside parties use OpenAI models directly.",
+        "Check data pipelines that use GPT to create training or evaluation data for other models.",
+        "Ask AI vendors whether they are a reseller or a feature builder under the new policy."
+      ],
+      "example": "A product team that uses GPT-6.2 to grade answers for training a cheaper in-house model pauses that job and asks legal to check it against the new training section.",
+      "audience": "Developers, AI platform teams, legal and procurement teams that buy or resell AI access.",
+      "watch": "How strictly OpenAI enforces the intermediary rule, and whether Anthropic and Google publish similar terms.",
+      "source": {
+        "title": "OpenAI: Usage policies (effective 20 November 2026)",
+        "url": "https://openai.com/policies/usage-policies/",
+        "quote": "If you operate a model-access intermediary platform or other service that enables third parties to directly access OpenAI models, you must obtain our prior review and approval."
+      }
+    },
+    {
+      "id": "trump-data-center-tax",
+      "topic": "money",
+      "theme": "Trump says US companies that build data centres abroad will face a “tremendous tax”",
+      "changed": "At a White House press conference on 20 November 2026, President Donald Trump said US companies would not be allowed to build data centres outside the country, and that those who did would face what he called a “tremendous tax”. CNBC reports that he said the policy was news to his own staff: “I haven’t even said that to my people.” No details, legal basis or start date were given. Alphabet, Amazon, Microsoft, Meta and Oracle already run data centres abroad, often to sit close to customers or to meet local data rules. Amazon, Google, Microsoft and Oracle did not immediately comment, CNBC said. Reuters notes the remark came days after the Commerce Department restricted exports of advanced AI chips to several Southeast Asian countries.",
+      "matters": "Where cloud companies build decides where your data can be stored and how fast AI services respond in India, Europe and elsewhere. A tax on foreign builds could raise prices or slow new regions.",
+      "imply": "This is a spoken threat, not a law. Nothing changes for cloud customers today, but long-term contracts that depend on a new local region are worth checking.",
+      "uses": [
+        "List which of your AI and cloud services rely on data centres outside the US.",
+        "Ask your cloud account manager whether announced local regions are on schedule.",
+        "Keep data-residency requirements written into contracts rather than assumed."
+      ],
+      "example": "A bank in India planning to move AI workloads to a new local cloud region asks its provider for written confirmation of the region’s launch date and data-residency terms.",
+      "audience": "IT leaders, cloud buyers and anyone with data-residency obligations outside the US.",
+      "watch": "Any executive order or bill with details, responses from the cloud companies, and reactions from countries hosting US data centres.",
+      "source": {
+        "title": "CNBC: Trump vows to stop U.S. companies from building data centers abroad, threatens ‘tremendous tax’, 20 November 2026",
+        "url": "https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html",
+        "quote": "they can, but we're going to put a tremendous tax on them."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Gemini drives your Mac",
-        "body": "Gemini for Mac now clicks, types and fills forms across apps in a background window. Paid plans, US only."
+        "title": "A strong model on your laptop",
+        "body": "Inkling 2 Mini is open, about 20GB, and runs on a 32GB Mac. Its maker says it leads small open models at coding."
       },
       {
-        "title": "Anthropic up 17% on day one",
-        "body": "ANT opened at $111.50 against its $83 IPO price and closed at $97.17, CNBC reports."
+        "title": "AI routers leaked prompts",
+        "body": "A two-million-prompt test found breaches and ignored privacy settings. OpenRouter dropped three providers."
       },
       {
-        "title": "ChatGPT for Accounting",
-        "body": "A plugin that reconciles, drafts invoice entries and month-end reports, with QuickBooks, Xero and more."
+        "title": "Signal blocks phone AI",
+        "body": "Screenshots and on-screen AI are now blocked by default in Signal on iOS 27, and on Android when AI tries to read it."
       }
     ],
     "matters": [
       {
-        "title": "Muse showed others’ chats",
-        "body": "Meta staff saw its Muse agent surface Signal messages and bank balances. Meta says most were hallucinations."
+        "title": "Space reaches ChatGPT Plus",
+        "body": "Plus users get shared pages and slides that ChatGPT can keep updated from connected tools."
       },
       {
-        "title": "Schools vs Google’s AI",
-        "body": "NYC, LA and Chicago schools weigh dropping Google Search after Google said its AI cannot be switched off."
+        "title": "OpenAI’s new rules are live",
+        "body": "Model resellers now need OpenAI’s approval, and outputs cannot be used to train rival models."
       },
       {
-        "title": "Agents fix ChatGPT slowdowns",
-        "body": "OpenAI’s Codex agents ran 1,700+ investigations in just over three months; engineers still approve each fix."
+        "title": "Tax on data centres abroad?",
+        "body": "Trump says US firms that build data centres overseas will face a “tremendous tax”. No details yet."
       }
     ],
     "watch": [
       {
-        "title": "Check your agent’s access",
-        "body": "After the Muse reports, list every app your AI agent can open and remove what it does not need."
+        "title": "Sandbox local agents",
+        "body": "Inkling 2 Mini’s own model card warns it may delete or overwrite files without asking."
       },
       {
-        "title": "Gemini for work accounts",
-        "body": "Computer use is for personal accounts only. Watch for Workspace business accounts and more countries."
+        "title": "Pick your AI providers",
+        "body": "Do not accept a router’s default pool. Choose providers yourself and never paste keys into prompts."
       },
       {
-        "title": "Anthropic’s first results",
-        "body": "The first quarterly report as a public company will show Claude’s growth, costs and pricing plans."
+        "title": "Check shared page settings",
+        "body": "In Space, a collaborator’s training setting can apply to your edits. Review before sharing."
       }
     ]
   },
   "chips": [
-    "Google",
-    "Gemini",
-    "Computer use",
-    "Mac",
-    "Anthropic",
-    "IPO",
-    "Nasdaq",
-    "OpenAI",
-    "ChatGPT for Accounting",
-    "Meta",
-    "Muse",
+    "Thinking Machines",
+    "Inkling 2 Mini",
+    "Open weights",
+    "Local AI",
+    "Dragos",
+    "OpenRouter",
+    "Zero Data Retention",
+    "Signal",
     "Privacy",
-    "Schools",
-    "Google Search",
-    "Codex",
-    "AI agents"
+    "ChatGPT Space",
+    "OpenAI",
+    "Usage policies",
+    "Data centres",
+    "Trump"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Google, 19 Nov: computer use in Gemini app for Mac; isolated background window with live preview; choose apps, watch, pause, approve key actions; examples: colour-grading, PDF to shipping forms, dashboards to Slides; US English; Apple Silicon, macOS Sequoia 15.0+; personal accounts 18+; Google AI Plus, Pro, Ultra.",
+      "raw": "Thinking Machines, 20 Nov: Inkling 2 Mini, open weights, Apache 2.0; 26.4B params, 3.4B active, 5.4B weight activations per token with three loops; ~20GB; Macs with 32GB+; 1M ctx; DeepSWE v1.1 48.2%, Vals Index v2.2 46.5% (lab figures); model card: may take destructive actions, run agents in a sandbox.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "CNBC, 19 Nov: ANT opened $111.50, closed $97.17 (+17% vs $83 IPO); 846M+ shares traded vs SpaceX 522M; ~$1.8T fully diluted market cap at close; $81.3B raised. BBC: Nasdaq Composite down nearly 2.3%, Alphabet -3%, Amazon -3.9%.",
-      "topic": "Money"
-    },
-    {
-      "id": "s3",
-      "raw": "OpenAI: ChatGPT for Accounting; Accounting plugin (desktop app, computer use); reconcile, invoice entries, month-end reports, audit support; partners BILL, Campfire, FreshBooks, NetSuite, QuickStart, QuickBooks Online, Rillet, Xero; free to install; Enterprise admin approval. FreshBooks, 19 Nov: read-only connection.",
-      "topic": "Work"
-    },
-    {
-      "id": "s4",
-      "raw": "Reuters, 18 Nov (via TechCrunch 19 Nov): Meta staff saw Muse surface others’ childcare, career, orders, bank balances; Signal reminder without granted access; Meta: isolated incidents, many hallucinations, fixed; Reuters could not establish real vs invented; 10M+ downloads since September.",
+      "raw": "Dragos (HD Moore), 19 Nov: ~2M prompts with canaries, July to November; at least three providers compromised; marketplace resellers logged prompts; ZDR and no-data-collection flags ignored. OpenRouter, 22 Nov: off-boarded three providers, removed 125 endpoints from ZDR, notified customers.",
       "topic": "Trust"
     },
     {
+      "id": "s3",
+      "raw": "Signal blog (Meredith Whittaker), 20 Nov: blocking screenshots on iOS 27 and when Android AI assistants try to read the screen; Block Siri AI on by default on iPhone (Signal 8.37+); Android 8.35.1+; not on macOS; remedy incomplete.",
+      "topic": "Trust"
+    },
+    {
+      "id": "s4",
+      "raw": "OpenAI release notes, 20 Nov: ChatGPT Space rolling out globally to Plus users 18+; shared pages and slides; auto-update from connected apps; replaces Library; mobile editing; Free cannot open shared pages; no public links.",
+      "topic": "Work"
+    },
+    {
       "id": "s5",
-      "raw": "The Verge, 18 Nov (citing NYT): NYC, LA, Chicago schools weigh Google Search alternatives; from next year schools cannot disable Gemini features without disabling Search; Google: Guided Learning pilot this month, services off by default next year.",
+      "raw": "OpenAI Usage Policies, effective 20 Nov: model-access intermediaries need prior review and approval, not apps that merely integrate models; no using models or outputs to prepare training material for substitute models; changelog dated 21 Oct.",
       "topic": "Rules"
     },
     {
       "id": "s6",
-      "raw": "OpenAI, 19 Nov: Performance Factory; Codex agents investigate regressions, propose fixes for engineer review, verify after deploy; 1,700+ investigations, 600+ root caused in just over three months, ~17 a day.",
-      "topic": "Work"
+      "raw": "CNBC, 20 Nov: Trump says US companies will face a ‘tremendous tax’ for building data centers abroad; said he had not told his staff; Amazon, Google, Microsoft, Oracle did not immediately comment.",
+      "topic": "Money"
     }
   ]
 }

@@ -1,5 +1,59 @@
 [
   {
+    "name": "Techmeme",
+    "handle": "Techmeme",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1191943129823399936/ZvfTRAlg_normal.jpg",
+    "text": "Researchers used canary credentials in requests to AI routers like OpenRouter and Vercel, even under \"ZDR\" policies, and saw \"privacy\" often broken, keys stolen (@dangoodin001 / Ars Technica)\n\n(Visit Techmeme dot com for the link and full context!)",
+    "url": "https://x.com/Techmeme/status/2124234194536841560",
+    "postedAt": "2026-11-21T20:11:12.000Z",
+    "take": "A privacy flag is only a promise. If you use an AI router, pick the providers yourself and keep keys out of prompts."
+  },
+  {
+    "name": "Thinking Machines",
+    "handle": "thinkymachines",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2075275500420001792/Q9J4M1DL_normal.jpg",
+    "text": "Some of you thought that Inkling 2 Small was too big at 594B parameters. We heard you: Inkling 2 Mini is a looped transformer with just 26B parameters, small enough to run on your laptop, powerful enough for agentic work with a score of 20.1 on AA Index.\nhttps://t.co/9HzaUMwghb",
+    "url": "https://x.com/thinkymachines/status/2123871643797995872",
+    "postedAt": "2026-11-20T20:10:34.000Z",
+    "take": "Worth a try on a 32GB Mac for private, offline work. Run any agent tasks in a sandbox, as the model card advises."
+  },
+  {
+    "name": "Signal",
+    "handle": "signalapp",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1854965977005670402/vCSs3xoP_normal.png",
+    "text": "In order to protect your privacy in Signal from the latest agentic AI assistants on mobile operating systems, we are rolling out a new default to restrict screenshots in the Signal app.\n\nYou can re-enable screenshots in your settings.\n\nhttps://t.co/KHQF3bgaam",
+    "url": "https://x.com/signalapp/status/2123710768667652552",
+    "postedAt": "2026-11-20T09:31:18.000Z",
+    "take": "Phone AI that reads your screen can read your chats. Update Signal and leave the new block on for work talk."
+  },
+  {
+    "name": "nature",
+    "handle": "Nature",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1808863282091991040/EzGcmXyr_normal.jpg",
+    "text": "A mathematician at Anthropic is now claiming a full proof of the Riemann hypothesis, the statement that many mathematicians consider the most important open problem in the field.\n\nhttps://t.co/MtytM3vfb0",
+    "url": "https://x.com/Nature/status/2123922163069563015",
+    "postedAt": "2026-11-20T23:31:18.000Z",
+    "take": "The computer-checked version compiles for outside mathematicians, but nobody can read the proof yet. Treat it as promising, not settled."
+  },
+  {
+    "name": "Reuters",
+    "handle": "Reuters",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
+    "text": "Anthropic IPO haul rises to $93.5 billion after underwriters exercise greenshoe https://t.co/yUXwXwu5iB",
+    "url": "https://x.com/Reuters/status/2123896705292644405",
+    "postedAt": "2026-11-20T21:50:09.000Z",
+    "take": "The cash is in, even as the shares fell 8.5% on day two. For Claude users, nothing changes because of the share price."
+  },
+  {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg",
+    "text": "Distillation can reproduce powerful AI capabilities without the safeguards built around them.\n\nWe’re sharing new research on our work to combat distillation of our models, how these capabilities transfer, and how we detect and disrupt coordinated attempts.\n\nThese findings are helping us sharpen our defenses and support safeguards across the industry.\n\nhttps://t.co/FGQ0PHllIO",
+    "url": "https://x.com/OpenAI/status/2123862344422088794",
+    "postedAt": "2026-11-20T19:33:37.000Z",
+    "take": "If you build on GPT-6.2, add new messages instead of editing old ones, or the model loses its earlier reasoning."
+  },
+  {
     "name": "Google Gemini",
     "handle": "GeminiApp",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1940093473564073984/jiafRcO0_normal.png",

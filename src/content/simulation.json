@@ -1,75 +1,102 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "anthropic-first-day-trading",
+  "storyId": "inkling-2-mini",
   "kicker": "Play with today’s story",
-  "title": "Anthropic’s first day on Nasdaq: from the $83 IPO price to the $97.17 close",
-  "intro": "Slide through Anthropic’s first trading day to see the share price at each step, using CNBC’s figures.",
-  "note": "All figures are from CNBC’s live coverage on 19 November 2026. The 17% and 34% moves are measured from the $83 IPO price. Market value is CNBC’s fully diluted estimate at the close, not the value at the IPO price. One day’s trading says little about the company’s long-term value.",
+  "title": "Inkling 2 Mini: what fits on a laptop, step by step",
+  "intro": "Slide through the model’s size, the computer it needs, its coding scores and what its looping design changes, using Thinking Machines’ own figures.",
+  "note": "All figures are from Thinking Machines’ announcement and model card. The benchmark scores are the lab’s own and have not been independently checked; the lab says evaluation setups vary by model. The looping results come from a separate research version of the model with a variable number of loops, not the released model itself. Memory needs depend on the software you run it with.",
   "sources": [
     {
-      "label": "CNBC: Anthropic IPO live updates, 19 November 2026",
-      "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html"
+      "label": "Thinking Machines Lab: Introducing Inkling 2 Mini, 20 November 2026",
+      "url": "https://thinkingmachines.ai/news/inkling-2-mini/"
+    },
+    {
+      "label": "Thinking Machines Lab: Inkling 2 Mini model card on Hugging Face",
+      "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Anthropic’s first trading day, step by step",
+    "label": "Inkling 2 Mini, step by step",
     "items": [
       {
-        "label": "IPO price",
-        "name": "Priced on Wednesday 18 November",
-        "caption": "Anthropic sold its shares to investors before trading began.",
+        "label": "Size",
+        "name": "How big the model is",
+        "caption": "A Mixture-of-Experts model: only part of it works on each word.",
         "stats": [
           {
-            "label": "Price per share",
-            "value": "$83"
+            "label": "Total parameters",
+            "value": "26.4 billion"
           },
           {
-            "label": "Shares sold",
-            "value": "980 million"
+            "label": "Active per word",
+            "value": "3.4 billion"
           },
           {
-            "label": "Money raised",
-            "value": "$81.3 billion, the largest IPO on record"
+            "label": "Weight activations per word, counting loops",
+            "value": "5.4 billion"
+          },
+          {
+            "label": "Layers",
+            "value": "24, with the middle 12 run three times"
           }
         ]
       },
       {
-        "label": "Open",
-        "name": "First trade on Thursday 19 November",
-        "caption": "Trading as ANT on Nasdaq.",
+        "label": "Hardware",
+        "name": "What it needs to run",
+        "caption": "Small enough for some laptops and desktop AI computers.",
         "stats": [
           {
-            "label": "Opening price",
-            "value": "$111.50"
+            "label": "Memory footprint",
+            "value": "About 20GB"
           },
           {
-            "label": "Move from IPO price",
-            "value": "Up 34%"
+            "label": "Apple silicon",
+            "value": "32GB of memory or more"
+          },
+          {
+            "label": "Other GPUs",
+            "value": "32GB or more of video memory recommended"
+          },
+          {
+            "label": "Context window",
+            "value": "Up to 1M tokens"
           }
         ]
       },
       {
-        "label": "Close",
-        "name": "End of the first day",
-        "caption": "The price eased back from the open.",
+        "label": "Scores",
+        "name": "Coding and agent tests",
+        "caption": "The lab says it leads open-weights models under 100B total parameters on these.",
         "stats": [
           {
-            "label": "Closing price",
-            "value": "$97.17"
+            "label": "DeepSWE v1.1",
+            "value": "48.2%"
           },
           {
-            "label": "Move from IPO price",
-            "value": "Up 17%"
+            "label": "Vals Index v2.2",
+            "value": "46.5%"
+          }
+        ]
+      },
+      {
+        "label": "Loops",
+        "name": "What looping changed in research tests",
+        "caption": "Measured on the variable-loop research model released alongside it.",
+        "stats": [
+          {
+            "label": "Task length handled without written reasoning, one pass",
+            "value": "16 seconds"
           },
           {
-            "label": "Shares traded",
-            "value": "More than 846 million (SpaceX’s first day: 522 million)"
+            "label": "Same, with three passes",
+            "value": "37 seconds"
           },
           {
-            "label": "Market value, fully diluted",
-            "value": "Roughly $1.8 trillion"
+            "label": "Serial reasoning kept improving to",
+            "value": "10 loops"
           }
         ]
       }
