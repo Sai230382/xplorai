@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { TOOLS_PATH } from "../data/radar"
 import { hostOf, newToolsWeek, type NewTool } from "../data/newtools"
 import { shortDate } from "./format"
 
@@ -98,10 +99,10 @@ export function NewToolsPage() {
       </section>
 
       {picks.length > 0 && (
-        <section className="v4-section v4-radar v4-nt-picks" aria-labelledby="v4-nt-picks-title">
+        <section className="v4-section v4-nt-picks" aria-labelledby="v4-nt-picks-title">
           <div className="v4-radar-main">
             <header>
-              <p className="v4-cap v4-cap-light">Picks of the week</p>
+              <p className="v4-cap">Picks of the week</p>
               <h2 id="v4-nt-picks-title">Try it in 5 minutes</h2>
             </header>
             <div className="v4-nt-try-list">
@@ -134,7 +135,7 @@ export function NewToolsPage() {
             <p className="v4-cap">Every launch</p>
             <h2 id="v4-nt-list-title">All {tools.length} this week</h2>
           </div>
-          <a className="v4-text-link" href="/tools">
+          <a className="v4-text-link" href={TOOLS_PATH}>
             See every tool on the radar <span aria-hidden="true">→</span>
           </a>
         </header>
