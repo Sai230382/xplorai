@@ -1,5 +1,32 @@
 [
   {
+    "name": "Reuters",
+    "handle": "Reuters",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
+    "text": "US futures bounce while Asia markets brace for AI wipeout https://t.co/9S51DsfW7P",
+    "url": "https://x.com/Reuters/status/2124663006248210649",
+    "postedAt": "2026-11-23T00:35:09.000Z",
+    "take": "Share prices swing faster than products. If you rely on young AI suppliers, keep a data export and a backup plan."
+  },
+  {
+    "name": "Bloomberg",
+    "handle": "business",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1631723279676317709/-fjgaR2p_normal.jpg",
+    "text": "@EenaRuffini asks four governors: Raise your hand if you think the government understands AI well enough to regulate it. \n\nNo one raises their hand. \n@GovWesMoore\n@GovBraun\n@GovCox  \n@NC_Governor. \n\nNow, the National Governors Association is issuing new AI principles for governance.",
+    "url": "https://x.com/business/status/2124567368974172239",
+    "postedAt": "2026-11-22T18:15:07.000Z",
+    "take": "Even the governors say government is still learning. US employers should expect state rules on AI at work to stay."
+  },
+  {
+    "name": "Jakub Pachocki",
+    "handle": "merettm",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1032407242727809025/AJpM67Ve_normal.jpg",
+    "text": "We decided to provide more transparency into pretraining progress at OpenAI for the sake of moving toward shared safety bars. In “Perplexity and Intelligence” I argue for common limits based on perplexity and other measurements, with progress beyond them gated on our ability to understand AI behavior.\n\nhttps://t.co/XX35m5vq89",
+    "url": "https://x.com/merettm/status/2124549218995949967",
+    "postedAt": "2026-11-22T17:03:00.000Z",
+    "take": "A rare look at a lab’s internal numbers. It is a proposal for now; watch whether other labs agree to any limit."
+  },
+  {
     "name": "Techmeme",
     "handle": "Techmeme",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1191943129823399936/ZvfTRAlg_normal.jpg",

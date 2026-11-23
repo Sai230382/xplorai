@@ -1,13 +1,13 @@
 {
-  "number": 58,
-  "edition": "Briefing 58",
-  "date": "22 November 2026",
-  "dateISO": "2026-11-22",
-  "toolsPulseDate": "22 November 2026",
+  "number": 59,
+  "edition": "Briefing 59",
+  "date": "23 November 2026",
+  "dateISO": "2026-11-23",
+  "toolsPulseDate": "23 November 2026",
   "kicker": "Today in AI",
-  "title": "Thinking Machines puts a strong open model on your laptop. A test with two million booby-trapped prompts finds AI providers leaking data, and Signal blocks phone AI from reading chats. ChatGPT Space reaches Plus, OpenAI’s new usage rules take effect, and Trump threatens a tax on data centres abroad.",
-  "summary": "Inkling 2 Mini from Thinking Machines is an open model with 26.4 billion parameters that runs in about 20GB on a 32GB Mac and leads open models under 100 billion parameters on the DeepSWE coding test, by the lab’s figures. Dragos seeded about two million prompts with trackable secrets and found breached providers, resellers keeping prompts and ignored privacy settings; OpenRouter has dropped three providers and pulled 125 endpoints from its Zero Data Retention list. Signal now blocks screenshots and on-screen AI by default on iOS 27 and when Android assistants try to read it. ChatGPT Space, with shared pages and slides that update from connected tools, is rolling out to Plus. OpenAI’s usage policies now require approval for model resellers and bar using outputs to train rival models. Trump said US firms building data centres abroad would face a “tremendous tax”.",
-  "uncertainty": "Inkling 2 Mini’s benchmark scores are Thinking Machines’ own. The Dragos findings are one firm’s research; not all affected providers have posted, and OpenRouter’s actions are as it describes them. Signal’s blocking depends on app and system versions and does not cover macOS. Space is rolling out to eligible Plus accounts gradually. Trump’s tax remark came with no details, legal text or date.",
+  "title": "OpenAI shares its internal progress numbers and asks AI labs to agree limits. AI stocks end their worst week in years, Together AI says a coding agent leaked a key to stored prompts, and the best agents finish under 8% of tasks in a pretend company. US governors and South Korea set out new AI rules.",
+  "summary": "OpenAI’s chief scientist Jakub Pachocki published internal perplexity figures, from about 0.99 for GPT-3.5 to below 0.8 today, and proposed common limits labs would not cross until AI monitoring improves; Sam Altman backs it. The Nasdaq fell 10% last week and Nvidia 14% on Friday; US futures rose on Sunday while Korea’s Kospi fell on Monday. Together AI says an AI coding agent committed a credential that let an outsider download stored prompts from June and July. In the SWE-CoWork test, Claude Opus 5.5 and GPT-6 Astra completed under 8% of assignments that required working with simulated colleagues. US governors asked Congress for national AI rules that leave states room to protect workers, and South Korea published draft rules for training AI on personal data.",
+  "uncertainty": "OpenAI’s perplexity figures come from its own internal codebase dataset and cannot be compared with other labs; no other lab has agreed to the proposal. Market figures are as of CNBC’s updates and will move. Together’s review of the leaked prompts is still under way. SWE-CoWork is one research group’s benchmark, not yet peer reviewed. The governors’ principles and Korea’s draft rules are not law yet.",
   "stats": {
     "filtered": 6,
     "verified": 6,
@@ -15,222 +15,223 @@
   },
   "stories": [
     {
-      "id": "inkling-2-mini",
-      "topic": "tools",
-      "theme": "Thinking Machines releases Inkling 2 Mini, an open model small enough to run on a 32GB laptop and strong at coding",
-      "changed": "On 20 November 2026 Thinking Machines Lab, the company led by Mira Murati, released Inkling 2 Mini with open weights under the Apache 2.0 licence. It has 26.4 billion parameters, of which 3.4 billion are used for each word it writes, and it runs the middle 12 of its 24 layers three times per word, a design called looping that lets it reason more without being bigger. The download is about 20GB, and the model card lists Apple silicon Macs with 32GB or more of memory, Nvidia’s DGX Spark, or graphics cards with 32GB or more as suitable. It reads text and images and handles up to a million tokens of context. The lab says it leads every open-weights model under 100 billion parameters on coding tests such as DeepSWE v1.1, at 48.2%. It is on Hugging Face, runs through Ollama, vLLM, llama.cpp and others, and is on the lab’s Tinker service for fine-tuning. The model card warns that, when using tools, it “may take destructive actions, such as deleting or overwriting files, without confirmation” and tells developers to run agent work in a sandbox.",
-      "matters": "A capable coding and agent model that runs offline on a well-specced laptop means some AI work no longer has to leave your machine. That helps with privacy, cost and working without a connection.",
-      "imply": "Local does not mean safe to leave alone. The lab itself says the model is less reliable than bigger ones at following instructions and may not report its results accurately. It also knows fewer facts than larger models, so pair it with search or your own documents.",
-      "uses": [
-        "Run it on a 32GB Mac to summarise or tag files that should not go to a cloud service.",
-        "Try it as an offline coding helper on a flight or a train, inside a sandboxed folder.",
-        "Fine-tune it on Tinker for one narrow, repeated task, such as sorting support tickets."
-      ],
-      "example": "A consultant installs it with Ollama on a 48GB MacBook, points it at a folder of client notes copied into a sandbox, and asks for a one-page summary per client without anything leaving the laptop.",
-      "audience": "Developers, privacy-minded teams and anyone with a recent high-memory Mac or AI desktop.",
-      "watch": "Independent benchmark checks, how it behaves on real agent work at home, and whether other labs answer with small looped models.",
-      "source": {
-        "title": "Thinking Machines Lab: Introducing Inkling 2 Mini, 20 November 2026",
-        "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
-        "quote": "Today we are releasing Inkling 2 Mini, a fast, powerful model that’s small enough to run on your laptop."
-      }
-    },
-    {
-      "id": "ai-router-prompt-leaks",
-      "topic": "trust",
-      "theme": "A test with two million booby-trapped prompts found AI providers leaking data; OpenRouter dropped three providers",
-      "changed": "On 19 November 2026 HD Moore, chief research officer at the security firm Dragos, published the results of a five-month test. From July to November his team sent about two million prompts containing unique, trackable secrets, such as fake cloud keys and private web links, to widely used AI services, then watched where those secrets turned up. He reports evidence that at least three AI providers were breached by attackers who copied incoming prompts, that some resellers in an inference marketplace logged and kept customer prompts, and that several providers ignored “Zero Data Retention” and “no data collection” settings. In one case, prompts sent to US hosts of a Chinese lab’s models were fetched by that lab’s systems days later. On 22 November OpenRouter, a popular AI router that passes requests on to many model providers, said it had off-boarded three providers, removed 125 endpoints from its Zero Data Retention list and notified potentially affected customers. It said the findings showed no breach of OpenRouter itself.",
-      "matters": "Many AI apps send your text through a router and on to whichever provider is cheapest. Each hop can read it. A privacy setting is only a promise, and this test shows some providers did not keep it.",
-      "imply": "The cheapest model route can be the leakiest. Dragos advises going direct to a first-tier provider where you can, picking upstream providers yourself rather than accepting a router’s default pool, and staying away from reseller marketplaces. Keep passwords and keys out of prompts either way.",
-      "uses": [
-        "Ask your AI vendors which providers actually handle your prompts, and get it in writing.",
-        "Turn off automatic provider pools in routers and allow only providers you have checked.",
-        "Plant a fake credential, such as a free Canarytoken, in your own agent prompts and treat any use as an incident."
-      ],
-      "example": "A startup that routes customer chats through OpenRouter restricts traffic to two first-tier providers, adds a canary key to its system prompt, and sets an alert if anyone ever tries to use it.",
-      "audience": "Developers and IT or security teams using AI routers, gateways or cheap inference resellers.",
-      "watch": "Write-ups from the affected providers, whether other routers such as Vercel publish their own checks, and whether ZDR labels come with proof.",
-      "source": {
-        "title": "OpenRouter: Data Processing Incidents on Inference Providers, 22 November 2026",
-        "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
-        "quote": "Off-boarded three providers from OpenRouter, based on the results of our investigations."
-      }
-    },
-    {
-      "id": "signal-blocks-os-ai",
-      "topic": "trust",
-      "theme": "Signal now blocks screenshots by default so phone AI assistants cannot read your chats",
-      "changed": "On 20 November 2026 Signal said it is blocking AI agents built into phone operating systems from capturing what is on screen in its app. Signal president Meredith Whittaker wrote that features such as Gemini on Android and Siri AI’s on-screen awareness on iOS 27 scan the screen, so Signal messages can end up stored wherever the operating system’s AI keeps its data, outside Signal’s control. On iPhone, with Signal 8.37 or later on iOS 27, the new Block Siri AI setting is on by default and stops screenshots, screen recordings and on-device AI from reading Signal. On Android, with Signal 8.35.1 or later, screen security switches on the first time an AI assistant tries to read the screen. Users can turn it off, or on iPhone switch it off for 10 minutes to take a screenshot. Whittaker called the fix incomplete: it does not stop AI agents reaching data in other ways, such as through files on the device, and Signal cannot do the same on macOS yet.",
-      "matters": "Phone makers are building AI that reads everything on your screen. Signal is the first big app to push back by default, and its warning applies to any app where you read sensitive work messages.",
-      "imply": "Encryption protects messages in transit, but not once an on-screen assistant has read them. Companies that allow phone AI assistants on work devices should decide which apps those assistants may see.",
-      "uses": [
-        "Update Signal and check the new setting under Settings, Privacy.",
-        "For work phones, review whether Gemini or Siri AI may read the screen in email, chat and banking apps.",
-        "Tell colleagues that screenshots in Signal will now be blocked by default, so they are not surprised."
-      ],
-      "example": "An HR lead who discusses staff cases on Signal updates the app, leaves Block Siri AI on, and asks IT whether the company’s other messaging apps offer a similar setting.",
-      "audience": "Anyone who handles confidential conversations on a phone, and IT teams managing mobile devices.",
-      "watch": "Whether Apple, Google and Microsoft give apps proper ways to block AI reading, and whether other messaging apps follow Signal.",
-      "source": {
-        "title": "Signal: Signal is Serious About Protecting Your Privacy, 20 November 2026",
-        "url": "https://signal.org/blog/protecting-your-privacy/",
-        "quote": "So, we are blocking such capture by preventing screenshots in the app on iOS 27 and when AI assistants attempt to capture screen data on Android."
-      }
-    },
-    {
-      "id": "chatgpt-space-plus",
-      "topic": "work",
-      "theme": "ChatGPT Space, for shared pages and slides that ChatGPT keeps up to date, is rolling out to Plus",
-      "changed": "On 20 November 2026 OpenAI began rolling out ChatGPT Space to Plus users aged 18 and older worldwide. Until now it was limited to Pro, Business and Enterprise. Space is a home for pages, slides, images and uploaded files, and replaces the old Library. You can ask ChatGPT to create an editable page or presentation, invite others with Space access to edit it with you in real time, and set pages and slides to update themselves from connected apps and tools. OpenAI’s examples include a to-do list that updates itself and a project plan that stays current with decisions from Slack. Pages can now be edited on iOS and Android. People on the free plan cannot open shared pages, and there are no public links. OpenAI’s help page says each collaborator’s own Memory and training settings apply when their ChatGPT reads a shared page, so your contributions may be used for training through a collaborator whose setting is on.",
-      "matters": "The Plus plan now gets shared, self-updating documents inside ChatGPT. That puts it closer to Notion or Google Docs for small teams and freelancers.",
-      "imply": "Sharing has privacy catches. Anything ChatGPT copies onto a page is visible to everyone who can view it, even if they cannot open the original source, and one collaborator’s training setting can expose your edits.",
-      "uses": [
-        "Turn a meeting chat into a shared page with decisions and next steps.",
-        "Keep a client status page that updates from your connected tools.",
-        "Build a short slide deck with a colleague, each using your own ChatGPT."
-      ],
-      "example": "Two freelancers on Plus build a shared project plan page, connect it to their Slack, and check it each Monday instead of writing a status email.",
-      "audience": "Plus subscribers, freelancers and small teams that already plan work in ChatGPT.",
-      "watch": "When Space reaches your account, when Sheets arrive, and how Business admins control sharing.",
-      "source": {
-        "title": "OpenAI Help Center: ChatGPT release notes, 20 November 2026",
-        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-        "quote": "Starting today, ChatGPT Space is rolling out globally to Plus users ages 18 and older."
-      }
-    },
-    {
-      "id": "openai-usage-policies-live",
+      "id": "openai-perplexity-limits",
       "topic": "rules",
-      "theme": "OpenAI’s new usage rules are now in force: model resellers need approval, and outputs cannot train rival models",
-      "changed": "OpenAI’s rewritten Usage Policies took effect on 20 November 2026, a month after it announced them on 21 October. The full text is now public. Any company that runs a “model-access intermediary” platform, such as an AI router or gateway that lets other people or companies use OpenAI models directly, now needs OpenAI’s prior review and approval. The policy says this does not apply just because an app uses OpenAI models to power its own features. A new section bars using OpenAI models or their outputs to create or prepare training data, training tasks, rubrics or feedback for models meant as alternatives to or substitutes for OpenAI’s. The rewrite also covers protections for children and teens, requirements for high-stakes uses, and approval for national security and law enforcement uses.",
-      "matters": "If your company resells or routes OpenAI access to others, you now need permission. If you only build features on top of OpenAI, you do not. The full text now draws a line that was unclear in October.",
-      "imply": "Teams that use GPT output to label or score data for other models, including open models they plan to swap in, should check whether that work now breaks the rules.",
+      "theme": "OpenAI’s chief scientist publishes its internal progress numbers and asks AI labs to agree limits they will not cross until safety tools catch up",
+      "changed": "On 22 November 2026 OpenAI’s chief scientist, Jakub Pachocki, published “Perplexity and Intelligence”, and Sam Altman called it “the most important thing OpenAI has published in awhile”. Perplexity measures how well a model predicts the next piece of text; lower is better. For the first time OpenAI shared its own internal figures, measured on a held-out sample of its codebase: about 0.99 for GPT-3.5, about 0.91 for GPT-4, and below 0.8 for today’s models, which is where Pachocki says strong abilities in cybersecurity and mathematics appeared. He says a model at about 0.76 started producing major maths results, and expects more “transformative capabilities” in a window of about 0.68 to 0.7. He proposes that labs agree common limits, based on perplexity and other measures, that they will not cross until tools for understanding and monitoring AI reach a concrete milestone. He also warns that AI could speed up its own training research “as soon as 2027”. Reuters reports Altman backs the proposal.",
+      "matters": "A leading lab is asking rivals to pause at an agreed point rather than race. If labs adopt it, the pace of new models, and of the tools built on them, could become more predictable.",
+      "imply": "This is a proposal, not a rule, and no other lab has signed up. Pachocki lists the weak spots himself: labs measure on different data, the number does not track real tasks, and reasoning gains do not show up in it.",
       "uses": [
-        "Ask legal whether any internal gateway lets outside parties use OpenAI models directly.",
-        "Check data pipelines that use GPT to create training or evaluation data for other models.",
-        "Ask AI vendors whether they are a reseller or a feature builder under the new policy."
+        "When you plan AI projects a year out, assume new abilities can arrive suddenly rather than in steady steps.",
+        "Ask your AI vendors how they test new models for safety before release, and what they would do if a limit like this were agreed.",
+        "Watch for shared industry standards on testing; they are likely to end up in procurement checklists."
       ],
-      "example": "A product team that uses GPT-6.2 to grade answers for training a cheaper in-house model pauses that job and asks legal to check it against the new training section.",
-      "audience": "Developers, AI platform teams, legal and procurement teams that buy or resell AI access.",
-      "watch": "How strictly OpenAI enforces the intermediary rule, and whether Anthropic and Google publish similar terms.",
+      "example": "A head of risk adds a line to the firm’s AI policy: before switching to any new frontier model, the team reads the vendor’s safety report and runs its own tests on a sample of real work.",
+      "audience": "Leaders setting AI strategy, risk and compliance teams, and anyone who buys AI services.",
+      "watch": "Whether Anthropic, Google or others respond or publish their own figures, and whether the White House Accords that Altman mentions take the idea up.",
       "source": {
-        "title": "OpenAI: Usage policies (effective 20 November 2026)",
-        "url": "https://openai.com/policies/usage-policies/",
-        "quote": "If you operate a model-access intermediary platform or other service that enables third parties to directly access OpenAI models, you must obtain our prior review and approval."
+        "title": "OpenAI (Jakub Pachocki): Perplexity and Intelligence, 22 November 2026",
+        "url": "https://openai.com/index/perplexity-and-intelligence/",
+        "quote": "I further propose common limits, based on perplexity and other measurements, that developers are committed to not crossing until our ability to understand and monitor AI behavior achieves a certain concrete milestone"
       }
     },
     {
-      "id": "trump-data-center-tax",
+      "id": "ai-stock-rout",
       "topic": "money",
-      "theme": "Trump says US companies that build data centres abroad will face a “tremendous tax”",
-      "changed": "At a White House press conference on 20 November 2026, President Donald Trump said US companies would not be allowed to build data centres outside the country, and that those who did would face what he called a “tremendous tax”. CNBC reports that he said the policy was news to his own staff: “I haven’t even said that to my people.” No details, legal basis or start date were given. Alphabet, Amazon, Microsoft, Meta and Oracle already run data centres abroad, often to sit close to customers or to meet local data rules. Amazon, Google, Microsoft and Oracle did not immediately comment, CNBC said. Reuters notes the remark came days after the Commerce Department restricted exports of advanced AI chips to several Southeast Asian countries.",
-      "matters": "Where cloud companies build decides where your data can be stored and how fast AI services respond in India, Europe and elsewhere. A tax on foreign builds could raise prices or slow new regions.",
-      "imply": "This is a spoken threat, not a law. Nothing changes for cloud customers today, but long-term contracts that depend on a new local region are worth checking.",
+      "theme": "AI stocks had their worst week in years; US futures bounced on Sunday, but Asian AI chip makers kept falling on Monday",
+      "changed": "US stocks ended last week in what traders call correction territory, more than 10% below their records, with worries about AI driving the fall. CNBC says the Nasdaq Composite fell 10% for the week, its worst since March 2020, and is now down for 2026. Nvidia fell 14% on Friday after Reuters reported that the US Securities and Exchange Commission is looking into its accounting; it is down nearly 40% in November. Anthropic, which listed on Thursday at $83 a share and traded above $115, closed the week at $88.91. CNBC also points to fears that AI growth is slowing and to higher interest rates. On Sunday evening US time, S&P 500 futures rose 2.03% and Nasdaq-100 futures 2.76%. In Asia on Monday, South Korea’s Kospi fell 3.16%, with Samsung Electronics down about 3.6% and SK Hynix 3.2%, at the time of CNBC’s update. Hewlett Packard Enterprise and Dell, down 25% and 34% this month, report results on Monday and Tuesday.",
+      "matters": "Share prices pay for data centres, chips and start-up salaries. A long slide can mean tighter AI budgets, fewer free tiers and more pressure on vendors to show real revenue.",
+      "imply": "Prices move faster than products. Nothing about the AI tools you use changed this week, but vendor finances, discounts and roadmaps may, especially for smaller suppliers that depend on new funding.",
       "uses": [
-        "List which of your AI and cloud services rely on data centres outside the US.",
-        "Ask your cloud account manager whether announced local regions are on schedule.",
-        "Keep data-residency requirements written into contracts rather than assumed."
+        "Check which AI suppliers you depend on are young firms that need fresh funding, and keep an export of your data.",
+        "Push for longer price locks or credits in AI contracts while vendors want to show steady sales.",
+        "If your team’s budget assumes AI cost cuts, write down what happens if prices rise instead."
       ],
-      "example": "A bank in India planning to move AI workloads to a new local cloud region asks its provider for written confirmation of the region’s launch date and data-residency terms.",
-      "audience": "IT leaders, cloud buyers and anyone with data-residency obligations outside the US.",
-      "watch": "Any executive order or bill with details, responses from the cloud companies, and reactions from countries hosting US data centres.",
+      "example": "An operations manager renewing an AI transcription tool asks for a two-year price lock and a clause to export all recordings if the supplier is sold or shuts down.",
+      "audience": "Finance teams, procurement, founders raising money and anyone with AI suppliers on contract.",
+      "watch": "HPE and Dell results this week, the US Thanksgiving-shortened trading days, and any more news on the SEC look at Nvidia.",
       "source": {
-        "title": "CNBC: Trump vows to stop U.S. companies from building data centers abroad, threatens ‘tremendous tax’, 20 November 2026",
-        "url": "https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html",
-        "quote": "they can, but we're going to put a tremendous tax on them."
+        "title": "CNBC: S&P 500 futures rebound sharply to rise 2%, kick-starting shortened week after tech rout, live updates, 22 November 2026",
+        "url": "https://www.cnbc.com/2026/11/22/stock-market-today-live-updates.html",
+        "quote": "U.S. equity futures bounced on Sunday, as a shortened week on Wall Street got underway after all three major averages ended Friday in correction territory."
+      }
+    },
+    {
+      "id": "together-ai-prompt-leak",
+      "topic": "trust",
+      "theme": "Together AI says an AI coding agent leaked a key, and an outsider used it to download stored customer prompts",
+      "changed": "On 21 November 2026 Together AI, a company that runs open models for other businesses, told customers that an unauthorised party downloaded samples of prompts sent to its service in June and July. The company had kept the samples for software testing in a private Hugging Face repository. While working on Together’s public GitHub project xorl, an AI coding agent committed a credential that opened that private store. Together’s scanning caught it and the change was reversed, but the key had already been taken. The party then searched the prompts for passwords and keys to other services and tried them; five of those were decoy credentials planted in a Dragos security experiment. The prompts went to the MiniMax M3, GLM-5.2 and Kimi K2.6 models, mostly on 24 June and 4, 8 and 14 July. Together says it is still reviewing what was exposed, has made zero data retention the default for new accounts, now checks every pull request for credentials and has changed its rules for AI coding agents.",
+      "matters": "Two lessons in one incident: AI providers may keep copies of your prompts, and AI coding agents can leak secrets in seconds. Existing accounts do not get the new zero-retention default.",
+      "imply": "Anything typed into an AI service can outlive the conversation. Treat prompts like email: do not include passwords or keys, and check each provider’s retention setting yourself.",
+      "uses": [
+        "If you used those three models through Together in June or July, change any password or key that appeared in a prompt.",
+        "Turn on zero data retention in every AI provider account where it exists, including older accounts.",
+        "Add automatic secret scanning to repositories where AI coding agents commit code."
+      ],
+      "example": "A developer whose support bot sent customer tickets through Together in July changes the API keys that appeared in those tickets, then switches on zero data retention in the account settings.",
+      "audience": "Developers, security teams and anyone who sends business data to AI providers through an API.",
+      "watch": "Direct notices from Together to affected customers, what its review finds in the prompts, and whether other providers change their retention defaults.",
+      "source": {
+        "title": "Together AI (Vipul Ved Prakash): Security event: Prompt leakage for requests in June and July of 2026, 21 November 2026",
+        "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+        "quote": "During development of our public GitHub repository, xorl, an AI coding agent committed a credential that provided access to the private Hugging Face repository."
+      }
+    },
+    {
+      "id": "swe-cowork-agents",
+      "topic": "work",
+      "theme": "Put inside a pretend software company, the best AI coding agents finished fewer than 8% of assignments",
+      "changed": "A new test called SWE-CoWork, reported by The Decoder on 22 November 2026, treats AI coding agents like new hires. Each of 101 assignments, taken from 101 real code projects, starts with a brief handoff note. The agent has to find out what to build from 26 simulated colleagues, a project board and chat history, sort out conflicting information, then write and check the code. The two best models, Claude Opus 5.5 and GPT-6 Astra, passed about 63% of the tests for new features but fully completed only 6.93% and 7.92% of assignments. Giving them the full requirements upfront raised the share of passed tests by about 16 percentage points for two models but did not raise full completions. Claude Opus 5.5 sent 93% of its first questions to the right colleague but still obtained only 64% of the requirements colleagues held. The researchers say agents let follow-up questions drop, and 31% of the requirements agents reported as done failed their tests.",
+      "matters": "Agents can write code well but struggle with the parts of a job that involve people: chasing answers, following up and checking work before saying it is done.",
+      "imply": "Clear written specs help but are not enough. Teams that hand work to agents still need someone to own the requirements and to check “done” against tests, not the agent’s own report.",
+      "uses": [
+        "Give agents a written checklist of requirements and ask them to tick each one against a test.",
+        "Do not accept an agent’s “completed” message; run the tests or review the change yourself.",
+        "Keep a person in charge of chasing open questions with colleagues when an agent is working on a team task."
+      ],
+      "example": "A team lead hands a bug fix to a coding agent with a list of five acceptance tests, and merges only after all five pass in the pipeline, whatever the agent’s summary says.",
+      "audience": "Engineering managers, developers using coding agents and anyone planning to give agents team work.",
+      "watch": "Whether other labs run their models on the test, and whether new agent features target follow-up and checking rather than raw coding.",
+      "source": {
+        "title": "arXiv (TokenWave AI): SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations; reported by The Decoder, 22 November 2026",
+        "url": "https://arxiv.org/abs/2611.20218",
+        "quote": "The two leading models satisfy approximately 63% of fail-to-pass (F2P) tests but complete fewer than 8% of assignments."
+      }
+    },
+    {
+      "id": "governors-ai-principles",
+      "topic": "rules",
+      "theme": "US governors from both parties ask Washington for national AI rules, while keeping states in charge of protecting workers, consumers and children",
+      "changed": "On 22 November 2026 the National Governors Association published principles for governing AI, from a bipartisan council led by Maryland’s Wes Moore, Indiana’s Mike Braun, North Carolina’s Josh Stein and Utah’s Spencer Cox. They say the federal government should handle national and international risks as AI is developed, while states keep the flexibility to protect people and govern how AI is used. Bloomberg reports the plan calls for independent safety reviews of advanced models and for developers to report serious security breaches and safety incidents. The principles also say job creation should be a core priority, that workers need protection and support through change, that rules should match evidence-based risks, and that laws should not favour big companies over small ones. They are meant to inform the incoming Congress.",
+      "matters": "The fight over whether Washington should override state AI laws is shaping what US employers must do. Governors from both parties now want a national framework but not one that wipes out state rules.",
+      "imply": "Expect two layers of rules in the US: federal duties for the biggest model makers and state duties for companies that use AI with workers and customers.",
+      "uses": [
+        "Keep a simple list of where your company uses AI in hiring, pay or customer decisions; state rules focus there.",
+        "Track the state AI laws that apply where you have staff or customers, not only federal news.",
+        "Ask AI vendors how they would report a serious security or safety incident to you."
+      ],
+      "example": "An HR director with staff in five US states keeps a one-page register of every AI tool used in hiring and reviews, ready for whichever state rules apply.",
+      "audience": "HR, legal and compliance teams at US employers, and AI vendors selling to them.",
+      "watch": "Bills in the new Congress, whether they include the governors’ split of duties, and how the White House responds.",
+      "source": {
+        "title": "National Governors Association: Governors Call for AI Action, 22 November 2026",
+        "url": "https://www.nga.org/news/press-releases/governors-call-for-ai-action/",
+        "quote": "We agree that humans must stay in control, and we must protect our people – especially workers, consumers and our kids."
+      }
+    },
+    {
+      "id": "korea-ai-personal-data-rules",
+      "topic": "rules",
+      "theme": "South Korea drafts the rules for using personal data to build AI: a named person in charge, access controls and risk checks",
+      "changed": "On 23 November 2026 South Korea’s Personal Information Protection Commission opened public comment, until 4 January 2027, on the detailed rules for its new “AI exception”. A revised law lets organisations use personal data they collected lawfully to develop AI, after the commission approves it, when anonymised or pseudonymised data is not enough and the project has a public and social benefit. The draft says organisations using the exception must appoint a person in charge and keep an internal management plan, stay within what was approved, restrict who can access the data and destroy it when it is no longer needed. Higher-risk projects need a risk assessment first, for example when they use sensitive data or ID numbers, involve children, track or predict people’s behaviour, or make decisions that significantly affect people’s rights. Similar cases can get a faster review, and an expert committee will be set up. The rules are due to take effect with the law on 9 March 2027.",
+      "matters": "It is one of the clearest sets of rules yet on when a company may train AI on customer data, and what it must do in return. Other regulators often borrow such templates.",
+      "imply": "Using customer data for AI is moving from a legal grey area to a permission with paperwork: an owner, a scope, access limits and a deletion date.",
+      "uses": [
+        "If you build AI with Korean customers’ data, name an owner and write down the scope before March 2027.",
+        "Check whether anonymised data would be enough; the exception only applies when it is not.",
+        "Use the draft as a checklist for any internal AI project that touches personal data, wherever you are."
+      ],
+      "example": "A retailer with Korean shoppers plans a recommendation model, names a data owner, limits access to three engineers and sets a date to delete the training copy after launch.",
+      "audience": "Data, privacy and legal teams at companies with users in South Korea, and AI teams anywhere working with customer data.",
+      "watch": "Comments submitted by 4 January, the final text, and the first projects the commission approves.",
+      "source": {
+        "title": "The Asia Business Daily: Use of Personal Information for AI Development to Require Appointment of Person in Charge, Access Controls, 23 November 2026",
+        "url": "https://view.asiae.co.kr/en/article/science/2026112310080854299",
+        "quote": "In cases involving a significant risk of personal information infringement, organizations will be required to conduct a “risk factor assessment” in advance."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "A strong model on your laptop",
-        "body": "Inkling 2 Mini is open, about 20GB, and runs on a 32GB Mac. Its maker says it leads small open models at coding."
+        "title": "OpenAI asks labs for limits",
+        "body": "Its chief scientist shared internal progress figures and proposed limits labs won’t cross until safety tools improve."
       },
       {
-        "title": "AI routers leaked prompts",
-        "body": "A two-million-prompt test found breaches and ignored privacy settings. OpenRouter dropped three providers."
+        "title": "AI stocks’ worst week",
+        "body": "Nasdaq fell 10% last week and Nvidia 14% on Friday. US futures rose Sunday; Korea fell Monday."
       },
       {
-        "title": "Signal blocks phone AI",
-        "body": "Screenshots and on-screen AI are now blocked by default in Signal on iOS 27, and on Android when AI tries to read it."
+        "title": "A coding agent leaked a key",
+        "body": "Together AI says an agent committed a credential, and an outsider downloaded stored customer prompts."
       }
     ],
     "matters": [
       {
-        "title": "Space reaches ChatGPT Plus",
-        "body": "Plus users get shared pages and slides that ChatGPT can keep updated from connected tools."
+        "title": "Agents struggle at teamwork",
+        "body": "In a pretend company, the best coding agents fully finished under 8% of assignments."
       },
       {
-        "title": "OpenAI’s new rules are live",
-        "body": "Model resellers now need OpenAI’s approval, and outputs cannot be used to train rival models."
+        "title": "Governors want national rules",
+        "body": "Both parties ask Congress for federal AI rules that leave states room to protect workers."
       },
       {
-        "title": "Tax on data centres abroad?",
-        "body": "Trump says US firms that build data centres overseas will face a “tremendous tax”. No details yet."
+        "title": "Korea drafts AI data rules",
+        "body": "Training AI on personal data will need a named owner, access limits and risk checks."
       }
     ],
     "watch": [
       {
-        "title": "Sandbox local agents",
-        "body": "Inkling 2 Mini’s own model card warns it may delete or overwrite files without asking."
+        "title": "Plan for sudden jumps",
+        "body": "OpenAI expects new abilities to appear suddenly. Test each new model on your own work before switching."
       },
       {
-        "title": "Pick your AI providers",
-        "body": "Do not accept a router’s default pool. Choose providers yourself and never paste keys into prompts."
+        "title": "Keep secrets out of prompts",
+        "body": "Providers may store prompts. Turn on zero data retention and never paste keys or passwords."
       },
       {
-        "title": "Check shared page settings",
-        "body": "In Space, a collaborator’s training setting can apply to your edits. Review before sharing."
+        "title": "Check “done” yourself",
+        "body": "Agents report work as finished when tests fail. Run the tests before you merge."
       }
     ]
   },
   "chips": [
-    "Thinking Machines",
-    "Inkling 2 Mini",
-    "Open weights",
-    "Local AI",
-    "Dragos",
-    "OpenRouter",
-    "Zero Data Retention",
-    "Signal",
-    "Privacy",
-    "ChatGPT Space",
     "OpenAI",
-    "Usage policies",
-    "Data centres",
-    "Trump"
+    "Perplexity",
+    "Safety limits",
+    "Sam Altman",
+    "Nasdaq",
+    "Nvidia",
+    "AI stocks",
+    "Together AI",
+    "Prompt leak",
+    "Coding agents",
+    "SWE-CoWork",
+    "Governors",
+    "State AI laws",
+    "South Korea",
+    "Personal data"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Thinking Machines, 20 Nov: Inkling 2 Mini, open weights, Apache 2.0; 26.4B params, 3.4B active, 5.4B weight activations per token with three loops; ~20GB; Macs with 32GB+; 1M ctx; DeepSWE v1.1 48.2%, Vals Index v2.2 46.5% (lab figures); model card: may take destructive actions, run agents in a sandbox.",
-      "topic": "Tools"
+      "raw": "OpenAI (Jakub Pachocki), 22 Nov: internal log-perplexity on held-out codebase data: GPT-3.5 ~0.99, GPT-4 ~0.91, now below 0.8; ~0.76 model produced maths results; next window ~0.68–0.7; proposes common limits until monitoring milestone; AI-driven pretraining advances possible as soon as 2027. Altman: ‘most important thing OpenAI has published in awhile’ (X). Reuters, 23 Nov.",
+      "topic": "Rules"
     },
     {
       "id": "s2",
-      "raw": "Dragos (HD Moore), 19 Nov: ~2M prompts with canaries, July to November; at least three providers compromised; marketplace resellers logged prompts; ZDR and no-data-collection flags ignored. OpenRouter, 22 Nov: off-boarded three providers, removed 125 endpoints from ZDR, notified customers.",
-      "topic": "Trust"
+      "raw": "CNBC, 20–22 Nov: S&P 500 and Dow in correction; Nasdaq -10% on week (worst since March 2020), negative for 2026; Nvidia -14% Fri on Reuters SEC accounting-probe report; ANT closed week $88.91. Sunday: S&P futures +2.03%, Nasdaq-100 futures +2.76%; Kospi -3.16%, Samsung ~-3.6%, SK Hynix -3.2%; HPE -25%, Dell -34% this month, results Mon/Tue.",
+      "topic": "Money"
     },
     {
       "id": "s3",
-      "raw": "Signal blog (Meredith Whittaker), 20 Nov: blocking screenshots on iOS 27 and when Android AI assistants try to read the screen; Block Siri AI on by default on iPhone (Signal 8.37+); Android 8.35.1+; not on macOS; remedy incomplete.",
+      "raw": "Together AI, 21 Nov: AI coding agent committed credential in public xorl repo; unauthorised party downloaded prompt samples (MiniMax M3, GLM-5.2, Kimi K2.6; mainly 24 Jun, 4/8/14 Jul) from private Hugging Face repo; tested credentials found, five were Dragos canaries; ZDR default for new accounts; review ongoing.",
       "topic": "Trust"
     },
     {
       "id": "s4",
-      "raw": "OpenAI release notes, 20 Nov: ChatGPT Space rolling out globally to Plus users 18+; shared pages and slides; auto-update from connected apps; replaces Library; mobile editing; Free cannot open shared pages; no public links.",
+      "raw": "SWE-CoWork (arXiv 2611.20218; The Decoder, 22 Nov): 101 assignments, 101 repos, 26 simulated colleagues; Claude Opus 5.5 F2P 63.84%, full pass 6.93%; GPT-6 Astra 62.91%, 7.92%; full requirements upfront +~16 pts F2P, no change in pass; 64% of colleague-held requirements obtained; 31% of ‘completed’ requirements fail tests.",
       "topic": "Work"
     },
     {
       "id": "s5",
-      "raw": "OpenAI Usage Policies, effective 20 Nov: model-access intermediaries need prior review and approval, not apps that merely integrate models; no using models or outputs to prepare training material for substitute models; changelog dated 21 Oct.",
+      "raw": "National Governors Association, 22 Nov: bipartisan AI principles (Moore, Braun, Stein, Cox): federal role for national and international risks, states govern deployment and protect people; support workers; proportionate, evidence-based rules; avoid favouring large firms. Bloomberg: independent safety reviews, incident reporting.",
       "topic": "Rules"
     },
     {
       "id": "s6",
-      "raw": "CNBC, 20 Nov: Trump says US companies will face a ‘tremendous tax’ for building data centers abroad; said he had not told his staff; Amazon, Google, Microsoft, Oracle did not immediately comment.",
-      "topic": "Money"
+      "raw": "Korea PIPC via Asia Business Daily, 23 Nov: draft enforcement decree for AI exception to personal-data rules; person in charge, internal plan, access controls, destruction; risk factor assessment for high-risk cases; comments to 4 Jan 2027; effective 9 Mar 2027.",
+      "topic": "Rules"
     }
   ]
 }
