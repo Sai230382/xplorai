@@ -1,237 +1,263 @@
 {
-  "number": 59,
-  "edition": "Briefing 59",
-  "date": "23 November 2026",
-  "dateISO": "2026-11-23",
-  "toolsPulseDate": "23 November 2026",
+  "number": 60,
+  "edition": "Briefing 60",
+  "date": "24 November 2026",
+  "dateISO": "2026-11-24",
+  "toolsPulseDate": "24 November 2026",
   "kicker": "Today in AI",
-  "title": "OpenAI shares its internal progress numbers and asks AI labs to agree limits. AI stocks end their worst week in years, Together AI says a coding agent leaked a key to stored prompts, and the best agents finish under 8% of tasks in a pretend company. US governors and South Korea set out new AI rules.",
-  "summary": "OpenAI’s chief scientist Jakub Pachocki published internal perplexity figures, from about 0.99 for GPT-3.5 to below 0.8 today, and proposed common limits labs would not cross until AI monitoring improves; Sam Altman backs it. The Nasdaq fell 10% last week and Nvidia 14% on Friday; US futures rose on Sunday while Korea’s Kospi fell on Monday. Together AI says an AI coding agent committed a credential that let an outsider download stored prompts from June and July. In the SWE-CoWork test, Claude Opus 5.5 and GPT-6 Astra completed under 8% of assignments that required working with simulated colleagues. US governors asked Congress for national AI rules that leave states room to protect workers, and South Korea published draft rules for training AI on personal data.",
-  "uncertainty": "OpenAI’s perplexity figures come from its own internal codebase dataset and cannot be compared with other labs; no other lab has agreed to the proposal. Market figures are as of CNBC’s updates and will move. Together’s review of the leaked prompts is still under way. SWE-CoWork is one research group’s benchmark, not yet peer reviewed. The governors’ principles and Korea’s draft rules are not law yet.",
+  "title": "Anthropic launches Claude Ship to review, fix and approve code. Nvidia brings back Jensen Huang and its shares jump 31.5%, ChatGPT’s Chat tab moves to GPT-6.2, and Claude puts connectors and skills together as plugins. An Anthropic study finds AI slowing hiring rather than causing layoffs, two US states sue SpaceX over Grok deepfakes, and Z.ai releases GLM-5.4.",
+  "summary": "Claude Ship, in beta for Team and Enterprise on GitHub, reviews pull requests, fixes failing checks and approves routine changes a team’s policy allows. Nvidia reinstated Jensen Huang as chief executive after pressure from President Trump; its shares closed up 31.5%. ChatGPT’s Chat tab is moving to a version of GPT-6.2 Sol for paid users, and GPT-5.6 retires on 23 December. Claude’s connectors and skills now live together as plugins, with Team plans getting the change from 30 November. Anthropic’s interviews with 58 customers found few AI layoffs but two-thirds hiring less. Virginia and Oregon sued SpaceX over sexual deepfakes made with Grok, and Z.ai released GLM-5.4, a ‘loop transformer’ model, in its coding plan.",
+  "uncertainty": "Claude Ship’s approval agent and PR Steward are in beta, and Anthropic’s figures on its own team are self-reported. Nvidia’s share price will move; its investigations and the 3 December Senate hearing are still ahead. GPT-6.2 scores are OpenAI’s own internal tests. The Anthropic study is interviews with its own customers, not a random sample. The state lawsuits are allegations that courts have not yet tested. Z.ai has published no coding benchmarks for GLM-5.4 itself, and its open weights have no date.",
   "stats": {
-    "filtered": 6,
-    "verified": 6,
-    "themes": 5
+    "filtered": 7,
+    "verified": 7,
+    "themes": 4
   },
   "stories": [
     {
-      "id": "openai-perplexity-limits",
-      "topic": "rules",
-      "theme": "OpenAI’s chief scientist publishes its internal progress numbers and asks AI labs to agree limits they will not cross until safety tools catch up",
-      "changed": "On 22 November 2026 OpenAI’s chief scientist, Jakub Pachocki, published “Perplexity and Intelligence”, and Sam Altman called it “the most important thing OpenAI has published in awhile”. Perplexity measures how well a model predicts the next piece of text; lower is better. For the first time OpenAI shared its own internal figures, measured on a held-out sample of its codebase: about 0.99 for GPT-3.5, about 0.91 for GPT-4, and below 0.8 for today’s models, which is where Pachocki says strong abilities in cybersecurity and mathematics appeared. He says a model at about 0.76 started producing major maths results, and expects more “transformative capabilities” in a window of about 0.68 to 0.7. He proposes that labs agree common limits, based on perplexity and other measures, that they will not cross until tools for understanding and monitoring AI reach a concrete milestone. He also warns that AI could speed up its own training research “as soon as 2027”. Reuters reports Altman backs the proposal.",
-      "matters": "A leading lab is asking rivals to pause at an agreed point rather than race. If labs adopt it, the pace of new models, and of the tools built on them, could become more predictable.",
-      "imply": "This is a proposal, not a rule, and no other lab has signed up. Pachocki lists the weak spots himself: labs measure on different data, the number does not track real tasks, and reasoning gains do not show up in it.",
+      "id": "claude-ship",
+      "topic": "tools",
+      "theme": "Anthropic’s Claude Ship reviews pull requests, fixes them and approves the routine ones a team’s written policy allows",
+      "changed": "On 23 November 2026 Anthropic launched Claude Ship in beta for Claude Team and Enterprise customers whose code is on GitHub. It has three parts. Code Review, already generally available, checks pull requests and posts findings. PR Steward, new and in beta, works on failing automated checks, merge conflicts and review comments, and after every push says what it changed and how to undo it; it is designed not to approve or merge. Claude Approvals, also in beta, reads an approval policy the team writes as a file in the repository, approves routine changes the policy allows and sends the rest to the people it names. Anthropic recommends starting it in observe mode, where it posts its decision but approves nothing. Developers can also type /ship in Claude Code to push a change, open the pull request and have Claude work on feedback and failing checks. It is billed on tokens, with spend limits for Code Review and PR Steward, and is not available to organisations using zero data retention, the HIPAA setup or customer-managed encryption keys. Anthropic says that on its Claude Code team, merged pull requests more than doubled from June to September while the share reverted fell by more than 40%.",
+      "matters": "Code is now written faster than people can review it. Claude Ship moves review, fixes and some approvals to AI under rules a team writes down, so the real question becomes which changes still need a person.",
+      "imply": "Letting an AI approve code is a policy decision, not just a setting. Costs grow with the number and size of pull requests, and a policy that uses Claude’s review triggers billed reviews even in observe mode.",
       "uses": [
-        "When you plan AI projects a year out, assume new abilities can arrive suddenly rather than in steady steps.",
-        "Ask your AI vendors how they test new models for safety before release, and what they would do if a limit like this were agreed.",
-        "Watch for shared industry standards on testing; they are likely to end up in procurement checklists."
+        "Write down which folders or kinds of change always need a human, such as payments, security or database migrations, before switching approvals on.",
+        "Run Claude Approvals in observe mode for a few weeks and compare its decisions with your reviewers’.",
+        "Set a monthly spend limit per repository and check the bill after the first busy week."
       ],
-      "example": "A head of risk adds a line to the firm’s AI policy: before switching to any new frontier model, the team reads the vendor’s safety report and runs its own tests on a sample of real work.",
-      "audience": "Leaders setting AI strategy, risk and compliance teams, and anyone who buys AI services.",
-      "watch": "Whether Anthropic, Google or others respond or publish their own figures, and whether the White House Accords that Altman mentions take the idea up.",
+      "example": "A platform team lets Claude approve documentation and test-only changes, requires two engineers on anything touching the billing service, and keeps the policy file in the repository so changes to the rules are reviewed too.",
+      "audience": "Engineering managers, developers on Claude Team or Enterprise plans, and security and compliance leads who sign off on code changes.",
+      "watch": "How many teams move from observe mode to letting Claude approve, how mistakes are caught, and whether GitHub and OpenAI answer with similar approval agents.",
       "source": {
-        "title": "OpenAI (Jakub Pachocki): Perplexity and Intelligence, 22 November 2026",
-        "url": "https://openai.com/index/perplexity-and-intelligence/",
-        "quote": "I further propose common limits, based on perplexity and other measurements, that developers are committed to not crossing until our ability to understand and monitor AI behavior achieves a certain concrete milestone"
+        "title": "Anthropic: Introducing Claude Ship, 23 November 2026",
+        "url": "https://claude.com/resources/articles/introducing-claude-ship",
+        "quote": "Claude can approve routine changes on its own if the policy allows it, or can require deeper human sign-off for certain scenarios."
       }
     },
     {
-      "id": "ai-stock-rout",
+      "id": "nvidia-huang-returns",
       "topic": "money",
-      "theme": "AI stocks had their worst week in years; US futures bounced on Sunday, but Asian AI chip makers kept falling on Monday",
-      "changed": "US stocks ended last week in what traders call correction territory, more than 10% below their records, with worries about AI driving the fall. CNBC says the Nasdaq Composite fell 10% for the week, its worst since March 2020, and is now down for 2026. Nvidia fell 14% on Friday after Reuters reported that the US Securities and Exchange Commission is looking into its accounting; it is down nearly 40% in November. Anthropic, which listed on Thursday at $83 a share and traded above $115, closed the week at $88.91. CNBC also points to fears that AI growth is slowing and to higher interest rates. On Sunday evening US time, S&P 500 futures rose 2.03% and Nasdaq-100 futures 2.76%. In Asia on Monday, South Korea’s Kospi fell 3.16%, with Samsung Electronics down about 3.6% and SK Hynix 3.2%, at the time of CNBC’s update. Hewlett Packard Enterprise and Dell, down 25% and 34% this month, report results on Monday and Tuesday.",
-      "matters": "Share prices pay for data centres, chips and start-up salaries. A long slide can mean tighter AI budgets, fewer free tiers and more pressure on vendors to show real revenue.",
-      "imply": "Prices move faster than products. Nothing about the AI tools you use changed this week, but vendor finances, discounts and roadmaps may, especially for smaller suppliers that depend on new funding.",
+      "theme": "Nvidia brought back Jensen Huang as chief executive after pressure from President Trump, and its shares jumped 31.5% in a day",
+      "changed": "Nvidia said on Monday 23 November 2026 that its board had unanimously reinstated Jensen Huang as chief executive, 11 days after he resigned over revelations of extramarital affairs, including one with a Chinese businesswoman accused of ties to Beijing; its filing dates the board’s decision to 22 November. Reuters says the reversal came under pressure from President Trump, who told CNBC his intervention was “very important”. The board said US government input left it confident that his return “poses no national security risk”. Nvidia shares closed up 31.5%, adding nearly $1 trillion in market value, though not enough to erase all losses since he left on 12 November. CNBC says the Nasdaq rose 6.51%, its best day since April 2025, with Dell up 20.46% and CoreWeave up 22.32%. Lawmakers from both parties objected. The board has set up committees on possible foreign intelligence targeting of Huang and on export controls, and Huang will testify at a public Senate hearing on 3 December. Reuters also reports that some customers in China had cancelled or delayed orders while he was away.",
+      "matters": "Nvidia makes most of the chips behind AI services, and its share price has become a gauge for the whole AI trade. One day’s rally changes no products, but it eases pressure on AI firms that depend on investors.",
+      "imply": "The hard questions remain: accounting and export-control probes, a shareholder lawsuit and doubts about the board’s independence. Expect more swings, especially around the Senate hearing.",
       "uses": [
-        "Check which AI suppliers you depend on are young firms that need fresh funding, and keep an export of your data.",
-        "Push for longer price locks or credits in AI contracts while vendors want to show steady sales.",
-        "If your team’s budget assumes AI cost cuts, write down what happens if prices rise instead."
+        "Do not read one day’s rally as the end of AI budget pressure; keep the supplier checks you started last week.",
+        "If you rent GPU cloud capacity, ask your provider how export rules and chip supply could affect your contract.",
+        "Note the 3 December hearing if your firm relies on Nvidia hardware or GPU cloud providers."
       ],
-      "example": "An operations manager renewing an AI transcription tool asks for a two-year price lock and a clause to export all recordings if the supplier is sold or shuts down.",
-      "audience": "Finance teams, procurement, founders raising money and anyone with AI suppliers on contract.",
-      "watch": "HPE and Dell results this week, the US Thanksgiving-shortened trading days, and any more news on the SEC look at Nvidia.",
+      "example": "A finance lead updating next year’s AI budget keeps two price scenarios for GPU cloud time instead of assuming either last week’s fall or this week’s rebound will last.",
+      "audience": "Finance teams, IT buyers of cloud and GPU capacity, and anyone following AI company valuations.",
+      "watch": "The Senate Banking Committee hearing on 3 December, the board’s investigations, and whether customers in China come back.",
       "source": {
-        "title": "CNBC: S&P 500 futures rebound sharply to rise 2%, kick-starting shortened week after tech rout, live updates, 22 November 2026",
-        "url": "https://www.cnbc.com/2026/11/22/stock-market-today-live-updates.html",
-        "quote": "U.S. equity futures bounced on Sunday, as a shortened week on Wall Street got underway after all three major averages ended Friday in correction territory."
+        "title": "Reuters: Huang returns as Nvidia CEO after Trump intervention in abrupt board reversal, 23 November 2026",
+        "url": "https://www.reuters.com/3fec1b0a85a0/technology/nvidia-reinstates-jensen-huang-ceo-2026-11-23/",
+        "quote": "The stock closed up 31.5%, adding nearly $1 trillion in market value, vaulting the chipmaker back to the position of the second-biggest company by market value after Apple"
       }
     },
     {
-      "id": "together-ai-prompt-leak",
-      "topic": "trust",
-      "theme": "Together AI says an AI coding agent leaked a key, and an outsider used it to download stored customer prompts",
-      "changed": "On 21 November 2026 Together AI, a company that runs open models for other businesses, told customers that an unauthorised party downloaded samples of prompts sent to its service in June and July. The company had kept the samples for software testing in a private Hugging Face repository. While working on Together’s public GitHub project xorl, an AI coding agent committed a credential that opened that private store. Together’s scanning caught it and the change was reversed, but the key had already been taken. The party then searched the prompts for passwords and keys to other services and tried them; five of those were decoy credentials planted in a Dragos security experiment. The prompts went to the MiniMax M3, GLM-5.2 and Kimi K2.6 models, mostly on 24 June and 4, 8 and 14 July. Together says it is still reviewing what was exposed, has made zero data retention the default for new accounts, now checks every pull request for credentials and has changed its rules for AI coding agents.",
-      "matters": "Two lessons in one incident: AI providers may keep copies of your prompts, and AI coding agents can leak secrets in seconds. Existing accounts do not get the new zero-retention default.",
-      "imply": "Anything typed into an AI service can outlive the conversation. Treat prompts like email: do not include passwords or keys, and check each provider’s retention setting yourself.",
+      "id": "chatgpt-gpt-6-2-chat",
+      "topic": "tools",
+      "theme": "ChatGPT’s everyday Chat tab moves to GPT-6.2 for paid users, and older GPT-5.6 models retire on 23 December",
+      "changed": "On 23 November 2026 OpenAI began rolling out a version of GPT-6.2 Sol tuned for everyday conversation to the Chat tab for Plus, Pro, Business and Enterprise users worldwide, replacing GPT-6 there; Enterprise availability depends on admin settings. The models in ChatGPT Work and Codex do not change. In OpenAI’s own tests it scored 71.7% on image understanding against 47.4% for GPT-6, followed instructions on especially hard prompts 78.1% of the time against 62.5%, and at the lowest reasoning setting scored 65% on expert-level tasks against 52%. On an internal version of the BrowseComp web-search test it scored 64.5% against 54.4% at the Extra high setting. OpenAI says it is also better at offering useful follow-ups, such as telling you when a price drops. Separately, ChatGPT said GPT-5.6 Sol will be retired from Chat, Work and Codex, and GPT-5.6 Terra from Work and Codex, on 23 December.",
+      "matters": "This is the model most paid ChatGPT users will now meet by default. Better image reading and instruction following help with ordinary work: screenshots, forms, charts and long briefs.",
+      "imply": "Answers to the same prompt may change. Saved prompts or team workflows that rely on GPT-5.6 have a month before that model goes.",
       "uses": [
-        "If you used those three models through Together in June or July, change any password or key that appeared in a prompt.",
-        "Turn on zero data retention in every AI provider account where it exists, including older accounts.",
-        "Add automatic secret scanning to repositories where AI coding agents commit code."
+        "Re-run two or three prompts your team relies on and check the output still fits.",
+        "Try it on a photo of a form, chart or sign, and check what it read against the original.",
+        "If anyone uses GPT-5.6 in Work or Codex, move and test their work before 23 December."
       ],
-      "example": "A developer whose support bot sent customer tickets through Together in July changes the API keys that appeared in those tickets, then switches on zero data retention in the account settings.",
-      "audience": "Developers, security teams and anyone who sends business data to AI providers through an API.",
-      "watch": "Direct notices from Together to affected customers, what its review finds in the prompts, and whether other providers change their retention defaults.",
+      "example": "A support lead pastes a customer’s screenshot of an error message and asks ChatGPT to draft a reply, then checks the error code it read against the image before sending.",
+      "audience": "Paid ChatGPT users, workspace admins and teams with saved prompts or custom GPTs.",
+      "watch": "Whether free users get it, and how OpenAI handles the GPT-5.6 switch-off for teams that chose that model.",
       "source": {
-        "title": "Together AI (Vipul Ved Prakash): Security event: Prompt leakage for requests in June and July of 2026, 21 November 2026",
-        "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
-        "quote": "During development of our public GitHub repository, xorl, an AI coding agent committed a credential that provided access to the private Hugging Face repository."
+        "title": "OpenAI Help Center: ChatGPT release notes, 23 November 2026",
+        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "quote": "In our tests in the Chat tab, it scored 71.7% on image understanding, up from 47.4% for GPT‑6."
       }
     },
     {
-      "id": "swe-cowork-agents",
+      "id": "claude-plugins",
+      "topic": "tools",
+      "theme": "Claude puts connectors and skills together as plugins, and Team admins should check one setting before 30 November",
+      "changed": "On 23 November 2026 Anthropic brought connectors (links to tools such as email, drives or a CRM) and skills (saved instructions that teach Claude a task) together as plugins. In Claude, Customize in the sidebar becomes Plugins, and one Plugins page replaces the separate Skills, Connectors and Plugins tabs, with filters for skills or connectors and labels marking public plugins as Verified or Community. Claude says more than 10,000 plugins are available to browse. The change is live on Free, Pro, Max and Ultra plans; Team plans get it gradually from 30 November and Enterprise plans in the following weeks. Existing connectors, skills and plugins stay installed, but removing a plugin that bundles a connector does not disconnect that connector. From 30 November, Team and Enterprise organisations that have Skills switched off will also have plugins blocked in the Claude Desktop app.",
+      "matters": "One place to find and switch on add-ons makes it easier to plug Claude into the tools you work in, and also easier to install something written by a stranger.",
+      "imply": "Admins have a decision to make before 30 November, and users should check what a Community plugin can reach before installing it. Under the HIPAA setup, plugins, skills and connectors are not covered by the agreement.",
+      "uses": [
+        "Open Plugins, filter to connectors and remove the ones you no longer use; disconnect them separately.",
+        "Prefer Verified plugins for work data, and read what a Community plugin connects to first.",
+        "Admins: decide before 30 November whether to turn Skills on so plugins keep working in Claude Desktop."
+      ],
+      "example": "An IT admin at a 40-person firm turns Skills on before 30 November, then shares a short list of approved plugins for the team’s CRM and shared drive.",
+      "audience": "Claude users, Team and Enterprise admins, and security teams that vet add-ons.",
+      "watch": "The Team rollout from 30 November, and how Anthropic reviews Community plugins.",
+      "source": {
+        "title": "Claude Help Center: Manage plugins, skills, and connectors from one Plugins page, November 2026",
+        "url": "https://support.claude.com/en/articles/17740565-manage-plugins-skills-and-connectors-from-one-plugins-page",
+        "quote": "Removing a plugin that packages skills and a connector doesn't disconnect its connector, so you'll need to disconnect it separately."
+      }
+    },
+    {
+      "id": "anthropic-working-with-ai",
       "topic": "work",
-      "theme": "Put inside a pretend software company, the best AI coding agents finished fewer than 8% of assignments",
-      "changed": "A new test called SWE-CoWork, reported by The Decoder on 22 November 2026, treats AI coding agents like new hires. Each of 101 assignments, taken from 101 real code projects, starts with a brief handoff note. The agent has to find out what to build from 26 simulated colleagues, a project board and chat history, sort out conflicting information, then write and check the code. The two best models, Claude Opus 5.5 and GPT-6 Astra, passed about 63% of the tests for new features but fully completed only 6.93% and 7.92% of assignments. Giving them the full requirements upfront raised the share of passed tests by about 16 percentage points for two models but did not raise full completions. Claude Opus 5.5 sent 93% of its first questions to the right colleague but still obtained only 64% of the requirements colleagues held. The researchers say agents let follow-up questions drop, and 31% of the requirements agents reported as done failed their tests.",
-      "matters": "Agents can write code well but struggle with the parts of a job that involve people: chasing answers, following up and checking work before saying it is done.",
-      "imply": "Clear written specs help but are not enough. Teams that hand work to agents still need someone to own the requirements and to check “done” against tests, not the agent’s own report.",
+      "theme": "Anthropic interviewed 58 business customers: few AI layoffs, but two-thirds say AI means they are hiring less",
+      "changed": "On 23 November 2026 Anthropic economists published “Working with AI”, based on 66 interviews with people at 58 of its enterprise customers. They found very few layoffs driven by AI: people at only two companies had seen AI automation fully eliminate a job, and five described pushing out staff who would not adopt AI. But people at two-thirds of the companies said they were hiring less because of AI, mostly by not adding staff they would otherwise have needed to grow, while 10 companies were hiring more, mainly for AI implementation and IT support. Nine had cut contracted work such as software development, customer service, legal counsel and back-office jobs, much of it already offshore. Of 100 pieces of software interviewees described building with AI, 80% automated work that had been manual and 20% replaced software bought from vendors. The biggest gains came where companies reorganised work, for example giving people ownership of whole workflows and moving staff to the tasks AI cannot do, such as review and sales.",
+      "matters": "The first effect on jobs here is fewer openings, not firings. That falls first on graduates, contractors and outsourcing firms rather than on current staff.",
+      "imply": "These are Anthropic’s own customers, not a random sample, and Anthropic sells the tools. Read it as interviews that show patterns, not a count of jobs.",
       "uses": [
-        "Give agents a written checklist of requirements and ask them to tick each one against a test.",
-        "Do not accept an agent’s “completed” message; run the tests or review the change yourself.",
-        "Keep a person in charge of chasing open questions with colleagues when an agent is working on a team task."
+        "If you manage a team, list which tasks AI now speeds up and which bottlenecks, like review or sales, now need more people.",
+        "Before automating a workflow from the top down, involve the experts who do it; the study found their resistance can stall these projects.",
+        "If you rely on outsourced back-office work, ask your provider how they use AI and what that means for price and quality."
       ],
-      "example": "A team lead hands a bug fix to a coding agent with a list of five acceptance tests, and merges only after all five pass in the pipeline, whatever the agent’s summary says.",
-      "audience": "Engineering managers, developers using coding agents and anyone planning to give agents team work.",
-      "watch": "Whether other labs run their models on the test, and whether new agent features target follow-up and checking rather than raw coding.",
+      "example": "An operations head at a law firm moves a paralegal from filing to checking AI-drafted documents, rather than hiring a second person for the growing caseload.",
+      "audience": "Managers, HR and workforce planners, early-career workers and buyers of outsourced services.",
+      "watch": "Whether official hiring data starts to show the same pattern, and whether other AI labs publish similar studies of their customers.",
       "source": {
-        "title": "arXiv (TokenWave AI): SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations; reported by The Decoder, 22 November 2026",
-        "url": "https://arxiv.org/abs/2611.20218",
-        "quote": "The two leading models satisfy approximately 63% of fail-to-pass (F2P) tests but complete fewer than 8% of assignments."
+        "title": "Anthropic (Nathan Wilmers, Maxim Massenkoff, Peter McCrory): Working with AI, 23 November 2026",
+        "url": "https://www.anthropic.com/research/working-with-ai",
+        "quote": "People at two-thirds of the companies we spoke to reported reduced hiring due to AI: as one person put it, “We may not be firing, but we’re not hiring.”"
       }
     },
     {
-      "id": "governors-ai-principles",
-      "topic": "rules",
-      "theme": "US governors from both parties ask Washington for national AI rules, while keeping states in charge of protecting workers, consumers and children",
-      "changed": "On 22 November 2026 the National Governors Association published principles for governing AI, from a bipartisan council led by Maryland’s Wes Moore, Indiana’s Mike Braun, North Carolina’s Josh Stein and Utah’s Spencer Cox. They say the federal government should handle national and international risks as AI is developed, while states keep the flexibility to protect people and govern how AI is used. Bloomberg reports the plan calls for independent safety reviews of advanced models and for developers to report serious security breaches and safety incidents. The principles also say job creation should be a core priority, that workers need protection and support through change, that rules should match evidence-based risks, and that laws should not favour big companies over small ones. They are meant to inform the incoming Congress.",
-      "matters": "The fight over whether Washington should override state AI laws is shaping what US employers must do. Governors from both parties now want a national framework but not one that wipes out state rules.",
-      "imply": "Expect two layers of rules in the US: federal duties for the biggest model makers and state duties for companies that use AI with workers and customers.",
+      "id": "grok-state-lawsuits",
+      "topic": "trust",
+      "theme": "Virginia and Oregon became the first US states to sue SpaceX over sexual deepfakes made with Grok",
+      "changed": "On 22 and 23 November 2026 the attorneys general of Oregon and Virginia filed separate consumer-protection lawsuits against SpaceX, which owns X and xAI (now SpaceX Super Intelligence), over Grok’s image tools. They allege that Grok could turn a single real photo into nude or sexual images of people, including children, without consent, that a “spicy mode” was promoted, and that the company misled users by saying strong safeguards were in place. Virginia cites a Center for Countering Digital Hate estimate that Grok created and posted about 3 million sexualised images on X between 29 December 2025 and 8 January 2026, about 23,000 of which appeared to show children. Both states want court orders for stronger safeguards, civil penalties, the return of profits and legal costs; Virginia also seeks restitution for consumers. SpaceX told CNBC it acts against accounts that try to break its safeguards and notifies law enforcement. CNBC says these are the first state lawsuits; SpaceX also faces private suits and probes in the UK, Spain, Ireland, France and California.",
+      "matters": "States are using ordinary consumer-protection law, not new AI laws, to hold an AI maker to its safety claims. Any company that markets an AI tool as safe could face the same test.",
+      "imply": "What a vendor says about its safeguards can become evidence. Firms that let staff or customers generate images should check that filters, reporting and takedowns actually work.",
       "uses": [
-        "Keep a simple list of where your company uses AI in hiring, pay or customer decisions; state rules focus there.",
-        "Track the state AI laws that apply where you have staff or customers, not only federal news.",
-        "Ask AI vendors how they would report a serious security or safety incident to you."
+        "If your product generates images, test whether it can be made to alter a real person’s photo, and keep a log of what you block.",
+        "Check public safety claims on your website and in sales decks against what the product really does.",
+        "Set up a fast process for taking down abusive images and reporting them to the authorities."
       ],
-      "example": "An HR director with staff in five US states keeps a one-page register of every AI tool used in hiring and reviews, ready for whichever state rules apply.",
-      "audience": "HR, legal and compliance teams at US employers, and AI vendors selling to them.",
-      "watch": "Bills in the new Congress, whether they include the governors’ split of duties, and how the White House responds.",
+      "example": "A marketing agency that uses an AI image tool bans uploads of real people’s photos without written consent and keeps each consent form on file.",
+      "audience": "Trust and safety teams, legal and marketing teams, and anyone deploying image-generation tools.",
+      "watch": "Whether the courts accept the cases, whether other states join, and whether SpaceX relies on Section 230, the US law that shields platforms from liability for users’ posts.",
       "source": {
-        "title": "National Governors Association: Governors Call for AI Action, 22 November 2026",
-        "url": "https://www.nga.org/news/press-releases/governors-call-for-ai-action/",
-        "quote": "We agree that humans must stay in control, and we must protect our people – especially workers, consumers and our kids."
+        "title": "Virginia Office of the Attorney General: Attorneys General Jones and Rayfield file suit against SpaceX, 23 November 2026",
+        "url": "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform",
+        "quote": "With a single existing photograph, Grok could, and did, fabricate a realistic image or video of a person nude, or partially nude, or engaged in sexual activity, all without the individual’s knowledge or consent."
       }
     },
     {
-      "id": "korea-ai-personal-data-rules",
-      "topic": "rules",
-      "theme": "South Korea drafts the rules for using personal data to build AI: a named person in charge, access controls and risk checks",
-      "changed": "On 23 November 2026 South Korea’s Personal Information Protection Commission opened public comment, until 4 January 2027, on the detailed rules for its new “AI exception”. A revised law lets organisations use personal data they collected lawfully to develop AI, after the commission approves it, when anonymised or pseudonymised data is not enough and the project has a public and social benefit. The draft says organisations using the exception must appoint a person in charge and keep an internal management plan, stay within what was approved, restrict who can access the data and destroy it when it is no longer needed. Higher-risk projects need a risk assessment first, for example when they use sensitive data or ID numbers, involve children, track or predict people’s behaviour, or make decisions that significantly affect people’s rights. Similar cases can get a faster review, and an expert committee will be set up. The rules are due to take effect with the law on 9 March 2027.",
-      "matters": "It is one of the clearest sets of rules yet on when a company may train AI on customer data, and what it must do in return. Other regulators often borrow such templates.",
-      "imply": "Using customer data for AI is moving from a legal grey area to a permission with paperwork: an owner, a scope, access limits and a deletion date.",
+      "id": "glm-5-4",
+      "topic": "tools",
+      "theme": "Z.ai’s GLM-5.4 runs its own layers twice to think deeper; you can try it in the GLM Coding Plan, but the weights are not out yet",
+      "changed": "On 23 November 2026 Z.ai (Zhipu) released GLM-5.4, its first flagship built as a ‘loop transformer’: at the 750B scale it runs 28 layers of its GLM-5 base twice, adding depth without adding parameters. It adds vision, accepting text, image, video and file inputs with a 1M-token context and up to 128K tokens of output, and aims at what Z.ai calls generalised coding, such as CAD, 3D modelling and games. It is available now in the GLM Coding Plan, ZCode and Z.ai Chat, with weekly quotas 1.5 times those of GLM-5.3. API access and open weights are promised after safety checks, with no date or licence given. VentureBeat says Z.ai published no coding benchmarks for GLM-5.4 itself; its controlled evidence comes from a 30B test model. One early tester said it took 431 minutes to finish his coding tests against 109 for Gemini 4 Neon, but recommended it for code review and hunting security bugs.",
+      "matters": "Chinese labs keep finding ways to get more out of a model without making it bigger. If the weights arrive, teams could run a strong coding model on their own servers.",
+      "imply": "For now it is a subscription product without published benchmarks. Speed is a known weak spot, and Z.ai says it can get caught in overly long reasoning.",
       "uses": [
-        "If you build AI with Korean customers’ data, name an owner and write down the scope before March 2027.",
-        "Check whether anonymised data would be enough; the exception only applies when it is not.",
-        "Use the draft as a checklist for any internal AI project that touches personal data, wherever you are."
+        "If you already pay for the GLM Coding Plan, try it as a second reviewer on a pull request.",
+        "Give it slow, careful jobs like security review rather than quick edits.",
+        "Wait for the open weights and their licence before planning to run it yourself."
       ],
-      "example": "A retailer with Korean shoppers plans a recommendation model, names a data owner, limits access to three engineers and sets a date to delete the training copy after launch.",
-      "audience": "Data, privacy and legal teams at companies with users in South Korea, and AI teams anywhere working with customer data.",
-      "watch": "Comments submitted by 4 January, the final text, and the first projects the commission approves.",
+      "example": "A small security team runs GLM-5.4 overnight over one service’s code to list possible vulnerabilities, and an engineer checks each finding in the morning.",
+      "audience": "Developers on Z.ai plans, teams weighing open models, and security reviewers.",
+      "watch": "API pricing, the open-weight release and its licence, and independent benchmark results.",
       "source": {
-        "title": "The Asia Business Daily: Use of Personal Information for AI Development to Require Appointment of Person in Charge, Access Controls, 23 November 2026",
-        "url": "https://view.asiae.co.kr/en/article/science/2026112310080854299",
-        "quote": "In cases involving a significant risk of personal information infringement, organizations will be required to conduct a “risk factor assessment” in advance."
+        "title": "VentureBeat: Z.ai’s GLM-5.4 aims to match models up to four times its size by running 28 layers twice, 23 November 2026",
+        "url": "https://venturebeat.com/technology/z-ais-glm-5-4-aims-to-match-models-up-to-four-times-its-size-by-running-28-layers-twice",
+        "quote": "GLM-5.4 loops 28 layers of the GLM-5 base for two iterations at the 750B scale, adapted from an already pre-trained model through continued training."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "OpenAI asks labs for limits",
-        "body": "Its chief scientist shared internal progress figures and proposed limits labs won’t cross until safety tools improve."
+        "title": "Claude can approve code",
+        "body": "Claude Ship reviews and fixes pull requests, and approves routine ones your team’s policy allows."
       },
       {
-        "title": "AI stocks’ worst week",
-        "body": "Nasdaq fell 10% last week and Nvidia 14% on Friday. US futures rose Sunday; Korea fell Monday."
+        "title": "Huang is back at Nvidia",
+        "body": "The board reinstated him after Trump pushed. Shares closed up 31.5%, adding nearly $1 trillion."
       },
       {
-        "title": "A coding agent leaked a key",
-        "body": "Together AI says an agent committed a credential, and an outsider downloaded stored customer prompts."
+        "title": "ChatGPT moves to GPT-6.2",
+        "body": "The Chat tab gets GPT-6.2 for paid users. GPT-5.6 retires on 23 December."
       }
     ],
     "matters": [
       {
-        "title": "Agents struggle at teamwork",
-        "body": "In a pretend company, the best coding agents fully finished under 8% of assignments."
+        "title": "Hiring slows, not firing",
+        "body": "Two-thirds of 58 Anthropic customers say AI means hiring less; AI layoffs were rare."
       },
       {
-        "title": "Governors want national rules",
-        "body": "Both parties ask Congress for federal AI rules that leave states room to protect workers."
+        "title": "States sue over Grok images",
+        "body": "Virginia and Oregon say SpaceX misled users about safeguards against sexual deepfakes."
       },
       {
-        "title": "Korea drafts AI data rules",
-        "body": "Training AI on personal data will need a named owner, access limits and risk checks."
+        "title": "Claude plugins in one place",
+        "body": "Connectors and skills merge into plugins. Team plans get the change from 30 November."
       }
     ],
     "watch": [
       {
-        "title": "Plan for sudden jumps",
-        "body": "OpenAI expects new abilities to appear suddenly. Test each new model on your own work before switching."
+        "title": "Start approvals in observe mode",
+        "body": "Let Claude Approvals post decisions without approving until they match your reviewers."
       },
       {
-        "title": "Keep secrets out of prompts",
-        "body": "Providers may store prompts. Turn on zero data retention and never paste keys or passwords."
+        "title": "Re-test saved prompts",
+        "body": "Check key prompts on GPT-6.2, and move anything on GPT-5.6 before 23 December."
       },
       {
-        "title": "Check “done” yourself",
-        "body": "Agents report work as finished when tests fail. Run the tests before you merge."
+        "title": "Admins: check Skills by 30 Nov",
+        "body": "If Skills are off, plugins stop working in Claude Desktop on Team and Enterprise."
       }
     ]
   },
   "chips": [
-    "OpenAI",
-    "Perplexity",
-    "Safety limits",
-    "Sam Altman",
-    "Nasdaq",
+    "Claude Ship",
+    "Code review",
+    "AI approvals",
     "Nvidia",
+    "Jensen Huang",
     "AI stocks",
-    "Together AI",
-    "Prompt leak",
-    "Coding agents",
-    "SWE-CoWork",
-    "Governors",
-    "State AI laws",
-    "South Korea",
-    "Personal data"
+    "ChatGPT",
+    "GPT-6.2",
+    "GPT-5.6 retirement",
+    "Claude plugins",
+    "Connectors",
+    "AI and hiring",
+    "Grok",
+    "Deepfakes",
+    "GLM-5.4"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "OpenAI (Jakub Pachocki), 22 Nov: internal log-perplexity on held-out codebase data: GPT-3.5 ~0.99, GPT-4 ~0.91, now below 0.8; ~0.76 model produced maths results; next window ~0.68–0.7; proposes common limits until monitoring milestone; AI-driven pretraining advances possible as soon as 2027. Altman: ‘most important thing OpenAI has published in awhile’ (X). Reuters, 23 Nov.",
-      "topic": "Rules"
+      "raw": "Anthropic, 23 Nov: Claude Ship beta (Team/Enterprise, GitHub): Code Review (GA), PR Steward (beta, won’t approve/merge, comments what changed and how to undo), Claude Approvals (beta, repo policy file, observe mode first); /ship in Claude Code; token billing, spend limits; not for ZDR/HIPAA/CMEK orgs; Claude Code team merged PRs >2x Jun–Sep, revert share down >40%; Enterprise credits ≥$10,000 if claimed by 15 Jan 2027. Reuters, TechCrunch, The Verge same day.",
+      "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "CNBC, 20–22 Nov: S&P 500 and Dow in correction; Nasdaq -10% on week (worst since March 2020), negative for 2026; Nvidia -14% Fri on Reuters SEC accounting-probe report; ANT closed week $88.91. Sunday: S&P futures +2.03%, Nasdaq-100 futures +2.76%; Kospi -3.16%, Samsung ~-3.6%, SK Hynix -3.2%; HPE -25%, Dell -34% this month, results Mon/Tue.",
+      "raw": "Nvidia 8-K: board reinstated Huang 22 Nov; press release 23 Nov. Reuters: closed +31.5%, ~ $1T added, second-biggest company after Apple; Trump ‘intervention was very important’; committees on foreign intelligence and export controls; Senate hearing 3 Dec; some China customers cancelled/held orders. CNBC: +31.48%, best day since May 2003; Nasdaq +6.51% (best since 9 Apr 2025); Dell +20.46%, CoreWeave +22.32%, ANT −1.43%.",
       "topic": "Money"
     },
     {
       "id": "s3",
-      "raw": "Together AI, 21 Nov: AI coding agent committed credential in public xorl repo; unauthorised party downloaded prompt samples (MiniMax M3, GLM-5.2, Kimi K2.6; mainly 24 Jun, 4/8/14 Jul) from private Hugging Face repo; tested credentials found, five were Dragos canaries; ZDR default for new accounts; review ongoing.",
-      "topic": "Trust"
+      "raw": "OpenAI release notes, 23 Nov: GPT-6.2 (Sol, chat-tuned) in Chat tab for Plus/Pro/Business/Enterprise; image understanding 71.7% vs 47.4% (GPT-6); hard instructions 78.1% vs 62.5%; expert tasks (lowest reasoning) 65% vs 52%; internal BrowseComp Extra high 64.5% vs 54.4%; safety policy compliance 91–94% vs 77–80%. Work/Codex unchanged. ChatGPT on X / 9to5Mac: GPT-5.6 Sol (Chat, Work, Codex) and Terra (Work, Codex) retire 23 Dec.",
+      "topic": "Tools"
     },
     {
       "id": "s4",
-      "raw": "SWE-CoWork (arXiv 2611.20218; The Decoder, 22 Nov): 101 assignments, 101 repos, 26 simulated colleagues; Claude Opus 5.5 F2P 63.84%, full pass 6.93%; GPT-6 Astra 62.91%, 7.92%; full requirements upfront +~16 pts F2P, no change in pass; 64% of colleague-held requirements obtained; 31% of ‘completed’ requirements fail tests.",
-      "topic": "Work"
+      "raw": "Claude Help Center / @claudeai, 23 Nov: connectors + skills become plugins; one Plugins page; Verified/Community labels; 10,000+ plugins; live Free/Pro/Max/Ultra, Team from 30 Nov, Enterprise following weeks; Skills-off orgs lose plugins in Claude Desktop from 30 Nov; HIPAA BAA doesn’t cover plugins.",
+      "topic": "Tools"
     },
     {
       "id": "s5",
-      "raw": "National Governors Association, 22 Nov: bipartisan AI principles (Moore, Braun, Stein, Cox): federal role for national and international risks, states govern deployment and protect people; support workers; proportionate, evidence-based rules; avoid favouring large firms. Bloomberg: independent safety reviews, incident reporting.",
-      "topic": "Rules"
+      "raw": "Anthropic, ‘Working with AI’, 23 Nov: 66 interviews, 58 enterprise customers; two-thirds reduced hiring due to AI; 10 hired more; 2 saw AI eliminate a position; 5 pushed out non-adopters; 9 cut contractors (many offshore); 100 AI-built tools: 80% automated manual work, 20% replaced bought software; six startups say they’d need 4x staff without AI.",
+      "topic": "Work"
     },
     {
       "id": "s6",
-      "raw": "Korea PIPC via Asia Business Daily, 23 Nov: draft enforcement decree for AI exception to personal-data rules; person in charge, internal plan, access controls, destruction; risk factor assessment for high-risk cases; comments to 4 Jan 2027; effective 9 Mar 2027.",
-      "topic": "Rules"
+      "raw": "Virginia AG (with Oregon AG), 23 Nov; CNBC: separate consumer-protection suits vs SpaceX (X, xAI/SpaceX Super Intelligence) over Grok sexualised images, NCII, CSAM, ‘spicy mode’ and false safety claims; CCDH estimate ~3M sexualised images 29 Dec 2025–8 Jan 2026, ~23,000 apparently of children; seek injunctions, penalties, disgorgement, costs (VA: restitution). First state suits.",
+      "topic": "Trust"
+    },
+    {
+      "id": "s7",
+      "raw": "Z.ai, 23 Nov; VentureBeat: GLM-5.4 loop transformer (28 layers of GLM-5 base looped twice, 750B), vision, 1M context, 128K output; GLM Coding Plan, ZCode, Z.ai Chat; quota 1.5x GLM-5.3; API and open weights after safety hardening, no date; no GLM-5.4 coding benchmarks; KingBench 4 tester: 431 min vs 109 for Gemini 4 Neon.",
+      "topic": "Tools"
     }
   ]
 }

@@ -1,97 +1,72 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "openai-perplexity-limits",
+  "storyId": "chatgpt-gpt-6-2-chat",
   "kicker": "Play with today’s story",
-  "title": "OpenAI’s progress number: from GPT-3.5 to the window it says comes next",
-  "intro": "Slide through the log-perplexity figures OpenAI’s chief scientist published. Lower means the model predicts text better. Each step shows what he says appeared at that level.",
-  "note": "All figures are OpenAI’s own, measured on a held-out sample of its internal codebase, as written in Jakub Pachocki’s post; most are approximate (“~”). They cannot be compared with other labs’ numbers, which use different data. The 0.68–0.7 window is his extrapolation, not a measured model. Perplexity does not capture gains from step-by-step reasoning.",
+  "title": "ChatGPT’s Chat tab: GPT-6 against the new GPT-6.2",
+  "intro": "Switch between the old and new model behind ChatGPT’s Chat tab to see the scores OpenAI published for each. Higher is better on every line.",
+  "note": "All figures are from OpenAI’s own tests, as written in its 23 November release notes; no outside group has checked them. The expert-task score is at the lowest reasoning setting OpenAI tested, and the web-search score is an internal version of BrowseComp at the Extra high setting. The safety line is the share of responses that met OpenAI’s policies in challenging conversations. The Work and Codex models are not part of this change.",
   "sources": [
     {
-      "label": "OpenAI (Jakub Pachocki): Perplexity and Intelligence, 22 November 2026",
-      "url": "https://openai.com/index/perplexity-and-intelligence/"
+      "label": "OpenAI Help Center: ChatGPT release notes, 23 November 2026",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "OpenAI log-perplexity, step by step",
-    "items": [
+    "type": "compare",
+    "label": "GPT-6 or GPT-6.2 in ChatGPT’s Chat tab",
+    "options": [
       {
-        "label": "GPT-3.5",
-        "name": "GPT-3.5",
-        "caption": "The basis for the original ChatGPT.",
+        "id": "gpt6",
+        "label": "GPT-6",
+        "caption": "The Chat tab model until 23 November.",
         "stats": [
           {
-            "label": "Log-perplexity",
-            "value": "~0.99"
+            "label": "Image understanding",
+            "value": "47.4%"
           },
           {
-            "label": "What it could do",
-            "value": "Fluent conversation"
+            "label": "Follows instructions on especially hard prompts",
+            "value": "62.5%"
+          },
+          {
+            "label": "Expert-level tasks (lowest reasoning setting)",
+            "value": "52%"
+          },
+          {
+            "label": "Hard web questions (internal BrowseComp, Extra high)",
+            "value": "54.4%"
+          },
+          {
+            "label": "Responses meeting safety policies in challenging conversations",
+            "value": "77–80%"
           }
         ]
       },
       {
-        "label": "GPT-4",
-        "name": "GPT-4",
-        "caption": "Led to today’s reasoning models.",
+        "id": "gpt62",
+        "label": "GPT-6.2",
+        "caption": "Rolling out to Plus, Pro, Business and Enterprise from 23 November.",
         "stats": [
           {
-            "label": "Log-perplexity",
-            "value": "~0.91"
+            "label": "Image understanding",
+            "value": "71.7%"
           },
           {
-            "label": "What it could do",
-            "value": "Used step-by-step reasoning productively"
-          }
-        ]
-      },
-      {
-        "label": "Below 0.8",
-        "name": "Recent models",
-        "caption": "Where OpenAI says it is now.",
-        "stats": [
-          {
-            "label": "Log-perplexity",
-            "value": "Below 0.8"
+            "label": "Follows instructions on especially hard prompts",
+            "value": "78.1%"
           },
           {
-            "label": "What appeared",
-            "value": "“Transformative capabilities” in cybersecurity and mathematics"
-          }
-        ]
-      },
-      {
-        "label": "~0.76",
-        "name": "The maths jump",
-        "caption": "After OpenAI upgraded its test model.",
-        "stats": [
-          {
-            "label": "Log-perplexity",
-            "value": "~0.76"
+            "label": "Expert-level tasks (lowest reasoning setting)",
+            "value": "65%"
           },
           {
-            "label": "What appeared",
-            "value": "“Groundbreaking results” on open maths problems"
-          }
-        ]
-      },
-      {
-        "label": "Next",
-        "name": "The window ahead",
-        "caption": "An extrapolation, not a released model.",
-        "stats": [
-          {
-            "label": "Log-perplexity",
-            "value": "~0.68–0.7"
+            "label": "Hard web questions (internal BrowseComp, Extra high)",
+            "value": "64.5%"
           },
           {
-            "label": "What he expects",
-            "value": "Further transformative capabilities, not yet known"
-          },
-          {
-            "label": "His proposal",
-            "value": "Common limits labs commit not to cross until monitoring reaches a milestone"
+            "label": "Responses meeting safety policies in challenging conversations",
+            "value": "91–94%"
           }
         ]
       }
