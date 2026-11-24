@@ -3,6 +3,33 @@
     "name": "Reuters",
     "handle": "Reuters",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
+    "text": "US stocks surged, led by a more than 6% jump in the Nasdaq as Nvidia's reinstatement of Jensen Huang as CEO drove investors back into AI-related shares after last week's rout https://t.co/xvlxNHbfWO https://t.co/GOeYADz35d",
+    "url": "https://x.com/Reuters/status/2125039198302531699",
+    "postedAt": "2026-11-24T01:30:00.000Z",
+    "take": "One CEO decision moved the whole AI market in a day. Prices this jumpy are a reason to keep AI budgets and supplier plans steady."
+  },
+  {
+    "name": "Claude",
+    "handle": "claudeai",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+    "text": "There’s now one way to connect your tools to Claude, teach it a new skill, or do both.\n\nConnectors and skills come together as plugins. Live on Free, Pro, Max, and Ultra plans, with Team and Enterprise coming soon.\n\nBrowse 10,000+ plugins: https://t.co/gSwpY9HDPY https://t.co/K78lwls8qh",
+    "url": "https://x.com/claudeai/status/2124970294523945328",
+    "postedAt": "2026-11-23T20:56:12.000Z",
+    "take": "Connectors and skills now sit on one Plugins page. Check what a Community plugin can reach before you install it for work."
+  },
+  {
+    "name": "Boris Cherny",
+    "handle": "bcherny",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1902044548936953856/J2jeik0t_normal.jpg",
+    "text": "A year ago we launched Opus 4.5, the first model to write 100% of my code.\n\nShipping PRs hasn’t caught up, so today we’re launching Claude Ship in beta for Team and Enterprise. I use it all day every day and can’t imagine shipping without it. https://t.co/IfK0Oua6rZ",
+    "url": "https://x.com/bcherny/status/2124961485801836573",
+    "postedAt": "2026-11-23T20:21:12.000Z",
+    "take": "Claude can now approve routine pull requests. Write down which changes always need a person, and start in observe mode."
+  },
+  {
+    "name": "Reuters",
+    "handle": "Reuters",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
     "text": "US futures bounce while Asia markets brace for AI wipeout https://t.co/9S51DsfW7P",
     "url": "https://x.com/Reuters/status/2124663006248210649",
     "postedAt": "2026-11-23T00:35:09.000Z",

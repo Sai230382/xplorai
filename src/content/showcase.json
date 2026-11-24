@@ -20,6 +20,146 @@
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2122230879594639360/img/Qc8H91O5v_IhfvV0.jpg"
   },
   {
+    "id": "2124994547482829052",
+    "url": "https://x.com/maxt3chno/status/2124994547482829052",
+    "author_name": "Max",
+    "author_handle": "@maxt3chno",
+    "created_at": "2026-11-23T22:32:35.000Z",
+    "text": "How did this playable three.js ATV cost less than 1% of my Claude Max quota??\n\nsimple: I made Gemini 4 Neon do the dirty work first\n\n- Neon: cooked the model from an image + built the physics in 23 min + 7% quota\n- Opus 5.5: fixed 4 flaws and integrated it into my main project https://t.co/lya2D9pPUp",
+    "model_or_tool": "Gemini 4 Neon and Claude Opus 5.5",
+    "what_they_built": "A playable three.js ATV: Gemini 4 Neon built the model from an image and the physics in 23 minutes, then Opus 5.5 fixed four flaws and merged it into the maker’s project.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 12,
+      "impression_count": 1355,
+      "like_count": 26,
+      "quote_count": 2,
+      "reply_count": 7,
+      "retweet_count": 3
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124993988662841344/img/b6OZsKFTRgefPWTI.jpg"
+  },
+  {
+    "id": "2124972391306559555",
+    "url": "https://x.com/MaksimOlekhno/status/2124972391306559555",
+    "author_name": "Maksim Olekhno",
+    "author_handle": "@MaksimOlekhno",
+    "created_at": "2026-11-23T21:04:32.000Z",
+    "text": "Who's on GLM 5.4 here? 🦖\n\nAI agents made this dinosaur short in one evening, all in the cloud. My laptop did nothing heavier than editing.\n\nHow we built it, what it cost, and everything that broke 👇\n\n2/\nStep 1: real 3D in Blender.\nGemini Neon (Antigravity) built the scene from https://t.co/pujaMgcdon",
+    "model_or_tool": "Gemini 4 Neon (Antigravity), Blender and AI agents",
+    "what_they_built": "A short dinosaur film made by AI agents in one evening in the cloud, starting with a real 3D scene built in Blender by Gemini 4 Neon, with a thread on cost and what broke.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 1,
+      "impression_count": 327,
+      "like_count": 1,
+      "quote_count": 1,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124972231696535552/img/vI-ScThJG09NZKjx.jpg"
+  },
+  {
+    "id": "2124918219341230407",
+    "url": "https://x.com/kinderlayer/status/2124918219341230407",
+    "author_name": "Kinder",
+    "author_handle": "@kinderlayer",
+    "created_at": "2026-11-23T17:29:17.000Z",
+    "text": "this is f*cking fascinating - I made Claude play chess against itself. Claude Opus 5.5 vs Claude Fable 5.2, full game, every move scored by Stockfish.\n\nboth held ~95%+ accuracy. near grandmaster. for 60 moves neither one blinked.\n\nthen it came down to a king and a single rook. https://t.co/emrbEpg03k https://t.co/0OVb4fpVIU",
+    "model_or_tool": "Claude Opus 5.5 and Claude Fable 5.2",
+    "what_they_built": "A full chess game between Claude Opus 5.5 and Claude Fable 5.2, every move scored by Stockfish; the maker says both held about 95% accuracy for 60 moves.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 101,
+      "impression_count": 89352,
+      "like_count": 111,
+      "quote_count": 1,
+      "reply_count": 29,
+      "retweet_count": 3
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124917717295673344/img/KVxDjI3w-uFquvZA.jpg"
+  },
+  {
+    "id": "2124816283774374109",
+    "url": "https://x.com/exploraX_/status/2124816283774374109",
+    "author_name": "m0h",
+    "author_handle": "@exploraX_",
+    "created_at": "2026-11-23T10:44:13.000Z",
+    "text": "🚨 zAI just launched GLM-5.4, its first loop transformer model.\n\nand it built this game entirely from code.\n\ni'll be running more tests to see how well the model performs.\n\nwhat do you guys think this model would beat opus 5.5 and GPT-6.2 sol? https://t.co/C5untsDKv3 https://t.co/tjKDIUA8AI",
+    "model_or_tool": "GLM-5.4 (Z.ai)",
+    "what_they_built": "A game built entirely from code by Z.ai’s new GLM-5.4, posted on its launch day as a first test.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 4,
+      "impression_count": 1906,
+      "like_count": 14,
+      "quote_count": 0,
+      "reply_count": 6,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124814613069922304/img/pVUXOFj30y6XgjuZ.jpg"
+  },
+  {
+    "id": "2124797603661427123",
+    "url": "https://x.com/thegenioo/status/2124797603661427123",
+    "author_name": "Hamza",
+    "author_handle": "@thegenioo",
+    "created_at": "2026-11-23T09:30:00.000Z",
+    "text": "I was doing this payout forecast thing inside T3 Code manually which wasn't as smooth experience\n\nSo I wanted to make a widget that stays in front of me\n\nBuilt this widget with Gemini 4 Neon inside T3 Code in one go (did some UI changes as per my liking later)\n\nThis is so cool, https://t.co/6SgDE5YRB5",
+    "model_or_tool": "Gemini 4 Neon in T3 Code",
+    "what_they_built": "A desktop widget that keeps a payout forecast in view, built in one go with Gemini 4 Neon inside T3 Code.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 2,
+      "impression_count": 499,
+      "like_count": 6,
+      "quote_count": 0,
+      "reply_count": 3,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/media/HXzLmBQaIAAddno.jpg"
+  },
+  {
+    "id": "2124762348556787848",
+    "url": "https://x.com/MengTo/status/2124762348556787848",
+    "author_name": "Meng To",
+    "author_handle": "@MengTo",
+    "created_at": "2026-11-23T07:09:54.000Z",
+    "text": "A 19-min tutorial on how I made this game with Fable 5.2\n\nFull video and all the skills here: https://t.co/JqmkI8ILtt https://t.co/SqE9HXyxyk https://t.co/N2PnBYSXmD",
+    "model_or_tool": "Claude Fable 5.2",
+    "what_they_built": "A game made with Fable 5.2, shared with a 19-minute tutorial and the skills used to build it.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 390,
+      "impression_count": 21692,
+      "like_count": 268,
+      "quote_count": 2,
+      "reply_count": 26,
+      "retweet_count": 21
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124761499956854784/img/U3y0all3mAcMK-NC.jpg"
+  },
+  {
+    "id": "2124510714945507832",
+    "url": "https://x.com/camperaigg/status/2124510714945507832",
+    "author_name": "camper 🦎🎣",
+    "author_handle": "@camperaigg",
+    "created_at": "2026-11-22T14:30:00.000Z",
+    "text": "🪓I made this 20-second pixel-art duel with GPT-6.2 Astra in Codex. Three cuts took 38 minutes of build time. Estimated model cost was $8.00.\n\n14 impact shots. 183 sound placements.\n\n#PixelArt #Anime #SoundDesign #GameAudio #Codex https://t.co/NXBXRFvgHU",
+    "model_or_tool": "GPT-6.2 Astra in Codex",
+    "what_they_built": "A 20-second pixel-art duel with 14 impact shots and 183 sound placements, built in 38 minutes of build time for an estimated $8 in model cost.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 317,
+      "like_count": 3,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124461822510260224/img/SVAcmiTelG_CLHrb.jpg"
+  },
+  {
     "id": "2124321250164006914",
     "url": "https://x.com/intheworldofai/status/2124321250164006914",
     "author_name": "WorldofAI",
@@ -98,145 +238,5 @@
       "retweet_count": 13
     },
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2124184319916744704/img/NeE4qMt6RXxcgTXe.jpg"
-  },
-  {
-    "id": "2124153573718307003",
-    "url": "https://x.com/M__Houser/status/2124153573718307003",
-    "author_name": "Mike Houser",
-    "author_handle": "@M__Houser",
-    "created_at": "2026-11-21T14:50:51.000Z",
-    "text": "Two months ago, I quit my job to make games with AI and spent my last $1,400. Now I’m profitable and can keep making games.\n\nThe response to my newest game AOD - Age of Dragon reveal was incredible.\n\nI built it solo in just a few days with Opus 5.5 and Fable 5.2. Since then, I’ve https://t.co/3Ip6wi5MMe",
-    "model_or_tool": "Claude Opus 5.5 and Fable 5.2",
-    "what_they_built": "AOD - Age of Dragon, a solo-built open-world fantasy game the maker says already has over 150 quests, built in a few days and expanded daily.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 853,
-      "impression_count": 504926,
-      "like_count": 1835,
-      "quote_count": 37,
-      "reply_count": 268,
-      "retweet_count": 83
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124151533650718720/img/QvVpCf7sUl1j038k.jpg"
-  },
-  {
-    "id": "2123989830447022140",
-    "url": "https://x.com/0interestrates/status/2123989830447022140",
-    "author_name": "rahul",
-    "author_handle": "@0interestrates",
-    "created_at": "2026-11-21T04:00:12.000Z",
-    "text": "I built Blinky - a screenshot organizer that runs fully locally on my mac and is powered by Inkling 2 Mini from @thinkymachines \n\ni like to bookmark things by screenshotting them. but finding and organizing those screenshots gets really annoying\n\nnow with Blinky, Inkling 2 mini https://t.co/wsWqrXYDt1 https://t.co/EUn0TFDTpc",
-    "model_or_tool": "Inkling 2 Mini (Thinking Machines)",
-    "what_they_built": "Blinky, a Mac screenshot organiser that runs fully locally with Inkling 2 Mini, renaming and describing each new screenshot so it can be found by describing it.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 1336,
-      "impression_count": 98297,
-      "like_count": 1381,
-      "quote_count": 7,
-      "reply_count": 69,
-      "retweet_count": 51
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123989276480421888/img/HHRsraWHyVADxLfy.jpg"
-  },
-  {
-    "id": "2123982460090503626",
-    "url": "https://x.com/parhelion318/status/2123982460090503626",
-    "author_name": "Dr. Apolotary",
-    "author_handle": "@parhelion318",
-    "created_at": "2026-11-21T03:30:54.000Z",
-    "text": "I've always wanted to make a slow bio-inspired synth. Here's a simulated plant that grows based on location, time, and weather simulation, producing unique sounds over days.\n\nMade with Fable 5.2 + Opus 5.5 https://t.co/i5lmZsSdcJ",
-    "model_or_tool": "Claude Fable 5.2 and Opus 5.5",
-    "what_they_built": "A slow, bio-inspired synth: a simulated plant that grows with location, time and weather and makes changing sounds over days.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 112,
-      "impression_count": 5688,
-      "like_count": 198,
-      "quote_count": 4,
-      "reply_count": 10,
-      "retweet_count": 24
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123982314959261696/img/ZLMgEuLEZfXCj7YH.jpg"
-  },
-  {
-    "id": "2123912627063779719",
-    "url": "https://x.com/_BenRatliff/status/2123912627063779719",
-    "author_name": "Ben Ratliff",
-    "author_handle": "@_BenRatliff",
-    "created_at": "2026-11-20T22:53:25.000Z",
-    "text": "Beadle is a personal Mac and iPhone app I built in Claude Code that attends my week: worship planning, doctrinal Standards, ESV, reference works, task lists, weather, health info, schedule. All in one place. Took me a couple days of letting it run in the background when I was at https://t.co/AYlwjHZkJo",
-    "model_or_tool": "Claude Code (Fable 5.2)",
-    "what_they_built": "Beadle, a personal Mac and iPhone app for planning the week, with reference works, tasks, weather and schedule, kept local to the maker’s devices.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 72,
-      "impression_count": 6804,
-      "like_count": 46,
-      "quote_count": 3,
-      "reply_count": 16,
-      "retweet_count": 1
-    },
-    "preview": "https://pbs.twimg.com/media/HXmj_eraQAArQo_.jpg"
-  },
-  {
-    "id": "2123910688695566729",
-    "url": "https://x.com/sshayahmet/status/2123910688695566729",
-    "author_name": "Serik",
-    "author_handle": "@sshayahmet",
-    "created_at": "2026-11-20T22:45:43.000Z",
-    "text": "I built Red Five, a pixel-art Death Star trench run, with GPT-6.2 Astra. The whole game fits in one HTML file and used about 8% of my weekly Codex quota.\n\nFree flight sounded fun until I couldn’t find anything to shoot 😂 So I had Astra turn it into a Star Fox-style trench run. https://t.co/fa1f1NX7Pu",
-    "model_or_tool": "GPT-6.2 Astra in Codex",
-    "what_they_built": "Red Five, a pixel-art Death Star trench-run game in a single HTML file, built in three passes over about 1 hour 22 minutes.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 137,
-      "like_count": 1,
-      "quote_count": 0,
-      "reply_count": 2,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123910541613899777/img/vj1WkqFLfo6hkdnE.jpg"
-  },
-  {
-    "id": "2123790017440964622",
-    "url": "https://x.com/hraness/status/2123790017440964622",
-    "author_name": "hraness",
-    "author_handle": "@hraness",
-    "created_at": "2026-11-20T14:46:12.000Z",
-    "text": "i've been producing electronic music for 15 years in @Ableton. i asked claude to make a song for me. we started from scratch. first i built a fully agentic DAW, where every element is programmable. then i built a library of synthesized instruments and effects. building a vocal https://t.co/syHuVia7XR https://t.co/LO9lC11u9z",
-    "model_or_tool": "Claude Opus 5.5, with some Fable 5.2",
-    "what_they_built": "A fully programmable, agentic music studio with synthesised instruments and a vocal synth, then an album produced by directing Claude over a month.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 1175,
-      "impression_count": 205170,
-      "like_count": 811,
-      "quote_count": 61,
-      "reply_count": 187,
-      "retweet_count": 52
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123781713486602240/img/_LpNhYAO9871z-MC.jpg"
-  },
-  {
-    "id": "2123774006683709684",
-    "url": "https://x.com/thomas_guilcher/status/2123774006683709684",
-    "author_name": "Thomas Guilcher-Trouche",
-    "author_handle": "@thomas_guilcher",
-    "created_at": "2026-11-20T13:42:35.000Z",
-    "text": "A lot of you asked how I made those 2.5D environments in Godot, so here’s a video tutorial 😉\n\nI used GPT-6.2 Astra Max with ImageGen in Codex. Both prompts are in the video.\n\nHave fun building and share your creations 😄\n\nGrab the skill here 👇🏻\nhttps://t.co/rAjokCwaQd https://t.co/XZwmtjy7ad",
-    "model_or_tool": "GPT-6.2 Astra with ImageGen in Codex",
-    "what_they_built": "2.5D game environments in Godot, shared as a video tutorial with both prompts and a reusable skill.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 387,
-      "impression_count": 11768,
-      "like_count": 251,
-      "quote_count": 3,
-      "reply_count": 15,
-      "retweet_count": 20
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2123773344352792576/img/evaOpkTXg7wRUMHJ.jpg"
   }
 ]
