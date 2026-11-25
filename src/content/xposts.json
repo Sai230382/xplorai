@@ -1,5 +1,32 @@
 [
   {
+    "name": "OpenClaw🦞",
+    "handle": "openclaw",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2017100664984186880/orbYx-3U_normal.jpg",
+    "text": "The best AI agents still fail about 4 in 10 everyday tasks.\n\nShellBench, out today: 100 real-world tasks, 12 models, 5 harnesses, 53,100 graded runs.\n\nTop score: 62.5%. Passing all three attempts: 48.8%.\n\nOpen-source harnesses held their own.\n\nhttps://t.co/KFffm04Ts6",
+    "url": "https://x.com/openclaw/status/2125326970976366734",
+    "postedAt": "2026-11-24T20:33:31.000Z",
+    "take": "Even the best agent got everyday chores fully right about six times in ten. Test a task three times before you let it run alone."
+  },
+  {
+    "name": "Felix Rieseberg",
+    "handle": "felixrieseberg",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1544558915819487233/qMrauBqx_normal.jpg",
+    "text": "Big news: You can now build and share Mac & Windows apps with Claude. No coding skills needed!\n\nThese apps can use OS APIs, connectors, and Claude. If you got ideas, you can now make Claude-powered apps! \n\nI made some fun demos: https://t.co/aKzHuVxYZ3 https://t.co/0BuddittfE",
+    "url": "https://x.com/felixrieseberg/status/2125310111149416682",
+    "postedAt": "2026-11-24T19:26:31.000Z",
+    "take": "A Claude artifact can now sit in your dock as an app. Give full computer access only to apps you or your colleagues built."
+  },
+  {
+    "name": "Chandu Thota",
+    "handle": "ChanduThota",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1735903526885429248/QJRGkSnB_normal.jpg",
+    "text": "We are making Workspace MCP servers and the Workspace CLI generally available today, alongside Google Cloud Agent Gateway.\n\nTraditional REST APIs were built for human-paced apps.\n\nNow AI agents get a standard path into Workspace with DLP checks and human in the loop controls (HITL) built in!   🧵1/3",
+    "url": "https://x.com/ChanduThota/status/2125275496355348799",
+    "postedAt": "2026-11-24T17:08:58.000Z",
+    "take": "Agents that read Gmail or Drive through the old APIs must switch to Google’s MCP servers by 1 February 2027. Find yours now."
+  },
+  {
     "name": "Reuters",
     "handle": "Reuters",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",

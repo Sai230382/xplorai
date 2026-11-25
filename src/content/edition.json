@@ -1,262 +1,263 @@
 {
-  "number": 60,
-  "edition": "Briefing 60",
-  "date": "24 November 2026",
-  "dateISO": "2026-11-24",
-  "toolsPulseDate": "24 November 2026",
+  "number": 61,
+  "edition": "Briefing 61",
+  "date": "25 November 2026",
+  "dateISO": "2026-11-25",
+  "toolsPulseDate": "25 November 2026",
   "kicker": "Today in AI",
-  "title": "Anthropic launches Claude Ship to review, fix and approve code. Nvidia brings back Jensen Huang and its shares jump 31.5%, ChatGPT’s Chat tab moves to GPT-6.2, and Claude puts connectors and skills together as plugins. An Anthropic study finds AI slowing hiring rather than causing layoffs, two US states sue SpaceX over Grok deepfakes, and Z.ai releases GLM-5.4.",
-  "summary": "Claude Ship, in beta for Team and Enterprise on GitHub, reviews pull requests, fixes failing checks and approves routine changes a team’s policy allows. Nvidia reinstated Jensen Huang as chief executive after pressure from President Trump; its shares closed up 31.5%. ChatGPT’s Chat tab is moving to a version of GPT-6.2 Sol for paid users, and GPT-5.6 retires on 23 December. Claude’s connectors and skills now live together as plugins, with Team plans getting the change from 30 November. Anthropic’s interviews with 58 customers found few AI layoffs but two-thirds hiring less. Virginia and Oregon sued SpaceX over sexual deepfakes made with Grok, and Z.ai released GLM-5.4, a ‘loop transformer’ model, in its coding plan.",
-  "uncertainty": "Claude Ship’s approval agent and PR Steward are in beta, and Anthropic’s figures on its own team are self-reported. Nvidia’s share price will move; its investigations and the 3 December Senate hearing are still ahead. GPT-6.2 scores are OpenAI’s own internal tests. The Anthropic study is interviews with its own customers, not a random sample. The state lawsuits are allegations that courts have not yet tested. Z.ai has published no coding benchmarks for GLM-5.4 itself, and its open weights have no date.",
+  "title": "Google tells AI agents to reach Gmail and Drive through its new MCP servers from 1 February 2027. A new test finds the best agents finish about six in ten everyday tasks, and Claude artifacts become Mac and Windows apps. The UK warns of AI-run attacks on old weaknesses, Anthropic closes below its IPO price, Tidal bans AI-only music, and Meta’s Muse goes shopping in the UK.",
+  "summary": "Google made its Workspace MCP servers and CLI generally available, with admin confirmations and audit logs, and says agents must use them instead of the REST APIs from 1 February 2027. In ShellBench, GPT-6 Astra led at 62.5% of 100 everyday tasks but passed all three tries only 48.8% of the time. Claude can now install an artifact as a Mac or Windows app with tiered permissions. The UK’s NCSC reports a marked rise in attacks run by AI agents on leaked keys, default passwords and weak APIs. Anthropic’s shares closed at $81.91, under the $83 IPO price. Tidal will remove tracks it finds wholly AI-generated from 9 December, and Meta’s Muse agent launched in the UK and now shops Walmart’s Black Friday deals in the US.",
+  "uncertainty": "Google has not published Scaled-tier prices, and the MCP rollout takes two weeks. ShellBench’s full paper is not yet out, its tasks were not run in Muse, Dots or Claude Duet’s own apps, and its costs are estimates. Install as app is a beta, and Anthropic does not review apps. The NCSC does not give attack counts. Share prices will move. Tidal’s detection is its own, and TechCrunch gives 27 million AI tracks today but more than 29 million to be removed by year end. Meta’s safety claims for Muse are its own.",
   "stats": {
     "filtered": 7,
     "verified": 7,
-    "themes": 4
+    "themes": 5
   },
   "stories": [
     {
-      "id": "claude-ship",
+      "id": "workspace-mcp-agents",
       "topic": "tools",
-      "theme": "Anthropic’s Claude Ship reviews pull requests, fixes them and approves the routine ones a team’s written policy allows",
-      "changed": "On 23 November 2026 Anthropic launched Claude Ship in beta for Claude Team and Enterprise customers whose code is on GitHub. It has three parts. Code Review, already generally available, checks pull requests and posts findings. PR Steward, new and in beta, works on failing automated checks, merge conflicts and review comments, and after every push says what it changed and how to undo it; it is designed not to approve or merge. Claude Approvals, also in beta, reads an approval policy the team writes as a file in the repository, approves routine changes the policy allows and sends the rest to the people it names. Anthropic recommends starting it in observe mode, where it posts its decision but approves nothing. Developers can also type /ship in Claude Code to push a change, open the pull request and have Claude work on feedback and failing checks. It is billed on tokens, with spend limits for Code Review and PR Steward, and is not available to organisations using zero data retention, the HIPAA setup or customer-managed encryption keys. Anthropic says that on its Claude Code team, merged pull requests more than doubled from June to September while the share reverted fell by more than 40%.",
-      "matters": "Code is now written faster than people can review it. Claude Ship moves review, fixes and some approvals to AI under rules a team writes down, so the real question becomes which changes still need a person.",
-      "imply": "Letting an AI approve code is a policy decision, not just a setting. Costs grow with the number and size of pull requests, and a policy that uses Claude’s review triggers billed reviews even in observe mode.",
+      "theme": "Google opens official MCP servers and a CLI so AI agents can work in Gmail, Drive and Docs, and says agents must use them from 1 February 2027",
+      "changed": "On 24 November 2026 Google made its Workspace MCP servers and the official Workspace CLI generally available. The MCP servers are run by Google and let cloud and web-based AI agents call ready-made tools in Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and Tasks, with Keep coming soon. The CLI brings the same tools to terminal agents on a laptop, a virtual machine or a sandbox, with packaged agent skills and scoped sign-in. Admins get new controls under Security > API Controls in the Admin console: which outside agents may connect, rules that make people confirm sensitive actions such as sharing data or reading external files, and audit logs of what agents did. Existing data loss prevention rules apply automatically. A new Workspace AI Tools Addendum bars agents from storing some data taken from Workspace for long periods and from scraping. The big change: AI agents must use the MCP servers instead of calling Workspace REST APIs directly, with technical enforcement from 1 February 2027. Google also set two usage tiers: Standard, free with published limits, and Scaled, billed above daily free allowances from 1 April 2027. Google says over 99% of active developers are within the Standard tier.",
+      "matters": "Gmail, Drive and Calendar are where much office work lives. Google is now setting the official road for AI agents into that data, with admin approval, confirmations and logs built in, and closing the side roads.",
+      "imply": "Any home-built agent or AI tool that reads Workspace through the regular APIs has until 1 February 2027 to move. For admins, agents become something you approve and audit like any other app, not a quiet script with an API key.",
       "uses": [
-        "Write down which folders or kinds of change always need a human, such as payments, security or database migrations, before switching approvals on.",
-        "Run Claude Approvals in observe mode for a few weeks and compare its decisions with your reviewers’.",
-        "Set a monthly spend limit per repository and check the bill after the first busy week."
+        "List every AI tool or script in your company that reads Gmail, Drive or Calendar, and ask its owner whether it uses the REST APIs.",
+        "Admins: set confirmation rules for sharing and external files before switching on new agents.",
+        "Developers: mark OAuth clients used by agents as agentic, and check the new usage dashboard for projects near the free limits."
       ],
-      "example": "A platform team lets Claude approve documentation and test-only changes, requires two engineers on anything touching the billing service, and keeps the policy file in the repository so changes to the rules are reviewed too.",
-      "audience": "Engineering managers, developers on Claude Team or Enterprise plans, and security and compliance leads who sign off on code changes.",
-      "watch": "How many teams move from observe mode to letting Claude approve, how mistakes are caught, and whether GitHub and OpenAI answer with similar approval agents.",
+      "example": "An operations lead finds that the team’s invoice-chasing bot reads Gmail through the API. The developer moves it to the Workspace MCP server in December, and the admin adds a rule that any email it sends to a new address needs a person to confirm.",
+      "audience": "Google Workspace admins, IT and security teams, and developers who build or buy AI agents that touch company email and files.",
+      "watch": "The rollout to all domains over the next two weeks, which outside AI tools switch to the MCP servers first, and the pricing of the Scaled tier before April 2027.",
       "source": {
-        "title": "Anthropic: Introducing Claude Ship, 23 November 2026",
-        "url": "https://claude.com/resources/articles/introducing-claude-ship",
-        "quote": "Claude can approve routine changes on its own if the policy allows it, or can require deeper human sign-off for certain scenarios."
+        "title": "Google Workspace Updates: Simplifying agent access while keeping organizations in control: MCP servers, CLI, standardized usage tiers, and admin policies, 24 November 2026",
+        "url": "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html",
+        "quote": "AI agents or similar access tools must use MCP to access Workspace data, rather than calling Workspace REST APIs directly. Technical enforcement begins on February 1, 2027."
       }
     },
     {
-      "id": "nvidia-huang-returns",
-      "topic": "money",
-      "theme": "Nvidia brought back Jensen Huang as chief executive after pressure from President Trump, and its shares jumped 31.5% in a day",
-      "changed": "Nvidia said on Monday 23 November 2026 that its board had unanimously reinstated Jensen Huang as chief executive, 11 days after he resigned over revelations of extramarital affairs, including one with a Chinese businesswoman accused of ties to Beijing; its filing dates the board’s decision to 22 November. Reuters says the reversal came under pressure from President Trump, who told CNBC his intervention was “very important”. The board said US government input left it confident that his return “poses no national security risk”. Nvidia shares closed up 31.5%, adding nearly $1 trillion in market value, though not enough to erase all losses since he left on 12 November. CNBC says the Nasdaq rose 6.51%, its best day since April 2025, with Dell up 20.46% and CoreWeave up 22.32%. Lawmakers from both parties objected. The board has set up committees on possible foreign intelligence targeting of Huang and on export controls, and Huang will testify at a public Senate hearing on 3 December. Reuters also reports that some customers in China had cancelled or delayed orders while he was away.",
-      "matters": "Nvidia makes most of the chips behind AI services, and its share price has become a gauge for the whole AI trade. One day’s rally changes no products, but it eases pressure on AI firms that depend on investors.",
-      "imply": "The hard questions remain: accounting and export-control probes, a shareholder lawsuit and doubts about the board’s independence. Expect more swings, especially around the Senate hearing.",
-      "uses": [
-        "Do not read one day’s rally as the end of AI budget pressure; keep the supplier checks you started last week.",
-        "If you rent GPU cloud capacity, ask your provider how export rules and chip supply could affect your contract.",
-        "Note the 3 December hearing if your firm relies on Nvidia hardware or GPU cloud providers."
-      ],
-      "example": "A finance lead updating next year’s AI budget keeps two price scenarios for GPU cloud time instead of assuming either last week’s fall or this week’s rebound will last.",
-      "audience": "Finance teams, IT buyers of cloud and GPU capacity, and anyone following AI company valuations.",
-      "watch": "The Senate Banking Committee hearing on 3 December, the board’s investigations, and whether customers in China come back.",
-      "source": {
-        "title": "Reuters: Huang returns as Nvidia CEO after Trump intervention in abrupt board reversal, 23 November 2026",
-        "url": "https://www.reuters.com/3fec1b0a85a0/technology/nvidia-reinstates-jensen-huang-ceo-2026-11-23/",
-        "quote": "The stock closed up 31.5%, adding nearly $1 trillion in market value, vaulting the chipmaker back to the position of the second-biggest company by market value after Apple"
-      }
-    },
-    {
-      "id": "chatgpt-gpt-6-2-chat",
-      "topic": "tools",
-      "theme": "ChatGPT’s everyday Chat tab moves to GPT-6.2 for paid users, and older GPT-5.6 models retire on 23 December",
-      "changed": "On 23 November 2026 OpenAI began rolling out a version of GPT-6.2 Sol tuned for everyday conversation to the Chat tab for Plus, Pro, Business and Enterprise users worldwide, replacing GPT-6 there; Enterprise availability depends on admin settings. The models in ChatGPT Work and Codex do not change. In OpenAI’s own tests it scored 71.7% on image understanding against 47.4% for GPT-6, followed instructions on especially hard prompts 78.1% of the time against 62.5%, and at the lowest reasoning setting scored 65% on expert-level tasks against 52%. On an internal version of the BrowseComp web-search test it scored 64.5% against 54.4% at the Extra high setting. OpenAI says it is also better at offering useful follow-ups, such as telling you when a price drops. Separately, ChatGPT said GPT-5.6 Sol will be retired from Chat, Work and Codex, and GPT-5.6 Terra from Work and Codex, on 23 December.",
-      "matters": "This is the model most paid ChatGPT users will now meet by default. Better image reading and instruction following help with ordinary work: screenshots, forms, charts and long briefs.",
-      "imply": "Answers to the same prompt may change. Saved prompts or team workflows that rely on GPT-5.6 have a month before that model goes.",
-      "uses": [
-        "Re-run two or three prompts your team relies on and check the output still fits.",
-        "Try it on a photo of a form, chart or sign, and check what it read against the original.",
-        "If anyone uses GPT-5.6 in Work or Codex, move and test their work before 23 December."
-      ],
-      "example": "A support lead pastes a customer’s screenshot of an error message and asks ChatGPT to draft a reply, then checks the error code it read against the image before sending.",
-      "audience": "Paid ChatGPT users, workspace admins and teams with saved prompts or custom GPTs.",
-      "watch": "Whether free users get it, and how OpenAI handles the GPT-5.6 switch-off for teams that chose that model.",
-      "source": {
-        "title": "OpenAI Help Center: ChatGPT release notes, 23 November 2026",
-        "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-        "quote": "In our tests in the Chat tab, it scored 71.7% on image understanding, up from 47.4% for GPT‑6."
-      }
-    },
-    {
-      "id": "claude-plugins",
-      "topic": "tools",
-      "theme": "Claude puts connectors and skills together as plugins, and Team admins should check one setting before 30 November",
-      "changed": "On 23 November 2026 Anthropic brought connectors (links to tools such as email, drives or a CRM) and skills (saved instructions that teach Claude a task) together as plugins. In Claude, Customize in the sidebar becomes Plugins, and one Plugins page replaces the separate Skills, Connectors and Plugins tabs, with filters for skills or connectors and labels marking public plugins as Verified or Community. Claude says more than 10,000 plugins are available to browse. The change is live on Free, Pro, Max and Ultra plans; Team plans get it gradually from 30 November and Enterprise plans in the following weeks. Existing connectors, skills and plugins stay installed, but removing a plugin that bundles a connector does not disconnect that connector. From 30 November, Team and Enterprise organisations that have Skills switched off will also have plugins blocked in the Claude Desktop app.",
-      "matters": "One place to find and switch on add-ons makes it easier to plug Claude into the tools you work in, and also easier to install something written by a stranger.",
-      "imply": "Admins have a decision to make before 30 November, and users should check what a Community plugin can reach before installing it. Under the HIPAA setup, plugins, skills and connectors are not covered by the agreement.",
-      "uses": [
-        "Open Plugins, filter to connectors and remove the ones you no longer use; disconnect them separately.",
-        "Prefer Verified plugins for work data, and read what a Community plugin connects to first.",
-        "Admins: decide before 30 November whether to turn Skills on so plugins keep working in Claude Desktop."
-      ],
-      "example": "An IT admin at a 40-person firm turns Skills on before 30 November, then shares a short list of approved plugins for the team’s CRM and shared drive.",
-      "audience": "Claude users, Team and Enterprise admins, and security teams that vet add-ons.",
-      "watch": "The Team rollout from 30 November, and how Anthropic reviews Community plugins.",
-      "source": {
-        "title": "Claude Help Center: Manage plugins, skills, and connectors from one Plugins page, November 2026",
-        "url": "https://support.claude.com/en/articles/17740565-manage-plugins-skills-and-connectors-from-one-plugins-page",
-        "quote": "Removing a plugin that packages skills and a connector doesn't disconnect its connector, so you'll need to disconnect it separately."
-      }
-    },
-    {
-      "id": "anthropic-working-with-ai",
+      "id": "shellbench-everyday-agents",
       "topic": "work",
-      "theme": "Anthropic interviewed 58 business customers: few AI layoffs, but two-thirds say AI means they are hiring less",
-      "changed": "On 23 November 2026 Anthropic economists published “Working with AI”, based on 66 interviews with people at 58 of its enterprise customers. They found very few layoffs driven by AI: people at only two companies had seen AI automation fully eliminate a job, and five described pushing out staff who would not adopt AI. But people at two-thirds of the companies said they were hiring less because of AI, mostly by not adding staff they would otherwise have needed to grow, while 10 companies were hiring more, mainly for AI implementation and IT support. Nine had cut contracted work such as software development, customer service, legal counsel and back-office jobs, much of it already offshore. Of 100 pieces of software interviewees described building with AI, 80% automated work that had been manual and 20% replaced software bought from vendors. The biggest gains came where companies reorganised work, for example giving people ownership of whole workflows and moving staff to the tasks AI cannot do, such as review and sales.",
-      "matters": "The first effect on jobs here is fewer openings, not firings. That falls first on graduates, contractors and outsourcing firms rather than on current staff.",
-      "imply": "These are Anthropic’s own customers, not a random sample, and Anthropic sells the tools. Read it as interviews that show patterns, not a count of jobs.",
+      "theme": "A new test of everyday agent work finds the best models finish about six in ten tasks, and fewer than half every time",
+      "changed": "On 24 November 2026 the OpenClaw Foundation, with researchers from Parsewave, Hugging Face, Red Hat, UC Berkeley and others, published ShellBench, a test built from patterns in more than 10 million anonymised real agent conversations. Each of its 100 tasks starts with a short request and a messy workspace of emails, calendar exports, spreadsheets, receipts, chat logs and PDFs, often with outdated records or a phishing trap. On the 90 rubric-graded tasks, an answer only counts if it meets every requirement. Twelve models were run in five agent harnesses, 53,100 graded runs in all. GPT-6 Astra led at 62.5%, Claude Fable 5.2 scored 61.9% and GPT-6.1 Sol 61.4%. Astra completed 75.1% of tasks at least once in three tries but only 48.8% on all three. Across all runs, 15.7% failed at least one safety check, and 9.9% of otherwise correct runs still failed one. In one dinner-planning task, 522 of 531 attempts picked the right restaurant, but 331 failed only because they did not name the files supporting the group’s budget or timing, and just 152 met every requirement. Estimated cost per run was $1.10 for Astra, $0.83 for Fable 5.2 and $0.19 for GPT-6.1 Sol, while DeepSeek V4.1 Flash passed 39.7% at about five cents.",
+      "matters": "Personal and work agents are being sold to do inbox, calendar and expense chores. This is real evidence on how often they get such chores fully right, and how often they slip on safety.",
+      "imply": "Getting it right once is not the same as getting it right every time. A cheaper model can be almost as good, and leaving out the evidence is a failure even when the answer is right.",
       "uses": [
-        "If you manage a team, list which tasks AI now speeds up and which bottlenecks, like review or sales, now need more people.",
-        "Before automating a workflow from the top down, involve the experts who do it; the study found their resistance can stall these projects.",
-        "If you rely on outsourced back-office work, ask your provider how they use AI and what that means for price and quality."
+        "Run an agent on the same real task three times before trusting it to do that task unattended.",
+        "Ask agents to name the files or emails behind every answer, and check them on anything involving money.",
+        "Compare a cheaper model on your own tasks; here GPT-6.1 Sol came within 1.1 points of the leader at about a sixth of the cost."
       ],
-      "example": "An operations head at a law firm moves a paralegal from filing to checking AI-drafted documents, rather than hiring a second person for the growing caseload.",
-      "audience": "Managers, HR and workforce planners, early-career workers and buyers of outsourced services.",
-      "watch": "Whether official hiring data starts to show the same pattern, and whether other AI labs publish similar studies of their customers.",
+      "example": "A finance assistant uses an agent to match receipts to the expenses sheet, but sets it to list the receipt file for every line and reviews any payment it flags before anything is paid.",
+      "audience": "Anyone handing errands, expenses or inbox work to AI agents, and the teams choosing which model and agent tool to buy.",
+      "watch": "The full paper, promised soon, results for more models, and whether agent makers cite ShellBench scores for their own products.",
       "source": {
-        "title": "Anthropic (Nathan Wilmers, Maxim Massenkoff, Peter McCrory): Working with AI, 23 November 2026",
-        "url": "https://www.anthropic.com/research/working-with-ai",
-        "quote": "People at two-thirds of the companies we spoke to reported reduced hiring due to AI: as one person put it, “We may not be firing, but we’re not hiring.”"
+        "title": "OpenClaw (Vincent Koc): Introducing ShellBench, the benchmark for real-world tasks, 24 November 2026; reported by TechCrunch",
+        "url": "https://openclaw.ai/blog/shellbench",
+        "quote": "Averaged across harnesses, even the highest-performing models successfully completed only about six in ten tasks."
       }
     },
     {
-      "id": "grok-state-lawsuits",
-      "topic": "trust",
-      "theme": "Virginia and Oregon became the first US states to sue SpaceX over sexual deepfakes made with Grok",
-      "changed": "On 22 and 23 November 2026 the attorneys general of Oregon and Virginia filed separate consumer-protection lawsuits against SpaceX, which owns X and xAI (now SpaceX Super Intelligence), over Grok’s image tools. They allege that Grok could turn a single real photo into nude or sexual images of people, including children, without consent, that a “spicy mode” was promoted, and that the company misled users by saying strong safeguards were in place. Virginia cites a Center for Countering Digital Hate estimate that Grok created and posted about 3 million sexualised images on X between 29 December 2025 and 8 January 2026, about 23,000 of which appeared to show children. Both states want court orders for stronger safeguards, civil penalties, the return of profits and legal costs; Virginia also seeks restitution for consumers. SpaceX told CNBC it acts against accounts that try to break its safeguards and notifies law enforcement. CNBC says these are the first state lawsuits; SpaceX also faces private suits and probes in the UK, Spain, Ireland, France and California.",
-      "matters": "States are using ordinary consumer-protection law, not new AI laws, to hold an AI maker to its safety claims. Any company that markets an AI tool as safe could face the same test.",
-      "imply": "What a vendor says about its safeguards can become evidence. Firms that let staff or customers generate images should check that filters, reporting and takedowns actually work.",
-      "uses": [
-        "If your product generates images, test whether it can be made to alter a real person’s photo, and keep a log of what you block.",
-        "Check public safety claims on your website and in sales decks against what the product really does.",
-        "Set up a fast process for taking down abusive images and reporting them to the authorities."
-      ],
-      "example": "A marketing agency that uses an AI image tool bans uploads of real people’s photos without written consent and keeps each consent form on file.",
-      "audience": "Trust and safety teams, legal and marketing teams, and anyone deploying image-generation tools.",
-      "watch": "Whether the courts accept the cases, whether other states join, and whether SpaceX relies on Section 230, the US law that shields platforms from liability for users’ posts.",
-      "source": {
-        "title": "Virginia Office of the Attorney General: Attorneys General Jones and Rayfield file suit against SpaceX, 23 November 2026",
-        "url": "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform",
-        "quote": "With a single existing photograph, Grok could, and did, fabricate a realistic image or video of a person nude, or partially nude, or engaged in sexual activity, all without the individual’s knowledge or consent."
-      }
-    },
-    {
-      "id": "glm-5-4",
+      "id": "claude-artifact-apps",
       "topic": "tools",
-      "theme": "Z.ai’s GLM-5.4 runs its own layers twice to think deeper; you can try it in the GLM Coding Plan, but the weights are not out yet",
-      "changed": "On 23 November 2026 Z.ai (Zhipu) released GLM-5.4, its first flagship built as a ‘loop transformer’: at the 750B scale it runs 28 layers of its GLM-5 base twice, adding depth without adding parameters. It adds vision, accepting text, image, video and file inputs with a 1M-token context and up to 128K tokens of output, and aims at what Z.ai calls generalised coding, such as CAD, 3D modelling and games. It is available now in the GLM Coding Plan, ZCode and Z.ai Chat, with weekly quotas 1.5 times those of GLM-5.3. API access and open weights are promised after safety checks, with no date or licence given. VentureBeat says Z.ai published no coding benchmarks for GLM-5.4 itself; its controlled evidence comes from a 30B test model. One early tester said it took 431 minutes to finish his coding tests against 109 for Gemini 4 Neon, but recommended it for code review and hunting security bugs.",
-      "matters": "Chinese labs keep finding ways to get more out of a model without making it bigger. If the weights arrive, teams could run a strong coding model on their own servers.",
-      "imply": "For now it is a subscription product without published benchmarks. Speed is a known weak spot, and Z.ai says it can get caught in overly long reasoning.",
+      "theme": "Claude can now turn an artifact into a Mac or Windows app with its own icon, window and permissions",
+      "changed": "On 24 November 2026 Anthropic began rolling out “Install as app” in beta in Claude for Mac and Windows, on all plans. You describe a tool to Claude, try it as an artifact, then choose Install as app from the Share menu. It gets its own icon and window, can use Claude and your connectors, and updates when the artifact is edited; requests it makes to Claude count toward your plan’s limits. There are three permission levels: by default an app can do only what a browser page could; it can ask for app permissions such as notifications, global shortcuts or menu bar items; or it can ask for full computer access to run programs and read, change or delete files without asking each time. Permission covers only the current version, so Claude asks again after every update. Full access is allowed only for apps you made or, on Team and Enterprise, apps made by colleagues, and Anthropic does not review apps before they are installed. It is on by default for Team with full access off, and off on Enterprise until an owner turns it on. HIPAA-ready organisations cannot use it, and you must be online and signed in for an app to open.",
+      "matters": "Anyone who can describe a small tool can now have it sit in the dock like real software, without packaging or code signing. That is useful, and it is also a new way for unreviewed software to reach work computers.",
+      "imply": "Small internal tools, like a daily order tracker or meeting prep page, no longer need a developer. IT teams need a view on which permission levels staff may grant.",
       "uses": [
-        "If you already pay for the GLM Coding Plan, try it as a second reviewer on a pull request.",
-        "Give it slow, careful jobs like security review rather than quick edits.",
-        "Wait for the open weights and their licence before planning to run it yourself."
+        "Turn an artifact you open every day, such as a meeting prep page that pulls from your calendar, into an app with notifications.",
+        "Team and Enterprise admins: decide whether full computer access stays off, and who may share apps.",
+        "Before granting full access to a colleague’s app, read what it does; Anthropic does not review it."
       ],
-      "example": "A small security team runs GLM-5.4 overnight over one service’s code to list possible vulnerabilities, and an engineer checks each finding in the morning.",
-      "audience": "Developers on Z.ai plans, teams weighing open models, and security reviewers.",
-      "watch": "API pricing, the open-weight release and its licence, and independent benchmark results.",
+      "example": "A shipping coordinator builds a menu bar app listing today’s unshipped orders from a connected spreadsheet, and allows notifications only, not full computer access.",
+      "audience": "Knowledge workers who build small tools with Claude, and IT and security admins on Claude Team and Enterprise plans.",
+      "watch": "Whether companies allow full access, the first reports of a harmful shared app, and whether OpenAI or Google offer the same.",
       "source": {
-        "title": "VentureBeat: Z.ai’s GLM-5.4 aims to match models up to four times its size by running 28 layers twice, 23 November 2026",
-        "url": "https://venturebeat.com/technology/z-ais-glm-5-4-aims-to-match-models-up-to-four-times-its-size-by-running-28-layers-twice",
-        "quote": "GLM-5.4 loops 28 layers of the GLM-5 base for two iterations at the 750B scale, adapted from an already pre-trained model through continued training."
+        "title": "Anthropic: Turn artifacts into Mac and Windows apps, 24 November 2026",
+        "url": "https://claude.com/resources/articles/install-as-app",
+        "quote": "Anthropic doesn’t review apps before you install them, so only give full access to apps you trust."
+      }
+    },
+    {
+      "id": "ncsc-agentic-attacks",
+      "topic": "trust",
+      "theme": "The UK’s cyber agency sees a marked rise in attacks run by AI agents, hitting old, unfixed weaknesses in minutes",
+      "changed": "On 24 November 2026 the UK’s National Cyber Security Centre said that since September it has seen a marked rise in AI-assisted cyber attacks. Attackers are using “agentic offensive frameworks”, tools first built for authorised security testing, such as ARTEX, Cairn, PentAGI, RedAmon, Xalgorix and Darkmoon, paired with cheap open models or illegal API resellers. An AI model plans attack steps, runs ordinary hacking tools against a target, reads the results and adapts. Organisations in several sectors reported downtime or compromised systems. The NCSC stresses that none of the weaknesses are new: credentials committed to code repositories, misconfigured infrastructure code, default or missing passwords and weak APIs. What changed is speed and persistence at low cost: the agents go from discovery to exploitation in minutes and try every endpoint, parameter and credential they find. They are noisy for now, which makes them easier to spot. Its advice includes knowing what is exposed to the internet, putting services behind sign-in, rate-limiting by account rather than IP address, keeping secrets out of code, giving error messages that reveal little, and using decoys such as honeytokens.",
+      "matters": "Weaknesses that sat unnoticed for years can now be found and used in minutes by cheap automated tools. Forgotten servers and old test sites are where many of these attacks land.",
+      "imply": "Basic security hygiene is now urgent rather than a backlog item. AI does not need a new kind of flaw; it just finds the old ones faster.",
+      "uses": [
+        "Ask IT for a list of every internet-facing service, including old websites, and who owns each one.",
+        "Turn on secret scanning in code repositories so keys cannot be pushed by people or coding agents.",
+        "Put admin pages and internal tools behind company sign-in or a VPN instead of the open internet."
+      ],
+      "example": "A small software firm finds an old staging site still online with a default admin password, takes it offline the same day and moves its other test sites behind single sign-on.",
+      "audience": "IT and security teams, small business owners who run their own websites, and developers who publish code.",
+      "watch": "Whether attacks become quieter and harder to detect, and whether other national agencies issue similar warnings.",
+      "source": {
+        "title": "NCSC: Familiar weaknesses, exploited faster: defending against agentic cyber attacks, 24 November 2026",
+        "url": "https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks",
+        "quote": "What has changed, is how quickly and persistently threat actors can conduct attacks – at low cost – using these frameworks combined with cheap, capable open models or illegal API resellers."
+      }
+    },
+    {
+      "id": "anthropic-below-ipo",
+      "topic": "money",
+      "theme": "Anthropic’s shares close below their $83 IPO price on their fourth day of trading",
+      "changed": "Anthropic’s shares closed down 6.5% on Tuesday 24 November 2026 at $81.91, below the $83 price set for its initial public offering, Axios and CNBC report. The stock, ticker ANT, opened at $111.50 on the Nasdaq last Thursday after Anthropic raised $81.3 billion in what CNBC calls the largest offering of all time, and has fallen steadily since. TechCrunch reports it traded as low as $76 at midday. Nvidia and other chip and cloud stocks also fell on Tuesday, giving back part of Monday’s rally after Jensen Huang returned as Nvidia’s chief executive. Analysts starting coverage stayed positive: Canaccord Genuity rates it a buy with a $135 target, Wedbush outperform with $120, and Oppenheimer outperform with $150. TechCrunch notes that if the shares keep trading poorly, it could put pressure on private AI start-up valuations and other AI companies’ plans to list.",
+      "matters": "Anthropic is the first big pure AI lab on the stock market, so its price is read as a vote on AI business models. A weak price can make funding harder for the smaller AI suppliers many teams rely on.",
+      "imply": "Nothing about Claude changed this week. The pressure is on valuations, which can show up later in pricing, discounts and how fast young vendors can raise money.",
+      "uses": [
+        "If a young AI vendor is about to raise money, ask how long its current funding lasts before signing a multi-year deal.",
+        "Keep exports of data you store with AI suppliers, so a sale or shutdown does not strand you.",
+        "Staff paid partly in AI start-up shares: check what a lower valuation means for vesting and tax."
+      ],
+      "example": "A procurement lead renewing an AI note-taking tool from a small start-up asks for a data-export clause and a price lock, citing the market’s new caution.",
+      "audience": "Finance and procurement teams, founders raising money, and investors watching AI listings.",
+      "watch": "Whether ANT climbs back above $83, whether other AI listings are delayed, and the next round of AI start-up valuations.",
+      "source": {
+        "title": "CNBC: Anthropic closes below $83 IPO price, but analysts are still largely positive, 24 November 2026 (closing price from Axios)",
+        "url": "https://www.cnbc.com/2026/11/24/anthropic-stock-ipo-price.html",
+        "quote": "Shares of Anthropic closed down 6.5% on Tuesday, sending the stock below the artificial intelligence company’s $83 IPO price."
+      }
+    },
+    {
+      "id": "tidal-ai-music-ban",
+      "topic": "rules",
+      "theme": "Tidal will reject and remove music it finds is 100% AI-generated, after 43% of new deliveries turned out to be AI",
+      "changed": "On 24 November 2026 music streaming service Tidal said that from 9 December it will reject and remove any track it determines is wholly AI-generated, and will stop distributors from delivering such tracks. Music made with AI assistance is still allowed. Tidal’s music lead Robert Anderson said 43% of tracks delivered to it in the last 90 days were detected as AI-generated. TechCrunch reports that Tidal says 27 million tracks, 6.3% of its catalogue, are fully AI-generated, and 96% of those have no streams. Since June Tidal had labelled such tracks and paid them no royalties, which Anderson said was not enough. Tidal’s policy says it acts only on wholly AI-generated recordings to avoid false positives, will widen action as detection improves, and lets artists appeal if they did not use AI. Bandcamp has already banned AI music; Spotify and YouTube Music label it instead.",
+      "matters": "Platforms are starting to draw hard lines on fully AI-made content because the volume is crowding out real work. Other content platforms, from stock images to app stores, face the same flood.",
+      "imply": "“Made with AI help” and “made by AI” are becoming separate categories with different rules. Detection is imperfect, so appeals and records of how work was made start to matter.",
+      "uses": [
+        "If you produce music, audio or video for clients, keep records of your process in case a platform flags it.",
+        "Marketing teams using AI music in ads or podcasts: check each platform’s rules before 9 December.",
+        "Use AI for drafts and parts, and keep a human-made element, if you publish on platforms with bans."
+      ],
+      "example": "A podcast producer who used an AI tool to sketch a theme tune re-records it with a session musician and keeps the project files in case the track is flagged.",
+      "audience": "Musicians, labels and distributors, and marketing and content teams that publish audio.",
+      "watch": "How many tracks are removed after 9 December, false-positive appeals, and whether Spotify or Apple Music move beyond labels.",
+      "source": {
+        "title": "TechCrunch: Tidal to ban and remove millions of AI-generated tracks as AI slop inundates music streaming, 24 November 2026; Tidal AI Policy",
+        "url": "https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/",
+        "quote": "at this scale, the authentic music and artists that Tidal subscribers are looking to listen to and discover get buried"
+      }
+    },
+    {
+      "id": "meta-muse-uk-shopping",
+      "topic": "tools",
+      "theme": "Meta’s Muse agent launches in the UK with British retailers, arrives in Instagram DMs, and shops Walmart’s Black Friday deals in the US",
+      "changed": "Meta made Muse, its personal AI agent, available to adults in the UK on 24 November 2026 on iOS, Android, muse.ai and WhatsApp. It is free, with paid plans for more use. It launches with UK partners including Marks & Spencer, Debenhams Group, Currys, Ocado Retail, Trainline, Sainsbury’s, ASOS, easyJet and Jet2. Meta says each Muse runs on its own virtual computer in the cloud, asks before important actions such as sending an email or making a purchase, cannot see passwords or card details, and pays through Onelink by Stripe or Shop Pay. The same day Meta began rolling out Muse inside Instagram DMs in the US, Canada, Mexico, Japan and Singapore, TechCrunch reports, and Walmart said US shoppers can now find and buy its Black Friday deals through Muse. Walmart says Muse gets no access to a customer’s shopping history, and shoppers can set spending limits and require approval before purchases.",
+      "matters": "Agents that buy things are moving from demos to big retailers, just in time for holiday shopping. Retailers are choosing sides: Walmart opens its store to agents while Amazon has moved to block outside ones.",
+      "imply": "Expect customers to arrive through agents rather than your website. For shoppers, spending limits and approval steps are the settings that matter.",
+      "uses": [
+        "Retailers: check how your site works when an agent, not a person, searches and fills the basket.",
+        "If you try Muse for shopping, set a spending limit and keep approval on for every purchase.",
+        "Customer service teams: prepare for refunds and complaints about orders an agent placed."
+      ],
+      "example": "A UK shopper asks Muse to rebook a Trainline journey and reorder a usual Ocado shop, approving each step on the phone before anything is paid.",
+      "audience": "Retail and e-commerce teams, customer service leads, and consumers in the UK and US trying shopping agents.",
+      "watch": "Black Friday results from agent shopping, whether more retailers open to agents, and how Amazon responds.",
+      "source": {
+        "title": "Meta: Introducing Muse in the UK: A Personal AI Agent You Control, 24 November 2026; TechCrunch on Instagram DMs and Walmart",
+        "url": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/",
+        "quote": "Muse asks for your go-ahead before important actions, like sending an email or making a purchase."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "Claude can approve code",
-        "body": "Claude Ship reviews and fixes pull requests, and approves routine ones your team’s policy allows."
+        "title": "Google sets an agent deadline",
+        "body": "Agents reaching Gmail, Drive or Docs must use Google’s MCP servers or CLI from 1 February 2027."
       },
       {
-        "title": "Huang is back at Nvidia",
-        "body": "The board reinstated him after Trump pushed. Shares closed up 31.5%, adding nearly $1 trillion."
+        "title": "Claude artifacts become apps",
+        "body": "Install a Claude artifact as a Mac or Windows app with its own icon, window and permissions."
       },
       {
-        "title": "ChatGPT moves to GPT-6.2",
-        "body": "The Chat tab gets GPT-6.2 for paid users. GPT-5.6 retires on 23 December."
+        "title": "Best agents fail 4 in 10 tasks",
+        "body": "In ShellBench, the top model finished 62.5% of everyday tasks, and 48.8% on all three tries."
       }
     ],
     "matters": [
       {
-        "title": "Hiring slows, not firing",
-        "body": "Two-thirds of 58 Anthropic customers say AI means hiring less; AI layoffs were rare."
+        "title": "Anthropic below its IPO price",
+        "body": "Shares closed at $81.91 on Tuesday, under the $83 IPO price, down 6.5% on the day."
       },
       {
-        "title": "States sue over Grok images",
-        "body": "Virginia and Oregon say SpaceX misled users about safeguards against sexual deepfakes."
+        "title": "AI agents find old gaps",
+        "body": "The UK’s NCSC sees a marked rise in agent-run attacks on leaked keys, default logins and weak APIs."
       },
       {
-        "title": "Claude plugins in one place",
-        "body": "Connectors and skills merge into plugins. Team plans get the change from 30 November."
+        "title": "Tidal removes AI-only music",
+        "body": "From 9 December, tracks Tidal judges 100% AI-generated are rejected and removed."
       }
     ],
     "watch": [
       {
-        "title": "Start approvals in observe mode",
-        "body": "Let Claude Approvals post decisions without approving until they match your reviewers."
+        "title": "Admins: review agent access",
+        "body": "Set confirmation rules and check agent audit logs under Security > API Controls in Workspace."
       },
       {
-        "title": "Re-test saved prompts",
-        "body": "Check key prompts on GPT-6.2, and move anything on GPT-5.6 before 23 December."
+        "title": "Run an agent task three times",
+        "body": "One success is not proof. Trust an agent with a chore only once it gets it right every time."
       },
       {
-        "title": "Admins: check Skills by 30 Nov",
-        "body": "If Skills are off, plugins stop working in Claude Desktop on Team and Enterprise."
+        "title": "Muse shops for UK users",
+        "body": "Meta’s agent launched with M&S, ASOS and easyJet, and asks before it buys. Set a spending limit."
       }
     ]
   },
   "chips": [
-    "Claude Ship",
-    "Code review",
-    "AI approvals",
-    "Nvidia",
-    "Jensen Huang",
-    "AI stocks",
-    "ChatGPT",
-    "GPT-6.2",
-    "GPT-5.6 retirement",
-    "Claude plugins",
-    "Connectors",
-    "AI and hiring",
-    "Grok",
-    "Deepfakes",
-    "GLM-5.4"
+    "Google Workspace",
+    "MCP",
+    "AI agents",
+    "Admin controls",
+    "ShellBench",
+    "Agent reliability",
+    "Claude",
+    "Desktop apps",
+    "NCSC",
+    "Cyber attacks",
+    "Anthropic stock",
+    "IPO",
+    "Tidal",
+    "AI music",
+    "Meta Muse",
+    "Agent shopping"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Anthropic, 23 Nov: Claude Ship beta (Team/Enterprise, GitHub): Code Review (GA), PR Steward (beta, won’t approve/merge, comments what changed and how to undo), Claude Approvals (beta, repo policy file, observe mode first); /ship in Claude Code; token billing, spend limits; not for ZDR/HIPAA/CMEK orgs; Claude Code team merged PRs >2x Jun–Sep, revert share down >40%; Enterprise credits ≥$10,000 if claimed by 15 Jan 2027. Reuters, TechCrunch, The Verge same day.",
+      "raw": "Google Workspace Updates, 24 Nov: Workspace MCP servers (Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat, Tasks; Keep soon) and Workspace CLI GA; Admin console Security > API Controls: agent access, HITL confirmation rules, audit logs; DLP applies; AI Tools Addendum (no long-term storage of certain data, no scraping); agents must use MCP not REST from 1 Feb 2027; Standard (free) and Scaled tiers, Scaled billing from 1 Apr 2027; >99% of active developers within Standard; rollout over 2 weeks. Chandu Thota on X: alongside Google Cloud Agent Gateway.",
       "topic": "Tools"
     },
     {
       "id": "s2",
-      "raw": "Nvidia 8-K: board reinstated Huang 22 Nov; press release 23 Nov. Reuters: closed +31.5%, ~ $1T added, second-biggest company after Apple; Trump ‘intervention was very important’; committees on foreign intelligence and export controls; Senate hearing 3 Dec; some China customers cancelled/held orders. CNBC: +31.48%, best day since May 2003; Nasdaq +6.51% (best since 9 Apr 2025); Dell +20.46%, CoreWeave +22.32%, ANT −1.43%.",
-      "topic": "Money"
+      "raw": "OpenClaw blog, 24 Nov (TechCrunch same day): ShellBench, 100 tasks from >10M anonymised agent interactions, 12 models x 5 harnesses, 53,100 graded runs; GPT-6 Astra 62.5% ($1.10/run), Claude Fable 5.2 61.9% ($0.83), GPT-6.1 Sol 61.4% ($0.19), DeepSeek V4.1 Flash 39.7% (~5 cents); Astra 75.1% at least once in 3, 48.8% all 3; 15.7% of runs failed a safety check; 9.9% of correct runs failed one; dinner task 522/531 right restaurant, 152 fully passed.",
+      "topic": "Work"
     },
     {
       "id": "s3",
-      "raw": "OpenAI release notes, 23 Nov: GPT-6.2 (Sol, chat-tuned) in Chat tab for Plus/Pro/Business/Enterprise; image understanding 71.7% vs 47.4% (GPT-6); hard instructions 78.1% vs 62.5%; expert tasks (lowest reasoning) 65% vs 52%; internal BrowseComp Extra high 64.5% vs 54.4%; safety policy compliance 91–94% vs 77–80%. Work/Codex unchanged. ChatGPT on X / 9to5Mac: GPT-5.6 Sol (Chat, Work, Codex) and Terra (Work, Codex) retire 23 Dec.",
+      "raw": "Anthropic, 24 Nov: Install as app (beta) in Claude for Mac and Windows, all plans; own icon/window, Claude + connectors, usage counts to plan; permissions: default (browser-level), app permissions, full computer access; re-asks after every update; full access only for own or same-org apps; no Anthropic review; Team on by default (full access off), Enterprise off until owner enables; not for HIPAA-ready or hybrid deployments. Felix Rieseberg on X.",
       "topic": "Tools"
     },
     {
       "id": "s4",
-      "raw": "Claude Help Center / @claudeai, 23 Nov: connectors + skills become plugins; one Plugins page; Verified/Community labels; 10,000+ plugins; live Free/Pro/Max/Ultra, Team from 30 Nov, Enterprise following weeks; Skills-off orgs lose plugins in Claude Desktop from 30 Nov; HIPAA BAA doesn’t cover plugins.",
-      "topic": "Tools"
-    },
-    {
-      "id": "s5",
-      "raw": "Anthropic, ‘Working with AI’, 23 Nov: 66 interviews, 58 enterprise customers; two-thirds reduced hiring due to AI; 10 hired more; 2 saw AI eliminate a position; 5 pushed out non-adopters; 9 cut contractors (many offshore); 100 AI-built tools: 80% automated manual work, 20% replaced bought software; six startups say they’d need 4x staff without AI.",
-      "topic": "Work"
-    },
-    {
-      "id": "s6",
-      "raw": "Virginia AG (with Oregon AG), 23 Nov; CNBC: separate consumer-protection suits vs SpaceX (X, xAI/SpaceX Super Intelligence) over Grok sexualised images, NCII, CSAM, ‘spicy mode’ and false safety claims; CCDH estimate ~3M sexualised images 29 Dec 2025–8 Jan 2026, ~23,000 apparently of children; seek injunctions, penalties, disgorgement, costs (VA: restitution). First state suits.",
+      "raw": "NCSC blog, 24 Nov: marked rise since Sept 2026 in AI-assisted attacks via agentic offensive frameworks (ARTEX, Cairn, PentAGI, RedAmon, Xalgorix, Darkmoon) with cheap open models or illegal API resellers; exploit old weaknesses (committed credentials, IaC misconfig, default creds, API flaws); discovery to exploitation in minutes; noisy; eight defensive questions incl. exposure inventory, auth proxies, account-level rate limits, secret scanning, honeytokens.",
       "topic": "Trust"
     },
     {
+      "id": "s5",
+      "raw": "CNBC, 24 Nov: ANT closed down 6.5%, below $83 IPO price; opened $111.50 Thursday; raised $81.3B, largest offering ever. Axios: closed at $81.91, third straight down session. TechCrunch: as low as $76 midday. Canaccord buy $135; Wedbush outperform $120; Oppenheimer outperform $150. Nvidia and chip stocks fell Tuesday after Monday's rally.",
+      "topic": "Money"
+    },
+    {
+      "id": "s6",
+      "raw": "Tidal, 24 Nov (TechCrunch, Guardian; Tidal AI Policy updated 24 Nov): from 9 Dec, wholly AI-generated tracks rejected and removed; distributors barred from delivering them; AI-assisted allowed; Robert Anderson on X: 43% of deliveries in last 90 days detected as AI; 27M tracks (6.3%) fully AI, 96% with no streams; demonetised since June; appeals available.",
+      "topic": "Rules"
+    },
+    {
       "id": "s7",
-      "raw": "Z.ai, 23 Nov; VentureBeat: GLM-5.4 loop transformer (28 layers of GLM-5 base looped twice, 750B), vision, 1M context, 128K output; GLM Coding Plan, ZCode, Z.ai Chat; quota 1.5x GLM-5.3; API and open weights after safety hardening, no date; no GLM-5.4 coding benchmarks; KingBench 4 tester: 431 min vs 109 for Gemini 4 Neon.",
+      "raw": "Meta Newsroom, 24 Nov: Muse launches in UK (18+, iOS, Android, muse.ai, WhatsApp; free with paid plans); UK partners incl. M&S, Debenhams, Currys, Ocado, Trainline, Sainsbury's, ASOS, easyJet, Jet2; asks before purchases; Onelink by Stripe, Shop Pay. TechCrunch: Muse in Instagram DMs (US, Canada, Mexico, Japan, Singapore); Walmart Black Friday deals via Muse with spending limits and approvals; Amazon blocks third-party agents.",
       "topic": "Tools"
     }
   ]
