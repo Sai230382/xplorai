@@ -1,72 +1,85 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "chatgpt-gpt-6-2-chat",
+  "storyId": "shellbench-everyday-agents",
   "kicker": "Play with today’s story",
-  "title": "ChatGPT’s Chat tab: GPT-6 against the new GPT-6.2",
-  "intro": "Switch between the old and new model behind ChatGPT’s Chat tab to see the scores OpenAI published for each. Higher is better on every line.",
-  "note": "All figures are from OpenAI’s own tests, as written in its 23 November release notes; no outside group has checked them. The expert-task score is at the lowest reasoning setting OpenAI tested, and the web-search score is an internal version of BrowseComp at the Extra high setting. The safety line is the share of responses that met OpenAI’s policies in challenging conversations. The Work and Codex models are not part of this change.",
+  "title": "Everyday agent tasks: how often the models got them fully right, and what a run cost",
+  "intro": "Slide across four of the twelve models ShellBench tested to see the share of 100 everyday tasks each one completed, averaged across five agent tools, and the estimated cost of a single run.",
+  "note": "All figures are from the OpenClaw Foundation’s ShellBench post of 24 November 2026; the full paper is not yet published. A task counts only if every requirement is met. Pass rates are averaged across five agent harnesses, and costs are the researchers’ estimates from recorded token use at study prices, excluding grading. The repeat-attempt figures were published for GPT-6 Astra only. The models were not tested inside consumer apps such as Muse, Dots or Claude Duet.",
   "sources": [
     {
-      "label": "OpenAI Help Center: ChatGPT release notes, 23 November 2026",
-      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      "label": "OpenClaw: Introducing ShellBench, the benchmark for real-world tasks, 24 November 2026",
+      "url": "https://openclaw.ai/blog/shellbench"
     }
   ],
   "widget": {
-    "type": "compare",
-    "label": "GPT-6 or GPT-6.2 in ChatGPT’s Chat tab",
-    "options": [
+    "type": "stepper",
+    "label": "Model tested in ShellBench",
+    "items": [
       {
-        "id": "gpt6",
-        "label": "GPT-6",
-        "caption": "The Chat tab model until 23 November.",
+        "label": "GPT-6 Astra",
+        "name": "OpenAI GPT-6 Astra",
+        "caption": "Highest score in the test.",
         "stats": [
           {
-            "label": "Image understanding",
-            "value": "47.4%"
-          },
-          {
-            "label": "Follows instructions on especially hard prompts",
+            "label": "Tasks fully completed",
             "value": "62.5%"
           },
           {
-            "label": "Expert-level tasks (lowest reasoning setting)",
-            "value": "52%"
+            "label": "Estimated cost per run",
+            "value": "$1.10"
           },
           {
-            "label": "Hard web questions (internal BrowseComp, Extra high)",
-            "value": "54.4%"
+            "label": "Completed at least once in three tries",
+            "value": "75.1%"
           },
           {
-            "label": "Responses meeting safety policies in challenging conversations",
-            "value": "77–80%"
+            "label": "Completed on all three tries",
+            "value": "48.8%"
           }
         ]
       },
       {
-        "id": "gpt62",
-        "label": "GPT-6.2",
-        "caption": "Rolling out to Plus, Pro, Business and Enterprise from 23 November.",
+        "label": "Claude Fable 5.2",
+        "name": "Anthropic Claude Fable 5.2",
         "stats": [
           {
-            "label": "Image understanding",
-            "value": "71.7%"
+            "label": "Tasks fully completed",
+            "value": "61.9%"
           },
           {
-            "label": "Follows instructions on especially hard prompts",
-            "value": "78.1%"
+            "label": "Estimated cost per run",
+            "value": "$0.83"
+          }
+        ]
+      },
+      {
+        "label": "GPT-6.1 Sol",
+        "name": "OpenAI GPT-6.1 Sol",
+        "caption": "Within 1.1 points of the top score at roughly one-sixth of the cost.",
+        "stats": [
+          {
+            "label": "Tasks fully completed",
+            "value": "61.4%"
           },
           {
-            "label": "Expert-level tasks (lowest reasoning setting)",
-            "value": "65%"
+            "label": "Estimated cost per run",
+            "value": "$0.19"
+          }
+        ]
+      },
+      {
+        "label": "DeepSeek V4.1 Flash",
+        "name": "DeepSeek V4.1 Flash",
+        "caption": "The low-cost end of the test.",
+        "stats": [
+          {
+            "label": "Tasks fully completed",
+            "value": "39.7%"
           },
           {
-            "label": "Hard web questions (internal BrowseComp, Extra high)",
-            "value": "64.5%"
-          },
-          {
-            "label": "Responses meeting safety policies in challenging conversations",
-            "value": "91–94%"
+            "label": "Estimated cost per run",
+            "value": "About five cents"
           }
         ]
       }
