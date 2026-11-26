@@ -20,6 +20,186 @@
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2122230879594639360/img/Qc8H91O5v_IhfvV0.jpg"
   },
   {
+    "id": "2125632702942691600",
+    "url": "https://x.com/Nyxera0x/status/2125632702942691600",
+    "author_name": "Nyxera",
+    "author_handle": "@Nyxera0x",
+    "created_at": "2026-11-25T16:48:23.000Z",
+    "text": "If a designer ever charged you for a 3D render of your place, you got robbed and I can prove it.\n\ni built a free Claude skill that turns a single photo of a floor plan into a full 3D render you can walk through and Claude Fable 5.2 made this barbershop off one listing.\n\ni https://t.co/535GCF7qEV https://t.co/jdgBVSNkMz",
+    "model_or_tool": "Claude Fable 5.2, Claude skill, Blender",
+    "what_they_built": "A free Claude skill that turns one photo of a floor plan into a walk-through 3D render; from a single listing it built a barbershop of 1,218 wall blocks, 287 floor tiles and 63 bottles.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 142,
+      "impression_count": 12263,
+      "like_count": 92,
+      "quote_count": 2,
+      "reply_count": 16,
+      "retweet_count": 8
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2125632645509873664/img/NMCmy04xUUYEyiQ2.jpg"
+  },
+  {
+    "id": "2125604102881050990",
+    "url": "https://x.com/Lummox_eth/status/2125604102881050990",
+    "author_name": "Lummox",
+    "author_handle": "@Lummox_eth",
+    "created_at": "2026-11-25T14:54:44.000Z",
+    "text": "here’s how i built this robot animation concept with fable 5.2 + a blender-style workspace...\n\none character, two synchronized views: a gray wireframe with a detailed skeleton overlay, and a textured version with worn metal, an ivory head and a teal work jacket.\n\nthe challenge https://t.co/qeEFkDl3MO https://t.co/FOF1olXaRo",
+    "model_or_tool": "Claude Fable 5.2",
+    "what_they_built": "A 10-second robot animation concept shown twice in sync, as a wireframe with a skeleton overlay and as a textured robot, with the six-step method for planning each movement.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 208,
+      "impression_count": 10515,
+      "like_count": 179,
+      "quote_count": 0,
+      "reply_count": 28,
+      "retweet_count": 15
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2125604057263845376/img/U512Xd9rgDAu5DRs.jpg"
+  },
+  {
+    "id": "2125583898176266324",
+    "url": "https://x.com/stevenobba/status/2125583898176266324",
+    "author_name": "Steven Kleinveld",
+    "author_handle": "@stevenobba",
+    "created_at": "2026-11-25T13:34:27.000Z",
+    "text": "This is Moss Gorge, and I didn't touch Blender to make it.\n\nI built it earlier with Astra in Codex, and it's probably my favorite environment so far: a hot-spring cinema in an autumn maple gorge, rendered in Cycles.\n\nFor complex USDZ environments I think Fable 5.2 is ahead right https://t.co/RqKyVccWRO",
+    "model_or_tool": "Astra in Codex, Blender Cycles",
+    "what_they_built": "Moss Gorge, a hot-spring cinema in an autumn maple gorge, built with Astra in Codex without opening Blender and now an immersive environment in the maker’s Vision Pro app.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 1,
+      "impression_count": 265,
+      "like_count": 9,
+      "quote_count": 0,
+      "reply_count": 2,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2125583622665031680/img/noFOQ9ynVsRx3BC_.jpg"
+  },
+  {
+    "id": "2125411265044721818",
+    "url": "https://x.com/Phavorism/status/2125411265044721818",
+    "author_name": "Phavorism",
+    "author_handle": "@Phavorism",
+    "created_at": "2026-11-25T02:08:28.000Z",
+    "text": "I keep replaying the glide over that waterfall 🏞️\n\n$6,528 of Claude Fable 5.2 tokens built this Unreal Engine 5.9 game in one week\n\nWatch the hero flip from elf to orc to Draconid\nThen the magic circles in the fight\nZoom in on the horse's hooves on the stairs https://t.co/dUNyNF5meW",
+    "model_or_tool": "Claude Fable 5.2, Unreal Engine 5.9",
+    "what_they_built": "An Unreal Engine 5.9 fantasy game built in one week with $6,528 of Claude Fable 5.2 tokens, with a hero who switches between elf, orc and Draconid.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 4,
+      "impression_count": 921,
+      "like_count": 13,
+      "quote_count": 0,
+      "reply_count": 3,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/ext_tw_video_thumb/2125411232765333504/pu/img/yvWmTVNRecKALPt4.jpg"
+  },
+  {
+    "id": "2125409139186905337",
+    "url": "https://x.com/Saccc_c/status/2125409139186905337",
+    "author_name": "Sac",
+    "author_handle": "@Saccc_c",
+    "created_at": "2026-11-25T02:00:01.000Z",
+    "text": "Fable 5.2 and Opus 5.5 have cracked code-generated video, but the audio still sucks.\n\nHere's my fix: redo the soundtrack with Sonilo.\n\nI made this special short to celebrate Thanksgiving.\n\nFirst 10s: the original audio, straight from Claude Code\n\nLast 20s: new music and sound https://t.co/ey7lJDSce1",
+    "model_or_tool": "Claude Fable 5.2, Opus 5.5, Sonilo",
+    "what_they_built": "A Thanksgiving short made in code with Claude Code, shown first with its original audio and then with new music and sound effects from Sonilo.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 25,
+      "impression_count": 15578,
+      "like_count": 85,
+      "quote_count": 3,
+      "reply_count": 17,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2125369897341571072/img/rq0LMbxExdYInY6W.jpg"
+  },
+  {
+    "id": "2125377692992491617",
+    "url": "https://x.com/aniketjart/status/2125377692992491617",
+    "author_name": "Aniket J",
+    "author_handle": "@aniketjart",
+    "created_at": "2026-11-24T23:55:04.000Z",
+    "text": "If you are building games with ai, spend time consuming good art media - games, movies, anime, comics, pinterest. Asked claude to show a process snippet of my game and how art drives them!\n\nPlay here: https://t.co/INTsck4NH7\n\nbuilt this with Fable 5.2, threejs and @usecrayon https://t.co/dJKnrI86a4",
+    "model_or_tool": "Claude Fable 5.2, three.js, Crayon",
+    "what_they_built": "A playable three.js browser game, with a process clip Claude made showing how the art references shaped it.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 29,
+      "impression_count": 1468,
+      "like_count": 42,
+      "quote_count": 0,
+      "reply_count": 2,
+      "retweet_count": 1
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2125375466349670400/img/AWC1CqiUei4n_oUY.jpg"
+  },
+  {
+    "id": "2125302944350494986",
+    "url": "https://x.com/AdarshBawankar/status/2125302944350494986",
+    "author_name": "Adarsh Bawankar",
+    "author_handle": "@AdarshBawankar",
+    "created_at": "2026-11-24T18:58:02.000Z",
+    "text": "Build Day at Claude Community Bhopal.\n\nI built a tiny computer with Claude Fable 5.2: a custom CPU, an assembler, an emulator, and 4 games like Snake, Dodge and Pong running on it. You can watch registers, memory and each line of code run in real time. \n#TheOriginGuild https://t.co/h30RZwhvdg",
+    "model_or_tool": "Claude Fable 5.2",
+    "what_they_built": "At a Claude Community Bhopal build day: a tiny computer with a custom CPU, assembler and emulator running four games such as Snake and Pong, with registers and memory visible live.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 118,
+      "like_count": 6,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/media/HX6XtxlaIAEBLnU.jpg"
+  },
+  {
+    "id": "2125248575902761003",
+    "url": "https://x.com/ZeeshhDecodes/status/2125248575902761003",
+    "author_name": "Zeeshh | AI Decoded",
+    "author_handle": "@ZeeshhDecodes",
+    "created_at": "2026-11-24T15:22:00.000Z",
+    "text": "I asked Claude Fable 5.2 to make a rally game concept. It built this whole clip in Blender from code: the car, forest, dust, game screen, even the engine sound. No outside assets.\n\nShould I turn it into a real playable browser game so you can try it and tear it apart? 👇 https://t.co/J6HRMloy1u",
+    "model_or_tool": "Claude Fable 5.2, Blender",
+    "what_they_built": "A rally game concept clip built in Blender entirely from code: the car, forest, dust, game screen and engine sound, with no outside assets.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 0,
+      "impression_count": 824,
+      "like_count": 8,
+      "quote_count": 2,
+      "reply_count": 6,
+      "retweet_count": 0
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2125212424571846656/img/B_nKeoKdDT9EX4SF.jpg"
+  },
+  {
+    "id": "2125150458398298361",
+    "url": "https://x.com/davidm_ml/status/2125150458398298361",
+    "author_name": "David Mráz",
+    "author_handle": "@davidm_ml",
+    "created_at": "2026-11-24T08:52:07.000Z",
+    "text": "I built this beautiful interactive website for luxury hotel in Greece with Fable 5.2 + @higgsfield. https://t.co/bTuINK5siY",
+    "model_or_tool": "Claude Fable 5.2, Higgsfield",
+    "what_they_built": "An interactive website for a luxury hotel in Greece, built with Claude Fable 5.2 and Higgsfield visuals.",
+    "has_media": true,
+    "public_metrics": {
+      "bookmark_count": 10,
+      "impression_count": 1159,
+      "like_count": 8,
+      "quote_count": 0,
+      "reply_count": 4,
+      "retweet_count": 2
+    },
+    "preview": "https://pbs.twimg.com/amplify_video_thumb/2125150390475788288/img/YuVhDzkdcNjQy7Eg.jpg"
+  },
+  {
     "id": "2124994547482829052",
     "url": "https://x.com/maxt3chno/status/2124994547482829052",
     "author_name": "Max",
@@ -58,185 +238,5 @@
       "retweet_count": 0
     },
     "preview": "https://pbs.twimg.com/amplify_video_thumb/2124972231696535552/img/vI-ScThJG09NZKjx.jpg"
-  },
-  {
-    "id": "2124918219341230407",
-    "url": "https://x.com/kinderlayer/status/2124918219341230407",
-    "author_name": "Kinder",
-    "author_handle": "@kinderlayer",
-    "created_at": "2026-11-23T17:29:17.000Z",
-    "text": "this is f*cking fascinating - I made Claude play chess against itself. Claude Opus 5.5 vs Claude Fable 5.2, full game, every move scored by Stockfish.\n\nboth held ~95%+ accuracy. near grandmaster. for 60 moves neither one blinked.\n\nthen it came down to a king and a single rook. https://t.co/emrbEpg03k https://t.co/0OVb4fpVIU",
-    "model_or_tool": "Claude Opus 5.5 and Claude Fable 5.2",
-    "what_they_built": "A full chess game between Claude Opus 5.5 and Claude Fable 5.2, every move scored by Stockfish; the maker says both held about 95% accuracy for 60 moves.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 101,
-      "impression_count": 89352,
-      "like_count": 111,
-      "quote_count": 1,
-      "reply_count": 29,
-      "retweet_count": 3
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124917717295673344/img/KVxDjI3w-uFquvZA.jpg"
-  },
-  {
-    "id": "2124816283774374109",
-    "url": "https://x.com/exploraX_/status/2124816283774374109",
-    "author_name": "m0h",
-    "author_handle": "@exploraX_",
-    "created_at": "2026-11-23T10:44:13.000Z",
-    "text": "🚨 zAI just launched GLM-5.4, its first loop transformer model.\n\nand it built this game entirely from code.\n\ni'll be running more tests to see how well the model performs.\n\nwhat do you guys think this model would beat opus 5.5 and GPT-6.2 sol? https://t.co/C5untsDKv3 https://t.co/tjKDIUA8AI",
-    "model_or_tool": "GLM-5.4 (Z.ai)",
-    "what_they_built": "A game built entirely from code by Z.ai’s new GLM-5.4, posted on its launch day as a first test.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 4,
-      "impression_count": 1906,
-      "like_count": 14,
-      "quote_count": 0,
-      "reply_count": 6,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124814613069922304/img/pVUXOFj30y6XgjuZ.jpg"
-  },
-  {
-    "id": "2124797603661427123",
-    "url": "https://x.com/thegenioo/status/2124797603661427123",
-    "author_name": "Hamza",
-    "author_handle": "@thegenioo",
-    "created_at": "2026-11-23T09:30:00.000Z",
-    "text": "I was doing this payout forecast thing inside T3 Code manually which wasn't as smooth experience\n\nSo I wanted to make a widget that stays in front of me\n\nBuilt this widget with Gemini 4 Neon inside T3 Code in one go (did some UI changes as per my liking later)\n\nThis is so cool, https://t.co/6SgDE5YRB5",
-    "model_or_tool": "Gemini 4 Neon in T3 Code",
-    "what_they_built": "A desktop widget that keeps a payout forecast in view, built in one go with Gemini 4 Neon inside T3 Code.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 2,
-      "impression_count": 499,
-      "like_count": 6,
-      "quote_count": 0,
-      "reply_count": 3,
-      "retweet_count": 1
-    },
-    "preview": "https://pbs.twimg.com/media/HXzLmBQaIAAddno.jpg"
-  },
-  {
-    "id": "2124762348556787848",
-    "url": "https://x.com/MengTo/status/2124762348556787848",
-    "author_name": "Meng To",
-    "author_handle": "@MengTo",
-    "created_at": "2026-11-23T07:09:54.000Z",
-    "text": "A 19-min tutorial on how I made this game with Fable 5.2\n\nFull video and all the skills here: https://t.co/JqmkI8ILtt https://t.co/SqE9HXyxyk https://t.co/N2PnBYSXmD",
-    "model_or_tool": "Claude Fable 5.2",
-    "what_they_built": "A game made with Fable 5.2, shared with a 19-minute tutorial and the skills used to build it.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 390,
-      "impression_count": 21692,
-      "like_count": 268,
-      "quote_count": 2,
-      "reply_count": 26,
-      "retweet_count": 21
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124761499956854784/img/U3y0all3mAcMK-NC.jpg"
-  },
-  {
-    "id": "2124510714945507832",
-    "url": "https://x.com/camperaigg/status/2124510714945507832",
-    "author_name": "camper 🦎🎣",
-    "author_handle": "@camperaigg",
-    "created_at": "2026-11-22T14:30:00.000Z",
-    "text": "🪓I made this 20-second pixel-art duel with GPT-6.2 Astra in Codex. Three cuts took 38 minutes of build time. Estimated model cost was $8.00.\n\n14 impact shots. 183 sound placements.\n\n#PixelArt #Anime #SoundDesign #GameAudio #Codex https://t.co/NXBXRFvgHU",
-    "model_or_tool": "GPT-6.2 Astra in Codex",
-    "what_they_built": "A 20-second pixel-art duel with 14 impact shots and 183 sound placements, built in 38 minutes of build time for an estimated $8 in model cost.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 317,
-      "like_count": 3,
-      "quote_count": 0,
-      "reply_count": 1,
-      "retweet_count": 1
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124461822510260224/img/SVAcmiTelG_CLHrb.jpg"
-  },
-  {
-    "id": "2124321250164006914",
-    "url": "https://x.com/intheworldofai/status/2124321250164006914",
-    "author_name": "WorldofAI",
-    "author_handle": "@intheworldofai",
-    "created_at": "2026-11-22T01:57:08.000Z",
-    "text": "Inkling 2 Mini just built this entire interactive isometric living room from scratch in Three.js. Great job @thinkymachines \n\nDrag to orbit, scroll to zoom, click the lamps + fireplace, full day/night toggle. Every object modeled in code.\n\nFully local. In my tests it’s https://t.co/brROmYLEDx",
-    "model_or_tool": "Inkling 2 Mini (Thinking Machines)",
-    "what_they_built": "An interactive isometric living room in Three.js, with clickable lamps and fireplace and a day/night toggle, built by Inkling 2 Mini running locally.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 3,
-      "impression_count": 852,
-      "like_count": 20,
-      "quote_count": 1,
-      "reply_count": 5,
-      "retweet_count": 0
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124320752178462720/img/DBs-UKMVRfIdIFzO.jpg"
-  },
-  {
-    "id": "2124208172990701603",
-    "url": "https://x.com/asafb2k/status/2124208172990701603",
-    "author_name": "Asaf Ishay Berreby",
-    "author_handle": "@asafb2k",
-    "created_at": "2026-11-21T18:27:48.000Z",
-    "text": "I built a 3D version of https://t.co/kNneHQoaoa for VR 🥽📈\n\nThe whole market as a 3D city, stock pages, even my portfolio as a 3D donut. Runs on Meta Quest 3, right in the browser.\n\nBuilt with Claude Fable 5.2, how is it compared to your Gemini 4 Neon?\n\n#AI #Claude #Gemini https://t.co/VnUiJDBEEC",
-    "model_or_tool": "Claude Fable 5.2",
-    "what_they_built": "A 3D virtual-reality version of a stock-market site for Meta Quest 3 in the browser, with the market as a city and a portfolio as a 3D donut.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 0,
-      "impression_count": 147,
-      "like_count": 2,
-      "quote_count": 1,
-      "reply_count": 1,
-      "retweet_count": 2
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124208039817326592/img/rtKZFMRS194CQFoJ.jpg"
-  },
-  {
-    "id": "2124199255959392764",
-    "url": "https://x.com/scottstts/status/2124199255959392764",
-    "author_name": "Scott",
-    "author_handle": "@scottstts",
-    "created_at": "2026-11-21T17:52:22.000Z",
-    "text": "I really like this one, Palace Mirage, made with fable 5.2 and opus 5.5 in @threejs, the beautiful sunshine in a desert oasis, really hit the spot\n\neverything procedural https://t.co/HIuCBVPEu4",
-    "model_or_tool": "Claude Fable 5.2 and Opus 5.5 with Three.js",
-    "what_they_built": "Palace Mirage, a fully procedural desert-oasis palace scene with sunshine, rendered in Three.js.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 9,
-      "impression_count": 828,
-      "like_count": 21,
-      "quote_count": 0,
-      "reply_count": 1,
-      "retweet_count": 1
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124197829228838912/img/MAqZuWQko2HKhhio.jpg"
-  },
-  {
-    "id": "2124186601118990667",
-    "url": "https://x.com/TokenGremlin/status/2124186601118990667",
-    "author_name": "Token Gremlin",
-    "author_handle": "@TokenGremlin",
-    "created_at": "2026-11-21T17:02:05.000Z",
-    "text": "I built all of these 3D assets in about 2 hours.\n\nGPT-6.2 Sol in Ultra mode modeled everything in Blender. Then GPT-6.2 Astra refined the details and handled all the animations.\n\nThe secret is OpenAI's own \"SVG &amp; 3D Design\" plugin. If you're making 3D models with ChatGPT without https://t.co/4j1zvsRcpR",
-    "model_or_tool": "GPT-6.2 Sol and Astra with Blender",
-    "what_they_built": "A set of animated 3D assets made in about two hours, with GPT-6.2 Sol modelling in Blender and Astra refining details and animation.",
-    "has_media": true,
-    "public_metrics": {
-      "bookmark_count": 142,
-      "impression_count": 9455,
-      "like_count": 202,
-      "quote_count": 1,
-      "reply_count": 14,
-      "retweet_count": 13
-    },
-    "preview": "https://pbs.twimg.com/amplify_video_thumb/2124184319916744704/img/NeE4qMt6RXxcgTXe.jpg"
   }
 ]

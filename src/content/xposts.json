@@ -1,5 +1,32 @@
 [
   {
+    "name": "Anthropic",
+    "handle": "AnthropicAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg",
+    "text": "We recently migrated our Messages API from Python to Rust.\n\nOn our engineering blog, we share how we used the existing service to verify the new one, with teams of Claude agents tracking down and fixing differences between the two versions.\n\nhttps://t.co/NdrMzgrOwP",
+    "url": "https://x.com/AnthropicAI/status/2125627317263466739",
+    "postedAt": "2026-11-25T16:26:59.000Z",
+    "take": "The new code passed about 98% of tests but matched only a quarter of real requests at first. Check agent work on real inputs."
+  },
+  {
+    "name": "OpenAI",
+    "handle": "OpenAI",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg",
+    "text": "We’re sharing a new preprint showing wet lab validation of intrinsic protein design capabilities of the GPT-6 family of models. \n\nOur models can design new protein shapes and sequences using reasoning and code, without calling specialized biology models to generate them. https://t.co/ov2t24sUCh",
+    "url": "https://x.com/OpenAI/status/2125334383490105601",
+    "postedAt": "2026-11-24T21:02:58.000Z",
+    "take": "35 of 322 designs bound their targets in the lab. Promising, but specialist models still picked the sequences and candidates."
+  },
+  {
+    "name": "ClaudeDevs",
+    "handle": "ClaudeDevs",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2044472418815893504/xf14RxM8_normal.png",
+    "text": "MCP turns two! What started as a protocol for connecting AI apps to tools and data is evolving to standardize how agents communicate and orchestrate work.\n\nWe’re bringing more of these agentic capabilities to Claude with Skills over MCP and Tasks. https://t.co/CwOSYqhNtm",
+    "url": "https://x.com/ClaudeDevs/status/2125289794871963935",
+    "postedAt": "2026-11-24T18:05:47.000Z",
+    "take": "Your connectors can now carry the vendor’s playbook and ask you before spending money or deleting data. Check which ones do."
+  },
+  {
     "name": "OpenClaw🦞",
     "handle": "openclaw",
     "avatarUrl": "https://pbs.twimg.com/profile_images/2017100664984186880/orbYx-3U_normal.jpg",
