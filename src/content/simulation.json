@@ -1,85 +1,60 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "shellbench-everyday-agents",
+  "storyId": "claude-rust-migration",
   "kicker": "Play with today’s story",
-  "title": "Everyday agent tasks: how often the models got them fully right, and what a run cost",
-  "intro": "Slide across four of the twelve models ShellBench tested to see the share of 100 everyday tasks each one completed, averaged across five agent tools, and the estimated cost of a single run.",
-  "note": "All figures are from the OpenClaw Foundation’s ShellBench post of 24 November 2026; the full paper is not yet published. A task counts only if every requirement is met. Pass rates are averaged across five agent harnesses, and costs are the researchers’ estimates from recorded token use at study prices, excluding grading. The repeat-attempt figures were published for GPT-6 Astra only. The models were not tested inside consumer apps such as Muse, Dots or Claude Duet.",
+  "title": "Anthropic’s Rust API: what the tests said, and what real traffic showed",
+  "intro": "Switch between April 2026, when the new Rust version had passed nearly all its tests, and the finished move, to see why Anthropic checked the new API against real requests before switching over.",
+  "note": "All figures are Anthropic’s own, from its engineering post of 25 November 2026, and most are approximate (“about”). The April match rate compares the Rust and Python versions on live production requests, step by step; the tests are Anthropic’s existing set of about 700 integration tests. The CPU figure is for one region, and the time-to-first-token figure is for customers’ Claude Code requests over a shorter period. Nothing here was measured independently.",
   "sources": [
     {
-      "label": "OpenClaw: Introducing ShellBench, the benchmark for real-world tasks, 24 November 2026",
-      "url": "https://openclaw.ai/blog/shellbench"
+      "label": "Anthropic: Migrating our Messages API to Rust, 25 November 2026",
+      "url": "https://www.anthropic.com/research/migrating-api-to-rust"
     }
   ],
   "widget": {
-    "type": "stepper",
-    "label": "Model tested in ShellBench",
-    "items": [
+    "type": "compare",
+    "label": "Stage of the move to Rust",
+    "options": [
       {
-        "label": "GPT-6 Astra",
-        "name": "OpenAI GPT-6 Astra",
-        "caption": "Highest score in the test.",
+        "id": "april",
+        "label": "April 2026: tests passed",
+        "caption": "Claude had written a first version of the core request path in about a week.",
         "stats": [
           {
-            "label": "Tasks fully completed",
-            "value": "62.5%"
+            "label": "Integration tests passed",
+            "value": "About 98%"
           },
           {
-            "label": "Estimated cost per run",
-            "value": "$1.10"
+            "label": "Live inputs that matched the Python API",
+            "value": "About a quarter"
           },
           {
-            "label": "Completed at least once in three tries",
-            "value": "75.1%"
-          },
-          {
-            "label": "Completed on all three tries",
-            "value": "48.8%"
+            "label": "Integration tests in the existing set",
+            "value": "About 700"
           }
         ]
       },
       {
-        "label": "Claude Fable 5.2",
-        "name": "Anthropic Claude Fable 5.2",
+        "id": "live",
+        "label": "After the move",
+        "caption": "Public traffic moved to Rust in September 2026, after Claude agents fixed the differences.",
         "stats": [
           {
-            "label": "Tasks fully completed",
-            "value": "61.9%"
+            "label": "CPU per request",
+            "value": "About 70% less"
           },
           {
-            "label": "Estimated cost per run",
-            "value": "$0.83"
-          }
-        ]
-      },
-      {
-        "label": "GPT-6.1 Sol",
-        "name": "OpenAI GPT-6.1 Sol",
-        "caption": "Within 1.1 points of the top score at roughly one-sixth of the cost.",
-        "stats": [
-          {
-            "label": "Tasks fully completed",
-            "value": "61.4%"
+            "label": "Median time to first token",
+            "value": "About 20% shorter"
           },
           {
-            "label": "Estimated cost per run",
-            "value": "$0.19"
-          }
-        ]
-      },
-      {
-        "label": "DeepSeek V4.1 Flash",
-        "name": "DeepSeek V4.1 Flash",
-        "caption": "The low-cost end of the test.",
-        "stats": [
-          {
-            "label": "Tasks fully completed",
-            "value": "39.7%"
+            "label": "Service taken offline",
+            "value": "Never"
           },
           {
-            "label": "Estimated cost per run",
-            "value": "About five cents"
+            "label": "API traffic growth, early 2024 to fall 2026",
+            "value": "Roughly 1,800 times"
           }
         ]
       }
