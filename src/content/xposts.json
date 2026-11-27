@@ -1,5 +1,32 @@
 [
   {
+    "name": "Tibo",
+    "handle": "thsottiaux",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_normal.jpg",
+    "text": "We made a billing mistake at launch of GPT-6.2 that incorrectly discounted GPT-6.2 Astra and Sol usage for most users. \n\nWe’ve fixed this now, so the same work will use more of your plan’s usage allowance. Comparing to last week, you will reach your limits 40% faster on GPT-6.2 Astra and 25% faster on Sol. You should still see these go further in usage compared to 6 Astra and 6.1 Sol. Other models weren’t affected, and we won’t charge you for the difference on past usage.\n\nAs a small token to apologize for the mistake, we’ll be adding one banked reset for everyone on Go, Plus, Pro, and Business.",
+    "url": "https://x.com/thsottiaux/status/2125784147889393806",
+    "postedAt": "2026-11-26T02:50:10.000Z",
+    "take": "Same price, less GPT-6.2 work per plan. Watch your usage meter this week and save the free reset for a real deadline."
+  },
+  {
+    "name": "Sam Altman",
+    "handle": "sama",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2046764873200394240/r7BxVezs_normal.jpg",
+    "text": "We’re now testing Private Inference, our latest offering as part of OpenAI Private Intelligence, with a small group of customers.\n\nStronger privacy protections will make frontier AI useful for a lot more work, and business privacy is important for a healthy ecosystem. Reach out to @shekar4x if interested!\n\n(Also, ZDR with Private Safety Processing enables automated safety reviews without giving OpenAI personnel access to the underlying content.)",
+    "url": "https://x.com/sama/status/2125638790593274259",
+    "postedAt": "2026-11-25T17:12:34.000Z",
+    "take": "If you keep contracts or health data away from AI, ask what can be proven about who sees your prompts. This is an early test."
+  },
+  {
+    "name": "Cloudflare",
+    "handle": "Cloudflare",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/2110452337764413440/6WKZL9q3_normal.jpg",
+    "text": "Did you know that you can flip one toggle to make your site searchable by AI agents — complete with automatic content indexing, a discoverable search API, and native HTTP QUERY support? Now you know: https://t.co/rudebZyY9V",
+    "url": "https://x.com/Cloudflare/status/2125591595965702452",
+    "postedAt": "2026-11-25T14:05:02.000Z",
+    "take": "One switch gives agents a search box on your own domain. Index only public pages, and note AI Search billing starts 1 December."
+  },
+  {
     "name": "Anthropic",
     "handle": "AnthropicAI",
     "avatarUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg",

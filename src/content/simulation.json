@@ -1,60 +1,86 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "claude-rust-migration",
+  "storyId": "chatgpt-62-usage-fix",
   "kicker": "Play with today’s story",
-  "title": "Anthropic’s Rust API: what the tests said, and what real traffic showed",
-  "intro": "Switch between April 2026, when the new Rust version had passed nearly all its tests, and the finished move, to see why Anthropic checked the new API against real requests before switching over.",
-  "note": "All figures are Anthropic’s own, from its engineering post of 25 November 2026, and most are approximate (“about”). The April match rate compares the Rust and Python versions on live production requests, step by step; the tests are Anthropic’s existing set of about 700 integration tests. The CPU figure is for one region, and the time-to-first-token figure is for customers’ Claude Code requests over a shorter period. Nothing here was measured independently.",
+  "title": "OpenAI’s GPT-6.2 billing fix: how much sooner each model hits your plan’s limit",
+  "intro": "Slide across the models to see what OpenAI’s fix changes compared with last week, and what it does not, as stated by OpenAI’s Tibo Sottiaux.",
+  "note": "Figures are OpenAI’s own, from Tibo Sottiaux’s post of 26 November 2026, as reported by BleepingComputer. “40% faster” and “25% faster” describe how soon you reach your limit compared with last week; OpenAI has not said exactly how this is measured, so it is not shown here as a number of tasks. The reset expiry is BleepingComputer’s observation in ChatGPT’s settings. Nothing here was measured independently.",
   "sources": [
     {
-      "label": "Anthropic: Migrating our Messages API to Rust, 25 November 2026",
-      "url": "https://www.anthropic.com/research/migrating-api-to-rust"
+      "label": "Tibo Sottiaux on X, 26 November 2026",
+      "url": "https://x.com/thsottiaux/status/2125784147889393806"
+    },
+    {
+      "label": "BleepingComputer: OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug, 26 November 2026",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/"
     }
   ],
   "widget": {
-    "type": "compare",
-    "label": "Stage of the move to Rust",
-    "options": [
+    "type": "stepper",
+    "label": "Model or plan detail",
+    "items": [
       {
-        "id": "april",
-        "label": "April 2026: tests passed",
-        "caption": "Claude had written a first version of the core request path in about a week.",
+        "label": "6.2 Astra",
+        "name": "GPT-6.2 Astra",
         "stats": [
           {
-            "label": "Integration tests passed",
-            "value": "About 98%"
+            "label": "Reaching your limit, compared with last week",
+            "value": "40% faster"
           },
           {
-            "label": "Live inputs that matched the Python API",
-            "value": "About a quarter"
+            "label": "Compared with GPT-6 Astra",
+            "value": "Should still go further"
           },
           {
-            "label": "Integration tests in the existing set",
-            "value": "About 700"
+            "label": "Charged for the difference on past usage",
+            "value": "No"
           }
         ]
       },
       {
-        "id": "live",
-        "label": "After the move",
-        "caption": "Public traffic moved to Rust in September 2026, after Claude agents fixed the differences.",
+        "label": "6.2 Sol",
+        "name": "GPT-6.2 Sol",
         "stats": [
           {
-            "label": "CPU per request",
-            "value": "About 70% less"
+            "label": "Reaching your limit, compared with last week",
+            "value": "25% faster"
           },
           {
-            "label": "Median time to first token",
-            "value": "About 20% shorter"
+            "label": "Compared with GPT-6.1 Sol",
+            "value": "Should still go further"
           },
           {
-            "label": "Service taken offline",
-            "value": "Never"
+            "label": "Charged for the difference on past usage",
+            "value": "No"
+          }
+        ]
+      },
+      {
+        "label": "Others",
+        "name": "Other models",
+        "stats": [
+          {
+            "label": "Change from the fix",
+            "value": "Not affected"
+          }
+        ]
+      },
+      {
+        "label": "Reset",
+        "name": "OpenAI’s apology",
+        "stats": [
+          {
+            "label": "Banked resets added",
+            "value": "One"
           },
           {
-            "label": "API traffic growth, early 2024 to fall 2026",
-            "value": "Roughly 1,800 times"
+            "label": "Plans that get it",
+            "value": "Go, Plus, Pro and Business"
+          },
+          {
+            "label": "Expires",
+            "value": "A month after it is added"
           }
         ]
       }
