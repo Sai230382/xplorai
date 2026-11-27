@@ -1,265 +1,267 @@
 {
-  "number": 62,
-  "edition": "Briefing 62",
-  "date": "26 November 2026",
-  "dateISO": "2026-11-26",
-  "toolsPulseDate": "26 November 2026",
+  "number": 63,
+  "edition": "Briefing 63",
+  "date": "27 November 2026",
+  "dateISO": "2026-11-27",
+  "toolsPulseDate": "27 November 2026",
   "kicker": "Today in AI",
-  "title": "MCP servers can now teach Claude how to do a job, run long tasks and ask before risky steps. Anthropic’s agents moved its API to Rust after tests hid most real-world differences, and GitHub will bill Copilot code review to organisations from 30 December. The UK’s FCA sets rules for AI agents in finance, 42 states fight Character.AI’s chat auction, the New York Times pauses Photoshop 2027, and GPT-6.2 designs proteins that bind in the lab.",
-  "summary": "Anthropic put Skills over MCP into public beta and made Tasks and Elicitation generally available, so connectors can ship playbooks, run background jobs and pause for approval. Its Messages API now runs on Rust with about 70% less CPU per request, after Claude agents fixed differences that tests missed: about 98% of tests passed in April but only about a quarter of live inputs matched. GitHub will bill unset Copilot code review to organisations from 30 December. The FCA says firms stay responsible for agents and tech firms may need authorisation. 42 attorneys general oppose the 1 December sale of chats from more than 21 million Character.AI accounts. The New York Times told freelancers to avoid Photoshop 2027 over AI tags, and OpenAI says 35 of 322 GPT-6.2-designed minibinders bound their targets.",
-  "uncertainty": "Skills over MCP is a beta and reaches Enterprise later. Anthropic’s Rust figures are its own and its CPU figure covers one region. GitHub’s change applies only where no billing choice is saved. The FCA page sets expectations, not new rules. The Character.AI sale depends on the bankruptcy court. The Times has not said which Photoshop features it means, and Adobe had not responded. OpenAI’s protein results are a preprint, used specialised models to supply sequences and pick candidates, and have not been independently replicated.",
+  "title": "OpenAI fixed a billing mistake, so GPT-6.2 now uses up ChatGPT plans 40% faster on Astra and 25% faster on Sol. Cloudflare gives websites a one-switch search box for AI agents, and OpenAI tests Private Inference for sensitive business work. Nvidia pauses server shipments to four Southeast Asian countries, the UK’s FCA says Meta refused joint testing of Muse, New York bans AI chatbot toys, and Apple pulls the Talkie companion app.",
+  "summary": "OpenAI says a launch billing mistake undercounted GPT-6.2 usage; after the fix you reach limits 40% faster on Astra and 25% faster on Sol than last week, with one banked reset as an apology, and Chat and Work are starting to share one meter. Cloudflare’s Search for Agents indexes a site and gives agents a search address on its own domain, with AI Search billing from 1 December. OpenAI is testing Private Inference, which protects prompts during processing, with a few customers. Nvidia told Dell and Super Micro to pause servers to Malaysia, Singapore, Thailand and Indonesia. The FCA says Meta declined sandbox testing of Muse before its UK launch. New York banned AI chatbot toys for five years, and Apple removed Talkie after an investigation into its chats with children.",
+  "uncertainty": "OpenAI has not said what “40% faster” measures or published the intended usage rates, and the shared Chat and Work meter is still a test. Search for Agents is a beta and real query costs are not yet known. Private Inference is an alpha with no date or price for wider access. The Nvidia pause comes from a Wall Street Journal report relayed by TechCrunch, and its length is unspecified. The FCA account of the Muse talks is Payne’s; Meta says it engaged constructively. New York’s toy ban starts 90 days after signing and has not been tested in court. The Talkie findings come from the ABC and TBIJ investigation; MiniMax did not respond to the ABC.",
   "stats": {
     "filtered": 7,
     "verified": 7,
-    "themes": 5
+    "themes": 4
   },
   "stories": [
     {
-      "id": "mcp-skills-tasks",
-      "topic": "tools",
-      "theme": "MCP servers can now ship skills, run long jobs in the background, and stop to ask you before risky steps in Claude",
-      "changed": "On 24 November 2026, two years after it launched the Model Context Protocol (MCP), Anthropic added three things to how Claude works with MCP servers, the connectors that link it to other apps. Skills over MCP, in public beta, lets a server publish skills alongside its tools: written playbooks for how to do a job, such as step-by-step workflows or rules tailored to your account. Claude loads a skill only when it needs it, and skills update with the server, so there is nothing separate to install. Shopify uses it to help Claude design and update a merchant’s store end to end, HubSpot to onboard customers, and Atlassian to draw on company context; Carta will use it to draft and issue equity from an uploaded document. Tasks, now generally available, lets a server run a long job, or a whole agent loop, in the background while Claude keeps working and collects the result later; ZoomInfo uses it for deeper account and contact research. Elicitation, also generally available, lets a server pause and ask you for input or approval through a form or link: Supabase confirms costs before creating a paid project and before destructive SQL, Railway asks before removing a service, and GitHub makes you type a repository’s name before an agent deletes it. File Uploads, which sends PDFs, spreadsheets and images straight to a server, is coming soon. Anthropic says MCP has over 700 million monthly SDK downloads and over 10,000 connectors for Claude.",
-      "matters": "Until now a connector told Claude what it could do, not how to do it well, and every tool call had to finish before Claude moved on. Skills put the vendor’s know-how inside the connector, and Elicitation builds an “are you sure?” step into the tool itself rather than leaving it to the model.",
-      "imply": "The apps you connect will start to behave more like trained colleagues than bare buttons. For admins, the questions shift from “which connectors are allowed?” to “whose playbooks is Claude following, and which actions ask a person first?”",
-      "uses": [
-        "Check which of your Claude connectors (Shopify, HubSpot, Atlassian, GitHub, Supabase) now ship skills, and try one end-to-end job instead of single commands.",
-        "Hand a slow research or reporting job to a connector that supports Tasks, and keep working in the same chat.",
-        "If you build an MCP server, add Elicitation before anything that spends money or deletes data."
-      ],
-      "example": "A small online shop owner asks Claude to refresh the winter collection page. Shopify’s skill walks Claude through the store’s theme and product rules, and before anything is published, a form asks the owner to approve the changes.",
-      "audience": "People who use Claude with business apps, developers who build MCP servers, and Team admins, who must switch Skills over MCP on.",
-      "watch": "Skills over MCP is on by default for Pro, Max and Ultra, needs an admin on Team plans and is coming soon to Enterprise. Tasks and Elicitation are rolling out to Team and Enterprise. Watch whether other AI apps adopt the same open extensions.",
-      "source": {
-        "title": "Claude by Anthropic: MCP servers can now ship skills, run tasks, and more with Claude, 24 November 2026",
-        "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
-        "quote": "With Skills over MCP, servers can publish skills alongside their tools to help Claude take on longer, multi-step work."
-      }
-    },
-    {
-      "id": "claude-rust-migration",
-      "topic": "work",
-      "theme": "Anthropic used teams of Claude agents to move its main API from Python to Rust, and found passing tests was not enough",
-      "changed": "On 25 November 2026 Anthropic described how it moved its Messages API, the service customers and its own apps such as Claude Code use to reach Claude, from Python to Rust. API traffic grew roughly 1,800 times from early 2024 to fall 2026, and Rust uses far less computing power per request. Claude wrote a first version of the core request path in about a week. The hard part was proving the new version behaved like the old one. In April the Rust API passed about 98% of its tests, yet only about a quarter of inputs matched the Python API on real production traffic, because live requests hit cases the roughly 700 integration tests did not cover. So the team ran live requests through both versions, compared each step, and grouped differences by a “fingerprint”. A coordinating Claude agent assigned a worker agent to each new kind of difference; the agent reproduced it, fixed the Rust code and posted the fix and evidence in Slack for engineers to review. Corrections were saved as rules every later agent could read. Public traffic moved to Rust in September. The result, Anthropic says: about 70% less CPU per request and about 20% shorter median time to first token, without taking the service offline or freezing feature work.",
-      "matters": "This is a detailed account of AI agents rebuilding a live, business-critical system, not a demo. Its main lesson is about checking: a near-perfect test score hid that three in four real requests came out different.",
-      "imply": "If you let agents rewrite or migrate systems, budget most of the effort for proving the new version matches the old one on real work. People’s role moves to deciding what counts as correct and reviewing fixes, not typing the code.",
-      "uses": [
-        "Before trusting an agent-written replacement, run real (anonymised) inputs through old and new versions and compare the outputs.",
-        "Group differences by pattern so one bug is fixed once, not hundreds of times.",
-        "Keep a shared rules file where reviewers’ corrections are written down for the next agent."
-      ],
-      "example": "A finance team lets an agent rebuild its invoice-matching script. Instead of stopping at the tests, they run last month’s invoices through both versions and find 40 that come out differently, all from one date-format rule.",
-      "audience": "Engineering leads, platform teams and anyone planning an AI-assisted migration of a system other people depend on.",
-      "watch": "Whether other companies publish similar numbers for agent-led migrations, and how much human review time such projects really need.",
-      "source": {
-        "title": "Anthropic: Migrating our Messages API to Rust, 25 November 2026",
-        "url": "https://www.anthropic.com/research/migrating-api-to-rust",
-        "quote": "Our Rust API passed about 98% of its tests in April, yet only about a quarter of inputs matched on production traffic"
-      }
-    },
-    {
-      "id": "copilot-review-billing",
+      "id": "chatgpt-62-usage-fix",
       "topic": "money",
-      "theme": "GitHub will bill Copilot code reviews to the organisation from 30 December unless admins choose otherwise",
-      "changed": "On 25 November 2026 GitHub said that, for organisations and enterprises on Copilot Business or Copilot Enterprise that have not chosen how to bill Copilot code review, reviews by members with a paid Copilot licence will be billed to the organisation that owns the repository from 30 December 2026. Today, when no choice is saved, those reviews use the member’s own Copilot entitlement. Organisations that already picked Member or Organization keep their choice, and the separate setting for members without a Copilot licence does not change. Accounts without AI Credits paid usage, with a billing lock or with no billable customer will be set to Member instead. To keep things as they are, an admin selects Member in the organisation or enterprise Copilot policy settings before 30 December; where an enterprise manages the setting, an enterprise owner makes the choice. Until then, unset settings show Default (Member) with a notice.",
-      "matters": "AI code review runs on every pull request, so who pays adds up fast. A default that quietly moves the bill from personal allowances to the company account is the kind of change finance only notices when the invoice arrives.",
-      "imply": "AI tools are moving from per-seat prices to metered usage charged to the organisation. Someone in each company needs to own these settings, the same way someone owns cloud budgets.",
+      "theme": "OpenAI fixed a billing mistake, so the same GPT-6.2 work now uses up your ChatGPT plan’s allowance faster",
+      "changed": "On 26 November 2026 Tibo Sottiaux, who works on Codex and ChatGPT at OpenAI, said a billing mistake at the launch of GPT-6.2 had “incorrectly discounted” GPT-6.2 Astra and Sol usage for most users. OpenAI has fixed it, so the same work now uses more of your plan’s usage allowance. Compared with last week, he said, you will reach your limits 40% faster on GPT-6.2 Astra and 25% faster on GPT-6.2 Sol, although both should still go further than GPT-6 Astra and GPT-6.1 Sol. Other models were not affected, and OpenAI will not charge for the difference on past usage. As an apology, everyone on Go, Plus, Pro and Business gets one banked reset; BleepingComputer found it under Settings, Usage, where it expires a month after it is added. Separately, OpenAI has started merging ChatGPT’s Chat and Work areas for a small group of Pro subscribers. They share one usage meter, Instant chats stay unlimited and do not count, and OpenAI’s support page says shared limits reach more users in December. OpenAI told TechCrunch most users should not hit limits more often, but a small fraction of its heaviest users may.",
+      "matters": "The price of a plan stayed the same, but how much work it buys on OpenAI’s newest models went down overnight. For anyone who planned client work, coding sprints or team budgets around last week’s limits, the maths has changed.",
+      "imply": "Treat AI plan limits like a utility tariff that can move, not a fixed promise. Teams that lean on one model for heavy work should watch their usage meter, keep a cheaper model in the mix, and plan for chat and coding drawing from one pot from December.",
       "uses": [
-        "Open your organisation’s Copilot policy settings this week and check what code review billing shows.",
-        "Decide deliberately: Member keeps costs inside licences; Organization may suit teams that want reviews on every repo.",
-        "If you choose Organization, set a spending alert on AI Credits paid usage."
+        "Open ChatGPT Settings, Usage this week and note how fast your allowance drops on a normal day of GPT-6.2 work.",
+        "Save the banked reset for a real deadline instead of spending it straight away; it expires about a month after it appears.",
+        "Move routine jobs, like quick rewrites or simple lookups, to Instant or an older model, and keep GPT-6.2 Astra for the hard parts."
       ],
-      "example": "An engineering manager at a 60-person startup sees “Default (Member)” in the Copilot settings, agrees with finance to keep member billing for now, and selects Member before the holidays so January’s bill holds no surprise.",
-      "audience": "GitHub organisation and enterprise admins, engineering managers and finance teams paying for Copilot Business or Enterprise.",
-      "watch": "30 December 2026, when the default changes, and whether other AI coding tools move review costs to company accounts too.",
+      "example": "A freelance developer on Plus usually runs out of Codex time on Friday. This week she switches small edits to GPT-6.1 Sol, keeps GPT-6.2 Astra for the tricky refactor, and holds her banked reset for the client deadline.",
+      "audience": "Paying ChatGPT and Codex users, freelancers who quote work based on their plan, and team leads who budget AI seats.",
+      "watch": "When shared Chat and Work limits reach your plan in December, and whether OpenAI publishes clear before-and-after figures for what an allowance buys, which users on its community forum are asking for.",
       "source": {
-        "title": "GitHub Changelog: Copilot code review billing will default to the organization, 25 November 2026",
-        "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/",
-        "quote": "Organization billing requires AI Credits paid usage and can increase your organization’s spending."
+        "title": "BleepingComputer: OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug, 26 November 2026",
+        "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+        "quote": "Comparing to last week, you will reach your limits 40% faster on GPT-6.2 Astra and 25% faster on Sol."
       }
     },
     {
-      "id": "fca-agentic-ai",
+      "id": "cloudflare-search-for-agents",
+      "topic": "tools",
+      "theme": "Cloudflare lets any website owner give AI agents a search box with one switch, ahead of AI Search billing on 1 December",
+      "changed": "On 25 November 2026 Cloudflare launched Search for Agents, in beta on all plans including Free (with limits). Turn it on for a domain under Quick Actions on the dashboard’s Overview page, and Cloudflare creates an AI Search index of your site, crawls and indexes your pages, and opens a search address on your own domain at /.well-known/search. It adds tags to every page telling visiting AI agents the search exists and how to use it. Agents send a question and get back the matching content from your site in Markdown, not an AI-written answer. Besides normal web requests, it supports the new HTTP QUERY method (RFC 10008, published in June 2026). Requests still pass through your bot management, AI Crawl Control and firewall settings. By default it crawls up to 100,000 pages, five links deep, and refreshes every 24 hours. Usage follows AI Search pricing, and Cloudflare’s docs say AI Search billing begins on 1 December 2026. Each account gets 5 million ingestion tokens, 10 GB-month of storage, 1,000 semantic and 1,000 full-text queries a month, then pays $0.75 per 1,000 semantic or hybrid queries. On the Workers Free plan crawling is capped at 500 pages a day.",
+      "matters": "AI agents increasingly read websites for people, and they usually scrape page by page. This gives site owners a way to hand agents the right page from their own content, on their own domain and under their own access rules.",
+      "imply": "Being findable by agents is becoming a website setting, like a sitemap was for search engines. Marketing and docs teams will need to decide which content agents should find, and keep an eye on the query bill.",
+      "uses": [
+        "Docs and support teams: switch it on for a help centre so coding and support agents pull the right article instead of guessing.",
+        "Small businesses on Cloudflare: test it on your site, then ask an agent a customer question and see what it finds.",
+        "Before turning it on, check that only public pages are indexed and set the query budget you are willing to pay after the free allowance."
+      ],
+      "example": "A software company enables Search for Agents on its docs site. A customer’s coding agent asks “what is the upload size limit?”, gets the exact limits page in Markdown, and answers correctly without crawling the whole site.",
+      "audience": "Website owners, documentation and marketing teams, and developers building agents that read the web.",
+      "watch": "How many agents actually look for the /.well-known/search address, whether other hosts copy the idea, and what real query bills look like after 1 December.",
+      "source": {
+        "title": "Cloudflare Blog: Introducing Search for Agents, 25 November 2026",
+        "url": "https://blog.cloudflare.com/search-for-agents/",
+        "quote": "Today we're introducing Search for Agents, which puts that setup behind a toggle in your Cloudflare dashboard."
+      }
+    },
+    {
+      "id": "openai-private-inference",
+      "topic": "trust",
+      "theme": "OpenAI is testing Private Inference, which aims to keep a business’s prompts private even while its models process them",
+      "changed": "On 25 November 2026 OpenAI chief executive Sam Altman said the company is now testing Private Inference with a small group of customers. It is part of OpenAI Private Intelligence, its set of privacy protections for businesses. OpenAI’s product page lists Private Inference as an alpha and an API preview, built on confidential computing, where the work runs on sealed-off hardware, plus what it calls “strict verifiable controls”. The goal is to protect a company’s prompts and the model’s replies while the model is working on them, not only when data is stored or sent. Altman also pointed to the existing pairing of zero data retention (ZDR) with Private Safety Processing, which he said lets automated safety reviews run without giving OpenAI staff access to the underlying content. According to The Next Web, the OpenAI lead on the work called the test a first step and said OpenAI is lining up more computing power for a much larger rollout, with no date given.",
+      "matters": "Many firms still keep AI away from contracts, health records, deal documents and source code because they cannot be sure who might see the data. A provider being able to prove, not just promise, that it cannot read prompts would remove one of the biggest blocks to using AI on sensitive work.",
+      "imply": "Expect privacy guarantees that can be checked to become a buying question, alongside price and model quality. Legal, security and procurement teams should start asking vendors what is verifiable and what is only a policy.",
+      "uses": [
+        "Security and legal teams: list which sensitive workflows you keep away from AI today, and what proof would change that.",
+        "Companies on OpenAI’s API: ask your account team about the Private Inference pilot and whether ZDR already covers your use.",
+        "Procurement: add “can you show us the provider cannot read our prompts?” to AI vendor questionnaires."
+      ],
+      "example": "A law firm that bans AI on merger documents asks its provider for an audit showing prompts are processed on sealed hardware, then runs a small pilot on one closed deal before widening use.",
+      "audience": "Security, legal and compliance leads, regulated businesses, and developers handling sensitive data through OpenAI’s API.",
+      "watch": "Who gets access after the alpha, what independent checks OpenAI publishes, how much it costs, and how it compares with privacy offers from other AI providers.",
+      "source": {
+        "title": "The Next Web: OpenAI is testing a way to shield business prompts while its models run, 25 November 2026",
+        "url": "https://thenextweb.com/news/openai-private-inference-testing-customers",
+        "quote": "Stronger privacy protections will make frontier AI useful for a lot more work, and business privacy is important for a healthy ecosystem."
+      }
+    },
+    {
+      "id": "nvidia-southeast-asia-pause",
+      "topic": "money",
+      "theme": "Nvidia told Dell and Super Micro to pause AI server shipments to four Southeast Asian countries while it checks export rules",
+      "changed": "On 26 November 2026 TechCrunch, citing the Wall Street Journal, reported that Nvidia has told manufacturing partners, including Dell and Super Micro, to pause shipments of servers to Malaysia, Singapore, Thailand and Indonesia for an unspecified period. Nvidia is checking whether its partners in the region meet US export requirements. Chinese companies have been using Nvidia chips remotely from data centres in those countries, a route the US Commerce Department closed earlier this month. The Journal notes that the think tank Institute for Progress estimates such remote data centres supply about 24% of China’s AI computing power.",
+      "matters": "Southeast Asia has become a major home for new AI data centres. A pause on Nvidia servers there can delay capacity that companies across Asia, not just Chinese firms, were planning to rent.",
+      "imply": "Where your AI computing physically sits now carries trade-rule risk. Companies renting GPUs in the region may face delays, tighter checks on who the end customer is, or higher prices while the pause lasts.",
+      "uses": [
+        "If you rent GPU capacity in Singapore, Malaysia, Thailand or Indonesia, ask your provider whether new hardware or expansions are affected.",
+        "Finance and planning teams: build a delay into any AI project that depends on new capacity in the region.",
+        "Keep a second region or provider ready for critical AI workloads."
+      ],
+      "example": "An Indian startup planning to move model training to a new Johor data centre in January asks the operator for a written delivery date, and keeps its current cloud contract until the servers actually arrive.",
+      "audience": "Companies renting AI computing in Asia, data centre investors, and finance teams planning AI budgets.",
+      "watch": "How long the pause lasts, whether Nvidia confirms it publicly, and whether shipments resume with stricter checks on who uses the chips.",
+      "source": {
+        "title": "TechCrunch: Nvidia hits pause on chip shipments to Southeast Asia, 26 November 2026",
+        "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+        "quote": "Nvidia has told manufacturing partners, including Dell and Super Micro, to hit pause on server shipments to Malaysia, Singapore, Thailand, and Indonesia for an unspecified period"
+      }
+    },
+    {
+      "id": "fca-meta-muse-testing",
       "topic": "rules",
-      "theme": "The UK’s financial regulator says firms stay responsible for the AI agents they use, and tech firms whose agents move money may need its permission",
-      "changed": "On 24 November 2026 the UK’s Financial Conduct Authority (FCA) published its approach to agentic AI, meaning AI that can act, not just answer, in financial services. For regulated firms, responsibility for following the rules stays with the firm and its senior managers even when the agent comes from a third party; firms must show they understand the systems they use, how much freedom those systems have, the risks and the controls needed in real time and under stress. Firms should also plan for customers who send AI agents to deal with them: how to tell they are dealing with an agent, what consent is in place, what the agent may do, how customers get help when something goes wrong, and whether to accept payments instructed by an agent or from a wallet an agent controls. For technology providers and social media platforms, the FCA says calling yourself a tech company does not settle whether you need authorisation: an agent that handles payments, gives financial advice, arranges credit or issues financial promotions may be doing regulated work. The FCA says it will intervene against unauthorised financial services, expects clear disclaimers about the limits of AI financial information, and plans an Agentic Policy Sprint for firms and tech providers.",
-      "matters": "Shopping and assistant agents are starting to pay, borrow and invest for people. The UK regulator is saying the old rules apply to them, and that the company behind an agent cannot hide behind the word “technology”.",
-      "imply": "Banks, insurers and fintechs need a plan for agent customers, not just their own AI. AI companies launching money features in the UK should expect to talk to the FCA early.",
+      "theme": "The UK’s financial regulator says Meta turned down joint testing of its Muse shopping agent before launching it in the UK",
+      "changed": "Meta declined a suggestion from the UK’s Financial Conduct Authority (FCA) last week to test its Muse personal agent together in the regulator’s sandbox, the FCA’s head of innovation, Colin Payne, told WIRED in a story published on 26 November 2026. Muse launched in the UK on Tuesday 24 November. The FCA especially wants to understand how agents will make payments: Sainsbury’s, Marks & Spencer, Ocado, Debenhams Group and Currys said they had worked with Meta to smooth Muse’s access to their sites. Payne said Meta only told the FCA of its plans last month, and that testing would normally be planned over weeks or months. Meta said it had “engaged constructively” with regulators. The Competition and Markets Authority has already made Meta change its UK terms to say it must use “reasonable skill and care” when providing Muse, and said it will not hesitate to act if it has concerns. The data watchdog, the ICO, stressed that users must understand and control how Muse uses their data. WIRED reports more than 10 million users have set up Muse in North America since September.",
+      "matters": "This is a regulator saying publicly that a big shopping agent arrived before it could check how the agent handles people’s money. It follows the FCA’s 24 November statement that firms stay responsible for agents and tech firms may need authorisation.",
+      "imply": "Retailers and payment firms working with consumer agents should expect UK regulators to ask how agent purchases are approved, explained and refunded, whoever built the agent.",
       "uses": [
-        "Risk and compliance teams: list where AI agents act for your firm and who the accountable senior manager is for each.",
-        "Customer teams: decide how you will recognise and handle an AI agent calling or messaging on a customer’s behalf.",
-        "Product teams at AI companies: check whether a planned payment or advice feature could count as regulated activity."
+        "UK retailers: check how purchases made by Muse or other agents appear in your systems, and how refunds and disputes work.",
+        "Payment and fraud teams: flag agent-made orders separately so you can spot problems early.",
+        "Product teams launching agents in the UK: talk to the FCA early; it says testing takes weeks or months to plan."
       ],
-      "example": "A UK building society gets a mortgage enquiry sent by a customer’s AI assistant. Its new process checks the customer has authorised the agent, limits the agent to fetching information, and sends any application to the customer to sign.",
-      "audience": "Compliance and risk teams at UK financial firms, fintech founders, and AI companies offering agents to UK consumers.",
-      "watch": "The FCA’s regular updates on the same page, the Agentic Policy Sprint, and any first action against an unauthorised agent product.",
+      "example": "A UK grocer that opened its site to Muse adds a tag for agent-placed orders, and reviews a week of them for wrong items and refund requests before promoting the feature.",
+      "audience": "UK retailers, payment and fintech teams, and companies planning to launch AI agents that buy things for people.",
+      "watch": "Whether the FCA, CMA or ICO open a formal review of Muse, and whether other agent makers accept sandbox testing before UK launches.",
       "source": {
-        "title": "Financial Conduct Authority: Our approach to Agentic AI, 24 November 2026",
-        "url": "https://www.fca.org.uk/firms/innovation/ai-approach/agentic-ai",
-        "quote": "Just because a business describes itself as a technology provider does not mean that they do not need to be authorised by us to provide financial services in the UK."
+        "title": "WIRED: Meta Refused to Share Muse for Testing, UK Financial Watchdog Complains, 26 November 2026",
+        "url": "https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/",
+        "quote": "If an agent is acting autonomously, we want to make sure it’s in the interest of the consumer"
       }
     },
     {
-      "id": "characterai-chat-auction",
+      "id": "ny-ai-chatbot-toy-ban",
+      "topic": "rules",
+      "theme": "New York banned the making and selling of AI chatbot toys for five years, with fines of up to $15,000 a day",
+      "changed": "New York Governor Kathy Hochul signed S.9408A/A.11144B, a five-year moratorium on manufacturing, distributing and selling toys in New York with embedded or integrated AI chatbots, such as talking stuffed animals, dolls and robots that use the internet to hold conversations with children. The law takes effect 90 days after signing, so it does not cover this holiday season. The Attorney General will enforce it, with civil penalties of up to $15,000 per day for each violation. The governor’s office cited a consumer watchdog’s tests of chatbot toys for ages 3 to 12: some talked about sexually explicit topics, told children where to find matches at home, and acted upset when a child had to leave, with few or no parental controls and safety limits that weakened in longer conversations. It follows a New York law from October that bans certain unsafe chatbot features for minors.",
+      "matters": "This pauses a whole category of children’s products instead of setting rules for how they behave. It shows lawmakers are willing to stop sales outright when safety testing looks weak.",
+      "imply": "Companies that put AI models into consumer hardware, especially for children, should expect bans or strict rules rather than voluntary codes. Retailers will need to know which products in their range contain a chatbot.",
+      "uses": [
+        "Toy makers and retailers: list every product with an online chatbot and plan to stop New York sales before the law takes effect.",
+        "Hardware startups: document parental controls, data collection and conversation limits now; other states may copy this.",
+        "Parents and gift buyers: check the box for open-ended chat, voice recording or face scanning before buying."
+      ],
+      "example": "An online toy shop tags every talking plush and robot that uses an AI chatbot, blocks New York delivery for them from the start date, and adds a plain note on each product page.",
+      "audience": "Toy and consumer hardware makers, retailers and marketplaces selling into New York, and parents.",
+      "watch": "Whether other states follow, how the Attorney General defines “AI chatbot toy” in enforcement, and whether makers challenge the law.",
+      "source": {
+        "title": "Governor Kathy Hochul: As Consumers Begin Their Holiday Shopping Season, Governor Hochul Signs Five-Year Ban on AI Chatbot Toys, 24 November 2026",
+        "url": "https://www.governor.ny.gov/news/consumers-begin-their-holiday-shopping-season-governor-hochul-signs-five-year-ban-ai-chatbot",
+        "quote": "Violators face civil penalties up to $15,000 per day for each violation that will be enforced by the Attorney General."
+      }
+    },
+    {
+      "id": "talkie-apple-removal",
       "topic": "trust",
-      "theme": "Bankrupt Character.AI plans to auction millions of users’ private chats, and 42 US attorneys general ask the court to stop it",
-      "changed": "On 24 November 2026 California Attorney General Rob Bonta said he had joined a bipartisan coalition of 42 attorneys general opposing Character.AI’s plan to sell its platform and the private chat histories of more than 21 million US accounts, more than 2.1 million of them registered to minors, at an auction set for 1 December 2026. The sale would include users’ personal data such as IP addresses and other metadata, and risk scores the company gave users. Character.AI filed for Chapter 11 bankruptcy in October and had told users it does not sell personal information. The states say the deal places no duties on the buyer: it would not have to follow Character.AI’s privacy policy or honour opt-out and deletion requests, and could pass the data on. The only bidder named so far, Smirks and Pangs Acquisition LLC, was set up in Delaware on 13 November, one day before Character.AI picked it as the opening bid. The states ask the court to reject the sale terms, the bidder and its proposed $350,000 break-up fee, and at a minimum to leave out children’s chats and other sensitive data. TechCrunch reported the story on 25 November.",
-      "matters": "People tell chatbots things they tell no one else. This case tests whether those conversations become just another asset to sell when an AI company fails.",
-      "imply": "A privacy promise is only as strong as what happens in bankruptcy. Before staff or customers pour sensitive details into any AI service, ask what happens to the data if the company is sold or goes under.",
+      "theme": "Apple pulled MiniMax’s Talkie companion app worldwide, and Talkie has now blocked web users in Australia and the UK",
+      "changed": "Apple removed Talkie, one of the world’s most popular AI companion apps, from its App Store worldwide for breaking its rules on sexual content, after questions from Australia’s ABC. On 27 November 2026 the ABC reported that Talkie had also started blocking Australian and British visitors to its website. The moves follow a joint investigation by the ABC and the UK’s Bureau of Investigative Journalism into inappropriate and abusive conversations between Talkie’s AI characters and children. The reporters found corporate documents showing that Talkie’s Chinese owner, MiniMax, had built its models to create emotional bonds that keep users talking, and evidence suggesting MiniMax trained its commercial AI models on Talkie conversations despite telling users they were “private”. Talkie is still on Google Play, where it shows more than 50 million downloads; Google previously told the ABC it was available only to verified adults. Australia’s Information Commissioner said a new Children’s Online Privacy Code starts on 10 December, with civil penalties of up to $50 million per breach.",
+      "matters": "Companion apps reach children through app stores, and in this case the store acted only after reporters brought evidence. It also shows that “private” chats with an AI app may end up training its models.",
+      "imply": "Expect more pressure on app stores, and on companies building AI characters, to prove age checks and data promises work. Anyone offering a chatbot to the public needs to be able to show what it says to children and what happens to their chats.",
       "uses": [
-        "If you or your children used Character.AI, check its settings and consider deleting chats before 1 December.",
-        "In vendor reviews, ask AI suppliers what their contracts say about data in a sale or bankruptcy.",
-        "Remind staff not to put personal or client details into consumer chatbots."
+        "Parents and schools: check phones for Talkie and other companion apps; removal from the App Store does not delete apps already installed.",
+        "Companies with customer chatbots: test what your bot says to someone who says they are 12, and fix it before a journalist does.",
+        "Privacy teams: check that what your app tells users about chat privacy matches how chats are really used for training."
       ],
-      "example": "A school counsellor who once suggested a “study buddy” bot to students sends parents a short note about the auction and how to delete chats.",
-      "audience": "Parents, privacy and procurement teams, and anyone who has shared personal matters with an AI companion app.",
-      "watch": "The bankruptcy court’s ruling before or at the 1 December auction, and new chatbot safety laws in California, Colorado, New York and Connecticut that take effect on 1 January 2027.",
+      "example": "A school’s IT lead sends parents a short note before the holidays: how to find AI companion apps on a phone, how to turn on app-store age limits, and why “private” in an app’s pitch is not a guarantee.",
+      "audience": "Parents and educators, companies that run consumer chatbots, and app store and trust-and-safety teams.",
+      "watch": "Whether Google follows Apple, what Australia’s eSafety Commissioner and Information Commissioner do next, and whether MiniMax answers the training-data claims.",
       "source": {
-        "title": "California Department of Justice: Attorney General Bonta Opposes Asset Sale of Character.AI Amid Child Safety Concerns, 24 November 2026",
-        "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns",
-        "quote": "This kind of behavior is illegal under federal and California law and bankruptcy should not be used to sidestep these consumer protections"
-      }
-    },
-    {
-      "id": "nyt-photoshop-ai-metadata",
-      "topic": "trust",
-      "theme": "The New York Times tells freelance photographers not to use Photoshop 2027, because its hidden AI features can label photos as AI-edited",
-      "changed": "The New York Times has told freelance photographers not to use the newest version of Adobe Photoshop when working for it, The Verge reported on 24 November 2026. In an email from photography leaders Meaghan Looram and Josh Haner, the Times says features in the 2027 update use AI “in ways that may not be apparent to users” and “can result in metadata identifying photographs as AI-generated.” The rule covers Photoshop 2027, release 28.0.0 and later updates; a Times spokesperson confirmed it. The November update adds an AI Assisted Editor view, an AI assistant for step-by-step editing, prompt-based editing, new AI upscaling and a tool that recomposes images for new canvas sizes. Since August Adobe has been adding C2PA content credentials, tags that record whether an image was made or edited with AI, across its apps. The Times has said it does not retouch or digitally manipulate photos beyond minimal colour adjustments, so an AI tag on a news photo could cost readers’ trust. It is not yet clear which features the Times means, and Adobe had not answered The Verge.",
-      "matters": "AI is now built so deeply into everyday tools that people can use it without knowing, and the labels meant to build trust can then mislead. A major newsroom is choosing to freeze its software rather than risk that.",
-      "imply": "Any team that promises “no AI” in its work, from newsrooms to legal and medical imaging, needs to know which features in its tools count as AI and what tags they leave behind.",
-      "uses": [
-        "Photo, design and comms teams: check which Photoshop version freelancers and staff use for work with strict authenticity rules.",
-        "Open a sample exported file in a content credentials viewer to see what it says about AI.",
-        "Write down which editing tools are allowed for work you label as unedited."
-      ],
-      "example": "A charity’s comms lead learns a campaign photo carries an AI-edited tag only because an automatic selection tool was used, and sets a rule that documentary photos are edited in an older, approved version.",
-      "audience": "Photographers, picture editors, comms and marketing teams, and anyone whose work depends on proving an image is real.",
-      "watch": "Adobe’s answer on which features add AI tags, and whether other news organisations or agencies follow the Times.",
-      "source": {
-        "title": "The Verge: The New York Times warns photographers not to update Photoshop over AI features, 24 November 2026",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
-        "quote": "At this time, we are requiring that all contributing photographers avoid using Adobe Photoshop 2027 (release 28.0.0 and subsequent updates) when working on assignment for The Times"
-      }
-    },
-    {
-      "id": "gpt6-protein-design",
-      "topic": "work",
-      "theme": "OpenAI says GPT-6 models can design proteins with reasoning and code alone, and some designs bound their targets in the lab",
-      "changed": "On 24 November 2026 OpenAI published a preprint saying its GPT-6 models can design new protein shapes and sequences using only reasoning and general-purpose code, without calling specialised biology models to generate them. With research partner Onava it tested designs in the lab. A pre-release version of GPT-6.2 designed three-dimensional shapes for minibinders, small proteins meant to attach to a chosen target, for five targets; a specialised model called SolubleMPNN supplied the amino acid sequences, and other specialised models helped pick candidates. Of 322 minibinders tested, 35 (10.9%) bound their intended target: 5 hits for PD-L1, a protein some cancers use to evade the immune system, 3 for IL-7Rα, 1 for TrkA, 8 for VEGF-A and 18 for IL-17A. Every target got at least one hit. In separate experiments, many antibodies and minibinders that GPT-6.2 redesigned also bound. OpenAI says GPT-6.2’s designs scored slightly below the specialised RFdiffusion model on computer measures while its newer internal models scored higher, and that the original RFdiffusion study reported higher hit rates. It also says the results do not yet show end-to-end design without specialised models, that binding is only one step towards a medicine, and that the same skills could be misused.",
-      "matters": "General AI models are starting to do work that needed a chain of specialist tools and experts. For research teams that could mean trying ideas faster, but the lab, the filtering and the human judgment still decide what works.",
-      "imply": "Expect more “one general model plus a few specialist checks” workflows in science and engineering. Results like this need reading closely: who filtered the designs, how binding was defined, and who ran the lab.",
-      "uses": [
-        "Biotech and research teams: compare a general model’s designs against your current specialist pipeline on one target you know well.",
-        "R&D managers: ask vendors what share of an AI-designed batch actually worked in the lab, not just computer scores.",
-        "Safety and compliance teams: review dual-use controls before giving staff biology-capable models."
-      ],
-      "example": "A university lab tests a general model on a protein target it has studied for years, sends 40 designs to its usual lab partner, and compares the hit rate with last year’s specialist-tool campaign.",
-      "audience": "Biotech researchers, R&D leaders and investors in drug discovery, and safety teams watching dual-use risk.",
-      "watch": "Independent replication, results from OpenAI’s internal models in the lab, and how labs govern access to protein-design abilities.",
-      "source": {
-        "title": "OpenAI: GPT-6 models demonstrate intrinsic protein-design capabilities, 24 November 2026",
-        "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
-        "quote": "We tested 322 minibinders against 5 targets in the lab. Of those, 35 (10.9%) tested positive for binding to their intended target."
+        "title": "ABC News: AI companion app Talkie blocked on web in Australia and UK as parents welcome Apple removal, 27 November 2026",
+        "url": "https://www.abc.net.au/news/2026-11-27/talkie-ai-app-blocked-taken-off-apple-store/107433834",
+        "quote": "Controversial AI companion service Talkie is now blocking Australian and British visitors from its website, days after an ABC investigation prompted Apple to remove the product from its app store globally."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "MCP servers can teach Claude",
-        "body": "Connectors can now ship skills, run long jobs in the background and stop to ask you before risky steps."
+        "title": "GPT-6.2 limits arrive sooner",
+        "body": "OpenAI fixed a billing bug: you hit limits 40% faster on GPT-6.2 Astra and 25% faster on Sol than last week."
       },
       {
-        "title": "Agents moved Anthropic’s API",
-        "body": "Claude agents helped move the Messages API to Rust: about 70% less CPU per request, 20% faster first token."
+        "title": "A search box for AI agents",
+        "body": "Cloudflare indexes your site with one switch and gives agents a search address on your own domain."
       },
       {
-        "title": "GitHub bills reviews to orgs",
-        "body": "From 30 December, unset Copilot code review billing moves from members’ allowances to the organisation."
+        "title": "OpenAI tests Private Inference",
+        "body": "A small group of businesses is trying sealed-hardware processing meant to keep prompts private."
       }
     ],
     "matters": [
       {
-        "title": "UK FCA on AI agents",
-        "body": "Firms stay responsible for agents they use; tech firms whose agents move money may need FCA authorisation."
+        "title": "Nvidia pauses Asian shipments",
+        "body": "Dell and Super Micro were told to pause AI servers to Malaysia, Singapore, Thailand and Indonesia."
       },
       {
-        "title": "42 states fight a chat auction",
-        "body": "Character.AI plans to sell chats from 21M+ US accounts on 1 December; attorneys general want it stopped."
+        "title": "FCA: Meta skipped Muse tests",
+        "body": "The UK regulator says Meta declined joint sandbox testing before launching its shopping agent there."
       },
       {
-        "title": "NYT pauses Photoshop 2027",
-        "body": "The Times told freelance photographers to avoid it, as hidden AI features can tag photos as AI-generated."
+        "title": "New York bans AI chatbot toys",
+        "body": "A five-year ban on making or selling toys with AI chatbots, with fines up to $15,000 a day per violation."
       }
     ],
     "watch": [
       {
-        "title": "GPT-6.2 designs proteins",
-        "body": "In lab tests, 35 of 322 small proteins built from GPT-6.2’s designs bound their targets, or 10.9%."
+        "title": "Apple pulls Talkie",
+        "body": "The AI companion app left the App Store after an investigation into its chats with children."
       },
       {
-        "title": "Admins: choose Copilot billing",
-        "body": "Pick Member or Organization in Copilot policy settings before 30 December to avoid surprise spending."
+        "title": "Save your banked reset",
+        "body": "Go, Plus, Pro and Business users get one extra ChatGPT usage reset; it expires a month after it appears."
       },
       {
-        "title": "Test agents on real work",
-        "body": "Anthropic’s Rust API passed about 98% of tests but first matched only about a quarter of live inputs."
+        "title": "AI Search billing from 1 Dec",
+        "body": "Search for Agents runs on Cloudflare AI Search, which starts billing on 1 December after a free allowance."
       }
     ]
   },
   "chips": [
-    "MCP",
-    "Claude",
-    "Skills",
-    "Agent approvals",
-    "Rust",
-    "Code migration",
-    "Agent verification",
-    "GitHub Copilot",
-    "AI billing",
-    "FCA",
-    "Agentic AI rules",
-    "Character.AI",
-    "Chat privacy",
-    "Photoshop",
-    "Content credentials",
     "GPT-6.2",
-    "Protein design"
+    "ChatGPT limits",
+    "Codex",
+    "AI billing",
+    "Cloudflare",
+    "Search for Agents",
+    "HTTP QUERY",
+    "Private Inference",
+    "Confidential computing",
+    "Nvidia",
+    "Export controls",
+    "Southeast Asia",
+    "FCA",
+    "Meta Muse",
+    "AI agents",
+    "AI toys",
+    "New York law",
+    "Talkie",
+    "Child safety"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Claude by Anthropic, 24 Nov (MCP turns two): Skills over MCP public beta (Claude, Claude Code; on by default Pro/Max/Ultra, Team via admin, Enterprise soon); Tasks and Elicitation GA (Pro/Max/Ultra; rolling out Team/Enterprise); File Uploads soon. Shopify, HubSpot, Atlassian, Carta (soon) skills; ZoomInfo Tasks; Supabase, Railway, GitHub Elicitation. >700M monthly SDK downloads; >10,000 connectors for Claude. ClaudeDevs on X.",
-      "topic": "Tools"
-    },
-    {
-      "id": "s2",
-      "raw": "Anthropic research blog, 25 Nov: Messages API migrated Python to Rust; traffic ~1,800x early 2024 to fall 2026; Claude wrote first core request path in ~a week; ~700 integration tests; April: ~98% tests passed, ~a quarter of production inputs matched; shadowing with checkpoints and fingerprints; coordinator + worker Claude agents, fixes reviewed in Slack, memory rules; public traffic on Rust in Sept 2026; ~70% less CPU/request, ~20% lower median TTFT, no downtime. AnthropicAI on X.",
-      "topic": "Work"
-    },
-    {
-      "id": "s3",
-      "raw": "GitHub Changelog, 25 Nov: Copilot Business/Enterprise orgs with no code review billing choice: reviews by licensed members billed to repo-owning org from 30 Dec 2026; choose Member to keep; existing choices unchanged; accounts without AI Credits paid usage, billing lock or billable customer set to Member.",
+      "raw": "Tibo Sottiaux on X, 26 Nov 02:50 UTC (BleepingComputer, 26 Nov): GPT-6.2 launch billing mistake discounted Astra and Sol usage for most users; fixed; vs last week limits reached 40% faster on 6.2 Astra, 25% faster on Sol; still further than 6 Astra and 6.1 Sol; other models unaffected; no charge for past usage; one banked reset for Go, Plus, Pro, Business (Settings > Usage, expires a month later). TechCrunch 25 Nov: unified Chat and Work for a small group of Pro users, one usage meter, Instant unlimited, wider shared limits in December.",
       "topic": "Money"
     },
     {
+      "id": "s2",
+      "raw": "Cloudflare Blog, 25 Nov: Search for Agents, beta on all plans incl. Free (with limits); toggle under Quick Actions; AI Search instance; /.well-known/search; agent meta tags; returns Markdown, not generated answers; HTTP QUERY (RFC 10008, June 2026); subject to bot management, AI Crawl Control, WAF. Docs: default 100,000 pages, 5 hops, 24h sync; AI Search billing from 1 Dec 2026; 5M ingestion tokens, 10 GB-month, 1,000 semantic + 1,000 full-text queries included; $0.75 per 1,000 semantic/hybrid queries; Workers Free 500 pages/day. Cloudflare on X.",
+      "topic": "Tools"
+    },
+    {
+      "id": "s3",
+      "raw": "Sam Altman on X, 25 Nov 17:12 UTC (The Next Web, 25 Nov): testing Private Inference with a small group of customers, part of OpenAI Private Intelligence; product page: Private Inference (Alpha), API Preview, confidential computing, strict verifiable controls; ZDR with Private Safety Processing allows automated safety reviews without staff access; larger rollout planned, no date.",
+      "topic": "Trust"
+    },
+    {
       "id": "s4",
-      "raw": "FCA, 24 Nov: Our approach to Agentic AI. Regulated firms keep responsibility incl. third-party agents; senior managers accountable; understand autonomy, risks, real-time controls; plan for customer agents (identification, consent, permissions, support, agent-instructed payments, agent wallets). Tech providers/social platforms may need authorisation (payments, advice, credit broking, promotions). Disclaimers; Agentic Policy Sprint; regular updates.",
-      "topic": "Rules"
+      "raw": "TechCrunch, 26 Nov (citing WSJ): Nvidia told partners incl. Dell and Super Micro to pause server shipments to Malaysia, Singapore, Thailand, Indonesia for an unspecified period while assessing export compliance; remote access loophole closed by Commerce earlier in November; Institute for Progress estimate ~24% of China’s AI compute from remote data centres.",
+      "topic": "Money"
     },
     {
       "id": "s5",
-      "raw": "California AG, 24 Nov (TechCrunch 25 Nov): 42 AGs oppose Character.AI sale of platform and chats from >21M US accounts (>2.1M minors), IP addresses, metadata, risk scores; auction 1 Dec 2026; Chapter 11 in Oct; bidder Smirks and Pangs Acquisition LLC formed 13 Nov, picked 14 Nov; $350,000 break-up fee; states ask to deny or exclude kids' and sensitive chats; chatbot laws in CA, CO, NY, CT from 1 Jan 2027.",
-      "topic": "Trust"
+      "raw": "WIRED, 26 Nov: FCA head of innovation Colin Payne says Meta declined last week’s suggestion of joint sandbox testing of Muse; Muse launched in UK Tue 24 Nov; Sainsbury’s, M&S, Ocado, Debenhams Group, Currys working with Meta; Meta told FCA last month; Meta: engaged constructively; CMA made Meta add reasonable skill and care to UK terms; ICO on data control; >10M users set up Muse in North America since Sept.",
+      "topic": "Rules"
     },
     {
       "id": "s6",
-      "raw": "The Verge, 24 Nov: NYT email (Meaghan Looram, Josh Haner) asks freelance photographers to avoid Photoshop 2027 (28.0.0+) on assignment; AI features may add metadata identifying photos as AI-generated; spokesperson Graham James confirmed; Adobe C2PA support since August; November update adds AI Assisted Editor, assistant, prompt editing, upscaling, recompose; Adobe no comment.",
-      "topic": "Trust"
+      "raw": "NY Governor, 24 Nov: S.9408A/A.11144B five-year moratorium on manufacture, distribution and sale of toys with embedded or integrated AI chatbots; effective 90 days after signing; AG enforces; civil penalties up to $15,000 per day per violation; watchdog tests of toys for ages 3-12. GovKathyHochul on X.",
+      "topic": "Rules"
     },
     {
       "id": "s7",
-      "raw": "OpenAI, 24 Nov: preprint on intrinsic protein design in GPT-6 family; with Onava, pre-release GPT-6.2 designed minibinder shapes for 5 targets, SolubleMPNN sequences, specialised models for selection; 322 tested, 35 (10.9%) bound: PD-L1 5, IL-7Ra 3, TrkA 1, VEGF-A 8, IL-17A 18; redesigned antibodies/minibinders also bound; RFdiffusion study reported higher hit rates; not yet end-to-end; dual-use caveat. OpenAI on X.",
-      "topic": "Work"
+      "raw": "ABC News, 27 Nov: Talkie blocks Australian and UK web visitors days after Apple removed it worldwide for sexual-content rule breaches; ABC/TBIJ investigation into abusive chats with children; MiniMax documents on emotional bonds; evidence of training on Talkie chats despite ‘private’ claims; still on Google Play (50M+ downloads, verified adults per Google); Australian Children’s Online Privacy Code from 10 Dec, penalties up to $50M per contravention; MiniMax did not respond.",
+      "topic": "Trust"
     }
   ]
 }

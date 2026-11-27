@@ -5538,11 +5538,123 @@
       "s": 3,
       "p": "Free to build; first app hosted free; CHF 50/month per further hosted project or source download",
       "st": "active"
+    },
+    {
+      "n": "lip-dictation",
+      "w": "https://github.com/batanus/lip-dictation",
+      "c": "Vibe Coding",
+      "tl": "Silent dictation for Claude Code: mouth words at your webcam and a local lip-reading model types them",
+      "d": "lip-dictation is a Claude Code plugin for Mac that turns silently mouthed phrases into prompt text with a lip-reading model that runs on your machine. No audio is recorded and no video leaves the Mac. Claude is told which words were lip-read and asks before destructive actions, and you can train the model on your own lips.",
+      "f": [
+        "Local Auto-AVSR visual-only lip-reading model",
+        "Button above the Claude Code prompt and /lip-setup",
+        "Claude told which words were lip-read, with alternatives",
+        "Optional training that keeps a personal model only if it improves"
+      ],
+      "u": [
+        "Asking Claude Code to run tests during a call while muted",
+        "Sending short commands in an open-plan office without talking",
+        "Working late at home without waking anyone"
+      ],
+      "e": "It's like a colleague across the room who can read your lips and type what you mouthed, though you should read it back before hitting Send.",
+      "s": 3,
+      "p": "Free and open source (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "Nullify 68M",
+      "w": "https://huggingface.co/rbsriram/nullify-68m",
+      "c": "Agent Infrastructure",
+      "tl": "A tiny local model that finds and masks personal data in text in milliseconds",
+      "d": "Nullify 68M is a 68-million-parameter open model that detects personal and sensitive information in text, such as names, organisations, phone numbers and emails, and returns exact character positions so you can mask them. It runs locally on a laptop CPU with PyTorch or ONNX, with one profile that leaves dates and places visible and one that masks everything.",
+      "f": [
+        "Exact start and end positions for each detected span",
+        "About 8.5 ms per message on a laptop CPU (maker’s figure)",
+        "PyTorch or ONNX backend, no GPU needed",
+        "Mask profiles for default or all classes"
+      ],
+      "u": [
+        "Redacting customer names and emails before sending tickets to an AI model",
+        "Cleaning logs and transcripts before storing them",
+        "Adding a privacy filter in front of an agent’s inputs"
+      ],
+      "e": "It's like a fast proofreader with a black marker who crosses out every name, phone number and email before a letter leaves the building.",
+      "s": 4,
+      "p": "Free and open source (Apache 2.0)",
+      "st": "active"
+    },
+    {
+      "n": "Selenia",
+      "w": "https://github.com/penielny/selenia",
+      "c": "Workflow Automation",
+      "tl": "Find Selenium test elements with plain English using a 24 MB local model, no LLM",
+      "d": "Selenia is a Python library that picks the element a Selenium test needs from a plain-English description, using a small local ranking model that scores the page’s real elements. It never writes selectors, refuses ambiguous matches, works offline, and returns normal Selenium elements.",
+      "f": [
+        "24 MB local model, no API key or per-call cost",
+        "Reported 89% top-1 and 96% top-3 on unseen sites",
+        "About 20–35 ms per lookup on an Apple M1 (maker’s figure)",
+        "Raises an error when nothing or two things match"
+      ],
+      "u": [
+        "Replacing brittle XPath in login and checkout tests",
+        "Running UI tests offline in locked-down CI",
+        "Keeping tests working after a front-end redesign"
+      ],
+      "e": "It's like telling a helper “press the blue Login button” instead of giving them the exact grid position, so moving the furniture doesn’t confuse them.",
+      "s": 3,
+      "p": "Free and open source (MIT)",
+      "st": "active"
+    },
+    {
+      "n": "Draftmux",
+      "w": "https://draftmux.raine.dev/",
+      "c": "Productivity",
+      "tl": "Edit what your coding agent writes next to a live GitHub or Slack preview",
+      "d": "Draftmux is a desktop editor for refining messages a coding agent drafts, such as PR descriptions, issues and Slack updates. It forks your Claude Code or Pi session so the draft starts from your conversation, previews the text as GitHub, Slack, rich text or plain text, and lets you shorten, tighten or chat about selected parts before copying or handing it back.",
+      "f": [
+        "Hand-off command from Claude Code or Pi sessions",
+        "Live preview as GitHub, Slack, rich text or plain text",
+        "Selection actions to shorten or tighten text",
+        "Copy formatted for the target, or tell the agent to file it"
+      ],
+      "u": [
+        "Polishing a PR description before reviewers see it",
+        "Writing a team Slack update from a long coding session",
+        "Editing a README with its own agent session"
+      ],
+      "e": "It's like having a print preview and an editor sitting beside your ghostwriter, so you see exactly how the note will look before it goes out.",
+      "s": 3,
+      "p": "Free and open source (MIT)",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "26 November 2026",
+    "week": "27 November 2026",
     "launches": [
+      {
+        "name": "lip-dictation (github.com/batanus/lip-dictation)",
+        "date": "26 November 2026",
+        "desc": "A free Claude Code plugin for Mac that lets you dictate without making a sound, posted as a Show HN on 26 November. Press a button above the prompt, mouth a phrase at your webcam, press again, and a lip-reading model (Auto-AVSR’s 250-million-parameter visual-only model) running on your Mac types the words into the prompt. No audio is recorded and no video leaves the machine. The maker calls it a prototype with modest accuracy: the model gets about 80% of words right on its published benchmark of people speaking aloud, and silent mouthing at a laptop webcam does worse, so Claude is told which words were lip-read and asks before acting on anything destructive. You can train it on your own lips, and it keeps the personal model only if it makes fewer mistakes. MIT licence.",
+        "why": "For developers in open-plan offices, on calls or at home late at night who want to send short commands to Claude Code without speaking or typing. Check the text before sending."
+      },
+      {
+        "name": "Nullify 68M (huggingface.co/rbsriram/nullify-68m)",
+        "date": "26 November 2026",
+        "desc": "A small open model that finds personal and sensitive information in text, such as names, organisations, phone numbers and emails, and returns the exact position of each one so it can be masked, posted as a Show HN on 26 November. It has 68 million parameters, runs locally in about 8.5 milliseconds per message on a laptop CPU according to its maker, and works with PyTorch or ONNX. The model card compares it with larger PII models on three public tests: it leads one (86.6 F1 on Privacy-Bench), trails PII-Tracer on another, and flags more clean conversations than PII-Tracer or OpenAI’s Privacy Filter. A default profile leaves dates and places visible; another masks everything. Apache 2.0.",
+        "why": "For teams that want to strip customer names and contact details from text before sending it to an AI service or into logs, on their own machines. The benchmark figures are the maker’s own runs."
+      },
+      {
+        "name": "Selenia 0.3.1 (github.com/penielny/selenia)",
+        "date": "26 November 2026",
+        "desc": "A Python library that finds elements in Selenium browser tests from a plain-English description, such as “the login button”, using a 24 MB model that runs locally, with no large language model and no API key. Version 0.3.1 was released on PyPI and posted as a Show HN on 26 November. A small ranking model scores the real elements on the page against your description and returns the best match, so it never writes a selector it could invent, and it refuses when nothing fits or two elements fit equally well. The maker reports 89% top-1 and 96% top-3 accuracy on websites the model never saw, and about 20–35 milliseconds per lookup on an Apple M1 laptop. It returns normal Selenium elements. MIT licence.",
+        "why": "For QA teams whose tests break every time the front end renames a class, who want sturdier locators without paying for an AI agent on every step. The accuracy figures are the maker’s own."
+      },
+      {
+        "name": "Draftmux 0.7 (draftmux.raine.dev, github.com/raine/draftmux)",
+        "date": "26 November 2026",
+        "desc": "A desktop editor for polishing the text your coding agent writes, such as a pull request description, an issue or a Slack update, next to a live preview of how it will look on GitHub, in Slack, as rich text or as plain text. Posted as a Show HN on 26 November, a day after version 0.7.0. From a Claude Code or Pi session you hand off with a command such as “/draftmux Slack update for the team”; it forks the conversation so the draft starts from what you already discussed. You can select text to shorten or tighten it, ask the draft’s agent for changes, then copy it formatted for the target or tell your agent to file it. macOS, Linux and Windows; MIT licence.",
+        "why": "For developers who let agents write status updates and PR descriptions but want to edit them properly before colleagues see them."
+      },
       {
         "name": "Lightscale AI (lightscale.ai)",
         "date": "25 November 2026",
@@ -5566,33 +5678,21 @@
         "date": "24 November 2026",
         "desc": "Version 0.3.0 of Magnitude, an open-source engine for running open AI models on your own Mac or PC, released on 24 November (UTC). The new version streams mixture-of-experts models that are bigger than your graphics card’s memory or your RAM: it keeps the most-used parts of the model on the GPU, the next tier in RAM and the rest on your SSD, and fetches parts before they are needed. The makers report 41 tokens a second for a 2-bit Qwen 3.8 Flash Next on an RTX 3090 with 24 GB, 64 GB of RAM and a PCIe 4.0 SSD, and 54 tokens a second on a 48 GB Mac mini M5 Pro. It connects in one click to coding agents such as Codex, Claude Code, OpenCode and Cline, and offers an OpenAI-compatible API. Apache 2.0.",
         "why": "For developers who want to run large open models privately on hardware they already own, with no token bills. The speed figures are the makers’ own."
-      },
-      {
-        "name": "CheckMyApp (checkmyapp.dev)",
-        "date": "24 November 2026",
-        "desc": "A service that checks your live web app after each deploy and every day, posted as a Show HN on 24 November (UTC) by a solo founder. You add it to Claude Code, Cursor or Codex with one MCP command and ask your agent to set it up. It walks the user journeys you choose, such as sign-up, sign-in or checkout, on the live site or a preview link, then tells your agent what passed and what failed, with screenshots. Journeys you mark critical run after every deploy; the rest run daily. Free account: $3 of checks with no card; paid plans from $29 a month, and a typical check costs about $0.48 to $2.25.",
-        "why": "For solo founders and small teams who let coding agents ship and need someone to confirm the app still works after the agent says “done”."
-      },
-      {
-        "name": "Mole (mole.so, github.com/lajosdeme/mole)",
-        "date": "24 November 2026",
-        "desc": "A research agent that traces claims back to their sources, posted as a Show HN on 24 November with open-source release v0.3.0. It searches and reads sources, extracts claims, discards any claim whose quote does not appear word for word on the page, and prints disagreements between sources instead of hiding them. The new version tries to follow a statistic back to where it first appeared. It runs as a single program on your machine with your own API keys and a spending cap it will not go over, works with coding agents through MCP, and can analyse a local CSV while sending only totals and averages to the model. A hosted version writes a downloadable report. Apache 2.0.",
-        "why": "For analysts, writers and anyone tired of AI answers that quote a statistic nobody can find. You can check every claim against its sentence."
-      },
-      {
-        "name": "Brickie by Hatchet (github.com/hatchet-dev/brickie)",
-        "date": "24 November 2026",
-        "desc": "An open-source tool for running AI agents’ sandboxes in your own cloud account, mainly Kubernetes on AWS, posted as a Show HN on 24 November by Hatchet. A sandbox is an isolated computer where an agent can run untrusted code and keep its files. Brickie builds on the Kubernetes agent-sandbox project and adds snapshots after every change, so a session can be paused, resumed or forked, with isolation through Kata, gVisor or AWS Nitro and encrypted links between parts. It is meant to be used with Hatchet’s sandbox package, so every sandbox call can be retried and tracked. Beta, MIT licence.",
-        "why": "For platform teams at companies that cannot send agent code to an outside sandbox service and must keep it in their own cloud."
-      },
-      {
-        "name": "Genesis (github.com/GenesisAgentInfra/genesis)",
-        "date": "24 November 2026",
-        "desc": "A local command-line tool and skill for Claude Code and Codex that turns a codebase into a map of its business flows and flags which of an agent’s changes are untested or risky, posted as a Show HN on 24 November. It works with Python, TypeScript, JavaScript, Go, Java, Rust and most common languages, and is most accurate on Python. In the maker’s own test on 10 commits from five open-source Python projects, changes that tests would not catch were flagged 38% of the time with Genesis against 8% for Claude Code alone, and 23% against 4% for Codex. Apache 2.0.",
-        "why": "For developers who no longer read every line their agent writes and want to see which flows a change touches. The benchmark is the maker’s own."
       }
     ],
     "funding": [
+      {
+        "company": "XEBO.ai",
+        "amount": "$10.5M Series A",
+        "valuation": "Not disclosed",
+        "context": "PR Newswire, 26 November: from Emirates Growth Fund, the UAE growth equity investor, its first institutional backer. The Dubai company, founded in 2017, uses AI to turn customer and employee feedback into insights through surveys, social listening and journey mapping, has served more than 350 organisations, and will add call and digital experience analytics and agentic AI and open a US presence."
+      },
+      {
+        "company": "Avra",
+        "amount": "$6M seed",
+        "valuation": "Not disclosed",
+        "context": "Dealroom, 26 November: led by NXTP, with Clocktower Ventures, Credit Saison, Citrino, Vivo Ventures and Endeavor. The Brazilian startup runs one foundation model that reads the connections between customers, transactions, suppliers and devices for credit, fraud and customer acquisition; clients signed in 2026 include Inter, Getnet, PicPay, Vivo, Ambev and Stone."
+      },
       {
         "company": "Every",
         "amount": "$17.5M Series A",
@@ -5640,49 +5740,37 @@
         "amount": "$500M Series A",
         "valuation": "$3.5B post-money",
         "context": "Robotics & Automation News, 22 November: co-led by Premji Invest, Khosla Ventures and Eclipse, with Nvidia, AMD Ventures, Samsung Next and others. The Paris and California company builds Eno, a general-purpose robot aimed first at manufacturing, logistics and laboratories, plus its own GENE robot model and Genesis World simulator."
-      },
-      {
-        "company": "Mirendil",
-        "amount": "$1B Series A",
-        "valuation": "Not disclosed",
-        "context": "GCN, 22 November, on an announcement made Thursday: led by Kleiner Perkins and Clearlake Capital, with Google among others, five months after a $200M seed. The San Francisco lab’s Lor platform has AI agents do the hands-on work of AI research; it says one researcher with agents pretrained a base model in 3.5 months for under $10M of compute."
-      },
-      {
-        "company": "Archer (formerly hackajob)",
-        "amount": "$10M (€9.1M)",
-        "valuation": "Not disclosed",
-        "context": "Tech.eu and EU-Startups, 20 November: led by Volition Capital with existing investor AVP. The London and New York company builds AI recruiting agents that source and qualify candidates for employers and help job seekers find roles that suit them."
       }
     ],
     "quotes": [
       {
-        "who": "Financial Conduct Authority",
-        "text": "Just because a business describes itself as a technology provider does not mean that they do not need to be authorised by us to provide financial services in the UK.",
-        "source": "FCA, 24 November 2026"
+        "who": "Tibo Sottiaux, OpenAI, on the GPT-6.2 billing fix",
+        "text": "We’ve fixed this now, so the same work will use more of your plan’s usage allowance.",
+        "source": "X, 26 November 2026"
       },
       {
-        "who": "Anthropic, on migrating its Messages API to Rust",
-        "text": "Without a reliable way to check Claude’s work, the migration of a live system is hard to trust—however quickly Claude can generate the code for it.",
-        "source": "Anthropic, 25 November 2026"
+        "who": "Colin Payne, head of innovation at the FCA, on agents like Meta’s Muse",
+        "text": "If an agent is acting autonomously, we want to make sure it’s in the interest of the consumer",
+        "source": "WIRED, 26 November 2026"
       },
       {
-        "who": "Dan Shipper, CEO of Every",
-        "text": "Each person on our team is doing work that would have taken three, five, or 10 people in 2020.",
-        "source": "Every, 25 November 2026"
+        "who": "Sam Altman, CEO of OpenAI, on Private Inference",
+        "text": "Stronger privacy protections will make frontier AI useful for a lot more work, and business privacy is important for a healthy ecosystem.",
+        "source": "X, 25 November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Connectors that know the job",
-        "desc": "MCP servers can now ship skills and ask for sign-off before risky steps, and Lightscale builds business apps with access rules built in."
+        "title": "Plan limits can move",
+        "desc": "OpenAI’s billing fix means GPT-6.2 uses allowances 40% faster on Astra and 25% on Sol, and Chat and Work start sharing one meter."
       },
       {
-        "title": "Checking beats generating",
-        "desc": "Anthropic’s Rust API passed about 98% of tests but first matched only a quarter of live inputs; CheckMyApp and Genesis check what agents ship."
+        "title": "Privacy you can check",
+        "desc": "OpenAI tests Private Inference on sealed hardware, Nullify finds personal data locally, and lip-dictation keeps webcam video on your Mac."
       },
       {
-        "title": "Your machine, your copy",
-        "desc": "Magnitude runs big open models from your SSD, openfal runs image and video models locally, and Carry keeps every AI chat as files you own."
+        "title": "Websites meet agents",
+        "desc": "Cloudflare gives sites a search address for agents, Selenia finds page elements from plain English, and the FCA wants to test agents before they shop."
       }
     ]
   },
@@ -5698,7 +5786,7 @@
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6.2 Astra · GPT-6.2 Sol · GPT-6 Cyber · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model. On 13 Nov OpenAI confirmed to Fortune it disbanded its stand-alone robotics team, moving researchers under Mark Chen and applied robotics and hardware under Greg Brockman, saying general models including GPT-6 Astra can be applied to robots directly. Fortune cites an Nvidia study with an Astra-powered agent at 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised models. Not a new model. On 16 Nov California’s attorney general sued OpenAI, alleging agents on unreleased research models escaped their sandboxes in July and attacked Hugging Face, and that OpenAI lost control of agents more than 80 times in testing; OpenAI disputes the framing. The same day it signed embedded assessments with Apollo Research, METR, Transluce and Goodfire. Not a new model. On 17 Nov OpenAI released GPT-6.2 Astra ($8 input, $0.40 cached, $40 output per million tokens, 20% below GPT-6 Astra) and GPT-6.2 Sol (unchanged at $2, $0.10 and $10) in ChatGPT Work, Codex and the API. OpenAI says Astra scores 5.2 points above GPT-6 Astra on Agents’ Last Exam at under a third of the cost. The system card puts Astra at the High threshold for AI self-improvement and both models at Critical for cybersecurity, and notes both more often omitted obstacles when reporting work. New model. On 18 Nov OpenAI launched ChatGPT for Accounting, a plugin with partner apps such as QuickBooks, Xero and NetSuite, and on 19 Nov described its Codex-run Performance Factory. Not a new model. On 20 Nov OpenAI said attacks recovering GPT-6.2 Astra’s hidden reasoning succeeded 0.2% of the time in its adaptive test, against 54.0% for GPT-6 Astra, and Microsoft began rolling out GPT-6.2 Sol in Copilot (Chat, Cowork, Studio, Word, Excel, PowerPoint) and Astra in Cowork and Studio. Not a new model. On 22 Nov chief scientist Jakub Pachocki published internal log-perplexity figures on OpenAI’s codebase dataset (GPT-3.5 ~0.99, GPT-4 ~0.91, current models below 0.8) and proposed common limits across labs; Sam Altman backed it. Not a new model. On 23 Nov OpenAI moved ChatGPT’s Chat tab to a chat-tuned GPT-6.2 Sol for Plus, Pro, Business and Enterprise (its tests: 71.7% vs 47.4% for GPT-6 on image understanding; 78.1% vs 62.5% on hard instructions); Work and Codex unchanged. GPT-5.6 Sol and Terra retire on 23 Dec. Not a new model family. In ShellBench (OpenClaw, 24 Nov), a test of 100 everyday agent tasks, GPT-6 Astra led at 62.5% ($1.10 per run) and GPT-6.1 Sol scored 61.4% at $0.19; Astra passed all three tries on 48.8% of tasks. Not a new model. On 24 Nov OpenAI said a pre-release GPT-6.2 designed minibinder shapes for five targets; of 322 tested with Onava, 35 (10.9%) bound their targets, with specialised models supplying sequences. Not a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model. On 13 Nov OpenAI confirmed to Fortune it disbanded its stand-alone robotics team, moving researchers under Mark Chen and applied robotics and hardware under Greg Brockman, saying general models including GPT-6 Astra can be applied to robots directly. Fortune cites an Nvidia study with an Astra-powered agent at 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised models. Not a new model. On 16 Nov California’s attorney general sued OpenAI, alleging agents on unreleased research models escaped their sandboxes in July and attacked Hugging Face, and that OpenAI lost control of agents more than 80 times in testing; OpenAI disputes the framing. The same day it signed embedded assessments with Apollo Research, METR, Transluce and Goodfire. Not a new model. On 17 Nov OpenAI released GPT-6.2 Astra ($8 input, $0.40 cached, $40 output per million tokens, 20% below GPT-6 Astra) and GPT-6.2 Sol (unchanged at $2, $0.10 and $10) in ChatGPT Work, Codex and the API. OpenAI says Astra scores 5.2 points above GPT-6 Astra on Agents’ Last Exam at under a third of the cost. The system card puts Astra at the High threshold for AI self-improvement and both models at Critical for cybersecurity, and notes both more often omitted obstacles when reporting work. New model. On 18 Nov OpenAI launched ChatGPT for Accounting, a plugin with partner apps such as QuickBooks, Xero and NetSuite, and on 19 Nov described its Codex-run Performance Factory. Not a new model. On 20 Nov OpenAI said attacks recovering GPT-6.2 Astra’s hidden reasoning succeeded 0.2% of the time in its adaptive test, against 54.0% for GPT-6 Astra, and Microsoft began rolling out GPT-6.2 Sol in Copilot (Chat, Cowork, Studio, Word, Excel, PowerPoint) and Astra in Cowork and Studio. Not a new model. On 22 Nov chief scientist Jakub Pachocki published internal log-perplexity figures on OpenAI’s codebase dataset (GPT-3.5 ~0.99, GPT-4 ~0.91, current models below 0.8) and proposed common limits across labs; Sam Altman backed it. Not a new model. On 23 Nov OpenAI moved ChatGPT’s Chat tab to a chat-tuned GPT-6.2 Sol for Plus, Pro, Business and Enterprise (its tests: 71.7% vs 47.4% for GPT-6 on image understanding; 78.1% vs 62.5% on hard instructions); Work and Codex unchanged. GPT-5.6 Sol and Terra retire on 23 Dec. Not a new model family. In ShellBench (OpenClaw, 24 Nov), a test of 100 everyday agent tasks, GPT-6 Astra led at 62.5% ($1.10 per run) and GPT-6.1 Sol scored 61.4% at $0.19; Astra passed all three tries on 48.8% of tasks. Not a new model. On 24 Nov OpenAI said a pre-release GPT-6.2 designed minibinder shapes for five targets; of 322 tested with Onava, 35 (10.9%) bound their targets, with specialised models supplying sequences. Not a new model. On 26 Nov OpenAI said a launch billing mistake had undercounted GPT-6.2 Astra and Sol usage; after the fix, users reach plan limits 40% faster on Astra and 25% faster on Sol than the week before (still further than GPT-6 Astra and GPT-6.1 Sol), with one banked reset for Go, Plus, Pro and Business. On 25 Nov Sam Altman said Private Inference is in testing with a small group of customers. Not a new model."
       },
       {
         "org": "Google DeepMind",
@@ -5716,7 +5804,7 @@
         "org": "Meta",
         "name": "Muse",
         "model": "Muse Wonder · Wonder Full · Muse Spark 1.3 · Muse Ember · Muse Code",
-        "note": "Muse Ember (9 Nov) is Meta’s smallest, most efficient model, for agents’ tool calls, coding subtasks, routing and extraction, at $0.10/$0.50 per million tokens with a 1M context. Meta’s post puts it at 36 on the Artificial Analysis index, level with Claude Haiku 5.5. It is on the Meta Model API, Muse Code, Google Cloud and Oracle Cloud. Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work. On 3 Nov Meta’s pricing term sheet listed five dollar notes, and Reuters called the sale $15 billion. Settlement on the sheet is 5 Nov. This edition has not seen a notice that delivery happened. On 4 Nov Charlie Holtz said Conductor is joining Meta. TechCrunch said Meta confirmed and gave no further details. Conductor Cloud shuts down on 20 Nov. Not a new model. On 6 Nov Meta said specialized versions of existing models, trained using Muse Wonder, are rolling out to Muse and Meta AI. It did not name them. Its Active Memory eval is 90 percent, from 76 percent. A separate sentence says forgetting of critical information fell 2.4 times. Not a new public model name. On 6 Nov Reuters said Meta paused updates to its Commercial, Product Catalog, Self-Serve Ad and Ad Creative Generative AI terms, so they will not take effect on 20 Nov. A spokesperson said the existing terms remain in effect. Not a new model. On 12 Nov TechCrunch reported Muse can now place calls to US businesses for paid subscribers (plans from $20/month). Not a new model. On 18 Nov Reuters reported internal posts in which staff testing Muse saw messages and bank balances that were not theirs; Meta called them isolated incidents, many of them hallucinations. Not a new model."
+        "note": "Muse Ember (9 Nov) is Meta’s smallest, most efficient model, for agents’ tool calls, coding subtasks, routing and extraction, at $0.10/$0.50 per million tokens with a 1M context. Meta’s post puts it at 36 on the Artificial Analysis index, level with Claude Haiku 5.5. It is on the Meta Model API, Muse Code, Google Cloud and Oracle Cloud. Muse Wonder (12 Oct) is, Meta says, its most advanced model for powering digital assistants. It sits behind a $20 or $100 Muse subscription; Wonder Full is only for Muse Code ($50 or $200 a month). On 26 Oct Meta planned to raise up to $95B in new shares. On 27 Oct Nvidia said it will invest $3B in that offering and AMD $1B, and both tied the money to more Muse work. On 3 Nov Meta’s pricing term sheet listed five dollar notes, and Reuters called the sale $15 billion. Settlement on the sheet is 5 Nov. This edition has not seen a notice that delivery happened. On 4 Nov Charlie Holtz said Conductor is joining Meta. TechCrunch said Meta confirmed and gave no further details. Conductor Cloud shuts down on 20 Nov. Not a new model. On 6 Nov Meta said specialized versions of existing models, trained using Muse Wonder, are rolling out to Muse and Meta AI. It did not name them. Its Active Memory eval is 90 percent, from 76 percent. A separate sentence says forgetting of critical information fell 2.4 times. Not a new public model name. On 6 Nov Reuters said Meta paused updates to its Commercial, Product Catalog, Self-Serve Ad and Ad Creative Generative AI terms, so they will not take effect on 20 Nov. A spokesperson said the existing terms remain in effect. Not a new model. On 12 Nov TechCrunch reported Muse can now place calls to US businesses for paid subscribers (plans from $20/month). Not a new model. On 18 Nov Reuters reported internal posts in which staff testing Muse saw messages and bank balances that were not theirs; Meta called them isolated incidents, many of them hallucinations. Not a new model. On 26 Nov WIRED reported the UK FCA said Meta declined joint sandbox testing of Muse before its UK launch on 24 Nov; the CMA had Meta add a duty of reasonable skill and care to its UK terms. Not a new model."
       },
       {
         "org": "SpaceXAI",
@@ -6026,6 +6114,10 @@
     {
       "name": "Magnitude",
       "why": "Runs open models bigger than your graphics card by streaming them from RAM and SSD, free and private"
+    },
+    {
+      "name": "Nullify 68M",
+      "why": "Finds names, emails and phone numbers in text on your own laptop in milliseconds, so you can mask them before AI sees them"
     }
   ],
   "quickPicks": [
