@@ -1,5 +1,32 @@
 [
   {
+    "name": "Reuters",
+    "handle": "Reuters",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1874154135869616128/nJDmubGJ_normal.jpg",
+    "text": "OpenAI countersues Apple for stealing trade secrets https://t.co/a0v8NFZZRw",
+    "url": "https://x.com/Reuters/status/2126462371182919842",
+    "postedAt": "2026-11-27T23:45:11.000Z",
+    "take": "These are claims in a court filing, and Apple denies them. If your staff use personal phones for work, check your exit process now."
+  },
+  {
+    "name": "Evan Solomon",
+    "handle": "EvanLSolomon",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1938756616020430848/qWPhiD1C_normal.jpg",
+    "text": "We’re supercharging innovation in Canada’s small businesses. \n\nToday, I announced another $700 million for the AI Compute Access Fund to tackle one of the biggest barriers facing Canadian companies building AI: access to compute.\n\nBecause Canadian ideas need Canadian computing power.\n\nFrom PLC Group using AI to help protect critical communications networks from severe weather, to Gotcare helping bring care to people in rural communities, to Resemble AI building tools to detect and combat AI-generated fraud, Canadian companies are solving real problems.\n\nWe’re lowering the cost of compute so more Canadian entrepreneurs can turn their ideas into products, companies and jobs, and build and scale them right here at home.\n\nBuild here. Scale here. Compete with the world from here.\n\n 🇨🇦",
+    "url": "https://x.com/EvanLSolomon/status/2126056857462825137",
+    "postedAt": "2026-11-26T20:53:49.000Z",
+    "take": "The minister’s own announcement. Rates of up to 80% or 50% are in the program guide; the first call closes 4 January."
+  },
+  {
+    "name": "Tencent Hy",
+    "handle": "TencentHunyuan",
+    "avatarUrl": "https://pbs.twimg.com/profile_images/1810934469769195520/kKSVenHW_normal.jpg",
+    "text": "🚀 We’re open-sourcing DFly2 — Hy4 flash’s speculative decoding drafter, delivering up to 4.2× speedup for long-context & agentic workloads.\n\n✨ Shares the target model’s KV cache + top-k token selection\n\n→ Drafting cost stays flat at any context length\n→ Zero extra KV memory\n\nOn agentic tasks: ~30% faster than same-recipe DSpark, and accepts +10.4% more draft tokens vs open-source DSpark.\n\nGitHub: https://github.com/Tencent/AngelSpec\nHuggingFace: https://huggingface.co/AngelSlim\nDFly2: https://arxiv.org/abs/2611.34776",
+    "url": "https://x.com/TencentHunyuan/status/2125928146113585468",
+    "postedAt": "2026-11-26T12:22:22.000Z",
+    "take": "Tencent’s own numbers, on its own tasks. If you host open models, test it on your real long jobs before trusting 4.2×."
+  },
+  {
     "name": "Tibo",
     "handle": "thsottiaux",
     "avatarUrl": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_normal.jpg",
