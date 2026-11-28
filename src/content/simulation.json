@@ -1,86 +1,97 @@
 {
   "_readme": "Schema and morning notes: src/content/SIMULATION.md. This file stays separate from edition.json. If storyId is not in today's edition, the block hides itself.",
   "enabled": true,
-  "storyId": "chatgpt-62-usage-fix",
+  "storyId": "sap-job-cuts-ai",
   "kicker": "Play with today’s story",
-  "title": "OpenAI’s GPT-6.2 billing fix: how much sooner each model hits your plan’s limit",
-  "intro": "Slide across the models to see what OpenAI’s fix changes compared with last week, and what it does not, as stated by OpenAI’s Tibo Sottiaux.",
-  "note": "Figures are OpenAI’s own, from Tibo Sottiaux’s post of 26 November 2026, as reported by BleepingComputer. “40% faster” and “25% faster” describe how soon you reach your limit compared with last week; OpenAI has not said exactly how this is measured, so it is not shown here as a number of tasks. The reset expiry is BleepingComputer’s observation in ChatGPT’s settings. Nothing here was measured independently.",
+  "title": "SAP’s reported job cuts, next to other software firms that tied cuts to AI this year",
+  "intro": "Slide across the companies to see what each said it would cut and why, as listed by CNBC, then the US total counted by Challenger, Gray & Christmas.",
+  "note": "All figures are copied from CNBC’s report of 27 November 2026. SAP’s number is Bloomberg’s report from unnamed sources, and SAP says no decisions have been made. The other three are what each company said, with the reasons CNBC gave, and they differ, so they are not a like-for-like count. Nothing is added up or estimated here.",
   "sources": [
     {
-      "label": "Tibo Sottiaux on X, 26 November 2026",
-      "url": "https://x.com/thsottiaux/status/2125784147889393806"
-    },
-    {
-      "label": "BleepingComputer: OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug, 26 November 2026",
-      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/"
+      "label": "CNBC: German software firm SAP is reportedly cutting at least 10,000 jobs in AI push, 27 November 2026",
+      "url": "https://www.cnbc.com/2026/11/27/sap-job-cuts-ai-restructuring.html"
     }
   ],
   "widget": {
     "type": "stepper",
-    "label": "Model or plan detail",
+    "label": "Company or total",
     "items": [
       {
-        "label": "6.2 Astra",
-        "name": "GPT-6.2 Astra",
+        "label": "Feb",
+        "name": "WiseTech Global",
+        "caption": "Said in February",
         "stats": [
           {
-            "label": "Reaching your limit, compared with last week",
-            "value": "40% faster"
+            "label": "Planned cuts",
+            "value": "About 2,000 jobs over two years"
           },
           {
-            "label": "Compared with GPT-6 Astra",
-            "value": "Should still go further"
-          },
-          {
-            "label": "Charged for the difference on past usage",
-            "value": "No"
+            "label": "Reason given",
+            "value": "Integrating AI into its products and operations"
           }
         ]
       },
       {
-        "label": "6.2 Sol",
-        "name": "GPT-6.2 Sol",
+        "label": "Mar",
+        "name": "Atlassian",
+        "caption": "Said in March",
         "stats": [
           {
-            "label": "Reaching your limit, compared with last week",
-            "value": "25% faster"
+            "label": "Planned cuts",
+            "value": "About 1,600 jobs"
           },
           {
-            "label": "Compared with GPT-6.1 Sol",
-            "value": "Should still go further"
-          },
-          {
-            "label": "Charged for the difference on past usage",
-            "value": "No"
+            "label": "Reason given",
+            "value": "Partly to fund further AI investment"
           }
         ]
       },
       {
-        "label": "Others",
-        "name": "Other models",
+        "label": "May",
+        "name": "Cloudflare",
+        "caption": "Said in May",
         "stats": [
           {
-            "label": "Change from the fix",
-            "value": "Not affected"
+            "label": "Planned cuts",
+            "value": "More than 1,100 roles"
+          },
+          {
+            "label": "Reason given",
+            "value": "Moving toward an AI-first operating model"
           }
         ]
       },
       {
-        "label": "Reset",
-        "name": "OpenAI’s apology",
+        "label": "SAP",
+        "name": "SAP (reported, not confirmed)",
+        "caption": "Bloomberg, 26 November, citing people familiar",
         "stats": [
           {
-            "label": "Banked resets added",
-            "value": "One"
+            "label": "Positions being weighed",
+            "value": "At least 10,000"
           },
           {
-            "label": "Plans that get it",
-            "value": "Go, Plus, Pro and Business"
+            "label": "Departments in focus",
+            "value": "Product, engineering and sales"
           },
           {
-            "label": "Expires",
-            "value": "A month after it is added"
+            "label": "SAP’s response",
+            "value": "No decisions made on further measures"
+          }
+        ]
+      },
+      {
+        "label": "US",
+        "name": "US employers, through October 2026",
+        "caption": "Challenger, Gray & Christmas, 5 November",
+        "stats": [
+          {
+            "label": "Job-cut announcements citing AI",
+            "value": "121,401"
+          },
+          {
+            "label": "Share of all announced cuts",
+            "value": "About 20%"
           }
         ]
       }

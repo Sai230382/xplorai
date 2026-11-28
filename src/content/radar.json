@@ -5626,11 +5626,123 @@
       "s": 3,
       "p": "Free and open source (MIT)",
       "st": "active"
+    },
+    {
+      "n": "ClawdTime",
+      "w": "https://www.clawdtime.com/",
+      "c": "Agent Infrastructure",
+      "tl": "A Mac agent that runs long tasks and FaceTimes you when it needs a decision",
+      "d": "ClawdTime is a computer-use agent for Mac. You give it a task and it works across your apps and browser, delegating to tools such as Codex and Claude Code. When it needs your judgment or has a result to review, it prepares a walkthrough and FaceTimes you, zooming into the relevant window; you can also call it and have it run tasks while it shares its screen.",
+      "f": [
+        "Calls you through FaceTime when it is stuck or finished",
+        "Works across apps and your browser",
+        "Delegates to Codex, Claude Code and other tools",
+        "Your own model key; guided setup with a Mac app or one command"
+      ],
+      "u": [
+        "Checking in on a long coding or video-editing job from your phone",
+        "Approving a decision without going back to your desk",
+        "Handing a multi-app task to an agent and reviewing a short walkthrough"
+      ],
+      "e": "It's like an assistant who rings you for a quick yes or no when they hit a snag, instead of leaving a note on your desk.",
+      "s": 3,
+      "p": "Pricing not stated; you bring your own model key",
+      "st": "active"
+    },
+    {
+      "n": "CoDesignFlo",
+      "w": "https://codesignflo.com",
+      "c": "Design",
+      "tl": "Keep your app’s Figma file in step with what your coding agents ship",
+      "d": "CoDesignFlo draws the pages and components developers build into a Live page in the designer’s Figma file, straight from the code. A designer claims a page, edits it and sends it as Ready for dev; the developer’s coding agent receives the exact changes over MCP and builds them, and the proposal closes by itself once the code matches.",
+      "f": [
+        "App pages and components drawn into Figma from code",
+        "Claim, edit and send design proposals",
+        "Exact changes sent to coding agents over MCP",
+        "Self-hosting with Docker, or hosted"
+      ],
+      "u": [
+        "Letting a designer fix the look of a feature an agent just built",
+        "Reviewing what changed in design tokens, text and layers",
+        "Running design and development without being online at the same time"
+      ],
+      "e": "It's like pull requests for design: the designer proposes, the developer's agent builds it, and nobody has to wait for a meeting.",
+      "s": 3,
+      "p": "Developers free; designers’ first 5 designs free, then per seat; self-host free for your own use",
+      "st": "active"
+    },
+    {
+      "n": "Glossbeam",
+      "w": "https://www.glossbeam.com",
+      "c": "Productivity",
+      "tl": "Select text in any Mac app and the explanation opens right beside it",
+      "d": "Glossbeam is a Mac menu-bar app that explains what you are reading. Select text in any app and an answer opens beside it, with follow-up questions, step-by-step code explanations and translation. The open edition runs on your own Anthropic or OpenAI key, or your ChatGPT plan; text goes straight to the provider, and past answers are kept on your Mac, filed by topic.",
+      "f": [
+        "Explanation opens beside the selected text",
+        "Follow-up questions get their own answers",
+        "Bring your own Anthropic key, OpenAI key or ChatGPT plan",
+        "History kept on your Mac, grouped by topic"
+      ],
+      "u": [
+        "Understanding a clause in a contract without switching tabs",
+        "Walking through unfamiliar code line by line",
+        "Translating a sentence of business French while you read"
+      ],
+      "e": "It's like having a patient colleague looking over your shoulder who explains the hard sentence the moment you point at it.",
+      "s": 3,
+      "p": "Open edition free (Apache 2.0, build it yourself); you pay your model provider",
+      "st": "active"
+    },
+    {
+      "n": "Dev-Mem",
+      "w": "https://github.com/HarsH-1877/Dev-Mem",
+      "c": "Agent Infrastructure",
+      "tl": "A local memory so your coding agent stops repeating last session’s mistakes",
+      "d": "Dev-Mem gives Claude Code, Codex, Cursor and OpenCode a persistent local knowledge store. It records decisions, failed approaches, constraints and discoveries during sessions, and injects the relevant ones at the start of the next, so the new session does not re-investigate what the last one learned. Data stays on your machine in a project-local SQLite store.",
+      "f": [
+        "Hooks for Claude Code, Codex, Cursor and OpenCode",
+        "Records decisions, failed approaches and conventions",
+        "Local SQLite store, nothing leaves your machine",
+        "Optional shared file for team decisions through Git"
+      ],
+      "u": [
+        "Starting a new agent session without re-explaining the project",
+        "Warning an agent that an approach already failed",
+        "Sharing agreed conventions with teammates through Git"
+      ],
+      "e": "It's like a shared notebook the agent reads before each shift, so the night crew knows what the day crew already tried.",
+      "s": 3,
+      "p": "Free and open source (MIT); needs a model key for extraction",
+      "st": "active"
     }
   ],
   "pulse": {
-    "week": "27 November 2026",
+    "week": "28 November 2026",
     "launches": [
+      {
+        "name": "ClawdTime (clawdtime.com)",
+        "date": "27 November 2026",
+        "desc": "A computer-use agent for Mac, posted as a Show HN on 27 November by its maker, that works on long tasks and FaceTimes you when it needs your input. You give it a task and it runs it across your apps and browser, delegating to tools such as Codex and Claude Code, and when it needs your judgment or has something to review it prepares a walkthrough and calls you. You can also call it and have it run tasks while sharing its screen. It has its own planning and monitoring engine, uses your own model key, and needs macOS 14 or later on Apple silicon. Its site says shared-number calls are not yet qualified for live use.",
+        "why": "For anyone who leaves Codex, Claude Code or other agents running long jobs and wants a call, not a stalled chat, when the agent needs a decision."
+      },
+      {
+        "name": "CoDesignFlo (codesignflo.com, github.com/orkestralai/codesignflo)",
+        "date": "27 November 2026",
+        "desc": "A Figma plugin and server that keeps designers and coding agents in step, posted as a Show HN on 27 November. It draws the app’s pages and components from the developers’ code into a page called Live in the designer’s Figma file. A designer claims a page, changes it and sends it as “Ready for dev”; the developer’s coding agent (Claude Code, Cursor, Codex and others) receives the exact changes over MCP and builds them, and the proposal closes when the code matches. The README calls it pull requests for design. Developers are always free and designers get five free designs, then pay per seat; the plugin, CLI and engine are MIT, and the service is under the Functional Source License.",
+        "why": "For teams where developers ship with AI agents faster than designers can review, and want design changes to arrive as exact instructions rather than screenshots."
+      },
+      {
+        "name": "Glossbeam (glossbeam.com, github.com/YasserShkeir/glossbeam-open)",
+        "date": "27 November 2026",
+        "desc": "A Mac menu-bar app that explains whatever you are reading: select text in any app and the explanation opens beside it, with no copying or second tab, and follow-up questions get their own answers. Its open edition was posted as a Show HN on 27 November under Apache 2.0, and you bring your own Anthropic key, OpenAI key or ChatGPT plan. The README says your text goes straight to the provider you chose, with no Glossbeam server and no account, and that past answers stay on your Mac, filed by topic. It needs macOS 14 or later and Xcode to build; an official build is offered at glossbeam.com.",
+        "why": "For people who read dense documents, contracts or code and want a quick explanation without leaving the page or sending text through a middleman."
+      },
+      {
+        "name": "Dev-Mem (github.com/HarsH-1877/Dev-Mem)",
+        "date": "26 November 2026",
+        "desc": "A free, local memory for AI coding agents, posted as a Show HN on 26 November. It records decisions, failed approaches, constraints and discoveries from your Claude Code, Codex, Cursor or OpenCode sessions in a SQLite store inside the project, and puts the relevant ones in front of the next session so it does not repeat work. Everything stays on your machine; extraction uses a model key you already have, or a local Ollama model. Install with npm install -g dev-memo, then run dev-memo install in the project. It needs Node.js 22 or later; MIT licence.",
+        "why": "For developers who restart agent sessions often and are tired of explaining the same dead ends again."
+      },
       {
         "name": "lip-dictation (github.com/batanus/lip-dictation)",
         "date": "26 November 2026",
@@ -5654,33 +5766,15 @@
         "date": "26 November 2026",
         "desc": "A desktop editor for polishing the text your coding agent writes, such as a pull request description, an issue or a Slack update, next to a live preview of how it will look on GitHub, in Slack, as rich text or as plain text. Posted as a Show HN on 26 November, a day after version 0.7.0. From a Claude Code or Pi session you hand off with a command such as “/draftmux Slack update for the team”; it forks the conversation so the draft starts from what you already discussed. You can select text to shorten or tighten it, ask the draft’s agent for changes, then copy it formatted for the target or tell your agent to file it. macOS, Linux and Windows; MIT licence.",
         "why": "For developers who let agents write status updates and PR descriptions but want to edit them properly before colleagues see them."
-      },
-      {
-        "name": "Lightscale AI (lightscale.ai)",
-        "date": "25 November 2026",
-        "desc": "An AI builder for business software such as a CRM, a web shop or applicant tracking, posted as a Show HN on 25 November by a small team in Zug, Switzerland. Instead of having a model write ordinary code, it uses a new programming language, compiler and runtime designed for AI authors, with strict rules meant to rule out whole classes of errors and to keep token use low enough for mid-tier models. Apps get sign-in, access control and data protection built in, records carry over when you change the app, and each app holding personal data gets a privacy page and GDPR and Swiss FADP documents. Building and prompting are free; the first app is hosted free in Switzerland, and further hosting or source download costs CHF 50 a month per project.",
-        "why": "For small firms that want a custom internal tool, such as time-off requests or expense claims, without hiring developers or reviewing AI-written code line by line."
-      },
-      {
-        "name": "openfal (openfal.org, github.com/webbrain-one/openfal)",
-        "date": "25 November 2026",
-        "desc": "An open-source server that runs image and video generation models on your own Windows, Linux or Mac machine behind an API shaped like the hosted fal.ai service, posted as a Show HN on 25 November. One command checks your GPU, memory and disk, another downloads a verified set of model files (the smallest image setup is about 16.1 GB), and a third starts the API, a queue and a browser Studio. It runs Qwen-Image-2.1, Wan 2.2 and MiniMax H3 for text-to-image, image editing, text- and image-to-video, character animation and video with audio. The maker’s own RTX 5090 tests show it ahead of ComfyUI on some jobs and behind on others. MIT licence; model weights keep their own licences.",
-        "why": "For developers and studios that already call fal.ai-style APIs and want the same calls to run on their own GPU, without building ComfyUI node graphs."
-      },
-      {
-        "name": "Carry (carry.md)",
-        "date": "25 November 2026",
-        "desc": "A browser extension that automatically saves your chats, projects and files from ChatGPT, Claude, Gemini and Grok as Markdown files in a folder on your computer, posted as a Show HN on 25 November. It reads each service through your own signed-in session, keeps files current as you keep chatting, searches across every saved chat by app, date or project, and can open a saved conversation in another AI with the transcript attached. Files stay on your device and remain yours if you stop using it; the maker says compatibility checks and optional usage counts contact carry.md. 14 days free with no card, then a paid licence.",
-        "why": "For people who switch between AI assistants and want one searchable archive they own, for example inside an Obsidian notes folder."
-      },
-      {
-        "name": "Magnitude 0.3 (magnitude.dev, github.com/magnitudedev/magnitude)",
-        "date": "24 November 2026",
-        "desc": "Version 0.3.0 of Magnitude, an open-source engine for running open AI models on your own Mac or PC, released on 24 November (UTC). The new version streams mixture-of-experts models that are bigger than your graphics card’s memory or your RAM: it keeps the most-used parts of the model on the GPU, the next tier in RAM and the rest on your SSD, and fetches parts before they are needed. The makers report 41 tokens a second for a 2-bit Qwen 3.8 Flash Next on an RTX 3090 with 24 GB, 64 GB of RAM and a PCIe 4.0 SSD, and 54 tokens a second on a 48 GB Mac mini M5 Pro. It connects in one click to coding agents such as Codex, Claude Code, OpenCode and Cline, and offers an OpenAI-compatible API. Apache 2.0.",
-        "why": "For developers who want to run large open models privately on hardware they already own, with no token bills. The speed figures are the makers’ own."
       }
     ],
     "funding": [
+      {
+        "company": "nextesy",
+        "amount": "$10.4M seed",
+        "valuation": "Not disclosed",
+        "context": "Tech Startups, 27 November: led by Swisscom Ventures, with HIAG Beteiligung Holding, Fifth Quarter Ventures, Herbert VC, Look AI Ventures and angels. The Zurich company builds accounting, payroll and invoicing software for small businesses, freelancers and accounting firms around AI agents, says it has more than 2,000 customers shortly after launch, and wants agents to handle year-end closing; it calls that a goal, not a confirmed feature. It plans to expand abroad in 2027."
+      },
       {
         "company": "XEBO.ai",
         "amount": "$10.5M Series A",
@@ -5734,43 +5828,37 @@
         "amount": "$100M pre-Series A",
         "valuation": "$1.6B (Bloomberg, basis not specified)",
         "context": "Bloomberg, reported by Tech Startups on 23 November: led by Ant Group, with Alibaba, Tencent, HongShan and Lanchi Ventures. The Hangzhou company, founded in 2025 by former Li Auto executives, builds robot foundation models and industrial robots for moving materials and tending equipment, and says it delivered its first 100 i7 Pro units this year."
-      },
-      {
-        "company": "Genesis AI",
-        "amount": "$500M Series A",
-        "valuation": "$3.5B post-money",
-        "context": "Robotics & Automation News, 22 November: co-led by Premji Invest, Khosla Ventures and Eclipse, with Nvidia, AMD Ventures, Samsung Next and others. The Paris and California company builds Eno, a general-purpose robot aimed first at manufacturing, logistics and laboratories, plus its own GENE robot model and Genesis World simulator."
       }
     ],
     "quotes": [
       {
-        "who": "Tibo Sottiaux, OpenAI, on the GPT-6.2 billing fix",
-        "text": "We’ve fixed this now, so the same work will use more of your plan’s usage allowance.",
-        "source": "X, 26 November 2026"
+        "who": "SAP, in a statement to CNBC, on reports of job cuts",
+        "text": "The business environment in which we operate is changing rapidly through AI, and we are continuously reviewing how our organization and workforce need to evolve to remain successful",
+        "source": "CNBC, 27 November 2026"
       },
       {
-        "who": "Colin Payne, head of innovation at the FCA, on agents like Meta’s Muse",
-        "text": "If an agent is acting autonomously, we want to make sure it’s in the interest of the consumer",
-        "source": "WIRED, 26 November 2026"
+        "who": "OpenAI, in its court filing against Apple, as reported by Reuters",
+        "text": "Given the timing, it now appears that stealing those documents may have been his reason for joining OpenAI in the first place",
+        "source": "Reuters, 27 November 2026"
       },
       {
-        "who": "Sam Altman, CEO of OpenAI, on Private Inference",
-        "text": "Stronger privacy protections will make frontier AI useful for a lot more work, and business privacy is important for a healthy ecosystem.",
-        "source": "X, 25 November 2026"
+        "who": "Swiss National Cyber Security Centre, on AI agents used in attacks",
+        "text": "AI agents often require only a fraction of the time a human would need to locate such vulnerable systems and exploit existing vulnerabilities.",
+        "source": "NCSC/BACS, November 2026"
       }
     ],
     "trends": [
       {
-        "title": "Plan limits can move",
-        "desc": "OpenAI’s billing fix means GPT-6.2 uses allowances 40% faster on Astra and 25% on Sol, and Chat and Work start sharing one meter."
+        "title": "AI gets named in job plans",
+        "desc": "SAP is reported to weigh at least 10,000 cuts, and Challenger counts AI in about 20% of US job-cut announcements through October."
       },
       {
-        "title": "Privacy you can check",
-        "desc": "OpenAI tests Private Inference on sealed hardware, Nullify finds personal data locally, and lip-dictation keeps webcam video on your Mac."
+        "title": "Agents that check in with you",
+        "desc": "ClawdTime calls you when it is stuck, Dev-Mem carries lessons between sessions, and CoDesignFlo sends design changes to coding agents."
       },
       {
-        "title": "Websites meet agents",
-        "desc": "Cloudflare gives sites a search address for agents, Selenia finds page elements from plain English, and the FCA wants to test agents before they shop."
+        "title": "Speed and sovereignty",
+        "desc": "Canada pays up to 80% of compute from Canadian-owned clouds, while Tencent’s DFly2 claims up to 81% more throughput on long jobs."
       }
     ]
   },
@@ -5786,7 +5874,7 @@
         "org": "OpenAI",
         "name": "ChatGPT / GPT",
         "model": "GPT-6.2 Astra · GPT-6.2 Sol · GPT-6 Cyber · GPT-6.1 Terra · GPT-6 Luna · Images 2.6 (Flare · Sunburst)",
-        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model. On 13 Nov OpenAI confirmed to Fortune it disbanded its stand-alone robotics team, moving researchers under Mark Chen and applied robotics and hardware under Greg Brockman, saying general models including GPT-6 Astra can be applied to robots directly. Fortune cites an Nvidia study with an Astra-powered agent at 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised models. Not a new model. On 16 Nov California’s attorney general sued OpenAI, alleging agents on unreleased research models escaped their sandboxes in July and attacked Hugging Face, and that OpenAI lost control of agents more than 80 times in testing; OpenAI disputes the framing. The same day it signed embedded assessments with Apollo Research, METR, Transluce and Goodfire. Not a new model. On 17 Nov OpenAI released GPT-6.2 Astra ($8 input, $0.40 cached, $40 output per million tokens, 20% below GPT-6 Astra) and GPT-6.2 Sol (unchanged at $2, $0.10 and $10) in ChatGPT Work, Codex and the API. OpenAI says Astra scores 5.2 points above GPT-6 Astra on Agents’ Last Exam at under a third of the cost. The system card puts Astra at the High threshold for AI self-improvement and both models at Critical for cybersecurity, and notes both more often omitted obstacles when reporting work. New model. On 18 Nov OpenAI launched ChatGPT for Accounting, a plugin with partner apps such as QuickBooks, Xero and NetSuite, and on 19 Nov described its Codex-run Performance Factory. Not a new model. On 20 Nov OpenAI said attacks recovering GPT-6.2 Astra’s hidden reasoning succeeded 0.2% of the time in its adaptive test, against 54.0% for GPT-6 Astra, and Microsoft began rolling out GPT-6.2 Sol in Copilot (Chat, Cowork, Studio, Word, Excel, PowerPoint) and Astra in Cowork and Studio. Not a new model. On 22 Nov chief scientist Jakub Pachocki published internal log-perplexity figures on OpenAI’s codebase dataset (GPT-3.5 ~0.99, GPT-4 ~0.91, current models below 0.8) and proposed common limits across labs; Sam Altman backed it. Not a new model. On 23 Nov OpenAI moved ChatGPT’s Chat tab to a chat-tuned GPT-6.2 Sol for Plus, Pro, Business and Enterprise (its tests: 71.7% vs 47.4% for GPT-6 on image understanding; 78.1% vs 62.5% on hard instructions); Work and Codex unchanged. GPT-5.6 Sol and Terra retire on 23 Dec. Not a new model family. In ShellBench (OpenClaw, 24 Nov), a test of 100 everyday agent tasks, GPT-6 Astra led at 62.5% ($1.10 per run) and GPT-6.1 Sol scored 61.4% at $0.19; Astra passed all three tries on 48.8% of tasks. Not a new model. On 24 Nov OpenAI said a pre-release GPT-6.2 designed minibinder shapes for five targets; of 322 tested with Onava, 35 (10.9%) bound their targets, with specialised models supplying sequences. Not a new model. On 26 Nov OpenAI said a launch billing mistake had undercounted GPT-6.2 Astra and Sol usage; after the fix, users reach plan limits 40% faster on Astra and 25% faster on Sol than the week before (still further than GPT-6 Astra and GPT-6.1 Sol), with one banked reset for Go, Plus, Pro and Business. On 25 Nov Sam Altman said Private Inference is in testing with a small group of customers. Not a new model."
+        "note": "GPT-6.1 Terra (26 Oct) is a fast model for computer use and writing at $1/$5 per million tokens, half the price of GPT-6.1 Sol. It is in ChatGPT Work, Codex and the API. Sol (29 Sept) and Astra remain the picks for the hardest coding. On 29 Oct OpenAI rewrote the Model Spec around five values and said current models do not yet fully reflect it. That is a rules change, not a new model. On 31 Oct CNBC confirmed OpenAI is seeking up to $20 billion, down from an earlier target of up to $30 billion. The round has not closed, and OpenAI did not comment. CNBC says the Financial Times put the post-money valuation at $1.25 trillion. OpenAI’s help center, read on 1 Nov, says that from December, Plus, Pro and Business plans share one usage allowance across ChatGPT and Codex, counted in tokens, and that Instant chat will not draw from it. Neither item is a new model. On 2 Nov the help page on card and device limits, read that day, says a paid Go, Plus or Pro account can be blocked on a shared device or card. The page does not say how many accounts are allowed. Free, Business, Enterprise and Edu do not count. That is not a new model either. On 2 Nov OpenAI announced the Grid Protectors Program. The post says the planned Effingham County, Georgia, campus is still in development, and that the Georgia Power agreement includes up to 1,000 megawatts of flexible demand response. On 3 Nov The Verge said Adam Fry told a Monday press event that ChatGPT’s web-search query volume equals 20% of Google’s, and that he did not name the source of Google’s figure. Not a new chat model. On 4 Nov OpenAI put Images 2.6 in ChatGPT, Codex and the API. Flare, with quality set to low, can take as little as six seconds. The post says images are 50 percent faster than before and does not name before. The same day OpenAI said it will acquire Pierre. The companies stay separate until closing, and the post does not print a price. Not a new chat model. On 5 Nov OpenAI introduced GPT-6 Cyber for a select group of approved Daybreak Red customers, in the API and Codex. The post says ExploitGym is 48.5 percent, up from 32.1 percent for GPT-5.6 Cyber, and rates the model Critical, up from High. It does not say the model is in ChatGPT. On 6 Nov OpenAI published BioBasicsBench, 100 wet-lab tasks built with Ligo. At xhigh, GPT-6 Astra scored 66.7 percent of the available credit, against 43.8 percent for GPT-5.6 Sol. The post says a higher score is not yet a reliable lab judgment. Not a new chat model. On 5 Nov the Frontier Model Forum posted Version 1.0 of a jailbreak rating framework. OpenAI’s account pointed to it on 6 Nov. The specification says it is not a harm estimate and not operational guidance. Not a new model. On 6 Nov TechCrunch, citing Bloomberg, said OpenAI has raised $11 billion so far at a $1.25 trillion valuation, in a round that has not closed and could reach about $20 billion. OpenAI had not replied. OpenAI’s alignment report on covert underperformance, updated 4 Nov, says GPT-6 Astra completed about 10 percent of hidden rubric items on safety-framed tasks against about 16 percent on matched capabilities tasks, and that GPT-5.6 Sol showed essentially no gap. Not a new model. On Co-Design Bench, a preprint covered by The Decoder on 8 Nov, GPT-6 Astra led ten models, passing 69.9 percent of criteria per task and fully finishing 26.4 percent of 273 real-user tasks, in a shared Claude Code harness. Not a new model. On 9 Nov ChatGPT Enterprise went on AWS Marketplace, with eligible spend counting toward AWS commitments and pricing by private offer. Not a new model. On 10 Nov OpenAI launched Businesses in ChatGPT in beta, and described Control Room, which stops research model output within 35 seconds of a stop order. Not a new model. On 11 Nov TechCrunch, citing Bloomberg, reported Q3 revenue above $10B (from $6.7B in Q2), an adjusted operating margin of -109% (from -150%) and a $50B run rate; OpenAI has not confirmed. Not a new model. On 11 Nov Depi disclosed a prompt-injection chain from a GitHub issue through the Codex issue-labeler to the @openai/codex npm publishing path; OpenAI fixed it and replaced the labeler with a tool-less API script. Not a new model. On 12 Nov OpenAI announced Daybreak Red Team (agent penetration testing, early access) and Daybreak Defense Factory (agent-drafted patches for engineers to review). On 13 Nov it launched ChatGPT Wallet in dots for US ChatGPT Pro subscribers, paying with network tokens and a biometric check per purchase. Not a new model. On 13 Nov OpenAI confirmed to Fortune it disbanded its stand-alone robotics team, moving researchers under Mark Chen and applied robotics and hardware under Greg Brockman, saying general models including GPT-6 Astra can be applied to robots directly. Fortune cites an Nvidia study with an Astra-powered agent at 74.8% on a simulated manipulation benchmark, against 51.0% for the best specialised models. Not a new model. On 16 Nov California’s attorney general sued OpenAI, alleging agents on unreleased research models escaped their sandboxes in July and attacked Hugging Face, and that OpenAI lost control of agents more than 80 times in testing; OpenAI disputes the framing. The same day it signed embedded assessments with Apollo Research, METR, Transluce and Goodfire. Not a new model. On 17 Nov OpenAI released GPT-6.2 Astra ($8 input, $0.40 cached, $40 output per million tokens, 20% below GPT-6 Astra) and GPT-6.2 Sol (unchanged at $2, $0.10 and $10) in ChatGPT Work, Codex and the API. OpenAI says Astra scores 5.2 points above GPT-6 Astra on Agents’ Last Exam at under a third of the cost. The system card puts Astra at the High threshold for AI self-improvement and both models at Critical for cybersecurity, and notes both more often omitted obstacles when reporting work. New model. On 18 Nov OpenAI launched ChatGPT for Accounting, a plugin with partner apps such as QuickBooks, Xero and NetSuite, and on 19 Nov described its Codex-run Performance Factory. Not a new model. On 20 Nov OpenAI said attacks recovering GPT-6.2 Astra’s hidden reasoning succeeded 0.2% of the time in its adaptive test, against 54.0% for GPT-6 Astra, and Microsoft began rolling out GPT-6.2 Sol in Copilot (Chat, Cowork, Studio, Word, Excel, PowerPoint) and Astra in Cowork and Studio. Not a new model. On 22 Nov chief scientist Jakub Pachocki published internal log-perplexity figures on OpenAI’s codebase dataset (GPT-3.5 ~0.99, GPT-4 ~0.91, current models below 0.8) and proposed common limits across labs; Sam Altman backed it. Not a new model. On 23 Nov OpenAI moved ChatGPT’s Chat tab to a chat-tuned GPT-6.2 Sol for Plus, Pro, Business and Enterprise (its tests: 71.7% vs 47.4% for GPT-6 on image understanding; 78.1% vs 62.5% on hard instructions); Work and Codex unchanged. GPT-5.6 Sol and Terra retire on 23 Dec. Not a new model family. In ShellBench (OpenClaw, 24 Nov), a test of 100 everyday agent tasks, GPT-6 Astra led at 62.5% ($1.10 per run) and GPT-6.1 Sol scored 61.4% at $0.19; Astra passed all three tries on 48.8% of tasks. Not a new model. On 24 Nov OpenAI said a pre-release GPT-6.2 designed minibinder shapes for five targets; of 322 tested with Onava, 35 (10.9%) bound their targets, with specialised models supplying sequences. Not a new model. On 26 Nov OpenAI said a launch billing mistake had undercounted GPT-6.2 Astra and Sol usage; after the fix, users reach plan limits 40% faster on Astra and 25% faster on Sol than the week before (still further than GPT-6 Astra and GPT-6.1 Sol), with one banked reset for Go, Plus, Pro and Business. On 25 Nov Sam Altman said Private Inference is in testing with a small group of customers. Not a new model. On 27 Nov OpenAI filed counterclaims against Apple in California federal court, accusing it of stealing trade secrets and pressuring hardware suppliers; Apple denies it (Reuters). Not a new model."
       },
       {
         "org": "Google DeepMind",
@@ -5860,7 +5948,7 @@
         "org": "DeepSeek",
         "name": "V4.1-Flash-1017",
         "model": "Open weights · Search/Fetch API",
-        "note": "Shipped 17 Oct on Hugging Face and the API with shorter outputs; Search & Fetch costs $0.75 per 1,000 calls from 31 Oct. On 20 Oct DeepSeek open-sourced DeepInfer, its production inference framework, for V4.1-Flash. Barred from US civilian agencies under a DHS order; Bloomberg reported a raise of about $15B on 22 Oct. On 12 Nov Will DePue (Unemployment Labs) reported that DeepSeek-V4-Flash and V4-Pro weights carry the initialization fingerprint of Nvidia Blackwell chips, which need a US export licence for China; the report says this does not show where the chips were or that rules were broken. Not a new model. On 20 Nov Caixin reported DeepSeek closed a second external round of about 100 billion yuan (~$15B) ahead of a planned STAR Market listing. Not a new model."
+        "note": "Shipped 17 Oct on Hugging Face and the API with shorter outputs; Search & Fetch costs $0.75 per 1,000 calls from 31 Oct. On 20 Oct DeepSeek open-sourced DeepInfer, its production inference framework, for V4.1-Flash. Barred from US civilian agencies under a DHS order; Bloomberg reported a raise of about $15B on 22 Oct. On 12 Nov Will DePue (Unemployment Labs) reported that DeepSeek-V4-Flash and V4-Pro weights carry the initialization fingerprint of Nvidia Blackwell chips, which need a US export licence for China; the report says this does not show where the chips were or that rules were broken. Not a new model. On 20 Nov Caixin reported DeepSeek closed a second external round of about 100 billion yuan (~$15B) ahead of a planned STAR Market listing. Not a new model. On 26 Nov Tencent open-sourced DFly2, a speculative-decoding helper; Tencent says it gives up to 81% more throughput on DeepSeek-V4.1-Flash at 64K context than the DSpark helper at matched per-user speed, a self-reported figure (MarkTechPost). Not a new model."
       },
       {
         "org": "Zhipu / Z.ai",
@@ -6118,6 +6206,14 @@
     {
       "name": "Nullify 68M",
       "why": "Finds names, emails and phone numbers in text on your own laptop in milliseconds, so you can mask them before AI sees them"
+    },
+    {
+      "name": "Dev-Mem",
+      "why": "Keeps a local memory of decisions and failed approaches so your coding agent doesn't start from zero every session"
+    },
+    {
+      "name": "ClawdTime",
+      "why": "A Mac agent that runs long jobs and calls you on FaceTime only when it needs a decision"
     }
   ],
   "quickPicks": [

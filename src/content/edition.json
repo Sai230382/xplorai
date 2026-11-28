@@ -1,267 +1,215 @@
 {
-  "number": 63,
-  "edition": "Briefing 63",
-  "date": "27 November 2026",
-  "dateISO": "2026-11-27",
-  "toolsPulseDate": "27 November 2026",
+  "number": 64,
+  "edition": "Briefing 64",
+  "date": "28 November 2026",
+  "dateISO": "2026-11-28",
+  "toolsPulseDate": "28 November 2026",
   "kicker": "Today in AI",
-  "title": "OpenAI fixed a billing mistake, so GPT-6.2 now uses up ChatGPT plans 40% faster on Astra and 25% faster on Sol. Cloudflare gives websites a one-switch search box for AI agents, and OpenAI tests Private Inference for sensitive business work. Nvidia pauses server shipments to four Southeast Asian countries, the UK’s FCA says Meta refused joint testing of Muse, New York bans AI chatbot toys, and Apple pulls the Talkie companion app.",
-  "summary": "OpenAI says a launch billing mistake undercounted GPT-6.2 usage; after the fix you reach limits 40% faster on Astra and 25% faster on Sol than last week, with one banked reset as an apology, and Chat and Work are starting to share one meter. Cloudflare’s Search for Agents indexes a site and gives agents a search address on its own domain, with AI Search billing from 1 December. OpenAI is testing Private Inference, which protects prompts during processing, with a few customers. Nvidia told Dell and Super Micro to pause servers to Malaysia, Singapore, Thailand and Indonesia. The FCA says Meta declined sandbox testing of Muse before its UK launch. New York banned AI chatbot toys for five years, and Apple removed Talkie after an investigation into its chats with children.",
-  "uncertainty": "OpenAI has not said what “40% faster” measures or published the intended usage rates, and the shared Chat and Work meter is still a test. Search for Agents is a beta and real query costs are not yet known. Private Inference is an alpha with no date or price for wider access. The Nvidia pause comes from a Wall Street Journal report relayed by TechCrunch, and its length is unspecified. The FCA account of the Muse talks is Payne’s; Meta says it engaged constructively. New York’s toy ban starts 90 days after signing and has not been tested in court. The Talkie findings come from the ABC and TBIJ investigation; MiniMax did not respond to the ABC.",
+  "title": "SAP is reported to be weighing at least 10,000 job cuts as AI reshapes its software business. OpenAI countersues Apple over trade secrets and suppliers, Canada adds C$700 million to its AI compute fund and will now cover up to 80% of costs on Canadian-owned clouds, and Switzerland confirms its first AI-agent cyberattacks. Tencent open-sources DFly2 to speed up long agent runs.",
+  "summary": "Bloomberg says SAP is weighing at least 10,000 job cuts, with product, engineering and sales in focus; SAP says no decisions have been made. OpenAI filed counterclaims accusing Apple of stealing trade secrets and pressuring suppliers, and Apple denies it. Canada’s AI Compute Access Fund reaches $1 billion and reimburses up to 80% of compute from sovereign providers and up to 50% from Canadian-based ones, with a first call for health and life sciences. Switzerland’s cyber agency reports its first attacks carried out with AI agents, and Microsoft details the ARTEX framework behind many of them. Tencent open-sourced DFly2, which it says gives up to 81% more throughput on DeepSeek-V4.1-Flash.",
+  "uncertainty": "The SAP figure comes from unnamed sources via Bloomberg; SAP says no decisions have been made. OpenAI’s and Apple’s accounts are court filings and statements, not findings, and both sides deny the other’s claims. The Canadian rates are the program’s maximums, and the earlier 67% rate comes from BetaKit and The Logic. The Swiss agency’s notice gives no counts; the five attacks and four successes come from Reuters, and the agency’s own wording says compromise followed in every case it knows of. DFly2’s figures are self-reported by Tencent, measured on its chosen tasks, and the gain ranges from 3.9% to 81%.",
   "stats": {
-    "filtered": 7,
-    "verified": 7,
+    "filtered": 5,
+    "verified": 5,
     "themes": 4
   },
   "stories": [
     {
-      "id": "chatgpt-62-usage-fix",
-      "topic": "money",
-      "theme": "OpenAI fixed a billing mistake, so the same GPT-6.2 work now uses up your ChatGPT plan’s allowance faster",
-      "changed": "On 26 November 2026 Tibo Sottiaux, who works on Codex and ChatGPT at OpenAI, said a billing mistake at the launch of GPT-6.2 had “incorrectly discounted” GPT-6.2 Astra and Sol usage for most users. OpenAI has fixed it, so the same work now uses more of your plan’s usage allowance. Compared with last week, he said, you will reach your limits 40% faster on GPT-6.2 Astra and 25% faster on GPT-6.2 Sol, although both should still go further than GPT-6 Astra and GPT-6.1 Sol. Other models were not affected, and OpenAI will not charge for the difference on past usage. As an apology, everyone on Go, Plus, Pro and Business gets one banked reset; BleepingComputer found it under Settings, Usage, where it expires a month after it is added. Separately, OpenAI has started merging ChatGPT’s Chat and Work areas for a small group of Pro subscribers. They share one usage meter, Instant chats stay unlimited and do not count, and OpenAI’s support page says shared limits reach more users in December. OpenAI told TechCrunch most users should not hit limits more often, but a small fraction of its heaviest users may.",
-      "matters": "The price of a plan stayed the same, but how much work it buys on OpenAI’s newest models went down overnight. For anyone who planned client work, coding sprints or team budgets around last week’s limits, the maths has changed.",
-      "imply": "Treat AI plan limits like a utility tariff that can move, not a fixed promise. Teams that lean on one model for heavy work should watch their usage meter, keep a cheaper model in the mix, and plan for chat and coding drawing from one pot from December.",
+      "id": "sap-job-cuts-ai",
+      "topic": "work",
+      "theme": "SAP is reported to be weighing at least 10,000 job cuts as it reshapes its software business around AI",
+      "changed": "Bloomberg reported on 26 November that SAP, Germany’s largest software company, is preparing a plan to cut at least 10,000 positions as it reshapes its software business for the AI era, citing people familiar with the matter. CNBC, relaying the report, says all departments were asked to identify potential cuts, with product, engineering and sales in particular focus. SAP employs more than 110,000 people. SAP told CNBC that “no decisions have been made regarding any further measures” and that it does not comment on speculation. The report came as SAP flagged a cybersecurity attack, saying it found “no evidence of unauthorized access to customer business data.” In 2024 SAP removed around 10,000 positions through a programme that relied mainly on voluntary departures and retraining, and headcount later stayed relatively flat as it hired for new roles.",
+      "matters": "The departments named, product, engineering and sales, are the people who build and sell software. CNBC adds that other software firms have tied cuts to AI this year, and that US employers cited AI in 121,401 job-cut announcements through October 2026, about 20% of the total, according to Challenger, Gray & Christmas.",
+      "imply": "Treat this as a signal, not a decision: SAP says nothing is settled and the figure comes from unnamed sources. But software and business-service teams should expect questions about which work needs a person and which can be handed to AI tools, and should have an answer ready.",
       "uses": [
-        "Open ChatGPT Settings, Usage this week and note how fast your allowance drops on a normal day of GPT-6.2 work.",
-        "Save the banked reset for a real deadline instead of spending it straight away; it expires about a month after it appears.",
-        "Move routine jobs, like quick rewrites or simple lookups, to Instant or an older model, and keep GPT-6.2 Astra for the hard parts."
+        "Managers: list the repeatable, rule-based tasks your team does each week, and mark which ones need judgement or a client relationship. That is the list you will be asked for.",
+        "Individual staff: write down the work where you check, fix or approve AI output; that is the part that is hard to replace and easy to show.",
+        "Hiring and training leads: if you retrain rather than lay off, as SAP mainly did in 2024, record what skills you are moving people towards."
       ],
-      "example": "A freelance developer on Plus usually runs out of Codex time on Friday. This week she switches small edits to GPT-6.1 Sol, keeps GPT-6.2 Astra for the tricky refactor, and holds her banked reset for the client deadline.",
-      "audience": "Paying ChatGPT and Codex users, freelancers who quote work based on their plan, and team leads who budget AI seats.",
-      "watch": "When shared Chat and Work limits reach your plan in December, and whether OpenAI publishes clear before-and-after figures for what an allowance buys, which users on its community forum are asking for.",
+      "example": "A sales-operations lead at a software reseller lists her team’s tasks: quote formatting and renewal reminders are repeatable and go to an AI assistant, while pricing exceptions and customer calls stay with people. She brings the list to her manager before the planning round, not after.",
+      "audience": "Staff and managers at software and business-service firms, HR and workforce planners, and anyone whose job involves sales, product or engineering support.",
+      "watch": "Whether SAP confirms a plan and a number, whether any cuts rely on voluntary departures as in 2024, and whether other software firms follow with AI-linked cuts.",
       "source": {
-        "title": "BleepingComputer: OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug, 26 November 2026",
-        "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
-        "quote": "Comparing to last week, you will reach your limits 40% faster on GPT-6.2 Astra and 25% faster on Sol."
+        "title": "CNBC: German software firm SAP is reportedly cutting at least 10,000 jobs in AI push, 27 November 2026",
+        "url": "https://www.cnbc.com/2026/11/27/sap-job-cuts-ai-restructuring.html",
+        "quote": "The business environment in which we operate is changing rapidly through AI, and we are continuously reviewing how our organization and workforce need to evolve to remain successful"
       }
     },
     {
-      "id": "cloudflare-search-for-agents",
+      "id": "openai-apple-countersuit",
+      "topic": "rules",
+      "theme": "OpenAI countersued Apple, accusing it of stealing trade secrets and pressuring hardware suppliers",
+      "changed": "On Friday 27 November OpenAI filed counterclaims in a California federal court against Apple, which sued OpenAI and former Apple employees Tang Tan and Chang Liu in July over alleged trade-secret misappropriation. OpenAI says Apple rehired a former employee who worked at OpenAI for six months, and that in that time he gained access to specific information on a new device and to OpenAI’s hardware roadmap. It also says Apple discouraged hardware suppliers from working on future OpenAI devices, and designed its employment practices to “trap” employees. OpenAI says 400 employees have left Apple for OpenAI so far. Apple denies using the rehired employee to get OpenAI’s confidential information and denies trying to suppress competition, calling the counterclaims “a transparent attempt to distract from the substance of Apple’s lawsuit.” OpenAI and the two former Apple employees deny Apple’s allegations. These are claims in court filings, not findings.",
+      "matters": "The fight is about people and devices as much as models. OpenAI says it is building AI devices that could “outcompete Apple on what Apple views as its own turf”, and the dispute shows how hiring, personal devices and supplier relationships are becoming legal issues in the race to build AI hardware.",
+      "imply": "Companies that hire from rivals, or lose staff to them, should expect closer scrutiny of what people carry between jobs. OpenAI’s filing also criticises Apple for asking staff to use personal devices and accounts for work and then blocking an orderly separation when they leave, which any employer with a bring-your-own-device policy should read as a warning.",
+      "uses": [
+        "HR and legal teams: check your exit process for staff who use personal phones or accounts for work, and agree in writing what is returned or wiped.",
+        "Hiring managers: record what a new hire from a competitor is, and is not, allowed to bring or use.",
+        "Hardware startups: note which suppliers you depend on for key parts, and what happens if a larger rival leans on them."
+      ],
+      "example": "A start-up hires an engineer from a larger rival. HR gives him a one-page note on what he may not bring, asks him to confirm he has returned company files from his old job, and keeps the signed note on file.",
+      "audience": "HR, legal and operations leads, founders hiring from big companies, and consumer-hardware makers.",
+      "watch": "How the court handles the counterclaims, whether suppliers are drawn in, and whether other companies tighten rules for personal devices at work.",
+      "source": {
+        "title": "Reuters: OpenAI countersues Apple for stealing trade secrets, 27 November 2026",
+        "url": "https://www.reuters.com/5f374b32b07b/technology/openai-countersues-apple-stealing-trade-secrets-ft-reports-2026-11-27/",
+        "quote": "Given the timing, it now appears that stealing those documents may have been his reason for joining OpenAI in the first place"
+      }
+    },
+    {
+      "id": "canada-ai-compute-fund",
+      "topic": "money",
+      "theme": "Canada added C$700 million to its AI Compute Access Fund and will now cover up to 80% of compute bought from Canadian-owned clouds",
+      "changed": "On 26 November Canada’s AI minister Evan Solomon announced $700 million more for the AI Compute Access Fund, building on the first $300 million and bringing the total to $1 billion. The updated program guide says the fund covers up to 80% of eligible costs for cloud compute from sovereign providers, and up to 50% for Canadian-based providers. A sovereign provider must be incorporated in Canada, ultimately Canadian-owned and controlled, run its compute in Canada, and keep data processed and stored there; multinationals with a Canadian entity count as Canadian-based. Proposals must have eligible compute costs between $100,000 and $5 million, for projects ending by 31 March 2030. The first call is for health and life sciences. A statement of interest is due by 17 December 2026 and the full application by 4 January 2027, 11:59 pm Eastern time. BetaKit and The Logic report the earlier phase covered up to 67% when Canadian providers were used. The government also announced $52 million for 45 more companies from the first phase, bringing commitments to more than $118 million for 89 companies.",
+      "matters": "The subsidy depends on where the compute is bought. The same AI bill is reimbursed at a higher rate if the cloud company is Canadian-owned than if it is a foreign firm’s Canadian region. That changes who small AI firms in Canada buy from, and gives local cloud providers a price edge.",
+      "imply": "Governments are starting to pay for AI compute and to steer where it is bought. Canadian small and mid-sized firms working in health and life sciences should check eligibility now, and cloud buyers elsewhere should expect similar sovereignty conditions to attach to public money.",
+      "uses": [
+        "Canadian health and life-science firms: read the program guide, check whether your yearly compute bill falls between $100,000 and $5 million, and submit the statement of interest by 17 December.",
+        "Finance leads: ask your cloud supplier whether it meets the sovereign test, since it changes the share you can claim.",
+        "Cloud providers: document ownership, data location and where processing happens, because the guide asks for contracts and proof."
+      ],
+      "example": "A Toronto medical-imaging start-up spends $400,000 a year on AI compute. It asks its provider for proof of Canadian ownership and data location, then files a statement of interest before 17 December.",
+      "audience": "Canadian small and medium-sized AI firms, especially in health and life sciences, plus cloud providers and their finance teams.",
+      "watch": "Which firms count as sovereign providers, the next sector calls after health, and whether other countries copy the idea.",
+      "source": {
+        "title": "Innovation, Science and Economic Development Canada: Program Guide, AI Compute Access Fund, updated 26 November 2026",
+        "url": "https://www.ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy/ai-compute-access-fund/program-guide-ai-compute-access-fund",
+        "quote": "Cover up to 80% of your eligible costs for sovereign, cloud-based compute services."
+      }
+    },
+    {
+      "id": "swiss-ai-agent-attacks",
+      "topic": "trust",
+      "theme": "Switzerland’s cyber agency confirmed its first attacks run by AI agents, and says the free tools behind them have almost doubled since October",
+      "changed": "Switzerland’s National Cyber Security Centre (NCSC, also called BACS) said it has received its first reports of cyberattacks in Switzerland carried out with the help of an AI agent, hitting organisations and critical infrastructure operators in at least two sectors. Reuters reported five attacks in recent days, four of them successful, with three targeting critical infrastructure operators; broadcaster SRF said these were electricity, water and telecoms providers. The NCSC says the attackers used “Agentic Offensive Frameworks”, AI agents that search for weak points, pick attack tools, check the results and plan the next step. It says the number of internet-accessible agents such as ARTEX and CyberStrikeAI has almost doubled since October 2026. Microsoft Threat Intelligence said on 25 November that ARTEX, released in July as a penetration-testing framework, is now used by state-backed and criminal groups, and can move from scanning to privileged access in minutes. The NCSC advises patching internet-facing systems no later than 24 hours after release, using multi-factor authentication or passkeys, and limiting what is exposed.",
+      "matters": "These tools are free and widely available, so the main change is speed. The NCSC says such agents need only a fraction of the time a human would to find and use weak systems, which leaves less time to spot and stop an attack.",
+      "imply": "Slow patching and shared or easy passwords are now a bigger risk than before. Small firms that supply bigger ones are as exposed as the large targets, and security plans written for human-speed attackers need a second look.",
+      "uses": [
+        "IT leads: list every system reachable from the internet and remove or restrict any that do not need to be.",
+        "Operations leads: set a rule that critical security updates are installed within 24 hours, and name who approves it.",
+        "Everyone: switch on multi-factor authentication or passkeys for email, VPN and other internet-facing logins."
+      ],
+      "example": "A water-meter supplier lists its remote-support portals and finds one that no one uses. It shuts that down, puts passkeys on the rest and sets a 24-hour patch rule.",
+      "audience": "IT and security teams, owners of small suppliers to utilities and large companies, and anyone who runs internet-facing systems.",
+      "watch": "Whether the NCSC or other national agencies publish counts and sectors, and whether more countries report attacks run by AI agents.",
+      "source": {
+        "title": "Swiss National Cyber Security Centre (NCSC/BACS): Cyberattacks involving AI agents, first confirmed cases in Switzerland, November 2026",
+        "url": "https://www.bacs.admin.ch/en/26-ki-agenten-1-en",
+        "quote": "AI agents often require only a fraction of the time a human would need to locate such vulnerable systems and exploit existing vulnerabilities."
+      }
+    },
+    {
+      "id": "tencent-dfly2",
       "topic": "tools",
-      "theme": "Cloudflare lets any website owner give AI agents a search box with one switch, ahead of AI Search billing on 1 December",
-      "changed": "On 25 November 2026 Cloudflare launched Search for Agents, in beta on all plans including Free (with limits). Turn it on for a domain under Quick Actions on the dashboard’s Overview page, and Cloudflare creates an AI Search index of your site, crawls and indexes your pages, and opens a search address on your own domain at /.well-known/search. It adds tags to every page telling visiting AI agents the search exists and how to use it. Agents send a question and get back the matching content from your site in Markdown, not an AI-written answer. Besides normal web requests, it supports the new HTTP QUERY method (RFC 10008, published in June 2026). Requests still pass through your bot management, AI Crawl Control and firewall settings. By default it crawls up to 100,000 pages, five links deep, and refreshes every 24 hours. Usage follows AI Search pricing, and Cloudflare’s docs say AI Search billing begins on 1 December 2026. Each account gets 5 million ingestion tokens, 10 GB-month of storage, 1,000 semantic and 1,000 full-text queries a month, then pays $0.75 per 1,000 semantic or hybrid queries. On the Workers Free plan crawling is capped at 500 pages a day.",
-      "matters": "AI agents increasingly read websites for people, and they usually scrape page by page. This gives site owners a way to hand agents the right page from their own content, on their own domain and under their own access rules.",
-      "imply": "Being findable by agents is becoming a website setting, like a sitemap was for search engines. Marketing and docs teams will need to decide which content agents should find, and keep an eye on the query bill.",
+      "theme": "Tencent open-sourced DFly2, a helper that makes long, agent-style AI runs cheaper to serve, with up to 81% more throughput on DeepSeek-V4.1-Flash",
+      "changed": "On 26 November Tencent’s Hunyuan team open-sourced DFly2, a speculative-decoding drafter. In plain terms, a small helper model guesses several words ahead and the big model checks them in one pass, so the output is the same but arrives faster. DFly2 reads the big model’s own memory (its KV cache) and its choice of which earlier text to look at, instead of keeping a separate copy, so the helper adds no extra memory and its cost stays flat at any context length. MarkTechPost reports Tencent’s figures: up to 81% more throughput on DeepSeek-V4.1-Flash at 64K context, compared with the DSpark helper at the same per-user speed, with 62% on a code task and 28% on short text. Tencent claims up to 4.2 times faster decoding on long agent tasks with its Hy4 flash model. The smallest gain was 3.9% on general tasks with Hy4 flash. MarkTechPost notes all numbers are self-reported by Tencent.",
+      "matters": "Long agent sessions are expensive because the model re-reads a lot of text. A helper that adds no memory and holds its cost at long context speeds up exactly the kind of runs coding agents produce, and it is open for teams that host their own models.",
+      "imply": "Teams that run their own open models can serve more users on the same hardware, or answer faster, without changing the big model. The gain varies by task and model, so test it on your own work before planning around Tencent’s best figure.",
       "uses": [
-        "Docs and support teams: switch it on for a help centre so coding and support agents pull the right article instead of guessing.",
-        "Small businesses on Cloudflare: test it on your site, then ask an agent a customer question and see what it finds.",
-        "Before turning it on, check that only public pages are indexed and set the query budget you are willing to pay after the free allowance."
+        "Platform teams running DeepSeek-V4.1-Flash, GLM-5.3-Flash or Hy4 flash: benchmark DFly2 against your current helper on your real prompts.",
+        "Developers using agents with very long context: ask your host whether it supports a drafter like this.",
+        "Finance leads: ask engineers for measured cost per task before and after, not Tencent’s headline."
       ],
-      "example": "A software company enables Search for Agents on its docs site. A customer’s coding agent asks “what is the upload size limit?”, gets the exact limits page in Markdown, and answers correctly without crawling the whole site.",
-      "audience": "Website owners, documentation and marketing teams, and developers building agents that read the web.",
-      "watch": "How many agents actually look for the /.well-known/search address, whether other hosts copy the idea, and what real query bills look like after 1 December.",
+      "example": "An engineering team that runs Hy4 flash for code review agents tries DFly2 on last week’s long review jobs. It records time per job and cost on the same hardware, and compares with its current setup before deciding.",
+      "audience": "Teams that host open AI models, platform and infrastructure engineers, and technical leads who pay for long-context agent runs.",
+      "watch": "Independent benchmarks, support in common serving software, and the licences: MarkTechPost lists an AngelSpec License and the Tencent Hy License for Hy4 flash.",
       "source": {
-        "title": "Cloudflare Blog: Introducing Search for Agents, 25 November 2026",
-        "url": "https://blog.cloudflare.com/search-for-agents/",
-        "quote": "Today we're introducing Search for Agents, which puts that setup behind a toggle in your Cloudflare dashboard."
-      }
-    },
-    {
-      "id": "openai-private-inference",
-      "topic": "trust",
-      "theme": "OpenAI is testing Private Inference, which aims to keep a business’s prompts private even while its models process them",
-      "changed": "On 25 November 2026 OpenAI chief executive Sam Altman said the company is now testing Private Inference with a small group of customers. It is part of OpenAI Private Intelligence, its set of privacy protections for businesses. OpenAI’s product page lists Private Inference as an alpha and an API preview, built on confidential computing, where the work runs on sealed-off hardware, plus what it calls “strict verifiable controls”. The goal is to protect a company’s prompts and the model’s replies while the model is working on them, not only when data is stored or sent. Altman also pointed to the existing pairing of zero data retention (ZDR) with Private Safety Processing, which he said lets automated safety reviews run without giving OpenAI staff access to the underlying content. According to The Next Web, the OpenAI lead on the work called the test a first step and said OpenAI is lining up more computing power for a much larger rollout, with no date given.",
-      "matters": "Many firms still keep AI away from contracts, health records, deal documents and source code because they cannot be sure who might see the data. A provider being able to prove, not just promise, that it cannot read prompts would remove one of the biggest blocks to using AI on sensitive work.",
-      "imply": "Expect privacy guarantees that can be checked to become a buying question, alongside price and model quality. Legal, security and procurement teams should start asking vendors what is verifiable and what is only a policy.",
-      "uses": [
-        "Security and legal teams: list which sensitive workflows you keep away from AI today, and what proof would change that.",
-        "Companies on OpenAI’s API: ask your account team about the Private Inference pilot and whether ZDR already covers your use.",
-        "Procurement: add “can you show us the provider cannot read our prompts?” to AI vendor questionnaires."
-      ],
-      "example": "A law firm that bans AI on merger documents asks its provider for an audit showing prompts are processed on sealed hardware, then runs a small pilot on one closed deal before widening use.",
-      "audience": "Security, legal and compliance leads, regulated businesses, and developers handling sensitive data through OpenAI’s API.",
-      "watch": "Who gets access after the alpha, what independent checks OpenAI publishes, how much it costs, and how it compares with privacy offers from other AI providers.",
-      "source": {
-        "title": "The Next Web: OpenAI is testing a way to shield business prompts while its models run, 25 November 2026",
-        "url": "https://thenextweb.com/news/openai-private-inference-testing-customers",
-        "quote": "Stronger privacy protections will make frontier AI useful for a lot more work, and business privacy is important for a healthy ecosystem."
-      }
-    },
-    {
-      "id": "nvidia-southeast-asia-pause",
-      "topic": "money",
-      "theme": "Nvidia told Dell and Super Micro to pause AI server shipments to four Southeast Asian countries while it checks export rules",
-      "changed": "On 26 November 2026 TechCrunch, citing the Wall Street Journal, reported that Nvidia has told manufacturing partners, including Dell and Super Micro, to pause shipments of servers to Malaysia, Singapore, Thailand and Indonesia for an unspecified period. Nvidia is checking whether its partners in the region meet US export requirements. Chinese companies have been using Nvidia chips remotely from data centres in those countries, a route the US Commerce Department closed earlier this month. The Journal notes that the think tank Institute for Progress estimates such remote data centres supply about 24% of China’s AI computing power.",
-      "matters": "Southeast Asia has become a major home for new AI data centres. A pause on Nvidia servers there can delay capacity that companies across Asia, not just Chinese firms, were planning to rent.",
-      "imply": "Where your AI computing physically sits now carries trade-rule risk. Companies renting GPUs in the region may face delays, tighter checks on who the end customer is, or higher prices while the pause lasts.",
-      "uses": [
-        "If you rent GPU capacity in Singapore, Malaysia, Thailand or Indonesia, ask your provider whether new hardware or expansions are affected.",
-        "Finance and planning teams: build a delay into any AI project that depends on new capacity in the region.",
-        "Keep a second region or provider ready for critical AI workloads."
-      ],
-      "example": "An Indian startup planning to move model training to a new Johor data centre in January asks the operator for a written delivery date, and keeps its current cloud contract until the servers actually arrive.",
-      "audience": "Companies renting AI computing in Asia, data centre investors, and finance teams planning AI budgets.",
-      "watch": "How long the pause lasts, whether Nvidia confirms it publicly, and whether shipments resume with stricter checks on who uses the chips.",
-      "source": {
-        "title": "TechCrunch: Nvidia hits pause on chip shipments to Southeast Asia, 26 November 2026",
-        "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
-        "quote": "Nvidia has told manufacturing partners, including Dell and Super Micro, to hit pause on server shipments to Malaysia, Singapore, Thailand, and Indonesia for an unspecified period"
-      }
-    },
-    {
-      "id": "fca-meta-muse-testing",
-      "topic": "rules",
-      "theme": "The UK’s financial regulator says Meta turned down joint testing of its Muse shopping agent before launching it in the UK",
-      "changed": "Meta declined a suggestion from the UK’s Financial Conduct Authority (FCA) last week to test its Muse personal agent together in the regulator’s sandbox, the FCA’s head of innovation, Colin Payne, told WIRED in a story published on 26 November 2026. Muse launched in the UK on Tuesday 24 November. The FCA especially wants to understand how agents will make payments: Sainsbury’s, Marks & Spencer, Ocado, Debenhams Group and Currys said they had worked with Meta to smooth Muse’s access to their sites. Payne said Meta only told the FCA of its plans last month, and that testing would normally be planned over weeks or months. Meta said it had “engaged constructively” with regulators. The Competition and Markets Authority has already made Meta change its UK terms to say it must use “reasonable skill and care” when providing Muse, and said it will not hesitate to act if it has concerns. The data watchdog, the ICO, stressed that users must understand and control how Muse uses their data. WIRED reports more than 10 million users have set up Muse in North America since September.",
-      "matters": "This is a regulator saying publicly that a big shopping agent arrived before it could check how the agent handles people’s money. It follows the FCA’s 24 November statement that firms stay responsible for agents and tech firms may need authorisation.",
-      "imply": "Retailers and payment firms working with consumer agents should expect UK regulators to ask how agent purchases are approved, explained and refunded, whoever built the agent.",
-      "uses": [
-        "UK retailers: check how purchases made by Muse or other agents appear in your systems, and how refunds and disputes work.",
-        "Payment and fraud teams: flag agent-made orders separately so you can spot problems early.",
-        "Product teams launching agents in the UK: talk to the FCA early; it says testing takes weeks or months to plan."
-      ],
-      "example": "A UK grocer that opened its site to Muse adds a tag for agent-placed orders, and reviews a week of them for wrong items and refund requests before promoting the feature.",
-      "audience": "UK retailers, payment and fintech teams, and companies planning to launch AI agents that buy things for people.",
-      "watch": "Whether the FCA, CMA or ICO open a formal review of Muse, and whether other agent makers accept sandbox testing before UK launches.",
-      "source": {
-        "title": "WIRED: Meta Refused to Share Muse for Testing, UK Financial Watchdog Complains, 26 November 2026",
-        "url": "https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/",
-        "quote": "If an agent is acting autonomously, we want to make sure it’s in the interest of the consumer"
-      }
-    },
-    {
-      "id": "ny-ai-chatbot-toy-ban",
-      "topic": "rules",
-      "theme": "New York banned the making and selling of AI chatbot toys for five years, with fines of up to $15,000 a day",
-      "changed": "New York Governor Kathy Hochul signed S.9408A/A.11144B, a five-year moratorium on manufacturing, distributing and selling toys in New York with embedded or integrated AI chatbots, such as talking stuffed animals, dolls and robots that use the internet to hold conversations with children. The law takes effect 90 days after signing, so it does not cover this holiday season. The Attorney General will enforce it, with civil penalties of up to $15,000 per day for each violation. The governor’s office cited a consumer watchdog’s tests of chatbot toys for ages 3 to 12: some talked about sexually explicit topics, told children where to find matches at home, and acted upset when a child had to leave, with few or no parental controls and safety limits that weakened in longer conversations. It follows a New York law from October that bans certain unsafe chatbot features for minors.",
-      "matters": "This pauses a whole category of children’s products instead of setting rules for how they behave. It shows lawmakers are willing to stop sales outright when safety testing looks weak.",
-      "imply": "Companies that put AI models into consumer hardware, especially for children, should expect bans or strict rules rather than voluntary codes. Retailers will need to know which products in their range contain a chatbot.",
-      "uses": [
-        "Toy makers and retailers: list every product with an online chatbot and plan to stop New York sales before the law takes effect.",
-        "Hardware startups: document parental controls, data collection and conversation limits now; other states may copy this.",
-        "Parents and gift buyers: check the box for open-ended chat, voice recording or face scanning before buying."
-      ],
-      "example": "An online toy shop tags every talking plush and robot that uses an AI chatbot, blocks New York delivery for them from the start date, and adds a plain note on each product page.",
-      "audience": "Toy and consumer hardware makers, retailers and marketplaces selling into New York, and parents.",
-      "watch": "Whether other states follow, how the Attorney General defines “AI chatbot toy” in enforcement, and whether makers challenge the law.",
-      "source": {
-        "title": "Governor Kathy Hochul: As Consumers Begin Their Holiday Shopping Season, Governor Hochul Signs Five-Year Ban on AI Chatbot Toys, 24 November 2026",
-        "url": "https://www.governor.ny.gov/news/consumers-begin-their-holiday-shopping-season-governor-hochul-signs-five-year-ban-ai-chatbot",
-        "quote": "Violators face civil penalties up to $15,000 per day for each violation that will be enforced by the Attorney General."
-      }
-    },
-    {
-      "id": "talkie-apple-removal",
-      "topic": "trust",
-      "theme": "Apple pulled MiniMax’s Talkie companion app worldwide, and Talkie has now blocked web users in Australia and the UK",
-      "changed": "Apple removed Talkie, one of the world’s most popular AI companion apps, from its App Store worldwide for breaking its rules on sexual content, after questions from Australia’s ABC. On 27 November 2026 the ABC reported that Talkie had also started blocking Australian and British visitors to its website. The moves follow a joint investigation by the ABC and the UK’s Bureau of Investigative Journalism into inappropriate and abusive conversations between Talkie’s AI characters and children. The reporters found corporate documents showing that Talkie’s Chinese owner, MiniMax, had built its models to create emotional bonds that keep users talking, and evidence suggesting MiniMax trained its commercial AI models on Talkie conversations despite telling users they were “private”. Talkie is still on Google Play, where it shows more than 50 million downloads; Google previously told the ABC it was available only to verified adults. Australia’s Information Commissioner said a new Children’s Online Privacy Code starts on 10 December, with civil penalties of up to $50 million per breach.",
-      "matters": "Companion apps reach children through app stores, and in this case the store acted only after reporters brought evidence. It also shows that “private” chats with an AI app may end up training its models.",
-      "imply": "Expect more pressure on app stores, and on companies building AI characters, to prove age checks and data promises work. Anyone offering a chatbot to the public needs to be able to show what it says to children and what happens to their chats.",
-      "uses": [
-        "Parents and schools: check phones for Talkie and other companion apps; removal from the App Store does not delete apps already installed.",
-        "Companies with customer chatbots: test what your bot says to someone who says they are 12, and fix it before a journalist does.",
-        "Privacy teams: check that what your app tells users about chat privacy matches how chats are really used for training."
-      ],
-      "example": "A school’s IT lead sends parents a short note before the holidays: how to find AI companion apps on a phone, how to turn on app-store age limits, and why “private” in an app’s pitch is not a guarantee.",
-      "audience": "Parents and educators, companies that run consumer chatbots, and app store and trust-and-safety teams.",
-      "watch": "Whether Google follows Apple, what Australia’s eSafety Commissioner and Information Commissioner do next, and whether MiniMax answers the training-data claims.",
-      "source": {
-        "title": "ABC News: AI companion app Talkie blocked on web in Australia and UK as parents welcome Apple removal, 27 November 2026",
-        "url": "https://www.abc.net.au/news/2026-11-27/talkie-ai-app-blocked-taken-off-apple-store/107433834",
-        "quote": "Controversial AI companion service Talkie is now blocking Australian and British visitors from its website, days after an ABC investigation prompted Apple to remove the product from its app store globally."
+        "title": "MarkTechPost: Tencent Open-Sources DFly2, Speculative Decoding That Reuses the Target’s Sparse KV Cache, 26 November 2026",
+        "url": "https://www.marktechpost.com/2026/11/26/tencent-dfly2-speculative-decoding-sparse-models/",
+        "quote": "Up to 81% more throughput on DeepSeek-V4.1-Flash at 64K, at matched per-user speed."
       }
     }
   ],
   "columns": {
     "changed": [
       {
-        "title": "GPT-6.2 limits arrive sooner",
-        "body": "OpenAI fixed a billing bug: you hit limits 40% faster on GPT-6.2 Astra and 25% faster on Sol than last week."
+        "title": "SAP weighs 10,000 job cuts",
+        "body": "Bloomberg reports at least 10,000 cuts, with product, engineering and sales in focus. SAP says nothing is decided."
       },
       {
-        "title": "A search box for AI agents",
-        "body": "Cloudflare indexes your site with one switch and gives agents a search address on your own domain."
+        "title": "OpenAI countersues Apple",
+        "body": "OpenAI accuses Apple of stealing trade secrets and pressuring suppliers. Apple denies it."
       },
       {
-        "title": "OpenAI tests Private Inference",
-        "body": "A small group of businesses is trying sealed-hardware processing meant to keep prompts private."
+        "title": "Swiss agency: AI-agent attacks",
+        "body": "Switzerland’s cyber agency confirms attacks run by AI agents on firms and critical infrastructure."
       }
     ],
     "matters": [
       {
-        "title": "Nvidia pauses Asian shipments",
-        "body": "Dell and Super Micro were told to pause AI servers to Malaysia, Singapore, Thailand and Indonesia."
+        "title": "Canada funds AI compute",
+        "body": "The fund reaches $1 billion and pays up to 80% of compute bought from Canadian-owned clouds."
       },
       {
-        "title": "FCA: Meta skipped Muse tests",
-        "body": "The UK regulator says Meta declined joint sandbox testing before launching its shopping agent there."
+        "title": "Tencent DFly2 speeds agents",
+        "body": "Open helper model gives up to 81% more throughput on DeepSeek-V4.1-Flash, by Tencent’s own tests."
       },
       {
-        "title": "New York bans AI chatbot toys",
-        "body": "A five-year ban on making or selling toys with AI chatbots, with fines up to $15,000 a day per violation."
+        "title": "AI cited in 1 in 5 US cuts",
+        "body": "Challenger counts 121,401 AI-cited cut announcements through October, about 20% of the total."
       }
     ],
     "watch": [
       {
-        "title": "Apple pulls Talkie",
-        "body": "The AI companion app left the App Store after an investigation into its chats with children."
+        "title": "Patch within 24 hours",
+        "body": "Swiss agency advice: install critical updates on internet-facing systems within a day, and use MFA or passkeys."
       },
       {
-        "title": "Save your banked reset",
-        "body": "Go, Plus, Pro and Business users get one extra ChatGPT usage reset; it expires a month after it appears."
+        "title": "Canada deadline: 17 December",
+        "body": "Health and life-science firms must file a statement of interest by 17 December; full applications by 4 January."
       },
       {
-        "title": "AI Search billing from 1 Dec",
-        "body": "Search for Agents runs on Cloudflare AI Search, which starts billing on 1 December after a free allowance."
+        "title": "Check work devices at exit",
+        "body": "OpenAI’s filing criticises Apple’s handling of personal devices and accounts when staff leave."
       }
     ]
   },
   "chips": [
-    "GPT-6.2",
-    "ChatGPT limits",
-    "Codex",
-    "AI billing",
-    "Cloudflare",
-    "Search for Agents",
-    "HTTP QUERY",
-    "Private Inference",
-    "Confidential computing",
-    "Nvidia",
-    "Export controls",
-    "Southeast Asia",
-    "FCA",
-    "Meta Muse",
+    "SAP",
+    "Job cuts",
+    "AI and work",
+    "OpenAI",
+    "Apple",
+    "Trade secrets",
+    "AI devices",
+    "Canada",
+    "AI Compute Access Fund",
+    "Sovereign compute",
+    "Switzerland",
+    "NCSC",
+    "ARTEX",
     "AI agents",
-    "AI toys",
-    "New York law",
-    "Talkie",
-    "Child safety"
+    "Cybersecurity",
+    "Tencent",
+    "DFly2",
+    "DeepSeek",
+    "Open models"
   ],
   "signals": [
     {
       "id": "s1",
-      "raw": "Tibo Sottiaux on X, 26 Nov 02:50 UTC (BleepingComputer, 26 Nov): GPT-6.2 launch billing mistake discounted Astra and Sol usage for most users; fixed; vs last week limits reached 40% faster on 6.2 Astra, 25% faster on Sol; still further than 6 Astra and 6.1 Sol; other models unaffected; no charge for past usage; one banked reset for Go, Plus, Pro, Business (Settings > Usage, expires a month later). TechCrunch 25 Nov: unified Chat and Work for a small group of Pro users, one usage meter, Instant unlimited, wider shared limits in December.",
-      "topic": "Money"
+      "topic": "Work",
+      "raw": "CNBC, 27 Nov (Bloomberg, 26 Nov): SAP preparing plan to cut at least 10,000 positions as it reshapes software business for AI; all departments asked to identify cuts, product, engineering, sales in focus; 110,000+ employees; SAP statement: no decisions made on further measures, does not comment on speculation; SAP flagged cyberattack, no evidence of unauthorized access to customer business data; 2024 programme ~10,000 positions mainly voluntary departures and retraining; WiseTech ~2,000 (Feb), Atlassian ~1,600 (Mar), Cloudflare 1,100+ (May); Challenger, Gray & Christmas 5 Nov: AI cited in 121,401 US job-cut announcements through Oct 2026, ~20%."
     },
     {
       "id": "s2",
-      "raw": "Cloudflare Blog, 25 Nov: Search for Agents, beta on all plans incl. Free (with limits); toggle under Quick Actions; AI Search instance; /.well-known/search; agent meta tags; returns Markdown, not generated answers; HTTP QUERY (RFC 10008, June 2026); subject to bot management, AI Crawl Control, WAF. Docs: default 100,000 pages, 5 hops, 24h sync; AI Search billing from 1 Dec 2026; 5M ingestion tokens, 10 GB-month, 1,000 semantic + 1,000 full-text queries included; $0.75 per 1,000 semantic/hybrid queries; Workers Free 500 pages/day. Cloudflare on X.",
-      "topic": "Tools"
+      "topic": "Rules",
+      "raw": "Reuters, 27 Nov: OpenAI counterclaims in California federal court vs Apple (Apple sued OpenAI, Tang Tan, Chang Liu in July). OpenAI: rehired ex-employee (six months at OpenAI) accessed device information and hardware roadmap; Apple discouraged suppliers; employment practices designed to trap employees; 400 employees left Apple for OpenAI. Apple denies, calls counterclaims transparent attempt to distract. OpenAI and employees deny Apple’s claims."
     },
     {
       "id": "s3",
-      "raw": "Sam Altman on X, 25 Nov 17:12 UTC (The Next Web, 25 Nov): testing Private Inference with a small group of customers, part of OpenAI Private Intelligence; product page: Private Inference (Alpha), API Preview, confidential computing, strict verifiable controls; ZDR with Private Safety Processing allows automated safety reviews without staff access; larger rollout planned, no date.",
-      "topic": "Trust"
+      "topic": "Money",
+      "raw": "ISED Canada, 26 Nov: $700M expansion of AI Compute Access Fund (initial $300M, total $1B); program guide updated 26 Nov: up to 80% of eligible costs for sovereign cloud compute, up to 50% for Canadian-based; costs $100,000 to $5M; projects to 31 Mar 2030; first call health and life sciences; SOI by 17 Dec 2026, deadline 4 Jan 2027 11:59 pm ET; $52M to 45 more companies, total >$118M for 89. BetaKit and The Logic: previous rate 67%."
     },
     {
       "id": "s4",
-      "raw": "TechCrunch, 26 Nov (citing WSJ): Nvidia told partners incl. Dell and Super Micro to pause server shipments to Malaysia, Singapore, Thailand, Indonesia for an unspecified period while assessing export compliance; remote access loophole closed by Commerce earlier in November; Institute for Progress estimate ~24% of China’s AI compute from remote data centres.",
-      "topic": "Money"
+      "topic": "Trust",
+      "raw": "NCSC/BACS Switzerland notice: first reports of attacks with AI agents (Agentic Offensive Frameworks), organisations and critical infrastructure in at least two sectors; ARTEX and CyberStrikeAI accessible agents almost doubled since Oct 2026; recommendations: limit exposure, patch within 24 hours, MFA/passkeys, least privilege, monitor behaviour, pen tests. Reuters/CNA, 26 Nov: five attacks, four successful, three critical infrastructure operators (SRF: electricity, water, telecoms). Microsoft Threat Intelligence, 25 Nov: ARTEX (released July 2026) used by Storm-0940, Salt Typhoon and others; recon to privileged access in minutes."
     },
     {
       "id": "s5",
-      "raw": "WIRED, 26 Nov: FCA head of innovation Colin Payne says Meta declined last week’s suggestion of joint sandbox testing of Muse; Muse launched in UK Tue 24 Nov; Sainsbury’s, M&S, Ocado, Debenhams Group, Currys working with Meta; Meta told FCA last month; Meta: engaged constructively; CMA made Meta add reasonable skill and care to UK terms; ICO on data control; >10M users set up Muse in North America since Sept.",
-      "topic": "Rules"
-    },
-    {
-      "id": "s6",
-      "raw": "NY Governor, 24 Nov: S.9408A/A.11144B five-year moratorium on manufacture, distribution and sale of toys with embedded or integrated AI chatbots; effective 90 days after signing; AG enforces; civil penalties up to $15,000 per day per violation; watchdog tests of toys for ages 3-12. GovKathyHochul on X.",
-      "topic": "Rules"
-    },
-    {
-      "id": "s7",
-      "raw": "ABC News, 27 Nov: Talkie blocks Australian and UK web visitors days after Apple removed it worldwide for sexual-content rule breaches; ABC/TBIJ investigation into abusive chats with children; MiniMax documents on emotional bonds; evidence of training on Talkie chats despite ‘private’ claims; still on Google Play (50M+ downloads, verified adults per Google); Australian Children’s Online Privacy Code from 10 Dec, penalties up to $50M per contravention; MiniMax did not respond.",
-      "topic": "Trust"
+      "topic": "Tools",
+      "raw": "MarkTechPost, 26 Nov; Tencent Hy on X, 26 Nov 12:22 UTC: DFly2 speculative-decoding drafter open-sourced; shares target KV cache and top-k selection; up to 81% more throughput on DeepSeek-V4.1-Flash at 64K vs DSpark at matched per-user speed (62% CodeSpan 64K, 28% short text); up to 4.2x on Hy4 flash agentic tasks; smallest gain 3.9% on Hy4 flash general; self-reported; AngelSpec License, Hy4 flash under Tencent Hy License."
     }
   ]
 }
